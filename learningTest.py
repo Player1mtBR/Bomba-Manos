@@ -31,7 +31,7 @@ isPlayerFacingRight = False
 isPlayerMoving = False
 
 #load img
-whiteBox_IMG = pygame.image.load("assets/imgs/whiteBox.png").convert_alpha() #convert makes for faster rendering and convert_alpha is to tell pygame to use alpha channel
+whiteBox_IMG = pygame.image.load("Bomba-Manos/assets/imgs/whiteBox.png").convert_alpha() #convert makes for faster rendering and convert_alpha is to tell pygame to use alpha channel
 #scaleImg --> transform using scale
 whiteBox_IMG = pygame.transform.scale(whiteBox_IMG, (whiteBox_IMG.get_width() * 3, whiteBox_IMG.get_height() * 3))
 
