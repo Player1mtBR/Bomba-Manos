@@ -17,7 +17,7 @@ font01 = pygame.font.Font(None, size=50)
 playerX = 100
 playerY = 100
 
-playerMoveSpeed = 100
+playerMoveSpeed = 300
 
 #junk
 """isPlayerFacingUp = False
@@ -25,6 +25,12 @@ isPlayerFacingDown = True
 isPlayerFacingLeft = False
 isPlayerFacingRight = False
 """
+
+#player input check
+keyPressed_W = False
+keyPressed_S = False
+keyPressed_A = False
+keyPressed_D = False
 
 
 #move player
@@ -43,20 +49,18 @@ while isGameRunning:
     currentScreen.blit(whiteBox_IMG, (playerX, playerY))
 
     #if input -> move up - down -left - right
-    if isPlayerMoving:
 
-        """if isPlayerFacingUp:
+    if keyPressed_W:
             playerY -= playerMoveSpeed * deltaTime
 
-        if isPlayerFacingDown:
+    if keyPressed_S:
             playerY += playerMoveSpeed * deltaTime
 
-        if isPlayerFacingLeft:
+    if keyPressed_A:
             playerX -= playerMoveSpeed * deltaTime
 
-        if isPlayerFacingRight:
-            playerX += playerMoveSpeed * deltaTime"""
-        pass
+    if keyPressed_D:
+            playerX += playerMoveSpeed * deltaTime
         
 
     #text on screen
@@ -82,61 +86,69 @@ while isGameRunning:
         if event.type == pygame.QUIT:
             isGameRunning = False
 
-        #key press
+        #key press #checks only once
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
                 #isPlayerMoving = True
                 pass
 
             if (event.key == pygame.K_w):
-                #isPlayerMoving = True
-                #isPlayerFacingUp = True
-                playerY -= playerMoveSpeed * deltaTime
+                keyPressed_W = True
                 
             if (event.key == pygame.K_s):
-                #isPlayerMoving = True
-                #isPlayerFacingDown = True
-                playerY += playerMoveSpeed * deltaTime
+                keyPressed_S = True
 
             if (event.key == pygame.K_a):
-                #isPlayerMoving = True
-                #isPlayerFacingLeft = True
-                playerX -= playerMoveSpeed * deltaTime
+                keyPressed_A = True
                 
             if (event.key == pygame.K_d):
-                #isPlayerMoving = True
-                #isPlayerFacingRight = True
-                playerX += playerMoveSpeed * deltaTime
+                keyPressed_D = True
+        
 
 
 
-        """if (event.type == pygame.KEYUP) and (not event.type == pygame.KEYDOWN):
+        elif (event.type == pygame.KEYUP) and (not event.type == pygame.KEYDOWN):
             if event.key == pygame.K_SPACE:
                 #isPlayerMoving = False
                 pass
 
             if (event.key == pygame.K_w):
-                isPlayerMoving = False
-                isPlayerFacingUp = False
+                keyPressed_W = False
                 
             if (event.key == pygame.K_s):
-                isPlayerMoving = False
-                isPlayerFacingDown = False
+                keyPressed_S = False
 
             if (event.key == pygame.K_a):
-                isPlayerMoving = False
-                isPlayerFacingLeft = False
-                
+                keyPressed_A = False
+
             if (event.key == pygame.K_d):
-                isPlayerMoving = False
-                isPlayerFacingRight = False"""
+                keyPressed_D = False
+
+        #check held down key #has delay
+        """pressedKey = pygame.key.get_pressed()
+        
+        if pressedKey[pygame.K_w]:
+            playerY -= playerMoveSpeed * deltaTime
+        
+        if pressedKey[pygame.K_s]:
+            playerY += playerMoveSpeed * deltaTime
+
+        if pressedKey[pygame.K_a]:
+            playerX -= playerMoveSpeed * deltaTime
+
+        if pressedKey[pygame.K_d]:
+            playerX += playerMoveSpeed * deltaTime
+        """
+        
+        
+
 
 
     #make stuff appear on window
     pygame.display.flip()
 
     deltaTime = gameClock.tick(60) / 1000 #miliseconds
-    deltaTime = max(0.001, min(0.1, deltaTime))
+    #deltaTime = max(0.001, min(0.1, deltaTime))
 
 #close pygame?
 pygame.quit()
