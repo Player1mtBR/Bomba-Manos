@@ -64,7 +64,7 @@ while isGameRunning:
         
 
     #text on screen
-    text01 = font01.render("Anybody can find love (Except you).", True, (255, 255, 255))
+    text01 = font01.render("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", True, (255, 255, 255))
     #render text
     currentScreen.blit(text01, (200, 200))
 
