@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfb37a0qqc7jj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3jxj"]
+
+[node name="mainScene" type="Node2D"]
+
+[node name="mapa" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="mapa"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mapa/StaticBody2D"]
+shape = SubResource("RectangleShape2D_o3jxj")
