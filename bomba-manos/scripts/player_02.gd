@@ -11,14 +11,14 @@ var playerDirection : Vector2 ##utiliza vetor (x, y) para definir a direção qu
 #var playerVelocity : Vector2
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("p1_bomb"):
+	if Input.is_action_just_pressed("p2_bomb"):
 		placeBombaNode.placeBombOnMap() ##puxa a funcao que está no node
 
 func _physics_process(delta: float) -> void:## roda a cada frame de física
 	
 	##get_axis define um valor negativo e positivo pra ação
-	playerDirection.x = Input.get_axis("p1_moveLeft", "p1_moveRight")
-	playerDirection.y = Input.get_axis("p1_moveUp", "p1_moveDown")
+	playerDirection.x = Input.get_axis("p2_moveLeft", "p2_moveRight")
+	playerDirection.y = Input.get_axis("p2_moveUp", "p2_moveDown")
 	
 	##fix pro movimento diagonal
 	playerDirection = playerDirection.normalized()
@@ -38,16 +38,16 @@ func _physics_process(delta: float) -> void:## roda a cada frame de física
 	
 	##usable for anim test
 	
-	if Input.is_action_pressed("p1_moveUp"):
+	if Input.is_action_pressed("p2_moveUp"):
 		animPlayerNode.play("move_up")
 		#self.global_position.y -= moveSpeed * delta
-	elif Input.is_action_pressed("p1_moveDown"):
+	elif Input.is_action_pressed("p2_moveDown"):
 		animPlayerNode.play("move_down")
 		#self.global_position.y += moveSpeed * delta
-	elif Input.is_action_pressed("p1_moveLeft"):
+	elif Input.is_action_pressed("p2_moveLeft"):
 		animPlayerNode.play("move_left")
 		#self.global_position.x -= moveSpeed * delta
-	elif Input.is_action_pressed("p1_moveRight"):
+	elif Input.is_action_pressed("p2_moveRight"):
 		animPlayerNode.play("move_right")
 		#self.global_position.x += moveSpeed * delta
 	

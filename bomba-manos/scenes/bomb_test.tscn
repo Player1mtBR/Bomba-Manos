@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://cf6p0xsqdx21u"]
+[gd_scene load_steps=3 format=3 uid="uid://cf6p0xsqdx21u"]
+
+[ext_resource type="Texture2D" uid="uid://bir2tcvl6u7d2" path="res://icon.svg" id="1_3x2mv"]
+[ext_resource type="Script" uid="uid://bdbhxd2bsuwof" path="res://scripts/bomb_test.gd" id="1_xb4ww"]
 
 [node name="bombTest" type="Node2D"]
+script = ExtResource("1_xb4ww")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)
+texture = ExtResource("1_3x2mv")
