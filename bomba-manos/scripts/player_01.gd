@@ -9,6 +9,9 @@ func _physics_process(delta: float) -> void:
 	playerDirection.x = Input.get_axis("p1_moveLeft", "p1_moveRight")
 	playerDirection.y = Input.get_axis("p1_moveUp", "p1_moveDown")
 	
+	#diagonal movement speed fix
+	playerDirection = playerDirection.normalized()
+	
 	#check if player is moving
 	if playerDirection:
 		#velocity will use the direction and multiply by the movespeed
