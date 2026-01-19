@@ -15,7 +15,7 @@ func placeBombOnMap():
 	var newBomba = bombaScene.instantiate() ## definindo instancia da bomba
 	
 	var setBombaPosition = Vector2(round(get_parent().position.x / tileSize) * tileSize + 8, round(get_parent().position.y / tileSize) * tileSize + 8)
-	## Vector2 pra INT pega a posicao do node pai q é o player e divide por 16 q é o tamanho do tileset e multiplica por 16 pra dar o valor que "encaixa" no quadradin
+	## Vector2 arredonda posicao do node pai q é o player e divide por 16 q é o tamanho do tileset e multiplica por 16 + 8 pra dar o valor que "encaixa" no quadradin
 	
 	newBomba.position = setBombaPosition ## definindo posicao aqui pq tava atualizando a posicao a cada chamada
 	

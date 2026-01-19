@@ -6,4 +6,4 @@ func _ready():
 func kaboom():
 	await get_tree().create_timer(3.0).timeout
 	print("MIBOOMBA")
-	queue_free()
+	queue_free() ## deleta o node da cena

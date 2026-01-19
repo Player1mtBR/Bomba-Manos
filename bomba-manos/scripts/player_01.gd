@@ -50,16 +50,16 @@ func _physics_process(delta: float) -> void:## roda a cada frame de física
 	
 	##usable for anim test
 	if isPlayerAlive:
-		if Input.is_action_pressed("p1_moveUp"):
+		if Input.is_action_just_pressed("p1_moveUp"):
 			animPlayerNode.play("move_up")
 			#self.global_position.y -= moveSpeed * delta
-		elif Input.is_action_pressed("p1_moveDown"):
+		elif Input.is_action_just_pressed("p1_moveDown"):
 			animPlayerNode.play("move_down")
 			#self.global_position.y += moveSpeed * delta
-		elif Input.is_action_pressed("p1_moveLeft"):
+		elif Input.is_action_just_pressed("p1_moveLeft"):
 			animPlayerNode.play("move_left")
 			#self.global_position.x -= moveSpeed * delta
-		elif Input.is_action_pressed("p1_moveRight"):
+		elif Input.is_action_just_pressed("p1_moveRight"):
 			animPlayerNode.play("move_right")
 			#self.global_position.x += moveSpeed * delta
 	
