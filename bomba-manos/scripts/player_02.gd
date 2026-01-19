@@ -22,8 +22,8 @@ var playerDirection : Vector2 ##utiliza vetor (x, y) para definir a direção qu
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("p2_bomb") and placedBombas < maxBombasAtOnce:
 		placeBombaNode.placeBombOnMap() ##puxa a funcao que está no node
-		print("placed bombas: ", placedBombas)
 		placedBombas += 1
+		print("placed bombas: ", placedBombas)
 		await get_tree().create_timer(3.0).timeout ## cria um novo timer e aguarda o sinal de quando acaba o timer
 		placedBombas -= 1
 
@@ -55,16 +55,16 @@ func _physics_process(delta: float) -> void:## roda a cada frame de física
 	
 	##usable for anim test
 	if isPlayerAlive:
-		if Input.is_action_just_pressed("p2_moveUp"):
+		if Input.is_action_pressed("p2_moveUp"):
 			animPlayerNode.play("move_up")
 			#self.global_position.y -= moveSpeed * delta
-		elif Input.is_action_just_pressed("p2_moveDown"):
+		elif Input.is_action_pressed("p2_moveDown"):
 			animPlayerNode.play("move_down")
 			#self.global_position.y += moveSpeed * delta
-		elif Input.is_action_just_pressed("p2_moveLeft"):
+		elif Input.is_action_pressed("p2_moveLeft"):
 			animPlayerNode.play("move_left")
 			#self.global_position.x -= moveSpeed * delta
-		elif Input.is_action_just_pressed("p2_moveRight"):
+		elif Input.is_action_pressed("p2_moveRight"):
 			animPlayerNode.play("move_right")
 			#self.global_position.x += moveSpeed * delta
 	
