@@ -88,25 +88,25 @@ sources/0 = SubResource("TileSetAtlasSource_dbunn")
 
 [node name="MapTest01" type="Node2D"]
 
-[node name="damnBroLetsCode" type="Sprite2D" parent="."]
-position = Vector2(-0.000310898, -32)
-scale = Vector2(0.175695, 0.1875)
+[node name="damnBroLetsCode2" type="Sprite2D" parent="."]
+position = Vector2(-66.4375, 33)
+scale = Vector2(0.271504, 0.354167)
 texture = ExtResource("1_5wric")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(-8, -8)
-tile_map_data = PackedByteArray("AAAAAP//AAABAAEAAAACAP//AAABAAEAAAD+////AAABAAEAAAD8////AAABAAEAAAD6////AAABAAEAAAAEAP//AAABAAEAAAAGAPv/AAABAAEAAAAGAP3/AAABAAEAAAAGAP//AAABAAEAAAAGAAEAAAABAAEAAAAGAAMAAAABAAEAAAD6//v/AAABAAEAAAD6//3/AAABAAEAAAD6/wEAAAABAAEAAAD6/wMAAAABAAEAAAD7/wMAAAABAAEAAAD8//v/AAABAAEAAAD8//3/AAABAAEAAAD8/wEAAAABAAEAAAD8/wMAAAABAAEAAAD9/wMAAAABAAEAAAD+//v/AAABAAEAAAD+//3/AAABAAEAAAD+/wEAAAABAAEAAAD+/wMAAAABAAEAAAD//wMAAAABAAEAAAAAAPv/AAABAAEAAAAAAP3/AAABAAEAAAAAAAEAAAABAAEAAAAAAAMAAAABAAEAAAABAAMAAAABAAEAAAACAPv/AAABAAEAAAACAP3/AAABAAEAAAACAAEAAAABAAEAAAACAAMAAAABAAEAAAADAAMAAAABAAEAAAAEAPv/AAABAAEAAAAEAP3/AAABAAEAAAAEAAEAAAABAAEAAAAEAAMAAAABAAEAAAAFAAMAAAABAAEAAAAHAAMAAAABAAEAAAD4//n/AAABAAEAAAD4//r/AAABAAEAAAD4//v/AAABAAEAAAD4//z/AAABAAEAAAD4//3/AAABAAEAAAD4//7/AAABAAEAAAD4////AAABAAEAAAD4/wAAAAABAAEAAAD4/wEAAAABAAEAAAD4/wIAAAABAAEAAAD4/wMAAAABAAEAAAAIAAMAAAABAAEAAAAIAAIAAAABAAEAAAAIAAEAAAABAAEAAAAIAAAAAAABAAEAAAAIAP//AAABAAEAAAAIAP7/AAABAAEAAAAIAP3/AAABAAEAAAAIAPz/AAABAAEAAAAIAPv/AAABAAEAAAAIAPr/AAABAAEAAAAIAPn/AAABAAEAAAAHAPn/AAABAAEAAAAGAPn/AAABAAEAAAAFAPn/AAABAAEAAAAEAPn/AAABAAEAAAADAPn/AAABAAEAAAACAPn/AAABAAEAAAABAPn/AAABAAEAAAAAAPn/AAABAAEAAAD///n/AAABAAEAAAD+//n/AAABAAEAAAD9//n/AAABAAEAAAD8//n/AAABAAEAAAD7//n/AAABAAEAAAD6//n/AAABAAEAAAD5//n/AAABAAEAAAD5/wMAAAABAAEAAAA=")
+position = Vector2(55, -8)
+tile_map_data = PackedByteArray("AAAAAP//AAABAAEAAAACAP//AAABAAEAAAD+////AAABAAEAAAD8////AAABAAEAAAD6////AAABAAEAAAAEAP//AAABAAEAAAD6//v/AAABAAEAAAD6//3/AAABAAEAAAD6/wEAAAABAAEAAAD8//v/AAABAAEAAAD8//3/AAABAAEAAAD8/wEAAAABAAEAAAD+//v/AAABAAEAAAD+//3/AAABAAEAAAD+/wEAAAABAAEAAAAAAPv/AAABAAEAAAAAAP3/AAABAAEAAAAAAAEAAAABAAEAAAACAPv/AAABAAEAAAACAP3/AAABAAEAAAACAAEAAAABAAEAAAAEAPv/AAABAAEAAAAEAP3/AAABAAEAAAAEAAEAAAABAAEAAAD4//v/AAABAAEAAAD2//v/AAABAAEAAAD0//v/AAABAAEAAADy//v/AAABAAEAAADw//v/AAABAAEAAADu//v/AAABAAEAAADs/wkAAAABAAEAAADs/wgAAAABAAEAAADs/wcAAAABAAEAAADs/wYAAAABAAEAAADs/wUAAAABAAEAAADs/wQAAAABAAEAAADs/wMAAAABAAEAAADs/wIAAAABAAEAAADs/wEAAAABAAEAAADs/wAAAAABAAEAAADs////AAABAAEAAADs//7/AAABAAEAAADs//3/AAABAAEAAADs//z/AAABAAEAAADs//v/AAABAAEAAADs//r/AAABAAEAAADs//n/AAABAAEAAADt//n/AAABAAEAAADu//n/AAABAAEAAADv//n/AAABAAEAAADw//n/AAABAAEAAADx//n/AAABAAEAAADy//n/AAABAAEAAADz//n/AAABAAEAAAD0//n/AAABAAEAAAD1//n/AAABAAEAAAD2//n/AAABAAEAAAD3//n/AAABAAEAAAD4//n/AAABAAEAAAD5//n/AAABAAEAAAD6//n/AAABAAEAAAD7//n/AAABAAEAAAD8//n/AAABAAEAAAD9//n/AAABAAEAAAD+//n/AAABAAEAAAD///n/AAABAAEAAAAAAPn/AAABAAEAAAABAPn/AAABAAEAAAACAPn/AAABAAEAAAADAPn/AAABAAEAAAAEAPn/AAABAAEAAADu//3/AAABAAEAAADu////AAABAAEAAADu/wEAAAABAAEAAADu/wMAAAABAAEAAADu/wUAAAABAAEAAADu/wcAAAABAAEAAADw/wcAAAABAAEAAADy/wcAAAABAAEAAAD0/wcAAAABAAEAAAD2/wcAAAABAAEAAAD4/wcAAAABAAEAAAD6/wcAAAABAAEAAAD8/wcAAAABAAEAAAD+/wcAAAABAAEAAAAAAAcAAAABAAEAAAACAAcAAAABAAEAAAAEAAcAAAABAAEAAAAEAAUAAAABAAEAAAAEAAMAAAABAAEAAAACAAMAAAABAAEAAAAAAAMAAAABAAEAAAAAAAUAAAABAAEAAAACAAUAAAABAAEAAAD+/wUAAAABAAEAAAD8/wUAAAABAAEAAAD8/wMAAAABAAEAAAD+/wMAAAABAAEAAAD6/wMAAAABAAEAAAD6/wUAAAABAAEAAAD4/wUAAAABAAEAAAD2/wUAAAABAAEAAAD0/wUAAAABAAEAAADy/wUAAAABAAEAAADw/wUAAAABAAEAAADw/wMAAAABAAEAAADy/wMAAAABAAEAAAD0/wMAAAABAAEAAAD2/wMAAAABAAEAAAD4/wMAAAABAAEAAAD4/wEAAAABAAEAAAD4////AAABAAEAAAD4//3/AAABAAEAAAD2//3/AAABAAEAAAD0//3/AAABAAEAAADy//3/AAABAAEAAADw//3/AAABAAEAAADw////AAABAAEAAADy////AAABAAEAAAD0////AAABAAEAAAD2////AAABAAEAAAD2/wEAAAABAAEAAAD0/wEAAAABAAEAAADy/wEAAAABAAEAAADw/wEAAAABAAEAAADu/wkAAAABAAEAAADs/wsAAAABAAEAAADt/wsAAAABAAEAAADu/wsAAAABAAEAAADv/wsAAAABAAEAAADw/wsAAAABAAEAAADx/wsAAAABAAEAAADy/wsAAAABAAEAAADz/wsAAAABAAEAAAD0/wsAAAABAAEAAAD1/wsAAAABAAEAAAD2/wsAAAABAAEAAAD3/wsAAAABAAEAAAD4/wsAAAABAAEAAAD5/wsAAAABAAEAAAD6/wsAAAABAAEAAAD7/wsAAAABAAEAAAD8/wsAAAABAAEAAAD9/wsAAAABAAEAAAD+/wsAAAABAAEAAAD//wsAAAABAAEAAAAAAAsAAAABAAEAAAABAAsAAAABAAEAAAACAAsAAAABAAEAAAADAAsAAAABAAEAAAAEAAsAAAABAAEAAADs/woAAAABAAEAAADw/wkAAAABAAEAAADy/wkAAAABAAEAAAD0/wkAAAABAAEAAAD2/wkAAAABAAEAAAD4/wkAAAABAAEAAAD6/wkAAAABAAEAAAD8/wkAAAABAAEAAAD+/wkAAAABAAEAAAAAAAkAAAABAAEAAAACAAkAAAABAAEAAAAEAAkAAAABAAEAAAAEAPr/AAABAAEAAAAEAPz/AAABAAEAAAAEAP7/AAABAAEAAAAEAAAAAAABAAEAAAAEAAIAAAABAAEAAAAEAAQAAAABAAEAAAAEAAYAAAABAAEAAAAEAAgAAAABAAEAAAAEAAoAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_pn1uf")
 
 [node name="player01" parent="." instance=ExtResource("2_dbunn")]
-position = Vector2(-112, -96)
-scale = Vector2(0.125, 0.125)
+position = Vector2(-241, -95)
+scale = Vector2(0.123805, 0.126199)
 
 [node name="mainCamera" parent="." instance=ExtResource("3_pn1uf")]
-position = Vector2(-8.00032, -8)
+position = Vector2(-72, 56)
 
 [node name="Player02" parent="." instance=ExtResource("5_ffdus")]
-position = Vector2(112, 32)
+position = Vector2(111, 158)
 scale = Vector2(0.125, 0.125)
 
 [node name="AllBricks" type="Node2D" parent="."]
@@ -177,6 +177,91 @@ modulate = Color(1, 1, 0, 1)
 position = Vector2(56, -88)
 scale = Vector2(0.125, 0.125)
 
+[node name="BreakableBlock90" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-184, -88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock104" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-184, -88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock105" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-184, -88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock106" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-184, -88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock91" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-168, -88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock92" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-152, -88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock93" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-136, -88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock94" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-120, -88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock95" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-104, -88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock98" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-184, -56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock99" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-168, -56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock100" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-152, -56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock101" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-136, -56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock102" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-120, -56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock103" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-104, -56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock96" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-87.9997, -88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock97" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-71.9997, -88)
+scale = Vector2(0.125, 0.125)
+
 [node name="BreakableBlock13" parent="AllBricks" instance=ExtResource("4_pn1uf")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(56, -72)
@@ -192,9 +277,79 @@ modulate = Color(1, 1, 0, 1)
 position = Vector2(-56, 40)
 scale = Vector2(0.125, 0.125)
 
+[node name="BreakableBlock192" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-200, -8)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock193" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-168, -8)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock194" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-136, -8)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock195" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-216, 40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock196" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-216, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock197" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-216, 104)
+scale = Vector2(0.125, 0.125)
+
 [node name="BreakableBlock17" parent="AllBricks" instance=ExtResource("4_pn1uf")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(-40, 40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock198" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-39.9997, 56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock199" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-7.99968, 56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock200" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(24.0003, 56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock201" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(56.0003, 56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock202" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(56.0003, 88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock203" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(24.0003, 88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock204" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-7.99968, 88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock205" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-39.9997, 88)
 scale = Vector2(0.125, 0.125)
 
 [node name="BreakableBlock18" parent="AllBricks" instance=ExtResource("4_pn1uf")]
@@ -230,6 +385,926 @@ scale = Vector2(0.125, 0.125)
 [node name="BreakableBlock63" parent="AllBricks" instance=ExtResource("4_pn1uf")]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(72, 40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock107" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-55.9997, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock108" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-39.9997, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock109" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-23.9997, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock110" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-7.99968, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock111" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(8.00032, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock112" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(24.0003, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock113" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(40.0003, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock114" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(56.0003, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock115" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(72.0003, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock116" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-55.9997, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock117" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-39.9997, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock118" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-23.9997, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock119" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-7.99968, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock120" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(8.00032, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock121" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(24.0003, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock122" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(40.0003, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock123" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(56.0003, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock124" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(72.0003, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock125" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-232, 8)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock126" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-216, 8)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock142" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-216, -56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock143" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-200, -56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock184" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-168, -72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock185" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-136, -72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock186" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-136, -72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock187" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-104, -72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock188" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-136, -40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock189" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-168, -40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock190" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-200, -40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock191" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-216, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock144" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-200, -88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock145" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-200, -72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock146" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-232, -56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock147" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-232, -40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock148" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-232, -8)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock127" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-200, 8)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock128" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-184, 8)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock129" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-168, 8)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock130" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-152, 8)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock131" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-136, 8)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock132" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-120, 8)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock134" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-232, -24)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock149" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-232, 88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock150" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-232, 24)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock151" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-232, 40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock152" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-232, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock153" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-232, 56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock154" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-200, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock155" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-232, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock156" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-232, 120)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock157" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-200, 152)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock158" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-232, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock246" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-184, 40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock247" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-184, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock248" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-184, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock249" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-184, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock250" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-152, 40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock251" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-152, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock252" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-152, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock253" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-152, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock254" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-120, 40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock255" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-120, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock256" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-120, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock257" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-120, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock258" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-87.9997, 40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock259" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-87.9997, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock260" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-87.9997, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock261" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-87.9997, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock262" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-87.9997, 40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock263" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-87.9997, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock264" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-87.9997, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock265" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-87.9997, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock206" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-200, 88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock207" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-200, 24)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock208" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-200, 40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock209" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-200, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock210" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-200, 56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock211" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-200, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock212" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-200, 120)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock213" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-200, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock214" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-168, 88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock215" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-168, 24)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock216" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-168, 40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock217" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-168, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock218" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-168, 56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock219" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-168, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock220" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-168, 120)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock221" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-168, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock222" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-136, 88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock223" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-136, 24)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock224" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-136, 40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock225" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-136, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock226" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-136, 56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock227" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-136, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock228" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-136, 120)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock229" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-136, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock230" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-104, 88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock231" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-104, 24)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock232" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-104, 40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock233" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-104, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock234" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-104, 56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock235" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-104, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock236" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-104, 120)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock237" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-104, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock238" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-71.9997, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock239" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-71.9997, 40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock240" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-71.9997, 56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock241" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-71.9997, 88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock242" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-71.9997, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock243" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-71.9997, 120)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock244" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-71.9997, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock266" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-168, 152)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock267" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-136, 152)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock268" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-104, 152)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock269" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-71.9997, 152)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock270" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-39.9997, 152)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock272" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-55.9997, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock273" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-23.9997, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock274" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(8.00032, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock275" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(40.0003, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock276" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(72.0003, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock277" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-55.9997, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock278" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-23.9997, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock279" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(8.00032, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock280" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(40.0003, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock281" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(72.0003, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock282" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-184, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock283" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-152, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock284" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-120, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock285" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-87.9997, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock286" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-55.9997, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock287" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-168, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock288" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-136, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock289" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-104, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock290" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-71.9997, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock291" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-39.9997, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock292" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-7.99968, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock293" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(24.0003, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock294" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(56.0003, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock295" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-39.9997, 120)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock296" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-7.99968, 120)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock297" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(24.0003, 120)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock298" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-39.9997, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock299" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-7.99968, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock300" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(24.0003, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock301" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(24.0003, 152)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock302" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(56.0003, 152)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock303" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(56.0003, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock304" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(56.0003, 120)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock271" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-7.99968, 152)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock245" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-71.9997, 152)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock159" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(120, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock160" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(120, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock161" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(120, 88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock162" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(120, 120)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock163" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(120, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock164" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(120, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock165" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(120, 8)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock169" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(120, -56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock170" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(88.0003, -88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock171" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(88.0003, 168)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock166" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(120, 24)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock167" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(120, 56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock168" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(120, 40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock172" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(88.0003, 152)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock173" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(88.0003, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock174" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(88.0003, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock175" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(88.0003, 120)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock176" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(88.0003, 88)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock177" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(88.0003, 40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock180" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(104, 40)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock181" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(104, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock182" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(104, 104)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock183" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(104, 136)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock178" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(88.0003, 72)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock179" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(88.0003, 56)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock135" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-216, -24)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock136" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-200, -24)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock137" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-184, -24)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock138" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-168, -24)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock139" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-152, -24)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock140" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-136, -24)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock141" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-120, -24)
+scale = Vector2(0.125, 0.125)
+
+[node name="BreakableBlock133" parent="AllBricks" instance=ExtResource("4_pn1uf")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-104, 8)
 scale = Vector2(0.125, 0.125)
 
 [node name="BreakableBlock16" parent="AllBricks" instance=ExtResource("4_pn1uf")]

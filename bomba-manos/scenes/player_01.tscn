@@ -186,5 +186,5 @@ script = ExtResource("3_imhd3")
 position = Vector2(5.72205e-06, 5.72205e-06)
 scale = Vector2(6.09524, 6.09524)
 sprite_frames = SubResource("SpriteFrames_xh808")
-animation = &"idle"
+animation = &"move_down"
 autoplay = "idle"

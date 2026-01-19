@@ -183,7 +183,7 @@ shape = SubResource("RectangleShape2D_imhd3")
 script = ExtResource("3_s4bhy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
+modulate = Color(0.152483, 0.0441165, 1.8049e-08, 1)
 position = Vector2(5.72205e-06, 5.72205e-06)
 scale = Vector2(6.09524, 6.09524)
 sprite_frames = SubResource("SpriteFrames_xh808")

@@ -22,3 +22,4 @@ func placeBombOnMap():
 	get_tree().root.add_child(newBomba) ## pega o root da cena e cria um node 
 	
 	print("É BOMBA")
+	
