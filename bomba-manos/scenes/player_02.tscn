@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://cerl0w0wfugqu"]
+[gd_scene load_steps=28 format=3 uid="uid://cerl0w0wfugqu"]
 
 [ext_resource type="Script" uid="uid://dyrugf6uwtoo" path="res://scripts/player_02.gd" id="1_tac4p"]
 [ext_resource type="Texture2D" uid="uid://bir2tcvl6u7d2" path="res://icon.svg" id="2_axtip"]
 [ext_resource type="Script" uid="uid://denkwoabotyh5" path="res://scripts/place_bomba.gd" id="3_s4bhy"]
+[ext_resource type="Texture2D" uid="uid://cdm4r8xoeq8lc" path="res://assets/sprites/messias sheet 2.png" id="4_axtip"]
 [ext_resource type="Texture2D" uid="uid://rm6npmhxg1ii" path="res://SPRITESHEET MESSIAS/frame 1.png" id="4_qimwo"]
 [ext_resource type="Texture2D" uid="uid://btejs1ol7j5jm" path="res://assets/sprites/phMissiaSpritesheet.png" id="5_plvwl"]
 [ext_resource type="Texture2D" uid="uid://ofuna4onpboc" path="res://SPRITESHEET MESSIAS/frame 5.png" id="6_1k57y"]
@@ -17,6 +18,38 @@ radius = 59.5
 height = 119.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imhd3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4bhy"]
+atlas = ExtResource("4_axtip")
+region = Rect2(0, 21, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qimwo"]
+atlas = ExtResource("4_axtip")
+region = Rect2(21, 21, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plvwl"]
+atlas = ExtResource("4_axtip")
+region = Rect2(42, 21, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1k57y"]
+atlas = ExtResource("4_axtip")
+region = Rect2(63, 21, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h10hb"]
+atlas = ExtResource("4_axtip")
+region = Rect2(84, 21, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_106an"]
+atlas = ExtResource("4_axtip")
+region = Rect2(105, 21, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arx5m"]
+atlas = ExtResource("4_axtip")
+region = Rect2(126, 21, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axtip"]
+atlas = ExtResource("4_axtip")
+region = Rect2(105, 0, 21, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xh808"]
 atlas = ExtResource("5_plvwl")
@@ -36,6 +69,35 @@ region = Rect2(42, 21, 21, 21)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xh808"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4bhy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qimwo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plvwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1k57y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h10hb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_106an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arx5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axtip")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_qimwo")
@@ -125,6 +187,5 @@ modulate = Color(1, 0, 0, 1)
 position = Vector2(5.72205e-06, 5.72205e-06)
 scale = Vector2(6.09524, 6.09524)
 sprite_frames = SubResource("SpriteFrames_xh808")
-animation = &"move_down"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.173526
