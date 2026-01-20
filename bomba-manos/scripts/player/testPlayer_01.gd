@@ -8,6 +8,10 @@ extends CharacterBody2D
 @onready var animPlayerNode := $AnimatedSprite2D
 
 var isPlayerAlive := true
+
+var canPlayerMove := true
+var playerMoveDelay := 1.0
+
 var maxBombasAtOnce := 2
 var placedBombas := 0
 
@@ -41,7 +45,7 @@ func _physics_process(delta: float) -> void:## roda a cada frame de física
 		velocity = velocity.move_toward(Vector2.ZERO, playerMoveSpeed)
 		if isPlayerAlive:
 			animPlayerNode.stop()
-		
+	
 	
 	if Input.is_action_just_pressed("p1_kill"):
 		killPlayer()

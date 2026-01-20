@@ -1,8 +1,8 @@
 [gd_scene load_steps=28 format=3 uid="uid://cerl0w0wfugqu"]
 
-[ext_resource type="Script" uid="uid://dyrugf6uwtoo" path="res://scripts/player_02.gd" id="1_tac4p"]
+[ext_resource type="Script" uid="uid://dyrugf6uwtoo" path="res://scripts/player/testPlayer_02.gd" id="1_tac4p"]
 [ext_resource type="Texture2D" uid="uid://bir2tcvl6u7d2" path="res://icon.svg" id="2_axtip"]
-[ext_resource type="Script" uid="uid://denkwoabotyh5" path="res://scripts/place_bomba.gd" id="3_s4bhy"]
+[ext_resource type="Script" uid="uid://denkwoabotyh5" path="res://scripts/player/place_bomba.gd" id="3_s4bhy"]
 [ext_resource type="Texture2D" uid="uid://cdm4r8xoeq8lc" path="res://assets/sprites/messias sheet 2.png" id="4_axtip"]
 [ext_resource type="Texture2D" uid="uid://rm6npmhxg1ii" path="res://SPRITESHEET MESSIAS/frame 1.png" id="4_qimwo"]
 [ext_resource type="Texture2D" uid="uid://btejs1ol7j5jm" path="res://assets/sprites/phMissiaSpritesheet.png" id="5_plvwl"]
@@ -183,7 +183,7 @@ shape = SubResource("RectangleShape2D_imhd3")
 script = ExtResource("3_s4bhy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.152483, 0.0441165, 1.8049e-08, 1)
+modulate = Color(1, 0, 0, 1)
 position = Vector2(5.72205e-06, 5.72205e-06)
 scale = Vector2(6.09524, 6.09524)
 sprite_frames = SubResource("SpriteFrames_xh808")
