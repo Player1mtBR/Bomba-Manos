@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 ## escrever ":" define o tipo da variável, pode usar := pra definir o tipo e valor ao mesmo tempo tbm
+@export var playerID := 0 ##permite usar um único script para o input de todos os jogadores
 @export var playerMoveSpeed := 50
 
 ## @onready define a var na hora que o node é inicializado
@@ -24,8 +25,10 @@ var inputMoveDirection
 
 var playerDirection : Vector2 ##utiliza vetor (x, y) para definir a direção que o jogador se move
 
+
+
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("p1_bomb") and placedBombas < maxBombasAtOnce:
+	if Input.is_action_just_pressed("p"+str(playerID)+"_bomb") and placedBombas < maxBombasAtOnce:
 		placeBombaNode.placeBombOnMap() ##puxa a funcao que está no node
 		placedBombas += 1
 		print("placed bombas: ", placedBombas)
@@ -37,31 +40,30 @@ func _physics_process(delta: float) -> void:## roda a cada frame de física
 	
 	## checha input e se o raycast ta colidindo pra poder andar
 	if isPlayerAlive:
-		print(raycastUp.get_collider())
-		if Input.is_action_pressed("p1_moveUp") and raycastUp.is_colliding() == false:
-			
+		#print(raycastUp.get_collider())
+		if Input.is_action_pressed("p"+str(playerID)+"_moveUp") and raycastUp.is_colliding() == false:
 			inputMoveDirection = Vector2(0, -1)
 			movePlayer()
 			animPlayerNode.play("move_up")
 			
-		elif Input.is_action_pressed("p1_moveDown") and raycastDown.is_colliding() == false:
+		elif Input.is_action_pressed("p"+str(playerID)+"_moveDown") and raycastDown.is_colliding() == false:
 			inputMoveDirection = Vector2(0, 1)
 			movePlayer()
 			animPlayerNode.play("move_down")
 			
-		elif Input.is_action_pressed("p1_moveLeft") and raycastLeft.is_colliding() == false:
+		elif Input.is_action_pressed("p"+str(playerID)+"_moveLeft") and raycastLeft.is_colliding() == false:
 			inputMoveDirection = Vector2(-1, 0)
 			movePlayer()
 			animPlayerNode.play("move_left")
 			
-		elif Input.is_action_pressed("p1_moveRight") and raycastRight.is_colliding() == false:
+		elif Input.is_action_pressed("p"+str(playerID)+"_moveRight") and raycastRight.is_colliding() == false:
 			inputMoveDirection = Vector2(1, 0)
 			movePlayer()
 			animPlayerNode.play("move_right")
 			
-	
-	if Input.is_action_just_pressed("p1_kill"):
-		killPlayer()
+	##kill anim test
+	#if Input.is_action_just_pressed("p1_kill"):
+	#	killPlayer()
 	
 	if inputMoveDirection == Vector2(0, 0) and canPlayerMove:
 		animPlayerNode.stop()

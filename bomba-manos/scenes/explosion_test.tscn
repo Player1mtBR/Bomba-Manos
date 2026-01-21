@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://beo503f124xe2"]
+
+[ext_resource type="Texture2D" uid="uid://cv4atd0l8ffog" path="res://assets/sprites/bomba/explosões picotadas.png" id="1_rojhr"]
+[ext_resource type="Script" uid="uid://rsqkdhkpm5g0" path="res://scripts/explosion_test.gd" id="1_x3ncj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3ncj"]
+atlas = ExtResource("1_rojhr")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2i3p"]
+atlas = ExtResource("1_rojhr")
+region = Rect2(161, 50, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amn5q"]
+atlas = ExtResource("1_rojhr")
+region = Rect2(280, 53, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nwfe"]
+atlas = ExtResource("1_rojhr")
+region = Rect2(401, 53, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_58opt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3ncj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2i3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amn5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nwfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3ncj")
+}],
+"loop": false,
+"name": &"kaboom",
+"speed": 5.0
+}]
+
+[node name="ExplosionTest" type="Node2D"]
+script = ExtResource("1_x3ncj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_58opt")
+animation = &"kaboom"
+autoplay = "kaboom"
+frame = 4
+frame_progress = 1.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5l0wfwo4xh3"
-path="res://.godot/imported/damnBroLetsCode.png-647842cb18d866a07bb94a66df4fb669.ctex"
+uid="uid://cfpki24d0xh0o"
+path="res://.godot/imported/BOMBA SALGADO EXPLODINDOV6.png-00570d95e623d8e12139f496bd0a6e3a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/damnBroLetsCode.png"
-dest_files=["res://.godot/imported/damnBroLetsCode.png-647842cb18d866a07bb94a66df4fb669.ctex"]
+source_file="res://assets/sprites/bomba/BOMBA SALGADO EXPLODINDOV6.png"
+dest_files=["res://.godot/imported/BOMBA SALGADO EXPLODINDOV6.png-00570d95e623d8e12139f496bd0a6e3a.ctex"]
 
 [params]
 

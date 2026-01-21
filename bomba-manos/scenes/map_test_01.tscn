@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=4 uid="uid://dfbkpt2rxb4rx"]
+[gd_scene load_steps=8 format=4 uid="uid://dfbkpt2rxb4rx"]
 
-[ext_resource type="Texture2D" uid="uid://b5l0wfwo4xh3" path="res://assets/damnBroLetsCode.png" id="1_5wric"]
 [ext_resource type="PackedScene" uid="uid://ds7j3hfwhepin" path="res://scenes/entities/players/testPlayer_01.tscn" id="2_dbunn"]
 [ext_resource type="TileSet" uid="uid://dlipkyeoxn74e" path="res://assets/res/placeHolderTileSet.tres" id="2_rsdxb"]
 [ext_resource type="PackedScene" uid="uid://dbae74pwgkq23" path="res://scenes/main_camera.tscn" id="3_pn1uf"]
@@ -10,11 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://chwgyufb52bwt" path="res://assets/audio/tracks/FlyingBatteryZoneAct1.wav" id="8_rsdxb"]
 
 [node name="MapTest01" type="Node2D"]
-
-[node name="damnBroLetsCode2" type="Sprite2D" parent="."]
-position = Vector2(-66.4375, 33)
-scale = Vector2(0.271504, 0.354167)
-texture = ExtResource("1_5wric")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(55, -8)
@@ -26,7 +20,7 @@ position = Vector2(-241, -95)
 scale = Vector2(0.123805, 0.126199)
 
 [node name="mainCamera" parent="." instance=ExtResource("3_pn1uf")]
-position = Vector2(-72, 56)
+position = Vector2(-64, 32)
 
 [node name="Player02" parent="." instance=ExtResource("5_ffdus")]
 position = Vector2(111, 158)

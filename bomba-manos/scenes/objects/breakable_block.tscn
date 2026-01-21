@@ -60,6 +60,7 @@ visible = false
 texture = ExtResource("1_ofc15")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_ofc15")
