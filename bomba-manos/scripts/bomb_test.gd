@@ -5,6 +5,8 @@ extends Node2D
 
 @export var blastRadius := 2
 
+var tileSize := 16
+
 var raycastFirstTarget
 
 func _ready():
@@ -12,53 +14,38 @@ func _ready():
 	
 func kaboom():
 	await get_tree().create_timer(3.0).timeout
-	print("MIBOOMBA")
+	#print("MIBOOMBA")
+	spawnExplosion(global_position)
 	checkCollision()
 	queue_free() ## deleta o node da cena
 
-"""
-************************
-IGNORAR, Ñ ESTÁ PRONTO
-************************
-"""
-
 
 func checkCollision():
-	print("chamou checkCollision ok")
-	var raycastTempColliders := [] ## guarda lugar dos colliders
-	var raycastFinalColliders := [] ## spawna a explosao na colisao
-	
 	for bombaRaycasts in raycastsBomba.get_children():
-		print("chamou get_child ok")
-		var raycastFirstTarget = bombaRaycasts.target_position
-		
-		for tile in blastRadius: ##repete de acordo coom o alcançe
-			print("chamou quadradins ok")
-			bombaRaycasts.target_position = raycastFirstTarget * (Vector2(1, 1) * (tile + 1)) ##pula pra proxima posição
-			print(bombaRaycasts.target_position)
-			print("ir pra raycast")
-			if bombaRaycasts.is_colliding():
-				print("chamou checarColisaoRaydfefe ok")
-				var bombaCollider = bombaRaycasts.get_collider() ##pega o q q ta colidindo
-				print(bombaCollider)
-				
-				raycastTempColliders.append(bombaCollider) ##add o q ta colidindo na array
-				bombaRaycasts.add_exception(bombaCollider) ##add como exceção pra ñ colidir dnv
-				bombaRaycasts.force_raycast_update()##atualiza pra checar a colisao na nova posicao
-			else:
-				print("n ta colidindo")
-				break ## se ñ ta colidindo, sai do loop
+		if bombaRaycasts.is_colliding():
+			var bombaCollider = bombaRaycasts.get_collider()
+			print(bombaRaycasts.get_collider().name)
+			if bombaCollider.name == "StaticBody2D" or bombaCollider.name == "gridPlayer01":
+				spawnExplosion(bombaRaycasts.global_position + bombaRaycasts.target_position)
 			
-	## removendo raycasts duplicados
-	for bombaCollider in raycastTempColliders: ## loop pelos colliders temp
-		if not bombaCollider in raycastFinalColliders: ## add na array definitiva
-			raycastFinalColliders.append(bombaCollider)
+		else:
+			var distanceExploded := 0
+			while distanceExploded < blastRadius and bombaRaycasts.is_colliding() == false:
+				distanceExploded += 1
+				#print("before", bombaRaycasts.position)
+				bombaRaycasts.global_position += bombaRaycasts.target_position
+				#print("after", bombaRaycasts.position)
+				bombaRaycasts.force_raycast_update()
+				spawnExplosion(bombaRaycasts.global_position)#* Vector2(1, 1) * distanceExploded)
+			if bombaRaycasts.is_colliding() and distanceExploded < blastRadius:
+					var bombaCollider = bombaRaycasts.get_collider()
+					#print(bombaRaycasts.get_collider().name)
+					if bombaCollider.name == "StaticBody2D":
+						spawnExplosion(bombaRaycasts.global_position + bombaRaycasts.target_position)
 
-	for bombaCollider in raycastFinalColliders: ## explodir em cada posição de collider
-		print(raycastFinalColliders)
-		spawnExplosion(bombaCollider)
-		
-func spawnExplosion(bombaCollider):
+				
+			
+func spawnExplosion(explosionSpawnPosition := Vector2()):
 	var newExplosion = explosionScene.instantiate()
-	newExplosion.global_position = bombaCollider.global_position
+	newExplosion.position = explosionSpawnPosition
 	get_tree().root.add_child(newExplosion)

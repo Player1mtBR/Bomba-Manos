@@ -28,10 +28,11 @@ var playerDirection : Vector2 ##utiliza vetor (x, y) para definir a direção qu
 
 
 func _process(delta: float) -> void:
+	
 	if Input.is_action_just_pressed("p"+str(playerID)+"_bomb") and placedBombas < maxBombasAtOnce:
 		placeBombaNode.placeBombOnMap() ##puxa a funcao que está no node
 		placedBombas += 1
-		print("placed bombas: ", placedBombas)
+		#print("placed bombas: ", placedBombas)
 		await get_tree().create_timer(3.0).timeout ## cria um novo timer e aguarda o sinal de quando acaba o timer
 		placedBombas -= 1
 
@@ -65,7 +66,7 @@ func _physics_process(delta: float) -> void:## roda a cada frame de física
 	#if Input.is_action_just_pressed("p1_kill"):
 	#	killPlayer()
 	
-	if inputMoveDirection == Vector2(0, 0) and canPlayerMove:
+	if inputMoveDirection == Vector2(0, 0) and canPlayerMove and isPlayerAlive:
 		animPlayerNode.stop()
 	
 	
@@ -87,3 +88,7 @@ func killPlayer():
 	isPlayerAlive = false
 	animPlayerNode.play("die")
 	
+	
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.name == "ExplosionArea":
+		killPlayer()

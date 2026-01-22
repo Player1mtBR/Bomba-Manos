@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://beo503f124xe2"]
+[gd_scene load_steps=9 format=3 uid="uid://beo503f124xe2"]
 
 [ext_resource type="Texture2D" uid="uid://cv4atd0l8ffog" path="res://assets/sprites/bomba/explosões picotadas.png" id="1_rojhr"]
 [ext_resource type="Script" uid="uid://rsqkdhkpm5g0" path="res://scripts/explosion_test.gd" id="1_x3ncj"]
@@ -39,8 +39,11 @@ animations = [{
 }],
 "loop": false,
 "name": &"kaboom",
-"speed": 5.0
+"speed": 7.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3ncj"]
+size = Vector2(16, 16)
 
 [node name="ExplosionTest" type="Node2D"]
 script = ExtResource("1_x3ncj")
@@ -51,3 +54,12 @@ animation = &"kaboom"
 autoplay = "kaboom"
 frame = 4
 frame_progress = 1.0
+
+[node name="ExplosionArea" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionArea"]
+scale = Vector2(0.75, 0.75)
+shape = SubResource("RectangleShape2D_x3ncj")
+debug_color = Color(0.999138, 0.0238237, 3.85046e-07, 0.42)

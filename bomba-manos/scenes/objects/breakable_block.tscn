@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cb6neg2ddhkn"]
+[gd_scene load_steps=10 format=3 uid="uid://cb6neg2ddhkn"]
 
 [ext_resource type="Script" uid="uid://dhhab8c8xnrfb" path="res://scripts/breakable_block.gd" id="1_20sil"]
 [ext_resource type="Texture2D" uid="uid://bir2tcvl6u7d2" path="res://icon.svg" id="1_ofc15"]
@@ -44,6 +44,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofc15"]
 size = Vector2(128, 128)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b0tg"]
+size = Vector2(128, 128)
+
 [node name="BreakableBlock" type="Node2D"]
 scale = Vector2(0.125, 0.125)
 script = ExtResource("1_20sil")
@@ -53,14 +56,32 @@ scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_idm1l")
 animation = &"destroy"
 
-[node name="Area2D" type="Area2D" parent="."]
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("1_ofc15")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 5
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_ofc15")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_0b0tg")
+debug_color = Color(1, 1, 0, 0.419608)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-56, -56)
+target_position = Vector2(112, 112)
+collision_mask = 5
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
