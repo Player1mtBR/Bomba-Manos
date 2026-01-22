@@ -15,6 +15,10 @@ run/main_scene="uid://dfbkpt2rxb4rx"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalScript="*res://scripts/globalScript.gd"
+
 [display]
 
 window/size/viewport_width=855
@@ -182,6 +186,7 @@ p6_bomb={
 
 2d_physics/layer_2="bombPlayer"
 2d_physics/layer_3="bombaTest"
+2d_physics/layer_4="bombBomb"
 
 [rendering]
 

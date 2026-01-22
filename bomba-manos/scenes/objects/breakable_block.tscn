@@ -48,6 +48,8 @@ size = Vector2(128, 128)
 size = Vector2(128, 128)
 
 [node name="BreakableBlock" type="Node2D"]
+z_index = 6
+z_as_relative = false
 scale = Vector2(0.125, 0.125)
 script = ExtResource("1_20sil")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cf6p0xsqdx21u"]
+[gd_scene load_steps=9 format=3 uid="uid://cf6p0xsqdx21u"]
 
 [ext_resource type="Texture2D" uid="uid://bir2tcvl6u7d2" path="res://icon.svg" id="1_3x2mv"]
 [ext_resource type="Script" uid="uid://bdbhxd2bsuwof" path="res://scripts/bomb_test.gd" id="1_xb4ww"]
@@ -32,7 +32,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spfbs"]
+size = Vector2(20.6667, 20.6667)
+
 [node name="bombTest" type="Node2D"]
+z_index = 5
 scale = Vector2(0.75, 0.75)
 script = ExtResource("1_xb4ww")
 
@@ -45,7 +49,8 @@ texture = ExtResource("1_3x2mv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_spfbs")
 autoplay = "default"
-frame_progress = 0.67869
+frame = 2
+frame_progress = 0.750861
 
 [node name="raycasts" type="Node2D" parent="."]
 
@@ -64,3 +69,13 @@ collision_mask = 5
 [node name="right" type="RayCast2D" parent="raycasts"]
 target_position = Vector2(16, 0)
 collision_mask = 5
+
+[node name="ChainReactionArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChainReactionArea"]
+position = Vector2(-0.333333, -0.333333)
+shape = SubResource("RectangleShape2D_spfbs")
+
+[connection signal="area_entered" from="ChainReactionArea" to="." method="_on_chain_reaction_area_area_entered"]

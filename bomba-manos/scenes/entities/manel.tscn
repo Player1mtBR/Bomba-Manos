@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bgkax6c3eo7n0"]
+
+[ext_resource type="Script" uid="uid://c3yrggigyrqda" path="res://scripts/manel.gd" id="1_f4fsj"]
+[ext_resource type="Texture2D" uid="uid://kciyrmrnrqw1" path="res://assets/phManel.png" id="1_uuirj"]
+[ext_resource type="AudioStream" uid="uid://c701ygoemed0o" path="res://assets/audio/sfx/manel/taComendoBombaDenovo.wav" id="3_nxelx"]
+[ext_resource type="AudioStream" uid="uid://b1v4qih6fmo5l" path="res://assets/audio/sfx/manel/risada.wav" id="4_un2uc"]
+[ext_resource type="AudioStream" uid="uid://767es7yhe3pi" path="res://assets/audio/sfx/manel/nComamBomba.wav" id="5_8akxd"]
+
+[node name="Manel" type="Node2D"]
+script = ExtResource("1_f4fsj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("1_uuirj")
+
+[node name="voiceLines" type="Node2D" parent="."]
+
+[node name="taComendoBombaDenovo" type="AudioStreamPlayer2D" parent="voiceLines"]
+stream = ExtResource("3_nxelx")
+volume_db = 10.0
+
+[node name="risada" type="AudioStreamPlayer2D" parent="voiceLines"]
+stream = ExtResource("4_un2uc")
+volume_db = 10.0
+
+[node name="nComamBomba" type="AudioStreamPlayer2D" parent="voiceLines"]
+stream = ExtResource("5_8akxd")
+volume_db = 10.0

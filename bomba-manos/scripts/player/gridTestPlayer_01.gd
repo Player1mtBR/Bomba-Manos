@@ -32,6 +32,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("p"+str(playerID)+"_bomb") and placedBombas < maxBombasAtOnce:
 		placeBombaNode.placeBombOnMap() ##puxa a funcao que está no node
 		placedBombas += 1
+		GlobalScript.manelBombasCount += 1 ##contador Manel
 		#print("placed bombas: ", placedBombas)
 		await get_tree().create_timer(3.0).timeout ## cria um novo timer e aguarda o sinal de quando acaba o timer
 		placedBombas -= 1
@@ -87,6 +88,8 @@ func movePlayer(): ##tween vai levar de um valor a outro de forma gradual
 func killPlayer():
 	isPlayerAlive = false
 	animPlayerNode.play("die")
+	await animPlayerNode.animation_finished
+	queue_free()
 	
 	
 func _on_area_2d_area_entered(area: Area2D) -> void:
