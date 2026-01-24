@@ -7,9 +7,7 @@ var tileSize := 16
 func _ready() -> void:
 	#var playerParent = get_parent()
 	pass
-
-func _process(delta: float) -> void:
-	pass
+	
 
 func placeBombOnMap():
 	var newBomba = bombaScene.instantiate() ## definindo instancia da bomba
