@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://dht51xrjropuf"]
+
+[ext_resource type="Texture2D" uid="uid://duvvpgsucos5l" path="res://assets/lanchonete_fundo.jpeg" id="1_w5wq3"]
+[ext_resource type="FontFile" uid="uid://cqueenegv6tcf" path="res://assets/04B_30__.TTF" id="2_clgm0"]
+[ext_resource type="PackedScene" uid="uid://dtwicdmkeqgh" path="res://scenes/entities/players/gridTestPlayer_01.tscn" id="3_381ou"]
+
+[node name="PlayerSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = -427.0
+offset_top = -240.0
+offset_right = 429.0
+offset_bottom = 240.0
+texture = ExtResource("1_w5wq3")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -331.5
+offset_top = -160.0
+offset_right = 371.5
+offset_bottom = -119.0
+theme_override_colors/font_color = Color(0.917647, 0.823529, 0.313726, 1)
+theme_override_fonts/font = ExtResource("2_clgm0")
+theme_override_font_sizes/font_size = 40
+text = "Escolha Seu Vagabundo"
+
+[node name="gridPlayer01" parent="." instance=ExtResource("3_381ou")]
+position = Vector2(-267.5, 48)
+scale = Vector2(0.4, 0.4)
+isPlayerAlive = false
+inMenu = true
+
+[node name="gridPlayer02" parent="." instance=ExtResource("3_381ou")]
+modulate = Color(1, 0.300051, 0.236805, 1)
+position = Vector2(116.5, 48)
+scale = Vector2(0.4, 0.4)
+playerID = 2
+isPlayerAlive = false
+inMenu = true
+
+[node name="gridPlayer03" parent="." instance=ExtResource("3_381ou")]
+modulate = Color(0.488179, 1, 0.456277, 1)
+position = Vector2(-75.5, 48)
+scale = Vector2(0.4, 0.4)
+playerID = 3
+isPlayerAlive = false
+inMenu = true
+
+[node name="gridPlayer04" parent="." instance=ExtResource("3_381ou")]
+modulate = Color(0.995766, 1, 0.318056, 1)
+position = Vector2(308.5, 48)
+scale = Vector2(0.4, 0.4)
+playerID = 4
+isPlayerAlive = false
+inMenu = true

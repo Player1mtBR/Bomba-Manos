@@ -312,7 +312,6 @@ position = Vector2(48, 64)
 [node name="gridPlayer01" parent="." instance=ExtResource("4_51x6l")]
 modulate = Color(0.299968, 0.511606, 1, 1)
 position = Vector2(-96, -96)
-playerID = 1
 
 [node name="mainCamera" parent="." instance=ExtResource("5_51x6l")]
 position = Vector2(0, -32)
