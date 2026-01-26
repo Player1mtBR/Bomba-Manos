@@ -45,8 +45,6 @@ func _physics_process(delta: float) -> void:## roda a cada frame de física
 		velocity = velocity.move_toward(Vector2.ZERO, playerMoveSpeed)
 		if isPlayerAlive:
 			animPlayerNode.stop()
-			
-
 	
 	
 	if Input.is_action_just_pressed("p1_kill"):

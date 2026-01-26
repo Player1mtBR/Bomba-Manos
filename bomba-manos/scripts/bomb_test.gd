@@ -2,6 +2,9 @@ extends Node2D
 
 @onready var raycastsBomba := $raycasts
 @onready var chainReaction := $ChainReactionArea
+@onready var bombBlocksPlayer := $bombBlocksPlayer/CollisionShape2D
+@onready var audioPlayer := $AudioStreamPlayer2D
+
 
 @onready var explosionScene := preload("res://scenes/explosion_test.tscn")
 
@@ -9,17 +12,20 @@ extends Node2D
 
 var tileSize := 16
 
-var raycastFirstTarget
-
 func _ready():
+	audioPlayer.playing = true
 	await get_tree().create_timer(3.0).timeout
+	GlobalScript.triggerBombaSfx = true
 	kaboom()
 	
-func kaboom():
+func kaboom():	
+	#audioPlayer2.playing = true
+	GlobalScript.triggerCameraShake = true
 	#await get_tree().create_timer(3.0).timeout
 	#print("MIBOOMBA")
 	spawnExplosion(0, global_position)
 	checkCollision()
+	#await audioPlayer2.finished
 	queue_free() ## deleta o node da cena
 
 
@@ -28,7 +34,7 @@ func checkCollision():
 		var setExplosionAnim := 0
 		if bombaRaycasts.is_colliding():
 			var bombaCollider = bombaRaycasts.get_collider()
-			print(bombaRaycasts.get_collider().name)
+			#print(bombaRaycasts.get_collider().name)
 			if bombaCollider.name == "StaticBody2D" or bombaCollider.name == "gridPlayer01":
 				
 				spawnExplosion(setExplosionAnim, bombaRaycasts.global_position + bombaRaycasts.target_position)
@@ -81,7 +87,7 @@ func spawnExplosion(setExplosionAnim, explosionSpawnPosition := Vector2()):
 	
 	
 	newExplosion.animDir = setExplosionAnim
-	get_tree().root.call_deferred("add_child", newExplosion)
+	get_tree().root.call_deferred("add_child", newExplosion) ##spawn fixed
 
 
 func _on_chain_reaction_area_area_entered(area: Area2D) -> void:

@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://cdwq7sa50f3wk"]
+[gd_scene load_steps=2 format=3 uid="uid://cdwq7sa50f3wk"]
+
+[ext_resource type="Script" uid="uid://b2vamni65boga" path="res://scripts/camera_2d.gd" id="1_65vmm"]
 
 [node name="SmallCamera" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(1.95, 1.95)
+script = ExtResource("1_65vmm")

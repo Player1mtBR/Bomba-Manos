@@ -1,5 +1,7 @@
 extends Control
 
+@onready var lab01Scene := preload("res://scenes/levels/lab_test_01.tscn")
+
 # Referências aos cursores e UI
 @onready var cursor_p1 = $ColorRect
 @onready var cursor_p2 = $ColorRect2
@@ -17,19 +19,19 @@ func _ready():
 	await get_tree().process_frame
 	atualizar_posicao_cursores()
 
-func _input(event):
+func _process(delta: float) -> void:
 	# Movimentação P1
 	if not p1_pronto:
 		# Movimentação P1
-		if event.is_action_pressed("p1_moveRight"):  p1_pos = (p1_pos + 1) % 4
-		if event.is_action_pressed("p1_moveLeft"): p1_pos = (p1_pos - 1 + 4) % 4 # Soma 4 para evitar números negativos	
-		if event.is_action_pressed("p1_kill"): p1_pronto = true
+		if Input.is_action_just_pressed("p1_moveRight"):  p1_pos = (p1_pos + 1) % 4
+		if Input.is_action_just_pressed("p1_moveLeft"): p1_pos = (p1_pos - 1 + 4) % 4 # Soma 4 para evitar números negativos	
+		if Input.is_action_just_pressed("p1_bomb"): p1_pronto = true
 
 	# Movimentação P2
 	if not p2_pronto:
-		if event.is_action_pressed("p2_moveRight"):  p2_pos = (p2_pos + 1) % 4
-		if event.is_action_pressed("p2_moveLeft"): p2_pos = (p2_pos - 1 + 4) % 4 # Soma 4 para evitar números negativos	
-		if event.is_action_pressed("p2_kill"): p2_pronto = true
+		if Input.is_action_just_pressed("p2_moveRight"):  p2_pos = (p2_pos + 1) % 4
+		if Input.is_action_just_pressed("p2_moveLeft"): p2_pos = (p2_pos - 1 + 4) % 4 # Soma 4 para evitar números negativos	
+		if Input.is_action_just_pressed("p2_bomb"): p2_pronto = true
 
 	atualizar_posicao_cursores()
 	verificar_selecao()
@@ -46,15 +48,29 @@ func atualizar_posicao_cursores():
 	
 
 func verificar_selecao():
-	print("P1 escolheu: ", p1_pos, " | P2 escolheu: ", p2_pos)
-	#Para a música (usando o MusicPlayer que criamos no início)
-	if has_node("/root/MusicPlayer"):
-		get_node("/root/MusicPlayer").stop() 
-	pass
+	#print(p1_pos)
+	#print(p2_pos)
+	
+	if p1_pronto == true and p2_pronto == true:
+		p1_pos += 1 ## add 1 pra funcionar com os ids de jogador ja existentes
+		p2_pos += 1
+		print(p1_pos)
+		print(p2_pos)
+		GlobalScript.selectedPlayer1 = p1_pos
+		GlobalScript.selectedPlayer2 = p2_pos
+		get_tree().change_scene_to_packed(lab01Scene)
+	#pass
+	
 	#if p1_pronto and p2_pronto:
 		# Salva a escolha no Singleton Global
 		#Global.p1_escolhido = p1_pos
 		#Global.p2_escolhido = p2_pos
 		
+		#print("P1 escolheu: ", p1_pos, " | P2 escolheu: ", p2_pos)
+
+		# Para a música (usando o MusicPlayer que criamos no início)
+		#if has_node("/root/MusicPlayer"):
+		#	get_node("/root/MusicPlayer").stop() 
+
 		# Muda para a cena da partida
 		#get_tree().change_scene_to_file("res://cena_jogo.tscn")

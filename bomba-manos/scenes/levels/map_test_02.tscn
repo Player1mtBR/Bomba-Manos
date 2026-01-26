@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=4 uid="uid://l0cb4g8telp0"]
 
+[ext_resource type="Texture2D" uid="uid://drutjoa1y5g30" path="res://assets/sprites/damnBroLetsCode.png" id="1_iftyd"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="1_megmf"]
 [ext_resource type="PackedScene" uid="uid://cb6neg2ddhkn" path="res://scenes/objects/breakable_block.tscn" id="2_w4tvx"]
-[ext_resource type="PackedScene" uid="uid://dtwicdmkeqgh" path="res://scenes/entities/players/gridTestPlayer_01.tscn" id="4_51x6l"]
 [ext_resource type="AudioStream" uid="uid://3ltw3qe7xh3" path="res://assets/audio/tracks/PokémonHeartGold&SoulSilver-GymLeader&EliteFourBattleMusic.mp3" id="5_01k7s"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="5_51x6l"]
-[ext_resource type="PackedScene" uid="uid://cf6p0xsqdx21u" path="res://scenes/bomb_test.tscn" id="6_01k7s"]
-[ext_resource type="PackedScene" uid="uid://beo503f124xe2" path="res://scenes/explosion_test.tscn" id="7_01k7s"]
 [ext_resource type="PackedScene" uid="uid://bgkax6c3eo7n0" path="res://scenes/entities/manel.tscn" id="8_q7e64"]
+[ext_resource type="PackedScene" uid="uid://bkla2y3q2sihu" path="res://scenes/entities/players/messias.tscn" id="9_iftyd"]
+[ext_resource type="PackedScene" uid="uid://bb7vc6uojlbw8" path="res://scenes/entities/players/p1mt.tscn" id="9_s3l7e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_01k7s"]
 texture = ExtResource("1_megmf")
@@ -22,6 +22,11 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_01k7s")
 
 [node name="MapTest02" type="Node2D"]
+
+[node name="floor" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_iftyd")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-8, -8)
@@ -309,10 +314,6 @@ position = Vector2(32, 64)
 [node name="BreakableBlock75" parent="AllBricks" instance=ExtResource("2_w4tvx")]
 position = Vector2(48, 64)
 
-[node name="gridPlayer01" parent="." instance=ExtResource("4_51x6l")]
-modulate = Color(0.299968, 0.511606, 1, 1)
-position = Vector2(-96, -96)
-
 [node name="mainCamera" parent="." instance=ExtResource("5_51x6l")]
 position = Vector2(0, -32)
 
@@ -320,26 +321,13 @@ position = Vector2(0, -32)
 stream = ExtResource("5_01k7s")
 autoplay = true
 
-[node name="gridPlayer02" parent="." instance=ExtResource("4_51x6l")]
-modulate = Color(1, 0.300051, 0.236805, 1)
-position = Vector2(96, 64)
-playerID = 2
-
-[node name="gridPlayer03" parent="." instance=ExtResource("4_51x6l")]
-modulate = Color(0.488179, 1, 0.456277, 1)
-position = Vector2(-96, 64)
-playerID = 3
-
-[node name="gridPlayer04" parent="." instance=ExtResource("4_51x6l")]
-modulate = Color(0.995766, 1, 0.318056, 1)
-position = Vector2(96, -96)
-playerID = 4
-
-[node name="bombTest" parent="." instance=ExtResource("6_01k7s")]
-position = Vector2(-64, -128)
-
-[node name="ExplosionTest" parent="." instance=ExtResource("7_01k7s")]
-position = Vector2(-48, -128)
-
 [node name="Manel" parent="." instance=ExtResource("8_q7e64")]
 position = Vector2(0, -128)
+
+[node name="messias" parent="." instance=ExtResource("9_iftyd")]
+position = Vector2(-96, -96)
+playerID = 1
+
+[node name="p1mt" parent="." instance=ExtResource("9_s3l7e")]
+position = Vector2(96, 64)
+playerID = 2

@@ -1,15 +1,215 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgkax6c3eo7n0"]
+[gd_scene load_steps=18 format=3 uid="uid://bgkax6c3eo7n0"]
 
 [ext_resource type="Script" uid="uid://c3yrggigyrqda" path="res://scripts/manel.gd" id="1_f4fsj"]
 [ext_resource type="Texture2D" uid="uid://kciyrmrnrqw1" path="res://assets/phManel.png" id="1_uuirj"]
 [ext_resource type="AudioStream" uid="uid://c701ygoemed0o" path="res://assets/audio/sfx/manel/taComendoBombaDenovo.wav" id="3_nxelx"]
 [ext_resource type="AudioStream" uid="uid://b1v4qih6fmo5l" path="res://assets/audio/sfx/manel/risada.wav" id="4_un2uc"]
 [ext_resource type="AudioStream" uid="uid://767es7yhe3pi" path="res://assets/audio/sfx/manel/nComamBomba.wav" id="5_8akxd"]
+[ext_resource type="Texture2D" uid="uid://bympxhg5ow63m" path="res://assets/sprites/manel/manelSheet.png" id="6_nxelx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_un2uc"]
+atlas = ExtResource("6_nxelx")
+region = Rect2(0, 72, 68, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8akxd"]
+atlas = ExtResource("6_nxelx")
+region = Rect2(68, 72, 68, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ee1a"]
+atlas = ExtResource("6_nxelx")
+region = Rect2(136, 72, 68, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxelx"]
+atlas = ExtResource("6_nxelx")
+region = Rect2(340, 72, 68, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mer6"]
+atlas = ExtResource("6_nxelx")
+region = Rect2(408, 72, 68, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1eh7"]
+atlas = ExtResource("6_nxelx")
+region = Rect2(0, 0, 68, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vdtg"]
+atlas = ExtResource("6_nxelx")
+region = Rect2(68, 0, 68, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2it2y"]
+atlas = ExtResource("6_nxelx")
+region = Rect2(136, 0, 68, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4p7x"]
+atlas = ExtResource("6_nxelx")
+region = Rect2(204, 0, 68, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhfbm"]
+atlas = ExtResource("6_nxelx")
+region = Rect2(272, 0, 68, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lhfbm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_un2uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8akxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ee1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ee1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ee1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8akxd")
+}],
+"loop": true,
+"name": &"laugh",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_un2uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8akxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ee1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ee1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ee1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8akxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_un2uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8akxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ee1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ee1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ee1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8akxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_un2uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8akxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ee1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ee1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ee1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8akxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_un2uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8akxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ee1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ee1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ee1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8akxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_un2uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8akxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ee1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ee1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ee1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8akxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_un2uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8akxd")
+}],
+"loop": false,
+"name": &"laughOnce",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxelx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mer6")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1eh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vdtg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2it2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4p7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhfbm")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 7.0
+}]
 
 [node name="Manel" type="Node2D"]
 script = ExtResource("1_f4fsj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("1_uuirj")
 
@@ -26,3 +226,10 @@ volume_db = 10.0
 [node name="nComamBomba" type="AudioStreamPlayer2D" parent="voiceLines"]
 stream = ExtResource("5_8akxd")
 volume_db = 10.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.825, 0.825)
+sprite_frames = SubResource("SpriteFrames_lhfbm")
+animation = &"talk"
+autoplay = "walking"
+frame_progress = 0.796554

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cf6p0xsqdx21u"]
+[gd_scene load_steps=12 format=3 uid="uid://cf6p0xsqdx21u"]
 
 [ext_resource type="Texture2D" uid="uid://bir2tcvl6u7d2" path="res://icon.svg" id="1_3x2mv"]
 [ext_resource type="Script" uid="uid://bdbhxd2bsuwof" path="res://scripts/bomb_test.gd" id="1_xb4ww"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://d4eqoew3q5gbk" path="res://assets/sprites/bomba/BOMBA SALGADO EXPLODINDOV5.png" id="4_el67q"]
 [ext_resource type="Texture2D" uid="uid://cfo8eo14ckihq" path="res://assets/sprites/bomba/BOMBA SALGADO EXPLODINDOV7.png" id="5_vmf22"]
 [ext_resource type="Texture2D" uid="uid://dym6tsc6xxhm4" path="res://assets/sprites/bomba/BOMBA SALGADO EXPLODINDOV4.png" id="6_shsfc"]
+[ext_resource type="AudioStream" uid="uid://ck0cn56w0to6j" path="res://assets/audio/sfx/placeBomba.wav" id="7_mfosm"]
+[ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="8_el67q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_spfbs"]
 animations = [{
@@ -33,6 +35,9 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spfbs"]
+size = Vector2(20.6667, 20.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfosm"]
 size = Vector2(20.6667, 20.6667)
 
 [node name="bombTest" type="Node2D"]
@@ -77,5 +82,22 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChainReactionArea"]
 position = Vector2(-0.333333, -0.333333)
 shape = SubResource("RectangleShape2D_spfbs")
+
+[node name="bombBlocksPlayer" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bombBlocksPlayer"]
+position = Vector2(0.333333, -0.333333)
+scale = Vector2(0.75, 0.75)
+shape = SubResource("RectangleShape2D_mfosm")
+debug_color = Color(1, 0.462745, 0, 0.419608)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_mfosm")
+volume_db = 10.0
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_el67q")
 
 [connection signal="area_entered" from="ChainReactionArea" to="." method="_on_chain_reaction_area_area_entered"]

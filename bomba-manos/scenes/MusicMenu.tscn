@@ -1,9 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://1s8rymaacs7p"]
+[gd_scene load_steps=2 format=3 uid="uid://djuvkvcv2qrhl"]
 
-[ext_resource type="AudioStream" uid="uid://dk4mesgbep782" path="res://assets/musictema.mp3" id="1_toqge"]
+[ext_resource type="AudioStream" uid="uid://q5majgatifgl" path="res://assets/musictema.mp3" id="1_toqge"]
 
 [node name="MusicMenu" type="Node"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_toqge")
+volume_db = -10.0
 autoplay = true

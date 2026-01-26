@@ -25,3 +25,10 @@ Ordenação de nodes (quanto maior o número, mais a frente é desenhado na tela
 player - 4
 bomba - 10
 #####
+
+######
+comentários desatualizados ou faltando comentários de documentação
+
+coisas q dependem de recursos de outra cena estão sendo carregados do script global com uma var servindo como intermédio
+######
+"""

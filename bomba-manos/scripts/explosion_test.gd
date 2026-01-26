@@ -3,11 +3,13 @@ extends Node2D
 @export var animDir := 0
 
 @onready var animPlayer := $AnimatedSprite2D
+@onready var audioPlayer := $AudioStreamPlayer2D
 
 func _ready() -> void:
-	print(position)
+	#print(position)
 	match animDir: ##switch
 		0:
+			#audioPlayer.playing = true
 			animPlayer.play("kaboom")
 			
 		1:

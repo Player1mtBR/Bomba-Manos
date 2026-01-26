@@ -1,6 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://dtwicdmkeqgh"]
+[gd_scene load_steps=27 format=3 uid="uid://dtwicdmkeqgh"]
 
-[ext_resource type="Script" uid="uid://bhhi61k4b7iqx" path="res://scenes/gridTestPlayer_01.gd" id="1_fau1h"]
+[ext_resource type="Script" uid="uid://bhhi61k4b7iqx" path="res://scripts/player/gridTestPlayer_01.gd" id="1_fau1h"]
 [ext_resource type="Script" uid="uid://denkwoabotyh5" path="res://scripts/player/place_bomba.gd" id="3_k0yuw"]
 [ext_resource type="Texture2D" uid="uid://cdm4r8xoeq8lc" path="res://assets/sprites/messias sheet 2.png" id="4_a5ndm"]
 [ext_resource type="Texture2D" uid="uid://rm6npmhxg1ii" path="res://SPRITESHEET MESSIAS/frame 1.png" id="5_sm68o"]
@@ -50,22 +50,6 @@ region = Rect2(126, 21, 21, 21)
 [sub_resource type="AtlasTexture" id="AtlasTexture_axtip"]
 atlas = ExtResource("4_a5ndm")
 region = Rect2(105, 0, 21, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fau1h"]
-atlas = ExtResource("6_0g605")
-region = Rect2(0, 0, 21, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h0sy5"]
-atlas = ExtResource("6_0g605")
-region = Rect2(0, 42, 21, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hsobk"]
-atlas = ExtResource("6_0g605")
-region = Rect2(0, 21, 21, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k0yuw"]
-atlas = ExtResource("6_0g605")
-region = Rect2(0, 63, 21, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xh808"]
 atlas = ExtResource("6_0g605")
@@ -136,23 +120,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fau1h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h0sy5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hsobk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k0yuw")
-}],
-"loop": true,
-"name": &"menuRotation",
-"speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_xh808")
 }, {
 "duration": 1.0,
@@ -212,7 +179,6 @@ animations = [{
 scale = Vector2(0.125, 0.125)
 collision_mask = 5
 script = ExtResource("1_fau1h")
-playerID = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0.5)
@@ -235,30 +201,29 @@ z_index = 4
 position = Vector2(5.72205e-06, 5.72205e-06)
 scale = Vector2(6.09524, 6.09524)
 sprite_frames = SubResource("SpriteFrames_xh808")
-animation = &"menuRotation"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.707423
 
 [node name="collisionRaycasts" type="Node2D" parent="."]
 
 [node name="up" type="RayCast2D" parent="collisionRaycasts"]
 position = Vector2(0, -40)
 target_position = Vector2(0, -100)
-hit_from_inside = true
+collision_mask = 17
 
 [node name="down" type="RayCast2D" parent="collisionRaycasts"]
 position = Vector2(0, 40)
 target_position = Vector2(0, 100)
-hit_from_inside = true
+collision_mask = 17
 
 [node name="left" type="RayCast2D" parent="collisionRaycasts"]
 position = Vector2(-40, 0)
 target_position = Vector2(-100, 0)
-hit_from_inside = true
+collision_mask = 17
 
 [node name="right" type="RayCast2D" parent="collisionRaycasts"]
 position = Vector2(40, 0)
 target_position = Vector2(100, 0)
-hit_from_inside = true
+collision_mask = 17
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
