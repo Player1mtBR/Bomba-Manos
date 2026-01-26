@@ -46,19 +46,15 @@ func atualizar_posicao_cursores():
 	
 
 func verificar_selecao():
-	print(p1_pos)
-	print(p2_pos)
+	print("P1 escolheu: ", p1_pos, " | P2 escolheu: ", p2_pos)
+	#Para a música (usando o MusicPlayer que criamos no início)
+	if has_node("/root/MusicPlayer"):
+		get_node("/root/MusicPlayer").stop() 
 	pass
 	#if p1_pronto and p2_pronto:
 		# Salva a escolha no Singleton Global
 		#Global.p1_escolhido = p1_pos
 		#Global.p2_escolhido = p2_pos
 		
-		#print("P1 escolheu: ", p1_pos, " | P2 escolheu: ", p2_pos)
-
-		# Para a música (usando o MusicPlayer que criamos no início)
-		#if has_node("/root/MusicPlayer"):
-		#	get_node("/root/MusicPlayer").stop() 
-
 		# Muda para a cena da partida
 		#get_tree().change_scene_to_file("res://cena_jogo.tscn")
