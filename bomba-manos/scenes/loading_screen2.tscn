@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8ikstmt53arr"]
+
+[ext_resource type="Script" uid="uid://yb85okjemk3k" path="res://scripts/loading_screen_2.gd" id="1_pefi5"]
+[ext_resource type="Texture2D" uid="uid://odusc1mpnfio" path="res://assets/titleScreen.jpeg" id="2_v7tur"]
+[ext_resource type="PackedScene" uid="uid://bkla2y3q2sihu" path="res://scenes/entities/players/messias.tscn" id="3_irpao"]
+[ext_resource type="PackedScene" uid="uid://dhvew4gclgmef" path="res://scenes/entities/players/pedro.tscn" id="4_74o5v"]
+[ext_resource type="PackedScene" uid="uid://c7a8uwncb4gff" path="res://scenes/entities/players/igor.tscn" id="5_wvnfn"]
+[ext_resource type="PackedScene" uid="uid://bb7vc6uojlbw8" path="res://scenes/entities/players/p1mt.tscn" id="6_5i0ac"]
+[ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="7_6cr1w"]
+
+[node name="loadingScreen" type="Node2D"]
+script = ExtResource("1_pefi5")
+loadingScene = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-328.605, -211.765)
+scale = Vector2(0.837209, 0.882353)
+color = Color(0.0384253, 9.62615e-08, 0.35917, 1)
+polygon = PackedVector2Array(-123.5, -32, 908.5, -32, 908.5, 512, 391.5, 512, -123.5, 512)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-200, 0)
+scale = Vector2(0.311523, 0.311523)
+texture = ExtResource("2_v7tur")
+
+[node name="messias" parent="." instance=ExtResource("3_irpao")]
+position = Vector2(64, -120)
+scale = Vector2(0.5, 0.5)
+playerID = 1
+isPlayerOnMenu = true
+
+[node name="pedro" parent="." instance=ExtResource("4_74o5v")]
+position = Vector2(256, -120)
+scale = Vector2(0.5, 0.5)
+playerID = 2
+isPlayerOnMenu = true
+
+[node name="igor" parent="." instance=ExtResource("5_wvnfn")]
+position = Vector2(64, 120)
+scale = Vector2(0.5, 0.5)
+playerID = 3
+isPlayerOnMenu = true
+
+[node name="p1mt" parent="." instance=ExtResource("6_5i0ac")]
+position = Vector2(256, 120)
+scale = Vector2(0.5, 0.5)
+playerID = 4
+isPlayerOnMenu = true
+
+[node name="Label" type="Label" parent="p1mt"]
+offset_left = -496.0
+offset_top = -272.0
+offset_right = 280.0
+offset_bottom = -171.0
+theme_override_fonts/font = ExtResource("7_6cr1w")
+theme_override_font_sizes/font_size = 80
+text = "Carregando..."

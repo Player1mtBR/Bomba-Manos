@@ -1,5 +1,7 @@
 extends Node
 
+@onready var loading2Lab := preload("res://scenes/loading_screen.tscn")
+
 var manelBombasCount := 0
 
 var triggerLaugh := false
@@ -16,6 +18,8 @@ var selectedPlayer2 #: CharacterBody2D
 
 
 ##Manel, Missia, Igão, Ureia, Anão
+#func _ready() -> void:
+	#loading2Lab.loadingScene = 2
 var playerScores := [0, 0, 0, 0, 0]
 
 func _process(delta: float) -> void:
@@ -36,7 +40,7 @@ func restartLevel():
 	currentPlayers = 0
 	MANEL_WINS = false
 	checkIfAreAllDead = true
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://scenes/loading_screen2.tscn")
 	
 func addPoint2Player(idNum):
 	playerScores[idNum] += 1

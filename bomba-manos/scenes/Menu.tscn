@@ -28,7 +28,6 @@ offset_bottom = 240.0
 
 [node name="Polygon2D" type="Polygon2D" parent="TextureRect"]
 position = Vector2(0, 1.52588e-05)
-scale = Vector2(1, 1)
 color = Color(0.0384253, 9.62615e-08, 0.35917, 1)
 polygon = PackedVector2Array(-115.5, -32, 908.5, -32, 908.5, 512, 391.5, 512, -123.5, 512)
 

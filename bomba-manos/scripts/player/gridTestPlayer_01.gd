@@ -120,7 +120,7 @@ func victory():
 	#isPlayerAlive = false
 	animPlayerNode.play("win")
 	
-	await get_tree().create_timer(7.0).timeout
+	await get_tree().create_timer(4.0).timeout
 	if isPlayerAlive == true:
 		queue_free()
 		

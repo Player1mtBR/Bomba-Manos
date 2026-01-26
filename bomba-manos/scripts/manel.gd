@@ -77,5 +77,5 @@ func victoryPose():
 	#await voice02.finished
 	print("manel victory pose")
 	GlobalScript.addPoint2Player(0) ##Manel ID = 0
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(4.0).timeout
 	GlobalScript.restartLevel()
