@@ -41,8 +41,6 @@ func atualizar_posicao_cursores():
 		var node_p1 = container_personagens.get_child(p1_pos)
 		var node_p2 = container_personagens.get_child(p2_pos)
 		
-		# Pegamos a posição global do personagem e subtraímos metade do tamanho do cursor
-		# Isso faz com que o centro do ColorRect fique sobre o centro do CharacterBody2D
 		cursor_p1.global_position = node_p1.global_position - (cursor_p1.size / 2)
 		cursor_p2.global_position = node_p2.global_position - (cursor_p2.size / 2)
 	
@@ -59,18 +57,3 @@ func verificar_selecao():
 		GlobalScript.selectedPlayer1 = p1_pos
 		GlobalScript.selectedPlayer2 = p2_pos
 		get_tree().change_scene_to_packed(lab01Scene)
-	#pass
-	
-	#if p1_pronto and p2_pronto:
-		# Salva a escolha no Singleton Global
-		#Global.p1_escolhido = p1_pos
-		#Global.p2_escolhido = p2_pos
-		
-		#print("P1 escolheu: ", p1_pos, " | P2 escolheu: ", p2_pos)
-
-		# Para a música (usando o MusicPlayer que criamos no início)
-		#if has_node("/root/MusicPlayer"):
-		#	get_node("/root/MusicPlayer").stop() 
-
-		# Muda para a cena da partida
-		#get_tree().change_scene_to_file("res://cena_jogo.tscn")
