@@ -50,6 +50,7 @@ func _ready() -> void:
 			
 
 func spawnCharacter(id, character, pos):
+	await get_tree().create_timer(0.1).timeout
 	get_tree().root.call_deferred("add_child", character)
 	character.playerID = id
 	character.position = pos.position
