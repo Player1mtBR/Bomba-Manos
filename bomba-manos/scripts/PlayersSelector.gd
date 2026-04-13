@@ -1,6 +1,6 @@
 extends Control
 
-@onready var lab01Scene := load("res://scenes/loading_screen2.tscn")
+@onready var lab01Scene := load("res://scenes/menus/loading_screen2.tscn")
 
 # Referências aos cursores e UI
 @onready var cursor_p1 = $ColorRect

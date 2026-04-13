@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var bombaScene := preload("res://scenes/bomb_test.tscn") ##carregando cena em uma variavel
+@onready var bombaScene := preload("res://scenes/objects/bombas/bomba_main.tscn") ##carregando cena em uma variavel
 #var playerParent = null
 var tileSize := 16
 

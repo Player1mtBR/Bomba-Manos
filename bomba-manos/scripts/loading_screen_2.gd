@@ -1,6 +1,6 @@
 extends Node2D
 @export var loadingScene := 1
-@onready var selectPlayer := preload("res://scenes/PlayerSelector.tscn")
+@onready var selectPlayer := preload("res://scenes/menus/PlayerSelector.tscn")
 @onready var labScene := preload("res://scenes/levels/lab_test_01.tscn")
 
 func _ready() -> void:

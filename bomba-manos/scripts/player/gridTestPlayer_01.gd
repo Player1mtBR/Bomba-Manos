@@ -113,10 +113,10 @@ func killPlayer():
 	queue_free()
 	
 func victory():
+	canPlayerMove = false
 	wonMatch = true
 	print(playerID, "victory")
 	GlobalScript.addPoint2Player(playerID)
-	canPlayerMove = false
 	#isPlayerAlive = false
 	animPlayerNode.play("win")
 	

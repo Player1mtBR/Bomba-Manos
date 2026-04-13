@@ -6,7 +6,7 @@ extends Node2D
 @onready var audioPlayer := $AudioStreamPlayer2D
 
 
-@onready var explosionScene := preload("res://scenes/explosion_test.tscn")
+@onready var explosionScene := preload("res://scenes/objects/bombas/explosion_base.tscn")
 
 @export var blastRadius := 2
 

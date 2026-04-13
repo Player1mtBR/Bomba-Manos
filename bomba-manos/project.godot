@@ -21,7 +21,7 @@ config/icon="uid://be6qw0e7jy44g"
 [autoload]
 
 GlobalScript="*res://scripts/globalScript.gd"
-MusicMenu="*res://scenes/MusicMenu.tscn"
+MusicMenu="*res://scenes/menus/MusicMenu.tscn"
 
 [display]
 

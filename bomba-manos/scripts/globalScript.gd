@@ -1,6 +1,6 @@
 extends Node
 
-@onready var loading2Lab := preload("res://scenes/loading_screen.tscn")
+@onready var loading2Lab := preload("res://scenes/menus/loading_screen.tscn")
 
 var manelBombasCount := 0
 
@@ -40,7 +40,7 @@ func restartLevel():
 	currentPlayers = 0
 	MANEL_WINS = false
 	checkIfAreAllDead = true
-	get_tree().change_scene_to_file("res://scenes/loading_screen2.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/loading_screen2.tscn")
 	
 func addPoint2Player(idNum):
 	playerScores[idNum] += 1

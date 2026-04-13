@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b8ikstmt53arr"]
 
 [ext_resource type="Script" uid="uid://yb85okjemk3k" path="res://scripts/loading_screen_2.gd" id="1_pefi5"]
-[ext_resource type="Texture2D" uid="uid://odusc1mpnfio" path="res://assets/titleScreen.jpeg" id="2_v7tur"]
+[ext_resource type="Texture2D" uid="uid://odusc1mpnfio" path="res://scenes/entities/titleScreen.jpeg" id="2_v7tur"]
 [ext_resource type="PackedScene" uid="uid://bkla2y3q2sihu" path="res://scenes/entities/players/messias.tscn" id="3_irpao"]
 [ext_resource type="PackedScene" uid="uid://dhvew4gclgmef" path="res://scenes/entities/players/pedro.tscn" id="4_74o5v"]
 [ext_resource type="PackedScene" uid="uid://c7a8uwncb4gff" path="res://scenes/entities/players/igor.tscn" id="5_wvnfn"]
