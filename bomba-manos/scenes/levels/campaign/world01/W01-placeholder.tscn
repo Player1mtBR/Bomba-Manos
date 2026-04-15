@@ -1,8 +1,8 @@
-[gd_scene load_steps=17 format=4 uid="uid://cfwugrihtwwqk"]
+[gd_scene load_steps=19 format=4 uid="uid://cfwugrihtwwqk"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_x402h"]
 [ext_resource type="Texture2D" uid="uid://o31y83d3vwpt" path="res://assets/sprites/levels/campaign/world01/LostWoodsFloor.png" id="2_314sh"]
-[ext_resource type="Texture2D" uid="uid://c3pnfnouiewui" path="res://assets/sprites/cenario02.png" id="3_1igom"]
+[ext_resource type="Texture2D" uid="uid://de7pnjuks4khq" path="res://assets/sprites/levels/campaign/world01/LeftWallLostWoods.png" id="3_314sh"]
 [ext_resource type="Texture2D" uid="uid://bl0ijw02ik1ku" path="res://assets/sprites/cenario03.png" id="4_cgl54"]
 [ext_resource type="Texture2D" uid="uid://bafdra410sgl3" path="res://assets/sprites/wallCorner.png" id="5_4ctlw"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="6_vsa7i"]
@@ -14,6 +14,8 @@
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="12_v4acd"]
 [ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="13_jk64q"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="14_3l6e0"]
+[ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="15_aqixd"]
+[ext_resource type="SpriteFrames" uid="uid://dnwsmvk3wpfgx" path="res://assets/res/spriteframes/pedro-Sprite-Frames.tres" id="16_ye23i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_01k7s"]
 texture = ExtResource("6_vsa7i")
@@ -36,10 +38,9 @@ scale = Vector2(0.251647, 0.25)
 texture = ExtResource("2_314sh")
 
 [node name="leftWall" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-142, -16.5)
+position = Vector2(-194, -16.5)
 scale = Vector2(0.310976, 0.213408)
-texture = ExtResource("3_1igom")
+texture = ExtResource("3_314sh")
 
 [node name="rightWall" type="Sprite2D" parent="."]
 visible = false
@@ -64,6 +65,7 @@ texture = ExtResource("5_4ctlw")
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-8, -8)
 tile_map_data = PackedByteArray("AAD5//n/AQAAAAAAAAD6//n/AQAAAAAAAAD7//n/AQAAAAAAAAD8//n/AQAAAAAAAAD9//n/AQAAAAAAAAD+//n/AQAAAAAAAAD///n/AQAAAAAAAAAAAPn/AQAAAAAAAAABAPn/AQAAAAAAAAACAPn/AQAAAAAAAAADAPn/AQAAAAAAAAAEAPn/AQAAAAAAAAAFAPn/AQAAAAAAAAAGAPn/AQAAAAAAAAAHAPn/AQAAAAAAAAAHAPr/AQAAAAAAAAAHAPv/AQAAAAAAAAAHAPz/AQAAAAAAAAAHAP3/AQAAAAAAAAAHAP7/AQAAAAAAAAAHAP//AQAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAQAAAAAAAAAHAAMAAQAAAAAAAAAHAAQAAQAAAAAAAAAHAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAADAAUAAQAAAAAAAAACAAUAAQAAAAAAAAABAAUAAQAAAAAAAAAAAAUAAQAAAAAAAAD//wUAAQAAAAAAAAD+/wUAAQAAAAAAAAD9/wUAAQAAAAAAAAD8/wUAAQAAAAAAAAD7/wUAAQAAAAAAAAD6/wUAAQAAAAAAAAD5/wUAAQAAAAAAAAD5/wQAAQAAAAAAAAD5/wMAAQAAAAAAAAD5/wIAAQAAAAAAAAD5/wEAAQAAAAAAAAD5/wAAAQAAAAAAAAD5////AQAAAAAAAAD5//7/AQAAAAAAAAD5//3/AQAAAAAAAAD5//z/AQAAAAAAAAD5//v/AQAAAAAAAAD5//r/AQAAAAAAAAD7//v/AQAAAAAAAAD9//v/AQAAAAAAAAD///v/AQAAAAAAAAABAPv/AQAAAAAAAAADAPv/AQAAAAAAAAAFAPv/AQAAAAAAAAAFAP3/AQAAAAAAAAADAP3/AQAAAAAAAAABAP3/AQAAAAAAAAD///3/AQAAAAAAAAD9//3/AQAAAAAAAAD7//3/AQAAAAAAAAD7////AQAAAAAAAAD9////AQAAAAAAAAD/////AQAAAAAAAAABAP//AQAAAAAAAAADAP//AQAAAAAAAAAFAP//AQAAAAAAAAAFAAEAAQAAAAAAAAADAAEAAQAAAAAAAAABAAEAAQAAAAAAAAD//wEAAQAAAAAAAAD9/wEAAQAAAAAAAAD7/wEAAQAAAAAAAAD7/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAD//wMAAQAAAAAAAAABAAMAAQAAAAAAAAADAAMAAQAAAAAAAAAFAAMAAQAAAAAAAAA=")
+enabled = false
 tile_set = SubResource("TileSet_q7e64")
 
 [node name="fundo" type="Sprite2D" parent="."]
@@ -433,3 +435,23 @@ L
 
 (0)"
 horizontal_alignment = 1
+
+[node name="basePlayer01" parent="." instance=ExtResource("15_aqixd")]
+position = Vector2(-160, 64)
+playerID = 2
+charSkin = ExtResource("16_ye23i")
+
+[node name="basePlayer02" parent="." instance=ExtResource("15_aqixd")]
+position = Vector2(-160, -96)
+playerID = 1
+charSkin = ExtResource("16_ye23i")
+
+[node name="basePlayer03" parent="." instance=ExtResource("15_aqixd")]
+position = Vector2(160, -96)
+playerID = 3
+charSkin = ExtResource("16_ye23i")
+
+[node name="basePlayer04" parent="." instance=ExtResource("15_aqixd")]
+position = Vector2(160, 64)
+playerID = 4
+charSkin = ExtResource("16_ye23i")
