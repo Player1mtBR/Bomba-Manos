@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xgxg5m8tonl4"
-path="res://.godot/imported/frame 4.png-25d6e3848aa3f612717e159e83045f18.ctex"
+uid="uid://cj3jjed66nk6t"
+path="res://.godot/imported/ArbustoDestrutivelAnimation.png-cf8fd4008287b52fbf56b1d8fb159179.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SPRITESHEET MESSIAS/frame 4.png"
-dest_files=["res://.godot/imported/frame 4.png-25d6e3848aa3f612717e159e83045f18.ctex"]
+source_file="res://assets/sprites/levels/campaign/world01/ArbustoDestrutivelAnimation.png"
+dest_files=["res://.godot/imported/ArbustoDestrutivelAnimation.png-cf8fd4008287b52fbf56b1d8fb159179.ctex"]
 
 [params]
 
