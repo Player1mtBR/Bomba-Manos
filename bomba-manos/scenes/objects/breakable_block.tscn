@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cb6neg2ddhkn"]
+[gd_scene load_steps=9 format=3 uid="uid://cb6neg2ddhkn"]
 
 [ext_resource type="Script" uid="uid://dhhab8c8xnrfb" path="res://scripts/breakable_block.gd" id="1_20sil"]
-[ext_resource type="Texture2D" uid="uid://bir2tcvl6u7d2" path="res://icon.svg" id="1_ofc15"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="2_0b0tg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3vvu"]
@@ -56,11 +55,6 @@ script = ExtResource("1_20sil")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_idm1l")
-animation = &"destroy"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("1_ofc15")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 5

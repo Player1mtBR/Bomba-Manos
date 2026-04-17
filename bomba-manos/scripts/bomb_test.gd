@@ -51,8 +51,12 @@ func checkCollision():
 				
 				if bombaRaycasts.target_position.y < 0: # cima
 					setExplosionAnim = 1
+					print(1)
 					if distanceExploded == blastRadius:
 						setExplosionAnim = 11
+						print(11)
+					#print("KABOOM DIST: ",distanceExploded)
+					
 						
 				if bombaRaycasts.target_position.y > 0: # baixo
 					setExplosionAnim = 2

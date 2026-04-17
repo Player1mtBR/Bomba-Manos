@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://rn0ut8v4q0w0"]
+[gd_scene load_steps=25 format=4 uid="uid://rn0ut8v4q0w0"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_wx4nu"]
 [ext_resource type="Texture2D" uid="uid://drutjoa1y5g30" path="res://assets/sprites/damnBroLetsCode.png" id="2_6pv5t"]
@@ -14,6 +14,9 @@
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="12_whm4t"]
 [ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="13_wsnw5"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="14_2bxm4"]
+[ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="15_6pv5t"]
+[ext_resource type="Texture2D" uid="uid://bjk3e4cu0dnb8" path="res://assets/sprites/levels/campaign/world02/floorThing2.png" id="16_3da86"]
+[ext_resource type="SpriteFrames" uid="uid://cyekfxld10edt" path="res://assets/res/spriteframes/p1mt-Sprite-Frames.tres" id="16_a5yev"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_01k7s"]
 texture = ExtResource("6_3jlch")
@@ -27,42 +30,86 @@ texture = ExtResource("6_3jlch")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_01k7s")
 
-[node name="MapTest02" type="Node2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5yev"]
+atlas = ExtResource("16_3da86")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30q7r"]
+atlas = ExtResource("16_3da86")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jlch"]
+atlas = ExtResource("16_3da86")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ah2vn"]
+atlas = ExtResource("16_3da86")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6i2sj"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_a5yev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30q7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jlch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ah2vn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CyberworldTest" type="Node2D"]
 script = ExtResource("1_wx4nu")
 
 [node name="floor" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1, -16)
 scale = Vector2(0.251647, 0.25)
 texture = ExtResource("2_6pv5t")
 
 [node name="leftWall" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-142, -16.5)
 scale = Vector2(0.310976, 0.213408)
 texture = ExtResource("3_3da86")
 
 [node name="rightWall" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(141, -19)
 scale = Vector2(0.285, -0.213275)
 texture = ExtResource("4_a5yev")
 
 [node name="rightCorner" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(145.703, -137.783)
 rotation = 1.57079
 scale = Vector2(-0.232267, 0.205622)
 texture = ExtResource("5_30q7r")
 
 [node name="rightCorner2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-147.698, -137.743)
 rotation = 1.57079
 scale = Vector2(-0.232941, -0.225524)
 texture = ExtResource("5_30q7r")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+visible = false
 position = Vector2(-8, -8)
 tile_map_data = PackedByteArray("AAD5//n/AQAAAAAAAAD6//n/AQAAAAAAAAD7//n/AQAAAAAAAAD8//n/AQAAAAAAAAD9//n/AQAAAAAAAAD+//n/AQAAAAAAAAD///n/AQAAAAAAAAAAAPn/AQAAAAAAAAABAPn/AQAAAAAAAAACAPn/AQAAAAAAAAADAPn/AQAAAAAAAAAEAPn/AQAAAAAAAAAFAPn/AQAAAAAAAAAGAPn/AQAAAAAAAAAHAPn/AQAAAAAAAAAHAPr/AQAAAAAAAAAHAPv/AQAAAAAAAAAHAPz/AQAAAAAAAAAHAP3/AQAAAAAAAAAHAP7/AQAAAAAAAAAHAP//AQAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAQAAAAAAAAAHAAMAAQAAAAAAAAAHAAQAAQAAAAAAAAAHAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAADAAUAAQAAAAAAAAACAAUAAQAAAAAAAAABAAUAAQAAAAAAAAAAAAUAAQAAAAAAAAD//wUAAQAAAAAAAAD+/wUAAQAAAAAAAAD9/wUAAQAAAAAAAAD8/wUAAQAAAAAAAAD7/wUAAQAAAAAAAAD6/wUAAQAAAAAAAAD5/wUAAQAAAAAAAAD5/wQAAQAAAAAAAAD5/wMAAQAAAAAAAAD5/wIAAQAAAAAAAAD5/wEAAQAAAAAAAAD5/wAAAQAAAAAAAAD5////AQAAAAAAAAD5//7/AQAAAAAAAAD5//3/AQAAAAAAAAD5//z/AQAAAAAAAAD5//v/AQAAAAAAAAD5//r/AQAAAAAAAAD7//v/AQAAAAAAAAD9//v/AQAAAAAAAAD///v/AQAAAAAAAAABAPv/AQAAAAAAAAADAPv/AQAAAAAAAAAFAPv/AQAAAAAAAAAFAP3/AQAAAAAAAAADAP3/AQAAAAAAAAABAP3/AQAAAAAAAAD///3/AQAAAAAAAAD9//3/AQAAAAAAAAD7//3/AQAAAAAAAAD7////AQAAAAAAAAD9////AQAAAAAAAAD/////AQAAAAAAAAABAP//AQAAAAAAAAADAP//AQAAAAAAAAAFAP//AQAAAAAAAAAFAAEAAQAAAAAAAAADAAEAAQAAAAAAAAABAAEAAQAAAAAAAAD//wEAAQAAAAAAAAD9/wEAAQAAAAAAAAD7/wEAAQAAAAAAAAD7/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAD//wMAAQAAAAAAAAABAAMAAQAAAAAAAAADAAMAAQAAAAAAAAAFAAMAAQAAAAAAAAA=")
+enabled = false
 tile_set = SubResource("TileSet_q7e64")
 
 [node name="fundo" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0.500002, -135.375)
 scale = Vector2(0.176428, 0.253)
 texture = ExtResource("7_ah2vn")
@@ -353,6 +400,7 @@ stream = ExtResource("9_81r66")
 autoplay = true
 
 [node name="Manel" parent="." instance=ExtResource("10_ibw14")]
+visible = false
 position = Vector2(0, -130)
 
 [node name="mainCamera" parent="." instance=ExtResource("11_tg6ll")]
@@ -370,7 +418,13 @@ position = Vector2(96, 64)
 
 [node name="players" type="Node2D" parent="."]
 
+[node name="basePlayer01" parent="players" instance=ExtResource("15_6pv5t")]
+position = Vector2(-144, -96)
+playerID = 1
+charSkin = ExtResource("16_a5yev")
+
 [node name="ui" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -224.0
@@ -428,3 +482,12 @@ L
 
 (0)"
 horizontal_alignment = 1
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.0972375, 0.0897427, 0.0970939, 1)
+polygon = PackedVector2Array(-219, -167, 219, -167, 219, 79, -219, 79)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-120, -56)
+sprite_frames = SubResource("SpriteFrames_6i2sj")
+autoplay = "default"

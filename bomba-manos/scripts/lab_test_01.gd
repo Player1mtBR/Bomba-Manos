@@ -8,7 +8,7 @@ extends Node2D
 @onready var RangerMan := preload("res://scenes/entities/players/igor.tscn").instantiate()
 @onready var MiniMan := preload("res://scenes/entities/players/p1mt.tscn").instantiate()
 
-@onready var playerNodes := $players
+@onready var playerNodes := $entities/players
 @onready var p1Pos := $player1Pos
 @onready var p2Pos := $player2Pos
 

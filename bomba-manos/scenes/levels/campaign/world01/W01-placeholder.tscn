@@ -1,14 +1,16 @@
-[gd_scene load_steps=19 format=4 uid="uid://cfwugrihtwwqk"]
+[gd_scene load_steps=25 format=4 uid="uid://cfwugrihtwwqk"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_x402h"]
 [ext_resource type="Texture2D" uid="uid://o31y83d3vwpt" path="res://assets/sprites/levels/campaign/world01/LostWoodsFloor.png" id="2_314sh"]
 [ext_resource type="Texture2D" uid="uid://de7pnjuks4khq" path="res://assets/sprites/levels/campaign/world01/LeftWallLostWoods.png" id="3_314sh"]
-[ext_resource type="Texture2D" uid="uid://bl0ijw02ik1ku" path="res://assets/sprites/cenario03.png" id="4_cgl54"]
-[ext_resource type="Texture2D" uid="uid://bafdra410sgl3" path="res://assets/sprites/wallCorner.png" id="5_4ctlw"]
+[ext_resource type="Texture2D" uid="uid://ddd0t2ximg5k6" path="res://assets/sprites/levels/campaign/world01/RightWallLostWoods.png" id="4_xl4s7"]
+[ext_resource type="Texture2D" uid="uid://v7o6pkkgso0r" path="res://assets/sprites/levels/campaign/world01/LostWoodsCorner.png" id="5_ma06w"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="6_vsa7i"]
 [ext_resource type="Texture2D" uid="uid://dueqxmq3k7o4h" path="res://assets/sprites/levels/campaign/world01/FRENTELostWoods.png" id="7_aqixd"]
+[ext_resource type="Texture2D" uid="uid://dmrvrc1nfclbv" path="res://assets/sprites/levels/campaign/world01/fireflyTLOU.png" id="8_a4ok7"]
 [ext_resource type="PackedScene" uid="uid://cb6neg2ddhkn" path="res://scenes/objects/breakable_block.tscn" id="8_a6nb6"]
 [ext_resource type="AudioStream" uid="uid://3ltw3qe7xh3" path="res://assets/audio/tracks/PokémonHeartGold&SoulSilver-GymLeader&EliteFourBattleMusic.mp3" id="9_ms13k"]
+[ext_resource type="Texture2D" uid="uid://blylye7pcl0xi" path="res://assets/sprites/levels/campaign/world01/boomerang.png" id="9_ou0xf"]
 [ext_resource type="PackedScene" uid="uid://bgkax6c3eo7n0" path="res://scenes/entities/manel.tscn" id="10_n626e"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="11_gukpt"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="12_v4acd"]
@@ -16,6 +18,10 @@
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="14_3l6e0"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="15_aqixd"]
 [ext_resource type="SpriteFrames" uid="uid://dnwsmvk3wpfgx" path="res://assets/res/spriteframes/pedro-Sprite-Frames.tres" id="16_ye23i"]
+[ext_resource type="Texture2D" uid="uid://coq1f0bkppr40" path="res://assets/sprites/levels/campaign/world01/TroncoIndestrutivelLostWoods.png" id="17_ma06w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4ok7"]
+size = Vector2(384, 26)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_01k7s"]
 texture = ExtResource("6_vsa7i")
@@ -24,342 +30,440 @@ texture = ExtResource("6_vsa7i")
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 
 [sub_resource type="TileSet" id="TileSet_q7e64"]
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_01k7s")
 
-[node name="MapTest02" type="Node2D"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lx53w"]
+texture = ExtResource("17_ma06w")
+texture_region_size = Vector2i(60, 60)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 32, 32, 32, 32, -32, -32, -32)
+
+[sub_resource type="TileSet" id="TileSet_dk4xo"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_lx53w")
+
+[node name="mapPlaceholderForest" type="Node2D"]
 script = ExtResource("1_x402h")
 
-[node name="floor" type="Sprite2D" parent="."]
-position = Vector2(1, -16)
-scale = Vector2(0.251647, 0.25)
-texture = ExtResource("2_314sh")
+[node name="boundaries" type="Node2D" parent="."]
 
-[node name="leftWall" type="Sprite2D" parent="."]
-position = Vector2(-194, -16.5)
-scale = Vector2(0.310976, 0.213408)
+[node name="StaticBody2D" type="StaticBody2D" parent="boundaries"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="boundaries/StaticBody2D"]
+polygon = PackedVector2Array(168, -104, 168, 88, 224, 88, 224, -168, -224, -168, -224, 88, -168, 88, -168, -104)
+disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/StaticBody2D"]
+position = Vector2(0, 85)
+shape = SubResource("RectangleShape2D_a4ok7")
+disabled = true
+
+[node name="environment" type="Node2D" parent="."]
+
+[node name="fixStuff" type="Node2D" parent="environment"]
+
+[node name="rightCorner3" type="Sprite2D" parent="environment/fixStuff"]
+position = Vector2(190.375, -136.375)
+scale = Vector2(0.269, 0.253)
+texture = ExtResource("5_ma06w")
+
+[node name="rightCorner4" type="Sprite2D" parent="environment/fixStuff"]
+position = Vector2(-188.743, -136.473)
+rotation = 3.14159
+scale = Vector2(0.255946, -0.253784)
+texture = ExtResource("5_ma06w")
+
+[node name="topWall2fix" type="Sprite2D" parent="environment/fixStuff"]
+position = Vector2(31, -140)
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("7_aqixd")
+
+[node name="topWall2fix2" type="Sprite2D" parent="environment/fixStuff"]
+position = Vector2(-27, -140)
+scale = Vector2(-0.225, 0.225)
+texture = ExtResource("7_aqixd")
+
+[node name="mapWalls" type="Node2D" parent="environment"]
+
+[node name="leftWall" type="Sprite2D" parent="environment/mapWalls"]
+position = Vector2(-194.775, -16.1562)
+scale = Vector2(0.295427, 0.225349)
 texture = ExtResource("3_314sh")
 
-[node name="rightWall" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(141, -19)
-scale = Vector2(0.285, -0.213275)
-texture = ExtResource("4_cgl54")
+[node name="rightWall" type="Sprite2D" parent="environment/mapWalls"]
+position = Vector2(194.775, -16)
+scale = Vector2(0.295427, 0.225)
+texture = ExtResource("4_xl4s7")
 
-[node name="rightCorner" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(145.703, -137.783)
-rotation = 1.57079
-scale = Vector2(-0.232267, 0.205622)
-texture = ExtResource("5_4ctlw")
+[node name="topWall" type="Sprite2D" parent="environment/mapWalls"]
+position = Vector2(7.6625, -140)
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("7_aqixd")
 
-[node name="rightCorner2" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-147.698, -137.743)
-rotation = 1.57079
-scale = Vector2(-0.232941, -0.225524)
-texture = ExtResource("5_4ctlw")
+[node name="floor" type="Sprite2D" parent="environment"]
+position = Vector2(0, -16)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_314sh")
+
+[node name="rightCorner" type="Sprite2D" parent="environment"]
+position = Vector2(192.5, -127.75)
+scale = Vector2(0.185, 0.138)
+texture = ExtResource("5_ma06w")
+
+[node name="leftCorner" type="Sprite2D" parent="environment"]
+position = Vector2(-192.5, -127.75)
+scale = Vector2(-0.185, 0.138)
+texture = ExtResource("5_ma06w")
+
+[node name="rightCorner2" type="Sprite2D" parent="environment"]
+position = Vector2(275, -162)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_ma06w")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+visible = false
 position = Vector2(-8, -8)
-tile_map_data = PackedByteArray("AAD5//n/AQAAAAAAAAD6//n/AQAAAAAAAAD7//n/AQAAAAAAAAD8//n/AQAAAAAAAAD9//n/AQAAAAAAAAD+//n/AQAAAAAAAAD///n/AQAAAAAAAAAAAPn/AQAAAAAAAAABAPn/AQAAAAAAAAACAPn/AQAAAAAAAAADAPn/AQAAAAAAAAAEAPn/AQAAAAAAAAAFAPn/AQAAAAAAAAAGAPn/AQAAAAAAAAAHAPn/AQAAAAAAAAAHAPr/AQAAAAAAAAAHAPv/AQAAAAAAAAAHAPz/AQAAAAAAAAAHAP3/AQAAAAAAAAAHAP7/AQAAAAAAAAAHAP//AQAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAQAAAAAAAAAHAAMAAQAAAAAAAAAHAAQAAQAAAAAAAAAHAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAADAAUAAQAAAAAAAAACAAUAAQAAAAAAAAABAAUAAQAAAAAAAAAAAAUAAQAAAAAAAAD//wUAAQAAAAAAAAD+/wUAAQAAAAAAAAD9/wUAAQAAAAAAAAD8/wUAAQAAAAAAAAD7/wUAAQAAAAAAAAD6/wUAAQAAAAAAAAD5/wUAAQAAAAAAAAD5/wQAAQAAAAAAAAD5/wMAAQAAAAAAAAD5/wIAAQAAAAAAAAD5/wEAAQAAAAAAAAD5/wAAAQAAAAAAAAD5////AQAAAAAAAAD5//7/AQAAAAAAAAD5//3/AQAAAAAAAAD5//z/AQAAAAAAAAD5//v/AQAAAAAAAAD5//r/AQAAAAAAAAD7//v/AQAAAAAAAAD9//v/AQAAAAAAAAD///v/AQAAAAAAAAABAPv/AQAAAAAAAAADAPv/AQAAAAAAAAAFAPv/AQAAAAAAAAAFAP3/AQAAAAAAAAADAP3/AQAAAAAAAAABAP3/AQAAAAAAAAD///3/AQAAAAAAAAD9//3/AQAAAAAAAAD7//3/AQAAAAAAAAD7////AQAAAAAAAAD9////AQAAAAAAAAD/////AQAAAAAAAAABAP//AQAAAAAAAAADAP//AQAAAAAAAAAFAP//AQAAAAAAAAAFAAEAAQAAAAAAAAADAAEAAQAAAAAAAAABAAEAAQAAAAAAAAD//wEAAQAAAAAAAAD9/wEAAQAAAAAAAAD7/wEAAQAAAAAAAAD7/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAD//wMAAQAAAAAAAAABAAMAAQAAAAAAAAADAAMAAQAAAAAAAAAFAAMAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAHAPv/AQAAAAAAAAAHAPz/AQAAAAAAAAAHAP3/AQAAAAAAAAAHAP7/AQAAAAAAAAAHAP//AQAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAQAAAAAAAAAHAAMAAQAAAAAAAAAHAAQAAQAAAAAAAAD7//v/AQAAAAAAAAAFAPv/AQAAAAAAAAAFAP3/AQAAAAAAAAADAP3/AQAAAAAAAAABAP3/AQAAAAAAAAD///3/AQAAAAAAAAD9//3/AQAAAAAAAAD7//3/AQAAAAAAAAD7////AQAAAAAAAAD9////AQAAAAAAAAD/////AQAAAAAAAAABAP//AQAAAAAAAAADAP//AQAAAAAAAAAFAP//AQAAAAAAAAAFAAEAAQAAAAAAAAADAAEAAQAAAAAAAAABAAEAAQAAAAAAAAD//wEAAQAAAAAAAAD9/wEAAQAAAAAAAAD7/wEAAQAAAAAAAAD7/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAD//wMAAQAAAAAAAAABAAMAAQAAAAAAAAADAAMAAQAAAAAAAAAFAAMAAQAAAAAAAAD5//n/AQAAAAAAAAD6//n/AQAAAAAAAAD7//n/AQAAAAAAAAD8//n/AQAAAAAAAAD9//n/AQAAAAAAAAD+//n/AQAAAAAAAAD///n/AQAAAAAAAAAAAPn/AQAAAAAAAAABAPn/AQAAAAAAAAACAPn/AQAAAAAAAAADAPn/AQAAAAAAAAAEAPn/AQAAAAAAAAAFAPn/AQAAAAAAAAAGAPn/AQAAAAAAAAAHAPn/AQAAAAAAAAAHAPr/AQAAAAAAAAADAPv/AQAAAAAAAAABAPv/AQAAAAAAAAD///v/AQAAAAAAAAD9//v/AQAAAAAAAAD5//r/AQAAAAAAAAD5//z/AQAAAAAAAAD5//3/AQAAAAAAAAD5//v/AQAAAAAAAAD5//7/AQAAAAAAAAD5////AQAAAAAAAAD5/wAAAQAAAAAAAAD5/wEAAQAAAAAAAAD5/wIAAQAAAAAAAAD5/wMAAQAAAAAAAAD5/wQAAQAAAAAAAAD5/wUAAQAAAAAAAAD6/wUAAQAAAAAAAAD7/wUAAQAAAAAAAAD8/wUAAQAAAAAAAAD9/wUAAQAAAAAAAAD+/wUAAQAAAAAAAAD//wUAAQAAAAAAAAAAAAUAAQAAAAAAAAABAAUAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAA=")
 enabled = false
 tile_set = SubResource("TileSet_q7e64")
 
-[node name="fundo" type="Sprite2D" parent="."]
-position = Vector2(0.500002, -135.375)
-scale = Vector2(0.176428, 0.253)
-texture = ExtResource("7_aqixd")
+[node name="tilemapBondary" type="TileMapLayer" parent="."]
+visible = false
+position = Vector2(-8, -8)
+tile_map_data = PackedByteArray("AAALAAAAAQAAAAAAAAALAP//AQAAAAAAAAD1//n/AQAAAAAAAAD1//r/AQAAAAAAAAD1//v/AQAAAAAAAAD1//z/AQAAAAAAAAD1//3/AQAAAAAAAAD1//7/AQAAAAAAAAD1////AQAAAAAAAAD1/wAAAQAAAAAAAAD1/wEAAQAAAAAAAAD1/wIAAQAAAAAAAAD1/wMAAQAAAAAAAAD1/wQAAQAAAAAAAAD1/wUAAQAAAAAAAAD2/wUAAQAAAAAAAAD3/wUAAQAAAAAAAAD4/wUAAQAAAAAAAAD5/wUAAQAAAAAAAAD6/wUAAQAAAAAAAAD7/wUAAQAAAAAAAAD8/wUAAQAAAAAAAAD9/wUAAQAAAAAAAAD+/wUAAQAAAAAAAAD//wUAAQAAAAAAAAAAAAUAAQAAAAAAAAABAAUAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAJAAUAAQAAAAAAAAAKAAUAAQAAAAAAAAALAAUAAQAAAAAAAAALAAQAAQAAAAAAAAALAAMAAQAAAAAAAAALAAIAAQAAAAAAAAALAAEAAQAAAAAAAAALAP7/AQAAAAAAAAALAP3/AQAAAAAAAAALAPz/AQAAAAAAAAALAPv/AQAAAAAAAAALAPr/AQAAAAAAAAALAPn/AQAAAAAAAAAKAPn/AQAAAAAAAAAJAPn/AQAAAAAAAAAIAPn/AQAAAAAAAAAHAPn/AQAAAAAAAAAGAPn/AQAAAAAAAAAFAPn/AQAAAAAAAAAEAPn/AQAAAAAAAAADAPn/AQAAAAAAAAACAPn/AQAAAAAAAAABAPn/AQAAAAAAAAAAAPn/AQAAAAAAAAD///n/AQAAAAAAAAD+//n/AQAAAAAAAAD9//n/AQAAAAAAAAD8//n/AQAAAAAAAAD7//n/AQAAAAAAAAD6//n/AQAAAAAAAAD5//n/AQAAAAAAAAD4//n/AQAAAAAAAAD3//n/AQAAAAAAAAD2//n/AQAAAAAAAAD1//j/AQAAAAAAAAD2//j/AQAAAAAAAAD3//j/AQAAAAAAAAD4//j/AQAAAAAAAAD5//j/AQAAAAAAAAD6//j/AQAAAAAAAAD7//j/AQAAAAAAAAD8//j/AQAAAAAAAAD9//j/AQAAAAAAAAD+//j/AQAAAAAAAAD///j/AQAAAAAAAAAAAPj/AQAAAAAAAAABAPj/AQAAAAAAAAACAPj/AQAAAAAAAAADAPj/AQAAAAAAAAAEAPj/AQAAAAAAAAAFAPj/AQAAAAAAAAAGAPj/AQAAAAAAAAAHAPj/AQAAAAAAAAAIAPj/AQAAAAAAAAAJAPj/AQAAAAAAAAAKAPj/AQAAAAAAAAALAPj/AQAAAAAAAAAMAPj/AQAAAAAAAAAMAPn/AQAAAAAAAAAMAPr/AQAAAAAAAAAMAPv/AQAAAAAAAAAMAPz/AQAAAAAAAAAMAP3/AQAAAAAAAAAMAP7/AQAAAAAAAAAMAP//AQAAAAAAAAAMAAAAAQAAAAAAAAAMAAEAAQAAAAAAAAAMAAIAAQAAAAAAAAAMAAMAAQAAAAAAAAAMAAQAAQAAAAAAAAAMAAUAAQAAAAAAAAALAAYAAQAAAAAAAAAMAAYAAQAAAAAAAAAJAAYAAQAAAAAAAAAIAAYAAQAAAAAAAAAKAAYAAQAAAAAAAAAHAAYAAQAAAAAAAAAGAAYAAQAAAAAAAAAFAAYAAQAAAAAAAAAEAAYAAQAAAAAAAAADAAYAAQAAAAAAAAACAAYAAQAAAAAAAAABAAYAAQAAAAAAAAAAAAYAAQAAAAAAAAD//wYAAQAAAAAAAAD+/wYAAQAAAAAAAAD9/wYAAQAAAAAAAAD8/wYAAQAAAAAAAAD7/wYAAQAAAAAAAAD6/wYAAQAAAAAAAAD5/wYAAQAAAAAAAAD4/wYAAQAAAAAAAAD3/wYAAQAAAAAAAAD2/wYAAQAAAAAAAAD1/wYAAQAAAAAAAAD0/wYAAQAAAAAAAAD0/wUAAQAAAAAAAAD0/wQAAQAAAAAAAAD0/wMAAQAAAAAAAAD0/wIAAQAAAAAAAAD0/wEAAQAAAAAAAAD0/wAAAQAAAAAAAAD0////AQAAAAAAAAD0//7/AQAAAAAAAAD0//3/AQAAAAAAAAD0//z/AQAAAAAAAAD0//v/AQAAAAAAAAD0//r/AQAAAAAAAAD0//n/AQAAAAAAAAD0//j/AQAAAAAAAAA=")
+tile_set = SubResource("TileSet_q7e64")
 
-[node name="AllBricks" type="Node2D" parent="."]
+[node name="decorations" type="Node2D" parent="."]
+
+[node name="ZeldaItemIdkTheName01" type="Sprite2D" parent="decorations"]
+position = Vector2(-209.555, -107.855)
+scale = Vector2(0.295, 0.225)
+texture = ExtResource("8_a4ok7")
+
+[node name="ZeldaItemIdkTheName02" type="Sprite2D" parent="decorations"]
+position = Vector2(207.195, -99.935)
+scale = Vector2(0.295, 0.225)
+texture = ExtResource("9_ou0xf")
+
+[node name="objects" type="Node2D" parent="."]
+
+[node name="AllBricks" type="Node2D" parent="objects"]
 modulate = Color(0.753984, 0.753984, 0.753984, 1)
 
-[node name="BreakableBlock4" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock4" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-48, -96)
 
-[node name="BreakableBlock5" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock5" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-32, -96)
 
-[node name="BreakableBlock6" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock6" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-16, -96)
 
-[node name="BreakableBlock7" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock7" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(0, -96)
 
-[node name="BreakableBlock8" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock8" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(16, -96)
 
-[node name="BreakableBlock9" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock9" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(32, -96)
 
-[node name="BreakableBlock10" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock10" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(48, -96)
 
-[node name="BreakableBlock15" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock15" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-80, -64)
 
-[node name="BreakableBlock16" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock16" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-64, -64)
 
-[node name="BreakableBlock17" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock17" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-48, -64)
 
-[node name="BreakableBlock18" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock18" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-32, -64)
 
-[node name="BreakableBlock19" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock19" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-16, -64)
 
-[node name="BreakableBlock20" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock20" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(0, -64)
 
-[node name="BreakableBlock21" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock21" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(16, -64)
 
-[node name="BreakableBlock22" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock22" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(32, -64)
 
-[node name="BreakableBlock23" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock23" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(48, -64)
 
-[node name="BreakableBlock24" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock24" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(64, -64)
 
-[node name="BreakableBlock25" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock25" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(80, -64)
 
-[node name="BreakableBlock27" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock27" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-96, -32)
 
-[node name="BreakableBlock28" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock28" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-80, -32)
 
-[node name="BreakableBlock29" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock29" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-64, -32)
 
-[node name="BreakableBlock30" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock30" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-48, -32)
 
-[node name="BreakableBlock31" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock31" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-32, -32)
 
-[node name="BreakableBlock32" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock32" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-16, -32)
 
-[node name="BreakableBlock33" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock33" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(0, -32)
 
-[node name="BreakableBlock34" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock34" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(16, -32)
 
-[node name="BreakableBlock35" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock35" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(32, -32)
 
-[node name="BreakableBlock36" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock36" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(48, -32)
 
-[node name="BreakableBlock37" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock37" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(64, -32)
 
-[node name="BreakableBlock38" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock38" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(80, -32)
 
-[node name="BreakableBlock39" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock39" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(96, -32)
 
-[node name="BreakableBlock40" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock40" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-96, 0)
 
-[node name="BreakableBlock41" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock41" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-80, 0)
 
-[node name="BreakableBlock42" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock42" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-64, 0)
 
-[node name="BreakableBlock43" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock43" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-48, 0)
 
-[node name="BreakableBlock44" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock44" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-32, 0)
 
-[node name="BreakableBlock45" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock45" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-16, 0)
 
-[node name="BreakableBlock46" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock46" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 
-[node name="BreakableBlock47" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock47" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(16, 0)
 
-[node name="BreakableBlock48" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock48" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(32, 0)
 
-[node name="BreakableBlock49" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock49" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(48, 0)
 
-[node name="BreakableBlock50" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock50" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(64, 0)
 
-[node name="BreakableBlock51" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock51" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(80, 0)
 
-[node name="BreakableBlock52" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock52" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(96, 0)
 
-[node name="BreakableBlock80" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock80" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-96, -48)
 
-[node name="BreakableBlock81" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock81" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-96, -16)
 
-[node name="BreakableBlock82" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock82" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-96, 16)
 
-[node name="BreakableBlock84" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock84" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-64, -80)
 
-[node name="BreakableBlock85" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock85" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-64, -48)
 
-[node name="BreakableBlock86" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock86" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-64, -16)
 
-[node name="BreakableBlock87" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock87" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-64, 16)
 
-[node name="BreakableBlock88" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock88" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-64, 48)
 
-[node name="BreakableBlock89" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock89" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-32, -80)
 
-[node name="BreakableBlock90" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock90" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-32, -48)
 
-[node name="BreakableBlock91" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock91" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-32, -16)
 
-[node name="BreakableBlock92" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock92" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-32, 16)
 
-[node name="BreakableBlock93" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock93" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-32, 48)
 
-[node name="BreakableBlock94" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock94" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(0, -80)
 
-[node name="BreakableBlock95" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock95" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(0, -48)
 
-[node name="BreakableBlock96" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock96" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(0, -16)
 
-[node name="BreakableBlock97" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock97" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(0, 16)
 
-[node name="BreakableBlock98" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock98" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(0, 48)
 
-[node name="BreakableBlock99" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock99" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(32, -80)
 
-[node name="BreakableBlock100" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock100" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(32, -48)
 
-[node name="BreakableBlock101" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock101" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(32, -16)
 
-[node name="BreakableBlock102" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock102" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(32, 16)
 
-[node name="BreakableBlock103" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock103" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(32, 48)
 
-[node name="BreakableBlock104" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock104" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(64, -80)
 
-[node name="BreakableBlock105" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock105" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(64, -48)
 
-[node name="BreakableBlock106" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock106" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(64, -16)
 
-[node name="BreakableBlock107" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock107" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(64, 16)
 
-[node name="BreakableBlock108" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock108" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(64, 48)
 
-[node name="BreakableBlock110" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock110" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(96, -48)
 
-[node name="BreakableBlock111" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock111" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(96, -16)
 
-[node name="BreakableBlock112" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock112" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(96, 16)
 
-[node name="BreakableBlock54" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock54" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-80, 32)
 
-[node name="BreakableBlock55" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock55" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-64, 32)
 
-[node name="BreakableBlock56" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock56" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-48, 32)
 
-[node name="BreakableBlock57" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock57" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-32, 32)
 
-[node name="BreakableBlock58" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock58" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-16, 32)
 
-[node name="BreakableBlock59" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock59" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(0, 32)
 
-[node name="BreakableBlock60" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock60" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(16, 32)
 
-[node name="BreakableBlock61" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock61" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(32, 32)
 
-[node name="BreakableBlock62" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock62" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(48, 32)
 
-[node name="BreakableBlock63" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock63" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(64, 32)
 
-[node name="BreakableBlock64" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock64" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(80, 32)
 
-[node name="BreakableBlock69" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock69" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-48, 64)
 
-[node name="BreakableBlock70" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock70" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-32, 64)
 
-[node name="BreakableBlock71" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock71" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(-16, 64)
 
-[node name="BreakableBlock72" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock72" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(0, 64)
 
-[node name="BreakableBlock73" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock73" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(16, 64)
 
-[node name="BreakableBlock74" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock74" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(32, 64)
 
-[node name="BreakableBlock75" parent="AllBricks" instance=ExtResource("8_a6nb6")]
+[node name="BreakableBlock75" parent="objects/AllBricks" instance=ExtResource("8_a6nb6")]
 position = Vector2(48, 64)
+
+[node name="entities" type="Node2D" parent="."]
+
+[node name="players" type="Node2D" parent="entities"]
+
+[node name="basePlayer01" parent="entities/players" instance=ExtResource("15_aqixd")]
+position = Vector2(-160, 64)
+playerID = 2
+charSkin = ExtResource("16_ye23i")
+
+[node name="basePlayer02" parent="entities/players" instance=ExtResource("15_aqixd")]
+position = Vector2(-160, -96)
+playerID = 1
+charSkin = ExtResource("16_ye23i")
+
+[node name="basePlayer03" parent="entities/players" instance=ExtResource("15_aqixd")]
+position = Vector2(160, -96)
+playerID = 3
+charSkin = ExtResource("16_ye23i")
+
+[node name="basePlayer04" parent="entities/players" instance=ExtResource("15_aqixd")]
+position = Vector2(160, 64)
+playerID = 4
+charSkin = ExtResource("16_ye23i")
+
+[node name="Manel" parent="entities" instance=ExtResource("10_n626e")]
+position = Vector2(0, -130)
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_ms13k")
 autoplay = true
-
-[node name="Manel" parent="." instance=ExtResource("10_n626e")]
-position = Vector2(0, -130)
 
 [node name="mainCamera" parent="." instance=ExtResource("11_gukpt")]
 position = Vector2(0, -44)
@@ -373,8 +477,6 @@ position = Vector2(-96, -96)
 
 [node name="player2Pos" type="Node2D" parent="."]
 position = Vector2(96, 64)
-
-[node name="players" type="Node2D" parent="."]
 
 [node name="ui" type="Control" parent="."]
 visible = false
@@ -436,22 +538,15 @@ L
 (0)"
 horizontal_alignment = 1
 
-[node name="basePlayer01" parent="." instance=ExtResource("15_aqixd")]
-position = Vector2(-160, 64)
-playerID = 2
-charSkin = ExtResource("16_ye23i")
+[node name="troncoDecor" type="Sprite2D" parent="."]
+position = Vector2(296, -112)
+scale = Vector2(0.325, 0.325)
+texture = ExtResource("17_ma06w")
 
-[node name="basePlayer02" parent="." instance=ExtResource("15_aqixd")]
-position = Vector2(-160, -96)
-playerID = 1
-charSkin = ExtResource("16_ye23i")
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+position = Vector2(-8, -8)
+scale = Vector2(0.25, 0.25)
+tile_map_data = PackedByteArray("AAD7//v/AAAAAAAAAAD9//v/AAAAAAAAAAD///v/AAAAAAAAAAABAPv/AAAAAAAAAAADAPv/AAAAAAAAAAAFAPv/AAAAAAAAAAAHAPv/AAAAAAAAAAAJAPv/AAAAAAAAAAD5//v/AAAAAAAAAAD3//v/AAAAAAAAAAAJAP3/AAAAAAAAAAAJAP//AAAAAAAAAAAJAAEAAAAAAAAAAAAJAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAADAAMAAAAAAAAAAAABAAMAAAAAAAAAAAD//wMAAAAAAAAAAAD9/wMAAAAAAAAAAAD7/wMAAAAAAAAAAAD5/wMAAAAAAAAAAAD3/wMAAAAAAAAAAAD3/wEAAAAAAAAAAAD3////AAAAAAAAAAD3//3/AAAAAAAAAAD5//3/AAAAAAAAAAD7//3/AAAAAAAAAAD9//3/AAAAAAAAAAD///3/AAAAAAAAAAABAP3/AAAAAAAAAAADAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAHAP3/AAAAAAAAAAAHAP//AAAAAAAAAAAHAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAADAAEAAAAAAAAAAAABAAEAAAAAAAAAAAD//wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD7/wEAAAAAAAAAAAD5/wEAAAAAAAAAAAD5////AAAAAAAAAAD7////AAAAAAAAAAD9////AAAAAAAAAAD/////AAAAAAAAAAABAP//AAAAAAAAAAADAP//AAAAAAAAAAAFAP//AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_dk4xo")
 
-[node name="basePlayer03" parent="." instance=ExtResource("15_aqixd")]
-position = Vector2(160, -96)
-playerID = 3
-charSkin = ExtResource("16_ye23i")
-
-[node name="basePlayer04" parent="." instance=ExtResource("15_aqixd")]
-position = Vector2(160, 64)
-playerID = 4
-charSkin = ExtResource("16_ye23i")
+[node name="spawnSomething" type="Node2D" parent="."]
