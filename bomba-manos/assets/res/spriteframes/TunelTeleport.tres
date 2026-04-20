@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://bwhj4dfvfrskr"]
+
+[ext_resource type="Texture2D" uid="uid://bu2i68aoyq16g" path="res://assets/sprites/levels/campaign/world01/TunelTeleporte.png" id="1_j0hfj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ndel"]
+atlas = ExtResource("1_j0hfj")
+region = Rect2(0, 75, 100, 75)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ndel")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
