@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhhi61k4b7iqx" path="res://scripts/player/gridTestPlayer_01.gd" id="1_hjs4j"]
 [ext_resource type="Script" uid="uid://denkwoabotyh5" path="res://scripts/player/place_bomba.gd" id="2_vgan8"]
-[ext_resource type="SpriteFrames" uid="uid://dnwsmvk3wpfgx" path="res://assets/res/spriteframes/pedro-Sprite-Frames.tres" id="3_g1lgq"]
+[ext_resource type="SpriteFrames" uid="uid://dnwsmvk3wpfgx" path="res://assets/res/spriteframes/ureiaman-Sprite-Frames.tres" id="3_g1lgq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tou7l"]
 radius = 59.5
