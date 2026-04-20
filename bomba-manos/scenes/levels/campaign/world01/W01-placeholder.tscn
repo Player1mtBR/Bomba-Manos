@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://cfwugrihtwwqk"]
+[gd_scene load_steps=25 format=4 uid="uid://cfwugrihtwwqk"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_x402h"]
 [ext_resource type="Texture2D" uid="uid://o31y83d3vwpt" path="res://assets/sprites/levels/campaign/world01/LostWoodsFloor.png" id="2_314sh"]
@@ -44,6 +44,8 @@ texture_region_size = Vector2i(60, 60)
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lx53w")
+
+[sub_resource type="GDScript" id="GDScript_a4ok7"]
 
 [node name="mapPlaceholderForest" type="Node2D"]
 script = ExtResource("1_x402h")
@@ -527,6 +529,11 @@ position = Vector2(-128, -16)
 
 [node name="BreakableBlock144" parent="objects/AllBricks" instance=ExtResource("10_a4ok7")]
 position = Vector2(-128, 16)
+
+[node name="AllTeleports" type="Node2D" parent="objects"]
+script = SubResource("GDScript_a4ok7")
+
+[node name="Teleport1" type="Node2D" parent="objects/AllTeleports"]
 
 [node name="entities" type="Node2D" parent="."]
 
