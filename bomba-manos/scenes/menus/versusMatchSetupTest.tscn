@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c02kwfsjemtds"]
+[gd_scene load_steps=4 format=3 uid="uid://c02kwfsjemtds"]
 
 [ext_resource type="PackedScene" uid="uid://dbae74pwgkq23" path="res://scenes/main_camera.tscn" id="2_0qyue"]
+[ext_resource type="Script" uid="uid://cyn5kl26ct3pp" path="res://scripts/menus/testButtonMP.gd" id="2_2qljs"]
 
 [sub_resource type="GDScript" id="GDScript_y61lx"]
-script/source = "extends Control
+script/source = "extends Node2D
 
 @onready var BOMBAMAN := preload(\"res://assets/res/spriteframes/bombaman-Sprite-Frames.tres\")
 @onready var UREIAMAN := preload(\"res://assets/res/spriteframes/ureiaman-Sprite-Frames.tres\")
@@ -16,9 +17,216 @@ script/source = "extends Control
 #func _ready() -> void:
 "
 
-[node name="VersusMatchSetupTest" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="VersusMatchSetupTest" type="Node2D"]
 script = SubResource("GDScript_y61lx")
 
 [node name="mainCamera" parent="." instance=ExtResource("2_0qyue")]
+
+[node name="buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+size_flags_horizontal = 4
+script = ExtResource("2_2qljs")
+
+[node name="playerCountSelect" type="VBoxContainer" parent="buttons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.6667
+offset_top = -32.0
+offset_right = 85.3333
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="2players" type="Button" parent="buttons/playerCountSelect"]
+layout_mode = 2
+text = "2 Players"
+
+[node name="3players" type="Button" parent="buttons/playerCountSelect"]
+layout_mode = 2
+disabled = true
+text = "3 Players"
+
+[node name="4players" type="Button" parent="buttons/playerCountSelect"]
+layout_mode = 2
+disabled = true
+text = "4 Players"
+
+[node name="CharSelect2" type="BoxContainer" parent="buttons"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -85.3333
+offset_right = 363.0
+offset_bottom = 112.667
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="player1" type="VBoxContainer" parent="buttons/CharSelect2"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Label" type="Label" parent="buttons/CharSelect2/player1"]
+layout_mode = 2
+text = "Player 1"
+horizontal_alignment = 1
+
+[node name="bombaman" type="Button" parent="buttons/CharSelect2/player1"]
+layout_mode = 2
+text = "BOMBAMAN"
+
+[node name="ureiaman" type="Button" parent="buttons/CharSelect2/player1"]
+layout_mode = 2
+text = "UREIAMAN"
+
+[node name="rangerman" type="Button" parent="buttons/CharSelect2/player1"]
+layout_mode = 2
+text = "RANGERMAN"
+
+[node name="miniman" type="Button" parent="buttons/CharSelect2/player1"]
+layout_mode = 2
+text = "MINIMAN"
+
+[node name="secret" type="Button" parent="buttons/CharSelect2/player1"]
+layout_mode = 2
+text = "???"
+
+[node name="player2" type="VBoxContainer" parent="buttons/CharSelect2"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Label" type="Label" parent="buttons/CharSelect2/player2"]
+layout_mode = 2
+text = "Player 2"
+horizontal_alignment = 1
+
+[node name="bombaman" type="Button" parent="buttons/CharSelect2/player2"]
+layout_mode = 2
+text = "BOMBAMAN"
+
+[node name="ureiaman" type="Button" parent="buttons/CharSelect2/player2"]
+layout_mode = 2
+text = "UREIAMAN"
+
+[node name="rangerman" type="Button" parent="buttons/CharSelect2/player2"]
+layout_mode = 2
+text = "RANGERMAN"
+
+[node name="miniman" type="Button" parent="buttons/CharSelect2/player2"]
+layout_mode = 2
+text = "MINIMAN"
+
+[node name="secret" type="Button" parent="buttons/CharSelect2/player2"]
+layout_mode = 2
+text = "???"
+
+[node name="player3" type="VBoxContainer" parent="buttons/CharSelect2"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="buttons/CharSelect2/player3"]
+layout_mode = 2
+text = "Player 3"
+horizontal_alignment = 1
+
+[node name="bombaman" type="Button" parent="buttons/CharSelect2/player3"]
+layout_mode = 2
+text = "BOMBAMAN"
+
+[node name="ureiaman" type="Button" parent="buttons/CharSelect2/player3"]
+layout_mode = 2
+text = "UREIAMAN"
+
+[node name="rangerman" type="Button" parent="buttons/CharSelect2/player3"]
+layout_mode = 2
+text = "RANGERMAN"
+
+[node name="miniman" type="Button" parent="buttons/CharSelect2/player3"]
+layout_mode = 2
+text = "MINIMAN"
+
+[node name="secret" type="Button" parent="buttons/CharSelect2/player3"]
+layout_mode = 2
+text = "???"
+
+[node name="player4" type="VBoxContainer" parent="buttons/CharSelect2"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Label" type="Label" parent="buttons/CharSelect2/player4"]
+layout_mode = 2
+text = "Player 4"
+horizontal_alignment = 1
+
+[node name="bombaman" type="Button" parent="buttons/CharSelect2/player4"]
+layout_mode = 2
+text = "BOMBAMAN"
+
+[node name="ureiaman" type="Button" parent="buttons/CharSelect2/player4"]
+layout_mode = 2
+text = "UREIAMAN"
+
+[node name="rangerman" type="Button" parent="buttons/CharSelect2/player4"]
+layout_mode = 2
+text = "RANGERMAN"
+
+[node name="miniman" type="Button" parent="buttons/CharSelect2/player4"]
+layout_mode = 2
+text = "MINIMAN"
+
+[node name="secret" type="Button" parent="buttons/CharSelect2/player4"]
+layout_mode = 2
+text = "???"
+
+[node name="startMatch" type="VBoxContainer" parent="buttons"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.6667
+offset_top = -10.6667
+offset_right = 85.3333
+offset_bottom = 55.3333
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="changeMap" type="Button" parent="buttons/startMatch"]
+layout_mode = 2
+text = "Change Map"
+
+[node name="begin" type="Button" parent="buttons/startMatch"]
+layout_mode = 2
+text = "Start Match"
+
+[connection signal="pressed" from="buttons/playerCountSelect/2players" to="buttons" method="_on_2_players_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player1/bombaman" to="buttons" method="_2Ps_P1_bombaman_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player1/ureiaman" to="buttons" method="_2Ps_P1_ureiaman_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player1/rangerman" to="buttons" method="_2Ps_P1_rangerman_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player1/miniman" to="buttons" method="_2Ps_P1_miniman_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player1/secret" to="buttons" method="_2Ps_P1_secret01_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player2/bombaman" to="buttons" method="_2Ps_P2_bombaman_pressed"]
+[connection signal="pressed" from="buttons/startMatch/begin" to="buttons" method="_on_begin_pressed"]

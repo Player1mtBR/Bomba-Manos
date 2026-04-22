@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://gyx4dqujih7p"]
+[gd_scene load_steps=23 format=4 uid="uid://gyx4dqujih7p"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_xdbbx"]
 [ext_resource type="Texture2D" uid="uid://v7o6pkkgso0r" path="res://assets/sprites/levels/campaign/world01/LostWoodsCorner.png" id="2_kfgqy"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://ddd0t2ximg5k6" path="res://assets/sprites/levels/campaign/world01/RightWallLostWoods.png" id="5_knpra"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="6_11j41"]
 [ext_resource type="Texture2D" uid="uid://o31y83d3vwpt" path="res://assets/sprites/levels/campaign/world01/LostWoodsFloor.png" id="6_vpjj6"]
-[ext_resource type="Texture2D" uid="uid://coq1f0bkppr40" path="res://assets/sprites/levels/campaign/world01/TroncoIndestrutivelLostWoods.png" id="8_blrw0"]
 [ext_resource type="Texture2D" uid="uid://b5aikch2jynv5" path="res://assets/sprites/levels/campaign/world02/cyberBlocks.png" id="9_cgdcy"]
 [ext_resource type="AudioStream" uid="uid://3ltw3qe7xh3" path="res://assets/audio/tracks/PokémonHeartGold&SoulSilver-GymLeader&EliteFourBattleMusic.mp3" id="9_p5ime"]
 [ext_resource type="PackedScene" uid="uid://bgkax6c3eo7n0" path="res://scenes/entities/manel.tscn" id="10_jkmx2"]
@@ -625,11 +624,6 @@ texture = ExtResource("2_kfgqy")
 [node name="leftCorner" type="Sprite2D" parent="environment"]
 position = Vector2(-192.5, -127.75)
 scale = Vector2(-0.185, 0.138)
-texture = ExtResource("2_kfgqy")
-
-[node name="rightCorner2" type="Sprite2D" parent="environment"]
-position = Vector2(280, -144)
-scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_kfgqy")
 
 [node name="spawnSomething" type="Node2D" parent="."]
@@ -1274,8 +1268,3 @@ L
 
 (0)"
 horizontal_alignment = 1
-
-[node name="troncoDecor" type="Sprite2D" parent="."]
-position = Vector2(296, -112)
-scale = Vector2(0.325, 0.325)
-texture = ExtResource("8_blrw0")
