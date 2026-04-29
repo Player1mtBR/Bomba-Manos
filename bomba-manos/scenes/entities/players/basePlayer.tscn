@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ch1smqkxm1ox0"]
+[gd_scene load_steps=7 format=3 uid="uid://ch1smqkxm1ox0"]
 
 [ext_resource type="Script" uid="uid://vxqs6e04o26n" path="res://scripts/player/base_player.gd" id="1_5v3ci"]
 [ext_resource type="Script" uid="uid://denkwoabotyh5" path="res://scripts/player/place_bomba.gd" id="2_ru4r5"]
@@ -10,6 +10,9 @@ height = 119.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imhd3"]
 size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5v3ci"]
+size = Vector2(16, 16)
 
 [node name="basePlayer01" type="CharacterBody2D"]
 collision_mask = 5
@@ -60,4 +63,10 @@ collision_mask = 17
 target_position = Vector2(16, 0)
 collision_mask = 17
 
+[node name="teleporteArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teleporteArea"]
+shape = SubResource("RectangleShape2D_5v3ci")
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="teleporteArea" to="." method="_on_teleporte_area_area_entered"]

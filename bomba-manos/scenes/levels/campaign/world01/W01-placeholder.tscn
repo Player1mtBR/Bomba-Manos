@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://cfwugrihtwwqk"]
+[gd_scene load_steps=27 format=4 uid="uid://cfwugrihtwwqk"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_x402h"]
 [ext_resource type="Texture2D" uid="uid://o31y83d3vwpt" path="res://assets/sprites/levels/campaign/world01/LostWoodsFloor.png" id="2_314sh"]
@@ -13,8 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://c1x22kwjvm6tb" path="res://scenes/objects/Lost_Woods_Bush.tscn" id="10_a4ok7"]
 [ext_resource type="PackedScene" uid="uid://bgkax6c3eo7n0" path="res://scenes/entities/manel.tscn" id="10_n626e"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="11_gukpt"]
+[ext_resource type="PackedScene" uid="uid://c5egrrhbfp5fo" path="res://scenes/objects/teleportTunel.tscn" id="12_ou0xf"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="12_v4acd"]
 [ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="13_jk64q"]
+[ext_resource type="PackedScene" uid="uid://c0hokdg4uk5yy" path="res://scenes/objects/teleportTunel2.tscn" id="13_lx53w"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="14_3l6e0"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="15_aqixd"]
 [ext_resource type="SpriteFrames" uid="uid://dnwsmvk3wpfgx" path="res://assets/res/spriteframes/ureiaman-Sprite-Frames.tres" id="16_ye23i"]
@@ -377,39 +379,6 @@ position = Vector2(48, 64)
 [node name="BreakableBlock85" parent="objects/AllBricks" instance=ExtResource("10_a4ok7")]
 position = Vector2(64, 64)
 
-[node name="BreakableBlock91" parent="objects/AllBricks" instance=ExtResource("10_a4ok7")]
-position = Vector2(-64, -96)
-
-[node name="BreakableBlock93" parent="objects/AllBricks" instance=ExtResource("10_a4ok7")]
-position = Vector2(-80, -96)
-
-[node name="BreakableBlock94" parent="objects/AllBricks" instance=ExtResource("10_a4ok7")]
-position = Vector2(-16, -96)
-
-[node name="BreakableBlock95" parent="objects/AllBricks" instance=ExtResource("10_a4ok7")]
-position = Vector2(-48, -96)
-
-[node name="BreakableBlock96" parent="objects/AllBricks" instance=ExtResource("10_a4ok7")]
-position = Vector2(-32, -96)
-
-[node name="BreakableBlock97" parent="objects/AllBricks" instance=ExtResource("10_a4ok7")]
-position = Vector2(32, -96)
-
-[node name="BreakableBlock98" parent="objects/AllBricks" instance=ExtResource("10_a4ok7")]
-position = Vector2(0, -96)
-
-[node name="BreakableBlock99" parent="objects/AllBricks" instance=ExtResource("10_a4ok7")]
-position = Vector2(16, -96)
-
-[node name="BreakableBlock100" parent="objects/AllBricks" instance=ExtResource("10_a4ok7")]
-position = Vector2(80, -96)
-
-[node name="BreakableBlock101" parent="objects/AllBricks" instance=ExtResource("10_a4ok7")]
-position = Vector2(48, -96)
-
-[node name="BreakableBlock102" parent="objects/AllBricks" instance=ExtResource("10_a4ok7")]
-position = Vector2(64, -96)
-
 [node name="BreakableBlock106" parent="objects/AllBricks" instance=ExtResource("10_a4ok7")]
 position = Vector2(96, -80)
 
@@ -533,34 +502,46 @@ position = Vector2(-128, 16)
 [node name="AllTeleports" type="Node2D" parent="objects"]
 script = SubResource("GDScript_a4ok7")
 
-[node name="Teleport1" type="Node2D" parent="objects/AllTeleports"]
+[node name="TeleportTunel" parent="objects/AllTeleports" instance=ExtResource("12_ou0xf")]
+position = Vector2(-160, -112)
+
+[node name="TeleportTunel2" parent="objects/AllTeleports" instance=ExtResource("13_lx53w")]
+position = Vector2(160, -112)
 
 [node name="entities" type="Node2D" parent="."]
 
 [node name="players" type="Node2D" parent="entities"]
 
-[node name="basePlayer01" parent="entities/players" instance=ExtResource("15_aqixd")]
+[node name="basePlayer01" parent="entities/players" node_paths=PackedStringArray("teleportTunel", "teleportTunel2") instance=ExtResource("15_aqixd")]
 modulate = Color(0.483338, 0.649368, 1, 1)
 position = Vector2(-160, 64)
 playerID = 2
 charSkin = ExtResource("16_ye23i")
+teleportTunel = NodePath("../../../objects/AllTeleports/TeleportTunel")
+teleportTunel2 = NodePath("../../../objects/AllTeleports/TeleportTunel2")
 
-[node name="basePlayer02" parent="entities/players" instance=ExtResource("15_aqixd")]
+[node name="basePlayer02" parent="entities/players" node_paths=PackedStringArray("teleportTunel", "teleportTunel2") instance=ExtResource("15_aqixd")]
 position = Vector2(-160, -96)
 playerID = 1
 charSkin = ExtResource("16_ye23i")
+teleportTunel = NodePath("../../../objects/AllTeleports/TeleportTunel")
+teleportTunel2 = NodePath("../../../objects/AllTeleports/TeleportTunel2")
 
-[node name="basePlayer03" parent="entities/players" instance=ExtResource("15_aqixd")]
+[node name="basePlayer03" parent="entities/players" node_paths=PackedStringArray("teleportTunel", "teleportTunel2") instance=ExtResource("15_aqixd")]
 modulate = Color(1, 0.407246, 0.338652, 1)
 position = Vector2(160, -96)
 playerID = 3
 charSkin = ExtResource("16_ye23i")
+teleportTunel = NodePath("../../../objects/AllTeleports/TeleportTunel")
+teleportTunel2 = NodePath("../../../objects/AllTeleports/TeleportTunel2")
 
-[node name="basePlayer04" parent="entities/players" instance=ExtResource("15_aqixd")]
+[node name="basePlayer04" parent="entities/players" node_paths=PackedStringArray("teleportTunel", "teleportTunel2") instance=ExtResource("15_aqixd")]
 modulate = Color(0.537786, 1, 0.506004, 1)
 position = Vector2(160, 64)
 playerID = 4
 charSkin = ExtResource("16_ye23i")
+teleportTunel = NodePath("../../../objects/AllTeleports/TeleportTunel")
+teleportTunel2 = NodePath("../../../objects/AllTeleports/TeleportTunel2")
 
 [node name="Manel" parent="entities" instance=ExtResource("10_n626e")]
 position = Vector2(0, -130)
@@ -580,7 +561,7 @@ max_polyphony = 2
 position = Vector2(96, 64)
 
 [node name="player1Pos" type="Node2D" parent="."]
-position = Vector2(-96, -96)
+position = Vector2(-160, -96)
 
 [node name="ui" type="Control" parent="."]
 visible = false

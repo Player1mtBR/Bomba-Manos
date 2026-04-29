@@ -36,7 +36,7 @@ func _ready() -> void:
 		print(GlobalScript.currentPlayers)
 		#if playerID != GlobalScript.selectedPlayer1 and playerID != GlobalScript.selectedPlayer2:
 		#	queue_free()
-
+	
 func _process(delta: float) -> void:
 	if GlobalScript.currentPlayers == 1 and canPlayerMove == true and isPlayerAlive == true:
 		victory()
@@ -130,7 +130,32 @@ func victory():
 	#else:
 	#	GlobalScript.removePointFromPlayer(playerID)
 	#	print(GlobalScript.playerScores)
+
 	
+
+
+@export var teleportTunel: Node2D  
+@export var teleportTunel2: Node2D
+func teleport(id_tunel: int) -> void:
+	var destino
+	if id_tunel == 1:
+		destino = teleportTunel2
+		await get_tree().create_timer(0.5).timeout
+	elif id_tunel == 2:
+		destino = teleportTunel
+		await get_tree().create_timer(0.5).timeout
+	canPlayerMove = false
+	global_position = destino.global_position
+	await get_tree().create_timer(0.1).timeout
+	canPlayerMove = true
+
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "ExplosionArea":
 		killPlayer()
+
+	if area.name == "teleportTunel":
+		print("Entrou no túnel!", area.name)
+		teleport(1)
+	elif area.name == "teleportTunel2":
+		print("Entrou no túnel!", area.name)
+		teleport(2)

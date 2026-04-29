@@ -3,27 +3,28 @@
 [ext_resource type="Script" uid="uid://cn8f1hji03nmf" path="res://scripts/teleportTunel.gd" id="1_ur6jf"]
 [ext_resource type="SpriteFrames" uid="uid://bwhj4dfvfrskr" path="res://assets/res/spriteframes/TunelTeleport.tres" id="2_rl2hc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rl2hc"]
-size = Vector2(71.1111, 67.5556)
+[sub_resource type="GDScript" id="GDScript_rl2hc"]
+script/source = "extends Area2D
+
+@export var Destination: NodePath
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4r3t"]
-size = Vector2(71.1111, 66.6667)
+size = Vector2(71.1111, 70)
 
-[node name="TeleportTunel" type="Node2D"]
+[node name="TeleportTunel" type="Node2D" groups=["Teleporte"]]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_ur6jf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_rl2hc")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="teleportTunel" type="Area2D" parent="."]
+script = SubResource("GDScript_rl2hc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-7.15256e-07, 0)
-scale = Vector2(0.9, 0.9)
-shape = SubResource("RectangleShape2D_rl2hc")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teleportTunel"]
+position = Vector2(0, 0.499998)
 scale = Vector2(0.9, 0.9)
 shape = SubResource("RectangleShape2D_m4r3t")
+
+[connection signal="body_entered" from="teleportTunel" to="." method="_on_teleport_tunel_body_entered"]
