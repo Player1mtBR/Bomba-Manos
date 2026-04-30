@@ -38,11 +38,11 @@ func _ready() -> void:
 		#	queue_free()
 	
 func _process(delta: float) -> void:
-	if GlobalScript.currentPlayers == 1 and canPlayerMove == true and isPlayerAlive == true:
-		victory()
+	#if GlobalScript.currentPlayers == 1 and canPlayerMove == true and isPlayerAlive == true:
+	#	victory()
 	
 	if Input.is_action_just_pressed("p"+str(playerID)+"_bomb") and placedBombas < maxBombasAtOnce and wonMatch == false and isPlayerAlive == true and isPlayerOnMenu == false:
-		placeBombaNode.placeBombOnMap() ##puxa a funcao que está no node
+		placeBombaNode.placeBombOnMap(1, playerID) ##puxa a funcao que está no node
 		placedBombas += 1
 		#GlobalScript.manelBombasCount += 1 ##contador Manel ###REMOVE COMMENT FOR MULTIPLAYER
 		#print("placed bombas: ", placedBombas)
@@ -140,10 +140,10 @@ func teleport(id_tunel: int) -> void:
 	var destino
 	if id_tunel == 1:
 		destino = teleportTunel2
-		await get_tree().create_timer(0.5).timeout
+		#await get_tree().create_timer(0.5).timeout
 	elif id_tunel == 2:
 		destino = teleportTunel
-		await get_tree().create_timer(0.5).timeout
+		#await get_tree().create_timer(0.5).timeout
 	canPlayerMove = false
 	global_position = destino.global_position
 	await get_tree().create_timer(0.1).timeout

@@ -4,11 +4,12 @@ extends Node2D
 @onready var chainReaction := $ChainReactionArea
 @onready var bombBlocksPlayer := $bombBlocksPlayer/CollisionShape2D
 @onready var audioPlayer := $AudioStreamPlayer2D
+@onready var kaboomAudio := $AudioStreamPlayer2D2
 
 
 @onready var explosionScene := preload("res://scenes/objects/bombas/explosion_base.tscn")
 
-@export var blastRadius := 2
+@export var blastRadius := 2 #base = 2
 
 var tileSize := 16
 
@@ -19,14 +20,19 @@ func _ready():
 	kaboom()
 	
 func kaboom():	
-	#audioPlayer2.playing = true
 	GlobalScript.triggerCameraShake = true
-	#await get_tree().create_timer(3.0).timeout
-	#print("MIBOOMBA")
 	spawnExplosion(0, global_position)
 	checkCollision()
 	#await audioPlayer2.finished
 	queue_free() ## deleta o node da cena
+	
+	"""
+	kaboomAudio.playing = true
+	$ChainReactionArea/CollisionShape2D.set_deferred("disabled", true)
+	$bombBlocksPlayer/CollisionShape2D.set_deferred("disabled", true)
+	await get_tree().create_timer(1.0).timeout
+	call_deferred("queue_free") ## deleta o node da cena
+	"""
 
 
 func checkCollision():

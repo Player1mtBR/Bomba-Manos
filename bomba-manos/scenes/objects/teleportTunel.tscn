@@ -10,20 +10,21 @@ script/source = "extends Area2D
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4r3t"]
-size = Vector2(71.1111, 70)
+size = Vector2(35.5556, 35)
 
 [node name="TeleportTunel" type="Node2D" groups=["Teleporte"]]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_ur6jf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
 sprite_frames = ExtResource("2_rl2hc")
 
 [node name="teleportTunel" type="Area2D" parent="."]
 script = SubResource("GDScript_rl2hc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="teleportTunel"]
-position = Vector2(0, 0.499998)
+position = Vector2(0, -31.75)
 scale = Vector2(0.9, 0.9)
 shape = SubResource("RectangleShape2D_m4r3t")
 

@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var bombaScene := preload("res://scenes/objects/bombas/bomba_main.tscn") ##carregando cena em uma variavel
+@onready var mainBombaScene := preload("res://scenes/objects/bombas/bomba_main.tscn") ##carregando cena em uma variavel
 #var playerParent = null
 var tileSize := 16
 
@@ -11,8 +11,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func placeBombOnMap():
-	var newBomba = bombaScene.instantiate() ## definindo instancia da bomba
+func placeBombOnMap(bombType, playerNum):
+	var bombFromPlayer = playerNum
+	var newBomba
+	
+	match bombType:
+		1:
+			newBomba = mainBombaScene.instantiate()
+	
+	#newBomba = mainBombaScene.instantiate() ## definindo instancia da bomba
 	
 	var setBombaPosition = Vector2(round(get_parent().position.x / tileSize) * tileSize, round(get_parent().position.y / tileSize) * tileSize)
 	## Vector2 arredonda posicao do node pai q é o player e divide por 16 q é o tamanho do tileset e multiplica por 16 pra dar o valor que "encaixa" no quadradin

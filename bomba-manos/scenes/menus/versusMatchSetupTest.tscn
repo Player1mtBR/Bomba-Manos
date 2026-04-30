@@ -59,12 +59,10 @@ text = "2 Players"
 
 [node name="3players" type="Button" parent="buttons/playerCountSelect"]
 layout_mode = 2
-disabled = true
 text = "3 Players"
 
 [node name="4players" type="Button" parent="buttons/playerCountSelect"]
 layout_mode = 2
-disabled = true
 text = "4 Players"
 
 [node name="CharSelect2" type="BoxContainer" parent="buttons"]
@@ -88,7 +86,8 @@ size_flags_horizontal = 6
 
 [node name="Label" type="Label" parent="buttons/CharSelect2/player1"]
 layout_mode = 2
-text = "Player 1"
+text = "
+Player 1"
 horizontal_alignment = 1
 
 [node name="bombaman" type="Button" parent="buttons/CharSelect2/player1"]
@@ -109,6 +108,7 @@ text = "MINIMAN"
 
 [node name="secret" type="Button" parent="buttons/CharSelect2/player1"]
 layout_mode = 2
+disabled = true
 text = "???"
 
 [node name="player2" type="VBoxContainer" parent="buttons/CharSelect2"]
@@ -117,7 +117,8 @@ size_flags_horizontal = 6
 
 [node name="Label" type="Label" parent="buttons/CharSelect2/player2"]
 layout_mode = 2
-text = "Player 2"
+text = "
+Player 2"
 horizontal_alignment = 1
 
 [node name="bombaman" type="Button" parent="buttons/CharSelect2/player2"]
@@ -138,6 +139,7 @@ text = "MINIMAN"
 
 [node name="secret" type="Button" parent="buttons/CharSelect2/player2"]
 layout_mode = 2
+disabled = true
 text = "???"
 
 [node name="player3" type="VBoxContainer" parent="buttons/CharSelect2"]
@@ -168,6 +170,7 @@ text = "MINIMAN"
 
 [node name="secret" type="Button" parent="buttons/CharSelect2/player3"]
 layout_mode = 2
+disabled = true
 text = "???"
 
 [node name="player4" type="VBoxContainer" parent="buttons/CharSelect2"]
@@ -176,7 +179,8 @@ size_flags_horizontal = 6
 
 [node name="Label" type="Label" parent="buttons/CharSelect2/player4"]
 layout_mode = 2
-text = "Player 4"
+text = "
+Player 4"
 horizontal_alignment = 1
 
 [node name="bombaman" type="Button" parent="buttons/CharSelect2/player4"]
@@ -197,6 +201,7 @@ text = "MINIMAN"
 
 [node name="secret" type="Button" parent="buttons/CharSelect2/player4"]
 layout_mode = 2
+disabled = true
 text = "???"
 
 [node name="startMatch" type="VBoxContainer" parent="buttons"]
@@ -223,10 +228,26 @@ layout_mode = 2
 text = "Start Match"
 
 [connection signal="pressed" from="buttons/playerCountSelect/2players" to="buttons" method="_on_2_players_pressed"]
+[connection signal="pressed" from="buttons/playerCountSelect/3players" to="buttons" method="_on_3_players_pressed"]
+[connection signal="pressed" from="buttons/playerCountSelect/4players" to="buttons" method="_on_4_players_pressed"]
 [connection signal="pressed" from="buttons/CharSelect2/player1/bombaman" to="buttons" method="_2Ps_P1_bombaman_pressed"]
 [connection signal="pressed" from="buttons/CharSelect2/player1/ureiaman" to="buttons" method="_2Ps_P1_ureiaman_pressed"]
 [connection signal="pressed" from="buttons/CharSelect2/player1/rangerman" to="buttons" method="_2Ps_P1_rangerman_pressed"]
 [connection signal="pressed" from="buttons/CharSelect2/player1/miniman" to="buttons" method="_2Ps_P1_miniman_pressed"]
 [connection signal="pressed" from="buttons/CharSelect2/player1/secret" to="buttons" method="_2Ps_P1_secret01_pressed"]
 [connection signal="pressed" from="buttons/CharSelect2/player2/bombaman" to="buttons" method="_2Ps_P2_bombaman_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player2/ureiaman" to="buttons" method="_2Ps_P2_ureiaman_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player2/rangerman" to="buttons" method="_2Ps_P2_rangerman_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player2/miniman" to="buttons" method="_2Ps_P2_miniman_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player2/secret" to="buttons" method="_2Ps_P2_secret01_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player3/bombaman" to="buttons" method="_3Ps_P3_bombaman_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player3/ureiaman" to="buttons" method="_3Ps_P3_ureiaman_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player3/rangerman" to="buttons" method="_3Ps_P3_rangerman_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player3/miniman" to="buttons" method="_3Ps_P3_miniman_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player3/secret" to="buttons" method="_3Ps_P3_secret_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player4/bombaman" to="buttons" method="_4Ps_P4_bombaman_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player4/ureiaman" to="buttons" method="_4Ps_P4_ureiaman_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player4/rangerman" to="buttons" method="_4Ps_P4_rangerman_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player4/miniman" to="buttons" method="_4Ps_P4_miniman_pressed"]
+[connection signal="pressed" from="buttons/CharSelect2/player4/secret" to="buttons" method="_4Ps_P4_secret_pressed"]
 [connection signal="pressed" from="buttons/startMatch/begin" to="buttons" method="_on_begin_pressed"]
