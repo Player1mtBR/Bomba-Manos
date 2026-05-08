@@ -3,7 +3,6 @@ extends CharacterBody2D
 ## escrever ":" define o tipo da variável, pode usar := pra definir o tipo e valor ao mesmo tempo tbm
 @export var ia_ID := 0 ##permite usar um único script para o input de todos os jogadores
 @export var iaMoveSpeed := 50
-@export var charSkin := SpriteFrames #test
 
 ## @onready define a var na hora que o node é inicializado
 @onready var animIaNode := $AnimatedSprite2D
@@ -15,14 +14,13 @@ extends CharacterBody2D
 
 var isIaAlive := true
 var canIaMove := true
-var iaMoveDelay := 0.3
+var iaMoveDelay := 0.8
 var inputMoveDirection
 var target # referência ao nó do jogador (opcional)
-var smartChance := 0.4 # 0.0 = totalmente aleatório, 1.0 = sempre persegue
+var smartChance := 0.8 # 0.0 = totalmente aleatório, 1.0 = sempre persegue
 
 
 func _ready() -> void:
-	animIaNode.sprite_frames = charSkin
 	target = get_tree().get_first_node_in_group("players") # tenta achar o jogador na cena para perseguição
 	inputMoveDirection = _randomDirection() # escolhe uma direção inicial aleatória
 	#if isPlayerOnMenu == false:
@@ -105,10 +103,10 @@ func _raycastFor(dir: Vector2):
 	return null
 
 func _playAnim() -> void:
-	if inputMoveDirection == Vector2(0, -1): animIaNode.play("move_up")
-	elif inputMoveDirection == Vector2(0,  1): animIaNode.play("move_down")
-	elif inputMoveDirection == Vector2(-1, 0): animIaNode.play("move_left")
-	elif inputMoveDirection == Vector2(1,  0): animIaNode.play("move_right")
+	if inputMoveDirection == Vector2(0, -1): animIaNode.play("up")
+	elif inputMoveDirection == Vector2(0,  1): animIaNode.play("down")
+	elif inputMoveDirection == Vector2(-1, 0): animIaNode.play("left")
+	elif inputMoveDirection == Vector2(1,  0): animIaNode.play("right")
 	if inputMoveDirection:
 		if canIaMove:
 			canIaMove = false
@@ -119,30 +117,11 @@ func _playAnim() -> void:
 			canIaMove = true
 			
 func killIa():
-	GlobalScript.currentIas -= 1
-	if GlobalScript.currentIas > 1:
-		GlobalScript.triggerLaugh = true
 	isIaAlive = false
 	animIaNode.play("die")
 		
 	await animIaNode.animation_finished
 	queue_free()
-	
-func victory():
-	canIaMove = false
-	print(ia_ID, "victory")
-	GlobalScript.addPoint2Player(ia_ID)
-	#isIaAlive = false
-	animIaNode.play("win")
-	
-	await get_tree().create_timer(4.0).timeout
-	if isIaAlive == true:
-		queue_free()
-		
-		GlobalScript.restartLevel()
-	#else:
-	#	GlobalScript.removePointFromPlayer(ia_ID)
-	#	print(GlobalScript.playerScores)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "ExplosionArea":
