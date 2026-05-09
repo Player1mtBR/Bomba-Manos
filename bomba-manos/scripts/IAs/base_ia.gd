@@ -17,7 +17,7 @@ var canIaMove := true
 var iaMoveDelay := 0.8
 var inputMoveDirection
 var target # referência ao nó do jogador (opcional)
-var smartChance := 0.8 # 0.0 = totalmente aleatório, 1.0 = sempre persegue
+var smartChance := 1.0 # 0.0 = totalmente aleatório, 1.0 = sempre persegue
 
 
 func _ready() -> void:
