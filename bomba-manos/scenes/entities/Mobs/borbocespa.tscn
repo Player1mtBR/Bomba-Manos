@@ -353,9 +353,9 @@ script = ExtResource("1_poo8k")
 shape = SubResource("CapsuleShape2D_xsjrv")
 disabled = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Mob" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mob"]
 shape = SubResource("RectangleShape2D_t5x8p")
 
 [node name="collisionRaycasts" type="Node2D" parent="."]
@@ -380,4 +380,4 @@ collision_mask = 17
 sprite_frames = SubResource("SpriteFrames_w3p8x")
 animation = &"die"
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Mob" to="." method="_on_area_2d_area_entered"]
