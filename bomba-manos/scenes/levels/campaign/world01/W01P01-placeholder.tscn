@@ -290,8 +290,6 @@ position = Vector2(-32, 0)
 [node name="BreakableBlock46" parent="objects/AllBricks" instance=ExtResource("11_8y0rw")]
 position = Vector2(32, 0)
 
-[node name="BreakableBlock47" parent="objects/AllBricks" instance=ExtResource("11_8y0rw")]
-
 [node name="BreakableBlock48" parent="objects/AllBricks" instance=ExtResource("11_8y0rw")]
 position = Vector2(16, 0)
 
