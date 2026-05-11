@@ -40,7 +40,7 @@ scale = Vector2(6.09524, 6.09524)
 sprite_frames = ExtResource("3_g1lgq")
 animation = &"rotate"
 autoplay = "idle"
-frame_progress = 0.33171
+frame_progress = 0.367099
 
 [node name="collisionRaycasts" type="Node2D" parent="."]
 

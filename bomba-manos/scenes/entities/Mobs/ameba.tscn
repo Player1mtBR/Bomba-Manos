@@ -209,10 +209,10 @@ animations = [{
 "texture": SubResource("AtlasTexture_56clh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vxuoc")
+"texture": SubResource("AtlasTexture_euaxg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_euaxg")
+"texture": SubResource("AtlasTexture_vxuoc")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yh56l")
@@ -285,5 +285,7 @@ collision_mask = 17
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_w3p8x")
+animation = &"right"
+frame_progress = 0.0215898
 
 [connection signal="area_entered" from="Mob" to="." method="_on_area_2d_area_entered"]

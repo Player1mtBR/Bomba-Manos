@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bb6j62ylgr1sj"]
+[gd_scene load_steps=28 format=4 uid="uid://dbgq2yvwaef37"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_4tlly"]
 [ext_resource type="Texture2D" uid="uid://v7o6pkkgso0r" path="res://assets/sprites/levels/campaign/world01/LostWoodsCorner.png" id="2_43xto"]
@@ -15,8 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://c0hokdg4uk5yy" path="res://scenes/objects/teleportTunel2.tscn" id="13_tcsbx"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="14_vpl86"]
 [ext_resource type="SpriteFrames" uid="uid://dnwsmvk3wpfgx" path="res://assets/res/spriteframes/ureiaman-Sprite-Frames.tres" id="15_xh3vc"]
-[ext_resource type="PackedScene" uid="uid://bgkax6c3eo7n0" path="res://scenes/entities/manel.tscn" id="16_vk6mk"]
 [ext_resource type="AudioStream" uid="uid://3ltw3qe7xh3" path="res://assets/audio/tracks/PokémonHeartGold&SoulSilver-GymLeader&EliteFourBattleMusic.mp3" id="17_4oim1"]
+[ext_resource type="PackedScene" uid="uid://cbwhqu6sa22uf" path="res://scenes/entities/Mobs/corubia.tscn" id="17_d3347"]
+[ext_resource type="PackedScene" uid="uid://jqkiby8fkuil" path="res://scenes/entities/Mobs/ameba.tscn" id="18_qtwlu"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="18_tt8ok"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="19_yrbbd"]
 [ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="20_twkfc"]
@@ -285,8 +286,6 @@ position = Vector2(-32, 0)
 
 [node name="BreakableBlock46" parent="objects/AllBricks" instance=ExtResource("11_emgax")]
 position = Vector2(32, 0)
-
-[node name="BreakableBlock47" parent="objects/AllBricks" instance=ExtResource("11_emgax")]
 
 [node name="BreakableBlock48" parent="objects/AllBricks" instance=ExtResource("11_emgax")]
 position = Vector2(16, 0)
@@ -649,39 +648,27 @@ rotation = 1.57079
 
 [node name="players" type="Node2D" parent="entities"]
 
-[node name="basePlayer01" parent="entities/players" node_paths=PackedStringArray("teleportTunel", "teleportTunel2") instance=ExtResource("14_vpl86")]
-modulate = Color(0.483338, 0.649368, 1, 1)
-position = Vector2(-160, 64)
-playerID = 2
-charSkin = ExtResource("15_xh3vc")
-teleportTunel = NodePath("../../../objects/AllTeleports/TeleportTunel")
-teleportTunel2 = NodePath("../../../objects/AllTeleports/TeleportTunel2")
-
 [node name="basePlayer02" parent="entities/players" node_paths=PackedStringArray("teleportTunel", "teleportTunel2") instance=ExtResource("14_vpl86")]
-position = Vector2(-160, -96)
+position = Vector2(-160, 64)
 playerID = 1
 charSkin = ExtResource("15_xh3vc")
 teleportTunel = NodePath("../../../objects/AllTeleports/TeleportTunel")
 teleportTunel2 = NodePath("../../../objects/AllTeleports/TeleportTunel2")
 
-[node name="basePlayer03" parent="entities/players" node_paths=PackedStringArray("teleportTunel", "teleportTunel2") instance=ExtResource("14_vpl86")]
-modulate = Color(1, 0.407246, 0.338652, 1)
-position = Vector2(160, -96)
-playerID = 3
-charSkin = ExtResource("15_xh3vc")
-teleportTunel = NodePath("../../../objects/AllTeleports/TeleportTunel")
-teleportTunel2 = NodePath("../../../objects/AllTeleports/TeleportTunel2")
+[node name="Mobs" type="Node2D" parent="entities"]
 
-[node name="basePlayer04" parent="entities/players" node_paths=PackedStringArray("teleportTunel", "teleportTunel2") instance=ExtResource("14_vpl86")]
-modulate = Color(0.537786, 1, 0.506004, 1)
+[node name="corubia" parent="entities/Mobs" instance=ExtResource("17_d3347")]
 position = Vector2(160, 64)
-playerID = 4
-charSkin = ExtResource("15_xh3vc")
-teleportTunel = NodePath("../../../objects/AllTeleports/TeleportTunel")
-teleportTunel2 = NodePath("../../../objects/AllTeleports/TeleportTunel2")
 
-[node name="Manel" parent="entities" instance=ExtResource("16_vk6mk")]
-position = Vector2(0, -152)
+[node name="corubia2" parent="entities/Mobs" instance=ExtResource("17_d3347")]
+
+[node name="corubia3" parent="entities/Mobs" instance=ExtResource("17_d3347")]
+position = Vector2(160, -96)
+
+[node name="ameba" parent="entities/Mobs" instance=ExtResource("18_qtwlu")]
+position = Vector2(-128, -96)
+
+[node name="ameba2" parent="entities/Mobs" instance=ExtResource("18_qtwlu")]
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_4oim1")
@@ -698,7 +685,7 @@ max_polyphony = 2
 position = Vector2(96, 64)
 
 [node name="player1Pos" type="Node2D" parent="."]
-position = Vector2(-160, -96)
+position = Vector2(-160, -8)
 
 [node name="ui" type="Control" parent="."]
 visible = false

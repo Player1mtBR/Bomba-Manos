@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://cfwugrihtwwqk"]
+[gd_scene load_steps=27 format=4 uid="uid://cfwugrihtwwqk"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_8her5"]
 [ext_resource type="Texture2D" uid="uid://v7o6pkkgso0r" path="res://assets/sprites/levels/campaign/world01/LostWoodsCorner.png" id="2_ei5h2"]
@@ -15,17 +15,12 @@
 [ext_resource type="PackedScene" uid="uid://c0hokdg4uk5yy" path="res://scenes/objects/teleportTunel2.tscn" id="13_2y7tl"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="14_ulvm4"]
 [ext_resource type="SpriteFrames" uid="uid://dnwsmvk3wpfgx" path="res://assets/res/spriteframes/ureiaman-Sprite-Frames.tres" id="15_jvyfc"]
-[ext_resource type="PackedScene" uid="uid://bgkax6c3eo7n0" path="res://scenes/entities/manel.tscn" id="16_j8kx7"]
 [ext_resource type="AudioStream" uid="uid://3ltw3qe7xh3" path="res://assets/audio/tracks/PokémonHeartGold&SoulSilver-GymLeader&EliteFourBattleMusic.mp3" id="17_dwy2a"]
-[ext_resource type="PackedScene" uid="uid://og2qdp100kqe" path="res://scenes/entities/Mobs/borbocespa.tscn" id="17_ei5h2"]
-[ext_resource type="PackedScene" uid="uid://cbwhqu6sa22uf" path="res://scenes/entities/Mobs/corubia.tscn" id="18_jtrus"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="18_sjajx"]
 [ext_resource type="PackedScene" uid="uid://jqkiby8fkuil" path="res://scenes/entities/Mobs/ameba.tscn" id="19_bjx6k"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="19_ucnvu"]
-[ext_resource type="PackedScene" uid="uid://bfaodin2rks4j" path="res://scenes/entities/Mobs/wizry.tscn" id="20_fjla2"]
 [ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="20_k57pv"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="21_alk81"]
-[ext_resource type="PackedScene" uid="uid://qv2f2ttexgkc" path="res://scenes/entities/Mobs/bonght.tscn" id="21_byg7m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_01k7s"]
 texture = ExtResource("7_0r8de")
@@ -652,14 +647,6 @@ rotation = 1.57079
 
 [node name="players" type="Node2D" parent="entities"]
 
-[node name="basePlayer01" parent="entities/players" node_paths=PackedStringArray("teleportTunel", "teleportTunel2") instance=ExtResource("14_ulvm4")]
-modulate = Color(0.483338, 0.649368, 1, 1)
-position = Vector2(-160, 64)
-playerID = 2
-charSkin = ExtResource("15_jvyfc")
-teleportTunel = NodePath("../../../objects/AllTeleports/TeleportTunel")
-teleportTunel2 = NodePath("../../../objects/AllTeleports/TeleportTunel2")
-
 [node name="basePlayer02" parent="entities/players" node_paths=PackedStringArray("teleportTunel", "teleportTunel2") instance=ExtResource("14_ulvm4")]
 position = Vector2(-160, -96)
 playerID = 1
@@ -667,36 +654,18 @@ charSkin = ExtResource("15_jvyfc")
 teleportTunel = NodePath("../../../objects/AllTeleports/TeleportTunel")
 teleportTunel2 = NodePath("../../../objects/AllTeleports/TeleportTunel2")
 
-[node name="basePlayer03" parent="entities/players" node_paths=PackedStringArray("teleportTunel", "teleportTunel2") instance=ExtResource("14_ulvm4")]
-modulate = Color(1, 0.407246, 0.338652, 1)
-position = Vector2(160, -96)
-playerID = 3
-charSkin = ExtResource("15_jvyfc")
-teleportTunel = NodePath("../../../objects/AllTeleports/TeleportTunel")
-teleportTunel2 = NodePath("../../../objects/AllTeleports/TeleportTunel2")
-
-[node name="basePlayer04" parent="entities/players" node_paths=PackedStringArray("teleportTunel", "teleportTunel2") instance=ExtResource("14_ulvm4")]
-modulate = Color(0.537786, 1, 0.506004, 1)
-position = Vector2(160, 64)
-playerID = 4
-charSkin = ExtResource("15_jvyfc")
-teleportTunel = NodePath("../../../objects/AllTeleports/TeleportTunel")
-teleportTunel2 = NodePath("../../../objects/AllTeleports/TeleportTunel2")
-
-[node name="Manel" parent="entities" instance=ExtResource("16_j8kx7")]
-position = Vector2(0, -152)
-
 [node name="Mobs" type="Node2D" parent="entities"]
-
-[node name="Borbocespa" parent="entities/Mobs" instance=ExtResource("17_ei5h2")]
-
-[node name="corubia" parent="entities/Mobs" instance=ExtResource("18_jtrus")]
 
 [node name="ameba" parent="entities/Mobs" instance=ExtResource("19_bjx6k")]
 
-[node name="wizry" parent="entities/Mobs" instance=ExtResource("20_fjla2")]
+[node name="ameba2" parent="entities/Mobs" instance=ExtResource("19_bjx6k")]
+position = Vector2(128, -96)
 
-[node name="bonght" parent="entities/Mobs" instance=ExtResource("21_byg7m")]
+[node name="ameba3" parent="entities/Mobs" instance=ExtResource("19_bjx6k")]
+position = Vector2(144, 64)
+
+[node name="ameba4" parent="entities/Mobs" instance=ExtResource("19_bjx6k")]
+position = Vector2(-160, 64)
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_dwy2a")
