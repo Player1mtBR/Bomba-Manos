@@ -157,8 +157,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		killPlayer()
 
 	if area.name == "teleportTunel":
-		print("Entrou no túnel!", area.name)
 		teleport(1)
 	elif area.name == "teleportTunel2":
-		print("Entrou no túnel!", area.name)
 		teleport(2)
