@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxfq25mlua7ls"]
+
+[ext_resource type="Script" uid="uid://db51vpoxlelql" path="res://scripts/menus/worldSelect/campaign_level_select.gd" id="1_3u12c"]
+[ext_resource type="PackedScene" uid="uid://vqadtrjtxsn5" path="res://scenes/menus/worldSelectScenes/level_icon.tscn" id="2_y180b"]
+[ext_resource type="PackedScene" uid="uid://c3i3avv75txs4" path="res://scenes/menus/worldSelectScenes/player_icon.tscn" id="3_1kii7"]
+[ext_resource type="SpriteFrames" uid="uid://cdjt7gy7aei07" path="res://assets/res/spriteframes/rangerman-Sprite-Frames.tres" id="4_y180b"]
+
+[node name="CampaignLevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3u12c")
+
+[node name="LevelIcon" parent="." node_paths=PackedStringArray("next_level_right") instance=ExtResource("2_y180b")]
+offset_top = 256.0
+offset_bottom = 320.0
+level_name = "1"
+next_level_right = NodePath("../LevelIcon2")
+
+[node name="LevelIcon2" parent="." node_paths=PackedStringArray("next_level_left", "next_level_right") instance=ExtResource("2_y180b")]
+offset_left = 192.0
+offset_top = 192.0
+offset_right = 256.0
+offset_bottom = 256.0
+level_name = "2"
+next_level_left = NodePath("../LevelIcon")
+next_level_right = NodePath("../LevelIcon3")
+
+[node name="LevelIcon3" parent="." node_paths=PackedStringArray("next_level_left", "next_level_right") instance=ExtResource("2_y180b")]
+offset_left = 320.0
+offset_top = 256.0
+offset_right = 384.0
+offset_bottom = 320.0
+level_name = "3"
+next_level_left = NodePath("../LevelIcon2")
+next_level_right = NodePath("../LevelIcon4")
+
+[node name="LevelIcon4" parent="." node_paths=PackedStringArray("next_level_left", "next_level_right") instance=ExtResource("2_y180b")]
+offset_left = 512.0
+offset_top = 256.0
+offset_right = 576.0
+offset_bottom = 320.0
+level_name = "4"
+next_level_left = NodePath("../LevelIcon3")
+next_level_right = NodePath("../LevelIcon5")
+
+[node name="LevelIcon5" parent="." node_paths=PackedStringArray("next_level_left") instance=ExtResource("2_y180b")]
+offset_left = 704.0
+offset_top = 256.0
+offset_right = 768.0
+offset_bottom = 320.0
+level_name = "5"
+next_level_left = NodePath("../LevelIcon4")
+
+[node name="playerIcon" parent="." instance=ExtResource("3_1kii7")]
+characterSkin = ExtResource("4_y180b")
+
+[node name="WordName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 8.0
+offset_right = 413.0
+offset_bottom = 31.0
+scale = Vector2(2.5, 2.5)
+text = "Mundo 3"

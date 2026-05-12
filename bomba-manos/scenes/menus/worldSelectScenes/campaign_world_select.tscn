@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://wyq2fculrhic"]
+
+[ext_resource type="Script" uid="uid://cv2yv030f321n" path="res://scripts/menus/worldSelect/campaign_world_select.gd" id="1_oqn5v"]
+[ext_resource type="PackedScene" uid="uid://8cojvq8c0nxq" path="res://scenes/menus/worldSelectScenes/world_icon.tscn" id="2_x64fe"]
+[ext_resource type="PackedScene" uid="uid://c3i3avv75txs4" path="res://scenes/menus/worldSelectScenes/player_icon.tscn" id="3_lhlb2"]
+[ext_resource type="PackedScene" uid="uid://mhuio1sn8das" path="res://scenes/menus/worldSelectScenes/campaign_level_select_01.tscn" id="3_x64fe"]
+[ext_resource type="PackedScene" uid="uid://o886kdk1rmgp" path="res://scenes/menus/worldSelectScenes/campaign_level_select_02.tscn" id="4_d48f2"]
+[ext_resource type="PackedScene" uid="uid://bxfq25mlua7ls" path="res://scenes/menus/worldSelectScenes/campaign_level_select_03.tscn" id="5_l5fjb"]
+[ext_resource type="PackedScene" uid="uid://bid0ssiobl60c" path="res://scenes/menus/worldSelectScenes/campaign_level_select_04.tscn" id="6_fw80g"]
+[ext_resource type="PackedScene" uid="uid://ckyjryauswv6o" path="res://scenes/menus/worldSelectScenes/campaign_level_select_05.tscn" id="7_cur5s"]
+
+[node name="CampaignWorldSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oqn5v")
+
+[node name="WorldIcon" parent="." instance=ExtResource("2_x64fe")]
+offset_left = 136.0
+offset_top = 200.0
+offset_right = 200.0
+offset_bottom = 264.0
+go_2_level_packed = ExtResource("3_x64fe")
+
+[node name="WorldIcon2" parent="." instance=ExtResource("2_x64fe")]
+offset_left = 288.0
+offset_top = 120.0
+offset_right = 352.0
+offset_bottom = 184.0
+world_index = 2
+go_2_level_packed = ExtResource("4_d48f2")
+
+[node name="WorldIcon3" parent="." instance=ExtResource("2_x64fe")]
+offset_left = 376.0
+offset_top = 320.0
+offset_right = 440.0
+offset_bottom = 384.0
+world_index = 3
+go_2_level_packed = ExtResource("5_l5fjb")
+
+[node name="WorldIcon4" parent="." instance=ExtResource("2_x64fe")]
+offset_left = 480.0
+offset_top = 184.0
+offset_right = 544.0
+offset_bottom = 248.0
+world_index = 4
+go_2_level_packed = ExtResource("6_fw80g")
+
+[node name="WorldIcon5" parent="." instance=ExtResource("2_x64fe")]
+offset_left = 680.0
+offset_top = 208.0
+offset_right = 744.0
+offset_bottom = 272.0
+world_index = 5
+go_2_level_packed = ExtResource("7_cur5s")
+
+[node name="playerIcon" parent="." instance=ExtResource("3_lhlb2")]
