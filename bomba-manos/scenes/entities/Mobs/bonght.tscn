@@ -538,6 +538,9 @@ animations = [{
 
 [node name="bonght" type="CharacterBody2D"]
 script = ExtResource("1_w3ol2")
+ia_ID = null
+iaMoveDelay = null
+smartChance = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xsjrv")

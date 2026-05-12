@@ -660,20 +660,38 @@ teleportTunel2 = NodePath("../../../objects/AllTeleports/TeleportTunel2")
 
 [node name="Borbocespa" parent="entities/Mobs" instance=ExtResource("16_le0l0")]
 position = Vector2(-160, -96)
+ia_ID = null
+iaMoveDelay = null
+smartChance = null
 
 [node name="Borbocespa2" parent="entities/Mobs" instance=ExtResource("16_le0l0")]
 position = Vector2(160, -80)
+ia_ID = null
+iaMoveDelay = null
+smartChance = null
 
 [node name="corubia" parent="entities/Mobs" instance=ExtResource("17_y54ud")]
 position = Vector2(144, -96)
+ia_ID = null
+iaMoveDelay = null
+smartChance = null
 
 [node name="corubia2" parent="entities/Mobs" instance=ExtResource("17_y54ud")]
 position = Vector2(-128, 64)
+ia_ID = null
+iaMoveDelay = null
+smartChance = null
 
 [node name="wizry" parent="entities/Mobs" instance=ExtResource("19_sotoo")]
+ia_ID = null
+iaMoveDelay = 0.7
+smartChance = null
 
 [node name="wizry2" parent="entities/Mobs" instance=ExtResource("19_sotoo")]
 position = Vector2(-160, 64)
+ia_ID = null
+iaMoveDelay = 0.7
+smartChance = null
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("21_ukbbt")

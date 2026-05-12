@@ -2,7 +2,9 @@ extends CharacterBody2D
 
 ## escrever ":" define o tipo da variável, pode usar := pra definir o tipo e valor ao mesmo tempo tbm
 @export var ia_ID := 0 ##permite usar um único script para o input de todos os jogadores
-@export var iaMoveSpeed := 50
+@export var iaMoveDelay := 0.8
+@export var smartChance := 1.0 # 0.0 = totalmente aleatório, 1.0 = sempre persegue
+var player := "res://scenes/entities/players/basePlayer.tscn"
 
 ## @onready define a var na hora que o node é inicializado
 @onready var animIaNode := $AnimatedSprite2D
@@ -14,34 +16,20 @@ extends CharacterBody2D
 
 var isIaAlive := true
 var canIaMove := true
-var iaMoveDelay := 0.8
 var inputMoveDirection
-var target # referência ao nó do jogador (opcional)
-var smartChance := 1.0 # 0.0 = totalmente aleatório, 1.0 = sempre persegue
-
 
 func _ready() -> void:
-	target = get_tree().get_first_node_in_group("players") # tenta achar o jogador na cena para perseguição
 	inputMoveDirection = _randomDirection() # escolhe uma direção inicial aleatória
-	#if isPlayerOnMenu == false:
-		#ia_ID = GlobalScript.selectedPlayer1
-		#GlobalScript.currentPlayers += 1               ###remove comment
-		#print(GlobalScript.currentPlayers)
-		#if ia_ID != GlobalScript.selectedPlayer1 and ia_ID != GlobalScript.selectedPlayer2:
-		#	queue_free()
 
 func _physics_process(delta: float) -> void:## roda a cada frame de física
-	inputMoveDirection = Vector2(0, 0) ##qual direcao e pra andar
-	
 	## checha input e se o raycast ta colidindo pra poder andar
-	if isIaAlive == true and canIaMove == true:
+	if isIaAlive and canIaMove:
 		_decideDirection()
 		if inputMoveDirection != Vector2(0, 0):
 			_playAnim()
 			
 	if inputMoveDirection == Vector2(0, 0) and canIaMove and isIaAlive:
 		animIaNode.stop()
-	move_and_slide() ##built-in function that handles movement, some collisions etc
 
 # -------------------------------------------------------
 # Lógica de decisão
@@ -61,7 +49,7 @@ func _decideDirection() -> void:
 
 func _chooseNewDirection() -> Vector2:
 	# com smartChance de probabilidade, tenta se aproximar do jogador
-	if target and randf() < smartChance:
+	if player and randf() < smartChance:
 		var preferred = _directionTowardsTarget()
 		var ray = _raycastFor(preferred)
 		if ray and not ray.is_colliding():
@@ -75,7 +63,7 @@ func _chooseNewDirection() -> Vector2:
 	return free[0]
 
 func _directionTowardsTarget() -> Vector2:
-	var diff: Vector2 = target.position - position # prefere o eixo com maior diferença
+	var diff: Vector2 = player.position - position # prefere o eixo com maior diferença
 	if abs(diff.x) >= abs(diff.y):
 		return Vector2(sign(diff.x), 0)
 	else:

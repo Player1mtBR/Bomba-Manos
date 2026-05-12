@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 ## escrever ":" define o tipo da variável, pode usar := pra definir o tipo e valor ao mesmo tempo tbm
 @export var playerID := 0 ##permite usar um único script para o input de todos os jogadores
-@export var playerMoveSpeed := 50
 @export var isPlayerOnMenu := false
 @export var charSkin := SpriteFrames #test
 

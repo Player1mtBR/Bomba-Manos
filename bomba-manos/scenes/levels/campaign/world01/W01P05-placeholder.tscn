@@ -649,30 +649,57 @@ teleportTunel2 = NodePath("../../../objects/AllTeleports/TeleportTunel2")
 
 [node name="Borbocespa" parent="entities/Mobs" instance=ExtResource("16_5q1vy")]
 position = Vector2(-144, -96)
+ia_ID = null
+iaMoveDelay = null
+smartChance = null
 
 [node name="Borbocespa2" parent="entities/Mobs" instance=ExtResource("16_5q1vy")]
 position = Vector2(160, 48)
+ia_ID = null
+iaMoveDelay = null
+smartChance = null
 
 [node name="corubia" parent="entities/Mobs" instance=ExtResource("17_pj5pf")]
 position = Vector2(144, 64)
+ia_ID = null
+iaMoveDelay = null
+smartChance = null
 
 [node name="corubia2" parent="entities/Mobs" instance=ExtResource("17_pj5pf")]
 position = Vector2(-160, -80)
+ia_ID = null
+iaMoveDelay = null
+smartChance = null
 
 [node name="ameba" parent="entities/Mobs" instance=ExtResource("18_bd3r0")]
 position = Vector2(144, -96)
+ia_ID = null
+iaMoveDelay = null
+smartChance = null
 
 [node name="wizry" parent="entities/Mobs" instance=ExtResource("19_8clx8")]
 position = Vector2(160, -96)
+ia_ID = null
+iaMoveDelay = 0.7
+smartChance = null
 
 [node name="wizry2" parent="entities/Mobs" instance=ExtResource("19_8clx8")]
 position = Vector2(-144, 64)
+ia_ID = null
+iaMoveDelay = 0.7
+smartChance = null
 
 [node name="bonght" parent="entities/Mobs" instance=ExtResource("20_uuxcv")]
 position = Vector2(-160, 64)
+ia_ID = null
+iaMoveDelay = 0.6
+smartChance = null
 
 [node name="bonght2" parent="entities/Mobs" instance=ExtResource("20_uuxcv")]
 position = Vector2(160, 64)
+ia_ID = null
+iaMoveDelay = 0.6
+smartChance = null
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("21_3bxek")
@@ -755,3 +782,5 @@ horizontal_alignment = 1
 position = Vector2(296, -112)
 scale = Vector2(0.325, 0.325)
 texture = ExtResource("8_e0my4")
+
+[connection signal="ready" from="." to="entities/players/basePlayer02" method="_on_map_placeholder_forest_ready"]
