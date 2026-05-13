@@ -378,9 +378,6 @@ animations = [{
 
 [node name="corubia" type="CharacterBody2D"]
 script = ExtResource("1_0rmhj")
-ia_ID = null
-iaMoveDelay = null
-smartChance = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xsjrv")

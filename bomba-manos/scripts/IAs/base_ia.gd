@@ -1,69 +1,110 @@
 extends CharacterBody2D
 
-## escrever ":" define o tipo da variável, pode usar := pra definir o tipo e valor ao mesmo tempo tbm
-@export var ia_ID := 0 ##permite usar um único script para o input de todos os jogadores
+@export var ia_ID := 0
 @export var iaMoveDelay := 0.8
-@export var smartChance := 1.0 # 0.0 = totalmente aleatório, 1.0 = sempre persegue
-var player := "res://scenes/entities/players/basePlayer.tscn"
+@export var smartChance := 1.0
+@export var passosParaSugerir := 3
 
-## @onready define a var na hora que o node é inicializado
-@onready var animIaNode := $AnimatedSprite2D
-##raycasts
-@onready var raycastUp := $collisionRaycasts/up
-@onready var raycastDown := $collisionRaycasts/down
-@onready var raycastLeft := $collisionRaycasts/left
+@onready var animIaNode   := $AnimatedSprite2D
+@onready var raycastUp    := $collisionRaycasts/up
+@onready var raycastDown  := $collisionRaycasts/down
+@onready var raycastLeft  := $collisionRaycasts/left
 @onready var raycastRight := $collisionRaycasts/right
 
-var isIaAlive := true
-var canIaMove := true
-var inputMoveDirection
+var isIaAlive  := true
+var canIaMove  := true
+var inputMoveDirection : Vector2
+
+var playerNode
+var playerPosition    := Vector2()
+var lastPassosChecked := 0
+
+# --- controle de reavaliação ---
+var passosDaIa        := 0   # quantos passos a IA já deu
+var passosParaRever   := 2   # a cada X passos da IA, reavalia direção mesmo sem parede
 
 func _ready() -> void:
-	inputMoveDirection = _randomDirection() # escolhe uma direção inicial aleatória
+	playerNode = $"../../players/basePlayer02"
+	if playerNode:
+		playerPosition = playerNode.global_position
+	inputMoveDirection = _randomDirection()
 
-func _physics_process(delta: float) -> void:## roda a cada frame de física
-	## checha input e se o raycast ta colidindo pra poder andar
+# -------------------------------------------------------
+# Atualiza alvo com base nos passos do player
+# -------------------------------------------------------
+func _process(_delta: float) -> void:
+	if not is_instance_valid(playerNode):
+		return
+
+	var passosAtuais : int = playerNode.getPlayerPassos()
+	if passosAtuais - lastPassosChecked >= passosParaSugerir:
+		lastPassosChecked = passosAtuais
+		playerPosition = playerNode.global_position
+
+# -------------------------------------------------------
+# Física
+# -------------------------------------------------------
+func _physics_process(_delta: float) -> void:
 	if isIaAlive and canIaMove:
 		_decideDirection()
 		if inputMoveDirection != Vector2(0, 0):
 			_playAnim()
-			
+
 	if inputMoveDirection == Vector2(0, 0) and canIaMove and isIaAlive:
 		animIaNode.stop()
 
 # -------------------------------------------------------
-# Lógica de decisão
+# Lógica de decisão — agora reavalia periodicamente
 # -------------------------------------------------------
 func _decideDirection() -> void:
-	var rayForDir = _raycastFor(inputMoveDirection)
+	var ray = _raycastFor(inputMoveDirection)
+	var bloqueado = ray == null or ray.is_colliding()
 
-	# se a direção atual está livre, continua nela
-	if rayForDir and not rayForDir.is_colliding():
-		return
-
-	# bateu em algo — escolhe nova direção
-	inputMoveDirection = _chooseNewDirection()
-	var rayNew = _raycastFor(inputMoveDirection)
-	if rayNew and not rayNew.is_colliding():
-		return
+	# força reavaliação se bateu em parede OU se já andou X passos
+	if bloqueado or passosDaIa >= passosParaRever:
+		passosDaIa = 0
+		inputMoveDirection = _chooseNewDirection()
 
 func _chooseNewDirection() -> Vector2:
-	# com smartChance de probabilidade, tenta se aproximar do jogador
-	if player and randf() < smartChance:
-		var preferred = _directionTowardsTarget()
+	# --- tenta a direção ideal em direção ao player ---
+	if playerNode and randf() < smartChance:
+		var preferred = _directionTowards(playerPosition)
+
+		# evita continuar na mesma direção se o player está em outra
 		var ray = _raycastFor(preferred)
 		if ray and not ray.is_colliding():
 			return preferred
 
-	# caso contrário, escolhe aleatório entre as direções livres
-	var free = _freeDirections()
-	if free.is_empty():
-		return inputMoveDirection # preso, mantém
-	free.shuffle()
-	return free[0]
+		# direção ideal bloqueada — tenta o eixo perpendicular
+		var perp = _perpendicularDirections(preferred)
+		for d in perp:
+			var r = _raycastFor(d)
+			if r and not r.is_colliding():
+				return d
 
-func _directionTowardsTarget() -> Vector2:
-	var diff: Vector2 = player.position - position # prefere o eixo com maior diferença
+	# --- fallback aleatório entre direções livres ---
+	var free = _freeDirections()
+	# prefere não voltar atrás se tiver outra opção
+	var semVoltar = free.filter(func(d): return d != -inputMoveDirection)
+	if not semVoltar.is_empty():
+		semVoltar.shuffle()
+		return semVoltar[0]
+
+	if not free.is_empty():
+		free.shuffle()
+		return free[0]
+
+	return inputMoveDirection  # preso, mantém
+
+# retorna as duas direções perpendiculares a uma dada direção
+func _perpendicularDirections(dir: Vector2) -> Array:
+	if dir.x != 0:  # vinha horizontal → tenta vertical
+		return [Vector2(0, -1), Vector2(0, 1)]
+	else:           # vinha vertical → tenta horizontal
+		return [Vector2(-1, 0), Vector2(1, 0)]
+
+func _directionTowards(alvo: Vector2) -> Vector2:
+	var diff := alvo - position
 	if abs(diff.x) >= abs(diff.y):
 		return Vector2(sign(diff.x), 0)
 	else:
@@ -91,23 +132,22 @@ func _raycastFor(dir: Vector2):
 	return null
 
 func _playAnim() -> void:
-	if inputMoveDirection == Vector2(0, -1): animIaNode.play("up")
+	if   inputMoveDirection == Vector2(0, -1): animIaNode.play("up")
 	elif inputMoveDirection == Vector2(0,  1): animIaNode.play("down")
 	elif inputMoveDirection == Vector2(-1, 0): animIaNode.play("left")
 	elif inputMoveDirection == Vector2(1,  0): animIaNode.play("right")
-	if inputMoveDirection:
-		if canIaMove:
-			canIaMove = false
-			var moveTween = create_tween()
-			moveTween.tween_property(self, "position", position + inputMoveDirection * 16, iaMoveDelay)
-			await get_tree().create_timer(iaMoveDelay).timeout
-			
-			canIaMove = true
-			
+
+	if inputMoveDirection and canIaMove:
+		canIaMove = false
+		var moveTween = create_tween()
+		moveTween.tween_property(self, "position", position + inputMoveDirection * 16, iaMoveDelay)
+		await get_tree().create_timer(iaMoveDelay).timeout
+		passosDaIa += 1   # conta passo concluído
+		canIaMove = true
+
 func killIa():
 	isIaAlive = false
 	animIaNode.play("die")
-		
 	await animIaNode.animation_finished
 	queue_free()
 

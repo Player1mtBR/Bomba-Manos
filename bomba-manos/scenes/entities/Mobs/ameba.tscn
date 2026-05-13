@@ -255,9 +255,6 @@ animations = [{
 
 [node name="ameba" type="CharacterBody2D"]
 script = ExtResource("1_vulh0")
-ia_ID = null
-iaMoveDelay = null
-smartChance = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xsjrv")
