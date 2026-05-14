@@ -664,15 +664,19 @@ position = Vector2(144, -96)
 
 [node name="wizry" parent="entities/Mobs" instance=ExtResource("19_8clx8")]
 position = Vector2(160, -96)
+iaMoveDelay = 0.7
 
 [node name="wizry2" parent="entities/Mobs" instance=ExtResource("19_8clx8")]
 position = Vector2(-144, 64)
+iaMoveDelay = 0.7
 
 [node name="bonght" parent="entities/Mobs" instance=ExtResource("20_uuxcv")]
 position = Vector2(-160, 64)
+iaMoveDelay = 0.6
 
 [node name="bonght2" parent="entities/Mobs" instance=ExtResource("20_uuxcv")]
 position = Vector2(160, 64)
+iaMoveDelay = 0.6
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("21_3bxek")
@@ -755,3 +759,5 @@ horizontal_alignment = 1
 position = Vector2(296, -112)
 scale = Vector2(0.325, 0.325)
 texture = ExtResource("8_e0my4")
+
+[connection signal="ready" from="." to="entities/players/basePlayer02" method="_on_map_placeholder_forest_ready"]

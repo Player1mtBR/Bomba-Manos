@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 ## escrever ":" define o tipo da variável, pode usar := pra definir o tipo e valor ao mesmo tempo tbm
 @export var playerID := 0 ##permite usar um único script para o input de todos os jogadores
-@export var playerMoveSpeed := 50
 @export var isPlayerOnMenu := false
 @export var charSkin := SpriteFrames #test
 
@@ -23,6 +22,7 @@ var playerMoveDelay := 0.3
 
 var maxBombasAtOnce := 2
 var placedBombas := 0
+var passos := 0 
 
 var inputMoveDirection
 
@@ -48,6 +48,18 @@ func _process(delta: float) -> void:
 		#print("placed bombas: ", placedBombas)
 		await get_tree().create_timer(3.0).timeout ## cria um novo timer e aguarda o sinal de quando acaba o timer
 		placedBombas -= 1
+		
+	if Input.is_action_just_pressed("p"+str(playerID)+"_bomb") and placedBombas < maxBombasAtOnce and wonMatch == false and isPlayerAlive == true and isPlayerOnMenu == false:
+		placeBombaNode.placeBombOnMap(1, playerID) ##puxa a funcao que está no node
+		placedBombas += 1
+		#GlobalScript.manelBombasCount += 1 ##contador Manel ###REMOVE COMMENT FOR MULTIPLAYER
+		#print("placed bombas: ", placedBombas)
+		await get_tree().create_timer(3.0).timeout ## cria um novo timer e aguarda o sinal de quando acaba o timer
+		placedBombas -= 1
+		
+
+func getPlayerPassos():
+	return passos
 
 func _physics_process(delta: float) -> void:## roda a cada frame de física
 	inputMoveDirection = Vector2(0, 0) ##qual direcao e pra andar
@@ -82,10 +94,6 @@ func _physics_process(delta: float) -> void:## roda a cada frame de física
 	if inputMoveDirection == Vector2(0, 0) and canPlayerMove and isPlayerAlive and isPlayerOnMenu == false:
 		animPlayerNode.stop()
 	
-	
-	
-	move_and_slide() ##built-in function that handles movement, some collisions etc
-	
 	if isPlayerOnMenu:
 		animPlayerNode.play("rotate")
 
@@ -96,10 +104,9 @@ func movePlayer(): ##tween vai levar de um valor a outro de forma gradual
 			var moveTween = create_tween()
 			moveTween.tween_property(self, "position", position + inputMoveDirection * 16, playerMoveDelay)
 			await get_tree().create_timer(playerMoveDelay).timeout
-			
+			passos += 1
 			canPlayerMove = true
 			
-
 func killPlayer():
 	GlobalScript.currentPlayers -= 1
 	if GlobalScript.currentPlayers > 1:
@@ -131,9 +138,6 @@ func victory():
 	#	GlobalScript.removePointFromPlayer(playerID)
 	#	print(GlobalScript.playerScores)
 
-	
-
-
 @export var teleportTunel: Node2D  
 @export var teleportTunel2: Node2D
 func teleport(id_tunel: int) -> void:
@@ -157,8 +161,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		killPlayer()
 
 	if area.name == "teleportTunel":
-		print("Entrou no túnel!", area.name)
 		teleport(1)
 	elif area.name == "teleportTunel2":
-		print("Entrou no túnel!", area.name)
 		teleport(2)
+
+
+	

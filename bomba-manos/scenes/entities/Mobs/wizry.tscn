@@ -247,6 +247,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_loye4")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_i4oxy")
 }, {
 "duration": 1.0,
@@ -254,9 +257,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fil2v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_loye4")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l3dol")
@@ -305,6 +305,7 @@ animations = [{
 
 [node name="wizry" type="CharacterBody2D"]
 script = ExtResource("1_u312f")
+passosParaSugerir = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xsjrv")
@@ -335,6 +336,7 @@ collision_mask = 17
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_w3p8x")
-animation = &"up"
+animation = &"left"
+frame_progress = 0.709903
 
 [connection signal="area_entered" from="Mob" to="." method="_on_area_2d_area_entered"]

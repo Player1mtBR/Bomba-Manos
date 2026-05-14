@@ -17,7 +17,7 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_55naq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(0, -32)
 sprite_frames = ExtResource("2_ov6aw")
 
 [node name="teleportTunel2" type="Area2D" parent="."]

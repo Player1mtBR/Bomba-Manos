@@ -49,3 +49,5 @@ func addPoint2Player(idNum):
 func removePointFromPlayer(idNum):
 	playerScores[idNum] -= 1
 	print(playerScores)
+	
+	

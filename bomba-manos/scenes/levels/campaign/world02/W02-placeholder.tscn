@@ -1268,3 +1268,7 @@ L
 
 (0)"
 horizontal_alignment = 1
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 0.435294)
+polygon = PackedVector2Array(-176, -112, 168, -112, 168, 88, -176, 88)

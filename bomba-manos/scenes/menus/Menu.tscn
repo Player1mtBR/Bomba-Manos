@@ -17,8 +17,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("3_11y2r")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -440.0
