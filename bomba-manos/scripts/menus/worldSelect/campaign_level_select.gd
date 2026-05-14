@@ -10,21 +10,25 @@ func _ready() -> void:
 	$playerIcon.global_position = currentLevel.global_position
 	
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("menu_left") and currentLevel.next_level_left:
-		currentLevel = currentLevel.next_level_left
+	if event.is_action_pressed("menu_left") and currentLevel.nextLevelLeft:
+		currentLevel = currentLevel.nextLevelLeft
 		$playerIcon.global_position = currentLevel.global_position
 		
-	if event.is_action_pressed("menu_right") and currentLevel.next_level_right:
-		currentLevel = currentLevel.next_level_right
+	if event.is_action_pressed("menu_right") and currentLevel.nextLevelRight:
+		currentLevel = currentLevel.nextLevelRight
 		$playerIcon.global_position = currentLevel.global_position
 		
-	if event.is_action_pressed("menu_up") and currentLevel.next_level_up:
-		currentLevel = currentLevel.next_level_up
+	if event.is_action_pressed("menu_up") and currentLevel.nextLevelUp:
+		currentLevel = currentLevel.nextLevelUp
 		$playerIcon.global_position = currentLevel.global_position
 		
-	if event.is_action_pressed("menu_down") and currentLevel.next_level_down:
-		currentLevel = currentLevel.next_level_down
+	if event.is_action_pressed("menu_down") and currentLevel.nextLevelDown:
+		currentLevel = currentLevel.nextLevelDown
 		$playerIcon.global_position = currentLevel.global_position
+		
+	if event.is_action_pressed("menu_accept"):
+		if currentLevel.level2Load:
+			Loader.loadingScreen2Scene(currentLevel.level2Load)
 		
 	if event.is_action_pressed("menu_cancel"):
 		get_tree().get_root().add_child(return2WorldSelect)

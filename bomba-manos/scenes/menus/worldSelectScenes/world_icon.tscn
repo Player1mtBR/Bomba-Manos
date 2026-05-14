@@ -11,6 +11,7 @@ offset_right = 64.0
 offset_bottom = 64.0
 pivot_offset = Vector2(32, 32)
 script = ExtResource("1_423lh")
+worldIndex = null
 
 [node name="WorldLabel" type="Label" parent="."]
 layout_mode = 0
@@ -18,7 +19,7 @@ offset_left = -12.0
 offset_top = -24.0
 offset_right = 76.0
 offset_bottom = -1.0
-text = "(Mundo 01)"
+text = "(Mundo 0<null>)"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]

@@ -22,10 +22,10 @@ func _input(event: InputEvent) -> void:
 		
 		
 	if event.is_action_pressed("menu_accept"):
-		if worldList[currentWorld].go_2_level:
-			worldList[currentWorld].go_2_level.return2WorldSelect = self
+		if worldList[currentWorld].go2Level:
+			worldList[currentWorld].go2Level.return2WorldSelect = self
 			#loading shenanigans
-			get_tree().get_root().add_child(worldList[currentWorld].go_2_level)
-			get_tree().current_scene = worldList[currentWorld].go_2_level
+			get_tree().get_root().add_child(worldList[currentWorld].go2Level)
+			get_tree().current_scene = worldList[currentWorld].go2Level
 			get_tree().get_root().remove_child(self)
 			

@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj21dxxqeeufg"]
+
+[ext_resource type="Script" uid="uid://hx1q14ialw20" path="res://scripts/menus/main_menu.gd" id="1_xqga4"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_xqga4")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Buttons" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Buttons"]
+custom_minimum_size = Vector2(94.72, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.36
+offset_top = -15.5
+offset_right = 47.36
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Campanha" type="Button" parent="Control/Buttons/VBoxContainer"]
+layout_mode = 2
+text = "Campanha"
+
+[node name="Versus" type="Button" parent="Control/Buttons/VBoxContainer"]
+layout_mode = 2
+text = "Versus"
+
+[node name="Configurações" type="Button" parent="Control/Buttons/VBoxContainer"]
+layout_mode = 2
+text = "Configurações"
+
+[node name="Créditos" type="Button" parent="Control/Buttons/VBoxContainer"]
+layout_mode = 2
+text = "Créditos"
+
+[node name="Sair" type="Button" parent="Control/Buttons/VBoxContainer"]
+layout_mode = 2
+text = "Sair"
+
+[connection signal="pressed" from="Control/Buttons/VBoxContainer/Campanha" to="." method="_on_campanha_pressed"]
