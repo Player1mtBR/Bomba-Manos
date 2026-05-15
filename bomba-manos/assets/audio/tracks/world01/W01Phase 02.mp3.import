@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dx5nvbvai4npy"
+path="res://.godot/imported/W01Phase 02.mp3-872e0f39aaa7a555ba6e2322d7b486ed.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/tracks/world01/W01Phase 02.mp3"
+dest_files=["res://.godot/imported/W01Phase 02.mp3-872e0f39aaa7a555ba6e2322d7b486ed.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -15,8 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://c0hokdg4uk5yy" path="res://scenes/objects/teleportTunel2.tscn" id="13_tcsbx"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="14_vpl86"]
 [ext_resource type="SpriteFrames" uid="uid://dnwsmvk3wpfgx" path="res://assets/res/spriteframes/ureiaman-Sprite-Frames.tres" id="15_xh3vc"]
-[ext_resource type="AudioStream" uid="uid://3ltw3qe7xh3" path="res://assets/audio/tracks/PokémonHeartGold&SoulSilver-GymLeader&EliteFourBattleMusic.mp3" id="17_4oim1"]
 [ext_resource type="PackedScene" uid="uid://cbwhqu6sa22uf" path="res://scenes/entities/Mobs/World_2/corubia.tscn" id="17_d3347"]
+[ext_resource type="AudioStream" uid="uid://dx5nvbvai4npy" path="res://assets/audio/tracks/world01/W01Phase 02.mp3" id="18_43xto"]
 [ext_resource type="PackedScene" uid="uid://jqkiby8fkuil" path="res://scenes/entities/Mobs/World_2/ameba.tscn" id="18_qtwlu"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="18_tt8ok"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="19_yrbbd"]
@@ -671,8 +671,9 @@ position = Vector2(-160, -96)
 [node name="ameba2" parent="entities/Mobs" instance=ExtResource("18_qtwlu")]
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("17_4oim1")
+stream = ExtResource("18_43xto")
 autoplay = true
+parameters/looping = true
 
 [node name="mainCamera" parent="." instance=ExtResource("18_tt8ok")]
 position = Vector2(0, -44)

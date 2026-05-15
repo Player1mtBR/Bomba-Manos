@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://wyq2fculrhic"]
+[gd_scene load_steps=10 format=3 uid="uid://wyq2fculrhic"]
 
 [ext_resource type="Script" uid="uid://cv2yv030f321n" path="res://scripts/menus/worldSelect/campaign_world_select.gd" id="1_oqn5v"]
 [ext_resource type="PackedScene" uid="uid://8cojvq8c0nxq" path="res://scenes/menus/worldSelectScenes/world_icon.tscn" id="2_x64fe"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bxfq25mlua7ls" path="res://scenes/menus/worldSelectScenes/campaign_level_select_03.tscn" id="5_l5fjb"]
 [ext_resource type="PackedScene" uid="uid://bid0ssiobl60c" path="res://scenes/menus/worldSelectScenes/campaign_level_select_04.tscn" id="6_fw80g"]
 [ext_resource type="PackedScene" uid="uid://ckyjryauswv6o" path="res://scenes/menus/worldSelectScenes/campaign_level_select_05.tscn" id="7_cur5s"]
+[ext_resource type="AudioStream" uid="uid://c2spce1kd8xif" path="res://assets/audio/tracks/Space....mp3" id="9_l5fjb"]
 
 [node name="CampaignWorldSelect" type="Control"]
 layout_mode = 3
@@ -59,3 +60,7 @@ worldIndex = 5
 go2LevelPacked = ExtResource("7_cur5s")
 
 [node name="playerIcon" parent="." instance=ExtResource("3_lhlb2")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_l5fjb")
+autoplay = true
