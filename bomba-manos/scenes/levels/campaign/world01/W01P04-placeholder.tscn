@@ -17,8 +17,8 @@
 [ext_resource type="SpriteFrames" uid="uid://dnwsmvk3wpfgx" path="res://assets/res/spriteframes/ureiaman-Sprite-Frames.tres" id="15_0eyu6"]
 [ext_resource type="PackedScene" uid="uid://og2qdp100kqe" path="res://scenes/entities/Mobs/World_2/borbocespa.tscn" id="16_le0l0"]
 [ext_resource type="PackedScene" uid="uid://cbwhqu6sa22uf" path="res://scenes/entities/Mobs/World_2/corubia.tscn" id="17_y54ud"]
+[ext_resource type="AudioStream" uid="uid://2234ouivlgkm" path="res://assets/audio/tracks/world01/W01Phase 04.mp3" id="19_o73as"]
 [ext_resource type="PackedScene" uid="uid://bfaodin2rks4j" path="res://scenes/entities/Mobs/World_2/wizry.tscn" id="19_sotoo"]
-[ext_resource type="AudioStream" uid="uid://3ltw3qe7xh3" path="res://assets/audio/tracks/PokémonHeartGold&SoulSilver-GymLeader&EliteFourBattleMusic.mp3" id="21_ukbbt"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="22_rhv7f"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="23_jia8v"]
 [ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="24_t7xr0"]
@@ -694,8 +694,9 @@ iaMoveDelay = 0.7
 smartChance = null
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("21_ukbbt")
+stream = ExtResource("19_o73as")
 autoplay = true
+parameters/looping = true
 
 [node name="mainCamera" parent="." instance=ExtResource("22_rhv7f")]
 position = Vector2(0, -44)
