@@ -1,8 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://8cojvq8c0nxq"]
+[gd_scene load_steps=4 format=3 uid="uid://8cojvq8c0nxq"]
 
 [ext_resource type="Script" uid="uid://bpj3shtpebtdy" path="res://scripts/menus/worldSelect/world_icon.gd" id="1_423lh"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p65gg"]
+[ext_resource type="PackedScene" uid="uid://mhuio1sn8das" path="res://scenes/menus/worldSelectScenes/campaign_level_select_01.tscn" id="2_13mvj"]
+[ext_resource type="Texture2D" uid="uid://c02aiiewo0clu" path="res://assets/sprites/levels/campaign/world01/WorldPixelArt.png" id="3_igpti"]
 
 [node name="WorldIcon" type="Control"]
 layout_mode = 3
@@ -11,7 +11,7 @@ offset_right = 64.0
 offset_bottom = 64.0
 pivot_offset = Vector2(32, 32)
 script = ExtResource("1_423lh")
-worldIndex = null
+go2LevelPacked = ExtResource("2_13mvj")
 
 [node name="WorldLabel" type="Label" parent="."]
 layout_mode = 0
@@ -19,11 +19,11 @@ offset_left = -12.0
 offset_top = -24.0
 offset_right = 76.0
 offset_bottom = -1.0
-text = "(Mundo 0<null>)"
+text = "(Mundo 01)"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
-texture = SubResource("PlaceholderTexture2D_p65gg")
+texture = ExtResource("3_igpti")

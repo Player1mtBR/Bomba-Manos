@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://wyq2fculrhic"]
+[gd_scene load_steps=9 format=3 uid="uid://wyq2fculrhic"]
 
 [ext_resource type="Script" uid="uid://cv2yv030f321n" path="res://scripts/menus/worldSelect/campaign_world_select.gd" id="1_oqn5v"]
 [ext_resource type="PackedScene" uid="uid://8cojvq8c0nxq" path="res://scenes/menus/worldSelectScenes/world_icon.tscn" id="2_x64fe"]
 [ext_resource type="PackedScene" uid="uid://c3i3avv75txs4" path="res://scenes/menus/worldSelectScenes/player_icon.tscn" id="3_lhlb2"]
-[ext_resource type="PackedScene" uid="uid://mhuio1sn8das" path="res://scenes/menus/worldSelectScenes/campaign_level_select_01.tscn" id="3_x64fe"]
 [ext_resource type="PackedScene" uid="uid://o886kdk1rmgp" path="res://scenes/menus/worldSelectScenes/campaign_level_select_02.tscn" id="4_d48f2"]
 [ext_resource type="PackedScene" uid="uid://bxfq25mlua7ls" path="res://scenes/menus/worldSelectScenes/campaign_level_select_03.tscn" id="5_l5fjb"]
 [ext_resource type="PackedScene" uid="uid://bid0ssiobl60c" path="res://scenes/menus/worldSelectScenes/campaign_level_select_04.tscn" id="6_fw80g"]
@@ -24,8 +23,6 @@ offset_left = 136.0
 offset_top = 200.0
 offset_right = 200.0
 offset_bottom = 264.0
-worldIndex = 1
-go2LevelPacked = ExtResource("3_x64fe")
 
 [node name="WorldIcon2" parent="." instance=ExtResource("2_x64fe")]
 offset_left = 288.0
