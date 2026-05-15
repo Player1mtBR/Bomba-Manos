@@ -1,0 +1,153 @@
+[gd_scene load_steps=14 format=3 uid="uid://dlsguo0n2gyrp"]
+
+[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scripts/IAs/base_ia.gd" id="1_4d0rs"]
+[ext_resource type="Texture2D" uid="uid://pjwspwvcswcp" path="res://assets/sprites/mobs_world_3/Sprite-bicho1.png" id="2_6kwg8"]
+[ext_resource type="Texture2D" uid="uid://bjl0ijt487i3a" path="res://assets/sprites/mobs_world_3/Sprite-bicho2.png" id="3_qgiih"]
+[ext_resource type="Texture2D" uid="uid://x15dfkcitwh5" path="res://assets/sprites/mobs_world_3/Sprite-bicho3.png" id="4_8jcgp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xsjrv"]
+radius = 72.0
+height = 144.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t5x8p"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyncq"]
+atlas = ExtResource("2_6kwg8")
+region = Rect2(0, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_geqpv"]
+atlas = ExtResource("2_6kwg8")
+region = Rect2(22, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_praj2"]
+atlas = ExtResource("3_qgiih")
+region = Rect2(0, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d0rs"]
+atlas = ExtResource("3_qgiih")
+region = Rect2(22, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0jqj"]
+atlas = ExtResource("4_8jcgp")
+region = Rect2(0, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obigv"]
+atlas = ExtResource("4_8jcgp")
+region = Rect2(22, 0, 22, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w3p8x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyncq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_geqpv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_praj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d0rs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0jqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obigv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_o0jqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obigv")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyncq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_praj2")
+}],
+"loop": true,
+"name": &"down",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyncq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_praj2")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyncq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_praj2")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_geqpv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d0rs")
+}],
+"loop": true,
+"name": &"up",
+"speed": 6.0
+}]
+
+[node name="bicho" type="CharacterBody2D"]
+script = ExtResource("1_4d0rs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_xsjrv")
+disabled = true
+
+[node name="Mob" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mob"]
+shape = SubResource("RectangleShape2D_t5x8p")
+
+[node name="collisionRaycasts" type="Node2D" parent="."]
+
+[node name="up" type="RayCast2D" parent="collisionRaycasts"]
+target_position = Vector2(0, -16)
+collision_mask = 17
+
+[node name="down" type="RayCast2D" parent="collisionRaycasts"]
+target_position = Vector2(0, 16)
+collision_mask = 17
+
+[node name="left" type="RayCast2D" parent="collisionRaycasts"]
+target_position = Vector2(-16, 0)
+collision_mask = 17
+
+[node name="right" type="RayCast2D" parent="collisionRaycasts"]
+target_position = Vector2(16, 0)
+collision_mask = 17
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w3p8x")
+
+[connection signal="area_entered" from="Mob" to="." method="_on_area_2d_area_entered"]

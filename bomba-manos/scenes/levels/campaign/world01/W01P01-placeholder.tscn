@@ -17,12 +17,12 @@
 [ext_resource type="SpriteFrames" uid="uid://dnwsmvk3wpfgx" path="res://assets/res/spriteframes/ureiaman-Sprite-Frames.tres" id="15_jvyfc"]
 [ext_resource type="AudioStream" uid="uid://3ltw3qe7xh3" path="res://assets/audio/tracks/PokémonHeartGold&SoulSilver-GymLeader&EliteFourBattleMusic.mp3" id="17_dwy2a"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="18_sjajx"]
-[ext_resource type="PackedScene" uid="uid://jqkiby8fkuil" path="res://scenes/entities/Mobs/ameba.tscn" id="19_bjx6k"]
+[ext_resource type="PackedScene" uid="uid://jqkiby8fkuil" path="res://scenes/entities/Mobs/World_2/ameba.tscn" id="19_bjx6k"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="19_ucnvu"]
 [ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="20_k57pv"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="21_alk81"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_01k7s"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8her5"]
 texture = ExtResource("7_0r8de")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -34,7 +34,7 @@ texture = ExtResource("7_0r8de")
 
 [sub_resource type="TileSet" id="TileSet_q7e64"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_01k7s")
+sources/1 = SubResource("TileSetAtlasSource_8her5")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lx53w"]
 texture = ExtResource("8_kbxcb")

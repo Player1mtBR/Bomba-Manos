@@ -15,11 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://c0hokdg4uk5yy" path="res://scenes/objects/teleportTunel2.tscn" id="13_qrkt0"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="14_r3uwk"]
 [ext_resource type="SpriteFrames" uid="uid://dnwsmvk3wpfgx" path="res://assets/res/spriteframes/ureiaman-Sprite-Frames.tres" id="15_ku1l6"]
-[ext_resource type="PackedScene" uid="uid://og2qdp100kqe" path="res://scenes/entities/Mobs/borbocespa.tscn" id="16_5q1vy"]
-[ext_resource type="PackedScene" uid="uid://cbwhqu6sa22uf" path="res://scenes/entities/Mobs/corubia.tscn" id="17_pj5pf"]
-[ext_resource type="PackedScene" uid="uid://jqkiby8fkuil" path="res://scenes/entities/Mobs/ameba.tscn" id="18_bd3r0"]
-[ext_resource type="PackedScene" uid="uid://bfaodin2rks4j" path="res://scenes/entities/Mobs/wizry.tscn" id="19_8clx8"]
-[ext_resource type="PackedScene" uid="uid://qv2f2ttexgkc" path="res://scenes/entities/Mobs/bonght.tscn" id="20_uuxcv"]
+[ext_resource type="PackedScene" uid="uid://og2qdp100kqe" path="res://scenes/entities/Mobs/World_2/borbocespa.tscn" id="16_5q1vy"]
+[ext_resource type="PackedScene" uid="uid://cbwhqu6sa22uf" path="res://scenes/entities/Mobs/World_2/corubia.tscn" id="17_pj5pf"]
+[ext_resource type="PackedScene" uid="uid://jqkiby8fkuil" path="res://scenes/entities/Mobs/World_2/ameba.tscn" id="18_bd3r0"]
+[ext_resource type="PackedScene" uid="uid://bfaodin2rks4j" path="res://scenes/entities/Mobs/World_2/wizry.tscn" id="19_8clx8"]
+[ext_resource type="PackedScene" uid="uid://qv2f2ttexgkc" path="res://scenes/entities/Mobs/World_2/bonght.tscn" id="20_uuxcv"]
 [ext_resource type="AudioStream" uid="uid://3ltw3qe7xh3" path="res://assets/audio/tracks/PokémonHeartGold&SoulSilver-GymLeader&EliteFourBattleMusic.mp3" id="21_3bxek"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="22_nwxrt"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="23_v4pca"]
@@ -649,9 +649,11 @@ teleportTunel2 = NodePath("../../../objects/AllTeleports/TeleportTunel2")
 
 [node name="Borbocespa" parent="entities/Mobs" instance=ExtResource("16_5q1vy")]
 position = Vector2(-144, -96)
+smartChance = 0.5
 
 [node name="Borbocespa2" parent="entities/Mobs" instance=ExtResource("16_5q1vy")]
 position = Vector2(160, 48)
+smartChance = 0.5
 
 [node name="corubia" parent="entities/Mobs" instance=ExtResource("17_pj5pf")]
 position = Vector2(144, 64)
@@ -661,22 +663,27 @@ position = Vector2(-160, -80)
 
 [node name="ameba" parent="entities/Mobs" instance=ExtResource("18_bd3r0")]
 position = Vector2(144, -96)
+smartChance = 0.5
 
 [node name="wizry" parent="entities/Mobs" instance=ExtResource("19_8clx8")]
 position = Vector2(160, -96)
 iaMoveDelay = 0.7
+passosParaSugerir = 3
 
 [node name="wizry2" parent="entities/Mobs" instance=ExtResource("19_8clx8")]
 position = Vector2(-144, 64)
 iaMoveDelay = 0.7
+passosParaSugerir = 3
 
 [node name="bonght" parent="entities/Mobs" instance=ExtResource("20_uuxcv")]
 position = Vector2(-160, 64)
 iaMoveDelay = 0.6
+passosParaSugerir = 3
 
 [node name="bonght2" parent="entities/Mobs" instance=ExtResource("20_uuxcv")]
 position = Vector2(160, 64)
 iaMoveDelay = 0.6
+passosParaSugerir = 3
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("21_3bxek")
