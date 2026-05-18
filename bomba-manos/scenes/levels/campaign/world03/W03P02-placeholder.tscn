@@ -1,24 +1,22 @@
-[gd_scene load_steps=24 format=4 uid="uid://c8owbepyobwjm"]
+[gd_scene load_steps=22 format=4 uid="uid://32w4g56vc6rp"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_ht0kv"]
 [ext_resource type="Texture2D" uid="uid://bmh7gbx4co7l3" path="res://assets/sprites/levels/campaign/world03/chão.png" id="2_6rlt1"]
-[ext_resource type="Texture2D" uid="uid://cra10pdk1dbj8" path="res://assets/sprites/levels/campaign/world03/RightWallLostWoods.png" id="3_577iv"]
+[ext_resource type="Texture2D" uid="uid://dw4hil17syrg0" path="res://assets/sprites/levels/campaign/world03/FRENTELostWoods.png" id="4_577iv"]
 [ext_resource type="Texture2D" uid="uid://b5ndgww7gucmk" path="res://assets/sprites/levels/campaign/world03/LeftWallLostWoods.png" id="4_m8we0"]
 [ext_resource type="Texture2D" uid="uid://dfj6jigttkb7a" path="res://assets/sprites/levels/campaign/world03/muro7.png" id="5_cyfb6"]
 [ext_resource type="PackedScene" uid="uid://br4aq80htq6s0" path="res://scenes/objects/barril_block.tscn" id="6_sj3u4"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="7_bpvqd"]
 [ext_resource type="SpriteFrames" uid="uid://cdjt7gy7aei07" path="res://assets/res/spriteframes/rangerman-Sprite-Frames.tres" id="8_0u5qd"]
-[ext_resource type="PackedScene" uid="uid://bfd4ctvul1ngv" path="res://scenes/entities/Mobs/World_3/bruxa.tscn" id="9_bp2eq"]
 [ext_resource type="PackedScene" uid="uid://b63d186w7vqbn" path="res://scenes/entities/Mobs/World_3/skull.tscn" id="10_on052"]
 [ext_resource type="PackedScene" uid="uid://du7ge0tpaxnas" path="res://scenes/entities/Mobs/World_3/avessogob.tscn" id="11_p264e"]
-[ext_resource type="PackedScene" uid="uid://dkf84bm3n6pwv" path="res://scenes/entities/Mobs/World_3/assombro.tscn" id="12_48ric"]
-[ext_resource type="PackedScene" uid="uid://dlsguo0n2gyrp" path="res://scenes/entities/Mobs/World_3/bicho.tscn" id="13_jv452"]
 [ext_resource type="AudioStream" uid="uid://3ltw3qe7xh3" path="res://assets/audio/tracks/PokémonHeartGold&SoulSilver-GymLeader&EliteFourBattleMusic.mp3" id="14_a5b0a"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="15_ard0a"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="16_cq23i"]
 [ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="17_tjb8y"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="18_few6f"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="19_u6pfp"]
+[ext_resource type="Texture2D" uid="uid://b6t0qbecvhp4k" path="res://assets/sprites/levels/campaign/world03/LostWoodsCorner.png" id="21_m8we0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lx53w"]
 texture = ExtResource("5_cyfb6")
@@ -58,22 +56,39 @@ position = Vector2(0, -16)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_6rlt1")
 
-[node name="esquerdawall" type="Sprite2D" parent="environment/mapWalls"]
-position = Vector2(192, -43.085)
-scale = Vector2(0.322, 0.27914)
-texture = ExtResource("3_577iv")
-
 [node name="frentewall" type="Sprite2D" parent="environment/mapWalls"]
 z_index = 1
-position = Vector2(-1.30629, -138.848)
-rotation = 4.71239
-scale = Vector2(0.356736, 0.423372)
-texture = ExtResource("3_577iv")
+position = Vector2(0.676143, -150)
+rotation = 3.14159
+scale = Vector2(0.28021, 0.307206)
+texture = ExtResource("4_577iv")
+flip_v = true
 
 [node name="direitawall" type="Sprite2D" parent="environment/mapWalls"]
-position = Vector2(-194.815, -43.3056)
-scale = Vector2(0.355915, 0.278647)
+position = Vector2(-203, -44)
+scale = Vector2(0.429085, 0.278647)
 texture = ExtResource("4_m8we0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="environment/mapWalls"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-203, -139)
+scale = Vector2(0.285351, 0.287999)
+texture = ExtResource("21_m8we0")
+flip_h = true
+
+[node name="direitawall2" type="Sprite2D" parent="environment/mapWalls"]
+position = Vector2(203, -45)
+scale = Vector2(0.429085, 0.278647)
+texture = ExtResource("4_m8we0")
+flip_h = true
+
+[node name="Sprite2D" type="Sprite2D" parent="environment/mapWalls"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(203, -139)
+scale = Vector2(0.285349, 0.291153)
+texture = ExtResource("21_m8we0")
 
 [node name="spawnSomething" type="Node2D" parent="."]
 
@@ -228,9 +243,6 @@ position = Vector2(-48, 64)
 [node name="BreakableBlock30" parent="objects/AllBricks" instance=ExtResource("6_sj3u4")]
 position = Vector2(-96, 16)
 
-[node name="BreakableBlock36" parent="objects/AllBricks" instance=ExtResource("6_sj3u4")]
-position = Vector2(0, 32)
-
 [node name="BreakableBlock37" parent="objects/AllBricks" instance=ExtResource("6_sj3u4")]
 position = Vector2(0, -48)
 
@@ -240,10 +252,11 @@ position = Vector2(0, -32)
 [node name="BreakableBlock39" parent="objects/AllBricks" instance=ExtResource("6_sj3u4")]
 position = Vector2(0, -16)
 
-[node name="BreakableBlock42" parent="objects/AllBricks" instance=ExtResource("6_sj3u4")]
-position = Vector2(0, -64)
-
 [node name="BreakableBlock43" parent="objects/AllBricks" instance=ExtResource("6_sj3u4")]
+position = Vector2(0, 1)
+
+[node name="BreakableBlock" parent="objects/AllBricks/BreakableBlock43" instance=ExtResource("6_sj3u4")]
+position = Vector2(-160, -48)
 
 [node name="BreakableBlock44" parent="objects/AllBricks" instance=ExtResource("6_sj3u4")]
 position = Vector2(0, 16)
@@ -453,7 +466,7 @@ position = Vector2(-112, 0)
 position = Vector2(-80, 0)
 
 [node name="BreakableBlock145" parent="objects/AllBricks" instance=ExtResource("6_sj3u4")]
-position = Vector2(-16, 0)
+position = Vector2(0, -64)
 
 [node name="BreakableBlock146" parent="objects/AllBricks" instance=ExtResource("6_sj3u4")]
 position = Vector2(-48, 0)
@@ -569,8 +582,10 @@ position = Vector2(160, 0)
 [node name="BreakableBlock167" parent="objects/AllBricks" instance=ExtResource("6_sj3u4")]
 position = Vector2(160, 16)
 
+[node name="BreakableBlock19" parent="objects/AllBricks" instance=ExtResource("6_sj3u4")]
+position = Vector2(-160, -48)
+
 [node name="entities" type="Node2D" parent="."]
-visible = false
 
 [node name="players" type="Node2D" parent="entities"]
 
@@ -581,24 +596,33 @@ charSkin = ExtResource("8_0u5qd")
 
 [node name="Mobs" type="Node2D" parent="entities"]
 
-[node name="bruxa" parent="entities/Mobs" instance=ExtResource("9_bp2eq")]
-position = Vector2(-160, 64)
-iaMoveDelay = 0.5
-
 [node name="skull" parent="entities/Mobs" instance=ExtResource("10_on052")]
-position = Vector2(0, 64)
+position = Vector2(-160, -96)
+
+[node name="skull6" parent="entities/Mobs" instance=ExtResource("10_on052")]
+position = Vector2(-160, -96)
+
+[node name="skull2" parent="entities/Mobs" instance=ExtResource("10_on052")]
+position = Vector2(160, 64)
+
+[node name="skull8" parent="entities/Mobs" instance=ExtResource("10_on052")]
+position = Vector2(160, 64)
+
+[node name="skull3" parent="entities/Mobs" instance=ExtResource("10_on052")]
+position = Vector2(-144, 64)
+
+[node name="skull7" parent="entities/Mobs" instance=ExtResource("10_on052")]
+position = Vector2(-144, 64)
+
+[node name="skull4" parent="entities/Mobs" instance=ExtResource("10_on052")]
+position = Vector2(144, -96)
+
+[node name="skull5" parent="entities/Mobs" instance=ExtResource("10_on052")]
+position = Vector2(144, -96)
 
 [node name="avessogob" parent="entities/Mobs" instance=ExtResource("11_p264e")]
-position = Vector2(-160, -96)
+position = Vector2(0, 64)
 iaMoveDelay = 0.9
-
-[node name="assombro" parent="entities/Mobs" instance=ExtResource("12_48ric")]
-position = Vector2(160, -96)
-iaMoveDelay = 0.3
-
-[node name="bicho" parent="entities/Mobs" instance=ExtResource("13_jv452")]
-position = Vector2(160, 64)
-iaMoveDelay = 0.6
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_a5b0a")
@@ -608,7 +632,7 @@ autoplay = true
 position = Vector2(0, -44)
 
 [node name="bombaSfx" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(0, 8)
 stream = ExtResource("16_cq23i")
 max_polyphony = 2
 

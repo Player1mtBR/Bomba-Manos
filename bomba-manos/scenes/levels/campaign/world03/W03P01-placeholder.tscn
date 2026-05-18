@@ -1,16 +1,12 @@
-[gd_scene load_steps=24 format=4 uid="uid://d4j7l3uvdwopn"]
+[gd_scene load_steps=21 format=4 uid="uid://d4j7l3uvdwopn"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_lran8"]
+[ext_resource type="Texture2D" uid="uid://dw4hil17syrg0" path="res://assets/sprites/levels/campaign/world03/FRENTELostWoods.png" id="3_ljbgp"]
 [ext_resource type="PackedScene" uid="uid://br4aq80htq6s0" path="res://scenes/objects/barril_block.tscn" id="4_2c6ix"]
-[ext_resource type="Texture2D" uid="uid://cra10pdk1dbj8" path="res://assets/sprites/levels/campaign/world03/RightWallLostWoods.png" id="4_33v1t"]
 [ext_resource type="Texture2D" uid="uid://b5ndgww7gucmk" path="res://assets/sprites/levels/campaign/world03/LeftWallLostWoods.png" id="5_unpy3"]
 [ext_resource type="Texture2D" uid="uid://bmh7gbx4co7l3" path="res://assets/sprites/levels/campaign/world03/chão.png" id="6_ljbgp"]
-[ext_resource type="PackedScene" uid="uid://bfd4ctvul1ngv" path="res://scenes/entities/Mobs/World_3/bruxa.tscn" id="7_jgyab"]
 [ext_resource type="SpriteFrames" uid="uid://cdjt7gy7aei07" path="res://assets/res/spriteframes/rangerman-Sprite-Frames.tres" id="8_4di0p"]
-[ext_resource type="PackedScene" uid="uid://b63d186w7vqbn" path="res://scenes/entities/Mobs/World_3/skull.tscn" id="8_6vrrs"]
 [ext_resource type="PackedScene" uid="uid://du7ge0tpaxnas" path="res://scenes/entities/Mobs/World_3/avessogob.tscn" id="9_pbp7h"]
-[ext_resource type="PackedScene" uid="uid://dkf84bm3n6pwv" path="res://scenes/entities/Mobs/World_3/assombro.tscn" id="10_4di0p"]
-[ext_resource type="PackedScene" uid="uid://dlsguo0n2gyrp" path="res://scenes/entities/Mobs/World_3/bicho.tscn" id="11_ljbgp"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="13_jgyab"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="14_l4kwr"]
 [ext_resource type="AudioStream" uid="uid://3ltw3qe7xh3" path="res://assets/audio/tracks/PokémonHeartGold&SoulSilver-GymLeader&EliteFourBattleMusic.mp3" id="17_dxyuj"]
@@ -18,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="19_1oj76"]
 [ext_resource type="Texture2D" uid="uid://dfj6jigttkb7a" path="res://assets/sprites/levels/campaign/world03/muro7.png" id="19_4di0p"]
 [ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="20_d2lw7"]
+[ext_resource type="Texture2D" uid="uid://b6t0qbecvhp4k" path="res://assets/sprites/levels/campaign/world03/LostWoodsCorner.png" id="21_33v1t"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="21_xhe8u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lx53w"]
@@ -58,22 +55,39 @@ position = Vector2(0, -16)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("6_ljbgp")
 
-[node name="esquerdawall" type="Sprite2D" parent="environment/mapWalls"]
-position = Vector2(192, -43.085)
-scale = Vector2(0.322, 0.27914)
-texture = ExtResource("4_33v1t")
-
 [node name="frentewall" type="Sprite2D" parent="environment/mapWalls"]
 z_index = 1
-position = Vector2(-1.30629, -138.848)
-rotation = 4.71239
-scale = Vector2(0.356736, 0.423372)
-texture = ExtResource("4_33v1t")
+position = Vector2(0.676143, -150)
+rotation = 3.14159
+scale = Vector2(0.28021, 0.307206)
+texture = ExtResource("3_ljbgp")
+flip_v = true
 
 [node name="direitawall" type="Sprite2D" parent="environment/mapWalls"]
-position = Vector2(-194.815, -43.3056)
-scale = Vector2(0.355915, 0.278647)
+position = Vector2(-204, -44)
+scale = Vector2(0.429085, 0.278647)
 texture = ExtResource("5_unpy3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="environment/mapWalls"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-204, -139)
+scale = Vector2(0.285349, 0.291153)
+texture = ExtResource("21_33v1t")
+flip_h = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="environment/mapWalls"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(204, -139)
+scale = Vector2(0.285349, 0.291153)
+texture = ExtResource("21_33v1t")
+
+[node name="direitawall2" type="Sprite2D" parent="environment/mapWalls"]
+position = Vector2(204, -44)
+scale = Vector2(0.429085, 0.278647)
+texture = ExtResource("5_unpy3")
+flip_h = true
 
 [node name="spawnSomething" type="Node2D" parent="."]
 
@@ -228,9 +242,6 @@ position = Vector2(-48, 64)
 [node name="BreakableBlock30" parent="objects/AllBricks" instance=ExtResource("4_2c6ix")]
 position = Vector2(-96, 16)
 
-[node name="BreakableBlock36" parent="objects/AllBricks" instance=ExtResource("4_2c6ix")]
-position = Vector2(0, 32)
-
 [node name="BreakableBlock37" parent="objects/AllBricks" instance=ExtResource("4_2c6ix")]
 position = Vector2(0, -48)
 
@@ -239,9 +250,6 @@ position = Vector2(0, -32)
 
 [node name="BreakableBlock39" parent="objects/AllBricks" instance=ExtResource("4_2c6ix")]
 position = Vector2(0, -16)
-
-[node name="BreakableBlock42" parent="objects/AllBricks" instance=ExtResource("4_2c6ix")]
-position = Vector2(0, -64)
 
 [node name="BreakableBlock43" parent="objects/AllBricks" instance=ExtResource("4_2c6ix")]
 
@@ -569,36 +577,37 @@ position = Vector2(160, 0)
 [node name="BreakableBlock167" parent="objects/AllBricks" instance=ExtResource("4_2c6ix")]
 position = Vector2(160, 16)
 
-[node name="entities" type="Node2D" parent="."]
+[node name="entities" type="Node2D" parent="objects/AllBricks"]
+
+[node name="players" type="Node2D" parent="objects/AllBricks/entities"]
+
+[node name="Mobs" type="Node2D" parent="objects/AllBricks/entities"]
 visible = false
 
-[node name="players" type="Node2D" parent="entities"]
-
-[node name="basePlayer02" parent="entities/players" instance=ExtResource("14_l4kwr")]
-position = Vector2(0, -96)
-playerID = 1
-charSkin = ExtResource("8_4di0p")
-
-[node name="Mobs" type="Node2D" parent="entities"]
-
-[node name="bruxa" parent="entities/Mobs" instance=ExtResource("7_jgyab")]
-position = Vector2(-160, 64)
-iaMoveDelay = 0.5
-
-[node name="skull" parent="entities/Mobs" instance=ExtResource("8_6vrrs")]
-position = Vector2(0, 64)
-
-[node name="avessogob" parent="entities/Mobs" instance=ExtResource("9_pbp7h")]
+[node name="avessogob" parent="objects/AllBricks/entities/Mobs" instance=ExtResource("9_pbp7h")]
 position = Vector2(-160, -96)
 iaMoveDelay = 0.9
 
-[node name="assombro" parent="entities/Mobs" instance=ExtResource("10_4di0p")]
-position = Vector2(160, -96)
-iaMoveDelay = 0.3
+[node name="avessogob5" parent="objects/AllBricks/entities/Mobs" instance=ExtResource("9_pbp7h")]
+position = Vector2(152, 64)
+iaMoveDelay = 0.9
 
-[node name="bicho" parent="entities/Mobs" instance=ExtResource("11_ljbgp")]
-position = Vector2(160, 64)
-iaMoveDelay = 0.6
+[node name="avessogob4" parent="objects/AllBricks/entities/Mobs" instance=ExtResource("9_pbp7h")]
+position = Vector2(0, 64)
+iaMoveDelay = 0.9
+
+[node name="avessogob3" parent="objects/AllBricks/entities/Mobs" instance=ExtResource("9_pbp7h")]
+position = Vector2(159, -100)
+iaMoveDelay = 0.9
+
+[node name="avessogob2" parent="objects/AllBricks/entities/Mobs" instance=ExtResource("9_pbp7h")]
+position = Vector2(-157, 71)
+iaMoveDelay = 0.9
+
+[node name="basePlayer02" parent="objects/AllBricks/entities" instance=ExtResource("14_l4kwr")]
+position = Vector2(0, -96)
+playerID = 1
+charSkin = ExtResource("8_4di0p")
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_dxyuj")
@@ -677,3 +686,29 @@ visible = false
 position = Vector2(-8, -8)
 tile_map_data = PackedByteArray("AAALAAAAAQAAAAAAAAD1//n/AQAAAAAAAAD1//r/AQAAAAAAAAD1//v/AQAAAAAAAAD1//z/AQAAAAAAAAD1//3/AQAAAAAAAAD1//7/AQAAAAAAAAD1/wAAAQAAAAAAAAD1/wEAAQAAAAAAAAD1/wIAAQAAAAAAAAD1/wMAAQAAAAAAAAD1/wQAAQAAAAAAAAD1/wUAAQAAAAAAAAD2/wUAAQAAAAAAAAD3/wUAAQAAAAAAAAD4/wUAAQAAAAAAAAD5/wUAAQAAAAAAAAD6/wUAAQAAAAAAAAD7/wUAAQAAAAAAAAD8/wUAAQAAAAAAAAD9/wUAAQAAAAAAAAD+/wUAAQAAAAAAAAD//wUAAQAAAAAAAAAAAAUAAQAAAAAAAAABAAUAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAJAAUAAQAAAAAAAAAKAAUAAQAAAAAAAAALAAUAAQAAAAAAAAALAAQAAQAAAAAAAAALAAMAAQAAAAAAAAALAAIAAQAAAAAAAAALAAEAAQAAAAAAAAALAP7/AQAAAAAAAAALAP3/AQAAAAAAAAALAPz/AQAAAAAAAAALAPv/AQAAAAAAAAALAPr/AQAAAAAAAAALAPn/AQAAAAAAAAAKAPn/AQAAAAAAAAAJAPn/AQAAAAAAAAAIAPn/AQAAAAAAAAAHAPn/AQAAAAAAAAAGAPn/AQAAAAAAAAAFAPn/AQAAAAAAAAAEAPn/AQAAAAAAAAADAPn/AQAAAAAAAAACAPn/AQAAAAAAAAABAPn/AQAAAAAAAAAAAPn/AQAAAAAAAAD///n/AQAAAAAAAAD+//n/AQAAAAAAAAD9//n/AQAAAAAAAAD8//n/AQAAAAAAAAD7//n/AQAAAAAAAAD6//n/AQAAAAAAAAD5//n/AQAAAAAAAAD4//n/AQAAAAAAAAD3//n/AQAAAAAAAAD2//n/AQAAAAAAAAD1//j/AQAAAAAAAAD2//j/AQAAAAAAAAD3//j/AQAAAAAAAAD4//j/AQAAAAAAAAD5//j/AQAAAAAAAAD6//j/AQAAAAAAAAD7//j/AQAAAAAAAAD8//j/AQAAAAAAAAD9//j/AQAAAAAAAAD+//j/AQAAAAAAAAD///j/AQAAAAAAAAAAAPj/AQAAAAAAAAABAPj/AQAAAAAAAAACAPj/AQAAAAAAAAADAPj/AQAAAAAAAAAEAPj/AQAAAAAAAAAFAPj/AQAAAAAAAAAGAPj/AQAAAAAAAAAHAPj/AQAAAAAAAAAIAPj/AQAAAAAAAAAJAPj/AQAAAAAAAAAKAPj/AQAAAAAAAAALAPj/AQAAAAAAAAAMAPj/AQAAAAAAAAAMAPn/AQAAAAAAAAAMAPr/AQAAAAAAAAAMAPv/AQAAAAAAAAAMAPz/AQAAAAAAAAAMAP3/AQAAAAAAAAAMAP7/AQAAAAAAAAAMAP//AQAAAAAAAAAMAAAAAQAAAAAAAAAMAAEAAQAAAAAAAAAMAAIAAQAAAAAAAAAMAAMAAQAAAAAAAAAMAAQAAQAAAAAAAAAMAAUAAQAAAAAAAAALAAYAAQAAAAAAAAAMAAYAAQAAAAAAAAAJAAYAAQAAAAAAAAAIAAYAAQAAAAAAAAAKAAYAAQAAAAAAAAAHAAYAAQAAAAAAAAAGAAYAAQAAAAAAAAAFAAYAAQAAAAAAAAAEAAYAAQAAAAAAAAADAAYAAQAAAAAAAAACAAYAAQAAAAAAAAABAAYAAQAAAAAAAAAAAAYAAQAAAAAAAAD//wYAAQAAAAAAAAD+/wYAAQAAAAAAAAD9/wYAAQAAAAAAAAD8/wYAAQAAAAAAAAD7/wYAAQAAAAAAAAD6/wYAAQAAAAAAAAD5/wYAAQAAAAAAAAD4/wYAAQAAAAAAAAD3/wYAAQAAAAAAAAD2/wYAAQAAAAAAAAD1/wYAAQAAAAAAAAD0/wYAAQAAAAAAAAD0/wUAAQAAAAAAAAD0/wQAAQAAAAAAAAD0/wMAAQAAAAAAAAD0/wIAAQAAAAAAAAD0/wEAAQAAAAAAAAD0/wAAAQAAAAAAAAD0////AQAAAAAAAAD0//7/AQAAAAAAAAD0//3/AQAAAAAAAAD0//z/AQAAAAAAAAD0//v/AQAAAAAAAAD0//r/AQAAAAAAAAD0//n/AQAAAAAAAAD0//j/AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_uwl60")
+
+[node name="entities" type="Node2D" parent="."]
+
+[node name="players" type="Node2D" parent="entities"]
+
+[node name="basePlayer02" parent="entities/players" instance=ExtResource("14_l4kwr")]
+position = Vector2(0, -96)
+playerID = 1
+charSkin = ExtResource("8_4di0p")
+
+[node name="Mobs" type="Node2D" parent="entities"]
+
+[node name="avessogob6" parent="entities/Mobs" instance=ExtResource("9_pbp7h")]
+position = Vector2(-160, 47)
+
+[node name="avessogob7" parent="entities/Mobs" instance=ExtResource("9_pbp7h")]
+position = Vector2(0, 68)
+
+[node name="avessogob8" parent="entities/Mobs" instance=ExtResource("9_pbp7h")]
+position = Vector2(157, 69)
+
+[node name="avessogob9" parent="entities/Mobs" instance=ExtResource("9_pbp7h")]
+position = Vector2(-144, -99)
+
+[node name="avessogob10" parent="entities/Mobs" instance=ExtResource("9_pbp7h")]
+position = Vector2(157, -98)

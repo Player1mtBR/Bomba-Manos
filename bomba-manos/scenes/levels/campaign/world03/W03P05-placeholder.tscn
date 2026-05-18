@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=4 uid="uid://cghduj6t35af4"]
+[gd_scene load_steps=25 format=4 uid="uid://b738f72jq084f"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_c0prf"]
 [ext_resource type="Texture2D" uid="uid://bmh7gbx4co7l3" path="res://assets/sprites/levels/campaign/world03/chão.png" id="2_rck57"]
-[ext_resource type="Texture2D" uid="uid://cra10pdk1dbj8" path="res://assets/sprites/levels/campaign/world03/RightWallLostWoods.png" id="3_v5h3g"]
+[ext_resource type="Texture2D" uid="uid://dw4hil17syrg0" path="res://assets/sprites/levels/campaign/world03/FRENTELostWoods.png" id="3_rck57"]
 [ext_resource type="Texture2D" uid="uid://b5ndgww7gucmk" path="res://assets/sprites/levels/campaign/world03/LeftWallLostWoods.png" id="4_wjbri"]
+[ext_resource type="Texture2D" uid="uid://b6t0qbecvhp4k" path="res://assets/sprites/levels/campaign/world03/LostWoodsCorner.png" id="5_v5h3g"]
 [ext_resource type="Texture2D" uid="uid://dfj6jigttkb7a" path="res://assets/sprites/levels/campaign/world03/muro7.png" id="5_vjjs5"]
 [ext_resource type="PackedScene" uid="uid://br4aq80htq6s0" path="res://scenes/objects/barril_block.tscn" id="6_q3wpt"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="7_c4blb"]
@@ -58,22 +59,39 @@ position = Vector2(0, -16)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_rck57")
 
-[node name="esquerdawall" type="Sprite2D" parent="environment/mapWalls"]
-position = Vector2(192, -43.085)
-scale = Vector2(0.322, 0.27914)
-texture = ExtResource("3_v5h3g")
-
 [node name="frentewall" type="Sprite2D" parent="environment/mapWalls"]
 z_index = 1
-position = Vector2(-1.30629, -138.848)
-rotation = 4.71239
-scale = Vector2(0.356736, 0.423372)
-texture = ExtResource("3_v5h3g")
+position = Vector2(0.676143, -150)
+rotation = 3.14159
+scale = Vector2(0.28021, 0.307206)
+texture = ExtResource("3_rck57")
+flip_v = true
 
 [node name="direitawall" type="Sprite2D" parent="environment/mapWalls"]
-position = Vector2(-194.815, -43.3056)
-scale = Vector2(0.355915, 0.278647)
+position = Vector2(-200.815, -43.3056)
+scale = Vector2(0.429085, 0.278647)
 texture = ExtResource("4_wjbri")
+
+[node name="Sprite2D2" type="Sprite2D" parent="environment/mapWalls"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-200, -139)
+scale = Vector2(0.285351, 0.287999)
+texture = ExtResource("5_v5h3g")
+flip_h = true
+
+[node name="direitawall2" type="Sprite2D" parent="environment/mapWalls"]
+position = Vector2(203, -45)
+scale = Vector2(0.429085, 0.278647)
+texture = ExtResource("4_wjbri")
+flip_h = true
+
+[node name="Sprite2D" type="Sprite2D" parent="environment/mapWalls"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(203, -139)
+scale = Vector2(0.285349, 0.291153)
+texture = ExtResource("5_v5h3g")
 
 [node name="spawnSomething" type="Node2D" parent="."]
 
@@ -228,9 +246,6 @@ position = Vector2(-48, 64)
 [node name="BreakableBlock30" parent="objects/AllBricks" instance=ExtResource("6_q3wpt")]
 position = Vector2(-96, 16)
 
-[node name="BreakableBlock36" parent="objects/AllBricks" instance=ExtResource("6_q3wpt")]
-position = Vector2(0, 32)
-
 [node name="BreakableBlock37" parent="objects/AllBricks" instance=ExtResource("6_q3wpt")]
 position = Vector2(0, -48)
 
@@ -239,9 +254,6 @@ position = Vector2(0, -32)
 
 [node name="BreakableBlock39" parent="objects/AllBricks" instance=ExtResource("6_q3wpt")]
 position = Vector2(0, -16)
-
-[node name="BreakableBlock42" parent="objects/AllBricks" instance=ExtResource("6_q3wpt")]
-position = Vector2(0, -64)
 
 [node name="BreakableBlock43" parent="objects/AllBricks" instance=ExtResource("6_q3wpt")]
 

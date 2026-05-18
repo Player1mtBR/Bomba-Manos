@@ -345,7 +345,5 @@ collision_mask = 17
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_w3p8x")
-animation = &"left"
-frame_progress = 0.126206
 
 [connection signal="area_entered" from="Mob" to="." method="_on_area_2d_area_entered"]
