@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://du7ge0tpaxnas" path="res://scenes/entities/Mobs/World_3/avessogob.tscn" id="8_51nl4"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="9_hfggq"]
 [ext_resource type="SpriteFrames" uid="uid://cdjt7gy7aei07" path="res://assets/res/spriteframes/rangerman-Sprite-Frames.tres" id="10_krbr6"]
-[ext_resource type="AudioStream" uid="uid://3ltw3qe7xh3" path="res://assets/audio/tracks/PokémonHeartGold&SoulSilver-GymLeader&EliteFourBattleMusic.mp3" id="11_b45l2"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="12_4bnuq"]
+[ext_resource type="AudioStream" uid="uid://b6ewtu48bdibo" path="res://assets/sprites/levels/campaign/world04/sound.mp3" id="12_l57kd"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="13_x34ou"]
 [ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="14_ue0im"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="15_tyf0h"]
@@ -60,37 +60,33 @@ texture = ExtResource("2_l57kd")
 
 [node name="frentewall" type="Sprite2D" parent="environment/mapWalls"]
 z_index = 1
-position = Vector2(-30, -136)
+position = Vector2(-32.3601, -143)
 rotation = 3.14159
-scale = Vector2(0.28021, 0.307206)
+scale = Vector2(0.307092, 0.307206)
 texture = ExtResource("3_nkneb")
 flip_v = true
 
-[node name="frentewall2" type="Sprite2D" parent="environment/mapWalls"]
-z_index = 1
-position = Vector2(220.667, -139.831)
-rotation = 4.71239
-scale = Vector2(0.2548, 0.481603)
-texture = ExtResource("4_43bmj")
-flip_v = true
-
-[node name="frentewall2" type="Sprite2D" parent="environment/mapWalls/frentewall2"]
-z_index = 1
-position = Vector2(-7.18525, -908.01)
-rotation = 4.71239
-scale = Vector2(0.931725, 1.23379)
-texture = ExtResource("4_43bmj")
-flip_v = true
-
-[node name="direitawall" type="Sprite2D" parent="environment/mapWalls"]
+[node name="esquerdawall" type="Sprite2D" parent="environment/mapWalls"]
 position = Vector2(-189, -46)
 scale = Vector2(0.429085, 0.278647)
 texture = ExtResource("5_4kafp")
 
-[node name="direitawall2" type="Sprite2D" parent="environment/mapWalls"]
+[node name="direitawall" type="Sprite2D" parent="environment/mapWalls"]
 position = Vector2(193, -42)
 scale = Vector2(0.429085, 0.274232)
 texture = ExtResource("6_biyex")
+
+[node name="canto" type="Sprite2D" parent="environment/mapWalls"]
+position = Vector2(220.682, -139.861)
+scale = Vector2(0.450542, 0.281116)
+texture = ExtResource("4_43bmj")
+
+[node name="canto2" type="Sprite2D" parent="environment/mapWalls"]
+z_index = 1
+position = Vector2(-220, -139)
+scale = Vector2(0.490636, 0.324279)
+texture = ExtResource("4_43bmj")
+flip_h = true
 
 [node name="spawnSomething" type="Node2D" parent="."]
 
@@ -608,12 +604,12 @@ position = Vector2(-157, 71)
 iaMoveDelay = 0.9
 
 [node name="basePlayer02" parent="objects/AllBricks/entities" instance=ExtResource("9_hfggq")]
-position = Vector2(0, -96)
+position = Vector2(-16, -95)
 playerID = 1
 charSkin = ExtResource("10_krbr6")
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("11_b45l2")
+stream = ExtResource("12_l57kd")
 autoplay = true
 
 [node name="mainCamera" parent="." instance=ExtResource("12_4bnuq")]
@@ -691,6 +687,7 @@ tile_map_data = PackedByteArray("AAALAAAAAQAAAAAAAAD1//n/AQAAAAAAAAD1//r/AQAAAAA
 tile_set = SubResource("TileSet_uwl60")
 
 [node name="entities" type="Node2D" parent="."]
+visible = false
 
 [node name="players" type="Node2D" parent="entities"]
 
