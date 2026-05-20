@@ -66,7 +66,7 @@ scale = Vector2(0.269, 0.253)
 texture = ExtResource("2_yfhol")
 
 [node name="rightCorner4" type="Sprite2D" parent="environment/fixStuff"]
-position = Vector2(-188.743, -136.473)
+position = Vector2(-188, -136)
 rotation = 3.14159
 scale = Vector2(0.255946, -0.253784)
 texture = ExtResource("2_yfhol")
@@ -109,7 +109,7 @@ scale = Vector2(0.185, 0.138)
 texture = ExtResource("2_yfhol")
 
 [node name="leftCorner" type="Sprite2D" parent="environment"]
-position = Vector2(-192.5, -127.75)
+position = Vector2(-193, -128)
 scale = Vector2(-0.185, 0.138)
 texture = ExtResource("2_yfhol")
 
