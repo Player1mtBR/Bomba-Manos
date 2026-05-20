@@ -10,7 +10,7 @@
 [ext_resource type="SpriteFrames" uid="uid://cdjt7gy7aei07" path="res://assets/res/spriteframes/rangerman-Sprite-Frames.tres" id="8_0u5qd"]
 [ext_resource type="PackedScene" uid="uid://b63d186w7vqbn" path="res://scenes/entities/Mobs/World_3/skull.tscn" id="10_on052"]
 [ext_resource type="PackedScene" uid="uid://du7ge0tpaxnas" path="res://scenes/entities/Mobs/World_3/avessogob.tscn" id="11_p264e"]
-[ext_resource type="AudioStream" uid="uid://3ltw3qe7xh3" path="res://assets/audio/tracks/PokémonHeartGold&SoulSilver-GymLeader&EliteFourBattleMusic.mp3" id="14_a5b0a"]
+[ext_resource type="AudioStream" uid="uid://diul3f1txpftc" path="res://assets/audio/tracks/world 3/Igor01.mp3" id="12_mvs5p"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="15_ard0a"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="16_cq23i"]
 [ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="17_tjb8y"]
@@ -625,8 +625,9 @@ position = Vector2(0, 64)
 iaMoveDelay = 0.9
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("14_a5b0a")
+stream = ExtResource("12_mvs5p")
 autoplay = true
+parameters/looping = true
 
 [node name="mainCamera" parent="." instance=ExtResource("15_ard0a")]
 position = Vector2(0, -44)

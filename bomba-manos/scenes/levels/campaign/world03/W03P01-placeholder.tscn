@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bmh7gbx4co7l3" path="res://assets/sprites/levels/campaign/world03/chão.png" id="6_ljbgp"]
 [ext_resource type="SpriteFrames" uid="uid://cdjt7gy7aei07" path="res://assets/res/spriteframes/rangerman-Sprite-Frames.tres" id="8_4di0p"]
 [ext_resource type="PackedScene" uid="uid://du7ge0tpaxnas" path="res://scenes/entities/Mobs/World_3/avessogob.tscn" id="9_pbp7h"]
+[ext_resource type="AudioStream" uid="uid://diul3f1txpftc" path="res://assets/audio/tracks/world 3/Igor01.mp3" id="11_w5s4q"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="13_jgyab"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="14_l4kwr"]
-[ext_resource type="AudioStream" uid="uid://3ltw3qe7xh3" path="res://assets/audio/tracks/PokémonHeartGold&SoulSilver-GymLeader&EliteFourBattleMusic.mp3" id="17_dxyuj"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="18_aqvci"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="19_1oj76"]
 [ext_resource type="Texture2D" uid="uid://dfj6jigttkb7a" path="res://assets/sprites/levels/campaign/world03/muro7.png" id="19_4di0p"]
@@ -610,8 +610,9 @@ playerID = 1
 charSkin = ExtResource("8_4di0p")
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("17_dxyuj")
+stream = ExtResource("11_w5s4q")
 autoplay = true
+parameters/looping = true
 
 [node name="mainCamera" parent="." instance=ExtResource("18_aqvci")]
 position = Vector2(0, -44)
@@ -699,16 +700,16 @@ charSkin = ExtResource("8_4di0p")
 [node name="Mobs" type="Node2D" parent="entities"]
 
 [node name="avessogob6" parent="entities/Mobs" instance=ExtResource("9_pbp7h")]
-position = Vector2(-160, 47)
+position = Vector2(-160, 64)
 
 [node name="avessogob7" parent="entities/Mobs" instance=ExtResource("9_pbp7h")]
-position = Vector2(0, 68)
+position = Vector2(0, 64)
 
 [node name="avessogob8" parent="entities/Mobs" instance=ExtResource("9_pbp7h")]
-position = Vector2(157, 69)
+position = Vector2(160, 64)
 
 [node name="avessogob9" parent="entities/Mobs" instance=ExtResource("9_pbp7h")]
 position = Vector2(-144, -99)
 
 [node name="avessogob10" parent="entities/Mobs" instance=ExtResource("9_pbp7h")]
-position = Vector2(157, -98)
+position = Vector2(160, -96)

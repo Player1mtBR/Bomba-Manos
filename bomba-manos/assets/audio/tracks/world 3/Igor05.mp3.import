@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://db7tmgy4yjn37"
+path="res://.godot/imported/Igor05.mp3-92dcb8d4e835fd3d2f88bc1dcee4ca79.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/tracks/world 3/Igor05.mp3"
+dest_files=["res://.godot/imported/Igor05.mp3-92dcb8d4e835fd3d2f88bc1dcee4ca79.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
