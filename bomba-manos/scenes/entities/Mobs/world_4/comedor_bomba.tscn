@@ -158,7 +158,7 @@ animations = [{
 "speed": 15.0
 }, {
 "frames": [{
-"duration": 5.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_w5v2v")
 }, {
 "duration": 1.0,
@@ -205,28 +205,22 @@ animations = [{
 "texture": SubResource("AtlasTexture_5hy1h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n6dm8")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_m40tu")
 }],
 "loop": true,
 "name": &"left",
-"speed": 15.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1md3r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pctvw")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_lf6os")
 }],
 "loop": true,
 "name": &"right",
-"speed": 15.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -274,6 +268,7 @@ target_position = Vector2(16, 0)
 collision_mask = 17
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_w3p8x")
 animation = &"die"
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://cb26ahhfqtafj"]
+[gd_scene load_steps=25 format=4 uid="uid://cb26ahhfqtafj"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_2w56p"]
 [ext_resource type="Texture2D" uid="uid://cx1sqwd2s3rdj" path="res://assets/sprites/levels/campaign/world04/damnBroLetsCode.png" id="2_l57kd"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://br4aq80htq6s0" path="res://scenes/objects/barril_block.tscn" id="7_df6d5"]
 [ext_resource type="PackedScene" uid="uid://du7ge0tpaxnas" path="res://scenes/entities/Mobs/World_3/avessogob.tscn" id="8_51nl4"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="9_hfggq"]
-[ext_resource type="SpriteFrames" uid="uid://cdjt7gy7aei07" path="res://assets/res/spriteframes/rangerman-Sprite-Frames.tres" id="10_krbr6"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="12_4bnuq"]
 [ext_resource type="AudioStream" uid="uid://b6ewtu48bdibo" path="res://assets/sprites/levels/campaign/world04/sound.mp3" id="12_l57kd"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="13_x34ou"]
@@ -19,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="16_keiij"]
 [ext_resource type="SpriteFrames" uid="uid://qoeojvexepwx" path="res://assets/res/spriteframes/bombaman-Sprite-Frames.tres" id="17_vg1gn"]
 [ext_resource type="PackedScene" uid="uid://ck2e8e5o71yon" path="res://scenes/entities/Mobs/world_4/comedor_bomba.tscn" id="17_vsy6w"]
+[ext_resource type="PackedScene" uid="uid://deiblqi0tqf1d" path="res://scenes/entities/Mobs/world_4/arduino.tscn" id="20_43bmj"]
+[ext_resource type="PackedScene" uid="uid://x8wanugx3mkn" path="res://scenes/entities/Mobs/world_4/borabill.tscn" id="20_nkneb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lx53w"]
 texture = ExtResource("6_dj552")
@@ -603,11 +604,6 @@ iaMoveDelay = 0.9
 position = Vector2(-157, 71)
 iaMoveDelay = 0.9
 
-[node name="basePlayer02" parent="objects/AllBricks/entities" instance=ExtResource("9_hfggq")]
-position = Vector2(-16, -95)
-playerID = 1
-charSkin = ExtResource("10_krbr6")
-
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_l57kd")
 autoplay = true
@@ -687,7 +683,6 @@ tile_map_data = PackedByteArray("AAALAAAAAQAAAAAAAAD1//n/AQAAAAAAAAD1//r/AQAAAAA
 tile_set = SubResource("TileSet_uwl60")
 
 [node name="entities" type="Node2D" parent="."]
-visible = false
 
 [node name="players" type="Node2D" parent="entities"]
 
@@ -712,3 +707,11 @@ position = Vector2(160, 64)
 
 [node name="comedor_bomba5" parent="entities/Mobs" instance=ExtResource("17_vsy6w")]
 position = Vector2(160, -96)
+
+[node name="borabill" parent="entities/Mobs" instance=ExtResource("20_nkneb")]
+
+[node name="borabill2" parent="entities/Mobs" instance=ExtResource("20_nkneb")]
+
+[node name="arduino" parent="entities/Mobs" instance=ExtResource("20_43bmj")]
+
+[node name="arduino2" parent="entities/Mobs" instance=ExtResource("20_43bmj")]
