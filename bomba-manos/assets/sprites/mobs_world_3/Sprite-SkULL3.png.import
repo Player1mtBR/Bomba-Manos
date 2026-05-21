@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc1vfeff70gcl"
-path="res://.godot/imported/Sprite-SkULL3.png-a6d5031983fa49d2bb340dc9180a0143.ctex"
+uid="uid://frs338c5rkx2"
+path="res://.godot/imported/Sprite-SKULL3.png-873151110c86b7cbc14104e557a04723.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/mobs_world_3/Sprite-SkULL3.png"
-dest_files=["res://.godot/imported/Sprite-SkULL3.png-a6d5031983fa49d2bb340dc9180a0143.ctex"]
+source_file="res://assets/sprites/mobs_world_3/Sprite-SKULL3.png"
+dest_files=["res://.godot/imported/Sprite-SKULL3.png-873151110c86b7cbc14104e557a04723.ctex"]
 
 [params]
 

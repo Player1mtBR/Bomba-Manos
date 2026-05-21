@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://djuvkvcv2qrhl"]
 
-[ext_resource type="AudioStream" uid="uid://q5majgatifgl" path="res://assets/musictema.mp3" id="1_kfb1a"]
+[ext_resource type="AudioStream" uid="uid://c2spce1kd8xif" path="res://assets/audio/tracks/Space....mp3" id="1_kfb1a"]
 
 [node name="MusicMenu" type="Node"]
 

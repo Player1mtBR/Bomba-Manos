@@ -1,0 +1,107 @@
+[gd_scene load_steps=12 format=3 uid="uid://dphll6ifuw8mv"]
+
+[ext_resource type="Script" uid="uid://baqgu71qd44ta" path="res://scripts/bombas/remote_bomb.gd" id="1_trlla"]
+[ext_resource type="Texture2D" uid="uid://bir2tcvl6u7d2" path="res://icon.svg" id="2_d5fid"]
+[ext_resource type="Texture2D" uid="uid://ua4lpsan01yb" path="res://assets/sprites/bomba/BOMBA SALGADO EXPLODINDOV3.png" id="3_fjub0"]
+[ext_resource type="Texture2D" uid="uid://d4eqoew3q5gbk" path="res://assets/sprites/bomba/BOMBA SALGADO EXPLODINDOV5.png" id="4_4377e"]
+[ext_resource type="Texture2D" uid="uid://cfo8eo14ckihq" path="res://assets/sprites/bomba/BOMBA SALGADO EXPLODINDOV7.png" id="5_janij"]
+[ext_resource type="Texture2D" uid="uid://dym6tsc6xxhm4" path="res://assets/sprites/bomba/BOMBA SALGADO EXPLODINDOV4.png" id="6_ab63t"]
+[ext_resource type="AudioStream" uid="uid://ck0cn56w0to6j" path="res://assets/audio/sfx/placeBomba.wav" id="7_7ghyw"]
+[ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="8_xhbsr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_spfbs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fjub0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4377e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_janij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ab63t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"kaboom",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spfbs"]
+size = Vector2(20.6667, 20.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfosm"]
+size = Vector2(20.6667, 20.6667)
+
+[node name="remote" type="Node2D"]
+z_index = 5
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_trlla")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.34902, 0, 1)
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(0.166667, 0.166667)
+texture = ExtResource("2_d5fid")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_spfbs")
+autoplay = "default"
+frame_progress = 0.655638
+
+[node name="raycasts" type="Node2D" parent="."]
+
+[node name="up" type="RayCast2D" parent="raycasts"]
+target_position = Vector2(0, -16)
+collision_mask = 5
+
+[node name="down" type="RayCast2D" parent="raycasts"]
+target_position = Vector2(0, 16)
+collision_mask = 5
+
+[node name="left" type="RayCast2D" parent="raycasts"]
+target_position = Vector2(-16, 0)
+collision_mask = 5
+
+[node name="right" type="RayCast2D" parent="raycasts"]
+target_position = Vector2(16, 0)
+collision_mask = 5
+
+[node name="ChainReactionArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChainReactionArea"]
+position = Vector2(-0.333333, -0.333333)
+shape = SubResource("RectangleShape2D_spfbs")
+
+[node name="bombBlocksPlayer" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bombBlocksPlayer"]
+position = Vector2(0.333333, -0.333333)
+scale = Vector2(0.75, 0.75)
+shape = SubResource("RectangleShape2D_mfosm")
+debug_color = Color(1, 0.462745, 0, 0.419608)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_7ghyw")
+volume_db = 10.0
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_xhbsr")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="area_entered" from="ChainReactionArea" to="." method="_on_chain_reaction_area_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

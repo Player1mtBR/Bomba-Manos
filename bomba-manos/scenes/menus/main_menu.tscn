@@ -65,3 +65,4 @@ layout_mode = 2
 text = "Sair"
 
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Campanha" to="." method="_on_campanha_pressed"]
+[connection signal="pressed" from="Control/Buttons/VBoxContainer/Versus" to="." method="_on_versus_pressed"]
