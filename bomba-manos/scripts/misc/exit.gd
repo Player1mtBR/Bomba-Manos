@@ -13,4 +13,4 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 		Loader.loadingScreen2Scene(nextLevel)
 		#UnlockStuff.
 		UnlockStuff.completedLevels[levelIdentifier] = true
-		print(UnlockStuff.completedLevels[levelIdentifier.], " Completed")
+		print(UnlockStuff.completedLevels[levelIdentifier], " Completed")

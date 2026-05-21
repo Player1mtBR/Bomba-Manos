@@ -16,7 +16,6 @@ script = ExtResource("1_uqxyf")
 [node name="LevelIcon" parent="." node_paths=PackedStringArray("nextLevelRight") instance=ExtResource("2_nydxd")]
 offset_top = 192.0
 offset_bottom = 256.0
-locked = null
 nextLevelRight = NodePath("../LevelIcon2")
 
 [node name="LevelIcon2" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight") instance=ExtResource("2_nydxd")]
@@ -44,7 +43,6 @@ offset_right = 448.0
 offset_bottom = 320.0
 levelName = "4"
 unlockRequirement = "W05L03"
-locked = null
 nextLevelRight = NodePath("../LevelIcon5")
 nextLevelUp = NodePath("../LevelIcon3")
 nextLevelDown = NodePath("../LevelIcon6")
@@ -57,7 +55,6 @@ offset_bottom = 320.0
 levelName = "5"
 level2Load = "uid://suap6bq2v1le"
 unlockRequirement = "W05L04"
-locked = null
 nextLevelLeft = NodePath("../LevelIcon4")
 
 [node name="LevelIcon6" parent="." node_paths=PackedStringArray("nextLevelUp") instance=ExtResource("2_nydxd")]
@@ -66,8 +63,6 @@ offset_top = 376.0
 offset_right = 448.0
 offset_bottom = 440.0
 levelName = "Bônus"
-unlockRequirement = null
-locked = null
 nextLevelUp = NodePath("../LevelIcon4")
 
 [node name="playerIcon" parent="." instance=ExtResource("3_nwh7s")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://suap6bq2v1le"]
+[gd_scene load_steps=37 format=3 uid="uid://suap6bq2v1le"]
 
 [ext_resource type="Script" uid="uid://wasqsu7cxrg" path="res://scripts/misc/bossfight/megazord_jp.gd" id="1_eju5j"]
 [ext_resource type="Texture2D" uid="uid://bryq58u6v2vqq" path="res://assets/sprites/levels/campaign/extras/Sprite da cena da boss fight.png" id="2_g1im4"]
@@ -49,6 +49,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_v0qoy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_mg8sl"]
 resource_name = "moveBackground"
 length = 120.0
@@ -64,21 +79,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(294, 193), Vector2(424, -235), Vector2(-435, -222), Vector2(-217, 231), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_v0qoy"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vtx7u"]
@@ -103,11 +103,63 @@ colors = PackedColorArray(0, 0.686275, 1, 0.709804)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_u0vej"]
 gradient = SubResource("Gradient_b1twp")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1twp"]
+size = Vector2(88, 20)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mw2rv"]
+gradient = SubResource("Gradient_b1twp")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arlsb"]
+size = Vector2(88, 20)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6mkqc"]
+gradient = SubResource("Gradient_b1twp")
+
+[sub_resource type="Gradient" id="Gradient_mg8sl"]
+offsets = PackedFloat32Array(0, 0.2, 0.5, 0.8, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.701961, 1, 1, 1, 0.701961, 1, 1, 1, 0.701961, 1, 1, 1, 0, 0, 0, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v0qoy"]
+gradient = SubResource("Gradient_mg8sl")
+
+[sub_resource type="Gradient" id="Gradient_vtx7u"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mrnxu"]
+gradient = SubResource("Gradient_vtx7u")
+
+[sub_resource type="Gradient" id="Gradient_oofr0"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.0352941, 0.596078, 0, 1, 0, 0, 0, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b1twp"]
+gradient = SubResource("Gradient_oofr0")
+
+[sub_resource type="Gradient" id="Gradient_u0vej"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_arlsb"]
+gradient = SubResource("Gradient_u0vej")
+
+[sub_resource type="Gradient" id="Gradient_6mkqc"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.0366558, 0.595522, 1, 1, 0, 0, 0, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tp6la"]
+gradient = SubResource("Gradient_6mkqc")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vtx7u"]
-size = Vector2(20, 128)
+size = Vector2(20, 288)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrnxu"]
-size = Vector2(20, 128)
+size = Vector2(20, 288)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tp6la"]
 
 [node name="Bossfight" type="Node2D"]
 
@@ -160,6 +212,21 @@ autoplay = "default"
 frame = 2
 frame_progress = 0.772107
 
+[node name="SuperManel" type="Node2D" parent="."]
+position = Vector2(428, 88)
+
+[node name="Sprite2D" type="Sprite2D" parent="SuperManel"]
+scale = Vector2(2, 2)
+texture = ExtResource("3_wi1c3")
+
+[node name="attackSpawn" type="Node2D" parent="SuperManel"]
+
+[node name="left" type="Node2D" parent="SuperManel/attackSpawn"]
+
+[node name="right" type="Node2D" parent="SuperManel/attackSpawn"]
+
+[node name="top" type="Node2D" parent="SuperManel/attackSpawn"]
+
 [node name="MegazordJP" type="CharacterBody2D" parent="."]
 position = Vector2(428, 416)
 script = ExtResource("1_eju5j")
@@ -178,24 +245,57 @@ debug_color = Color(0.991107, 0, 0.269864, 0.42)
 shape = SubResource("RectangleShape2D_v0qoy")
 debug_color = Color(0.574583, 0.554237, 7.70092e-07, 0.42)
 
-[node name="Shield" type="StaticBody2D" parent="MegazordJP"]
+[node name="ShieldUP" type="StaticBody2D" parent="MegazordJP"]
 visible = false
 position = Vector2(0, -48)
+collision_layer = 2
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MegazordJP/Shield"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MegazordJP/ShieldUP"]
 shape = SubResource("RectangleShape2D_oofr0")
 
-[node name="trocar por animatedSprite" type="Sprite2D" parent="MegazordJP/Shield"]
+[node name="trocar por animatedSprite" type="Sprite2D" parent="MegazordJP/ShieldUP"]
 position = Vector2(6.94394e-06, 7.689e-06)
 scale = Vector2(1.375, 0.3125)
 texture = SubResource("GradientTexture2D_u0vej")
 
-[node name="SuperManel" type="Node2D" parent="."]
-position = Vector2(428, 88)
+[node name="ShieldLEFT" type="StaticBody2D" parent="MegazordJP"]
+visible = false
+position = Vector2(-44, 0)
+rotation = -1.57079
+collision_layer = 2
+collision_mask = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="SuperManel"]
-scale = Vector2(2, 2)
-texture = ExtResource("3_wi1c3")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MegazordJP/ShieldLEFT"]
+shape = SubResource("RectangleShape2D_b1twp")
+
+[node name="trocar por animatedSprite" type="Sprite2D" parent="MegazordJP/ShieldLEFT"]
+position = Vector2(6.94394e-06, 7.689e-06)
+scale = Vector2(1.375, 0.3125)
+texture = SubResource("GradientTexture2D_mw2rv")
+
+[node name="ShieldRIGHT" type="StaticBody2D" parent="MegazordJP"]
+visible = false
+position = Vector2(44, 0)
+rotation = 1.57079
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MegazordJP/ShieldRIGHT"]
+shape = SubResource("RectangleShape2D_arlsb")
+
+[node name="trocar por animatedSprite" type="Sprite2D" parent="MegazordJP/ShieldRIGHT"]
+position = Vector2(6.94394e-06, 7.689e-06)
+scale = Vector2(1.375, 0.3125)
+texture = SubResource("GradientTexture2D_6mkqc")
+
+[node name="Attack" type="Node2D" parent="MegazordJP"]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="MegazordJP/Attack"]
+position = Vector2(0, -240)
+scale = Vector2(1, 6.5)
+texture = SubResource("GradientTexture2D_v0qoy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(428, 240)
@@ -205,28 +305,29 @@ position = Vector2(428, 240)
 [node name="Faces" type="Node2D" parent="Icons"]
 
 [node name="Bomba" type="Node2D" parent="Icons/Faces"]
-position = Vector2(32, 32)
+position = Vector2(56, 56)
 
 [node name="Sprite2D" type="Sprite2D" parent="Icons/Faces/Bomba"]
+position = Vector2(8, 8)
 scale = Vector2(3, 3)
 texture = ExtResource("5_mg8sl")
 
 [node name="Ureia" type="Node2D" parent="Icons/Faces"]
-position = Vector2(824, 32)
+position = Vector2(792, 64)
 
 [node name="Sprite2D" type="Sprite2D" parent="Icons/Faces/Ureia"]
 scale = Vector2(3, 3)
 texture = ExtResource("5_mg8sl")
 
 [node name="Ranger" type="Node2D" parent="Icons/Faces"]
-position = Vector2(32, 448)
+position = Vector2(64, 416)
 
 [node name="Sprite2D" type="Sprite2D" parent="Icons/Faces/Ranger"]
 scale = Vector2(3, 3)
 texture = ExtResource("5_mg8sl")
 
 [node name="Mini" type="Node2D" parent="Icons/Faces"]
-position = Vector2(824, 448)
+position = Vector2(792, 416)
 
 [node name="Sprite2D" type="Sprite2D" parent="Icons/Faces/Mini"]
 scale = Vector2(3, 3)
@@ -234,9 +335,88 @@ texture = ExtResource("5_mg8sl")
 
 [node name="healthBarMegazordJP" type="Node2D" parent="Icons"]
 
+[node name="bar2" type="Sprite2D" parent="Icons/healthBarMegazordJP"]
+position = Vector2(48, 240)
+scale = Vector2(0.875, 4)
+texture = SubResource("GradientTexture2D_mrnxu")
+
+[node name="1" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
+position = Vector2(-3.8147e-06, 28)
+scale = Vector2(0.857143, 0.0625)
+texture = SubResource("GradientTexture2D_b1twp")
+
+[node name="2" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
+position = Vector2(-3.8147e-06, 22)
+scale = Vector2(0.857143, 0.0625)
+texture = SubResource("GradientTexture2D_b1twp")
+
+[node name="3" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
+position = Vector2(-3.8147e-06, 16)
+scale = Vector2(0.857143, 0.0625)
+texture = SubResource("GradientTexture2D_b1twp")
+
+[node name="4" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
+position = Vector2(-3.8147e-06, 10)
+scale = Vector2(0.857143, 0.0625)
+texture = SubResource("GradientTexture2D_b1twp")
+
+[node name="5" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
+position = Vector2(-3.8147e-06, 4)
+scale = Vector2(0.857143, 0.0625)
+texture = SubResource("GradientTexture2D_b1twp")
+
+[node name="6" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
+position = Vector2(-3.8147e-06, -2)
+scale = Vector2(0.857143, 0.0625)
+texture = SubResource("GradientTexture2D_b1twp")
+
+[node name="7" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
+position = Vector2(-3.8147e-06, -8)
+scale = Vector2(0.857143, 0.0625)
+texture = SubResource("GradientTexture2D_b1twp")
+
+[node name="8" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
+position = Vector2(-3.8147e-06, -14)
+scale = Vector2(0.857143, 0.0625)
+texture = SubResource("GradientTexture2D_b1twp")
+
+[node name="9" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
+position = Vector2(-3.8147e-06, -20)
+scale = Vector2(0.857143, 0.0625)
+texture = SubResource("GradientTexture2D_b1twp")
+
+[node name="10" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
+position = Vector2(-3.8147e-06, -26)
+scale = Vector2(0.857143, 0.0625)
+texture = SubResource("GradientTexture2D_b1twp")
+
 [node name="healthBarManel" type="Node2D" parent="Icons"]
 
 [node name="powerBar" type="Node2D" parent="Icons"]
+position = Vector2(808, 240)
+
+[node name="bar" type="Sprite2D" parent="Icons/powerBar"]
+position = Vector2(-2.38419e-07, 4.76837e-07)
+scale = Vector2(0.875, 3.5)
+texture = SubResource("GradientTexture2D_arlsb")
+
+[node name="1" type="Sprite2D" parent="Icons/powerBar"]
+visible = false
+position = Vector2(2.59876e-05, 72)
+scale = Vector2(0.75, 1)
+texture = SubResource("GradientTexture2D_tp6la")
+
+[node name="2" type="Sprite2D" parent="Icons/powerBar"]
+visible = false
+position = Vector2(2.59876e-05, 0)
+scale = Vector2(0.75, 1)
+texture = SubResource("GradientTexture2D_tp6la")
+
+[node name="3" type="Sprite2D" parent="Icons/powerBar"]
+visible = false
+position = Vector2(2.59876e-05, -72)
+scale = Vector2(0.75, 1)
+texture = SubResource("GradientTexture2D_tp6la")
 
 [node name="boundaries" type="Node2D" parent="."]
 position = Vector2(428, 240)
@@ -244,9 +424,19 @@ position = Vector2(428, 240)
 [node name="StaticBody2D" type="StaticBody2D" parent="boundaries"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/StaticBody2D"]
-position = Vector2(-300, 176)
+position = Vector2(-300, 96)
 shape = SubResource("RectangleShape2D_vtx7u")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="boundaries/StaticBody2D"]
-position = Vector2(300, 176)
+position = Vector2(300, 96)
 shape = SubResource("RectangleShape2D_mrnxu")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="boundaries/StaticBody2D"]
+position = Vector2(0, -48)
+scale = Vector2(32.56, 1)
+shape = SubResource("RectangleShape2D_tp6la")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="boundaries/StaticBody2D"]
+position = Vector2(0, 249)
+scale = Vector2(32.56, 1)
+shape = SubResource("RectangleShape2D_tp6la")

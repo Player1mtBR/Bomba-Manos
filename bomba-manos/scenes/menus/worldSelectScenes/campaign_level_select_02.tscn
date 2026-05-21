@@ -70,7 +70,6 @@ offset_top = 384.0
 offset_right = 352.0
 offset_bottom = 448.0
 levelName = "Bônus"
-unlockRequirement = null
 nextLevelUp = NodePath("../LevelIcon3")
 
 [node name="playerIcon" parent="." instance=ExtResource("3_3ka0m")]
