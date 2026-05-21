@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://suap6bq2v1le"]
+
+[ext_resource type="Script" uid="uid://wasqsu7cxrg" path="res://scripts/misc/bossfight/megazord_jp.gd" id="1_eju5j"]
+[ext_resource type="Texture2D" uid="uid://bryq58u6v2vqq" path="res://assets/sprites/levels/campaign/extras/Sprite da cena da boss fight.png" id="2_g1im4"]
+[ext_resource type="Texture2D" uid="uid://bir2tcvl6u7d2" path="res://icon.svg" id="3_1xob5"]
+[ext_resource type="Texture2D" uid="uid://jiu6k51vrqgi" path="res://assets/sprites/manel/MANEL ANDANDO ZANGADO5.png" id="3_wi1c3"]
+[ext_resource type="Texture2D" uid="uid://rm6npmhxg1ii" path="res://SPRITESHEET MESSIAS/frame 1.png" id="5_mg8sl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wi1c3"]
+atlas = ExtResource("2_g1im4")
+region = Rect2(0, 0, 855, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xob5"]
+atlas = ExtResource("2_g1im4")
+region = Rect2(855, 0, 855, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mg8sl"]
+atlas = ExtResource("2_g1im4")
+region = Rect2(1710, 0, 855, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0qoy"]
+atlas = ExtResource("2_g1im4")
+region = Rect2(2565, 0, 855, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtx7u"]
+atlas = ExtResource("2_g1im4")
+region = Rect2(3420, 0, 855, 480)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mrnxu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wi1c3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xob5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mg8sl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0qoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtx7u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bossfight" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Background"]
+position = Vector2(428, 240)
+sprite_frames = SubResource("SpriteFrames_mrnxu")
+autoplay = "default"
+frame = 2
+frame_progress = 0.772107
+
+[node name="MegazordJP" type="Node2D" parent="."]
+position = Vector2(428, 416)
+script = ExtResource("1_eju5j")
+
+[node name="Sprite2D" type="Sprite2D" parent="MegazordJP"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_1xob5")
+
+[node name="SuperManel" type="Node2D" parent="."]
+position = Vector2(428, 88)
+
+[node name="Sprite2D" type="Sprite2D" parent="SuperManel"]
+scale = Vector2(2, 2)
+texture = ExtResource("3_wi1c3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(428, 240)
+
+[node name="Icons" type="Node2D" parent="."]
+
+[node name="Faces" type="Node2D" parent="Icons"]
+
+[node name="Bomba" type="Node2D" parent="Icons/Faces"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Icons/Faces/Bomba"]
+position = Vector2(32, 32)
+scale = Vector2(3, 3)
+texture = ExtResource("5_mg8sl")
+
+[node name="Ureia" type="Node2D" parent="Icons/Faces"]
+
+[node name="healthBarMegazordJP" type="Node2D" parent="Icons"]
+
+[node name="healthBarManel" type="Node2D" parent="Icons"]
+
+[node name="powerBar" type="Node2D" parent="Icons"]

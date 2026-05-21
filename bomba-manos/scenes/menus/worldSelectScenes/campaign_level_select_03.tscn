@@ -17,6 +17,7 @@ script = ExtResource("1_3u12c")
 [node name="LevelIcon" parent="." node_paths=PackedStringArray("nextLevelRight") instance=ExtResource("2_y180b")]
 offset_top = 256.0
 offset_bottom = 320.0
+level2Load = "uid://d4j7l3uvdwopn"
 nextLevelRight = NodePath("../LevelIcon2")
 
 [node name="LevelIcon2" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight") instance=ExtResource("2_y180b")]
@@ -25,6 +26,7 @@ offset_top = 192.0
 offset_right = 256.0
 offset_bottom = 256.0
 levelName = "2"
+level2Load = "uid://c8owbepyobwjm"
 nextLevelLeft = NodePath("../LevelIcon")
 nextLevelRight = NodePath("../LevelIcon3")
 
@@ -34,6 +36,7 @@ offset_top = 256.0
 offset_right = 384.0
 offset_bottom = 320.0
 levelName = "3"
+level2Load = "uid://bqjv3k83yah76"
 nextLevelLeft = NodePath("../LevelIcon2")
 nextLevelRight = NodePath("../LevelIcon4")
 
@@ -43,6 +46,7 @@ offset_top = 256.0
 offset_right = 576.0
 offset_bottom = 320.0
 levelName = "4"
+level2Load = "uid://dfkd7qqto7yw6"
 nextLevelLeft = NodePath("../LevelIcon3")
 nextLevelRight = NodePath("../LevelIcon5")
 
@@ -52,6 +56,7 @@ offset_top = 256.0
 offset_right = 768.0
 offset_bottom = 320.0
 levelName = "5"
+level2Load = "uid://cghduj6t35af4"
 nextLevelLeft = NodePath("../LevelIcon4")
 
 [node name="playerIcon" parent="." instance=ExtResource("3_1kii7")]

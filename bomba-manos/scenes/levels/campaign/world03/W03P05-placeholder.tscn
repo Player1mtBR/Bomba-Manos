@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://b738f72jq084f"]
+[gd_scene load_steps=25 format=4 uid="uid://cghduj6t35af4"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_c0prf"]
 [ext_resource type="Texture2D" uid="uid://bmh7gbx4co7l3" path="res://assets/sprites/levels/campaign/world03/chão.png" id="2_rck57"]

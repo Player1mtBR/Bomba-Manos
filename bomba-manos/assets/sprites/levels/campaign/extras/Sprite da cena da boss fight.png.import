@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct5c7xpm8a4sb"
-path="res://.godot/imported/Sprite-SkULL5.png-46111858cd777fbcb040ccd669c802a2.ctex"
+uid="uid://bryq58u6v2vqq"
+path="res://.godot/imported/Sprite da cena da boss fight.png-4ff0092e7a04c2cbd04873bed0666688.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/mobs_world_3/Sprite-SkULL5.png"
-dest_files=["res://.godot/imported/Sprite-SkULL5.png-46111858cd777fbcb040ccd669c802a2.ctex"]
+source_file="res://assets/sprites/levels/campaign/extras/Sprite da cena da boss fight.png"
+dest_files=["res://.godot/imported/Sprite da cena da boss fight.png-4ff0092e7a04c2cbd04873bed0666688.ctex"]
 
 [params]
 
