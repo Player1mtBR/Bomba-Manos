@@ -164,6 +164,7 @@ size = Vector2(20, 288)
 [node name="Bossfight" type="Node2D"]
 
 [node name="Background02" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(428, 240)
 sprite_frames = SubResource("SpriteFrames_mrnxu")
 autoplay = "default"
@@ -178,7 +179,6 @@ libraries = {
 autoplay = "moveBackground"
 
 [node name="Background" type="Node2D" parent="."]
-visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Background"]
 sprite_frames = SubResource("SpriteFrames_mrnxu")
