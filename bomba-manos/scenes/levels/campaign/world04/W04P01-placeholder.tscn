@@ -1,14 +1,12 @@
-[gd_scene load_steps=25 format=4 uid="uid://cb26ahhfqtafj"]
+[gd_scene load_steps=23 format=4 uid="uid://cb26ahhfqtafj"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_2w56p"]
 [ext_resource type="Texture2D" uid="uid://cx1sqwd2s3rdj" path="res://assets/sprites/levels/campaign/world04/damnBroLetsCode.png" id="2_l57kd"]
 [ext_resource type="Texture2D" uid="uid://b5barr1qf378e" path="res://assets/sprites/levels/campaign/world04/cenario01.png" id="3_nkneb"]
-[ext_resource type="Texture2D" uid="uid://1pa8xl2vyfp5" path="res://assets/sprites/levels/campaign/world04/wallCorner.png" id="4_43bmj"]
 [ext_resource type="Texture2D" uid="uid://dvnjg0qr4yv86" path="res://assets/sprites/levels/campaign/world04/cenario02.png" id="5_4kafp"]
 [ext_resource type="Texture2D" uid="uid://bgat5qqowxgoe" path="res://assets/sprites/levels/campaign/world04/cenario03.png" id="6_biyex"]
 [ext_resource type="Texture2D" uid="uid://dfj6jigttkb7a" path="res://assets/sprites/levels/campaign/world03/muro7.png" id="6_dj552"]
 [ext_resource type="PackedScene" uid="uid://br4aq80htq6s0" path="res://scenes/objects/barril_block.tscn" id="7_df6d5"]
-[ext_resource type="PackedScene" uid="uid://du7ge0tpaxnas" path="res://scenes/entities/Mobs/World_3/avessogob.tscn" id="8_51nl4"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="9_hfggq"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="12_4bnuq"]
 [ext_resource type="AudioStream" uid="uid://b6ewtu48bdibo" path="res://assets/sprites/levels/campaign/world04/sound.mp3" id="12_l57kd"]
@@ -67,27 +65,23 @@ scale = Vector2(0.307092, 0.307206)
 texture = ExtResource("3_nkneb")
 flip_v = true
 
+[node name="frentewallfixs" type="Sprite2D" parent="environment/mapWalls"]
+z_index = 1
+position = Vector2(368.525, -143)
+rotation = 3.14159
+scale = Vector2(0.281434, 0.307206)
+texture = ExtResource("3_nkneb")
+flip_v = true
+
 [node name="esquerdawall" type="Sprite2D" parent="environment/mapWalls"]
-position = Vector2(-189, -46)
+position = Vector2(-200, 12)
 scale = Vector2(0.429085, 0.278647)
 texture = ExtResource("5_4kafp")
 
 [node name="direitawall" type="Sprite2D" parent="environment/mapWalls"]
-position = Vector2(193, -42)
+position = Vector2(208, 18)
 scale = Vector2(0.429085, 0.274232)
 texture = ExtResource("6_biyex")
-
-[node name="canto" type="Sprite2D" parent="environment/mapWalls"]
-position = Vector2(220.682, -139.861)
-scale = Vector2(0.450542, 0.281116)
-texture = ExtResource("4_43bmj")
-
-[node name="canto2" type="Sprite2D" parent="environment/mapWalls"]
-z_index = 1
-position = Vector2(-220, -139)
-scale = Vector2(0.490636, 0.324279)
-texture = ExtResource("4_43bmj")
-flip_h = true
 
 [node name="spawnSomething" type="Node2D" parent="."]
 
@@ -584,29 +578,10 @@ position = Vector2(160, 16)
 [node name="Mobs" type="Node2D" parent="objects/AllBricks/entities"]
 visible = false
 
-[node name="avessogob" parent="objects/AllBricks/entities/Mobs" instance=ExtResource("8_51nl4")]
-position = Vector2(-160, -96)
-iaMoveDelay = 0.9
-
-[node name="avessogob5" parent="objects/AllBricks/entities/Mobs" instance=ExtResource("8_51nl4")]
-position = Vector2(152, 64)
-iaMoveDelay = 0.9
-
-[node name="avessogob4" parent="objects/AllBricks/entities/Mobs" instance=ExtResource("8_51nl4")]
-position = Vector2(0, 64)
-iaMoveDelay = 0.9
-
-[node name="avessogob3" parent="objects/AllBricks/entities/Mobs" instance=ExtResource("8_51nl4")]
-position = Vector2(159, -100)
-iaMoveDelay = 0.9
-
-[node name="avessogob2" parent="objects/AllBricks/entities/Mobs" instance=ExtResource("8_51nl4")]
-position = Vector2(-157, 71)
-iaMoveDelay = 0.9
-
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_l57kd")
 autoplay = true
+parameters/looping = true
 
 [node name="mainCamera" parent="." instance=ExtResource("12_4bnuq")]
 position = Vector2(0, -44)
