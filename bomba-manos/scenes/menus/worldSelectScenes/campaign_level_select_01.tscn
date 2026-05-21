@@ -14,7 +14,6 @@ grow_vertical = 2
 script = ExtResource("1_8or57")
 
 [node name="LevelIcon" parent="." node_paths=PackedStringArray("nextLevelRight") instance=ExtResource("2_pvp6c")]
-levelName = "1"
 nextLevelRight = NodePath("../LevelIcon2")
 
 [node name="LevelIcon2" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight") instance=ExtResource("2_pvp6c")]

@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var mainBombaScene := preload("res://scenes/objects/bombas/bomba_main.tscn") ##carregando cena em uma variavel
+@onready var remoteBomb := preload("res://scenes/objects/bombas/remote_bomb.tscn")
 #var playerParent = null
 var tileSize := 16
 
@@ -18,6 +19,8 @@ func placeBombOnMap(bombType, playerNum):
 	match bombType:
 		1:
 			newBomba = mainBombaScene.instantiate()
+		2:
+			newBomba = remoteBomb.instantiate()
 	
 	#newBomba = mainBombaScene.instantiate() ## definindo instancia da bomba
 	

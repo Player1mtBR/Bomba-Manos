@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var playerID := 0 ##permite usar um único script para o input de todos os jogadores
 @export var isPlayerOnMenu := false
 @export var charSkin := SpriteFrames #test
+@export var bombaEX := 1
 
 ## @onready define a var na hora que o node é inicializado
 @onready var placeBombaNode := $PlaceBomba ##coloca a referência ao node "$" em uma variável
@@ -20,9 +21,11 @@ var wonMatch := false
 var canPlayerMove := true
 var playerMoveDelay := 0.3
 
-var maxBombasAtOnce := 2
+@export var maxBombasAtOnce := 2
 var placedBombas := 0
 var passos := 0 
+
+var equippedBomb := 1
 
 var inputMoveDirection
 
@@ -41,21 +44,44 @@ func _process(delta: float) -> void:
 	#if GlobalScript.currentPlayers == 1 and canPlayerMove == true and isPlayerAlive == true:
 	#	victory()
 	
-	if Input.is_action_just_pressed("p"+str(playerID)+"_bomb") and placedBombas < maxBombasAtOnce and wonMatch == false and isPlayerAlive == true and isPlayerOnMenu == false:
-		placeBombaNode.placeBombOnMap(1, playerID) ##puxa a funcao que está no node
-		placedBombas += 1
-		#GlobalScript.manelBombasCount += 1 ##contador Manel ###REMOVE COMMENT FOR MULTIPLAYER
-		#print("placed bombas: ", placedBombas)
-		await get_tree().create_timer(3.0).timeout ## cria um novo timer e aguarda o sinal de quando acaba o timer
-		placedBombas -= 1
+	if Input.is_action_just_pressed("p"+str(playerID)+"_bomb") and placedBombas < maxBombasAtOnce and isPlayerAlive == true:
+		placeBombaNode.placeBombOnMap(equippedBomb, playerID) ##puxa a funcao que está no node
+		if equippedBomb == 1:
+			placedBombas += 1
+			#GlobalScript.manelBombasCount += 1 ##contador Manel ###REMOVE COMMENT FOR MULTIPLAYER
+			#print("placed bombas: ", placedBombas)
+			await get_tree().create_timer(3.0).timeout ## cria um novo timer e aguarda o sinal de quando acaba o timer
+			placedBombas -= 1
+			
+		if equippedBomb == 2: #remote bomb
+			placedBombas += 1
+	if Input.is_action_pressed("p1_bomb") and placedBombas == 2:
+		if $remoteBombResetTimer.is_stopped():
+			$remoteBombResetTimer.start()
+			print("timer started")
+
+	if Input.is_action_just_released("p1_bomb"):
+		$remoteBombResetTimer.stop()
+		print("timer stopped")
+
+	#if Input.is_action_just_pressed("p"+str(playerID)+"_bomb") and placedBombas < maxBombasAtOnce and isPlayerAlive == true:
+	#	placeBombaNode.placeBombOnMap(equippedBomb, playerID) ##puxa a funcao que está no node
+	#	placedBombas += 1
+	#	#GlobalScript.manelBombasCount += 1 ##contador Manel ###REMOVE COMMENT FOR MULTIPLAYER
+	#	#print("placed bombas: ", placedBombas)
+	#	await get_tree().create_timer(3.0).timeout ## cria um novo timer e aguarda o sinal de quando acaba o timer
+	#	placedBombas -= 1
+	
+	if Input.is_action_just_pressed("p"+str(playerID)+"_swap_bomb"):
+		if equippedBomb == 1:
+			equippedBomb = bombaEX
+		elif equippedBomb == bombaEX:
+			equippedBomb = 1
+			
+		print("Equipped bomb: ",equippedBomb)
 		
-	if Input.is_action_just_pressed("p"+str(playerID)+"_bomb") and placedBombas < maxBombasAtOnce and wonMatch == false and isPlayerAlive == true and isPlayerOnMenu == false:
-		placeBombaNode.placeBombOnMap(1, playerID) ##puxa a funcao que está no node
-		placedBombas += 1
-		#GlobalScript.manelBombasCount += 1 ##contador Manel ###REMOVE COMMENT FOR MULTIPLAYER
-		#print("placed bombas: ", placedBombas)
-		await get_tree().create_timer(3.0).timeout ## cria um novo timer e aguarda o sinal de quando acaba o timer
-		placedBombas -= 1
+	if Input.is_action_just_released("p1_bomb") and placedBombas <= 1:
+		$remoteBombResetTimer.stop()
 		
 
 func getPlayerPassos():
@@ -167,3 +193,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 
 	
+
+
+func _on_remote_bomb_reset_timer_timeout() -> void:
+	print("reset bombs")
+	placedBombas = 0

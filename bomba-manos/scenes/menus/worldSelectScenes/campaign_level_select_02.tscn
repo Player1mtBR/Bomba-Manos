@@ -19,7 +19,6 @@ offset_left = 56.0
 offset_top = 240.0
 offset_right = 120.0
 offset_bottom = 304.0
-levelName = "1"
 level2Load = "uid://cfwugrihtwwqk"
 nextLevelRight = NodePath("../LevelIcon2")
 

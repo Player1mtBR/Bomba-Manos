@@ -1,8 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://8cojvq8c0nxq"]
 
 [ext_resource type="Script" uid="uid://bpj3shtpebtdy" path="res://scripts/menus/worldSelect/world_icon.gd" id="1_423lh"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://mhuio1sn8das" path="res://scenes/menus/worldSelectScenes/campaign_level_select_01.tscn" id="2_13mvj"]
 [ext_resource type="Texture2D" uid="uid://c02aiiewo0clu" path="res://assets/sprites/levels/campaign/world01/WorldPixelArt.png" id="3_igpti"]
+=======
+[ext_resource type="PackedScene" uid="uid://mhuio1sn8das" path="res://scenes/menus/worldSelectScenes/campaign_level_select_01.tscn" id="2_5jklo"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p65gg"]
+>>>>>>> Stashed changes
 
 [node name="WorldIcon" type="Control"]
 layout_mode = 3
@@ -11,7 +17,11 @@ offset_right = 64.0
 offset_bottom = 64.0
 pivot_offset = Vector2(32, 32)
 script = ExtResource("1_423lh")
+<<<<<<< Updated upstream
 go2LevelPacked = ExtResource("2_13mvj")
+=======
+go2LevelPacked = ExtResource("2_5jklo")
+>>>>>>> Stashed changes
 
 [node name="WorldLabel" type="Label" parent="."]
 layout_mode = 0
