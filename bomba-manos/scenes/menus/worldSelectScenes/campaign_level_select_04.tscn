@@ -26,6 +26,7 @@ offset_top = 288.0
 offset_right = 192.0
 offset_bottom = 352.0
 levelName = "2"
+unlockRequirement = "W04L01"
 nextLevelRight = NodePath("../LevelIcon3")
 nextLevelUp = NodePath("../LevelIcon")
 
@@ -35,6 +36,7 @@ offset_top = 384.0
 offset_right = 376.0
 offset_bottom = 448.0
 levelName = "3"
+unlockRequirement = "W04L02"
 nextLevelLeft = NodePath("../LevelIcon2")
 nextLevelRight = NodePath("../LevelIcon6")
 nextLevelUp = NodePath("../LevelIcon4")
@@ -43,6 +45,7 @@ nextLevelUp = NodePath("../LevelIcon4")
 offset_left = 384.0
 offset_right = 448.0
 levelName = "4"
+unlockRequirement = "W04L03"
 nextLevelRight = NodePath("../LevelIcon5")
 nextLevelDown = NodePath("../LevelIcon3")
 
@@ -50,6 +53,7 @@ nextLevelDown = NodePath("../LevelIcon3")
 offset_left = 640.0
 offset_right = 704.0
 levelName = "5"
+unlockRequirement = "W04L04"
 nextLevelLeft = NodePath("../LevelIcon4")
 
 [node name="LevelIcon6" parent="." node_paths=PackedStringArray("nextLevelLeft") instance=ExtResource("2_pjj7a")]

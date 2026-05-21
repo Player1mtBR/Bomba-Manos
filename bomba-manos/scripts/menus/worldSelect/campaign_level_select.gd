@@ -10,11 +10,11 @@ func _ready() -> void:
 	$playerIcon.global_position = currentLevel.global_position
 	
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("menu_left") and currentLevel.nextLevelLeft:
+	if event.is_action_pressed("menu_left") and currentLevel.nextLevelLeft and currentLevel.nextLevelLeft.locked == false:
 		currentLevel = currentLevel.nextLevelLeft
 		$playerIcon.global_position = currentLevel.global_position
 		
-	if event.is_action_pressed("menu_right") and currentLevel.nextLevelRight:
+	if event.is_action_pressed("menu_right") and currentLevel.nextLevelRight and currentLevel.nextLevelRight.locked == false:
 		currentLevel = currentLevel.nextLevelRight
 		$playerIcon.global_position = currentLevel.global_position
 		

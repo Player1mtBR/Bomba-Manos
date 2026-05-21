@@ -23,6 +23,7 @@ offset_top = 256.0
 offset_right = 256.0
 offset_bottom = 320.0
 levelName = "2"
+unlockRequirement = "W01L01"
 nextLevelLeft = NodePath("../LevelIcon")
 nextLevelRight = NodePath("../LevelIcon3")
 
@@ -32,6 +33,7 @@ offset_top = 192.0
 offset_right = 384.0
 offset_bottom = 256.0
 levelName = "3"
+unlockRequirement = "W01L02"
 nextLevelLeft = NodePath("../LevelIcon2")
 nextLevelRight = NodePath("../LevelIcon4")
 
@@ -41,6 +43,7 @@ offset_top = 256.0
 offset_right = 576.0
 offset_bottom = 320.0
 levelName = "4"
+unlockRequirement = "W01L03"
 nextLevelLeft = NodePath("../LevelIcon3")
 nextLevelRight = NodePath("../LevelIcon5")
 nextLevelDown = NodePath("../LevelIcon6")
@@ -49,6 +52,7 @@ nextLevelDown = NodePath("../LevelIcon6")
 offset_left = 640.0
 offset_right = 704.0
 levelName = "5"
+unlockRequirement = "W01L04"
 nextLevelLeft = NodePath("../LevelIcon4")
 
 [node name="LevelIcon6" parent="." node_paths=PackedStringArray("nextLevelUp") instance=ExtResource("2_pvp6c")]
@@ -57,6 +61,7 @@ offset_top = 384.0
 offset_right = 576.0
 offset_bottom = 448.0
 levelName = "Bônus"
+unlockRequirement = null
 nextLevelUp = NodePath("../LevelIcon4")
 
 [node name="playerIcon" parent="." instance=ExtResource("3_wdmo6")]

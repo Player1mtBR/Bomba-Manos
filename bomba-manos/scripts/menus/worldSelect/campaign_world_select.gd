@@ -3,12 +3,10 @@ extends Control
 @onready var worldList :=  [$WorldIcon, $WorldIcon2, $WorldIcon3, $WorldIcon4, $WorldIcon5]
 var currentWorld := 0
 
-var lockedWorld05 := true #placeholder var
-
 func _ready() -> void:
 	$playerIcon.global_position = worldList[currentWorld].global_position
 	
-	if lockedWorld05 == true: #placeholder
+	if UnlockStuff.world05Unlocked == false: #placeholder
 		worldList.pop_back()
 	
 func _input(event: InputEvent) -> void:
@@ -29,3 +27,6 @@ func _input(event: InputEvent) -> void:
 			get_tree().current_scene = worldList[currentWorld].go2Level
 			get_tree().get_root().remove_child(self)
 			
+func _process(delta: float) -> void:
+	if UnlockStuff.world05Unlocked == true:
+		worldList.append($WorldIcon5)
