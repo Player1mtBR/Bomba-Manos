@@ -3,17 +3,19 @@ extends Node2D
 @onready var bombaSfx := $bombaSfx
 #@onready var selectedPlayer1 : CharacterBody2D
 #@onready var selectedPlayer2 : CharacterBody2D
-@onready var BombaMan := preload("res://scenes/entities/players/messias.tscn").instantiate()
-@onready var UreiaMan := preload("res://scenes/entities/players/pedro.tscn").instantiate()
-@onready var RangerMan := preload("res://scenes/entities/players/igor.tscn").instantiate()
-@onready var MiniMan := preload("res://scenes/entities/players/p1mt.tscn").instantiate()
+#@onready var BombaMan := preload("res://scenes/entities/players/messias.tscn").instantiate()
+#@onready var UreiaMan := preload("res://scenes/entities/players/pedro.tscn").instantiate()
+#@onready var RangerMan := preload("res://scenes/entities/players/igor.tscn").instantiate()
+#@onready var MiniMan := preload("res://scenes/entities/players/p1mt.tscn").instantiate()
 
 @onready var playerNodes := $entities/players
-@onready var p1Pos := $player1Pos
-@onready var p2Pos := $player2Pos
+#@onready var p1Pos := $player1Pos
+#@onready var p2Pos := $player2Pos
 
 func _ready() -> void:
 	MusicMenu.get_child(0).stop()
+	CurrentLevelManager.levelComplete = false
+	"""
 	match GlobalScript.selectedPlayer1:
 		1:
 			spawnCharacter(1, BombaMan, p1Pos)
@@ -33,6 +35,7 @@ func _ready() -> void:
 			spawnCharacter(2, RangerMan, p2Pos)
 		4:
 			spawnCharacter(2, MiniMan, p2Pos)
+			"""
 	"""
 	for character in playerNodes.get_children():## p/ seletor de personagem
 		if character.playerID != GlobalScript.selectedPlayer1 and character.playerID != GlobalScript.selectedPlayer2:

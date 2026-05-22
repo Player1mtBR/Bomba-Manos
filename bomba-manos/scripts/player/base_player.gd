@@ -31,6 +31,9 @@ var inputMoveDirection
 
 var playerDirection : Vector2 ##utiliza vetor (x, y) para definir a direção que o jogador se move
 
+#for IDDQD
+var movespeed := 100
+
 func _ready() -> void:
 	animPlayerNode.sprite_frames = charSkin
 	if isPlayerOnMenu == false:
@@ -44,7 +47,7 @@ func _process(delta: float) -> void:
 	#if GlobalScript.currentPlayers == 1 and canPlayerMove == true and isPlayerAlive == true:
 	#	victory()
 	
-	if Input.is_action_just_pressed("p"+str(playerID)+"_bomb") and placedBombas < maxBombasAtOnce and isPlayerAlive == true:
+	if Input.is_action_just_pressed("p"+str(playerID)+"_bomb") and placedBombas < maxBombasAtOnce and isPlayerAlive == true and CurrentLevelManager.levelComplete == false:
 		placeBombaNode.placeBombOnMap(equippedBomb, playerID) ##puxa a funcao que está no node
 		if equippedBomb == 1:
 			placedBombas += 1
@@ -91,7 +94,7 @@ func _physics_process(delta: float) -> void:## roda a cada frame de física
 	inputMoveDirection = Vector2(0, 0) ##qual direcao e pra andar
 	
 	## checha input e se o raycast ta colidindo pra poder andar
-	if isPlayerAlive == true and canPlayerMove == true:
+	if isPlayerAlive == true and canPlayerMove == true and UnlockStuff.iddqd == false:
 		#print(raycastUp.get_collider())
 		if Input.is_action_pressed("p"+str(playerID)+"_moveUp") and raycastUp.is_colliding() == false:
 			inputMoveDirection = Vector2(0, -1)
@@ -117,14 +120,21 @@ func _physics_process(delta: float) -> void:## roda a cada frame de física
 	#if Input.is_action_just_pressed("p1_kill"):
 	#	killPlayer()
 	
-	if inputMoveDirection == Vector2(0, 0) and canPlayerMove and isPlayerAlive and isPlayerOnMenu == false:
+	if inputMoveDirection == Vector2(0, 0) and canPlayerMove and isPlayerAlive:
 		animPlayerNode.stop()
 	
 	if isPlayerOnMenu:
 		animPlayerNode.play("rotate")
+		
+		
+	#IDDQD movement
+	if UnlockStuff.iddqd == true:
+		var direction = Input.get_vector("p1_moveLeft", "p1_moveRight", "p1_moveUp", "p1_moveDown")
+		velocity = (direction * movespeed)
+		move_and_slide()
 
 func movePlayer(): ##tween vai levar de um valor a outro de forma gradual
-	if inputMoveDirection and isPlayerOnMenu == false:
+	if inputMoveDirection:
 		if canPlayerMove:
 			canPlayerMove = false
 			var moveTween = create_tween()
@@ -145,6 +155,8 @@ func killPlayer():
 		print(GlobalScript.playerScores)
 		
 	await animPlayerNode.animation_finished
+	if CurrentLevelManager.campaignMap == true:
+		CurrentLevelManager.restartLevel()
 	queue_free()
 	
 func victory():
@@ -180,20 +192,16 @@ func teleport(id_tunel: int) -> void:
 	canPlayerMove = true
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.name == "ExplosionArea":
+	if area.name == "ExplosionArea" and UnlockStuff.iddqd == false:
 		killPlayer()
 		
-	if area.name == "Mob":
+	if area.name == "Mob" and UnlockStuff.iddqd == false:
 		killPlayer()
 
 	if area.name == "teleportTunel":
 		teleport(1)
 	elif area.name == "teleportTunel2":
 		teleport(2)
-
-
-	
-
 
 func _on_remote_bomb_reset_timer_timeout() -> void:
 	print("reset bombs")

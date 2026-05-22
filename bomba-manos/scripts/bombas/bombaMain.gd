@@ -19,6 +19,10 @@ func _ready():
 	GlobalScript.triggerBombaSfx = true
 	kaboom()
 	
+func _process(delta: float) -> void:
+	if CurrentLevelManager.levelComplete == true:
+		queue_free()
+	
 func kaboom():	
 	GlobalScript.triggerCameraShake = true
 	spawnExplosion(0, global_position)

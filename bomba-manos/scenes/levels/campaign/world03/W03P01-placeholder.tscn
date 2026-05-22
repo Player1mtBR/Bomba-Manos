@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://d4j7l3uvdwopn"]
+[gd_scene load_steps=23 format=4 uid="uid://d4j7l3uvdwopn"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_lran8"]
 [ext_resource type="Texture2D" uid="uid://dw4hil17syrg0" path="res://assets/sprites/levels/campaign/world03/FRENTELostWoods.png" id="3_ljbgp"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="14_l4kwr"]
 [ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/campaign/exit.tscn" id="17_6vrrs"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="18_aqvci"]
+[ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="18_pbp7h"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="19_1oj76"]
 [ext_resource type="Texture2D" uid="uid://dfj6jigttkb7a" path="res://assets/sprites/levels/campaign/world03/muro7.png" id="19_4di0p"]
 [ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="20_d2lw7"]
@@ -585,26 +586,6 @@ position = Vector2(160, 16)
 [node name="Mobs" type="Node2D" parent="objects/AllBricks/entities"]
 visible = false
 
-[node name="avessogob" parent="objects/AllBricks/entities/Mobs" instance=ExtResource("9_pbp7h")]
-position = Vector2(-160, -96)
-iaMoveDelay = 0.9
-
-[node name="avessogob5" parent="objects/AllBricks/entities/Mobs" instance=ExtResource("9_pbp7h")]
-position = Vector2(152, 64)
-iaMoveDelay = 0.9
-
-[node name="avessogob4" parent="objects/AllBricks/entities/Mobs" instance=ExtResource("9_pbp7h")]
-position = Vector2(0, 64)
-iaMoveDelay = 0.9
-
-[node name="avessogob3" parent="objects/AllBricks/entities/Mobs" instance=ExtResource("9_pbp7h")]
-position = Vector2(159, -100)
-iaMoveDelay = 0.9
-
-[node name="avessogob2" parent="objects/AllBricks/entities/Mobs" instance=ExtResource("9_pbp7h")]
-position = Vector2(-157, 71)
-iaMoveDelay = 0.9
-
 [node name="basePlayer02" parent="objects/AllBricks/entities" instance=ExtResource("14_l4kwr")]
 position = Vector2(0, -96)
 playerID = 1
@@ -719,3 +700,5 @@ position = Vector2(160, -96)
 position = Vector2(0, -16)
 levelIdentifier = "W03L01"
 nextLevel = "uid://c8owbepyobwjm"
+
+[node name="pauseCampaign" parent="." instance=ExtResource("18_pbp7h")]

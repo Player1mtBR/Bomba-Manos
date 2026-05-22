@@ -1,10 +1,13 @@
-[gd_scene load_steps=37 format=3 uid="uid://suap6bq2v1le"]
+[gd_scene load_steps=47 format=3 uid="uid://suap6bq2v1le"]
 
 [ext_resource type="Script" uid="uid://wasqsu7cxrg" path="res://scripts/misc/bossfight/megazord_jp.gd" id="1_eju5j"]
+[ext_resource type="Script" uid="uid://b8x47tsklf1ns" path="res://scripts/misc/bossfight/bossfight.gd" id="1_vtx7u"]
 [ext_resource type="Texture2D" uid="uid://bryq58u6v2vqq" path="res://assets/sprites/levels/campaign/extras/Sprite da cena da boss fight.png" id="2_g1im4"]
 [ext_resource type="Texture2D" uid="uid://bir2tcvl6u7d2" path="res://icon.svg" id="3_1xob5"]
 [ext_resource type="Texture2D" uid="uid://jiu6k51vrqgi" path="res://assets/sprites/manel/MANEL ANDANDO ZANGADO5.png" id="3_wi1c3"]
 [ext_resource type="Texture2D" uid="uid://rm6npmhxg1ii" path="res://SPRITESHEET MESSIAS/frame 1.png" id="5_mg8sl"]
+[ext_resource type="AudioStream" uid="uid://cdnug66iunmj2" path="res://assets/audio/tracks/world05/Boss fight test.mp3" id="6_v0qoy"]
+[ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="8_mrnxu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wi1c3"]
 atlas = ExtResource("2_g1im4")
@@ -72,19 +75,64 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 20.7333, 46.9, 72.8667, 99.8, 120),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 20.7333, 46.9, 72.8667, 99.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(294, 193), Vector2(424, -235), Vector2(-435, -222), Vector2(-217, 231), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(294, 193), Vector2(260, -178), Vector2(-412, -175), Vector2(-170, 229)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vtx7u"]
 _data = {
 &"RESET": SubResource("Animation_v0qoy"),
 &"moveBackground": SubResource("Animation_mg8sl")
+}
+
+[sub_resource type="Gradient" id="Gradient_mrnxu"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0.294118)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oofr0"]
+gradient = SubResource("Gradient_mrnxu")
+
+[sub_resource type="Animation" id="Animation_mrnxu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("visual:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vtx7u"]
+resource_name = "manelFloat"
+length = 15.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("visual:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.13333, 4.86667, 7.26667, 9.93333, 12.5, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-27, -24), Vector2(-68, -13), Vector2(-22, 11), Vector2(46, -21), Vector2(67, -12), Vector2(26, 12)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oofr0"]
+_data = {
+&"RESET": SubResource("Animation_mrnxu"),
+&"manelFloat": SubResource("Animation_vtx7u")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mg8sl"]
@@ -102,6 +150,13 @@ colors = PackedColorArray(0, 0.686275, 1, 0.709804)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_u0vej"]
 gradient = SubResource("Gradient_b1twp")
+
+[sub_resource type="Gradient" id="Gradient_mw2rv"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 0, 0.709804)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3ar53"]
+gradient = SubResource("Gradient_mw2rv")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1twp"]
 size = Vector2(88, 20)
@@ -154,14 +209,15 @@ metadata/_snap_enabled = true
 gradient = SubResource("Gradient_6mkqc")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vtx7u"]
-size = Vector2(20, 288)
+size = Vector2(20, 277)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrnxu"]
-size = Vector2(20, 288)
+size = Vector2(20, 277)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tp6la"]
 
 [node name="Bossfight" type="Node2D"]
+script = ExtResource("1_vtx7u")
 
 [node name="Background02" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -212,24 +268,74 @@ autoplay = "default"
 frame = 2
 frame_progress = 0.772107
 
-[node name="SuperManel" type="Node2D" parent="."]
-position = Vector2(428, 88)
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(-427, -240)
+scale = Vector2(26.7188, 15)
+texture = SubResource("GradientTexture2D_oofr0")
+centered = false
 
-[node name="Sprite2D" type="Sprite2D" parent="SuperManel"]
-scale = Vector2(2, 2)
-texture = ExtResource("3_wi1c3")
+[node name="SuperManel" type="Node2D" parent="."]
+position = Vector2(428, 128)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SuperManel"]
+libraries = {
+&"": SubResource("AnimationLibrary_oofr0")
+}
+autoplay = "manelFloat"
 
 [node name="attackSpawn" type="Node2D" parent="SuperManel"]
 
 [node name="left" type="Node2D" parent="SuperManel/attackSpawn"]
 
+[node name="1" type="Node2D" parent="SuperManel/attackSpawn/left"]
+position = Vector2(-450, 128)
+
+[node name="2" type="Node2D" parent="SuperManel/attackSpawn/left"]
+position = Vector2(-450, 214)
+
+[node name="3" type="Node2D" parent="SuperManel/attackSpawn/left"]
+position = Vector2(-450, 300)
+
 [node name="right" type="Node2D" parent="SuperManel/attackSpawn"]
 
+[node name="1" type="Node2D" parent="SuperManel/attackSpawn/right"]
+position = Vector2(450, 128)
+
+[node name="2" type="Node2D" parent="SuperManel/attackSpawn/right"]
+position = Vector2(450, 214)
+
+[node name="3" type="Node2D" parent="SuperManel/attackSpawn/right"]
+position = Vector2(450, 300)
+
 [node name="top" type="Node2D" parent="SuperManel/attackSpawn"]
+position = Vector2(0, -160)
+
+[node name="1" type="Node2D" parent="SuperManel/attackSpawn/top"]
+position = Vector2(-220, 0)
+
+[node name="2" type="Node2D" parent="SuperManel/attackSpawn/top"]
+position = Vector2(-110, 0)
+
+[node name="3" type="Node2D" parent="SuperManel/attackSpawn/top"]
+
+[node name="4" type="Node2D" parent="SuperManel/attackSpawn/top"]
+position = Vector2(110, 0)
+
+[node name="5" type="Node2D" parent="SuperManel/attackSpawn/top"]
+position = Vector2(220, 0)
+
+[node name="visual" type="Node2D" parent="SuperManel"]
+
+[node name="Sprite2D" type="Sprite2D" parent="SuperManel/visual"]
+scale = Vector2(4, 4)
+texture = ExtResource("3_wi1c3")
 
 [node name="MegazordJP" type="CharacterBody2D" parent="."]
 position = Vector2(428, 416)
 script = ExtResource("1_eju5j")
+
+[node name="ParryTimer" type="Timer" parent="MegazordJP"]
+wait_time = 0.5
 
 [node name="Sprite2D" type="Sprite2D" parent="MegazordJP"]
 scale = Vector2(0.5, 0.5)
@@ -259,6 +365,11 @@ position = Vector2(6.94394e-06, 7.689e-06)
 scale = Vector2(1.375, 0.3125)
 texture = SubResource("GradientTexture2D_u0vej")
 
+[node name="green" type="Sprite2D" parent="MegazordJP/ShieldUP"]
+position = Vector2(6.94394e-06, 7.689e-06)
+scale = Vector2(1.375, 0.3125)
+texture = SubResource("GradientTexture2D_3ar53")
+
 [node name="ShieldLEFT" type="StaticBody2D" parent="MegazordJP"]
 visible = false
 position = Vector2(-44, 0)
@@ -274,6 +385,11 @@ position = Vector2(6.94394e-06, 7.689e-06)
 scale = Vector2(1.375, 0.3125)
 texture = SubResource("GradientTexture2D_mw2rv")
 
+[node name="green2" type="Sprite2D" parent="MegazordJP/ShieldLEFT"]
+position = Vector2(1.43051e-06, -1.3113e-06)
+scale = Vector2(1.375, 0.3125)
+texture = SubResource("GradientTexture2D_3ar53")
+
 [node name="ShieldRIGHT" type="StaticBody2D" parent="MegazordJP"]
 visible = false
 position = Vector2(44, 0)
@@ -288,6 +404,11 @@ shape = SubResource("RectangleShape2D_arlsb")
 position = Vector2(6.94394e-06, 7.689e-06)
 scale = Vector2(1.375, 0.3125)
 texture = SubResource("GradientTexture2D_6mkqc")
+
+[node name="green3" type="Sprite2D" parent="MegazordJP/ShieldRIGHT"]
+position = Vector2(-3.8147e-06, 0)
+scale = Vector2(1.375, 0.3125)
+texture = SubResource("GradientTexture2D_3ar53")
 
 [node name="Attack" type="Node2D" parent="MegazordJP"]
 visible = false
@@ -424,11 +545,11 @@ position = Vector2(428, 240)
 [node name="StaticBody2D" type="StaticBody2D" parent="boundaries"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/StaticBody2D"]
-position = Vector2(-300, 96)
+position = Vector2(-300, 100.5)
 shape = SubResource("RectangleShape2D_vtx7u")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="boundaries/StaticBody2D"]
-position = Vector2(300, 96)
+position = Vector2(300, 100.5)
 shape = SubResource("RectangleShape2D_mrnxu")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="boundaries/StaticBody2D"]
@@ -440,3 +561,12 @@ shape = SubResource("RectangleShape2D_tp6la")
 position = Vector2(0, 249)
 scale = Vector2(32.56, 1)
 shape = SubResource("RectangleShape2D_tp6la")
+
+[node name="soundtrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_v0qoy")
+autoplay = true
+
+[node name="pauseCampaign" parent="." instance=ExtResource("8_mrnxu")]
+visible = false
+
+[connection signal="timeout" from="MegazordJP/ParryTimer" to="MegazordJP" method="_on_parry_timer_timeout"]

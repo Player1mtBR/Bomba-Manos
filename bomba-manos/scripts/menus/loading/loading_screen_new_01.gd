@@ -4,6 +4,7 @@ extends CanvasLayer
 
 func _ready() -> void:
 	ResourceLoader.load_threaded_request(path2Scene) # carregamento no background
+	UnlockStuff.iddqd = false
 	
 func _process(delta: float) -> void:
 	if ResourceLoader.load_threaded_get_status(path2Scene) == ResourceLoader.THREAD_LOAD_LOADED:

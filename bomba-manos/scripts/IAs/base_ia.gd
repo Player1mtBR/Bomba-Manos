@@ -32,6 +32,7 @@ func _ready() -> void:
 	if shouldIncrease:
 		shouldIncrease = false
 		CurrentLevelManager.currentEnemiesAlive += 1
+		print("Enemies: ", CurrentLevelManager.currentEnemiesAlive)
 	
 	playerNode = $"../../players/basePlayer02"
 	if playerNode:
@@ -158,6 +159,7 @@ func killIa():
 	if shouldDecrease:
 		shouldDecrease = false
 		CurrentLevelManager.decreaseEnemyCount()
+		print("Enemies: ", CurrentLevelManager.currentEnemiesAlive)
 	isIaAlive = false
 	animIaNode.play("die")
 	await animIaNode.animation_finished

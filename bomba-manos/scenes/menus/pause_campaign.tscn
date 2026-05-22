@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2wjsl0bsfouh"]
+
+[ext_resource type="Script" uid="uid://crhholwb2f4y" path="res://scripts/misc/pause_campaign.gd" id="1_6tgym"]
+
+[node name="pauseCampaign" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_6tgym")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.490196)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="continuar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Continuar"
+
+[node name="sair" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Sair para o Menu"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.5
+offset_top = 116.0
+offset_right = 38.5
+offset_bottom = 139.0
+grow_horizontal = 2
+text = "PAUSADO"
+
+[connection signal="pressed" from="VBoxContainer/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="VBoxContainer/sair" to="." method="_on_sair_pressed"]

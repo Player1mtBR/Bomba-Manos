@@ -4,6 +4,8 @@ extends Control
 var currentWorld := 0
 
 func _ready() -> void:
+	if MusicMenu.get_child(0).playing == false:
+		MusicMenu.get_child(0).play()
 	$playerIcon.global_position = worldList[currentWorld].global_position
 	
 	if UnlockStuff.world05Unlocked == false: #placeholder
@@ -26,6 +28,8 @@ func _input(event: InputEvent) -> void:
 			get_tree().get_root().add_child(worldList[currentWorld].go2Level)
 			get_tree().current_scene = worldList[currentWorld].go2Level
 			get_tree().get_root().remove_child(self)
+	if event.is_action_pressed("menu_cancel"):
+		Loader.loadingScreen2Scene("res://scenes/menus/main_menu.tscn")
 			
 func _process(delta: float) -> void:
 	if UnlockStuff.world05Unlocked == true:

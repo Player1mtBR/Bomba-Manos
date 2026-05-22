@@ -14,6 +14,10 @@ script/source = "extends Control
 
 
 #func _ready() -> void:
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed(\"menu_cancel\"):
+		Loader.loadingScreen2Scene(\"res://scenes/menus/main_menu.tscn\")
 "
 
 [node name="VersusMatchSetupTest" type="Control"]

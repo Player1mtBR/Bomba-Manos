@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cdnug66iunmj2"
+path="res://.godot/imported/Boss fight test.mp3-93efbfb252a98cf67f45e92e3cd2f2e5.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/tracks/world05/Boss fight test.mp3"
+dest_files=["res://.godot/imported/Boss fight test.mp3-93efbfb252a98cf67f45e92e3cd2f2e5.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

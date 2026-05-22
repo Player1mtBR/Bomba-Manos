@@ -1,6 +1,8 @@
 extends Node
 
 var isOnMenu = false
+var unlockAll := false
+var iddqd := false
 #WORLDS
 var world05Unlocked := false
 
@@ -57,8 +59,9 @@ func _process(delta: float) -> void:
 
 	
 func _input(event: InputEvent) -> void:
-	if isOnMenu and Input.is_action_pressed("code_B") and Input.is_action_pressed("code_O") and Input.is_action_pressed("code_M") and Input.is_action_pressed("code_A"):
+	if isOnMenu and Input.is_action_pressed("Shift") and Input.is_action_pressed("code_B") and Input.is_action_pressed("code_O") and Input.is_action_pressed("code_M") and Input.is_action_pressed("code_A"):
 		print("Unlock all stuff")
+		unlockAll = true
 		
 		world05Unlocked = true
 		world01Completed = true
@@ -69,5 +72,8 @@ func _input(event: InputEvent) -> void:
 		
 		for level in completedLevels:
 			completedLevels[level] = true
-
+		
+	if Input.is_action_pressed("Shift") and Input.is_action_pressed("code_I") and Input.is_action_pressed("code_I") and Input.is_action_pressed("code_D") and Input.is_action_pressed("code_Q"):
+		iddqd = true
+		print("Degreelessness mode ON \nYou feel lighter")
 		

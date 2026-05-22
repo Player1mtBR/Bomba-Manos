@@ -8,7 +8,7 @@ func _process(delta: float) -> void:
 	
 func _on_campanha_pressed() -> void:
 	UnlockStuff.isOnMenu = false
-	Loader.loadingScreen2Scene("res://scenes/menus/worldSelectScenes/campaign_world_select.tscn")
+	Loader.loadingScreen2Scene("res://scenes/cutscenes/cutscene_01.tscn")
 	
 func _on_versus_pressed() -> void:
 	UnlockStuff.isOnMenu = false

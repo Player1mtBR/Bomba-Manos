@@ -24,7 +24,8 @@ var playerScores := [0, 0, 0, 0, 0]
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("restart"):
-		restartLevel()
+		pass
+		#restartLevel()
 	
 	if currentPlayers == 0 and checkIfAreAllDead == true and manelBombasCount != 0:
 		print("all dead")
