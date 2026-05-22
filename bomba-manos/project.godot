@@ -27,6 +27,7 @@ VersusMatchSettings="*res://scripts/misc/versus_match_settings.gd"
 VersusScoreManager="*res://scripts/misc/versus_score_manager.gd"
 UnlockStuff="*res://scripts/misc/unlock_stuff.gd"
 CurrentLevelManager="*res://scripts/misc/current_level_manager.gd"
+PortalTransition="*res://scenes/menus/loading/portal_transition.tscn"
 
 [display]
 

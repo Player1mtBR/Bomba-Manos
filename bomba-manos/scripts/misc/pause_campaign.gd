@@ -22,5 +22,6 @@ func _on_continuar_pressed() -> void:
 
 func _on_sair_pressed() -> void:
 	visible = false
+	CurrentLevelManager.currentEnemiesAlive = 0
 	get_tree().paused = false
 	Loader.loadingScreen2Scene("res://scenes/menus/main_menu.tscn")

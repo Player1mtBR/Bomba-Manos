@@ -136,9 +136,12 @@ func showGreenShield():
 	$ShieldUP/green.visible = true
 	$ShieldLEFT/green2.visible = true
 	$ShieldRIGHT/green3.visible = true
+	canParry = true
+	print("can parry = ", canParry)
 
 func _on_parry_timer_timeout() -> void:
 	$ShieldUP/green.visible = false
 	$ShieldLEFT/green2.visible = false
 	$ShieldRIGHT/green3.visible = false
-	
+	canParry = false
+	print("can parry = ", canParry)

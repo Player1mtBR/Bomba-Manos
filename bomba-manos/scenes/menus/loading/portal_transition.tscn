@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://6swpmr5f1l06"]
+
+[ext_resource type="Script" uid="uid://8kqjejc1poha" path="res://scripts/menus/loading/portal_transition.gd" id="1_qgwgh"]
+
+[sub_resource type="Gradient" id="Gradient_8tnyc"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0.709804, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qgwgh"]
+gradient = SubResource("Gradient_8tnyc")
+
+[sub_resource type="Animation" id="Animation_vvvje"]
+resource_name = "in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mm6vg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xwtas"]
+resource_name = "out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xue1a"]
+_data = {
+&"RESET": SubResource("Animation_mm6vg"),
+&"in": SubResource("Animation_vvvje"),
+&"out": SubResource("Animation_xwtas")
+}
+
+[node name="PortalTransition" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_qgwgh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_right = 855.0
+offset_bottom = 480.0
+texture = SubResource("GradientTexture2D_qgwgh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xue1a")
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

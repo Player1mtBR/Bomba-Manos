@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cem2spc4hrmqd"]
+[gd_scene load_steps=4 format=3 uid="uid://cem2spc4hrmqd"]
 
 [ext_resource type="Script" uid="uid://b83kybk1pq56o" path="res://scripts/menus/loading/loading_screen_new_01.gd" id="1_n0edm"]
+[ext_resource type="Texture2D" uid="uid://cfpki24d0xh0o" path="res://assets/sprites/bomba/BOMBA SALGADO EXPLODINDOV6.png" id="2_a7nhy"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jnic8"]
 
@@ -32,10 +33,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -52.0
-offset_top = -11.5
-offset_right = 52.0
-offset_bottom = 11.5
+offset_left = -105.5
+offset_top = 132.0
+offset_right = -1.5
+offset_bottom = 155.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 text = "Carregando..."
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.5
+offset_top = -11.0
+offset_right = 9.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(10, 10)
+pivot_offset = Vector2(10.5, 13)
+fill_mode = 4
+texture_under = ExtResource("2_a7nhy")
+texture_progress = ExtResource("2_a7nhy")
+tint_under = Color(0, 0, 0, 1)
