@@ -23,7 +23,16 @@ var lastPassosChecked := 0
 var passosDaIa        := 0   # quantos passos a IA já deu
 var passosParaRever   := 2   # a cada X passos da IA, reavalia direção mesmo sem parede
 
+
+var shouldDecrease := true
+var shouldIncrease := true
+
 func _ready() -> void:
+	
+	if shouldIncrease:
+		shouldIncrease = false
+		CurrentLevelManager.currentEnemiesAlive += 1
+	
 	playerNode = $"../../players/basePlayer02"
 	if playerNode:
 		playerPosition = playerNode.global_position
@@ -146,6 +155,9 @@ func _playAnim() -> void:
 		canIaMove = true
 
 func killIa():
+	if shouldDecrease:
+		shouldDecrease = false
+		CurrentLevelManager.decreaseEnemyCount()
 	isIaAlive = false
 	animIaNode.play("die")
 	await animIaNode.animation_finished

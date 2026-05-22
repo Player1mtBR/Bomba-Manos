@@ -26,12 +26,12 @@ Loader="*res://scripts/misc/loader.gd"
 VersusMatchSettings="*res://scripts/misc/versus_match_settings.gd"
 VersusScoreManager="*res://scripts/misc/versus_score_manager.gd"
 UnlockStuff="*res://scripts/misc/unlock_stuff.gd"
+CurrentLevelManager="*res://scripts/misc/current_level_manager.gd"
 
 [display]
 
 window/size/viewport_width=855
 window/size/viewport_height=480
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor]

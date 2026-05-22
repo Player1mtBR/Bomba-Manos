@@ -7,6 +7,7 @@
 size = Vector2(8, 8)
 
 [node name="Exit" type="Node2D"]
+visible = false
 script = ExtResource("1_bpsdj")
 levelIdentifier = "W01L01"
 

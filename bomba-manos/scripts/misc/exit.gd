@@ -14,3 +14,7 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 		#UnlockStuff.
 		UnlockStuff.completedLevels[levelIdentifier] = true
 		print(UnlockStuff.completedLevels[levelIdentifier], " Completed")
+
+func _process(delta: float) -> void:
+	if CurrentLevelManager.currentEnemiesAlive <= 0:
+		visible = true

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scripts/IAs/base_ia.gd" id="1_0p10g"]
 [ext_resource type="Texture2D" uid="uid://bgwbdni2vhnyn" path="res://assets/sprites/mobs_world_3/Sprite-SKULL1.png" id="2_71wva"]
-[ext_resource type="Texture2D" uid="uid://dk4xmk7ra1fgg" path="res://assets/sprites/mobs_world_3/Sprite-SKULL2.png" id="3_wpmfp"]
-[ext_resource type="Texture2D" uid="uid://dm86tk6pn2k4i" path="res://assets/sprites/mobs_world_3/Sprite-SKULL3.png" id="4_mb3kg"]
-[ext_resource type="Texture2D" uid="uid://dg5jwkfieasps" path="res://assets/sprites/mobs_world_3/Sprite-SKULL4.png" id="5_vrep4"]
-[ext_resource type="Texture2D" uid="uid://ct5c7xpm8a4sb" path="res://assets/sprites/mobs_world_3/Sprite-SKULL5.png" id="6_qiy2s"]
+[ext_resource type="Texture2D" uid="uid://dk4xmk7ra1fgg" path="res://assets/sprites/mobs_world_3/Sprite-SkULL2.png" id="3_wpmfp"]
+[ext_resource type="Texture2D" uid="uid://dm86tk6pn2k4i" path="res://assets/sprites/mobs_world_3/Sprite-SkULL3.png" id="4_mb3kg"]
+[ext_resource type="Texture2D" uid="uid://dg5jwkfieasps" path="res://assets/sprites/mobs_world_3/Sprite-SkULL4.png" id="5_vrep4"]
+[ext_resource type="Texture2D" uid="uid://ct5c7xpm8a4sb" path="res://assets/sprites/mobs_world_3/Sprite-SkULL5.png" id="6_qiy2s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xsjrv"]
 radius = 72.0
