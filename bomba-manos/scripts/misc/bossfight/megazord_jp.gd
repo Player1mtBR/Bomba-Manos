@@ -89,9 +89,10 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 	
 func chargePower(amount):
-	chargedPower += amount
-	if chargedPower >= 3:
-		canAttack = true
+	if canParry == true:
+		chargedPower += amount
+		if chargedPower >= 3:
+			canAttack = true
 
 func jpBlock():
 	print("Blocking")
@@ -100,22 +101,26 @@ func jpBlock():
 func jpBlockUp():
 	print("Blocking")
 	$ShieldUP.visible = true
+	$ShieldUP/CollisionShape2D.disabled = false
 	isBlocking = true
 	
 func jpBlockLeft():
 	print("Blocking")
 	$ShieldLEFT.visible = true
+	$ShieldLEFT/CollisionShape2D.disabled = false
 	isBlocking = true
 	
 func jpBlockRight():
 	print("Blocking")
 	$ShieldRIGHT.visible = true
+	$ShieldRIGHT/CollisionShape2D.disabled = false
 	isBlocking = true
 	
 func jpAttack():
 	canAttack = false
 	print("Attack")
 	$Attack.visible = true
+	$Attack/Area2D/CollisionShape2D.disabled == false
 	await get_tree().create_timer(1.0).timeout
 	chargedPower = 2
 	await get_tree().create_timer(1.0).timeout
@@ -123,6 +128,8 @@ func jpAttack():
 	await get_tree().create_timer(1.0).timeout
 	chargedPower = 0
 	$Attack.visible = false
+	$Attack/Area2D/CollisionShape2D.disabled == false
+	
 	canMove = true
 	canBlock = true
 	print("power ", chargedPower)
@@ -136,8 +143,20 @@ func showGreenShield():
 	$ShieldUP/green.visible = true
 	$ShieldLEFT/green2.visible = true
 	$ShieldRIGHT/green3.visible = true
+	$ShieldUP/CollisionShape2D.disabled = true
+	$ShieldLEFT/CollisionShape2D.disabled = true
+	$ShieldRIGHT/CollisionShape2D.disabled = true
 	canParry = true
 	print("can parry = ", canParry)
+	
+func takeDamage(amount):
+	hp -= amount
+	if hp <= 0:
+		killMegazord()
+	
+func killMegazord():
+	print("GAME OVER DUDES")
+	CurrentLevelManager.restartLevel()
 
 func _on_parry_timer_timeout() -> void:
 	$ShieldUP/green.visible = false

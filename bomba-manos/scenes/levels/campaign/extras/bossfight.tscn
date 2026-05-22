@@ -1,11 +1,12 @@
-[gd_scene load_steps=47 format=3 uid="uid://suap6bq2v1le"]
+[gd_scene load_steps=50 format=3 uid="uid://suap6bq2v1le"]
 
 [ext_resource type="Script" uid="uid://wasqsu7cxrg" path="res://scripts/misc/bossfight/megazord_jp.gd" id="1_eju5j"]
 [ext_resource type="Script" uid="uid://b8x47tsklf1ns" path="res://scripts/misc/bossfight/bossfight.gd" id="1_vtx7u"]
 [ext_resource type="Texture2D" uid="uid://bryq58u6v2vqq" path="res://assets/sprites/levels/campaign/extras/Sprite da cena da boss fight.png" id="2_g1im4"]
-[ext_resource type="Texture2D" uid="uid://bir2tcvl6u7d2" path="res://icon.svg" id="3_1xob5"]
+[ext_resource type="Script" uid="uid://d32qxnqtd8k4v" path="res://scripts/IAs/super_manel.gd" id="3_oofr0"]
 [ext_resource type="Texture2D" uid="uid://jiu6k51vrqgi" path="res://assets/sprites/manel/MANEL ANDANDO ZANGADO5.png" id="3_wi1c3"]
 [ext_resource type="Texture2D" uid="uid://rm6npmhxg1ii" path="res://SPRITESHEET MESSIAS/frame 1.png" id="5_mg8sl"]
+[ext_resource type="Texture2D" uid="uid://d153g467jwmqu" path="res://assets/sprites/misc/jpPlaceholder.png" id="5_mrnxu"]
 [ext_resource type="AudioStream" uid="uid://cdnug66iunmj2" path="res://assets/audio/tracks/world05/Boss fight test.mp3" id="6_v0qoy"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="8_mrnxu"]
 
@@ -135,6 +136,19 @@ _data = {
 &"manelFloat": SubResource("Animation_vtx7u")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0vej"]
+
+[sub_resource type="Gradient" id="Gradient_mg8sl"]
+offsets = PackedFloat32Array(0, 0.2, 0.5, 0.8, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.701961, 1, 1, 1, 0.701961, 1, 1, 1, 0.701961, 1, 1, 1, 0, 0, 0, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v0qoy"]
+gradient = SubResource("Gradient_mg8sl")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mw2rv"]
+size = Vector2(42, 544)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mg8sl"]
 size = Vector2(56, 64)
 
@@ -169,14 +183,6 @@ size = Vector2(88, 20)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_6mkqc"]
 gradient = SubResource("Gradient_b1twp")
-
-[sub_resource type="Gradient" id="Gradient_mg8sl"]
-offsets = PackedFloat32Array(0, 0.2, 0.5, 0.8, 1)
-colors = PackedColorArray(0, 0, 0, 0, 0.701961, 1, 1, 1, 0.701961, 1, 1, 1, 0.701961, 1, 1, 1, 0, 0, 0, 0)
-metadata/_snap_enabled = true
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_v0qoy"]
-gradient = SubResource("Gradient_mg8sl")
 
 [sub_resource type="Gradient" id="Gradient_vtx7u"]
 offsets = PackedFloat32Array(0)
@@ -276,6 +282,7 @@ centered = false
 
 [node name="SuperManel" type="Node2D" parent="."]
 position = Vector2(428, 128)
+script = ExtResource("3_oofr0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SuperManel"]
 libraries = {
@@ -330,18 +337,49 @@ position = Vector2(220, 0)
 scale = Vector2(4, 4)
 texture = ExtResource("3_wi1c3")
 
+[node name="Area2D" type="Area2D" parent="SuperManel"]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SuperManel/Area2D"]
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_u0vej")
+
 [node name="MegazordJP" type="CharacterBody2D" parent="."]
 position = Vector2(428, 416)
+collision_layer = 17
+collision_mask = 17
 script = ExtResource("1_eju5j")
+
+[node name="Attack" type="Node2D" parent="MegazordJP"]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="MegazordJP/Attack"]
+position = Vector2(0, -267)
+scale = Vector2(1, 8.34375)
+texture = SubResource("GradientTexture2D_v0qoy")
+
+[node name="Area2D" type="Area2D" parent="MegazordJP/Attack"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MegazordJP/Attack/Area2D"]
+position = Vector2(0, -262)
+shape = SubResource("RectangleShape2D_mw2rv")
+disabled = true
 
 [node name="ParryTimer" type="Timer" parent="MegazordJP"]
 wait_time = 0.5
 
 [node name="Sprite2D" type="Sprite2D" parent="MegazordJP"]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_1xob5")
+position = Vector2(0, 12)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_mrnxu")
 
 [node name="Area2D" type="Area2D" parent="MegazordJP"]
+visible = false
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MegazordJP/Area2D"]
 shape = SubResource("RectangleShape2D_mg8sl")
@@ -351,7 +389,7 @@ debug_color = Color(0.991107, 0, 0.269864, 0.42)
 shape = SubResource("RectangleShape2D_v0qoy")
 debug_color = Color(0.574583, 0.554237, 7.70092e-07, 0.42)
 
-[node name="ShieldUP" type="StaticBody2D" parent="MegazordJP"]
+[node name="ShieldUP" type="Area2D" parent="MegazordJP" groups=["shield"]]
 visible = false
 position = Vector2(0, -48)
 collision_layer = 2
@@ -359,6 +397,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MegazordJP/ShieldUP"]
 shape = SubResource("RectangleShape2D_oofr0")
+disabled = true
 
 [node name="trocar por animatedSprite" type="Sprite2D" parent="MegazordJP/ShieldUP"]
 position = Vector2(6.94394e-06, 7.689e-06)
@@ -370,7 +409,7 @@ position = Vector2(6.94394e-06, 7.689e-06)
 scale = Vector2(1.375, 0.3125)
 texture = SubResource("GradientTexture2D_3ar53")
 
-[node name="ShieldLEFT" type="StaticBody2D" parent="MegazordJP"]
+[node name="ShieldLEFT" type="Area2D" parent="MegazordJP" groups=["shield"]]
 visible = false
 position = Vector2(-44, 0)
 rotation = -1.57079
@@ -379,6 +418,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MegazordJP/ShieldLEFT"]
 shape = SubResource("RectangleShape2D_b1twp")
+disabled = true
 
 [node name="trocar por animatedSprite" type="Sprite2D" parent="MegazordJP/ShieldLEFT"]
 position = Vector2(6.94394e-06, 7.689e-06)
@@ -390,7 +430,7 @@ position = Vector2(1.43051e-06, -1.3113e-06)
 scale = Vector2(1.375, 0.3125)
 texture = SubResource("GradientTexture2D_3ar53")
 
-[node name="ShieldRIGHT" type="StaticBody2D" parent="MegazordJP"]
+[node name="ShieldRIGHT" type="Area2D" parent="MegazordJP" groups=["shield"]]
 visible = false
 position = Vector2(44, 0)
 rotation = 1.57079
@@ -399,6 +439,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MegazordJP/ShieldRIGHT"]
 shape = SubResource("RectangleShape2D_arlsb")
+disabled = true
 
 [node name="trocar por animatedSprite" type="Sprite2D" parent="MegazordJP/ShieldRIGHT"]
 position = Vector2(6.94394e-06, 7.689e-06)
@@ -409,14 +450,6 @@ texture = SubResource("GradientTexture2D_6mkqc")
 position = Vector2(-3.8147e-06, 0)
 scale = Vector2(1.375, 0.3125)
 texture = SubResource("GradientTexture2D_3ar53")
-
-[node name="Attack" type="Node2D" parent="MegazordJP"]
-visible = false
-
-[node name="Sprite2D" type="Sprite2D" parent="MegazordJP/Attack"]
-position = Vector2(0, -240)
-scale = Vector2(1, 6.5)
-texture = SubResource("GradientTexture2D_v0qoy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(428, 240)
@@ -543,6 +576,8 @@ texture = SubResource("GradientTexture2D_tp6la")
 position = Vector2(428, 240)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="boundaries"]
+collision_layer = 16
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/StaticBody2D"]
 position = Vector2(-300, 100.5)

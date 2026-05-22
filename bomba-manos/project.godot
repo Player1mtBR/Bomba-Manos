@@ -42,6 +42,10 @@ movie_writer/movie_file="C:/hddSave/projects/ispi/games/bombaManos/recordings/re
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
+[global_group]
+
+shield=""
+
 [input]
 
 p1_moveUp={
