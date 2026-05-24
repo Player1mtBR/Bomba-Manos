@@ -6,31 +6,31 @@ var movespeed := 300
 @onready var parryTimer = $ParryTimer
 
 var chargedPower := 0
+var invincible := false
+var invincibilityTime := 1.0
 
 var canMove := true
 var canBlock := true
 var isBlocking := false
 var canAttack := false
+var isAttacking := false
 var canParry := true
 
 func _ready() -> void:
 	pass
 	
 func _process(delta: float) -> void:
-	
-	if Input.is_action_just_pressed("p1_swap_bomb"):
-		jpBlock()
-	if Input.is_action_just_released("p1_swap_bomb"):
-		pass
-		#$Shield.visible = false
-		
-	#for test only:
-	if Input.is_action_just_pressed("menu_accept"):
-		chargePower(1)
+	$"../Icons/healthBarMegazordJP/TextureProgressBar".value = hp
+	$"../Icons/powerBar/TextureProgressBar".value = chargedPower
+	$"../Icons/powerBar/TextureProgressBar2".value = chargedPower
+	if UnlockStuff.iddqd == true:
+		invincible = true
+		chargedPower = 3
+		canAttack = true
 		
 	if canBlock:
 		if isBlocking == false:
-			if Input.is_action_just_pressed("p1_bomb") and canAttack:
+			if Input.is_action_just_pressed("p1_bomb") and canAttack == true:
 				canBlock == false
 				jpAttack()
 				movePlayer2AttackPosition(delta)
@@ -64,23 +64,6 @@ func _process(delta: float) -> void:
 		isBlocking = false
 		parryTimer.stop()
 		showGreenShield()
-		
-	if chargedPower <= 0:
-		$"../Icons/powerBar/1".visible = false
-		$"../Icons/powerBar/2".visible = false
-		$"../Icons/powerBar/3".visible = false
-	if chargedPower == 1:
-		$"../Icons/powerBar/1".visible = true
-		$"../Icons/powerBar/2".visible = false
-		$"../Icons/powerBar/3".visible = false
-	if chargedPower == 2:
-		$"../Icons/powerBar/1".visible = true
-		$"../Icons/powerBar/2".visible = true
-		$"../Icons/powerBar/3".visible = false
-	if chargedPower >= 3:
-		$"../Icons/powerBar/1".visible = true
-		$"../Icons/powerBar/2".visible = true
-		$"../Icons/powerBar/3".visible = true
 	
 func _physics_process(delta: float) -> void:
 	if canMove:
@@ -90,34 +73,44 @@ func _physics_process(delta: float) -> void:
 	
 func chargePower(amount):
 	if canParry == true:
+		$sfx/charge.play()
 		chargedPower += amount
 		if chargedPower >= 3:
 			canAttack = true
+			$sfx/fullpower.play()
 
 func jpBlock():
 	print("Blocking")
 	#$Shield.visible = true
 	
 func jpBlockUp():
+	$sfx/shield.play()
 	print("Blocking")
 	$ShieldUP.visible = true
 	$ShieldUP/CollisionShape2D.disabled = false
 	isBlocking = true
 	
 func jpBlockLeft():
+	$sfx/shield.play()
 	print("Blocking")
 	$ShieldLEFT.visible = true
 	$ShieldLEFT/CollisionShape2D.disabled = false
 	isBlocking = true
 	
 func jpBlockRight():
+	$sfx/shield.play()
 	print("Blocking")
 	$ShieldRIGHT.visible = true
 	$ShieldRIGHT/CollisionShape2D.disabled = false
 	isBlocking = true
 	
 func jpAttack():
+	$sfx/attack.play()
+	$"../SuperManel".wait4awesomeness = true
+	$"../Icons/Faces".modulate = Color(0, 1, 0)
 	canAttack = false
+	isAttacking = true
+	invincible = true
 	print("Attack")
 	$Attack.visible = true
 	$Attack/Area2D/CollisionShape2D.disabled == false
@@ -128,11 +121,14 @@ func jpAttack():
 	await get_tree().create_timer(1.0).timeout
 	chargedPower = 0
 	$Attack.visible = false
-	$Attack/Area2D/CollisionShape2D.disabled == false
-	
+	$Attack/Area2D/CollisionShape2D.disabled == true
 	canMove = true
 	canBlock = true
 	print("power ", chargedPower)
+	isAttacking = false
+	invincible = false
+	$"../SuperManel".wait4awesomeness = false
+	$"../Icons/Faces".modulate = Color(1, 1, 1)
 	
 func movePlayer2AttackPosition(delta):
 	canMove = false
@@ -150,9 +146,26 @@ func showGreenShield():
 	print("can parry = ", canParry)
 	
 func takeDamage(amount):
-	hp -= amount
-	if hp <= 0:
-		killMegazord()
+	if invincible == false:
+		$"../Icons/Faces".modulate = Color(1, 0, 0)
+		$"../Camera2D".camShake01Trigger = true
+	
+		invincible = true
+		print("invincible")
+		$sfx/hit.play()
+		hp -= amount
+		if hp <= 0:
+			killMegazord()
+		for i in range(4):
+			modulate = Color(1, 0, 0)
+			await get_tree().create_timer(0.05).timeout
+			modulate = Color(1, 1, 1)
+			await get_tree().create_timer(0.05).timeout
+			
+		#await get_tree().create_timer(invincibilityTime).timeout
+		$"../Icons/Faces".modulate = Color(1, 1, 1)
+		invincible = false
+		print("vulnerable")
 	
 func killMegazord():
 	print("GAME OVER DUDES")

@@ -1,0 +1,161 @@
+[gd_scene load_steps=19 format=3 uid="uid://lrtpygevxk5s"]
+
+[ext_resource type="Script" uid="uid://xp2r7rgsjomg" path="res://scripts/misc/bossfight/laser_01.gd" id="1_6xnoh"]
+[ext_resource type="Texture2D" uid="uid://ukscwey0ijyw" path="res://assets/sprites/manel/manellboss/projectiles/RAIOZAO.png" id="2_dhwic"]
+[ext_resource type="AudioStream" uid="uid://g7wq1jspr8u4" path="res://assets/audio/sfx/bossfight/lightning.wav" id="3_5wydi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhwic"]
+
+[sub_resource type="Gradient" id="Gradient_6xnoh"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.831373, 0, 0.937255, 0.392157)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dhwic"]
+gradient = SubResource("Gradient_6xnoh")
+
+[sub_resource type="Gradient" id="Gradient_nmbhu"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5wydi"]
+gradient = SubResource("Gradient_nmbhu")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wydi"]
+atlas = ExtResource("2_dhwic")
+region = Rect2(0, 0, 855, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g31u"]
+atlas = ExtResource("2_dhwic")
+region = Rect2(855, 0, 855, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e2ww"]
+atlas = ExtResource("2_dhwic")
+region = Rect2(1710, 0, 855, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nrgc"]
+atlas = ExtResource("2_dhwic")
+region = Rect2(2565, 0, 855, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tjsq"]
+atlas = ExtResource("2_dhwic")
+region = Rect2(3420, 0, 855, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shhi6"]
+atlas = ExtResource("2_dhwic")
+region = Rect2(4275, 0, 855, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qd5ln"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wydi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g31u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e2ww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nrgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tjsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shhi6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="Animation" id="Animation_dhwic"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5wydi"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1g31u"]
+_data = {
+&"RESET": SubResource("Animation_dhwic"),
+&"fade_out": SubResource("Animation_5wydi")
+}
+
+[node name="laser01" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+monitoring = false
+script = ExtResource("1_6xnoh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(500, 0)
+scale = Vector2(100, 4)
+shape = SubResource("RectangleShape2D_dhwic")
+
+[node name="danger" type="Sprite2D" parent="CollisionShape2D"]
+visible = false
+position = Vector2(9.53674e-07, 9.53674e-07)
+scale = Vector2(0.3125, 0.3125)
+texture = SubResource("GradientTexture2D_dhwic")
+
+[node name="laser" type="Sprite2D" parent="CollisionShape2D"]
+visible = false
+position = Vector2(0, 9.53674e-07)
+scale = Vector2(0.3125, 0.3125)
+texture = SubResource("GradientTexture2D_5wydi")
+
+[node name="spriteLightning" type="Node2D" parent="CollisionShape2D"]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D/spriteLightning"]
+position = Vector2(-5, 0)
+scale = Vector2(0.01, 0.25)
+sprite_frames = SubResource("SpriteFrames_qd5ln")
+autoplay = "default"
+offset = Vector2(-72, 0)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CollisionShape2D/spriteLightning"]
+position = Vector2(3.53, 0)
+scale = Vector2(0.01, 0.25)
+sprite_frames = SubResource("SpriteFrames_qd5ln")
+autoplay = "default"
+frame_progress = 0.332368
+offset = Vector2(-72, 0)
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1g31u")
+}
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5wydi")
+volume_db = -5.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

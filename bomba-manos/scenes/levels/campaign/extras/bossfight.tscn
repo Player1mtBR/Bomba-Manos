@@ -1,14 +1,28 @@
-[gd_scene load_steps=50 format=3 uid="uid://suap6bq2v1le"]
+[gd_scene load_steps=78 format=3 uid="uid://suap6bq2v1le"]
 
 [ext_resource type="Script" uid="uid://wasqsu7cxrg" path="res://scripts/misc/bossfight/megazord_jp.gd" id="1_eju5j"]
 [ext_resource type="Script" uid="uid://b8x47tsklf1ns" path="res://scripts/misc/bossfight/bossfight.gd" id="1_vtx7u"]
+[ext_resource type="Script" uid="uid://cxe6nlb4htl2x" path="res://scripts/misc/bossfight/camera_2d.gd" id="2_6mkqc"]
 [ext_resource type="Texture2D" uid="uid://bryq58u6v2vqq" path="res://assets/sprites/levels/campaign/extras/Sprite da cena da boss fight.png" id="2_g1im4"]
 [ext_resource type="Script" uid="uid://d32qxnqtd8k4v" path="res://scripts/IAs/super_manel.gd" id="3_oofr0"]
 [ext_resource type="Texture2D" uid="uid://jiu6k51vrqgi" path="res://assets/sprites/manel/MANEL ANDANDO ZANGADO5.png" id="3_wi1c3"]
-[ext_resource type="Texture2D" uid="uid://rm6npmhxg1ii" path="res://SPRITESHEET MESSIAS/frame 1.png" id="5_mg8sl"]
+[ext_resource type="Texture2D" uid="uid://cqsvfrb1ql0cu" path="res://assets/sprites/manel/manellboss/manel super boss form1.png" id="5_arlsb"]
 [ext_resource type="Texture2D" uid="uid://d153g467jwmqu" path="res://assets/sprites/misc/jpPlaceholder.png" id="5_mrnxu"]
+[ext_resource type="Texture2D" uid="uid://ye0exh3kcca" path="res://assets/sprites/manel/manellboss/manel super boss form2.png" id="6_6mkqc"]
 [ext_resource type="AudioStream" uid="uid://cdnug66iunmj2" path="res://assets/audio/tracks/world05/Boss fight test.mp3" id="6_v0qoy"]
+[ext_resource type="Texture2D" uid="uid://ds74i23gvb0tq" path="res://assets/sprites/manel/manellboss/manel super boss form3.png" id="7_tp6la"]
+[ext_resource type="Texture2D" uid="uid://chelsrqiah7ua" path="res://assets/sprites/manel/manellboss/manel super boss form4.png" id="8_3ar53"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="8_mrnxu"]
+[ext_resource type="AudioStream" uid="uid://b1v4qih6fmo5l" path="res://assets/audio/sfx/manel/risada.wav" id="10_bjlwm"]
+[ext_resource type="AudioStream" uid="uid://dtouqsl33uk48" path="res://assets/audio/sfx/bossfight/Charge.wav" id="12_3g2vu"]
+[ext_resource type="AudioStream" uid="uid://dslatlr5baqi2" path="res://assets/audio/sfx/bossfight/hit.wav" id="13_bjlwm"]
+[ext_resource type="AudioStream" uid="uid://c7yr1upscbcgc" path="res://assets/audio/sfx/bossfight/shield.wav" id="14_bk35a"]
+[ext_resource type="AudioStream" uid="uid://dvf2xtpjdsrcf" path="res://assets/audio/sfx/bossfight/Fullpower.wav" id="15_1y0gk"]
+[ext_resource type="AudioStream" uid="uid://bo0an6lmx7ead" path="res://assets/audio/sfx/bossfight/BombaLaser.wav" id="16_vu88c"]
+[ext_resource type="Texture2D" uid="uid://cunpr3nan5cql" path="res://assets/sprites/levels/campaign/extras/faces1.png" id="18_vu88c"]
+[ext_resource type="Texture2D" uid="uid://c1pbleenbfbv7" path="res://assets/sprites/levels/campaign/extras/faces2.png" id="19_i0mhj"]
+[ext_resource type="Texture2D" uid="uid://cy1bajtuax8n5" path="res://assets/sprites/levels/campaign/extras/faces3.png" id="20_w6xd6"]
+[ext_resource type="Texture2D" uid="uid://c18ssqcidwo1p" path="res://assets/sprites/levels/campaign/extras/faces4.png" id="21_lyyvp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wi1c3"]
 atlas = ExtResource("2_g1im4")
@@ -112,6 +126,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(428, 128)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("visual:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_vtx7u"]
 resource_name = "manelFloat"
@@ -130,11 +168,134 @@ tracks/0/keys = {
 "values": [Vector2(-27, -24), Vector2(-68, -13), Vector2(-22, 11), Vector2(46, -21), Vector2(67, -12), Vector2(26, 12)]
 }
 
+[sub_resource type="Animation" id="Animation_bjlwm"]
+resource_name = "intro"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("visual:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3, 4, 4.86667, 5.66667, 6.8, 9, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-690, -629), Vector2(577, 863), Vector2(-561, 800), Vector2(518, -538), Vector2(0, -400), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("visual:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 9, 10, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oofr0"]
 _data = {
 &"RESET": SubResource("Animation_mrnxu"),
+&"intro": SubResource("Animation_bjlwm"),
 &"manelFloat": SubResource("Animation_vtx7u")
 }
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0svcv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_tp6la")
+}],
+"loop": false,
+"name": &"attack01",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_arlsb")
+}],
+"loop": false,
+"name": &"attack02",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_6mkqc")
+}],
+"loop": false,
+"name": &"attack03",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_3ar53")
+}],
+"loop": false,
+"name": &"attack04",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_arlsb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6mkqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tp6la")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3ar53")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_tp6la")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6mkqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tp6la")
+}],
+"loop": false,
+"name": &"hit01",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_tp6la")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6mkqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tp6la")
+}],
+"loop": false,
+"name": &"hit02",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_tp6la")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6mkqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tp6la")
+}],
+"loop": false,
+"name": &"hit03",
+"speed": 3.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0vej"]
 
@@ -184,35 +345,75 @@ size = Vector2(88, 20)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_6mkqc"]
 gradient = SubResource("Gradient_b1twp")
 
-[sub_resource type="Gradient" id="Gradient_vtx7u"]
+[sub_resource type="Gradient" id="Gradient_tu222"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gjgst"]
+gradient = SubResource("Gradient_tu222")
+fill = 2
+
+[sub_resource type="Gradient" id="Gradient_wr6da"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tk171"]
+gradient = SubResource("Gradient_wr6da")
+fill = 2
+
+[sub_resource type="Gradient" id="Gradient_m6yek"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xjvhh"]
+gradient = SubResource("Gradient_m6yek")
+fill = 2
+
+[sub_resource type="Gradient" id="Gradient_0svcv"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0iceu"]
+gradient = SubResource("Gradient_0svcv")
+fill = 2
+
+[sub_resource type="Gradient" id="Gradient_0iceu"]
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(1, 1, 1, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_mrnxu"]
-gradient = SubResource("Gradient_vtx7u")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_foglc"]
+gradient = SubResource("Gradient_0iceu")
 
-[sub_resource type="Gradient" id="Gradient_oofr0"]
-offsets = PackedFloat32Array(0, 0.5, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.0352941, 0.596078, 0, 1, 0, 0, 0, 1)
-metadata/_snap_enabled = true
+[sub_resource type="Gradient" id="Gradient_rsrth"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_b1twp"]
-gradient = SubResource("Gradient_oofr0")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7cv3f"]
+gradient = SubResource("Gradient_rsrth")
 
-[sub_resource type="Gradient" id="Gradient_u0vej"]
+[sub_resource type="Gradient" id="Gradient_bk35a"]
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(1, 1, 1, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_arlsb"]
-gradient = SubResource("Gradient_u0vej")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1y0gk"]
+gradient = SubResource("Gradient_bk35a")
 
-[sub_resource type="Gradient" id="Gradient_6mkqc"]
-offsets = PackedFloat32Array(0, 0.5, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.0366558, 0.595522, 1, 1, 0, 0, 0, 1)
-metadata/_snap_enabled = true
+[sub_resource type="Gradient" id="Gradient_vu88c"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 1, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_tp6la"]
-gradient = SubResource("Gradient_6mkqc")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i0mhj"]
+gradient = SubResource("Gradient_vu88c")
+
+[sub_resource type="Gradient" id="Gradient_1y0gk"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.341235, 0.341235, 4.81308e-08, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vu88c"]
+gradient = SubResource("Gradient_1y0gk")
+
+[sub_resource type="Gradient" id="Gradient_i0mhj"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w6xd6"]
+gradient = SubResource("Gradient_i0mhj")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vtx7u"]
 size = Vector2(20, 277)
@@ -224,6 +425,10 @@ size = Vector2(20, 277)
 
 [node name="Bossfight" type="Node2D"]
 script = ExtResource("1_vtx7u")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(428, 240)
+script = ExtResource("2_6mkqc")
 
 [node name="Background02" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -293,6 +498,7 @@ autoplay = "manelFloat"
 [node name="attackSpawn" type="Node2D" parent="SuperManel"]
 
 [node name="left" type="Node2D" parent="SuperManel/attackSpawn"]
+position = Vector2(150, 0)
 
 [node name="1" type="Node2D" parent="SuperManel/attackSpawn/left"]
 position = Vector2(-450, 128)
@@ -304,6 +510,7 @@ position = Vector2(-450, 214)
 position = Vector2(-450, 300)
 
 [node name="right" type="Node2D" parent="SuperManel/attackSpawn"]
+position = Vector2(-150, 0)
 
 [node name="1" type="Node2D" parent="SuperManel/attackSpawn/right"]
 position = Vector2(450, 128)
@@ -315,7 +522,7 @@ position = Vector2(450, 214)
 position = Vector2(450, 300)
 
 [node name="top" type="Node2D" parent="SuperManel/attackSpawn"]
-position = Vector2(0, -160)
+position = Vector2(0, 64)
 
 [node name="1" type="Node2D" parent="SuperManel/attackSpawn/top"]
 position = Vector2(-220, 0)
@@ -334,16 +541,29 @@ position = Vector2(220, 0)
 [node name="visual" type="Node2D" parent="SuperManel"]
 
 [node name="Sprite2D" type="Sprite2D" parent="SuperManel/visual"]
+visible = false
 scale = Vector2(4, 4)
 texture = ExtResource("3_wi1c3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SuperManel/visual"]
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_0svcv")
+autoplay = "default"
+offset = Vector2(-95, 20)
 
 [node name="Area2D" type="Area2D" parent="SuperManel"]
 collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SuperManel/Area2D"]
-scale = Vector2(10, 10)
+scale = Vector2(15, 10)
 shape = SubResource("RectangleShape2D_u0vej")
+
+[node name="sfx" type="Node2D" parent="SuperManel"]
+
+[node name="risadaPessecopata" type="AudioStreamPlayer" parent="SuperManel/sfx"]
+stream = ExtResource("10_bjlwm")
+pitch_scale = 0.75
 
 [node name="MegazordJP" type="CharacterBody2D" parent="."]
 position = Vector2(428, 416)
@@ -360,8 +580,8 @@ scale = Vector2(1, 8.34375)
 texture = SubResource("GradientTexture2D_v0qoy")
 
 [node name="Area2D" type="Area2D" parent="MegazordJP/Attack"]
-collision_layer = 4
-collision_mask = 4
+collision_layer = 8
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MegazordJP/Attack/Area2D"]
 position = Vector2(0, -262)
@@ -392,6 +612,7 @@ debug_color = Color(0.574583, 0.554237, 7.70092e-07, 0.42)
 [node name="ShieldUP" type="Area2D" parent="MegazordJP" groups=["shield"]]
 visible = false
 position = Vector2(0, -48)
+scale = Vector2(0.5, 1)
 collision_layer = 2
 collision_mask = 2
 
@@ -413,6 +634,7 @@ texture = SubResource("GradientTexture2D_3ar53")
 visible = false
 position = Vector2(-44, 0)
 rotation = -1.57079
+scale = Vector2(0.5, 1)
 collision_layer = 2
 collision_mask = 2
 
@@ -434,6 +656,7 @@ texture = SubResource("GradientTexture2D_3ar53")
 visible = false
 position = Vector2(44, 0)
 rotation = 1.57079
+scale = Vector2(0.5, 1)
 collision_layer = 2
 collision_mask = 2
 
@@ -451,126 +674,124 @@ position = Vector2(-3.8147e-06, 0)
 scale = Vector2(1.375, 0.3125)
 texture = SubResource("GradientTexture2D_3ar53")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(428, 240)
+[node name="sfx" type="Node2D" parent="MegazordJP"]
+
+[node name="charge" type="AudioStreamPlayer" parent="MegazordJP/sfx"]
+stream = ExtResource("12_3g2vu")
+volume_db = 7.0
+
+[node name="hit" type="AudioStreamPlayer" parent="MegazordJP/sfx"]
+stream = ExtResource("13_bjlwm")
+volume_db = 2.0
+
+[node name="shield" type="AudioStreamPlayer" parent="MegazordJP/sfx"]
+stream = ExtResource("14_bk35a")
+volume_db = 10.0
+
+[node name="fullpower" type="AudioStreamPlayer" parent="MegazordJP/sfx"]
+stream = ExtResource("15_1y0gk")
+volume_db = 7.0
+
+[node name="attack" type="AudioStreamPlayer" parent="MegazordJP/sfx"]
+stream = ExtResource("16_vu88c")
 
 [node name="Icons" type="Node2D" parent="."]
+z_index = 3
 
 [node name="Faces" type="Node2D" parent="Icons"]
 
 [node name="Bomba" type="Node2D" parent="Icons/Faces"]
 position = Vector2(56, 56)
 
+[node name="Sprite2D2" type="Sprite2D" parent="Icons/Faces/Bomba"]
+position = Vector2(8, 8)
+scale = Vector2(1.25, 1.25)
+texture = SubResource("GradientTexture2D_gjgst")
+
 [node name="Sprite2D" type="Sprite2D" parent="Icons/Faces/Bomba"]
 position = Vector2(8, 8)
-scale = Vector2(3, 3)
-texture = ExtResource("5_mg8sl")
+scale = Vector2(4, 4)
+texture = ExtResource("18_vu88c")
+offset = Vector2(-0.5, 0)
 
 [node name="Ureia" type="Node2D" parent="Icons/Faces"]
 position = Vector2(792, 64)
 
+[node name="Sprite2D2" type="Sprite2D" parent="Icons/Faces/Ureia"]
+position = Vector2(4.76837e-07, 4.76837e-07)
+rotation = 1.5708
+scale = Vector2(1.25, 1.25)
+texture = SubResource("GradientTexture2D_tk171")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Icons/Faces/Ureia"]
+position = Vector2(-728, 352)
+rotation = -1.5708
+scale = Vector2(1.25, 1.25)
+texture = SubResource("GradientTexture2D_xjvhh")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Icons/Faces/Ureia"]
+position = Vector2(-6.10352e-05, 352)
+rotation = 3.14159
+scale = Vector2(1.25, 1.25)
+texture = SubResource("GradientTexture2D_0iceu")
+
 [node name="Sprite2D" type="Sprite2D" parent="Icons/Faces/Ureia"]
-scale = Vector2(3, 3)
-texture = ExtResource("5_mg8sl")
+scale = Vector2(4, 4)
+texture = ExtResource("19_i0mhj")
 
 [node name="Ranger" type="Node2D" parent="Icons/Faces"]
 position = Vector2(64, 416)
 
 [node name="Sprite2D" type="Sprite2D" parent="Icons/Faces/Ranger"]
-scale = Vector2(3, 3)
-texture = ExtResource("5_mg8sl")
+scale = Vector2(4, 4)
+texture = ExtResource("20_w6xd6")
 
 [node name="Mini" type="Node2D" parent="Icons/Faces"]
 position = Vector2(792, 416)
 
 [node name="Sprite2D" type="Sprite2D" parent="Icons/Faces/Mini"]
-scale = Vector2(3, 3)
-texture = ExtResource("5_mg8sl")
+scale = Vector2(4, 4)
+texture = ExtResource("21_lyyvp")
 
 [node name="healthBarMegazordJP" type="Node2D" parent="Icons"]
 
-[node name="bar2" type="Sprite2D" parent="Icons/healthBarMegazordJP"]
-position = Vector2(48, 240)
-scale = Vector2(0.875, 4)
-texture = SubResource("GradientTexture2D_mrnxu")
-
-[node name="1" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
-position = Vector2(-3.8147e-06, 28)
-scale = Vector2(0.857143, 0.0625)
-texture = SubResource("GradientTexture2D_b1twp")
-
-[node name="2" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
-position = Vector2(-3.8147e-06, 22)
-scale = Vector2(0.857143, 0.0625)
-texture = SubResource("GradientTexture2D_b1twp")
-
-[node name="3" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
-position = Vector2(-3.8147e-06, 16)
-scale = Vector2(0.857143, 0.0625)
-texture = SubResource("GradientTexture2D_b1twp")
-
-[node name="4" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
-position = Vector2(-3.8147e-06, 10)
-scale = Vector2(0.857143, 0.0625)
-texture = SubResource("GradientTexture2D_b1twp")
-
-[node name="5" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
-position = Vector2(-3.8147e-06, 4)
-scale = Vector2(0.857143, 0.0625)
-texture = SubResource("GradientTexture2D_b1twp")
-
-[node name="6" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
-position = Vector2(-3.8147e-06, -2)
-scale = Vector2(0.857143, 0.0625)
-texture = SubResource("GradientTexture2D_b1twp")
-
-[node name="7" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
-position = Vector2(-3.8147e-06, -8)
-scale = Vector2(0.857143, 0.0625)
-texture = SubResource("GradientTexture2D_b1twp")
-
-[node name="8" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
-position = Vector2(-3.8147e-06, -14)
-scale = Vector2(0.857143, 0.0625)
-texture = SubResource("GradientTexture2D_b1twp")
-
-[node name="9" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
-position = Vector2(-3.8147e-06, -20)
-scale = Vector2(0.857143, 0.0625)
-texture = SubResource("GradientTexture2D_b1twp")
-
-[node name="10" type="Sprite2D" parent="Icons/healthBarMegazordJP/bar2"]
-position = Vector2(-3.8147e-06, -26)
-scale = Vector2(0.857143, 0.0625)
-texture = SubResource("GradientTexture2D_b1twp")
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Icons/healthBarMegazordJP"]
+offset_left = 24.0
+offset_top = 116.0
+offset_right = 80.0
+offset_bottom = 372.0
+max_value = 10.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture2D_foglc")
+texture_progress = SubResource("GradientTexture2D_7cv3f")
 
 [node name="healthBarManel" type="Node2D" parent="Icons"]
 
 [node name="powerBar" type="Node2D" parent="Icons"]
 position = Vector2(808, 240)
 
-[node name="bar" type="Sprite2D" parent="Icons/powerBar"]
-position = Vector2(-2.38419e-07, 4.76837e-07)
-scale = Vector2(0.875, 3.5)
-texture = SubResource("GradientTexture2D_arlsb")
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Icons/powerBar"]
+offset_left = -32.0
+offset_top = -101.0
+offset_right = 24.0
+offset_bottom = 122.0
+max_value = 3.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture2D_1y0gk")
+texture_progress = SubResource("GradientTexture2D_i0mhj")
 
-[node name="1" type="Sprite2D" parent="Icons/powerBar"]
-visible = false
-position = Vector2(2.59876e-05, 72)
-scale = Vector2(0.75, 1)
-texture = SubResource("GradientTexture2D_tp6la")
-
-[node name="2" type="Sprite2D" parent="Icons/powerBar"]
-visible = false
-position = Vector2(2.59876e-05, 0)
-scale = Vector2(0.75, 1)
-texture = SubResource("GradientTexture2D_tp6la")
-
-[node name="3" type="Sprite2D" parent="Icons/powerBar"]
-visible = false
-position = Vector2(2.59876e-05, -72)
-scale = Vector2(0.75, 1)
-texture = SubResource("GradientTexture2D_tp6la")
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="Icons/powerBar"]
+offset_left = -28.0
+offset_top = -124.0
+offset_right = 36.0
+offset_bottom = -60.0
+scale = Vector2(0.75, 0.75)
+max_value = 3.0
+fill_mode = 4
+texture_under = SubResource("GradientTexture2D_vu88c")
+texture_progress = SubResource("GradientTexture2D_w6xd6")
 
 [node name="boundaries" type="Node2D" parent="."]
 position = Vector2(428, 240)
@@ -599,9 +820,13 @@ shape = SubResource("RectangleShape2D_tp6la")
 
 [node name="soundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_v0qoy")
-autoplay = true
 
 [node name="pauseCampaign" parent="." instance=ExtResource("8_mrnxu")]
 visible = false
 
+[node name="sfx" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="sfx"]
+
+[connection signal="area_entered" from="SuperManel/Area2D" to="SuperManel" method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="MegazordJP/ParryTimer" to="MegazordJP" method="_on_parry_timer_timeout"]

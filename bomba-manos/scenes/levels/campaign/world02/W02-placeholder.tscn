@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://gyx4dqujih7p"]
+[gd_scene load_steps=22 format=4 uid="uid://gyx4dqujih7p"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_xdbbx"]
 [ext_resource type="Texture2D" uid="uid://v7o6pkkgso0r" path="res://assets/sprites/levels/campaign/world01/LostWoodsCorner.png" id="2_kfgqy"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="6_11j41"]
 [ext_resource type="Texture2D" uid="uid://o31y83d3vwpt" path="res://assets/sprites/levels/campaign/world01/LostWoodsFloor.png" id="6_vpjj6"]
 [ext_resource type="Texture2D" uid="uid://b5aikch2jynv5" path="res://assets/sprites/levels/campaign/world02/cyberBlocks.png" id="9_cgdcy"]
-[ext_resource type="AudioStream" uid="uid://3ltw3qe7xh3" path="res://assets/audio/tracks/PokémonHeartGold&SoulSilver-GymLeader&EliteFourBattleMusic.mp3" id="9_p5ime"]
 [ext_resource type="PackedScene" uid="uid://bgkax6c3eo7n0" path="res://scenes/entities/manel.tscn" id="10_jkmx2"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="11_fw6rm"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="11_ye3uc"]
@@ -1178,7 +1177,6 @@ charSkin = ExtResource("12_vesgv")
 position = Vector2(0, -130)
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_p5ime")
 autoplay = true
 
 [node name="mainCamera" parent="." instance=ExtResource("11_ye3uc")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://cb26ahhfqtafj"]
+[gd_scene load_steps=29 format=4 uid="uid://cb26ahhfqtafj"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_2w56p"]
 [ext_resource type="Texture2D" uid="uid://cx1sqwd2s3rdj" path="res://assets/sprites/levels/campaign/world04/damnBroLetsCode.png" id="2_l57kd"]
@@ -20,6 +20,10 @@
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="20_4kafp"]
 [ext_resource type="PackedScene" uid="uid://deiblqi0tqf1d" path="res://scenes/entities/Mobs/world_4/arduino.tscn" id="20_43bmj"]
 [ext_resource type="PackedScene" uid="uid://x8wanugx3mkn" path="res://scenes/entities/Mobs/world_4/borabill.tscn" id="20_nkneb"]
+[ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="21_njagh"]
+[ext_resource type="AudioStream" uid="uid://bykd234ngpsbf" path="res://assets/audio/sfx/bossfight/Projectile02.wav" id="22_6n3gj"]
+[ext_resource type="AudioStream" uid="uid://g7wq1jspr8u4" path="res://assets/audio/sfx/bossfight/lightning.wav" id="23_pdepr"]
+[ext_resource type="AudioStream" uid="uid://dvf2xtpjdsrcf" path="res://assets/audio/sfx/bossfight/Fullpower.wav" id="24_pmv4o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lx53w"]
 texture = ExtResource("6_dj552")
@@ -693,7 +697,10 @@ position = Vector2(160, -96)
 
 [node name="arduino2" parent="entities/Mobs" instance=ExtResource("20_43bmj")]
 
-[node name="Exit" parent="entities/Mobs" instance=ExtResource("19_l57kd")]
+[node name="Exit" parent="." instance=ExtResource("19_l57kd")]
 position = Vector2(0, -16)
 
-[node name="pauseCampaign" parent="entities/Mobs" instance=ExtResource("20_4kafp")]
+[node name="pauseCampaign" parent="." instance=ExtResource("20_4kafp")]
+
+[node name="DIALOG" parent="." instance=ExtResource("21_njagh")]
+falasDosPersonagens = Array[AudioStream]([ExtResource("13_x34ou"), ExtResource("22_6n3gj"), ExtResource("23_pdepr"), ExtResource("24_pmv4o")])

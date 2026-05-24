@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=4 uid="uid://l0cb4g8telp0"]
+[gd_scene load_steps=10 format=4 uid="uid://l0cb4g8telp0"]
 
 [ext_resource type="Texture2D" uid="uid://drutjoa1y5g30" path="res://assets/sprites/damnBroLetsCode.png" id="1_iftyd"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="1_megmf"]
 [ext_resource type="PackedScene" uid="uid://cb6neg2ddhkn" path="res://scenes/objects/breakable_block.tscn" id="2_w4tvx"]
-[ext_resource type="AudioStream" uid="uid://3ltw3qe7xh3" path="res://assets/audio/tracks/PokémonHeartGold&SoulSilver-GymLeader&EliteFourBattleMusic.mp3" id="5_01k7s"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="5_51x6l"]
 [ext_resource type="PackedScene" uid="uid://bgkax6c3eo7n0" path="res://scenes/entities/manel.tscn" id="8_q7e64"]
 [ext_resource type="PackedScene" uid="uid://bkla2y3q2sihu" path="res://scenes/entities/players/messias.tscn" id="9_iftyd"]
@@ -318,7 +317,6 @@ position = Vector2(48, 64)
 position = Vector2(0, -32)
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_01k7s")
 autoplay = true
 
 [node name="Manel" parent="." instance=ExtResource("8_q7e64")]

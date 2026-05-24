@@ -161,6 +161,8 @@ func killIa():
 		CurrentLevelManager.decreaseEnemyCount()
 		print("Enemies: ", CurrentLevelManager.currentEnemiesAlive)
 	isIaAlive = false
+	if has_node("AudioStreamPlayer"):
+		$AudioStreamPlayer.play()
 	animIaNode.play("die")
 	await animIaNode.animation_finished
 	queue_free()

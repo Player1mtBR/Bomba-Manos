@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://rn0ut8v4q0w0"]
+[gd_scene load_steps=56 format=4 uid="uid://rn0ut8v4q0w0"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_wx4nu"]
 [ext_resource type="Texture2D" uid="uid://drutjoa1y5g30" path="res://assets/sprites/damnBroLetsCode.png" id="2_6pv5t"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="6_3jlch"]
 [ext_resource type="Texture2D" uid="uid://dyxcsyn1a87a6" path="res://assets/sprites/cenario01.png" id="7_ah2vn"]
 [ext_resource type="PackedScene" uid="uid://cb6neg2ddhkn" path="res://scenes/objects/breakable_block.tscn" id="8_6i2sj"]
-[ext_resource type="AudioStream" uid="uid://3ltw3qe7xh3" path="res://assets/audio/tracks/PokémonHeartGold&SoulSilver-GymLeader&EliteFourBattleMusic.mp3" id="9_81r66"]
 [ext_resource type="PackedScene" uid="uid://bgkax6c3eo7n0" path="res://scenes/entities/manel.tscn" id="10_ibw14"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="11_tg6ll"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="12_whm4t"]
@@ -660,7 +659,6 @@ position = Vector2(32, 64)
 position = Vector2(48, 64)
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_81r66")
 autoplay = true
 
 [node name="Manel" parent="." instance=ExtResource("10_ibw14")]

@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://dfbkpt2rxb4rx"]
+[gd_scene load_steps=6 format=4 uid="uid://dfbkpt2rxb4rx"]
 
 [ext_resource type="PackedScene" uid="uid://ds7j3hfwhepin" path="res://scenes/entities/players/testPlayer_01.tscn" id="2_dbunn"]
 [ext_resource type="TileSet" uid="uid://dlipkyeoxn74e" path="res://assets/res/placeHolderTileSet.tres" id="2_rsdxb"]
 [ext_resource type="PackedScene" uid="uid://dbae74pwgkq23" path="res://scenes/main_camera.tscn" id="3_pn1uf"]
 [ext_resource type="PackedScene" uid="uid://cb6neg2ddhkn" path="res://scenes/objects/breakable_block.tscn" id="4_pn1uf"]
 [ext_resource type="PackedScene" uid="uid://cerl0w0wfugqu" path="res://scenes/entities/players/testPlayer_02.tscn" id="5_ffdus"]
-[ext_resource type="AudioStream" uid="uid://bnyxts7rjpncg" path="res://assets/audio/tracks/RubyDelusions.wav" id="7_8eyi6"]
-[ext_resource type="AudioStream" uid="uid://chwgyufb52bwt" path="res://assets/audio/tracks/FlyingBatteryZoneAct1.wav" id="8_rsdxb"]
 
 [node name="MapTest01" type="Node2D"]
 
@@ -1246,8 +1244,6 @@ modulate = Color(1, 1, 0, 1)
 position = Vector2(-104, -40)
 
 [node name="soundtrack01" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_8eyi6")
 autoplay = true
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_rsdxb")

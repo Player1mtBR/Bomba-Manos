@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cu5et2hkyhpuo"]
+[gd_scene load_steps=16 format=4 uid="uid://cu5et2hkyhpuo"]
 
 [ext_resource type="Texture2D" uid="uid://c3pnfnouiewui" path="res://assets/sprites/cenario02.png" id="1_ag2dx"]
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_kr1rr"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cb6neg2ddhkn" path="res://scenes/objects/breakable_block.tscn" id="3_vv700"]
 [ext_resource type="Texture2D" uid="uid://bafdra410sgl3" path="res://assets/sprites/wallCorner.png" id="4_88upj"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="4_ag2dx"]
-[ext_resource type="AudioStream" uid="uid://3ltw3qe7xh3" path="res://assets/audio/tracks/PokémonHeartGold&SoulSilver-GymLeader&EliteFourBattleMusic.mp3" id="5_88upj"]
 [ext_resource type="PackedScene" uid="uid://bgkax6c3eo7n0" path="res://scenes/entities/manel.tscn" id="8_o2gsi"]
 [ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="13_ag2dx"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="14_88upj"]
@@ -349,7 +348,6 @@ position = Vector2(32, 64)
 position = Vector2(48, 64)
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_88upj")
 autoplay = true
 
 [node name="Manel" parent="." instance=ExtResource("8_o2gsi")]
