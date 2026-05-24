@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://br4aq80htq6s0" path="res://scenes/objects/barril_block.tscn" id="6_xnodc"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="7_kuk8l"]
 [ext_resource type="SpriteFrames" uid="uid://cdjt7gy7aei07" path="res://assets/res/spriteframes/rangerman-Sprite-Frames.tres" id="8_xgr4h"]
-[ext_resource type="AudioStream" uid="uid://diul3f1txpftc" path="res://assets/audio/tracks/world 3/Igor01.mp3" id="11_ylp4n"]
+[ext_resource type="AudioStream" uid="uid://r28gvm2syc8x" path="res://assets/audio/tracks/world 3/Igor03.mp3" id="11_xa711"]
 [ext_resource type="PackedScene" uid="uid://dlsguo0n2gyrp" path="res://scenes/entities/Mobs/World_3/bicho.tscn" id="13_xqbp7"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="15_vjuoa"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="16_11j6v"]
@@ -671,7 +671,7 @@ position = Vector2(-160, -64)
 iaMoveDelay = 0.6
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("11_ylp4n")
+stream = ExtResource("11_xa711")
 autoplay = true
 parameters/looping = true
 

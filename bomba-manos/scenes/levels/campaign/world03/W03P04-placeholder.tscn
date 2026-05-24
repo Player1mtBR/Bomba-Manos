@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="7_i5h1x"]
 [ext_resource type="SpriteFrames" uid="uid://cdjt7gy7aei07" path="res://assets/res/spriteframes/rangerman-Sprite-Frames.tres" id="8_s50qc"]
 [ext_resource type="PackedScene" uid="uid://bfd4ctvul1ngv" path="res://scenes/entities/Mobs/World_3/bruxa.tscn" id="9_2uo7c"]
-[ext_resource type="AudioStream" uid="uid://diul3f1txpftc" path="res://assets/audio/tracks/world 3/Igor01.mp3" id="11_tj2kt"]
+[ext_resource type="AudioStream" uid="uid://bysmg87sjt41i" path="res://assets/audio/tracks/world 3/Igor04.mp3" id="11_q2dxs"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="15_hm773"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="16_tcltx"]
 [ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/campaign/exit.tscn" id="17_i257l"]
@@ -498,7 +498,7 @@ iaMoveDelay = 0.2
 passosParaSugerir = 1
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("11_tj2kt")
+stream = ExtResource("11_q2dxs")
 autoplay = true
 parameters/looping = true
 
