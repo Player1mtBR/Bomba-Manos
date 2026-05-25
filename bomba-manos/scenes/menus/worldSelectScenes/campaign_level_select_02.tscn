@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://o886kdk1rmgp"]
+[gd_scene load_steps=6 format=3 uid="uid://o886kdk1rmgp"]
 
 [ext_resource type="Script" uid="uid://db51vpoxlelql" path="res://scripts/menus/worldSelect/campaign_level_select.gd" id="1_stwgo"]
 [ext_resource type="PackedScene" uid="uid://vqadtrjtxsn5" path="res://scenes/menus/worldSelectScenes/level_icon.tscn" id="2_x5nyx"]
 [ext_resource type="PackedScene" uid="uid://c3i3avv75txs4" path="res://scenes/menus/worldSelectScenes/player_icon.tscn" id="3_3ka0m"]
 [ext_resource type="SpriteFrames" uid="uid://dnwsmvk3wpfgx" path="res://assets/res/spriteframes/ureiaman-Sprite-Frames.tres" id="4_x5nyx"]
+[ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="5_3ka0m"]
 
 [node name="CampaignLevelSelect" type="Control"]
 layout_mode = 3
@@ -33,7 +34,7 @@ unlockRequirement = "W02L01"
 nextLevelLeft = NodePath("../LevelIcon")
 nextLevelRight = NodePath("../LevelIcon3")
 
-[node name="LevelIcon3" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight", "nextLevelDown") instance=ExtResource("2_x5nyx")]
+[node name="LevelIcon3" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight") instance=ExtResource("2_x5nyx")]
 offset_left = 320.0
 offset_top = 256.0
 offset_right = 384.0
@@ -43,7 +44,6 @@ level2Load = "uid://dhx4m4k7ci84q"
 unlockRequirement = "W02L02"
 nextLevelLeft = NodePath("../LevelIcon2")
 nextLevelRight = NodePath("../LevelIcon4")
-nextLevelDown = NodePath("../LevelIcon6")
 
 [node name="LevelIcon4" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight") instance=ExtResource("2_x5nyx")]
 offset_left = 448.0
@@ -64,14 +64,6 @@ level2Load = "uid://cetxykh7jdd2r"
 unlockRequirement = "W02L04"
 nextLevelLeft = NodePath("../LevelIcon4")
 
-[node name="LevelIcon6" parent="." node_paths=PackedStringArray("nextLevelUp") instance=ExtResource("2_x5nyx")]
-offset_left = 288.0
-offset_top = 384.0
-offset_right = 352.0
-offset_bottom = 448.0
-levelName = "Bônus"
-nextLevelUp = NodePath("../LevelIcon3")
-
 [node name="playerIcon" parent="." instance=ExtResource("3_3ka0m")]
 characterSkin = ExtResource("4_x5nyx")
 
@@ -81,5 +73,5 @@ offset_left = 344.0
 offset_top = 8.0
 offset_right = 413.0
 offset_bottom = 31.0
-scale = Vector2(2.5, 2.5)
+theme = ExtResource("5_3ka0m")
 text = "Mundo 2"

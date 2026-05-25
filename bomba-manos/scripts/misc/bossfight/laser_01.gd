@@ -7,26 +7,27 @@ var awaitTime := 2.0
 func _ready() -> void:
 	for i in range(5):
 		$CollisionShape2D/danger.visible = true
-		await get_tree().create_timer(0.1).timeout
+		await get_tree().create_timer(0.1, false).timeout
 		$CollisionShape2D/danger.visible = false
-		await get_tree().create_timer(0.1).timeout
+		await get_tree().create_timer(0.1, false).timeout
 
 	modulate = Color(10, 10, 10)
 	$CollisionShape2D/spriteLightning.visible = true
-	$sfx.play()
-	await get_tree().create_timer(0.25).timeout
-	modulate = Color(1, 1, 1)
+	$"../sfx/sfxLightning".play()
 	monitoring = true
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.25, false).timeout
+	modulate = Color(1, 1, 1)
+	$AnimationPlayer.play("blink")
+	await get_tree().create_timer(0.5, false).timeout
 	destroyLaser()
 	
 func _process(delta: float) -> void:
 	pass
 	'''while true:
 		$CollisionShape2D/danger.visible = true
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.5, false).timeout
 		$CollisionShape2D/danger.visible = false
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.5, false).timeout
 '''
 			
 

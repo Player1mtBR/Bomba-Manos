@@ -15,6 +15,9 @@ extends Node2D
 func _ready() -> void:
 	MusicMenu.get_child(0).stop()
 	CurrentLevelManager.levelComplete = false
+	if CurrentLevelManager.deathCount > 3:
+		if has_node("MOCKPLAYER"):
+			$MOCKPLAYER.play()
 	"""
 	match GlobalScript.selectedPlayer1:
 		1:

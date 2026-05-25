@@ -2,6 +2,9 @@ extends Control
 
 func _ready() -> void:
 	$Control/Buttons/VBoxContainer/Campanha.grab_focus()
+	CurrentLevelManager.deathCount = 0
+	if MusicMenu.get_child(0).playing == false:
+		MusicMenu.get_child(0).play()
 	
 func _process(delta: float) -> void:
 	UnlockStuff.isOnMenu = true

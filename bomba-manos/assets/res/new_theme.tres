@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dvty1m771uoa3"]
+
+[ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="1_kkmwf"]
+
+[resource]
+default_font = ExtResource("1_kkmwf")
+default_font_size = 30

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://xp2r7rgsjomg" path="res://scripts/misc/bossfight/laser_01.gd" id="1_6xnoh"]
 [ext_resource type="Texture2D" uid="uid://ukscwey0ijyw" path="res://assets/sprites/manel/manellboss/projectiles/RAIOZAO.png" id="2_dhwic"]
-[ext_resource type="AudioStream" uid="uid://g7wq1jspr8u4" path="res://assets/audio/sfx/bossfight/lightning.wav" id="3_5wydi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhwic"]
 
@@ -85,6 +84,23 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_1g31u"]
+resource_name = "blink"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(100, 5, 100, 1), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_5wydi"]
 resource_name = "fade_out"
 length = 0.5
@@ -104,10 +120,12 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1g31u"]
 _data = {
 &"RESET": SubResource("Animation_dhwic"),
+&"blink": SubResource("Animation_1g31u"),
 &"fade_out": SubResource("Animation_5wydi")
 }
 
 [node name="laser01" type="Area2D"]
+process_mode = 1
 collision_layer = 3
 collision_mask = 3
 monitoring = false
@@ -138,6 +156,7 @@ position = Vector2(-5, 0)
 scale = Vector2(0.01, 0.25)
 sprite_frames = SubResource("SpriteFrames_qd5ln")
 autoplay = "default"
+frame_progress = 0.673789
 offset = Vector2(-72, 0)
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CollisionShape2D/spriteLightning"]
@@ -145,7 +164,7 @@ position = Vector2(3.53, 0)
 scale = Vector2(0.01, 0.25)
 sprite_frames = SubResource("SpriteFrames_qd5ln")
 autoplay = "default"
-frame_progress = 0.332368
+frame_progress = 0.831912
 offset = Vector2(-72, 0)
 flip_h = true
 
@@ -153,9 +172,5 @@ flip_h = true
 libraries = {
 &"": SubResource("AnimationLibrary_1g31u")
 }
-
-[node name="sfx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_5wydi")
-volume_db = -5.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

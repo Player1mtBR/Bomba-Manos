@@ -1,9 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bk05cue0vo4me"]
+[gd_scene load_steps=11 format=3 uid="uid://bk05cue0vo4me"]
 
 [ext_resource type="Script" uid="uid://btyho8ym5bvky" path="res://scripts/misc/bossfight/projectile_01.gd" id="1_pa28f"]
 [ext_resource type="Texture2D" uid="uid://b8f461sp7xqcr" path="res://assets/sprites/manel/manellboss/projectiles/Projetilpequeno1-sheet.png" id="2_nmbhu"]
-[ext_resource type="AudioStream" uid="uid://pyhxl81ufsrj" path="res://assets/audio/sfx/bossfight/Projectile01.wav" id="3_sypa5"]
-[ext_resource type="AudioStream" uid="uid://mnveuqyfa0mr" path="res://assets/audio/sfx/bossfight/spawnBullet.wav" id="4_srtxa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sypa5"]
 radius = 12.0
@@ -78,6 +76,7 @@ _data = {
 }
 
 [node name="projectile01" type="Area2D"]
+process_mode = 1
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_pa28f")
@@ -96,14 +95,5 @@ offset = Vector2(0, -0.955)
 libraries = {
 &"": SubResource("AnimationLibrary_1g31u")
 }
-
-[node name="shootSfx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_sypa5")
-volume_db = 5.0
-
-[node name="spawnSfx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_srtxa")
-volume_db = 15.0
-autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

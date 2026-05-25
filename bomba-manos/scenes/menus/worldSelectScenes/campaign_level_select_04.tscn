@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bid0ssiobl60c"]
+[gd_scene load_steps=6 format=3 uid="uid://bid0ssiobl60c"]
 
 [ext_resource type="Script" uid="uid://db51vpoxlelql" path="res://scripts/menus/worldSelect/campaign_level_select.gd" id="1_8dwfl"]
 [ext_resource type="PackedScene" uid="uid://vqadtrjtxsn5" path="res://scenes/menus/worldSelectScenes/level_icon.tscn" id="2_pjj7a"]
 [ext_resource type="PackedScene" uid="uid://c3i3avv75txs4" path="res://scenes/menus/worldSelectScenes/player_icon.tscn" id="3_xae15"]
 [ext_resource type="SpriteFrames" uid="uid://cyekfxld10edt" path="res://assets/res/spriteframes/miniman-Sprite-Frames.tres" id="4_pjj7a"]
+[ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="5_xae15"]
 
 [node name="CampaignLevelSelect" type="Control"]
 layout_mode = 3
@@ -73,5 +74,5 @@ offset_left = 344.0
 offset_top = 8.0
 offset_right = 413.0
 offset_bottom = 31.0
-scale = Vector2(2.5, 2.5)
+theme = ExtResource("5_xae15")
 text = "Mundo 4"

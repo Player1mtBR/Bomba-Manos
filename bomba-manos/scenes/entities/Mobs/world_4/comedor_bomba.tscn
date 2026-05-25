@@ -159,7 +159,7 @@ animations = [{
 "speed": 15.0
 }, {
 "frames": [{
-"duration": 2.0,
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_w5v2v")
 }, {
 "duration": 1.0,
@@ -276,5 +276,6 @@ animation = &"die"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_5smwe")
 volume_db = 5.0
+bus = &"Effects"
 
 [connection signal="area_entered" from="Mob" to="." method="_on_area_2d_area_entered"]

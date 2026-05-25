@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ci182yols3wsu"
+path="res://.godot/imported/que troço mais horrível-fala7.mp3-7d77c8bba9d941a896253e577557bbfa.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/World03/que troço mais horrível-fala7.mp3"
+dest_files=["res://.godot/imported/que troço mais horrível-fala7.mp3-7d77c8bba9d941a896253e577557bbfa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

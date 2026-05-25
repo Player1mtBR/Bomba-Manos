@@ -33,6 +33,7 @@ PortalTransition="*res://scenes/menus/loading/portal_transition.tscn"
 
 window/size/viewport_width=855
 window/size/viewport_height=480
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckyjryauswv6o"]
+[gd_scene load_steps=5 format=3 uid="uid://ckyjryauswv6o"]
 
 [ext_resource type="Script" uid="uid://db51vpoxlelql" path="res://scripts/menus/worldSelect/campaign_level_select.gd" id="1_uqxyf"]
 [ext_resource type="PackedScene" uid="uid://vqadtrjtxsn5" path="res://scenes/menus/worldSelectScenes/level_icon.tscn" id="2_nydxd"]
 [ext_resource type="PackedScene" uid="uid://c3i3avv75txs4" path="res://scenes/menus/worldSelectScenes/player_icon.tscn" id="3_nwh7s"]
+[ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="4_nydxd"]
 
 [node name="CampaignLevelSelect" type="Control"]
 layout_mode = 3
@@ -13,57 +14,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uqxyf")
 
-[node name="LevelIcon" parent="." node_paths=PackedStringArray("nextLevelRight") instance=ExtResource("2_nydxd")]
-offset_top = 192.0
-offset_bottom = 256.0
-nextLevelRight = NodePath("../LevelIcon2")
-
-[node name="LevelIcon2" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight") instance=ExtResource("2_nydxd")]
-offset_left = 192.0
-offset_top = 192.0
-offset_right = 256.0
-offset_bottom = 256.0
-levelName = "2"
-unlockRequirement = "W05L01"
-nextLevelLeft = NodePath("../LevelIcon")
-nextLevelRight = NodePath("../LevelIcon3")
-
-[node name="LevelIcon3" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelDown") instance=ExtResource("2_nydxd")]
-offset_left = 320.0
-offset_right = 384.0
-levelName = "3"
-unlockRequirement = "W05L02"
-nextLevelLeft = NodePath("../LevelIcon2")
-nextLevelDown = NodePath("../LevelIcon4")
-
-[node name="LevelIcon4" parent="." node_paths=PackedStringArray("nextLevelRight", "nextLevelUp", "nextLevelDown") instance=ExtResource("2_nydxd")]
-offset_left = 384.0
-offset_top = 256.0
-offset_right = 448.0
-offset_bottom = 320.0
-levelName = "4"
-unlockRequirement = "W05L03"
-nextLevelRight = NodePath("../LevelIcon5")
-nextLevelUp = NodePath("../LevelIcon3")
-nextLevelDown = NodePath("../LevelIcon6")
-
-[node name="LevelIcon5" parent="." node_paths=PackedStringArray("nextLevelLeft") instance=ExtResource("2_nydxd")]
-offset_left = 576.0
-offset_top = 256.0
-offset_right = 640.0
-offset_bottom = 320.0
-levelName = "5"
+[node name="LevelIcon" parent="." instance=ExtResource("2_nydxd")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.5
+offset_top = -15.0
+offset_right = 32.5
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
 level2Load = "uid://suap6bq2v1le"
-unlockRequirement = "W05L04"
-nextLevelLeft = NodePath("../LevelIcon4")
-
-[node name="LevelIcon6" parent="." node_paths=PackedStringArray("nextLevelUp") instance=ExtResource("2_nydxd")]
-offset_left = 384.0
-offset_top = 376.0
-offset_right = 448.0
-offset_bottom = 440.0
-levelName = "Bônus"
-nextLevelUp = NodePath("../LevelIcon4")
 
 [node name="playerIcon" parent="." instance=ExtResource("3_nwh7s")]
 
@@ -73,5 +37,5 @@ offset_left = 344.0
 offset_top = 8.0
 offset_right = 413.0
 offset_bottom = 31.0
-scale = Vector2(2.5, 2.5)
-text = "Mundo 5"
+theme = ExtResource("4_nydxd")
+text = "Mundo 5?"

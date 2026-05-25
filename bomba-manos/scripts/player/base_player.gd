@@ -53,7 +53,7 @@ func _process(delta: float) -> void:
 			placedBombas += 1
 			#GlobalScript.manelBombasCount += 1 ##contador Manel ###REMOVE COMMENT FOR MULTIPLAYER
 			#print("placed bombas: ", placedBombas)
-			await get_tree().create_timer(3.0).timeout ## cria um novo timer e aguarda o sinal de quando acaba o timer
+			await get_tree().create_timer(3.0, false).timeout ## cria um novo timer e aguarda o sinal de quando acaba o timer
 			placedBombas -= 1
 			
 		if equippedBomb == 2: #remote bomb
@@ -72,7 +72,7 @@ func _process(delta: float) -> void:
 	#	placedBombas += 1
 	#	#GlobalScript.manelBombasCount += 1 ##contador Manel ###REMOVE COMMENT FOR MULTIPLAYER
 	#	#print("placed bombas: ", placedBombas)
-	#	await get_tree().create_timer(3.0).timeout ## cria um novo timer e aguarda o sinal de quando acaba o timer
+	#	await get_tree().create_timer(3.0, false).timeout ## cria um novo timer e aguarda o sinal de quando acaba o timer
 	#	placedBombas -= 1
 	
 	if Input.is_action_just_pressed("p"+str(playerID)+"_swap_bomb"):
@@ -139,11 +139,12 @@ func movePlayer(): ##tween vai levar de um valor a outro de forma gradual
 			canPlayerMove = false
 			var moveTween = create_tween()
 			moveTween.tween_property(self, "position", position + inputMoveDirection * 16, playerMoveDelay)
-			await get_tree().create_timer(playerMoveDelay).timeout
+			await get_tree().create_timer(playerMoveDelay, false).timeout
 			passos += 1
 			canPlayerMove = true
 			
 func killPlayer():
+	CurrentLevelManager.deathCount += 1
 	GlobalScript.currentPlayers -= 1
 	if GlobalScript.currentPlayers > 1:
 		GlobalScript.triggerLaugh = true
@@ -167,7 +168,7 @@ func victory():
 	#isPlayerAlive = false
 	animPlayerNode.play("win")
 	
-	await get_tree().create_timer(4.0).timeout
+	await get_tree().create_timer(4.0, false).timeout
 	if isPlayerAlive == true:
 		queue_free()
 		
@@ -182,13 +183,13 @@ func teleport(id_tunel: int) -> void:
 	var destino
 	if id_tunel == 1:
 		destino = teleportTunel2
-		#await get_tree().create_timer(0.5).timeout
+		#await get_tree().create_timer(0.5, false).timeout
 	elif id_tunel == 2:
 		destino = teleportTunel
-		#await get_tree().create_timer(0.5).timeout
+		#await get_tree().create_timer(0.5, false).timeout
 	canPlayerMove = false
 	global_position = destino.global_position
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.1, false).timeout
 	canPlayerMove = true
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

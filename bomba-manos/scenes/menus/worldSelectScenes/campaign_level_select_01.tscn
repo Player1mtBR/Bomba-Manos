@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://mhuio1sn8das"]
+[gd_scene load_steps=5 format=3 uid="uid://mhuio1sn8das"]
 
 [ext_resource type="Script" uid="uid://db51vpoxlelql" path="res://scripts/menus/worldSelect/campaign_level_select.gd" id="1_8or57"]
 [ext_resource type="PackedScene" uid="uid://vqadtrjtxsn5" path="res://scenes/menus/worldSelectScenes/level_icon.tscn" id="2_pvp6c"]
 [ext_resource type="PackedScene" uid="uid://c3i3avv75txs4" path="res://scenes/menus/worldSelectScenes/player_icon.tscn" id="3_wdmo6"]
+[ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="4_pvp6c"]
 
 [node name="CampaignLevelSelect" type="Control"]
 layout_mode = 3
@@ -37,7 +38,7 @@ unlockRequirement = "W01L02"
 nextLevelLeft = NodePath("../LevelIcon2")
 nextLevelRight = NodePath("../LevelIcon4")
 
-[node name="LevelIcon4" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight", "nextLevelDown") instance=ExtResource("2_pvp6c")]
+[node name="LevelIcon4" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight") instance=ExtResource("2_pvp6c")]
 offset_left = 512.0
 offset_top = 256.0
 offset_right = 576.0
@@ -46,7 +47,6 @@ levelName = "4"
 unlockRequirement = "W01L03"
 nextLevelLeft = NodePath("../LevelIcon3")
 nextLevelRight = NodePath("../LevelIcon5")
-nextLevelDown = NodePath("../LevelIcon6")
 
 [node name="LevelIcon5" parent="." node_paths=PackedStringArray("nextLevelLeft") instance=ExtResource("2_pvp6c")]
 offset_left = 640.0
@@ -55,21 +55,13 @@ levelName = "5"
 unlockRequirement = "W01L04"
 nextLevelLeft = NodePath("../LevelIcon4")
 
-[node name="LevelIcon6" parent="." node_paths=PackedStringArray("nextLevelUp") instance=ExtResource("2_pvp6c")]
-offset_left = 512.0
-offset_top = 384.0
-offset_right = 576.0
-offset_bottom = 448.0
-levelName = "Bônus"
-nextLevelUp = NodePath("../LevelIcon4")
-
 [node name="playerIcon" parent="." instance=ExtResource("3_wdmo6")]
 
 [node name="WordName" type="Label" parent="."]
 layout_mode = 0
 offset_left = 344.0
-offset_top = 8.0
-offset_right = 413.0
-offset_bottom = 31.0
-scale = Vector2(2.5, 2.5)
+offset_top = 32.0
+offset_right = 517.0
+offset_bottom = 63.0
+theme = ExtResource("4_pvp6c")
 text = "Mundo 1"

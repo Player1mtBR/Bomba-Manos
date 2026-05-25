@@ -19,7 +19,9 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 	if area.name == "Area2Dplayer":
 		PortalTransition.startAnimation()
 		CurrentLevelManager.levelComplete = true
-		await get_tree().create_timer(1.0).timeout
+		CurrentLevelManager.deathCount = 0
+		print(CurrentLevelManager.deathCount)
+		await get_tree().create_timer(1.0, false).timeout
 		Loader.loadingScreen2Scene(nextLevel)
 		#UnlockStuff.
 		UnlockStuff.completedLevels[levelIdentifier] = true

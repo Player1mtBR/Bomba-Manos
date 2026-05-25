@@ -4,6 +4,8 @@ extends Control
 var currentWorld := 0
 
 func _ready() -> void:
+	if PortalTransition.isPlaying == false:
+		PortalTransition.endAnimation()
 	if MusicMenu.get_child(0).playing == false:
 		MusicMenu.get_child(0).play()
 	$playerIcon.global_position = worldList[currentWorld].global_position

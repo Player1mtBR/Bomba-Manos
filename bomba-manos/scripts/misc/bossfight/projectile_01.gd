@@ -11,16 +11,21 @@ var chargeMult := 1
 
 func _ready() -> void:
 	modulate = Color(10, 10, 10)
-	await get_tree().create_timer(0.25).timeout
 	if canCharge == true:
+		$"../sfx/spawnSfx02".play()
 		chargeMult = 2
-		await get_tree().create_timer(0.5).timeout
-		modulate = Color(1, 100, 1)
-	else:
+		await get_tree().create_timer(0.5, false).timeout
 		modulate = Color(1, 1, 1)
+		$AnimationPlayer.play("blink")
+		await get_tree().create_timer(0.5, false).timeout
+		$"../sfx/shootSfx02".play()
+	else:
+		$"../sfx/spawnSfx01".play()
+		await get_tree().create_timer(0.25, false).timeout
+		modulate = Color(1, 1, 1)
+		$"../sfx/shootSfx01".play()
 	spawn = false
-	$shootSfx
-	await get_tree().create_timer(lifetime).timeout
+	await get_tree().create_timer(lifetime,false).timeout
 	queue_free()
 	
 func _physics_process(delta: float) -> void:

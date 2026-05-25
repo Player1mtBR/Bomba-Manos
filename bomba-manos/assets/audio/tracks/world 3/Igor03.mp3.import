@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Igor03.mp3-d713584008440ef5c08838a7a1af32e7.m
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

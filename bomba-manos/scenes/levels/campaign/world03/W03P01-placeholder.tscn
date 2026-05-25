@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://d4j7l3uvdwopn"]
+[gd_scene load_steps=26 format=4 uid="uid://d4j7l3uvdwopn"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_lran8"]
 [ext_resource type="Texture2D" uid="uid://dw4hil17syrg0" path="res://assets/sprites/levels/campaign/world03/FRENTELostWoods.png" id="3_ljbgp"]
@@ -15,9 +15,12 @@
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="18_pbp7h"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="19_1oj76"]
 [ext_resource type="Texture2D" uid="uid://dfj6jigttkb7a" path="res://assets/sprites/levels/campaign/world03/muro7.png" id="19_4di0p"]
+[ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="19_33v1t"]
 [ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="20_d2lw7"]
+[ext_resource type="AudioStream" uid="uid://cemv0y24ogg1o" path="res://assets/audio/dialogue/World03/fala 1 Igor.mp3" id="20_unpy3"]
 [ext_resource type="Texture2D" uid="uid://b6t0qbecvhp4k" path="res://assets/sprites/levels/campaign/world03/LostWoodsCorner.png" id="21_33v1t"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="21_xhe8u"]
+[ext_resource type="AudioStream" uid="uid://uj0a4u57cdea" path="res://assets/audio/dialogue/World03/fala 2-igor.mp3" id="21_xpafo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lx53w"]
 texture = ExtResource("19_4di0p")
@@ -592,8 +595,10 @@ playerID = 1
 charSkin = ExtResource("8_4di0p")
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("11_w5s4q")
 autoplay = true
+bus = &"Soundtrack"
 parameters/looping = true
 
 [node name="mainCamera" parent="." instance=ExtResource("18_aqvci")]
@@ -702,3 +707,6 @@ levelIdentifier = "W03L01"
 nextLevel = "uid://c8owbepyobwjm"
 
 [node name="pauseCampaign" parent="." instance=ExtResource("18_pbp7h")]
+
+[node name="DIALOG" parent="." instance=ExtResource("19_33v1t")]
+falasDosPersonagens = Array[AudioStream]([ExtResource("20_unpy3"), ExtResource("21_xpafo")])

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://c8owbepyobwjm"]
+[gd_scene load_steps=28 format=4 uid="uid://c8owbepyobwjm"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_ht0kv"]
 [ext_resource type="Texture2D" uid="uid://bmh7gbx4co7l3" path="res://assets/sprites/levels/campaign/world03/chão.png" id="2_6rlt1"]
@@ -18,7 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/campaign/exit.tscn" id="18_n5bi5"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="19_ht0kv"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="19_u6pfp"]
+[ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="20_cyfb6"]
 [ext_resource type="Texture2D" uid="uid://b6t0qbecvhp4k" path="res://assets/sprites/levels/campaign/world03/LostWoodsCorner.png" id="21_m8we0"]
+[ext_resource type="AudioStream" uid="uid://cs1g6dryjs5rg" path="res://assets/audio/dialogue/World03/fala Igor-3.mp3" id="21_sj3u4"]
+[ext_resource type="AudioStream" uid="uid://c6q42fxmcsyuo" path="res://assets/audio/dialogue/World03/Igor-fala4.mp3" id="22_bpvqd"]
+[ext_resource type="AudioStream" uid="uid://7w54yetxn63k" path="res://assets/audio/dialogue/World03/Igor-fala5.mp3" id="23_0u5qd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lx53w"]
 texture = ExtResource("5_cyfb6")
@@ -627,8 +631,10 @@ position = Vector2(0, 64)
 iaMoveDelay = 0.9
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("12_ht0kv")
 autoplay = true
+bus = &"Soundtrack"
 parameters/looping = true
 
 [node name="mainCamera" parent="." instance=ExtResource("15_ard0a")]
@@ -711,3 +717,7 @@ levelIdentifier = "W03L02"
 nextLevel = "uid://bqjv3k83yah76"
 
 [node name="pauseCampaign" parent="." instance=ExtResource("19_ht0kv")]
+
+[node name="DIALOG" parent="." instance=ExtResource("20_cyfb6")]
+position = Vector2(0, -16)
+falasDosPersonagens = Array[AudioStream]([ExtResource("21_sj3u4"), ExtResource("22_bpvqd"), ExtResource("23_0u5qd")])

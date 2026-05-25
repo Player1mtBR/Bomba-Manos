@@ -16,6 +16,8 @@ var canAttack := false
 var isAttacking := false
 var canParry := true
 
+var currentDirection : Vector2
+
 func _ready() -> void:
 	pass
 	
@@ -31,7 +33,7 @@ func _process(delta: float) -> void:
 	if canBlock:
 		if isBlocking == false:
 			if Input.is_action_just_pressed("p1_bomb") and canAttack == true:
-				canBlock == false
+				canBlock = false
 				jpAttack()
 				movePlayer2AttackPosition(delta)
 		
@@ -64,6 +66,44 @@ func _process(delta: float) -> void:
 		isBlocking = false
 		parryTimer.stop()
 		showGreenShield()
+
+	
+		
+	##MOVEMENT ANIMATIONS
+	if Input.is_action_just_pressed("p1_moveLeft"):
+		currentDirection = Vector2(-1, 0)
+		if $AnimatedSprite2D.animation != "go_left":
+			$AnimatedSprite2D.play("go_left")
+		
+	elif Input.is_action_just_pressed("p1_moveRight"):
+		currentDirection = Vector2(1, 0)
+		if $AnimatedSprite2D.animation != "go_right":
+			$AnimatedSprite2D.play("go_right")
+			
+	elif Input.is_action_just_pressed("p1_moveUp"):
+		currentDirection = Vector2(0, -1)
+		if $AnimatedSprite2D.animation != "foward":
+			$AnimatedSprite2D.play("foward")
+		
+	elif Input.is_action_just_pressed("p1_moveDown"):
+		currentDirection = Vector2(0, 1)
+		if $AnimatedSprite2D.animation != "back":
+			$AnimatedSprite2D.play("back")
+			
+			
+	if Input.is_action_just_released("p1_moveLeft"):
+		if currentDirection == Vector2(-1, 0):
+			$AnimatedSprite2D.play("return_left")
+			currentDirection = Vector2(0, 0)
+			
+
+			
+	if Input.is_action_just_released("p1_moveRight"):
+		if currentDirection == Vector2(1, 0):
+			$AnimatedSprite2D.play("return_right")
+			currentDirection = Vector2(0, 0)
+			
+			
 	
 func _physics_process(delta: float) -> void:
 	if canMove:
@@ -73,11 +113,27 @@ func _physics_process(delta: float) -> void:
 	
 func chargePower(amount):
 	if canParry == true:
+		$AnimationPlayer.play("charge")
 		$sfx/charge.play()
 		chargedPower += amount
+		hp += 2
+		$AnimationPlayer.play("heal")
+		for i in range(4):
+			modulate = Color(10, 10, 10)
+			await get_tree().create_timer(0.05, false).timeout
+			modulate = Color(1, 1, 1)
+			await get_tree().create_timer(0.05, false).timeout
+		if hp > 10:
+			hp = 10
 		if chargedPower >= 3:
 			canAttack = true
 			$sfx/fullpower.play()
+			$AnimationPlayer.play("fullpower")
+		
+		await $AnimationPlayer.animation_finished
+		if hp < 5:
+			$AnimationPlayer.play("low_health")
+			
 
 func jpBlock():
 	print("Blocking")
@@ -85,49 +141,51 @@ func jpBlock():
 	
 func jpBlockUp():
 	$sfx/shield.play()
-	print("Blocking")
+	#print("Blocking")
 	$ShieldUP.visible = true
 	$ShieldUP/CollisionShape2D.disabled = false
 	isBlocking = true
 	
 func jpBlockLeft():
 	$sfx/shield.play()
-	print("Blocking")
+	#print("Blocking")
 	$ShieldLEFT.visible = true
 	$ShieldLEFT/CollisionShape2D.disabled = false
 	isBlocking = true
 	
 func jpBlockRight():
 	$sfx/shield.play()
-	print("Blocking")
+	#print("Blocking")
 	$ShieldRIGHT.visible = true
 	$ShieldRIGHT/CollisionShape2D.disabled = false
 	isBlocking = true
 	
 func jpAttack():
 	$sfx/attack.play()
-	$"../SuperManel".wait4awesomeness = true
+	$AnimationPlayer.play("power_drain")
+	$"../SuperManel".coolAnimation = true
 	$"../Icons/Faces".modulate = Color(0, 1, 0)
 	canAttack = false
 	isAttacking = true
 	invincible = true
-	print("Attack")
+	#print("Attack")
 	$Attack.visible = true
-	$Attack/Area2D/CollisionShape2D.disabled == false
-	await get_tree().create_timer(1.0).timeout
+	$Attack/Area2D/CollisionShape2D.disabled = false
+	await get_tree().create_timer(1.0, false).timeout
 	chargedPower = 2
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0, false).timeout
 	chargedPower = 1
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0, false).timeout
 	chargedPower = 0
+	$AnimationPlayer.play("charge")
 	$Attack.visible = false
-	$Attack/Area2D/CollisionShape2D.disabled == true
+	$Attack/Area2D/CollisionShape2D.disabled = true
 	canMove = true
 	canBlock = true
-	print("power ", chargedPower)
+	#print("power ", chargedPower)
 	isAttacking = false
 	invincible = false
-	$"../SuperManel".wait4awesomeness = false
+	$"../SuperManel".coolAnimation = false
 	$"../Icons/Faces".modulate = Color(1, 1, 1)
 	
 func movePlayer2AttackPosition(delta):
@@ -143,37 +201,59 @@ func showGreenShield():
 	$ShieldLEFT/CollisionShape2D.disabled = true
 	$ShieldRIGHT/CollisionShape2D.disabled = true
 	canParry = true
-	print("can parry = ", canParry)
+	#print("can parry = ", canParry)
 	
 func takeDamage(amount):
+	if UnlockStuff.iddqd == true: #debug damage
+		for i in range(4):
+			modulate = Color(1, 0, 0)
+			await get_tree().create_timer(0.05, false).timeout
+			modulate = Color(1, 1, 1)
+			await get_tree().create_timer(0.05, false).timeout
+			
 	if invincible == false:
 		$"../Icons/Faces".modulate = Color(1, 0, 0)
 		$"../Camera2D".camShake01Trigger = true
 	
 		invincible = true
-		print("invincible")
+		#print("invincible")
 		$sfx/hit.play()
+		$AnimationPlayer.play("damage")
 		hp -= amount
+		if hp < 5:
+			$AnimationPlayer.play("low_health")
 		if hp <= 0:
 			killMegazord()
 		for i in range(4):
 			modulate = Color(1, 0, 0)
-			await get_tree().create_timer(0.05).timeout
+			await get_tree().create_timer(0.05, false).timeout
 			modulate = Color(1, 1, 1)
-			await get_tree().create_timer(0.05).timeout
+			await get_tree().create_timer(0.05, false).timeout
 			
-		#await get_tree().create_timer(invincibilityTime).timeout
+		#await get_tree().create_timer(invincibilityTime, false).timeout
 		$"../Icons/Faces".modulate = Color(1, 1, 1)
 		invincible = false
-		print("vulnerable")
+		#print("vulnerable")
 	
 func killMegazord():
 	print("GAME OVER DUDES")
-	CurrentLevelManager.restartLevel()
+	$"../AnimationPlayer".play("defeat")
+	$"../SuperManel".coolAnimation = true
+	$sfx/defeat.play()
+	canAttack = false
+	canBlock = false
+	await $"../AnimationPlayer".animation_finished
+	Loader.loadingScreen2Scene("res://scenes/menus/main_menu.tscn")
+	#CurrentLevelManager.restartLevel()
 
 func _on_parry_timer_timeout() -> void:
 	$ShieldUP/green.visible = false
 	$ShieldLEFT/green2.visible = false
 	$ShieldRIGHT/green3.visible = false
 	canParry = false
-	print("can parry = ", canParry)
+	#print("can parry = ", canParry)
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if $AnimatedSprite2D.animation == "return_left" or $AnimatedSprite2D.animation == "return_right":
+		$AnimatedSprite2D.play("idle")

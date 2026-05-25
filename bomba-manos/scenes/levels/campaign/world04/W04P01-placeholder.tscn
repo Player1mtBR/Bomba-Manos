@@ -585,8 +585,10 @@ position = Vector2(160, 16)
 visible = false
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("12_l57kd")
 autoplay = true
+bus = &"Soundtrack"
 parameters/looping = true
 
 [node name="mainCamera" parent="." instance=ExtResource("12_4bnuq")]

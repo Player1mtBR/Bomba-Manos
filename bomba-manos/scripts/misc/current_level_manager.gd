@@ -5,6 +5,7 @@ var isPlayer1Dead := false
 var currentLevelName : String
 var campaignMap := false
 var levelComplete := false
+var deathCount := 0
 
 func _process(delta: float) -> void:
 	pass

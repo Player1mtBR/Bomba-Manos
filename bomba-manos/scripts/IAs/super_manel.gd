@@ -18,6 +18,8 @@ extends Node2D
 	$"attackSpawn/top/5"
 ]
 
+var skipIntro := false
+var phase := 1
 
 var projectile01Scene = preload("res://scenes/levels/campaign/extras/projectile_01.tscn")
 var projectile02Scene = preload("res://scenes/levels/campaign/extras/projectile_02.tscn")
@@ -26,12 +28,8 @@ var laser01Scene = preload("res://scenes/levels/campaign/extras/laser_01.tscn")
 var coolAnimation := false
 	
 var canAttack := false
-var canAttackProjectile := true
-var canAttackLaser := true
-#var canAttackCharged := false
-var chargedCount := 5
-var phase := 1
-var wait4awesomeness := false
+var chargedCount := 7
+var chargeCountCap := 7 #phase01 = 7, phase02 = 5, phase03 = 3
 
 var attackCooldown1 := 0.1
 var attackCooldown2 := 0.25
@@ -39,6 +37,10 @@ var attackCooldown3 := 0.5
 var attackCooldown4 := 1.0
 var attackCooldown5 := 3.0
 var attackCooldown6 := 5.0
+
+var useLastAttack := true
+
+var currentAttack : Callable
 
 var phase01Projectiles : Array[Callable] = [ ##functions inside an array cant use parenthesis
 	attackLeft01,
@@ -56,87 +58,147 @@ var phase01Lasers : Array[Callable] = [
 	attackLaserTop02
 ]
 
+var phase02Projectiles : Array[Callable] = [
+	attackCircle,
+	attackCircle02,
+	attackZigzag,
+	attackLeft03,
+	attackRight03
+]
+
+var phase02Lasers : Array[Callable] = [
+	attackLaserTop2Middle,
+	attackLaserTop2Bottom,
+	attackLaserBottom2Top,
+	attackLaserLeft2Right,
+	attackLaserRight2Left
+]
+
+var phase03Projectiles : Array[Callable] = [
+	attackP301,
+	attackP302
+]
+
+var phase03Lasers : Array[Callable] = [
+	attackLaserCorners,
+	attackLaserLeftCornerUp,
+	attackLaserLeftCornerDown,
+	attackLaserRightCornerUp,
+	attackLaserRightCornerDown,
+]
+
 func _ready() -> void:
-	print("aaa"+str(phase))
-	coolAnimation = true
-	$AnimationPlayer.play("intro")
-	await get_tree().create_timer(10.0).timeout
-	$sfx/risadaPessecopata.play()
-	$"../soundtrack".play()
-	await $AnimationPlayer.animation_finished
-	coolAnimation = false
-	canAttack = true
+	#aaprint("aaa"+str(phase))
+	if skipIntro == false:
+		coolAnimation = true
+		$AnimationPlayer.play("intro")
+		await get_tree().create_timer(10.0, false).timeout
+		$sfx/risadaPessecopata.play()
+		$"../soundtrack".play()
+		await $AnimationPlayer.animation_finished
+		coolAnimation = false
 	
-	#await get_tree().create_timer(1.0).timeout
-	#attackLeft($"attackSpawn/left/2")
+	$"../soundtrack".play()
+	#await get_tree().create_timer(3.0).timeout
+	canAttack = true
+	print(coolAnimation, canAttack)
+
 
 func _physics_process(delta: float) -> void:
-	for area in $Area2D.get_overlapping_areas():
-			print("area",area.name)
-			#if area.name
+	pass
+	#for area in $Area2D.get_overlapping_areas():
+	#	print("area",area.name)
+		#if area.name
 
 func _process(delta: float) -> void:
-		if canAttack == true and wait4awesomeness == false:
-			var phRandom : int
-			if chargedCount > 0:
-				phRandom = randi_range(2, 4)
-			else:
-				phRandom = randi_range(1, 4)
+	if canAttack == true and coolAnimation == false and phase < 4:
+		var phRandom : int
+		if chargedCount > 0:
+			phRandom = randi_range(2, 4)
+		elif chargedCount <= -5:
+			phRandom = randi_range(1, 1) #if 5 attacks passed, charged sttack guaranteed
+		else:
+			phRandom = randi_range(1, 4)
 
-			canAttack = false
-			$AnimationPlayer.play("manelFloat")
-			match phRandom:
-				0:
-					attackLaserCorners()
-					chargedCount -= 1
-				1:
-					if chargedCount <= 0:
-						chooseCharged()
-						chargedCount = 5
-						$visual/AnimatedSprite2D.play("attack01")
-						$sfx/risadaPessecopata.play()
-				2:
-					chooseLaser()
-					chargedCount -= 1
-					$visual/AnimatedSprite2D.play("attack02")
-					print("laser")
-				3:
-					chooseProjectile()
-					chargedCount -= 1
-					$visual/AnimatedSprite2D.play("attack03")
-					print("pew")
-				4:
-					chooseProjectile()
-					chargedCount -= 1
-					$visual/AnimatedSprite2D.play("attack04")
-					print("pew")
+		canAttack = false
+		$AnimationPlayer.play("manelFloat")
+		match phRandom:
+			0:
+				attackLaserCorners()
+				chargedCount -= 1
+			1:
+				if chargedCount <= 0:
+					chooseCharged()
+					chargedCount = chargeCountCap
+					$visual/AnimatedSprite2D.play("attack01")
+					$sfx/risadaPessecopata.play()
+			2:
+				chooseLaser()
+				chargedCount -= 1
+				$visual/AnimatedSprite2D.play("attack02")
+				#print("laser")
+			3:
+				chooseProjectile()
+				chargedCount -= 1
+				$visual/AnimatedSprite2D.play("attack03")
+				#print("pew")
+			4:
+				chooseProjectile()
+				chargedCount -= 1
+				$visual/AnimatedSprite2D.play("attack04")
+				#print("pew")
+				
+		#print("chargedCount: ",chargedCount)
 					
-			#print("chargedCount: ",chargedCount)
-						
-					
-			await $visual/AnimatedSprite2D.animation_finished
-			$visual/AnimatedSprite2D.play("default")
-			await get_tree().create_timer(attackCooldown5).timeout
-			canAttack = true
-			
+		#canAttack = false
+		#print("can attack ", canAttack)
+		print("remaining to charge: ", chargedCount," / ",chargeCountCap)
+		await $visual/AnimatedSprite2D.animation_finished
+		$visual/AnimatedSprite2D.play("default")
+		await get_tree().create_timer(attackCooldown5, false).timeout
+		#canAttack = true
+	
+	if phase >= 4 and useLastAttack == true:
+		useLastAttack = false
+		finalAttack()
+	
 			
 func chooseProjectile():
 	match phase:
 		1:
-			phase01Projectiles.pick_random().call() #will choose a random attack from the array, and  use call
+			currentAttack = phase01Projectiles.pick_random()
+			print(currentAttack)
+			currentAttack.call()
+			#phase01Projectiles.pick_random().call() #will choose a random attack from the array, and  use call
 		2:
-			pass
+			currentAttack = phase02Projectiles.pick_random()
+			print(currentAttack)
+			currentAttack.call()
 		3:
-			pass
+			currentAttack = phase03Projectiles.pick_random()
+			print(currentAttack)
+			currentAttack.call()
+	await currentAttack.call()
+	if coolAnimation == false:
+		canAttack = true
 			
 func chooseLaser():
 	match phase:
 		1:
-			phase01Lasers.pick_random().call()
+			currentAttack = phase01Lasers.pick_random()
+			print(currentAttack)
+			currentAttack.call()
 		2:
-			pass
+			currentAttack = phase02Lasers.pick_random()
+			print(currentAttack)
+			currentAttack.call()
 		3:
-			pass
+			currentAttack = phase03Lasers.pick_random()
+			print(currentAttack)
+			currentAttack.call()
+	await currentAttack.call()
+	if coolAnimation == false:
+		canAttack = true
 	
 func chooseCharged():
 	var chargedDirection = randi_range(1, 3)
@@ -150,6 +212,10 @@ func chooseCharged():
 			chargeAttackRight(posRight[randLeftRight])
 		3:
 			chargeAttackTop(posTop[randTop])
+	await get_tree().create_timer(attackCooldown5, false).timeout
+	if coolAnimation == false:
+		canAttack = true
+	
 	match phase:
 		1:
 			pass
@@ -160,252 +226,335 @@ func chooseCharged():
 
 func attackZigzag():
 	attackTop(posTop[0])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[1])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[2])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[3])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[4])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[3])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[2])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[1])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[0])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[1])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[2])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[3])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[4])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[3])
-	await get_tree().create_timer(attackCooldown1).timeout
-	attackTop(posTop[4])
-	await get_tree().create_timer(attackCooldown1).timeout
-	attackTop(posTop[3])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[2])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[1])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[0])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
+	attackTop(posTop[1])
+	await get_tree().create_timer(attackCooldown1, false).timeout
+	attackTop(posTop[2])
+	await get_tree().create_timer(attackCooldown1, false).timeout
+	attackTop(posTop[3])
+	await get_tree().create_timer(attackCooldown1, false).timeout
+	attackTop(posTop[4])
+	await get_tree().create_timer(attackCooldown5, false).timeout
 	
 func attackCircle():
 	attackLeft(posLeft[2])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackLeft(posLeft[1])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackLeft(posLeft[0])
-	await get_tree().create_timer(attackCooldown3).timeout
+	await get_tree().create_timer(attackCooldown3, false).timeout
 	attackTop(posTop[0])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[1])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[2])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[3])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackTop(posTop[4])
-	await get_tree().create_timer(attackCooldown3).timeout
+	await get_tree().create_timer(attackCooldown3, false).timeout
 	attackRight(posRight[0])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackRight(posRight[1])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown1, false).timeout
 	attackRight(posRight[2])
-	await get_tree().create_timer(attackCooldown1).timeout
-
+	await get_tree().create_timer(attackCooldown6, false).timeout
+	
+func attackCircle02():
+	attackRight(posRight[2])
+	await get_tree().create_timer(attackCooldown1, false).timeout
+	attackRight(posRight[1])
+	await get_tree().create_timer(attackCooldown1, false).timeout
+	attackRight(posRight[0])
+	await get_tree().create_timer(attackCooldown3, false).timeout
+	attackTop(posTop[4])
+	await get_tree().create_timer(attackCooldown1, false).timeout
+	attackTop(posTop[3])
+	await get_tree().create_timer(attackCooldown1, false).timeout
+	attackTop(posTop[2])
+	await get_tree().create_timer(attackCooldown1, false).timeout
+	attackTop(posTop[1])
+	await get_tree().create_timer(attackCooldown1, false).timeout
+	attackTop(posTop[0])
+	await get_tree().create_timer(attackCooldown3, false).timeout
+	attackLeft(posLeft[0])
+	await get_tree().create_timer(attackCooldown1, false).timeout
+	attackLeft(posLeft[1])
+	await get_tree().create_timer(attackCooldown1, false).timeout
+	attackLeft(posLeft[2])
+	await get_tree().create_timer(attackCooldown5, false).timeout
+	
 
 
 func attackLeft01():
 	attackLeft(posLeft[0])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackLeft(posLeft[1])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackLeft(posLeft[2])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackLeft(posLeft[1])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackLeft(posLeft[0])
-	await get_tree().create_timer(attackCooldown3).timeout
+	await get_tree().create_timer(attackCooldown4, false).timeout
+	
 	
 func attackLeft02():
 	attackLeft(posLeft[2])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackLeft(posLeft[0])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackLeft(posLeft[1])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackLeft(posLeft[0])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackLeft(posLeft[2])
-	await get_tree().create_timer(attackCooldown3).timeout
+	await get_tree().create_timer(attackCooldown4, false).timeout
 	
+
+func attackLeft03():
+	for i in range(5):	
+		for i2 in range(3):
+			attackLeft(posLeft[i2])
+			await get_tree().create_timer(attackCooldown2, false).timeout
+		attackTop(posTop[i])
+	await get_tree().create_timer(attackCooldown4, false).timeout
 
 
 func attackRight01():
 	attackRight(posRight[0])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackRight(posRight[1])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackRight(posRight[2])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackRight(posRight[1])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackRight(posRight[0])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown4, false).timeout
+	
 	
 func attackRight02():
 	attackRight(posRight[2])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackRight(posRight[0])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackRight(posRight[1])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackRight(posRight[0])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackRight(posRight[2])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown4, false).timeout
 	
-	
+func attackRight03():
+	for i in range(4, -1, -1):	
+		for i2 in range(3):
+			attackRight(posRight[i2])
+			await get_tree().create_timer(attackCooldown2, false).timeout
+		attackTop(posTop[i])
+	await get_tree().create_timer(attackCooldown4, false).timeout
 	
 func attackTop01():
 	attackTop(posTop[0])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackTop(posTop[1])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackTop(posTop[2])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackTop(posTop[3])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackTop(posTop[4])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown4, false).timeout
+	
 	
 func attackTop02():
 	attackTop(posTop[4])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackTop(posTop[3])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackTop(posTop[2])
-	await get_tree().create_timer(attackCooldown1).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackTop(posTop[1])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown2, false).timeout
 	attackTop(posTop[0])
-	await get_tree().create_timer(attackCooldown2).timeout
+	await get_tree().create_timer(attackCooldown4, false).timeout
 	
+
+func attackP301():
+	attackZigzag()
+	attackLaserTop2Middle()
+	await get_tree().create_timer(attackCooldown5, false).timeout
+	attackZigzag()
+	attackLaserTop01()
+	await get_tree().create_timer(attackCooldown5, false).timeout
+	attackZigzag()
+	attackLaserTop02()
+	await get_tree().create_timer(attackCooldown6, false).timeout
+
+func attackP302():
+	attackCircle()
+	await get_tree().create_timer(attackCooldown5, false).timeout
+	attackCircle02()
+	attackLeft01()
+	await get_tree().create_timer(attackCooldown5, false).timeout
+	attackCircle()
+	attackRight02()
+	await get_tree().create_timer(attackCooldown5, false).timeout
+	attackTop01()
+	attackTop02()
+	await get_tree().create_timer(attackCooldown5, false).timeout
+	attackLeft01()
+	await get_tree().create_timer(attackCooldown3, false).timeout
+	attackRight02()
+	#await get_tree().create_timer(attackCooldown2, false).timeout
+	attackLaserTop2Middle()
+	await get_tree().create_timer(attackCooldown5, false).timeout
 
 func attackLaserLeft01():
 	laserLeft(posLeft[0])
-	await get_tree().create_timer(attackCooldown4).timeout
+	await get_tree().create_timer(attackCooldown4, false).timeout
 	laserLeft(posLeft[2])
-	await get_tree().create_timer(attackCooldown4).timeout
+	await get_tree().create_timer(attackCooldown5, false).timeout
+	
 	
 func attackLaserLeft02():
 	laserLeft(posLeft[1])
-	await get_tree().create_timer(attackCooldown5).timeout
+	await get_tree().create_timer(attackCooldown5, false).timeout
 	laserLeft(posLeft[2])
 	laserLeft(posLeft[0])
-	await get_tree().create_timer(attackCooldown4).timeout
+	await get_tree().create_timer(attackCooldown5, false).timeout
+	
 	
 func attackLaserTop01():
 	laserTop(posTop[2])
-	await get_tree().create_timer(attackCooldown5).timeout
+	await get_tree().create_timer(attackCooldown5, false).timeout
 	laserTop(posTop[4])
 	laserTop(posTop[0])
-	await get_tree().create_timer(attackCooldown4).timeout
+	await get_tree().create_timer(attackCooldown5, false).timeout
+	
 	
 func attackLaserTop02():
 	laserTop(posTop[1])
 	laserTop(posTop[3])
-	await get_tree().create_timer(attackCooldown4).timeout
-
-
+	await get_tree().create_timer(attackCooldown5, false).timeout
+	
 	
 func attackLaserTop2Middle():
-	
 	laserTop(posTop[0])
 	laserTop(posTop[4])
-	await get_tree().create_timer(attackCooldown4).timeout
+	await get_tree().create_timer(attackCooldown4, false).timeout
 	laserTop(posTop[2])
-	await get_tree().create_timer(attackCooldown4).timeout
+	await get_tree().create_timer(attackCooldown4, false).timeout
 	laserTop(posTop[1])
 	laserTop(posTop[3])
-	await get_tree().create_timer(attackCooldown4).timeout
+	await get_tree().create_timer(attackCooldown5, false).timeout
+	
 	
 func attackLaserTop2Bottom():
 	laserLeft(posLeft[0])
-	await get_tree().create_timer(attackCooldown3).timeout
+	await get_tree().create_timer(attackCooldown3, false).timeout
 	laserLeft(posLeft[1])
-	await get_tree().create_timer(attackCooldown3).timeout
+	await get_tree().create_timer(attackCooldown4, false).timeout
+	
 	
 func attackLaserBottom2Top():
 	laserLeft(posLeft[2])
-	await get_tree().create_timer(attackCooldown3).timeout
+	await get_tree().create_timer(attackCooldown3, false).timeout
 	laserLeft(posLeft[1])
-	await get_tree().create_timer(attackCooldown3).timeout
+	await get_tree().create_timer(attackCooldown4, false).timeout
 	
 	
 func attackLaserLeft2Right():
 	laserTop(posTop[0])
-	await get_tree().create_timer(attackCooldown3).timeout
+	await get_tree().create_timer(attackCooldown3, false).timeout
 	laserTop(posTop[1])
-	await get_tree().create_timer(attackCooldown3).timeout
+	await get_tree().create_timer(attackCooldown3, false).timeout
 	laserTop(posTop[2])
-	await get_tree().create_timer(attackCooldown3).timeout
+	await get_tree().create_timer(attackCooldown3, false).timeout
 	laserTop(posTop[3])
-	await get_tree().create_timer(attackCooldown3).timeout
+	await get_tree().create_timer(attackCooldown4, false).timeout
+	
 	
 func attackLaserRight2Left():
 	laserTop(posTop[4])
-	await get_tree().create_timer(attackCooldown3).timeout
+	await get_tree().create_timer(attackCooldown3, false).timeout
 	laserTop(posTop[3])
-	await get_tree().create_timer(attackCooldown3).timeout
+	await get_tree().create_timer(attackCooldown3, false).timeout
 	laserTop(posTop[2])
-	await get_tree().create_timer(attackCooldown3).timeout
+	await get_tree().create_timer(attackCooldown3, false).timeout
 	laserTop(posTop[1])
-	await get_tree().create_timer(attackCooldown3).timeout
+	await get_tree().create_timer(attackCooldown4, false).timeout
 	
 	
 func attackLaserLeftCornerUp():
 	attackLaserRight2Left()
-	await get_tree().create_timer(attackCooldown4).timeout
+	await get_tree().create_timer(attackCooldown4, false).timeout
 	attackLaserBottom2Top()
-	await get_tree().create_timer(attackCooldown6).timeout
+	await get_tree().create_timer(attackCooldown5, false).timeout
+	
 	
 func attackLaserLeftCornerDown():
 	attackLaserRight2Left()
-	await get_tree().create_timer(attackCooldown4).timeout
+	await get_tree().create_timer(attackCooldown4, false).timeout
 	attackLaserTop2Bottom()
-	await get_tree().create_timer(attackCooldown6).timeout
+	await get_tree().create_timer(attackCooldown5, false).timeout
+	
 	
 func attackLaserRightCornerUp():
 	attackLaserLeft2Right()
-	await get_tree().create_timer(attackCooldown4).timeout
+	await get_tree().create_timer(attackCooldown4, false).timeout
 	attackLaserBottom2Top()
-	await get_tree().create_timer(attackCooldown6).timeout
+	await get_tree().create_timer(attackCooldown5, false).timeout
+	
 	
 func attackLaserRightCornerDown():
 	attackLaserLeft2Right()
-	await get_tree().create_timer(attackCooldown4).timeout
+	await get_tree().create_timer(attackCooldown4, false).timeout
 	attackLaserTop2Bottom()
-	await get_tree().create_timer(attackCooldown6).timeout
+	await get_tree().create_timer(attackCooldown5, false).timeout
+	
 	
 func attackLaserCorners(): #BAD LOGIC
 	attackLaserRightCornerUp()
-	await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(attackCooldown5, false).timeout
 	attackLaserRightCornerDown()
-	await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(attackCooldown5, false).timeout
 	attackLaserLeftCornerDown()
-	await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(attackCooldown5, false).timeout
 	attackLaserLeftCornerUp()
-	await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(attackCooldown5, false).timeout
 	
 	
 
@@ -431,49 +580,60 @@ func attackRight(pos):
 func attackTop(pos):
 	shoot01(Vector2.DOWN, 300.0, pos.global_position, 0.0)
 	
+	
 func laserLeft(pos):
 	laser01(pos.rotation, pos.global_position)
 	
 func laserTop(pos):
 	laser01(90, pos.global_position)
-
-
+	
 	
 func shoot01(direction : Vector2, speed : float, projPosition : Vector2, projRotation : float):
-	var new_projectile = projectile01Scene.instantiate()
-	new_projectile.velocity = direction.normalized() * speed
-	new_projectile.position = projPosition
-	new_projectile.rotation = deg_to_rad(projRotation)
-	get_parent().add_child(new_projectile)
+	if coolAnimation == false:
+		var new_projectile = projectile01Scene.instantiate()
+		new_projectile.velocity = direction.normalized() * speed
+		new_projectile.position = projPosition
+		new_projectile.rotation = deg_to_rad(projRotation)
+		get_parent().add_child(new_projectile)
 	
 func shoot02(direction : Vector2, speed : float, projPosition : Vector2, projRotation : float):
-	var new_projectile = projectile02Scene.instantiate()
-	new_projectile.velocity = direction.normalized() * speed
-	new_projectile.position = projPosition
-	new_projectile.rotation = deg_to_rad(projRotation)
-	get_parent().add_child(new_projectile)
+	if coolAnimation == false:
+		var new_projectile = projectile02Scene.instantiate()
+		new_projectile.velocity = direction.normalized() * speed
+		new_projectile.position = projPosition
+		new_projectile.rotation = deg_to_rad(projRotation)
+		get_parent().add_child(new_projectile)
 	
 func laser01(setRotation : float, laserPosition : Vector2):
-	var new_laser = laser01Scene.instantiate()
-	new_laser.rotation = deg_to_rad(setRotation)
-	new_laser.position = laserPosition
-	get_parent().add_child(new_laser)
-	print(new_laser.rotation)
+	if coolAnimation == false:
+		var new_laser = laser01Scene.instantiate()
+		new_laser.rotation = deg_to_rad(setRotation)
+		new_laser.position = laserPosition
+		get_parent().add_child(new_laser)
+		#print(new_laser.rotation)
 	
 func takeDamage():
+	coolAnimation = true
+	$AnimationPlayer.play("damage")
+	print("manel hit, phase ", phase)
 	canAttack = false
 	$visual/AnimatedSprite2D.play("hit0"+str(phase))
 	phase += 1
+	chargeCountCap -= 2
+	chargedCount = chargeCountCap
 	await $visual/AnimatedSprite2D.animation_finished
+	await get_tree().create_timer(5.0, false).timeout #remove after animation is done
 	$sfx/risadaPessecopata.play()
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(3.0, false).timeout
+	$sfx/risadaPessecopata.play()
+	print("begin next phase")
+	coolAnimation = false
 	canAttack = true
 	
-	if phase >= 4:
-		pass ##maybe mash buttons
-
+func finalAttack():
+	pass
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print(area.name)
+	#print("area ",area.name)
 	#if area.get_parent().name == "Attack":
-		#takeDamage()
+		takeDamage()

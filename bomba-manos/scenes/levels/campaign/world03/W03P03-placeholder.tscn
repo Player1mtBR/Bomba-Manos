@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bqjv3k83yah76"]
+[gd_scene load_steps=25 format=4 uid="uid://bqjv3k83yah76"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_wqokc"]
 [ext_resource type="Texture2D" uid="uid://bmh7gbx4co7l3" path="res://assets/sprites/levels/campaign/world03/chão.png" id="2_hruej"]
@@ -17,7 +17,9 @@
 [ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="17_ettix"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="18_o58u8"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="18_xa711"]
+[ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="19_hruej"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="19_w77pn"]
+[ext_resource type="AudioStream" uid="uid://bfi34l87wta58" path="res://assets/audio/dialogue/World03/ferrou-fala6.mp3" id="20_5fcpm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lx53w"]
 texture = ExtResource("5_1b7og")
@@ -671,8 +673,10 @@ position = Vector2(-160, -64)
 iaMoveDelay = 0.6
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("11_xa711")
 autoplay = true
+bus = &"Soundtrack"
 parameters/looping = true
 
 [node name="mainCamera" parent="." instance=ExtResource("15_vjuoa")]
@@ -755,3 +759,7 @@ levelIdentifier = "W03L03"
 nextLevel = "uid://dfkd7qqto7yw6"
 
 [node name="pauseCampaign" parent="." instance=ExtResource("18_xa711")]
+
+[node name="DIALOG" parent="." instance=ExtResource("19_hruej")]
+position = Vector2(0, -16)
+falasDosPersonagens = Array[AudioStream]([ExtResource("20_5fcpm")])

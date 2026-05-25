@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ct5c7xpm8a4sb"
-path="res://.godot/imported/Sprite-SKULL5.png-a45ef106e8eb98fc1050de72a7272905.ctex"
+path="res://.godot/imported/Sprite-SkULL5.png-46111858cd777fbcb040ccd669c802a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/mobs_world_3/Sprite-SKULL5.png"
-dest_files=["res://.godot/imported/Sprite-SKULL5.png-a45ef106e8eb98fc1050de72a7272905.ctex"]
+source_file="res://assets/sprites/mobs_world_3/Sprite-SkULL5.png"
+dest_files=["res://.godot/imported/Sprite-SkULL5.png-46111858cd777fbcb040ccd669c802a2.ctex"]
 
 [params]
 

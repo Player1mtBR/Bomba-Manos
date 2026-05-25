@@ -15,7 +15,7 @@ var tileSize := 16
 
 func _ready():
 	audioPlayer.playing = true
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(3.0, false).timeout
 	GlobalScript.triggerBombaSfx = true
 	kaboom()
 	
@@ -34,7 +34,7 @@ func kaboom():
 	kaboomAudio.playing = true
 	$ChainReactionArea/CollisionShape2D.set_deferred("disabled", true)
 	$bombBlocksPlayer/CollisionShape2D.set_deferred("disabled", true)
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0, false).timeout
 	call_deferred("queue_free") ## deleta o node da cena
 	"""
 
