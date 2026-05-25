@@ -75,17 +75,17 @@ func _process(delta: float) -> void:
 		if $AnimatedSprite2D.animation != "go_left":
 			$AnimatedSprite2D.play("go_left")
 		
-	elif Input.is_action_just_pressed("p1_moveRight"):
+	if Input.is_action_just_pressed("p1_moveRight"):
 		currentDirection = Vector2(1, 0)
 		if $AnimatedSprite2D.animation != "go_right":
 			$AnimatedSprite2D.play("go_right")
 			
-	elif Input.is_action_just_pressed("p1_moveUp"):
+	elif Input.is_action_just_pressed("p1_moveUp") and currentDirection != Vector2(-1, 0) and currentDirection != Vector2(1, 0):
 		currentDirection = Vector2(0, -1)
 		if $AnimatedSprite2D.animation != "foward":
 			$AnimatedSprite2D.play("foward")
 		
-	elif Input.is_action_just_pressed("p1_moveDown"):
+	elif Input.is_action_just_pressed("p1_moveDown") and currentDirection != Vector2(-1, 0) and currentDirection != Vector2(1, 0):
 		currentDirection = Vector2(0, 1)
 		if $AnimatedSprite2D.animation != "back":
 			$AnimatedSprite2D.play("back")
@@ -102,6 +102,17 @@ func _process(delta: float) -> void:
 		if currentDirection == Vector2(1, 0):
 			$AnimatedSprite2D.play("return_right")
 			currentDirection = Vector2(0, 0)
+			
+	if Input.is_action_just_released("p1_moveUp"):
+		if currentDirection == Vector2(0, -1):
+			$AnimatedSprite2D.play("idle")
+			currentDirection = Vector2(0, 0)
+	
+	if Input.is_action_just_released("p1_moveDown") and currentDirection != Vector2(-1, 0) and currentDirection != Vector2(1, 0):
+		if currentDirection == Vector2(0, 1):
+			$AnimatedSprite2D.play("idle")
+			currentDirection = Vector2(0, 0)
+	
 			
 			
 	
@@ -144,6 +155,7 @@ func jpBlockUp():
 	#print("Blocking")
 	$ShieldUP.visible = true
 	$ShieldUP/CollisionShape2D.disabled = false
+	$ShieldUP/AnimatedSprite2D.play("default")
 	isBlocking = true
 	
 func jpBlockLeft():
@@ -151,6 +163,7 @@ func jpBlockLeft():
 	#print("Blocking")
 	$ShieldLEFT.visible = true
 	$ShieldLEFT/CollisionShape2D.disabled = false
+	$ShieldLEFT/AnimatedSprite2D.play("default")
 	isBlocking = true
 	
 func jpBlockRight():
@@ -158,10 +171,13 @@ func jpBlockRight():
 	#print("Blocking")
 	$ShieldRIGHT.visible = true
 	$ShieldRIGHT/CollisionShape2D.disabled = false
+	$ShieldRIGHT/AnimatedSprite2D.play("default")
 	isBlocking = true
 	
 func jpAttack():
+	$AnimatedSprite2D.play("shoot")
 	$sfx/attack.play()
+	$sfx/bombarangers.play()
 	$AnimationPlayer.play("power_drain")
 	$"../SuperManel".coolAnimation = true
 	$"../Icons/Faces".modulate = Color(0, 1, 0)
@@ -194,12 +210,15 @@ func movePlayer2AttackPosition(delta):
 	position.y = move_toward(position.y, 320.0, delta * movespeed)
 
 func showGreenShield():
-	$ShieldUP/green.visible = true
-	$ShieldLEFT/green2.visible = true
-	$ShieldRIGHT/green3.visible = true
+	#$ShieldUP/green.visible = true
+	#$ShieldLEFT/green2.visible = true
+	#$ShieldRIGHT/green3.visible = true
 	$ShieldUP/CollisionShape2D.disabled = true
 	$ShieldLEFT/CollisionShape2D.disabled = true
 	$ShieldRIGHT/CollisionShape2D.disabled = true
+	$ShieldUP/AnimatedSprite2D.stop()
+	$ShieldLEFT/AnimatedSprite2D.stop()
+	$ShieldRIGHT/AnimatedSprite2D.stop()
 	canParry = true
 	#print("can parry = ", canParry)
 	
@@ -242,6 +261,7 @@ func killMegazord():
 	$sfx/defeat.play()
 	canAttack = false
 	canBlock = false
+	$"../Camera2D".camShake01Trigger = false
 	await $"../AnimationPlayer".animation_finished
 	Loader.loadingScreen2Scene("res://scenes/menus/main_menu.tscn")
 	#CurrentLevelManager.restartLevel()
@@ -256,4 +276,5 @@ func _on_parry_timer_timeout() -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "return_left" or $AnimatedSprite2D.animation == "return_right":
+		
 		$AnimatedSprite2D.play("idle")

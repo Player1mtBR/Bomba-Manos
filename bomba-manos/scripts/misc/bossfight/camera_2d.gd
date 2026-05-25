@@ -22,7 +22,8 @@ func camShake01():
 	cameraShakeStrength = lerp(5.0, 0.0, delta) ##interpolate the shake stregght to 0 with delta as weight
 	offset.x = randf_range(-cameraOffset, cameraOffset)
 	offset.y = randf_range(-cameraOffset, cameraOffset)
-	await get_tree().create_timer(0.5).timeout
-	offset.x = 0.0
-	offset.y = 0.0
-	camShake01Trigger = false
+	if $"../SuperManel".coolAnimation == false:
+		await get_tree().create_timer(0.5).timeout
+		offset.x = 0.0
+		offset.y = 0.0
+		camShake01Trigger = false
