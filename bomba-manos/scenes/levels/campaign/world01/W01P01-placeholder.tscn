@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/campaign/exit.tscn" id="22_ei5h2"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="23_jtrus"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8her5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jtrus"]
 texture = ExtResource("7_0r8de")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -36,7 +36,7 @@ texture = ExtResource("7_0r8de")
 
 [sub_resource type="TileSet" id="TileSet_q7e64"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_8her5")
+sources/1 = SubResource("TileSetAtlasSource_jtrus")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lx53w"]
 texture = ExtResource("8_kbxcb")
