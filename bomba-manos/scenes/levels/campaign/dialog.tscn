@@ -1,6 +1,271 @@
-[gd_scene load_steps=7 format=3 uid="uid://frdo0jfku5v7"]
+[gd_scene load_steps=15 format=3 uid="uid://frdo0jfku5v7"]
 
 [ext_resource type="Script" uid="uid://cnj7al4mtmfwd" path="res://scripts/misc/dialog/dialog.gd" id="1_e7hda"]
+[ext_resource type="AudioStream" uid="uid://w063dn70k50t" path="res://assets/audio/tracks/extra/BombaRangers.mp3" id="2_fhwcq"]
+[ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="2_j7ayp"]
+[ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="3_1r307"]
+[ext_resource type="AudioStream" uid="uid://bddd4nud342au" path="res://assets/audio/sfx/portal.wav" id="3_khg6w"]
+
+[sub_resource type="Animation" id="Animation_fhwcq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("coisos/1:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.109375, -0.01)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("coisos/2:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.109375, -0.01)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("coisos/3:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.109375, -0.01)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("coisos/4:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.109375, -0.01)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("coisos/5:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.109375, -0.01)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("coisos/6:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.109375, -0.01)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("coisos/7:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.109375, -0.01)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("coisos/8:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.109375, -0.01)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("coisos/9:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.109375, -0.01)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1r307"]
+resource_name = "talk"
+length = 1.7
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("coisos/1:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.109, -0.07), Vector2(0.109, -0.3), Vector2(0.109, -0.08), Vector2(0.109, -0.1), Vector2(0.109, -0.3), Vector2(0.109, -0.2), Vector2(0.109, -0.3), Vector2(0.109, -0.03), Vector2(0.109, -0.3), Vector2(0.109, -0.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("coisos/2:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.109, -0.2), Vector2(0.109, -0.1), Vector2(0.109375, -0.01), Vector2(0.109, -0.28), Vector2(0.109, -0.5), Vector2(0.109, -0.31), Vector2(0.109, -0.27), Vector2(0.109375, -0.01), Vector2(0.109, -0.4), Vector2(0.109, -0.2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("coisos/3:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.109, -0.3), Vector2(0.109, -0.2), Vector2(0.109, -0.42), Vector2(0.109, -0.16), Vector2(0.109, -0.421), Vector2(0.109, 0), Vector2(0.109, -0.47), Vector2(0.109, -0.3), Vector2(0.109, -0.41), Vector2(0.109, -0.16)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("coisos/4:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.109, -0.4), Vector2(0.109, -0.52), Vector2(0.109, -0.45), Vector2(0.109, -0.47), Vector2(0.109, -0.26), Vector2(0.109, -0.47), Vector2(0.109, -0.34), Vector2(0.109, -0.38), Vector2(0.109, -0.27), Vector2(0.109, -0.46)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("coisos/5:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.613902, 0.8, 1, 1.2, 1.4, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.109, -0.1), Vector2(0.109, -0.32), Vector2(0.109, -0.51), Vector2(0.109, -0.53), Vector2(0.109, -0.35), Vector2(0.109, -0.47), Vector2(0.109, -0.29), Vector2(0.109, -0.35), Vector2(0.109, -0.47), Vector2(0.109, -0.24)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("coisos/6:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.424077, 0.6, 0.8, 1, 1.19146, 1.4, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.109, -0.2), Vector2(0.109, -0.43), Vector2(0.109, -0.26), Vector2(0.109, -0.36), Vector2(0.109, -0.53), Vector2(0.109, -0.27), Vector2(0.109, -0.39), Vector2(0.109, -0.23), Vector2(0.109, -0.14), Vector2(0.109, -0.38)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("coisos/7:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.109, -0.2), Vector2(0.109, -0.34), Vector2(0.109, -0.49), Vector2(0.109, -0.26), Vector2(0.109, -0.16), Vector2(0.109, -0.45), Vector2(0.109, -0.36), Vector2(0.109, -0.27), Vector2(0.109, -0.23), Vector2(0.109, -0.43)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("coisos/8:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.20357, 1.4, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.109, -0.1), Vector2(0.109, -0.52), Vector2(0.109, -0.24), Vector2(0.109, -0.36), Vector2(0.109, -0.15), Vector2(0.109, -0.4), Vector2(0.109, -0.25), Vector2(0.109, -0.37), Vector2(0.109, -0.2), Vector2(0.109, -0.1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("coisos/9:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.109, -0.05), Vector2(0.109, -0.34), Vector2(0.109, -0.06), Vector2(0.109, -0.18), Vector2(0.109, -0.03), Vector2(0.109, -0.16), Vector2(0.109, -0.32), Vector2(0.109, -0.15), Vector2(0.109, -0.2), Vector2(0.109, -0.1)]
+}
+
+[sub_resource type="Animation" id="Animation_khg6w"]
+resource_name = "fade"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_khg6w"]
+_data = {
+&"RESET": SubResource("Animation_fhwcq"),
+&"fade": SubResource("Animation_khg6w"),
+&"talk": SubResource("Animation_1r307")
+}
 
 [sub_resource type="Gradient" id="Gradient_vvvon"]
 offsets = PackedFloat32Array(0)
@@ -9,12 +274,28 @@ colors = PackedColorArray(0.403922, 1, 1, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_j7ayp"]
 gradient = SubResource("Gradient_vvvon")
 
-[sub_resource type="Animation" id="Animation_fhwcq"]
+[sub_resource type="Animation" id="Animation_tlt8y"]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wbnmu"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/path = NodePath("Visual:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,31 +305,16 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_1r307"]
-resource_name = "talk"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_khg6w"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lgyq6"]
 _data = {
-&"RESET": SubResource("Animation_fhwcq"),
-&"talk": SubResource("Animation_1r307")
+&"RESET": SubResource("Animation_wbnmu"),
+&"fade": SubResource("Animation_tlt8y")
 }
 
 [node name="DIALOG" type="Node2D"]
 script = ExtResource("1_e7hda")
+falasDosPersonagens = Array[AudioStream]([ExtResource("2_fhwcq"), ExtResource("3_khg6w")])
+legendas = Array[String](["aaaaaaaa", "bbbbbbbbbbbb"])
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 bus = &"Voices"
@@ -56,13 +322,84 @@ bus = &"Voices"
 [node name="Visual" type="Node2D" parent="."]
 visible = false
 z_index = 5
-position = Vector2(-120, -136)
-
-[node name="Sprite2D" type="Sprite2D" parent="Visual"]
-texture = SubResource("GradientTexture2D_j7ayp")
+position = Vector2(-208, -128)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Visual"]
 libraries = {
 &"": SubResource("AnimationLibrary_khg6w")
 }
-autoplay = "talk"
+
+[node name="Label" type="Label" parent="Visual"]
+offset_left = 256.0
+offset_top = -24.0
+offset_right = 896.0
+offset_bottom = 104.0
+scale = Vector2(0.25, 0.25)
+theme = ExtResource("2_j7ayp")
+text = "texto exibido"
+paragraph_separator = "\\"
+visible_ratio = -0.0769231
+
+[node name="coisos" type="Node2D" parent="Visual"]
+
+[node name="1" type="Sprite2D" parent="Visual/coisos"]
+scale = Vector2(0.109375, -0.01)
+texture = SubResource("GradientTexture2D_j7ayp")
+centered = false
+
+[node name="2" type="Sprite2D" parent="Visual/coisos"]
+position = Vector2(7.99999, 0)
+scale = Vector2(0.109375, -0.01)
+texture = SubResource("GradientTexture2D_j7ayp")
+centered = false
+
+[node name="3" type="Sprite2D" parent="Visual/coisos"]
+position = Vector2(16, 0)
+scale = Vector2(0.109375, -0.01)
+texture = SubResource("GradientTexture2D_j7ayp")
+centered = false
+
+[node name="4" type="Sprite2D" parent="Visual/coisos"]
+position = Vector2(24, 0)
+scale = Vector2(0.109375, -0.01)
+texture = SubResource("GradientTexture2D_j7ayp")
+centered = false
+
+[node name="5" type="Sprite2D" parent="Visual/coisos"]
+position = Vector2(32, 0)
+scale = Vector2(0.109375, -0.01)
+texture = SubResource("GradientTexture2D_j7ayp")
+centered = false
+
+[node name="6" type="Sprite2D" parent="Visual/coisos"]
+position = Vector2(40, 0)
+scale = Vector2(0.109375, -0.01)
+texture = SubResource("GradientTexture2D_j7ayp")
+centered = false
+
+[node name="7" type="Sprite2D" parent="Visual/coisos"]
+position = Vector2(48, 0)
+scale = Vector2(0.109375, -0.01)
+texture = SubResource("GradientTexture2D_j7ayp")
+centered = false
+
+[node name="8" type="Sprite2D" parent="Visual/coisos"]
+position = Vector2(56, 0)
+scale = Vector2(0.109375, -0.01)
+texture = SubResource("GradientTexture2D_j7ayp")
+centered = false
+
+[node name="9" type="Sprite2D" parent="Visual/coisos"]
+position = Vector2(64, 0)
+scale = Vector2(0.109375, -0.01)
+texture = SubResource("GradientTexture2D_j7ayp")
+centered = false
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Visual"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_lgyq6")
+}
+
+[node name="mainCamera" parent="." instance=ExtResource("3_1r307")]
+position = Vector2(0, -44)

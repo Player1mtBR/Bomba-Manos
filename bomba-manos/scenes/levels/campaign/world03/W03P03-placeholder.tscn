@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://bqjv3k83yah76"]
+[gd_scene load_steps=26 format=4 uid="uid://bqjv3k83yah76"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_wqokc"]
 [ext_resource type="Texture2D" uid="uid://bmh7gbx4co7l3" path="res://assets/sprites/levels/campaign/world03/chão.png" id="2_hruej"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="19_hruej"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="19_w77pn"]
 [ext_resource type="AudioStream" uid="uid://bfi34l87wta58" path="res://assets/audio/dialogue/World03/ferrou-fala6.mp3" id="20_5fcpm"]
+[ext_resource type="AudioStream" uid="uid://dv2yytahd5j8x" path="res://assets/audio/dialogue/World03/caramba cê joga mal hein-fala10.mp3" id="21_5fcpm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lx53w"]
 texture = ExtResource("5_1b7og")
@@ -763,3 +764,6 @@ nextLevel = "uid://dfkd7qqto7yw6"
 [node name="DIALOG" parent="." instance=ExtResource("19_hruej")]
 position = Vector2(0, -16)
 falasDosPersonagens = Array[AudioStream]([ExtResource("20_5fcpm")])
+
+[node name="MOCKPLAYER" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_5fcpm")

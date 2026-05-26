@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://c8owbepyobwjm"]
+[gd_scene load_steps=29 format=4 uid="uid://c8owbepyobwjm"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_ht0kv"]
 [ext_resource type="Texture2D" uid="uid://bmh7gbx4co7l3" path="res://assets/sprites/levels/campaign/world03/chão.png" id="2_6rlt1"]
@@ -23,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://cs1g6dryjs5rg" path="res://assets/audio/dialogue/World03/fala Igor-3.mp3" id="21_sj3u4"]
 [ext_resource type="AudioStream" uid="uid://c6q42fxmcsyuo" path="res://assets/audio/dialogue/World03/Igor-fala4.mp3" id="22_bpvqd"]
 [ext_resource type="AudioStream" uid="uid://7w54yetxn63k" path="res://assets/audio/dialogue/World03/Igor-fala5.mp3" id="23_0u5qd"]
+[ext_resource type="AudioStream" uid="uid://dv2yytahd5j8x" path="res://assets/audio/dialogue/World03/caramba cê joga mal hein-fala10.mp3" id="24_sj3u4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lx53w"]
 texture = ExtResource("5_cyfb6")
@@ -260,9 +261,6 @@ position = Vector2(0, -16)
 
 [node name="BreakableBlock43" parent="objects/AllBricks" instance=ExtResource("6_sj3u4")]
 position = Vector2(0, 1)
-
-[node name="BreakableBlock" parent="objects/AllBricks/BreakableBlock43" instance=ExtResource("6_sj3u4")]
-position = Vector2(-160, -48)
 
 [node name="BreakableBlock44" parent="objects/AllBricks" instance=ExtResource("6_sj3u4")]
 position = Vector2(0, 16)
@@ -591,6 +589,10 @@ position = Vector2(160, 16)
 [node name="BreakableBlock19" parent="objects/AllBricks" instance=ExtResource("6_sj3u4")]
 position = Vector2(-160, -48)
 
+[node name="BreakableBlock26" parent="objects/AllBricks" instance=ExtResource("6_sj3u4")]
+position = Vector2(-20, -5)
+scale = Vector2(0.015625, 0.015625)
+
 [node name="entities" type="Node2D" parent="."]
 
 [node name="players" type="Node2D" parent="entities"]
@@ -721,3 +723,6 @@ nextLevel = "uid://bqjv3k83yah76"
 [node name="DIALOG" parent="." instance=ExtResource("20_cyfb6")]
 position = Vector2(0, -16)
 falasDosPersonagens = Array[AudioStream]([ExtResource("21_sj3u4"), ExtResource("22_bpvqd"), ExtResource("23_0u5qd")])
+
+[node name="MOCKPLAYER" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_sj3u4")

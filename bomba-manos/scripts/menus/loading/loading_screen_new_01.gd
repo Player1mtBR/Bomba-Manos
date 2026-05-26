@@ -1,14 +1,14 @@
 extends CanvasLayer
 
 @export_file("*.tscn") var path2Scene : String
-var randValue4Loading = randi_range(10, 30)
+#var randValue4Loading = randi_range(10, 30)
 var update := 0.0
 
 func _ready() -> void:
 	ResourceLoader.load_threaded_request(path2Scene) # carregamento no background
 	UnlockStuff.iddqd = false
 	#$Control/TextureProgressBar.value = randValue4Loading
-	printt(randValue4Loading)
+	#print(randValue4Loading)
 	
 func _process(delta: float) -> void:
 	var progress = []
@@ -26,4 +26,6 @@ func _process(delta: float) -> void:
 		set_process(false)
 		var newScene : PackedScene = ResourceLoader.load_threaded_get(path2Scene) # var recebe a cena cxarregada
 		await get_tree().create_timer(0.25).timeout
+		print(newScene)
 		get_tree().change_scene_to_packed(newScene)
+		

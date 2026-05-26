@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://d4j7l3uvdwopn"]
+[gd_scene load_steps=27 format=4 uid="uid://d4j7l3uvdwopn"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_lran8"]
 [ext_resource type="Texture2D" uid="uid://dw4hil17syrg0" path="res://assets/sprites/levels/campaign/world03/FRENTELostWoods.png" id="3_ljbgp"]
@@ -21,8 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://b6t0qbecvhp4k" path="res://assets/sprites/levels/campaign/world03/LostWoodsCorner.png" id="21_33v1t"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="21_xhe8u"]
 [ext_resource type="AudioStream" uid="uid://uj0a4u57cdea" path="res://assets/audio/dialogue/World03/fala 2-igor.mp3" id="21_xpafo"]
+[ext_resource type="AudioStream" uid="uid://dv2yytahd5j8x" path="res://assets/audio/dialogue/World03/caramba cê joga mal hein-fala10.mp3" id="22_unpy3"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lx53w"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_33v1t"]
 texture = ExtResource("19_4di0p")
 texture_region_size = Vector2i(60, 60)
 0:0/0 = 0
@@ -31,7 +32,7 @@ texture_region_size = Vector2i(60, 60)
 [sub_resource type="TileSet" id="TileSet_dk4xo"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_lx53w")
+sources/0 = SubResource("TileSetAtlasSource_33v1t")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gs1c5"]
 texture = ExtResource("13_jgyab")
@@ -582,18 +583,6 @@ position = Vector2(160, 0)
 [node name="BreakableBlock167" parent="objects/AllBricks" instance=ExtResource("4_2c6ix")]
 position = Vector2(160, 16)
 
-[node name="entities" type="Node2D" parent="objects/AllBricks"]
-
-[node name="players" type="Node2D" parent="objects/AllBricks/entities"]
-
-[node name="Mobs" type="Node2D" parent="objects/AllBricks/entities"]
-visible = false
-
-[node name="basePlayer02" parent="objects/AllBricks/entities" instance=ExtResource("14_l4kwr")]
-position = Vector2(0, -96)
-playerID = 1
-charSkin = ExtResource("8_4di0p")
-
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
 stream = ExtResource("11_w5s4q")
@@ -710,3 +699,7 @@ nextLevel = "uid://c8owbepyobwjm"
 
 [node name="DIALOG" parent="." instance=ExtResource("19_33v1t")]
 falasDosPersonagens = Array[AudioStream]([ExtResource("20_unpy3"), ExtResource("21_xpafo")])
+legendas = Array[String](["É aqui o Inferno?", "O que são aquelas coisas???"])
+
+[node name="MOCKPLAYER" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_unpy3")

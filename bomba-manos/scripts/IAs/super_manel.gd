@@ -19,7 +19,7 @@ extends Node2D
 ]
 
 var skipIntro := false
-var phase := 3
+var phase := 1
 
 var projectile01Scene = preload("res://scenes/levels/campaign/extras/projectile_01.tscn")
 var projectile02Scene = preload("res://scenes/levels/campaign/extras/projectile_02.tscn")
@@ -28,8 +28,8 @@ var laser01Scene = preload("res://scenes/levels/campaign/extras/laser_01.tscn")
 var coolAnimation := false
 	
 var canAttack := false
-var chargedCount := 7
-var chargeCountCap := 7 #phase01 = 7, phase02 = 5, phase03 = 3
+var chargedCount := 6
+var chargeCountCap := 6 #phase01 = 6, phase02 = 4, phase03 = 2
 
 var attackCooldown1 := 0.1
 var attackCooldown2 := 0.25

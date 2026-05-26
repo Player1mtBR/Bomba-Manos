@@ -160,6 +160,7 @@ func killIa():
 		shouldDecrease = false
 		CurrentLevelManager.decreaseEnemyCount()
 		print("Enemies: ", CurrentLevelManager.currentEnemiesAlive)
+		$Mob/CollisionShape2D.set_deferred("disabled", true) 
 	isIaAlive = false
 	if has_node("AudioStreamPlayer"):
 		$AudioStreamPlayer.play()
