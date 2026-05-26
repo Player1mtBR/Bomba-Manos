@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://dywawragkqi21"]
 
-[ext_resource type="VideoStream" uid="uid://c6jsmrnqk6mfw" path="res://assets/video/YoU cAn'T jUsT sHoOt a hOlE iNtO ThE sUrFaCe oF mArS.ogv" id="1_csk8g"]
 [ext_resource type="Script" uid="uid://bj12gul8etm1p" path="res://scripts/misc/cutscene_01.gd" id="1_ygh52"]
+[ext_resource type="VideoStream" uid="uid://rkg2xv2fysjl" path="res://assets/video/MegasXLR_clip.ogv" id="2_ygh52"]
 
 [node name="cutscene01" type="Node2D"]
 script = ExtResource("1_ygh52")
+toLevelFile = "uid://wyq2fculrhic"
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 anchors_preset = 8
@@ -18,7 +19,7 @@ offset_right = 428.0
 offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("1_csk8g")
+stream = ExtResource("2_ygh52")
 autoplay = true
 expand = true
 

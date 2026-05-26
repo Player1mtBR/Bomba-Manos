@@ -61,6 +61,7 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if isOnMenu and Input.is_action_pressed("Shift") and Input.is_action_pressed("code_B") and Input.is_action_pressed("code_O") and Input.is_action_pressed("code_M") and Input.is_action_pressed("code_A"):
 		print("Unlock all stuff")
+		MusicMenu.get_child(1).play()
 		unlockAll = true
 		
 		world05Unlocked = true
@@ -75,5 +76,6 @@ func _input(event: InputEvent) -> void:
 		
 	if Input.is_action_pressed("Shift") and Input.is_action_pressed("code_I") and Input.is_action_pressed("code_I") and Input.is_action_pressed("code_D") and Input.is_action_pressed("code_Q"):
 		iddqd = true
+		MusicMenu.get_child(2).play()
 		print("Degreelessness mode ON \nYou feel lighter")
 		

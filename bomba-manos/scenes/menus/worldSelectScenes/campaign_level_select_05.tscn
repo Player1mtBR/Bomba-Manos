@@ -27,7 +27,7 @@ offset_right = 32.5
 offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
-level2Load = "uid://suap6bq2v1le"
+level2Load = "uid://ckcwf0yhamcqc"
 
 [node name="playerIcon" parent="." instance=ExtResource("3_nwh7s")]
 

@@ -15,30 +15,28 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8dwfl")
 
-[node name="LevelIcon" parent="." node_paths=PackedStringArray("nextLevelDown") instance=ExtResource("2_pjj7a")]
+[node name="LevelIcon" parent="." instance=ExtResource("2_pjj7a")]
 offset_left = 128.0
 offset_right = 192.0
 level2Load = "uid://cb1eg74baebch"
-nextLevelDown = NodePath("../LevelIcon2")
 
 [node name="LevelIcon2" parent="." node_paths=PackedStringArray("nextLevelRight", "nextLevelUp") instance=ExtResource("2_pjj7a")]
-offset_left = 128.0
-offset_top = 288.0
-offset_right = 192.0
-offset_bottom = 352.0
+offset_left = 144.0
+offset_top = 344.0
+offset_right = 208.0
+offset_bottom = 408.0
 levelName = "2"
 unlockRequirement = "W04L01"
 nextLevelRight = NodePath("../LevelIcon3")
 nextLevelUp = NodePath("../LevelIcon")
 
-[node name="LevelIcon3" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight", "nextLevelUp") instance=ExtResource("2_pjj7a")]
+[node name="LevelIcon3" parent="." node_paths=PackedStringArray("nextLevelRight", "nextLevelUp") instance=ExtResource("2_pjj7a")]
 offset_left = 312.0
 offset_top = 384.0
 offset_right = 376.0
 offset_bottom = 448.0
 levelName = "3"
 unlockRequirement = "W04L02"
-nextLevelLeft = NodePath("../LevelIcon2")
 nextLevelRight = NodePath("../LevelIcon6")
 nextLevelUp = NodePath("../LevelIcon4")
 

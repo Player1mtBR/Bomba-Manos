@@ -12,6 +12,7 @@ var invincibilityTime := 1.0
 var canMove := true
 var canBlock := true
 var isBlocking := false
+var currentBlock := ""
 var canAttack := false
 var isAttacking := false
 var canParry := true
@@ -37,39 +38,28 @@ func _process(delta: float) -> void:
 				jpAttack()
 				movePlayer2AttackPosition(delta)
 		
-			if Input.is_action_just_pressed("p2_moveUp"):
-				jpBlockUp()
-				parryTimer.start()
-				
-			elif Input.is_action_just_pressed("p2_moveLeft"):
-				jpBlockLeft()
-				parryTimer.start()
-				
-			elif Input.is_action_just_pressed("p2_moveRight"):
-				jpBlockRight()
-				parryTimer.start()
-		
-	if Input.is_action_just_released("p2_moveUp"):
-		$ShieldUP.visible = false
-		isBlocking = false
-		parryTimer.stop()
-		showGreenShield()
-		
-	if Input.is_action_just_released("p2_moveLeft"):
-		$ShieldLEFT.visible = false
-		isBlocking = false
-		parryTimer.stop()
-		showGreenShield()
-		
-	if Input.is_action_just_released("p2_moveRight"):
-		$ShieldRIGHT.visible = false
-		isBlocking = false
-		parryTimer.stop()
-		showGreenShield()
+	if Input.is_action_just_pressed("p2_moveUp"):
+		change_block("up")
 
+	elif Input.is_action_just_pressed("p2_moveLeft"):
+		change_block("left")
+
+	elif Input.is_action_just_pressed("p2_moveRight"):
+		change_block("right")
+
+
+
+	if currentBlock == "up" and Input.is_action_just_released("p2_moveUp"):
+		stop_block()
+
+	elif currentBlock == "left" and Input.is_action_just_released("p2_moveLeft"):
+		stop_block()
+
+	elif currentBlock == "right" and Input.is_action_just_released("p2_moveRight"):
+		stop_block()
 	
 		
-	##MOVEMENT ANIMATIONS
+	##MOVEMENT ANIMATION SYSTEm
 	if Input.is_action_just_pressed("p1_moveLeft"):
 		currentDirection = Vector2(-1, 0)
 		if $AnimatedSprite2D.animation != "go_left":
@@ -146,9 +136,21 @@ func chargePower(amount):
 			$AnimationPlayer.play("low_health")
 			
 
-func jpBlock():
-	print("Blocking")
-	#$Shield.visible = true
+func change_block(direction : String):
+
+	disable_all_shields()
+	parryTimer.stop()
+	parryTimer.start()
+	match direction:
+		"up":
+			jpBlockUp()
+		"left":
+			jpBlockLeft()
+		"right":
+			jpBlockRight()
+			
+	currentBlock = direction
+	isBlocking = true
 	
 func jpBlockUp():
 	$sfx/shield.play()
@@ -173,6 +175,21 @@ func jpBlockRight():
 	$ShieldRIGHT/CollisionShape2D.disabled = false
 	$ShieldRIGHT/AnimatedSprite2D.play("default")
 	isBlocking = true
+	
+func stop_block():
+	disable_all_shields()
+	isBlocking = false
+	currentBlock = ""
+	parryTimer.stop()
+	showGreenShield()
+	
+func disable_all_shields():
+	$ShieldUP.visible = false
+	$ShieldLEFT.visible = false
+	$ShieldRIGHT.visible = false
+	$ShieldUP/CollisionShape2D.disabled = true
+	$ShieldLEFT/CollisionShape2D.disabled = true
+	$ShieldRIGHT/CollisionShape2D.disabled = true
 	
 func jpAttack():
 	$AnimatedSprite2D.play("shoot")
@@ -210,9 +227,6 @@ func movePlayer2AttackPosition(delta):
 	position.y = move_toward(position.y, 320.0, delta * movespeed)
 
 func showGreenShield():
-	#$ShieldUP/green.visible = true
-	#$ShieldLEFT/green2.visible = true
-	#$ShieldRIGHT/green3.visible = true
 	$ShieldUP/CollisionShape2D.disabled = true
 	$ShieldLEFT/CollisionShape2D.disabled = true
 	$ShieldRIGHT/CollisionShape2D.disabled = true

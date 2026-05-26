@@ -12,8 +12,6 @@ func _process(delta: float) -> void:
 func _on_campanha_pressed() -> void:
 	UnlockStuff.isOnMenu = false
 	Loader.loadingScreen2Scene("res://scenes/cutscenes/cutscene_01.tscn")
-	if MusicMenu.get_child(0).playing == true:
-		MusicMenu.get_child(0).stop()
 	
 func _on_versus_pressed() -> void:
 	UnlockStuff.isOnMenu = false

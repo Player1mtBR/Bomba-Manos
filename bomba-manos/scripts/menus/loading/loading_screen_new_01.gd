@@ -27,5 +27,5 @@ func _process(delta: float) -> void:
 		var newScene : PackedScene = ResourceLoader.load_threaded_get(path2Scene) # var recebe a cena cxarregada
 		await get_tree().create_timer(0.25).timeout
 		print(newScene)
-		get_tree().change_scene_to_packed(newScene)
+		get_tree().call_deferred("change_scene_to_packed", newScene)
 		

@@ -39,7 +39,8 @@ func _process(delta: float) -> void:
 		
 func playDialog():
 	$Visual/Label.visible_ratio = 0.0
-	$Visual/Label.text = legendas[dialogIndex]
+	if legendas.size() == falasDosPersonagens.size():
+		$Visual/Label.text = legendas[dialogIndex]
 	tocadorDeSom.stream = falasDosPersonagens[dialogIndex]
 	tocadorDeSom.play()
 		

@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://djuvkvcv2qrhl"]
+[gd_scene load_steps=4 format=3 uid="uid://djuvkvcv2qrhl"]
 
 [ext_resource type="AudioStream" uid="uid://c2spce1kd8xif" path="res://assets/audio/tracks/Space....mp3" id="1_kfb1a"]
+[ext_resource type="AudioStream" uid="uid://w063dn70k50t" path="res://assets/audio/tracks/extra/BombaRangers.mp3" id="2_ig45p"]
+[ext_resource type="AudioStream" uid="uid://b1v4qih6fmo5l" path="res://assets/audio/sfx/manel/risada.wav" id="3_hx0ga"]
 
 [node name="MusicMenu" type="Node"]
 
@@ -8,3 +10,9 @@
 stream = ExtResource("1_kfb1a")
 autoplay = true
 bus = &"Soundtrack"
+
+[node name="unlock" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ig45p")
+
+[node name="iddqd" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hx0ga")

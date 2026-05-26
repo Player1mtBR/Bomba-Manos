@@ -21,6 +21,9 @@ func _ready() -> void:
 	if unlockRequirement != "":
 		locked = !UnlockStuff.completedLevels[unlockRequirement]
 	
+	if locked == true:
+		$locked.visible = true
+	
 func _process(delta: float) -> void:
 	
 	

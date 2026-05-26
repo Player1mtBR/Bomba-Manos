@@ -12,6 +12,7 @@ func _ready() -> void:
 	
 	if UnlockStuff.world05Unlocked == false: #placeholder
 		worldList.pop_back()
+		$WorldIcon5/locked.visible = true
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("menu_left") and currentWorld > 0:
@@ -36,3 +37,4 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if UnlockStuff.world05Unlocked == true:
 		worldList.append($WorldIcon5)
+		$WorldIcon5/locked.visible = false

@@ -1,9 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://vqadtrjtxsn5"]
+[gd_scene load_steps=6 format=3 uid="uid://vqadtrjtxsn5"]
 
 [ext_resource type="Script" uid="uid://mtd0vsndlq47" path="res://scripts/menus/worldSelect/level_icon.gd" id="1_brvjm"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="2_xxvwq"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p65gg"]
+
+[sub_resource type="Gradient" id="Gradient_xxvwq"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_88cbk"]
+gradient = SubResource("Gradient_xxvwq")
 
 [node name="LevelIcon" type="Control"]
 layout_mode = 3
@@ -31,3 +36,10 @@ layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 texture = SubResource("PlaceholderTexture2D_p65gg")
+
+[node name="locked" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = SubResource("GradientTexture2D_88cbk")
