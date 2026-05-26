@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://cb26ahhfqtafj"]
+[gd_scene load_steps=34 format=4 uid="uid://cb26ahhfqtafj"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_2w56p"]
 [ext_resource type="Texture2D" uid="uid://cx1sqwd2s3rdj" path="res://assets/sprites/levels/campaign/world04/damnBroLetsCode.png" id="2_l57kd"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://deiblqi0tqf1d" path="res://scenes/entities/Mobs/world_4/arduino.tscn" id="20_43bmj"]
 [ext_resource type="PackedScene" uid="uid://x8wanugx3mkn" path="res://scenes/entities/Mobs/world_4/borabill.tscn" id="20_nkneb"]
 [ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="21_njagh"]
+[ext_resource type="PackedScene" uid="uid://dvg4rkj02cf4" path="res://scenes/entities/Mobs/world_4/babydino.tscn" id="21_yd2uv"]
 [ext_resource type="AudioStream" uid="uid://bykd234ngpsbf" path="res://assets/audio/sfx/bossfight/Projectile02.wav" id="22_6n3gj"]
 [ext_resource type="AudioStream" uid="uid://g7wq1jspr8u4" path="res://assets/audio/sfx/bossfight/lightning.wav" id="23_pdepr"]
 [ext_resource type="AudioStream" uid="uid://dvf2xtpjdsrcf" path="res://assets/audio/sfx/bossfight/Fullpower.wav" id="24_pmv4o"]
@@ -786,6 +787,8 @@ position = Vector2(-104, -73)
 
 [node name="arduino2" parent="entities/Mobs" instance=ExtResource("20_43bmj")]
 position = Vector2(-76, -107)
+
+[node name="babydino" parent="entities/Mobs" instance=ExtResource("21_yd2uv")]
 
 [node name="Exit" parent="." instance=ExtResource("19_l57kd")]
 position = Vector2(0, -16)
