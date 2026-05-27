@@ -1,15 +1,13 @@
-[gd_scene load_steps=26 format=4 uid="uid://dut7i1mc463d"]
+[gd_scene load_steps=24 format=4 uid="uid://dut7i1mc463d"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_l86co"]
 [ext_resource type="Texture2D" uid="uid://cx1sqwd2s3rdj" path="res://assets/sprites/levels/campaign/world04/damnBroLetsCode.png" id="2_cf0xr"]
 [ext_resource type="Texture2D" uid="uid://5q4y76mfra7u" path="res://assets/sprites/levels/campaign/world04/cenario04.png" id="3_l86co"]
 [ext_resource type="Texture2D" uid="uid://da4rtja4y128d" path="res://assets/sprites/levels/campaign/world04/wallCorne06.png" id="4_cf0xr"]
 [ext_resource type="Texture2D" uid="uid://bxfyl8d5ehq0t" path="res://assets/sprites/levels/campaign/world04/cenario05.png" id="5_qhg8f"]
-[ext_resource type="AudioStream" uid="uid://0ijjrsmcp8ax" path="res://assets/audio/tracks/world01/W01Phase 01.mp3" id="11_g351m"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="12_bcx2o"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="13_2dhl8"]
-[ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="14_7gvhp"]
-[ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="15_py82y"]
+[ext_resource type="AudioStream" uid="uid://di7f8udmwsbqs" path="res://assets/audio/tracks/world02/Missia02.mp3.mp3" id="13_6lx2g"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="16_30xqa"]
 [ext_resource type="SpriteFrames" uid="uid://qoeojvexepwx" path="res://assets/res/spriteframes/bombaman-Sprite-Frames.tres" id="17_akatk"]
 [ext_resource type="PackedScene" uid="uid://ck2e8e5o71yon" path="res://scenes/entities/Mobs/world_4/comedor_bomba.tscn" id="18_gi4rl"]
@@ -673,7 +671,7 @@ position = Vector2(-144, 64)
 position = Vector2(144, 64)
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("11_g351m")
+stream = ExtResource("13_6lx2g")
 autoplay = true
 parameters/looping = true
 
@@ -683,72 +681,6 @@ position = Vector2(0, -44)
 [node name="bombaSfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_2dhl8")
 max_polyphony = 2
-
-[node name="player2Pos" type="Node2D" parent="."]
-position = Vector2(96, 64)
-
-[node name="player1Pos" type="Node2D" parent="."]
-position = Vector2(-160, -96)
-
-[node name="ui" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = -224.0
-offset_top = -168.0
-offset_right = 224.0
-offset_bottom = 80.0
-script = ExtResource("14_7gvhp")
-
-[node name="Polygon2D" type="Polygon2D" parent="ui"]
-position = Vector2(5, 0)
-scale = Vector2(1, 0.96875)
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(0, 0, 56, 0, 56, 256, 29.3174, 256, 0, 256)
-
-[node name="Polygon2D2" type="Polygon2D" parent="ui"]
-position = Vector2(387, 0)
-scale = Vector2(1, 0.96875)
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(0, 0, 56, 0, 56, 256, 29.3174, 256, 0, 256, 0, 208.912, 0, 146.4, 0, 128.206)
-
-[node name="score" type="Label" parent="ui"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 24.0
-offset_right = 56.0
-offset_bottom = 230.0
-theme_override_fonts/font = ExtResource("15_py82y")
-theme_override_font_sizes/font_size = 15
-text = "P1
-
-(0)
-
----
-
-P2
-
-(0)
-
-"
-horizontal_alignment = 1
-
-[node name="scoreManel" type="Label" parent="ui"]
-layout_mode = 0
-offset_left = 392.0
-offset_top = 24.0
-offset_right = 440.0
-offset_bottom = 230.0
-theme_override_fonts/font = ExtResource("15_py82y")
-theme_override_font_sizes/font_size = 15
-text = "M
-A
-N
-E
-L
-
-(0)"
-horizontal_alignment = 1
 
 [node name="Exit" parent="." instance=ExtResource("22_plt1o")]
 visible = true

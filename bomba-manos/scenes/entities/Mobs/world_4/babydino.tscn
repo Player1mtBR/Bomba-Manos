@@ -208,6 +208,7 @@ animations = [{
 script = ExtResource("1_xbarm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_xsjrv")
 disabled = true
 
