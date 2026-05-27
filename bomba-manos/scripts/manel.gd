@@ -28,15 +28,17 @@ func _process(delta: float) -> void:
 		
 	if canMove == true and GlobalScript.MANEL_WINS == false:
 		if moveLeft2Right == true:
-			position.x += moveSpeed * delta
+			position.y += moveSpeed * delta
 			
-			if position.x >= 90.0:
+			if position.y >= 120.0:
+				position.x = -position.x
 				moveLeft2Right = !moveLeft2Right
 			
 		else:
-			position.x -= moveSpeed * delta
+			position.y -= moveSpeed * delta
 			
-			if position.x <= -90.0:
+			if position.y <= -128.0:
+				#position.x = -144.0
 				moveLeft2Right = !moveLeft2Right
 				
 		

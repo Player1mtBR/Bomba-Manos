@@ -239,3 +239,12 @@ func _on_begin_pressed() -> void:
 	print("Player3: ", player3Char)
 	print("Player4: ", player4Char)
 	print("Map selected: ", setMapId)
+	VersusMatchSettings.setupMatch(
+		setMatchPlayerCount,
+		player1Char,
+		player2Char,
+		player3Char,
+		player4Char
+	)
+	
+	VersusMatchSettings.setMap(setMapId)

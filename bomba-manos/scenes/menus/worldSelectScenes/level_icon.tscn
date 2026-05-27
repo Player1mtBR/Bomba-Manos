@@ -1,45 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://vqadtrjtxsn5"]
+[gd_scene load_steps=5 format=3 uid="uid://vqadtrjtxsn5"]
 
 [ext_resource type="Script" uid="uid://mtd0vsndlq47" path="res://scripts/menus/worldSelect/level_icon.gd" id="1_brvjm"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="2_xxvwq"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p65gg"]
-
-[sub_resource type="Gradient" id="Gradient_xxvwq"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_88cbk"]
-gradient = SubResource("Gradient_xxvwq")
+[ext_resource type="Texture2D" uid="uid://btftsrg3e4ixl" path="res://assets/sprites/misc/worldIcons/WorldPlaceholder.png" id="3_88cbk"]
+[ext_resource type="Texture2D" uid="uid://skcfu3n5v314" path="res://assets/sprites/misc/worldIcons/lock.png" id="4_gfv8p"]
 
 [node name="LevelIcon" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 64.0
-offset_top = 128.0
-offset_right = 128.0
-offset_bottom = 192.0
+offset_right = 64.0
+offset_bottom = 64.0
 pivot_offset = Vector2(32, 32)
 script = ExtResource("1_brvjm")
+levelIconTexture = null
 
 [node name="WorldLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = -12.0
-offset_top = -24.0
-offset_right = 51.0
-offset_bottom = -1.0
+offset_left = -43.0
+offset_top = -55.0
+offset_right = 44.0
+offset_bottom = -32.0
 theme = ExtResource("2_xxvwq")
 theme_override_font_sizes/font_size = 14
 text = "(Nível 1)"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 64.0
-offset_bottom = 64.0
-texture = SubResource("PlaceholderTexture2D_p65gg")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_88cbk")
 
-[node name="locked" type="TextureRect" parent="."]
+[node name="locked" type="Sprite2D" parent="."]
 visible = false
-layout_mode = 0
-offset_right = 64.0
-offset_bottom = 64.0
-texture = SubResource("GradientTexture2D_88cbk")
+texture = ExtResource("4_gfv8p")

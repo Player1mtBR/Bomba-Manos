@@ -1,4 +1,4 @@
-[gd_scene load_steps=162 format=3 uid="uid://suap6bq2v1le"]
+[gd_scene load_steps=168 format=3 uid="uid://suap6bq2v1le"]
 
 [ext_resource type="Script" uid="uid://wasqsu7cxrg" path="res://scripts/misc/bossfight/megazord_jp.gd" id="1_eju5j"]
 [ext_resource type="Script" uid="uid://b8x47tsklf1ns" path="res://scripts/misc/bossfight/bossfight.gd" id="1_vtx7u"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://dwoiy7iictt5r" path="res://assets/sprites/levels/campaign/world05/megazordJP/bombazord2.png" id="22_tvrrt"]
 [ext_resource type="Texture2D" uid="uid://kulrlg5r5haw" path="res://assets/sprites/levels/campaign/world05/megazordJP/bombazord3.png" id="23_a6lve"]
 [ext_resource type="Texture2D" uid="uid://ctr0tvbruywil" path="res://assets/sprites/levels/campaign/world05/megazordJP/bombazord1-sheet2.png" id="23_l7u5o"]
+[ext_resource type="Script" uid="uid://bchte3dycebmt" path="res://scripts/misc/bossfight/beam_struggle.gd" id="23_uhwyr"]
 [ext_resource type="Texture2D" uid="uid://dh8qqshiboebb" path="res://assets/sprites/levels/campaign/world05/megazordJP/bombazord4.png" id="24_76wgd"]
 [ext_resource type="AudioStream" uid="uid://g7wq1jspr8u4" path="res://assets/audio/sfx/bossfight/lightning.wav" id="24_tu222"]
 [ext_resource type="AudioStream" uid="uid://pyhxl81ufsrj" path="res://assets/audio/sfx/bossfight/Projectile01.wav" id="25_gjgst"]
@@ -197,6 +198,42 @@ tracks/8/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Camera2D:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(428, 240)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Camera2D:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../Camera2D:zoom")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_tvrrt"]
 resource_name = "defeat"
@@ -298,6 +335,42 @@ tracks/7/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Camera2D:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(428, 240)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Camera2D:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Camera2D:zoom")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_mg8sl"]
 resource_name = "moveBackground"
@@ -316,19 +389,37 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(294, 193), Vector2(260, -178), Vector2(-412, -175), Vector2(-170, 229)]
 }
 
+[sub_resource type="Animation" id="Animation_x4b6s"]
+resource_name = "win"
+length = 7.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../stuff2Animate/blank:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vtx7u"]
 _data = {
 &"RESET": SubResource("Animation_v0qoy"),
 &"defeat": SubResource("Animation_tvrrt"),
-&"moveBackground": SubResource("Animation_mg8sl")
+&"moveBackground": SubResource("Animation_mg8sl"),
+&"win": SubResource("Animation_x4b6s")
 }
 
-[sub_resource type="Gradient" id="Gradient_mrnxu"]
+[sub_resource type="Gradient" id="Gradient_uhwyr"]
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(0, 0, 0, 0.294118)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_oofr0"]
-gradient = SubResource("Gradient_mrnxu")
+gradient = SubResource("Gradient_uhwyr")
 
 [sub_resource type="Animation" id="Animation_mrnxu"]
 length = 0.001
@@ -594,6 +685,89 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0vej"]
+
+[sub_resource type="Gradient" id="Gradient_tu222"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gjgst"]
+gradient = SubResource("Gradient_tu222")
+fill = 2
+
+[sub_resource type="Gradient" id="Gradient_wr6da"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tk171"]
+gradient = SubResource("Gradient_wr6da")
+fill = 2
+
+[sub_resource type="Gradient" id="Gradient_m6yek"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xjvhh"]
+gradient = SubResource("Gradient_m6yek")
+fill = 2
+
+[sub_resource type="Gradient" id="Gradient_0svcv"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0iceu"]
+gradient = SubResource("Gradient_0svcv")
+fill = 2
+
+[sub_resource type="Gradient" id="Gradient_0iceu"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_foglc"]
+gradient = SubResource("Gradient_0iceu")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7cv3f"]
+gradient = ExtResource("12_tk171")
+
+[sub_resource type="Gradient" id="Gradient_bk35a"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1y0gk"]
+gradient = SubResource("Gradient_bk35a")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i0mhj"]
+gradient = ExtResource("14_xjvhh")
+
+[sub_resource type="Gradient" id="Gradient_1y0gk"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.341235, 0.341235, 4.81308e-08, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vu88c"]
+gradient = SubResource("Gradient_1y0gk")
+
+[sub_resource type="Gradient" id="Gradient_i0mhj"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w6xd6"]
+gradient = SubResource("Gradient_i0mhj")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtx7u"]
+size = Vector2(20, 277)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrnxu"]
+size = Vector2(20, 277)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tp6la"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8gl0l"]
+gradient = ExtResource("13_m6yek")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wjp8x"]
+gradient = ExtResource("14_xjvhh")
+
+[sub_resource type="Gradient" id="Gradient_8gl0l"]
+offsets = PackedFloat32Array(0, 0.324675, 0.668831, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cnh5a"]
+gradient = SubResource("Gradient_8gl0l")
 
 [sub_resource type="Animation" id="Animation_0iceu"]
 length = 0.001
@@ -1320,76 +1494,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_tu222"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_gjgst"]
-gradient = SubResource("Gradient_tu222")
-fill = 2
-
-[sub_resource type="Gradient" id="Gradient_wr6da"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 1, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_tk171"]
-gradient = SubResource("Gradient_wr6da")
-fill = 2
-
-[sub_resource type="Gradient" id="Gradient_m6yek"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_xjvhh"]
-gradient = SubResource("Gradient_m6yek")
-fill = 2
-
-[sub_resource type="Gradient" id="Gradient_0svcv"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_0iceu"]
-gradient = SubResource("Gradient_0svcv")
-fill = 2
-
-[sub_resource type="Gradient" id="Gradient_0iceu"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_foglc"]
-gradient = SubResource("Gradient_0iceu")
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_7cv3f"]
-gradient = ExtResource("12_tk171")
-
-[sub_resource type="Gradient" id="Gradient_bk35a"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1y0gk"]
-gradient = SubResource("Gradient_bk35a")
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_i0mhj"]
-gradient = ExtResource("14_xjvhh")
-
-[sub_resource type="Gradient" id="Gradient_1y0gk"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.341235, 0.341235, 4.81308e-08, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_vu88c"]
-gradient = SubResource("Gradient_1y0gk")
-
-[sub_resource type="Gradient" id="Gradient_i0mhj"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(1, 1, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_w6xd6"]
-gradient = SubResource("Gradient_i0mhj")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtx7u"]
-size = Vector2(20, 277)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrnxu"]
-size = Vector2(20, 277)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tp6la"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_uhwyr"]
 atlas = ExtResource("41_l7u5o")
 region = Rect2(0, 0, 50, 50)
@@ -1756,6 +1860,42 @@ tracks/20/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../../MegazordJP:rotation")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../../MegazordJP/AnimatedSprite2D:animation")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("../../FinalAttack:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_fmuwu"]
 resource_name = "go"
@@ -1763,7 +1903,7 @@ length = 5.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -1775,7 +1915,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -1787,7 +1927,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath(".:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -1801,13 +1941,13 @@ tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/path = NodePath("../../MegazordJP:position")
-tracks/3/interp = 1
+tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(2, 3, 3.4),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(2, 3, 3.1, 3.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(428, 416), Vector2(428, 416), Vector2(428, 380)]
+"values": [Vector2(428, 416), Vector2(428, 416), Vector2(464, 409), Vector2(531, 486)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1847,7 +1987,7 @@ tracks/6/keys = {
 }
 tracks/7/type = "value"
 tracks/7/imported = false
-tracks/7/enabled = true
+tracks/7/enabled = false
 tracks/7/path = NodePath(".:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
@@ -1855,7 +1995,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0.01),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -1867,7 +2007,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0, 3, 3.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(56, 56), Vector2(56, 56), Vector2(646, 490)]
+"values": [Vector2(56, 56), Vector2(56, 56), Vector2(530, 98)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -1903,7 +2043,7 @@ tracks/11/keys = {
 "times": PackedFloat32Array(0, 3, 3.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(792, 64), Vector2(792, 64), Vector2(572, 518)]
+"values": [Vector2(792, 64), Vector2(792, 64), Vector2(630, 502)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
@@ -1939,7 +2079,7 @@ tracks/14/keys = {
 "times": PackedFloat32Array(0, 3, 3.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(64, 416), Vector2(64, 416), Vector2(506, 536)]
+"values": [Vector2(64, 416), Vector2(64, 416), Vector2(336, 158)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
@@ -1975,7 +2115,7 @@ tracks/17/keys = {
 "times": PackedFloat32Array(0, 3, 3.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(792, 416), Vector2(792, 416), Vector2(437, 555)]
+"values": [Vector2(792, 416), Vector2(792, 416), Vector2(442, 553)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
@@ -2000,6 +2140,42 @@ tracks/19/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../../MegazordJP:rotation")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 3, 3.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.261799]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../../MegazordJP/AnimatedSprite2D:animation")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"idle", &"shoot"]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../../FinalAttack:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 4.4, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_b2ao5"]
@@ -2153,6 +2329,7 @@ texture = ExtResource("3_wi1c3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SuperManel/visual"]
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_0svcv")
+animation = &"hit01"
 autoplay = "default"
 offset = Vector2(-95, 20)
 
@@ -2170,6 +2347,209 @@ shape = SubResource("RectangleShape2D_u0vej")
 stream = ExtResource("10_bjlwm")
 pitch_scale = 0.75
 bus = &"Voices"
+
+[node name="Icons" type="Node2D" parent="."]
+z_index = 3
+
+[node name="Faces" type="Node2D" parent="Icons"]
+
+[node name="Bomba" type="Node2D" parent="Icons/Faces"]
+position = Vector2(56, 56)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Icons/Faces/Bomba"]
+position = Vector2(8, 8)
+scale = Vector2(1.25, 1.25)
+texture = SubResource("GradientTexture2D_gjgst")
+
+[node name="Sprite2D" type="Sprite2D" parent="Icons/Faces/Bomba"]
+position = Vector2(8, 8)
+scale = Vector2(4, 4)
+texture = ExtResource("18_vu88c")
+offset = Vector2(-0.5, 0)
+
+[node name="Ureia" type="Node2D" parent="Icons/Faces"]
+position = Vector2(792, 64)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Icons/Faces/Ureia"]
+position = Vector2(4.76837e-07, 4.76837e-07)
+rotation = 1.5708
+scale = Vector2(1.25, 1.25)
+texture = SubResource("GradientTexture2D_tk171")
+
+[node name="Sprite2D" type="Sprite2D" parent="Icons/Faces/Ureia"]
+scale = Vector2(4, 4)
+texture = ExtResource("19_i0mhj")
+
+[node name="Ranger" type="Node2D" parent="Icons/Faces"]
+position = Vector2(64, 416)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Icons/Faces/Ranger"]
+rotation = -1.5708
+scale = Vector2(1.25, 1.25)
+texture = SubResource("GradientTexture2D_xjvhh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Icons/Faces/Ranger"]
+scale = Vector2(4, 4)
+texture = ExtResource("20_w6xd6")
+
+[node name="Mini" type="Node2D" parent="Icons/Faces"]
+position = Vector2(792, 416)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Icons/Faces/Mini"]
+position = Vector2(-6.10352e-05, 0)
+rotation = 3.14159
+scale = Vector2(1.25, 1.25)
+texture = SubResource("GradientTexture2D_0iceu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Icons/Faces/Mini"]
+scale = Vector2(4, 4)
+texture = ExtResource("21_lyyvp")
+
+[node name="healthBarMegazordJP" type="Node2D" parent="Icons"]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Icons/healthBarMegazordJP"]
+offset_left = 24.0
+offset_top = 116.0
+offset_right = 80.0
+offset_bottom = 372.0
+max_value = 10.0
+value = 7.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture2D_foglc")
+texture_progress = SubResource("GradientTexture2D_7cv3f")
+
+[node name="healthBarManel" type="Node2D" parent="Icons"]
+
+[node name="powerBar" type="Node2D" parent="Icons"]
+position = Vector2(808, 240)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Icons/powerBar"]
+offset_left = -32.0
+offset_top = -101.0
+offset_right = 24.0
+offset_bottom = 122.0
+max_value = 3.0
+value = 2.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture2D_1y0gk")
+texture_progress = SubResource("GradientTexture2D_i0mhj")
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="Icons/powerBar"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -136.0
+offset_right = 28.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+pivot_offset = Vector2(32, 32)
+max_value = 3.0
+value = 1.0
+fill_mode = 4
+texture_under = SubResource("GradientTexture2D_vu88c")
+texture_progress = SubResource("GradientTexture2D_w6xd6")
+
+[node name="boundaries" type="Node2D" parent="."]
+position = Vector2(428, 240)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="boundaries"]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/StaticBody2D"]
+position = Vector2(-300, 100.5)
+shape = SubResource("RectangleShape2D_vtx7u")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="boundaries/StaticBody2D"]
+position = Vector2(300, 100.5)
+shape = SubResource("RectangleShape2D_mrnxu")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="boundaries/StaticBody2D"]
+position = Vector2(0, -48)
+scale = Vector2(32.56, 1)
+shape = SubResource("RectangleShape2D_tp6la")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="boundaries/StaticBody2D"]
+position = Vector2(0, 249)
+scale = Vector2(32.56, 1)
+shape = SubResource("RectangleShape2D_tp6la")
+
+[node name="soundtrack" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("6_v0qoy")
+bus = &"Soundtrack"
+
+[node name="pauseCampaign" parent="." instance=ExtResource("8_mrnxu")]
+visible = false
+
+[node name="sfx" type="Node2D" parent="."]
+
+[node name="sfxLightning" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("24_tu222")
+volume_db = -5.0
+bus = &"Effects"
+
+[node name="shootSfx01" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("25_gjgst")
+max_polyphony = 7
+bus = &"Effects"
+
+[node name="spawnSfx01" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("26_wr6da")
+volume_db = 15.0
+bus = &"Effects"
+
+[node name="shootSfx02" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("27_tk171")
+volume_db = 10.0
+bus = &"Effects"
+
+[node name="spawnSfx02" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("26_wr6da")
+volume_db = 24.0
+pitch_scale = 0.5
+bus = &"Effects"
+
+[node name="FinalAttack" type="Node2D" parent="."]
+visible = false
+position = Vector2(467, 266)
+rotation = 1.309
+script = ExtResource("23_uhwyr")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="FinalAttack"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.133
+offset_top = -23.9925
+offset_right = 325.867
+offset_bottom = 16.0075
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 1)
+step = 0.1
+fill_mode = 1
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture2D_8gl0l")
+texture_progress = SubResource("GradientTexture2D_wjp8x")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="FinalAttack/TextureProgressBar"]
+position = Vector2(256, 20)
+scale = Vector2(0.75, 2)
+texture = SubResource("GradientTexture2D_cnh5a")
+
+[node name="Timer" type="Timer" parent="FinalAttack"]
+autostart = true
 
 [node name="MegazordJP" type="CharacterBody2D" parent="."]
 position = Vector2(428, 369)
@@ -2345,187 +2725,16 @@ volume_db = 5.0
 position = Vector2(2, 20)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_x4b6s")
-animation = &"back"
+animation = &"idle"
 autoplay = "idle"
-
-[node name="Icons" type="Node2D" parent="."]
-z_index = 3
-
-[node name="Faces" type="Node2D" parent="Icons"]
-
-[node name="Bomba" type="Node2D" parent="Icons/Faces"]
-position = Vector2(56, 56)
-
-[node name="Sprite2D2" type="Sprite2D" parent="Icons/Faces/Bomba"]
-position = Vector2(8, 8)
-scale = Vector2(1.25, 1.25)
-texture = SubResource("GradientTexture2D_gjgst")
-
-[node name="Sprite2D" type="Sprite2D" parent="Icons/Faces/Bomba"]
-position = Vector2(8, 8)
-scale = Vector2(4, 4)
-texture = ExtResource("18_vu88c")
-offset = Vector2(-0.5, 0)
-
-[node name="Ureia" type="Node2D" parent="Icons/Faces"]
-position = Vector2(792, 64)
-
-[node name="Sprite2D2" type="Sprite2D" parent="Icons/Faces/Ureia"]
-position = Vector2(4.76837e-07, 4.76837e-07)
-rotation = 1.5708
-scale = Vector2(1.25, 1.25)
-texture = SubResource("GradientTexture2D_tk171")
-
-[node name="Sprite2D" type="Sprite2D" parent="Icons/Faces/Ureia"]
-scale = Vector2(4, 4)
-texture = ExtResource("19_i0mhj")
-
-[node name="Ranger" type="Node2D" parent="Icons/Faces"]
-position = Vector2(64, 416)
-
-[node name="Sprite2D3" type="Sprite2D" parent="Icons/Faces/Ranger"]
-rotation = -1.5708
-scale = Vector2(1.25, 1.25)
-texture = SubResource("GradientTexture2D_xjvhh")
-
-[node name="Sprite2D" type="Sprite2D" parent="Icons/Faces/Ranger"]
-scale = Vector2(4, 4)
-texture = ExtResource("20_w6xd6")
-
-[node name="Mini" type="Node2D" parent="Icons/Faces"]
-position = Vector2(792, 416)
-
-[node name="Sprite2D4" type="Sprite2D" parent="Icons/Faces/Mini"]
-position = Vector2(-6.10352e-05, 0)
-rotation = 3.14159
-scale = Vector2(1.25, 1.25)
-texture = SubResource("GradientTexture2D_0iceu")
-
-[node name="Sprite2D" type="Sprite2D" parent="Icons/Faces/Mini"]
-scale = Vector2(4, 4)
-texture = ExtResource("21_lyyvp")
-
-[node name="healthBarMegazordJP" type="Node2D" parent="Icons"]
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Icons/healthBarMegazordJP"]
-offset_left = 24.0
-offset_top = 116.0
-offset_right = 80.0
-offset_bottom = 372.0
-max_value = 10.0
-value = 7.0
-fill_mode = 3
-nine_patch_stretch = true
-texture_under = SubResource("GradientTexture2D_foglc")
-texture_progress = SubResource("GradientTexture2D_7cv3f")
-
-[node name="healthBarManel" type="Node2D" parent="Icons"]
-
-[node name="powerBar" type="Node2D" parent="Icons"]
-position = Vector2(808, 240)
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Icons/powerBar"]
-offset_left = -32.0
-offset_top = -101.0
-offset_right = 24.0
-offset_bottom = 122.0
-max_value = 3.0
-value = 2.0
-fill_mode = 3
-nine_patch_stretch = true
-texture_under = SubResource("GradientTexture2D_1y0gk")
-texture_progress = SubResource("GradientTexture2D_i0mhj")
-
-[node name="TextureProgressBar2" type="TextureProgressBar" parent="Icons/powerBar"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -136.0
-offset_right = 28.0
-offset_bottom = -72.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.75, 0.75)
-pivot_offset = Vector2(32, 32)
-max_value = 3.0
-value = 1.0
-fill_mode = 4
-texture_under = SubResource("GradientTexture2D_vu88c")
-texture_progress = SubResource("GradientTexture2D_w6xd6")
-
-[node name="boundaries" type="Node2D" parent="."]
-position = Vector2(428, 240)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="boundaries"]
-collision_layer = 16
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/StaticBody2D"]
-position = Vector2(-300, 100.5)
-shape = SubResource("RectangleShape2D_vtx7u")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="boundaries/StaticBody2D"]
-position = Vector2(300, 100.5)
-shape = SubResource("RectangleShape2D_mrnxu")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="boundaries/StaticBody2D"]
-position = Vector2(0, -48)
-scale = Vector2(32.56, 1)
-shape = SubResource("RectangleShape2D_tp6la")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="boundaries/StaticBody2D"]
-position = Vector2(0, 249)
-scale = Vector2(32.56, 1)
-shape = SubResource("RectangleShape2D_tp6la")
-
-[node name="soundtrack" type="AudioStreamPlayer" parent="."]
-process_mode = 3
-stream = ExtResource("6_v0qoy")
-bus = &"Soundtrack"
-
-[node name="pauseCampaign" parent="." instance=ExtResource("8_mrnxu")]
-visible = false
-
-[node name="sfx" type="Node2D" parent="."]
-
-[node name="sfxLightning" type="AudioStreamPlayer" parent="sfx"]
-stream = ExtResource("24_tu222")
-volume_db = -5.0
-bus = &"Effects"
-
-[node name="shootSfx01" type="AudioStreamPlayer" parent="sfx"]
-stream = ExtResource("25_gjgst")
-max_polyphony = 7
-bus = &"Effects"
-
-[node name="spawnSfx01" type="AudioStreamPlayer" parent="sfx"]
-stream = ExtResource("26_wr6da")
-volume_db = 15.0
-bus = &"Effects"
-
-[node name="shootSfx02" type="AudioStreamPlayer" parent="sfx"]
-stream = ExtResource("27_tk171")
-volume_db = 10.0
-bus = &"Effects"
-
-[node name="spawnSfx02" type="AudioStreamPlayer" parent="sfx"]
-stream = ExtResource("26_wr6da")
-volume_db = 24.0
-pitch_scale = 0.5
-bus = &"Effects"
-
-[node name="FinalAttack" type="Node2D" parent="."]
 
 [node name="stuff2Animate" type="Node2D" parent="."]
 
 [node name="blank" type="Sprite2D" parent="stuff2Animate"]
 modulate = Color(1, 1, 1, 0)
 z_index = 7
-position = Vector2(428, 240)
-scale = Vector2(15, 10)
+position = Vector2(481, 305.5)
+scale = Vector2(22.0938, 17.7656)
 texture = ExtResource("39_76wgd")
 
 [node name="Label" type="Label" parent="stuff2Animate"]

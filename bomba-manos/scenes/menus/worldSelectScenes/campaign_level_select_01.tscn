@@ -15,7 +15,12 @@ grow_vertical = 2
 script = ExtResource("1_8or57")
 
 [node name="LevelIcon" parent="." node_paths=PackedStringArray("nextLevelRight") instance=ExtResource("2_pvp6c")]
+offset_left = 80.0
+offset_top = 168.0
+offset_right = 144.0
+offset_bottom = 232.0
 level2Load = "uid://cb26ahhfqtafj"
+levelIconTexture = ""
 nextLevelRight = NodePath("../LevelIcon2")
 
 [node name="LevelIcon2" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight") instance=ExtResource("2_pvp6c")]
@@ -24,6 +29,7 @@ offset_top = 256.0
 offset_right = 256.0
 offset_bottom = 320.0
 levelName = "2"
+levelIconTexture = ""
 unlockRequirement = "W01L01"
 nextLevelLeft = NodePath("../LevelIcon")
 nextLevelRight = NodePath("../LevelIcon3")
@@ -34,6 +40,7 @@ offset_top = 192.0
 offset_right = 384.0
 offset_bottom = 256.0
 levelName = "3"
+levelIconTexture = ""
 unlockRequirement = "W01L02"
 nextLevelLeft = NodePath("../LevelIcon2")
 nextLevelRight = NodePath("../LevelIcon4")
@@ -44,6 +51,7 @@ offset_top = 256.0
 offset_right = 576.0
 offset_bottom = 320.0
 levelName = "4"
+levelIconTexture = ""
 unlockRequirement = "W01L03"
 nextLevelLeft = NodePath("../LevelIcon3")
 nextLevelRight = NodePath("../LevelIcon5")
@@ -52,6 +60,7 @@ nextLevelRight = NodePath("../LevelIcon5")
 offset_left = 640.0
 offset_right = 704.0
 levelName = "5"
+levelIconTexture = ""
 unlockRequirement = "W01L04"
 nextLevelLeft = NodePath("../LevelIcon4")
 

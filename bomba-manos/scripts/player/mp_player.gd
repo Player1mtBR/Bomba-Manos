@@ -157,8 +157,7 @@ func killPlayer():
 		print(GlobalScript.playerScores)
 		
 	await animPlayerNode.animation_finished
-	if CurrentLevelManager.campaignMap == true:
-		CurrentLevelManager.restartLevel()
+
 	queue_free()
 	
 func victory():

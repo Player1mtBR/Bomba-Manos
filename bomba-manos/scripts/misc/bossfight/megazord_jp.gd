@@ -60,51 +60,52 @@ func _process(delta: float) -> void:
 	
 		
 	##MOVEMENT ANIMATION SYSTEm
-	if Input.is_action_just_pressed("p1_moveLeft"):
-		currentDirection = Vector2(-1, 0)
-		if $AnimatedSprite2D.animation != "go_left":
-			$AnimatedSprite2D.play("go_left")
-		
-	if Input.is_action_just_pressed("p1_moveRight"):
-		currentDirection = Vector2(1, 0)
-		if $AnimatedSprite2D.animation != "go_right":
-			$AnimatedSprite2D.play("go_right")
+	if canMove == true:
+		if Input.is_action_just_pressed("p1_moveLeft"):
+			currentDirection = Vector2(-1, 0)
+			if $AnimatedSprite2D.animation != "go_left":
+				$AnimatedSprite2D.play("go_left")
 			
-	elif Input.is_action_just_pressed("p1_moveUp") and currentDirection != Vector2(-1, 0) and currentDirection != Vector2(1, 0):
-		currentDirection = Vector2(0, -1)
-		if $AnimatedSprite2D.animation != "foward":
-			$AnimatedSprite2D.play("foward")
-		
-	elif Input.is_action_just_pressed("p1_moveDown") and currentDirection != Vector2(-1, 0) and currentDirection != Vector2(1, 0):
-		currentDirection = Vector2(0, 1)
-		if $AnimatedSprite2D.animation != "back":
-			$AnimatedSprite2D.play("back")
+		if Input.is_action_just_pressed("p1_moveRight"):
+			currentDirection = Vector2(1, 0)
+			if $AnimatedSprite2D.animation != "go_right":
+				$AnimatedSprite2D.play("go_right")
+				
+		elif Input.is_action_just_pressed("p1_moveUp") and currentDirection != Vector2(-1, 0) and currentDirection != Vector2(1, 0):
+			currentDirection = Vector2(0, -1)
+			if $AnimatedSprite2D.animation != "foward":
+				$AnimatedSprite2D.play("foward")
 			
-			
-	if Input.is_action_just_released("p1_moveLeft"):
-		if currentDirection == Vector2(-1, 0):
-			$AnimatedSprite2D.play("return_left")
-			currentDirection = Vector2(0, 0)
-			
+		elif Input.is_action_just_pressed("p1_moveDown") and currentDirection != Vector2(-1, 0) and currentDirection != Vector2(1, 0):
+			currentDirection = Vector2(0, 1)
+			if $AnimatedSprite2D.animation != "back":
+				$AnimatedSprite2D.play("back")
+				
+				
+		if Input.is_action_just_released("p1_moveLeft"):
+			if currentDirection == Vector2(-1, 0):
+				$AnimatedSprite2D.play("return_left")
+				currentDirection = Vector2(0, 0)
+				
 
-			
-	if Input.is_action_just_released("p1_moveRight"):
-		if currentDirection == Vector2(1, 0):
-			$AnimatedSprite2D.play("return_right")
-			currentDirection = Vector2(0, 0)
-			
-	if Input.is_action_just_released("p1_moveUp"):
-		if currentDirection == Vector2(0, -1):
-			$AnimatedSprite2D.play("idle")
-			currentDirection = Vector2(0, 0)
-	
-	if Input.is_action_just_released("p1_moveDown") and currentDirection != Vector2(-1, 0) and currentDirection != Vector2(1, 0):
-		if currentDirection == Vector2(0, 1):
-			$AnimatedSprite2D.play("idle")
-			currentDirection = Vector2(0, 0)
-	
-			
-			
+				
+		if Input.is_action_just_released("p1_moveRight"):
+			if currentDirection == Vector2(1, 0):
+				$AnimatedSprite2D.play("return_right")
+				currentDirection = Vector2(0, 0)
+				
+		if Input.is_action_just_released("p1_moveUp"):
+			if currentDirection == Vector2(0, -1):
+				$AnimatedSprite2D.play("idle")
+				currentDirection = Vector2(0, 0)
+		
+		if Input.is_action_just_released("p1_moveDown") and currentDirection != Vector2(-1, 0) and currentDirection != Vector2(1, 0):
+			if currentDirection == Vector2(0, 1):
+				$AnimatedSprite2D.play("idle")
+				currentDirection = Vector2(0, 0)
+		
+				
+				
 	
 func _physics_process(delta: float) -> void:
 	if canMove:
@@ -213,6 +214,7 @@ func jpAttack():
 	$AnimationPlayer.play("charge")
 	$Attack.visible = false
 	$Attack/Area2D/CollisionShape2D.disabled = true
+	$AnimatedSprite2D.play("idle")
 	canMove = true
 	canBlock = true
 	#print("power ", chargedPower)
@@ -277,7 +279,7 @@ func killMegazord():
 	canBlock = false
 	$"../Camera2D".camShake01Trigger = false
 	await $"../AnimationPlayer".animation_finished
-	Loader.loadingScreen2Scene("res://scenes/menus/main_menu.tscn")
+	Loader.loadingScreen2Scene("res://scenes/menus/worldSelectScenes/campaign_level_select_05.tscn")
 	#CurrentLevelManager.restartLevel()
 
 func _on_parry_timer_timeout() -> void:

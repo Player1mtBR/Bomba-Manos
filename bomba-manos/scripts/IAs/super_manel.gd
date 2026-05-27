@@ -18,8 +18,8 @@ extends Node2D
 	$"attackSpawn/top/5"
 ]
 
-var skipIntro := false
-var phase := 1
+var skipIntro := true
+var phase := 4
 
 var projectile01Scene = preload("res://scenes/levels/campaign/extras/projectile_01.tscn")
 var projectile02Scene = preload("res://scenes/levels/campaign/extras/projectile_02.tscn")
@@ -635,9 +635,10 @@ func finalAttack():
 	coolAnimation = true
 	$"../MegazordJP".canMove = false
 	$"../stuff2Animate/megaBomb/AnimationPlayer".play("go")
-	$"../stuff2Animate/megaBomb".visible = true
-	await get_tree().create_timer(3.7, false).timeout
-	#$"../Camera2D".camShake01Trigger = true
+	#$"../stuff2Animate/megaBomb".visible = true
+	await get_tree().create_timer(4.7, false).timeout
+	$"../Camera2D".camShake01Trigger = true
+	$"../FinalAttack".isActive = true
 	pass
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
