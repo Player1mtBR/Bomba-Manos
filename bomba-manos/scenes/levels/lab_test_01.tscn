@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://cu5et2hkyhpuo"]
+[gd_scene load_steps=15 format=4 uid="uid://cu5et2hkyhpuo"]
 
 [ext_resource type="Texture2D" uid="uid://c3pnfnouiewui" path="res://assets/sprites/cenario02.png" id="1_ag2dx"]
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_kr1rr"]
 [ext_resource type="Texture2D" uid="uid://drutjoa1y5g30" path="res://assets/sprites/damnBroLetsCode.png" id="1_swana"]
 [ext_resource type="Texture2D" uid="uid://bl0ijw02ik1ku" path="res://assets/sprites/cenario03.png" id="2_88upj"]
-[ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="2_kd8jg"]
 [ext_resource type="Texture2D" uid="uid://dyxcsyn1a87a6" path="res://assets/sprites/cenario01.png" id="2_vv700"]
 [ext_resource type="PackedScene" uid="uid://cb6neg2ddhkn" path="res://scenes/objects/breakable_block.tscn" id="3_vv700"]
 [ext_resource type="Texture2D" uid="uid://bafdra410sgl3" path="res://assets/sprites/wallCorner.png" id="4_88upj"]
@@ -15,7 +14,6 @@
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="15_k5tmf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_01k7s"]
-texture = ExtResource("2_kd8jg")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0

@@ -1,25 +1,29 @@
-[gd_scene load_steps=9 format=3 uid="uid://cb6neg2ddhkn"]
+[gd_scene load_steps=10 format=3 uid="uid://cb6neg2ddhkn"]
 
 [ext_resource type="Script" uid="uid://dhhab8c8xnrfb" path="res://scripts/breakable_block.gd" id="1_20sil"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="2_0b0tg"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b0tg"]
+atlas = ExtResource("2_0b0tg")
+region = Rect2(36, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqt12"]
+atlas = ExtResource("2_0b0tg")
+region = Rect2(20, 0, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3vvu"]
 atlas = ExtResource("2_0b0tg")
-region = Rect2(16, 0, 16, 16)
+region = Rect2(52, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vwjx"]
 atlas = ExtResource("2_0b0tg")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r5rlk"]
-atlas = ExtResource("2_0b0tg")
-region = Rect2(48, 0, 16, 16)
+region = Rect2(68, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_idm1l"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e3vvu")
+"texture": SubResource("AtlasTexture_0b0tg")
 }],
 "loop": true,
 "name": &"default",
@@ -27,13 +31,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_qqt12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b0tg")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_e3vvu")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7vwjx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r5rlk")
 }],
 "loop": false,
 "name": &"destroy",
