@@ -16,50 +16,56 @@ grow_vertical = 2
 script = ExtResource("1_8dwfl")
 
 [node name="LevelIcon" parent="." instance=ExtResource("2_pjj7a")]
-offset_left = 128.0
-offset_right = 192.0
+offset_left = 152.0
+offset_top = 64.0
+offset_right = 216.0
+offset_bottom = 128.0
 level2Load = "uid://cb1eg74baebch"
 
 [node name="LevelIcon2" parent="." node_paths=PackedStringArray("nextLevelRight", "nextLevelUp") instance=ExtResource("2_pjj7a")]
-offset_left = 144.0
-offset_top = 344.0
-offset_right = 208.0
-offset_bottom = 408.0
+offset_left = 168.0
+offset_top = 408.0
+offset_right = 232.0
+offset_bottom = 472.0
 levelName = "2"
 unlockRequirement = "W04L01"
 nextLevelRight = NodePath("../LevelIcon3")
 nextLevelUp = NodePath("../LevelIcon")
 
 [node name="LevelIcon3" parent="." node_paths=PackedStringArray("nextLevelRight", "nextLevelUp") instance=ExtResource("2_pjj7a")]
-offset_left = 312.0
-offset_top = 384.0
-offset_right = 376.0
-offset_bottom = 448.0
+offset_left = 336.0
+offset_top = 448.0
+offset_right = 400.0
+offset_bottom = 512.0
 levelName = "3"
 unlockRequirement = "W04L02"
 nextLevelRight = NodePath("../LevelIcon6")
 nextLevelUp = NodePath("../LevelIcon4")
 
 [node name="LevelIcon4" parent="." node_paths=PackedStringArray("nextLevelRight", "nextLevelDown") instance=ExtResource("2_pjj7a")]
-offset_left = 384.0
-offset_right = 448.0
+offset_left = 408.0
+offset_top = 64.0
+offset_right = 472.0
+offset_bottom = 128.0
 levelName = "4"
 unlockRequirement = "W04L03"
 nextLevelRight = NodePath("../LevelIcon5")
 nextLevelDown = NodePath("../LevelIcon3")
 
 [node name="LevelIcon5" parent="." node_paths=PackedStringArray("nextLevelLeft") instance=ExtResource("2_pjj7a")]
-offset_left = 640.0
-offset_right = 704.0
+offset_left = 664.0
+offset_top = 64.0
+offset_right = 728.0
+offset_bottom = 128.0
 levelName = "5"
 unlockRequirement = "W04L04"
 nextLevelLeft = NodePath("../LevelIcon4")
 
 [node name="LevelIcon6" parent="." node_paths=PackedStringArray("nextLevelLeft") instance=ExtResource("2_pjj7a")]
-offset_left = 512.0
-offset_top = 384.0
-offset_right = 576.0
-offset_bottom = 448.0
+offset_left = 536.0
+offset_top = 448.0
+offset_right = 600.0
+offset_bottom = 512.0
 levelName = "Bônus"
 nextLevelLeft = NodePath("../LevelIcon3")
 

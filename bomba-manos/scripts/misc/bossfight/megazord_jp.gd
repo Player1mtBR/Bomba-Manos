@@ -279,7 +279,7 @@ func killMegazord():
 	canBlock = false
 	$"../Camera2D".camShake01Trigger = false
 	await $"../AnimationPlayer".animation_finished
-	Loader.loadingScreen2Scene("res://scenes/menus/worldSelectScenes/campaign_level_select_05.tscn")
+	Loader.loadingScreen2Scene("res://scenes/menus/main_menu.tscn")
 	#CurrentLevelManager.restartLevel()
 
 func _on_parry_timer_timeout() -> void:

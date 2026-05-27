@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://daotc13i8n8ay"]
+[gd_scene load_steps=17 format=4 uid="uid://daotc13i8n8ay"]
 
 [ext_resource type="Script" uid="uid://jrv8xto1roqu" path="res://scripts/maps/versus_map.gd" id="1_ll2d3"]
 [ext_resource type="Texture2D" uid="uid://drutjoa1y5g30" path="res://assets/sprites/damnBroLetsCode.png" id="2_du6be"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="12_mq77w"]
 [ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="13_o386c"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="14_acgiq"]
+[ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="14_stuqf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ll2d3"]
 texture = ExtResource("6_lw0ki")
@@ -510,3 +511,5 @@ L
 
 (0)"
 horizontal_alignment = 1
+
+[node name="pauseCampaign" parent="." instance=ExtResource("14_stuqf")]

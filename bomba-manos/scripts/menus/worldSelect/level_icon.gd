@@ -4,7 +4,7 @@ class_name LevelIcon
 
 @export var levelName := "1"
 @export_file("*.tscn") var level2Load : String
-@export_file("*.png") var levelIconTexture : String
+@export var levelIconTexture : Texture
 
 @export var unlockRequirement : String = ""
 @export var locked := false
@@ -18,7 +18,7 @@ class_name LevelIcon
 
 func _ready() -> void:
 	$WorldLabel.text = "(Nível " + levelName + ")"
-	if levelIconTexture != "":
+	if levelIconTexture != null:
 		$Sprite2D.texture = levelIconTexture
 	
 	if unlockRequirement != "":

@@ -2796,5 +2796,6 @@ libraries = {
 }
 
 [connection signal="area_entered" from="SuperManel/Area2D" to="SuperManel" method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="FinalAttack/Timer" to="FinalAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="MegazordJP/ParryTimer" to="MegazordJP" method="_on_parry_timer_timeout"]
 [connection signal="animation_finished" from="MegazordJP/AnimatedSprite2D" to="MegazordJP" method="_on_animated_sprite_2d_animation_finished"]

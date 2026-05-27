@@ -637,7 +637,7 @@ func finalAttack():
 	$"../stuff2Animate/megaBomb/AnimationPlayer".play("go")
 	#$"../stuff2Animate/megaBomb".visible = true
 	await get_tree().create_timer(4.7, false).timeout
-	$"../Camera2D".camShake01Trigger = true
+	#$"../Camera2D".camShake01Trigger = true
 	$"../FinalAttack".isActive = true
 	pass
 
