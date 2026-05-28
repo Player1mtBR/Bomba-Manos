@@ -17,6 +17,11 @@ func _on_versus_pressed() -> void:
 	UnlockStuff.isOnMenu = false
 	Loader.loadingScreen2Scene("res://scenes/menus/versusMatchSetupTest.tscn")
 
+func _on_configurações_pressed() -> void:
+	Loader.loadingScreen2Scene("res://scenes/menus/settings.tscn")
+
+func _on_créditos_pressed() -> void:
+	Loader.loadingScreen2Scene("res://scenes/menus/credits.tscn")
 
 func _on_sair_pressed() -> void:
 	get_tree().quit()

@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://djvn7p6w0x1u4"]
+
+[ext_resource type="Script" uid="uid://bj12gul8etm1p" path="res://scripts/misc/cutscene_01.gd" id="1_j57co"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_yirsh"]
+file = "res://assets/video/YoU cAn'T jUsT sHoOt a hOlE iNtO ThE sUrFaCe oF mArS.ogv"
+
+[node name="cutscene02" type="Node2D"]
+script = ExtResource("1_j57co")
+toLevelFile = "uid://da5pc4u2g5qoe"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -428.0
+offset_top = -240.0
+offset_right = 428.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = SubResource("VideoStreamTheora_yirsh")
+autoplay = true
+expand = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

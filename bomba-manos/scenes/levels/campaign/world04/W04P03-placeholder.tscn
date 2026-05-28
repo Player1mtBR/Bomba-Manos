@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://c0lvasauvhdj5"]
+[gd_scene load_steps=23 format=4 uid="uid://c0lvasauvhdj5"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_3c7bv"]
 [ext_resource type="Texture2D" uid="uid://bxfyl8d5ehq0t" path="res://assets/sprites/levels/campaign/world04/cenario05.png" id="2_7pcwy"]
@@ -37,21 +37,12 @@ sources/1 = SubResource("TileSetAtlasSource_jtrus")
 texture = ExtResource("28_qgjkh")
 texture_region_size = Vector2i(60, 60)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSet" id="TileSet_dk4xo"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_bjx6k")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vsy6w"]
-texture_region_size = Vector2i(60, 60)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 32, 32, 32, 32, -32, -32, -32)
-
-[sub_resource type="TileSet" id="TileSet_vg1gn"]
-tile_size = Vector2i(64, 64)
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_vsy6w")
 
 [node name="mapPlaceholderForest" type="Node2D"]
 script = ExtResource("1_3c7bv")
@@ -144,7 +135,6 @@ position = Vector2(-8, -8)
 scale = Vector2(0.25, 0.25)
 tile_map_data = PackedByteArray("AAD7//v/AAAAAAEAAAD9//v/AAAAAAEAAAD///v/AAAAAAEAAAABAPv/AAAAAAEAAAADAPv/AAAAAAEAAAAFAPv/AAAAAAEAAAAHAPv/AAAAAAEAAAAJAPv/AAAAAAEAAAD5//v/AAAAAAEAAAD3//v/AAAAAAEAAAAJAP3/AAAAAAEAAAAJAP//AAAAAAEAAAAJAAEAAAAAAAEAAAAJAAMAAAAAAAEAAAAHAAMAAAAAAAEAAAAFAAMAAAAAAAEAAAADAAMAAAAAAAEAAAABAAMAAAAAAAEAAAD//wMAAAAAAAEAAAD9/wMAAAAAAAEAAAD7/wMAAAAAAAEAAAD5/wMAAAAAAAEAAAD3/wMAAAAAAAEAAAD3/wEAAAAAAAEAAAD3////AAAAAAEAAAD3//3/AAAAAAEAAAD5//3/AAAAAAEAAAD7//3/AAAAAAEAAAD9//3/AAAAAAEAAAD///3/AAAAAAEAAAABAP3/AAAAAAEAAAADAP3/AAAAAAEAAAAFAP3/AAAAAAEAAAAHAP3/AAAAAAEAAAAHAP//AAAAAAEAAAAHAAEAAAAAAAEAAAAFAAEAAAAAAAEAAAADAAEAAAAAAAEAAAABAAEAAAAAAAEAAAD//wEAAAAAAAEAAAD9/wEAAAAAAAEAAAD7/wEAAAAAAAEAAAD5/wEAAAAAAAEAAAD5////AAAAAAEAAAD7////AAAAAAEAAAD9////AAAAAAEAAAD/////AAAAAAEAAAABAP//AAAAAAEAAAADAP//AAAAAAEAAAAFAP//AAAAAAEAAAA=")
 tile_set = SubResource("TileSet_dk4xo")
-collision_enabled = false
 
 [node name="objects" type="Node2D" parent="."]
 
@@ -256,15 +246,6 @@ position = Vector2(-128, -32)
 [node name="BreakableBlock39" parent="objects/AllBricks" instance=ExtResource("7_qgx30")]
 position = Vector2(-144, -32)
 
-[node name="BreakableBlock40" parent="objects/AllBricks" instance=ExtResource("7_qgx30")]
-position = Vector2(16, -32)
-
-[node name="BreakableBlock41" parent="objects/AllBricks" instance=ExtResource("7_qgx30")]
-position = Vector2(0, -32)
-
-[node name="BreakableBlock42" parent="objects/AllBricks" instance=ExtResource("7_qgx30")]
-position = Vector2(-16, -32)
-
 [node name="BreakableBlock43" parent="objects/AllBricks" instance=ExtResource("7_qgx30")]
 position = Vector2(32, -32)
 
@@ -363,14 +344,6 @@ position = Vector2(-128, 0)
 
 [node name="BreakableBlock75" parent="objects/AllBricks" instance=ExtResource("7_qgx30")]
 position = Vector2(-144, 0)
-
-[node name="BreakableBlock76" parent="objects/AllBricks" instance=ExtResource("7_qgx30")]
-position = Vector2(16, 0)
-
-[node name="BreakableBlock77" parent="objects/AllBricks" instance=ExtResource("7_qgx30")]
-
-[node name="BreakableBlock78" parent="objects/AllBricks" instance=ExtResource("7_qgx30")]
-position = Vector2(-16, 0)
 
 [node name="BreakableBlock79" parent="objects/AllBricks" instance=ExtResource("7_qgx30")]
 position = Vector2(32, 0)
@@ -686,15 +659,9 @@ stream = ExtResource("13_55oq6")
 max_polyphony = 2
 
 [node name="Exit" parent="." instance=ExtResource("22_1bcej")]
-levelIdentifier = "W02L01"
-nextLevel = "uid://dbgq2yvwaef37"
+position = Vector2(0, -16)
+levelIdentifier = "W01L03"
+nextLevel = "uid://cm4u8v4lfccte"
 
 [node name="pauseCampaign" parent="." instance=ExtResource("23_0fo5b")]
 visible = false
-
-[node name="TileMapLayer2" type="TileMapLayer" parent="."]
-visible = false
-position = Vector2(-8, -8)
-scale = Vector2(0.25, 0.25)
-tile_map_data = PackedByteArray("AAD7//v/AAAAAAAAAAD9//v/AAAAAAAAAAD///v/AAAAAAAAAAABAPv/AAAAAAAAAAADAPv/AAAAAAAAAAAFAPv/AAAAAAAAAAAHAPv/AAAAAAAAAAAJAPv/AAAAAAAAAAD5//v/AAAAAAAAAAD3//v/AAAAAAAAAAAJAP3/AAAAAAAAAAAJAP//AAAAAAAAAAAJAAEAAAAAAAAAAAAJAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAADAAMAAAAAAAAAAAABAAMAAAAAAAAAAAD//wMAAAAAAAAAAAD9/wMAAAAAAAAAAAD7/wMAAAAAAAAAAAD5/wMAAAAAAAAAAAD3/wMAAAAAAAAAAAD3/wEAAAAAAAAAAAD3////AAAAAAAAAAD3//3/AAAAAAAAAAD5//3/AAAAAAAAAAD7//3/AAAAAAAAAAD9//3/AAAAAAAAAAD///3/AAAAAAAAAAABAP3/AAAAAAAAAAADAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAHAP3/AAAAAAAAAAAHAP//AAAAAAAAAAAHAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAADAAEAAAAAAAAAAAABAAEAAAAAAAAAAAD//wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD7/wEAAAAAAAAAAAD5/wEAAAAAAAAAAAD5////AAAAAAAAAAD7////AAAAAAAAAAD9////AAAAAAAAAAD/////AAAAAAAAAAABAP//AAAAAAAAAAADAP//AAAAAAAAAAAFAP//AAAAAAAAAAD1/wQAAAAAAAAAAAD1/wUAAAAAAAAAAAD1/wMAAAAAAAAAAAD1/wIAAAAAAAAAAAD1/wEAAAAAAAAAAAD1/wAAAAAAAAAAAAD1////AAAAAAAAAAD1//7/AAAAAAAAAAD1//3/AAAAAAAAAAD1//z/AAAAAAAAAAD1//v/AAAAAAAAAAD1//r/AAAAAAAAAAD1//n/AAAAAAAAAAD2//n/AAAAAAAAAAD3//n/AAAAAAAAAAD4//n/AAAAAAAAAAD5//n/AAAAAAAAAAD6//n/AAAAAAAAAAD7//n/AAAAAAAAAAD8//n/AAAAAAAAAAD9//n/AAAAAAAAAAD+//n/AAAAAAAAAAD///n/AAAAAAAAAAAAAPn/AAAAAAAAAAABAPn/AAAAAAAAAAACAPn/AAAAAAAAAAADAPn/AAAAAAAAAAAEAPn/AAAAAAAAAAAFAPn/AAAAAAAAAAAGAPn/AAAAAAAAAAAHAPn/AAAAAAAAAAAIAPn/AAAAAAAAAAAJAPn/AAAAAAAAAAAKAPn/AAAAAAAAAAALAPn/AAAAAAAAAAALAPr/AAAAAAAAAAALAPv/AAAAAAAAAAALAPz/AAAAAAAAAAALAP3/AAAAAAAAAAALAP7/AAAAAAAAAAALAP//AAAAAAAAAAALAAAAAAAAAAAAAAALAAEAAAAAAAAAAAALAAIAAAAAAAAAAAALAAMAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAADAAUAAAAAAAAAAAACAAUAAAAAAAAAAAABAAUAAAAAAAAAAAAAAAUAAAAAAAAAAAD//wUAAAAAAAAAAAD+/wUAAAAAAAAAAAD9/wUAAAAAAAAAAAD8/wUAAAAAAAAAAAD7/wUAAAAAAAAAAAD6/wUAAAAAAAAAAAD5/wUAAAAAAAAAAAD4/wUAAAAAAAAAAAD3/wUAAAAAAAAAAAD2/wUAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_vg1gn")

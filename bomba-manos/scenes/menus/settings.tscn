@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://50ntbmr4ohvq"]
+
+[ext_resource type="Script" uid="uid://c5i1rwp442crj" path="res://scripts/menus/settings.gd" id="1_del6v"]
+
+[node name="settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_del6v")
+
+[node name="reset" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Reset"
+
+[connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]

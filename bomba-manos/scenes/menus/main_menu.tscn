@@ -72,4 +72,6 @@ text = "Sair"
 
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Campanha" to="." method="_on_campanha_pressed"]
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Versus" to="." method="_on_versus_pressed"]
+[connection signal="pressed" from="Control/Buttons/VBoxContainer/Configurações" to="." method="_on_configurações_pressed"]
+[connection signal="pressed" from="Control/Buttons/VBoxContainer/Créditos" to="." method="_on_créditos_pressed"]
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Sair" to="." method="_on_sair_pressed"]

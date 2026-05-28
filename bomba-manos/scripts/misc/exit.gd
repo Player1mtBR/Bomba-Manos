@@ -26,8 +26,11 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 		#UnlockStuff.
 		UnlockStuff.completedLevels[levelIdentifier] = true
 		print(UnlockStuff.completedLevels[levelIdentifier], " Completed")
+		UnlockStuff.checkCompletion()
+		UnlockStuff.saveProgress()
 
 func _process(delta: float) -> void:
+	await get_tree().create_timer(0.5, false).timeout
 	if CurrentLevelManager.currentEnemiesAlive <= 0:
 		visible = true
 		$Area2D.monitoring = true

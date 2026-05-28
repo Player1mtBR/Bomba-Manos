@@ -20,6 +20,8 @@ func _ready():
 	kaboom()
 	
 func _process(delta: float) -> void:
+	#if get_tree().tree_changed
+	
 	if CurrentLevelManager.levelComplete == true:
 		queue_free()
 	

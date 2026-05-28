@@ -11,6 +11,8 @@ extends CharacterBody2D
 @onready var raycastLeft  := $collisionRaycasts/left
 @onready var raycastRight := $collisionRaycasts/right
 
+var delayMovementOnStart := true
+
 var isIaAlive  := true
 var canIaMove  := true
 var inputMoveDirection : Vector2
@@ -28,8 +30,10 @@ var shouldDecrease := true
 var shouldIncrease := true
 
 func _ready() -> void:
+	await get_tree().create_timer(0.15, false).timeout
+	delayMovementOnStart = false
 	
-	if shouldIncrease:
+	if shouldIncrease == true:
 		shouldIncrease = false
 		CurrentLevelManager.currentEnemiesAlive += 1
 		print("Enemies: ", CurrentLevelManager.currentEnemiesAlive)
@@ -55,7 +59,7 @@ func _process(_delta: float) -> void:
 # Física
 # -------------------------------------------------------
 func _physics_process(_delta: float) -> void:
-	if isIaAlive and canIaMove:
+	if isIaAlive and canIaMove and delayMovementOnStart == false:
 		_decideDirection()
 		if inputMoveDirection != Vector2(0, 0):
 			_playAnim()

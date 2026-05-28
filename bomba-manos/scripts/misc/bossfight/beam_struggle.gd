@@ -28,6 +28,8 @@ func _process(delta: float) -> void:
 		if beamStruggleValue >= 100.0:
 			isActive = false
 			$"../AnimationPlayer".play("win")
+			await get_tree().create_timer(3.0, false).timeout
+			Loader.loadingScreen2Scene("res://scenes/cutscenes/cutscene_bossEnd.tscn")
 		if beamStruggleValue <= -10.0:
 			isActive = false
 			$"../MegazordJP".killMegazord()
