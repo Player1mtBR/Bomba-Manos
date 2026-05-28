@@ -277,6 +277,7 @@ animation = &"die"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_5smwe")
 volume_db = 5.0
+autoplay = true
 bus = &"Effects"
 
 [connection signal="area_entered" from="Mob" to="." method="_on_area_2d_area_entered"]

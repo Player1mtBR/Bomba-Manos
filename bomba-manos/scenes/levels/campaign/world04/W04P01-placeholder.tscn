@@ -71,6 +71,7 @@ rotation = 3.14159
 scale = Vector2(0.253367, 0.307206)
 texture = ExtResource("3_vsy6w")
 offset = Vector2(-543.893, 53.1253)
+flip_h = true
 flip_v = true
 
 [node name="wallconer2" type="Sprite2D" parent="environment/mapWalls"]
@@ -626,15 +627,23 @@ charSkin = ExtResource("9_da8yb")
 
 [node name="comedor_bomba" parent="entities/Mobs" instance=ExtResource("10_vg1gn")]
 position = Vector2(-160, 64)
+iaMoveDelay = 0.5
+passosParaSugerir = 1
 
 [node name="comedor_bomba2" parent="entities/Mobs" instance=ExtResource("10_vg1gn")]
 position = Vector2(160, 64)
+iaMoveDelay = 0.5
+passosParaSugerir = 1
 
 [node name="comedor_bomba3" parent="entities/Mobs" instance=ExtResource("10_vg1gn")]
 position = Vector2(160, -95)
+iaMoveDelay = 0.5
+passosParaSugerir = 1
 
 [node name="comedor_bomba4" parent="entities/Mobs" instance=ExtResource("10_vg1gn")]
 position = Vector2(-160, -95)
+iaMoveDelay = 0.5
+passosParaSugerir = 1
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_vg1gn")

@@ -74,6 +74,7 @@ rotation = 3.14159
 scale = Vector2(0.253367, 0.307206)
 texture = ExtResource("3_5mrkk")
 offset = Vector2(-543.893, 53.1253)
+flip_h = true
 flip_v = true
 
 [node name="wallconer2" type="Sprite2D" parent="environment/mapWalls"]
@@ -625,26 +626,38 @@ charSkin = ExtResource("17_1l7m6")
 
 [node name="arduino" parent="entities/Mobs" instance=ExtResource("20_mguyu")]
 position = Vector2(-160, 64)
+iaMoveDelay = 0.4
+passosParaSugerir = 1
 
 [node name="arduino2" parent="entities/Mobs" instance=ExtResource("20_mguyu")]
 position = Vector2(160, 64)
+iaMoveDelay = 0.4
+passosParaSugerir = 1
 
 [node name="borabill" parent="entities/Mobs" instance=ExtResource("19_0plov")]
 position = Vector2(160, -96)
+iaMoveDelay = 0.4
+passosParaSugerir = 1
 
 [node name="borabill2" parent="entities/Mobs" instance=ExtResource("19_0plov")]
 position = Vector2(-160, -96)
+iaMoveDelay = 0.4
+passosParaSugerir = 1
 
 [node name="comedor_bomba" parent="entities/Mobs" instance=ExtResource("18_gcw41")]
 position = Vector2(-144, 64)
+iaMoveDelay = 0.5
+passosParaSugerir = 1
 
 [node name="comedor_bomba2" parent="entities/Mobs" instance=ExtResource("18_gcw41")]
 position = Vector2(144, 64)
+iaMoveDelay = 0.5
+passosParaSugerir = 1
 
-[node name="lobo_pidao" parent="entities" instance=ExtResource("13_5mrkk")]
+[node name="lobo_pidao" parent="entities/Mobs" instance=ExtResource("13_5mrkk")]
 position = Vector2(0, -96)
 iaMoveDelay = 0.3
-passosParaSugerir = 2
+passosParaSugerir = 0
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_5mrkk")
