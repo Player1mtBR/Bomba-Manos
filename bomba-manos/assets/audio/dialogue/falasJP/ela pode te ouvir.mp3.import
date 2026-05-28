@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://m166wqcnea4v"
+path="res://.godot/imported/ela pode te ouvir.mp3-d32fbc3a0870f7ee01290e420cff1fc1.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/falasJP/ela pode te ouvir.mp3"
+dest_files=["res://.godot/imported/ela pode te ouvir.mp3-d32fbc3a0870f7ee01290e420cff1fc1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cqh1jhcfvdpxs"
+path="res://.godot/imported/bombazord activated.wav-fa29c196413ff597c71efd868f4f5f40.sample"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/falasJP/bombazord activated.wav"
+dest_files=["res://.godot/imported/bombazord activated.wav-fa29c196413ff597c71efd868f4f5f40.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

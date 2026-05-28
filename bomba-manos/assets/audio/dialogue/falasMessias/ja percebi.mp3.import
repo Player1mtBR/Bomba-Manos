@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hhbwea8o6ef1"
+path="res://.godot/imported/ja percebi.mp3-96b1900225be3e752a3bd4f47a6422d0.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/falasMessias/ja percebi.mp3"
+dest_files=["res://.godot/imported/ja percebi.mp3-96b1900225be3e752a3bd4f47a6422d0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -442,7 +442,7 @@ max_polyphony = 2
 position = Vector2(-96, -96)
 
 [node name="player2Pos" type="Node2D" parent="."]
-position = Vector2(96, 64)
+position = Vector2(-96, -80)
 
 [node name="player3Pos" type="Node2D" parent="."]
 position = Vector2(-96, 64)

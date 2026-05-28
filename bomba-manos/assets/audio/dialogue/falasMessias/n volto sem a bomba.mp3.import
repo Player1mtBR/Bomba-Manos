@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://detd5743kn05s"
+path="res://.godot/imported/n volto sem a bomba.mp3-af92bd6e1714e24896eb1158c524d23e.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/falasMessias/n volto sem a bomba.mp3"
+dest_files=["res://.godot/imported/n volto sem a bomba.mp3-af92bd6e1714e24896eb1158c524d23e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

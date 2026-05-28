@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://el56sma8l5yo"
+path="res://.godot/imported/nos encontramos.mp3-50d26db54a63de9b42045f7c7113ffa1.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/falasManel/nos encontramos.mp3"
+dest_files=["res://.godot/imported/nos encontramos.mp3-50d26db54a63de9b42045f7c7113ffa1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

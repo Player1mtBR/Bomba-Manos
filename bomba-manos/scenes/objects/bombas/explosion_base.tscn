@@ -358,3 +358,5 @@ debug_color = Color(0.999138, 0.0238237, 3.85046e-07, 0.42)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_el4mo")
 volume_db = 10.0
+
+[connection signal="area_entered" from="ExplosionArea" to="." method="_on_explosion_area_area_entered"]

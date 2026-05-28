@@ -41,7 +41,7 @@ z_index = 4
 position = Vector2(5.72205e-06, 5.72205e-06)
 scale = Vector2(0.75, 0.75)
 sprite_frames = ExtResource("3_5v3ci")
-animation = &"move_down"
+animation = &"die"
 autoplay = "idle"
 
 [node name="collisionRaycasts" type="Node2D" parent="."]

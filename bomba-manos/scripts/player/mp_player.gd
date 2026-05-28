@@ -144,20 +144,14 @@ func movePlayer(): ##tween vai levar de um valor a outro de forma gradual
 			passos += 1
 			canPlayerMove = true
 			
-func killPlayer():
-	CurrentLevelManager.deathCount += 1
-	GlobalScript.currentPlayers -= 1
-	if GlobalScript.currentPlayers > 1:
-		GlobalScript.triggerLaugh = true
-	isPlayerAlive = false
+func killPlayer(killerId):
 	animPlayerNode.play("die")
-	
-	if wonMatch == true:
-		GlobalScript.removePointFromPlayer(playerID)
-		print(GlobalScript.playerScores)
-		
-	await animPlayerNode.animation_finished
+	if isPlayerAlive == true:
+		isPlayerAlive = false
 
+	VersusScoreManager.registerKill(killerId, playerID)
+	VersusScoreManager.registerDeath(playerID)
+	await animPlayerNode.animation_finished
 	queue_free()
 	
 func victory():
@@ -194,10 +188,12 @@ func teleport(id_tunel: int) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "ExplosionArea" and UnlockStuff.iddqd == false:
-		killPlayer()
+		pass
+		#killPlayer()
 		
 	if area.name == "Mob" and UnlockStuff.iddqd == false:
-		killPlayer()
+		pass
+		#killPlayer()
 
 	if area.name == "teleportTunel":
 		teleport(1)

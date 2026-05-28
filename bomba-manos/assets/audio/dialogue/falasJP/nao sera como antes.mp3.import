@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfw0aw3cxo2oh"
+path="res://.godot/imported/nao sera como antes.mp3-c6b8b7485aa017ae1c0d057e928ed71a.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/falasJP/nao sera como antes.mp3"
+dest_files=["res://.godot/imported/nao sera como antes.mp3-c6b8b7485aa017ae1c0d057e928ed71a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

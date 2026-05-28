@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://e1gahap2o0vn"
+path="res://.godot/imported/ele foi dominado.mp3-daa6aada27d10432d35d31fa7acc341d.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/falasJP/ele foi dominado.mp3"
+dest_files=["res://.godot/imported/ele foi dominado.mp3-daa6aada27d10432d35d31fa7acc341d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

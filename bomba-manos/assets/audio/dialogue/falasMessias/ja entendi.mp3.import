@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djf0gvq0uxlv"
+path="res://.godot/imported/ja entendi.mp3-6fe09a9caad8a5f4637ddec0e239fde3.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/falasMessias/ja entendi.mp3"
+dest_files=["res://.godot/imported/ja entendi.mp3-6fe09a9caad8a5f4637ddec0e239fde3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

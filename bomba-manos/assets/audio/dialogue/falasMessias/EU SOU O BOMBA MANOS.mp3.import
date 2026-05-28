@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bttkem4i4cm7i"
+path="res://.godot/imported/EU SOU O BOMBA MANOS.mp3-ce2b96d19bb25af62d775bc832b9a656.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/falasMessias/EU SOU O BOMBA MANOS.mp3"
+dest_files=["res://.godot/imported/EU SOU O BOMBA MANOS.mp3-ce2b96d19bb25af62d775bc832b9a656.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://du2cswrg844dk"
+path="res://.godot/imported/doido tem um delay.mp3-567a8c5a4cb3a8a90e87fad814377991.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/falasMessias/doido tem um delay.mp3"
+dest_files=["res://.godot/imported/doido tem um delay.mp3-567a8c5a4cb3a8a90e87fad814377991.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b57i6pgd3j2di"
+path="res://.godot/imported/vc lutou bravamente.mp3-4c9d743db67c3916dda59da33491c9f4.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/falasJP/vc lutou bravamente.mp3"
+dest_files=["res://.godot/imported/vc lutou bravamente.mp3-4c9d743db67c3916dda59da33491c9f4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

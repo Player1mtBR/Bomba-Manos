@@ -4,6 +4,7 @@ extends Node2D
 
 @onready var animPlayer := $AnimatedSprite2D
 @onready var audioPlayer := $AudioStreamPlayer2D
+@export var fromWhatPlayer : int
 
 func _ready() -> void:
 	#print(position)
@@ -39,3 +40,11 @@ func _ready() -> void:
 			
 	await animPlayer.animation_finished
 	queue_free()
+
+
+
+
+func _on_explosion_area_area_entered(area: Area2D) -> void:
+	if area.name == "Area2Dplayer":
+		area.get_parent().killPlayer(fromWhatPlayer)
+		print("body", area.name)

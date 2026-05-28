@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d3cppc6mvnyb2"
+path="res://.godot/imported/e pensar_galaxia.mp3-a7381582ad9936922802c1a3ee4c2820.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/falasJP/e pensar_galaxia.mp3"
+dest_files=["res://.godot/imported/e pensar_galaxia.mp3-a7381582ad9936922802c1a3ee4c2820.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

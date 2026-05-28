@@ -11,6 +11,8 @@ extends Node2D
 
 @export var blastRadius := 2 #base = 2
 
+@export var fromWhatPlayer : int
+
 var tileSize := 16
 
 func _ready():
@@ -99,11 +101,13 @@ func checkCollision():
 func spawnExplosion(setExplosionAnim, explosionSpawnPosition := Vector2()):
 	var newExplosion = explosionScene.instantiate()
 	newExplosion.position = explosionSpawnPosition
+	newExplosion.fromWhatPlayer = fromWhatPlayer
+	
 	#match :
 	
 	
 	newExplosion.animDir = setExplosionAnim
-	get_tree().root.call_deferred("add_child", newExplosion) ##spawn fixed
+	get_tree().current_scene.call_deferred("add_child", newExplosion) ##spawn fixed
 
 
 func _on_chain_reaction_area_area_entered(area: Area2D) -> void:

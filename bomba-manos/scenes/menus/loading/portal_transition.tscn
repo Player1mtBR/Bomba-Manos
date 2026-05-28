@@ -223,7 +223,7 @@ position = Vector2(608, 512)
 position = Vector2(31.25, -7.74999)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_38dbv")
-frame_progress = 0.0896663
+frame_progress = 0.469623
 
 [node name="Label" type="Label" parent="SavedIcon"]
 offset_left = 61.0
@@ -241,7 +241,7 @@ position = Vector2(0, 64)
 position = Vector2(32, 448)
 sprite_frames = ExtResource("5_xue1a")
 autoplay = "default"
-frame_progress = 0.214348
+frame_progress = 0.346291
 
 [node name="Label" type="Label" parent="cheats"]
 offset_left = 64.0

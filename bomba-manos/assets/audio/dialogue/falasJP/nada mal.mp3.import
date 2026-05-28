@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bigjv3r3svdql"
+path="res://.godot/imported/nada mal.mp3-4ce76c09ba70b9bcbb86542dc636fd73.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/falasJP/nada mal.mp3"
+dest_files=["res://.godot/imported/nada mal.mp3-4ce76c09ba70b9bcbb86542dc636fd73.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
