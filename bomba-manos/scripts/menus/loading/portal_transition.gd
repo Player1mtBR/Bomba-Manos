@@ -12,6 +12,13 @@ func endAnimation():
 	$AnimationPlayer.play("out")
 	$Timer.start()
 
+func saveAnimation():
+	#isPlaying = true
+	$AnimationPlayer2.play("saved")
+	
+func cheatAnimation():
+	#isPlaying = true
+	$AnimationPlayer2.play("cheats")
 
 func _on_timer_timeout() -> void:
 	isPlaying = false

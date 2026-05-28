@@ -28,6 +28,7 @@ func _on_sair_pressed() -> void:
 	CurrentLevelManager.currentEnemiesAlive = 0
 	get_tree().paused = false
 	Loader.loadingScreen2Scene("res://scenes/menus/main_menu.tscn")
+	PortalTransition.endAnimation()
 
 
 func _on_config_pressed() -> void:

@@ -60,6 +60,7 @@ func _input(event: InputEvent) -> void:
 		print("Unlock all stuff")
 		savingEnabled = false
 		MusicMenu.get_child(1).play()
+		PortalTransition.cheatAnimation()
 		unlockAll = true
 		
 		world05Unlocked = true
@@ -77,6 +78,7 @@ func _input(event: InputEvent) -> void:
 		savingEnabled = false
 		MusicMenu.get_child(2).play()
 		print("Degreelessness mode ON \nYou feel lighter")
+		PortalTransition.cheatAnimation()
 		
 func checkCompletion():
 	if world01Completed and world02Completed and world03Completed and world04Completed:
@@ -113,6 +115,7 @@ func saveProgress():
 		file2Use.close()
 
 		print("GOTCHA! PROGRESS SAVED!")
+		PortalTransition.saveAnimation()
 		
 func loadGame():
 

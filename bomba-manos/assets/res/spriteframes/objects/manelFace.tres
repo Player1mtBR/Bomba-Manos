@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://dnanir2elqjam"]
+
+[ext_resource type="Texture2D" uid="uid://db0eq0dmq02je" path="res://assets/sprites/manel/manellboss/face.png" id="1_gpfol"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhwyr"]
+atlas = ExtResource("1_gpfol")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4b6s"]
+atlas = ExtResource("1_gpfol")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8i53"]
+atlas = ExtResource("1_gpfol")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbfgo"]
+atlas = ExtResource("1_gpfol")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2ao5"]
+atlas = ExtResource("1_gpfol")
+region = Rect2(50, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nadbv"]
+atlas = ExtResource("1_gpfol")
+region = Rect2(100, 50, 50, 50)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhwyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4b6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8i53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbfgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2ao5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nadbv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]

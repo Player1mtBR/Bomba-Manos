@@ -1,7 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://6swpmr5f1l06"]
+[gd_scene load_steps=19 format=3 uid="uid://6swpmr5f1l06"]
 
 [ext_resource type="Script" uid="uid://8kqjejc1poha" path="res://scripts/menus/loading/portal_transition.gd" id="1_qgwgh"]
 [ext_resource type="AudioStream" uid="uid://bddd4nud342au" path="res://assets/audio/sfx/portal.wav" id="2_vvvje"]
+[ext_resource type="Texture2D" uid="uid://djurtd5cropm4" path="res://assets/sprites/UI/saveIcon.png" id="3_xwtas"]
+[ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="4_xue1a"]
+[ext_resource type="SpriteFrames" uid="uid://dnanir2elqjam" path="res://assets/res/spriteframes/objects/manelFace.tres" id="5_xue1a"]
 
 [sub_resource type="Gradient" id="Gradient_8tnyc"]
 offsets = PackedFloat32Array(0)
@@ -35,6 +38,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SavedIcon:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(608, 512)]
 }
 
 [sub_resource type="Animation" id="Animation_vvvje"]
@@ -86,6 +101,96 @@ _data = {
 &"out": SubResource("Animation_xwtas")
 }
 
+[sub_resource type="Animation" id="Animation_xue1a"]
+resource_name = "saved"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SavedIcon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(608, 512), Vector2(608, 456), Vector2(608, 456), Vector2(608, 512)]
+}
+
+[sub_resource type="Animation" id="Animation_bess2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SavedIcon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(608, 512)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cheats:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 64)]
+}
+
+[sub_resource type="Animation" id="Animation_7qf0a"]
+resource_name = "cheats"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cheats:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 64), Vector2(0, 0), Vector2(0, 0), Vector2(0, 64)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7qf0a"]
+_data = {
+&"RESET": SubResource("Animation_bess2"),
+&"cheats": SubResource("Animation_7qf0a"),
+&"saved": SubResource("Animation_xue1a")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qf0a"]
+atlas = ExtResource("3_xwtas")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8345"]
+atlas = ExtResource("3_xwtas")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_38dbv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qf0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8345")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="PortalTransition" type="CanvasLayer"]
 layer = 2
 script = ExtResource("1_qgwgh")
@@ -101,9 +206,50 @@ libraries = {
 &"": SubResource("AnimationLibrary_xue1a")
 }
 
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7qf0a")
+}
+
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vvvje")
+
+[node name="SavedIcon" type="Node2D" parent="."]
+position = Vector2(608, 512)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SavedIcon"]
+position = Vector2(31.25, -7.74999)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_38dbv")
+frame_progress = 0.0896663
+
+[node name="Label" type="Label" parent="SavedIcon"]
+offset_left = 61.0
+offset_top = -12.0
+offset_right = 240.0
+offset_bottom = 9.0
+theme = ExtResource("4_xue1a")
+theme_override_font_sizes/font_size = 20
+text = "Jogo Salvo!"
+
+[node name="cheats" type="Node2D" parent="."]
+position = Vector2(0, 64)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="cheats"]
+position = Vector2(32, 448)
+sprite_frames = ExtResource("5_xue1a")
+autoplay = "default"
+frame_progress = 0.214348
+
+[node name="Label" type="Label" parent="cheats"]
+offset_left = 64.0
+offset_top = 440.0
+offset_right = 602.0
+offset_bottom = 463.0
+theme = ExtResource("4_xue1a")
+theme_override_font_sizes/font_size = 20
+text = "Cheats ativados, salvar desativado"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
