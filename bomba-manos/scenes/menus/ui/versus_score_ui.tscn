@@ -25,12 +25,14 @@ layout_mode = 1
 theme_override_constants/separation = 184
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 768.0
 offset_right = 896.0
 offset_bottom = 64.0
 texture = SubResource("GradientTexture2D_carrn")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 776.0
 offset_top = 8.0
 offset_right = 888.0

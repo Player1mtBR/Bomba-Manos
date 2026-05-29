@@ -7,7 +7,7 @@ var movespeed := 300
 
 var chargedPower := 0
 var invincible := false
-var invincibilityTime := 1.0
+var extraInvincibilityTime := 0.30
 
 var canMove := true
 var canBlock := true
@@ -38,24 +38,24 @@ func _process(delta: float) -> void:
 				jpAttack()
 				movePlayer2AttackPosition(delta)
 		
-	if Input.is_action_just_pressed("p2_moveUp"):
+	if Input.is_action_just_pressed("block_up"):
 		change_block("up")
 
-	elif Input.is_action_just_pressed("p2_moveLeft"):
+	elif Input.is_action_just_pressed("block_left"):
 		change_block("left")
 
-	elif Input.is_action_just_pressed("p2_moveRight"):
+	elif Input.is_action_just_pressed("block_right"):
 		change_block("right")
 
 
 
-	if currentBlock == "up" and Input.is_action_just_released("p2_moveUp"):
+	if currentBlock == "up" and Input.is_action_just_released("block_up"):
 		stop_block()
 
-	elif currentBlock == "left" and Input.is_action_just_released("p2_moveLeft"):
+	elif currentBlock == "left" and Input.is_action_just_released("block_left"):
 		stop_block()
 
-	elif currentBlock == "right" and Input.is_action_just_released("p2_moveRight"):
+	elif currentBlock == "right" and Input.is_action_just_released("block_right"):
 		stop_block()
 	
 		
@@ -264,9 +264,12 @@ func takeDamage(amount):
 			await get_tree().create_timer(0.05, false).timeout
 			modulate = Color(1, 1, 1)
 			await get_tree().create_timer(0.05, false).timeout
+			modulate = Color(1, 0, 0)
 			
 		#await get_tree().create_timer(invincibilityTime, false).timeout
 		$"../Icons/Faces".modulate = Color(1, 1, 1)
+		await get_tree().create_timer(extraInvincibilityTime, false).timeout
+		modulate = Color(1, 1, 1)
 		invincible = false
 		#print("vulnerable")
 	
