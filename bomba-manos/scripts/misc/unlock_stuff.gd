@@ -81,18 +81,19 @@ func _input(event: InputEvent) -> void:
 		PortalTransition.cheatAnimation()
 		
 func checkCompletion():
-	if world01Completed and world02Completed and world03Completed and world04Completed:
-		world05Unlocked = true
-		
 	world01Completed = completedLevels["W01L05"]
 	
 	world02Completed = completedLevels["W02L05"]
 	
 	world03Completed = completedLevels["W03L05"]
 	
+	
 	world04Completed = completedLevels["W04L05"]
 	
 	world05Completed = completedLevels["W05L01"]
+	
+	if world01Completed and world02Completed and world03Completed and world04Completed:
+		world05Unlocked = true
 	
 
 func saveProgress():

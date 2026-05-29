@@ -6,6 +6,7 @@ var waitToDefeat := 5.0
 
 func _ready() -> void:
 	MusicMenu.get_child(0).stop()
+	PortalTransition.bossOut()
 
 func finalAttack():
 	print("idk")

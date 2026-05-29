@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://dddt13hsx7rge"]
+
+[ext_resource type="Script" uid="uid://dbh72age3iyox" path="res://scripts/menus/ui/player_score_ui.gd" id="1_apmvj"]
+[ext_resource type="Texture2D" uid="uid://s2mevjohxddo" path="res://assets/sprites/UI/redX.png" id="2_4q13d"]
+[ext_resource type="Texture2D" uid="uid://cttr675ttojt3" path="res://assets/res/texture/player_score_ui.tres" id="2_bnjgv"]
+[ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="3_bnjgv"]
+
+[node name="playerScoreUI" type="Control"]
+layout_mode = 3
+anchor_right = 0.22807
+anchor_bottom = 0.114583
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_apmvj")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 184.0
+offset_bottom = 64.0
+texture = ExtResource("2_bnjgv")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 176.0
+offset_bottom = 56.0
+texture = ExtResource("2_bnjgv")
+expand_mode = 1
+
+[node name="CharIcon" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+scale = Vector2(2, 2)
+
+[node name="DeadMarker" type="Sprite2D" parent="CharIcon"]
+visible = false
+texture = ExtResource("2_4q13d")
+
+[node name="killcount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 32.0
+offset_right = 163.0
+offset_bottom = 55.0
+theme = ExtResource("3_bnjgv")
+theme_override_font_sizes/font_size = 17
+text = "Abates: "
+
+[node name="killcountValue" type="Label" parent="killcount"]
+layout_mode = 0
+offset_left = 99.0
+offset_right = 139.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 17
+text = "0"
+
+[node name="wincount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 12.0
+offset_right = 163.0
+offset_bottom = 35.0
+theme = ExtResource("3_bnjgv")
+theme_override_font_sizes/font_size = 17
+text = "Pontos: "
+
+[node name="wincountLabel" type="Label" parent="wincount"]
+layout_mode = 0
+offset_left = 99.0
+offset_right = 139.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 17
+text = "0"

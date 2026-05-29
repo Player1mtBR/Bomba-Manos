@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
 ## escrever ":" define o tipo da variável, pode usar := pra definir o tipo e valor ao mesmo tempo tbm
-@export var playerID := 0 ##permite usar um único script para o input de todos os jogadores
+@export var playerId := 0 ##permite usar um único script para o input de todos os jogadores
 @export var isPlayerOnMenu := false
-@export var charSkin := SpriteFrames #test
+@export var charSkin := SpriteFrames 
+
 
 @export var bombaEX := 1 #01 NORMAL - 02 MESSIAS - 03 MASCARA 04 - FANTASMA - 05 REMOTO
 
@@ -18,6 +19,7 @@ extends CharacterBody2D
 
 var isPlayerAlive := true
 var wonMatch := false
+var useSpawnDelay := true
 
 var canPlayerMove := true
 var playerMoveDelay := 0.3
@@ -37,19 +39,15 @@ var movespeed := 100
 
 func _ready() -> void:
 	animPlayerNode.sprite_frames = charSkin
-	if isPlayerOnMenu == false:
-		#playerID = GlobalScript.selectedPlayer1
-		#GlobalScript.currentPlayers += 1               ###remove comment
-		print(GlobalScript.currentPlayers)
-		#if playerID != GlobalScript.selectedPlayer1 and playerID != GlobalScript.selectedPlayer2:
-		#	queue_free()
+	await get_tree().create_timer(3.0, false).timeout
+	useSpawnDelay = false
 	
 func _process(delta: float) -> void:
-	#if GlobalScript.currentPlayers == 1 and canPlayerMove == true and isPlayerAlive == true:
-	#	victory()
+
 	
-	if Input.is_action_just_pressed("p"+str(playerID)+"_bomb") and placedBombas < maxBombasAtOnce and isPlayerAlive == true and CurrentLevelManager.levelComplete == false:
-		placeBombaNode.placeBombOnMap(equippedBomb, playerID) ##puxa a funcao que está no node
+	if Input.is_action_just_pressed("p"+str(playerId)+"_bomb") and placedBombas < maxBombasAtOnce and isPlayerAlive == true \
+	 and CurrentLevelManager.levelComplete == false and wonMatch == false and useSpawnDelay == false:
+		placeBombaNode.placeBombOnMap(equippedBomb, playerId) ##puxa a funcao que está no node
 		if equippedBomb == 1:
 			placedBombas += 1
 			#GlobalScript.manelBombasCount += 1 ##contador Manel ###REMOVE COMMENT FOR MULTIPLAYER
@@ -68,15 +66,8 @@ func _process(delta: float) -> void:
 		$remoteBombResetTimer.stop()
 		print("timer stopped")
 
-	#if Input.is_action_just_pressed("p"+str(playerID)+"_bomb") and placedBombas < maxBombasAtOnce and isPlayerAlive == true:
-	#	placeBombaNode.placeBombOnMap(equippedBomb, playerID) ##puxa a funcao que está no node
-	#	placedBombas += 1
-	#	#GlobalScript.manelBombasCount += 1 ##contador Manel ###REMOVE COMMENT FOR MULTIPLAYER
-	#	#print("placed bombas: ", placedBombas)
-	#	await get_tree().create_timer(3.0, false).timeout ## cria um novo timer e aguarda o sinal de quando acaba o timer
-	#	placedBombas -= 1
 	
-	if Input.is_action_just_pressed("p"+str(playerID)+"_swap_bomb"):
+	if Input.is_action_just_pressed("p"+str(playerId)+"_swap_bomb"):
 		if equippedBomb == 1:
 			equippedBomb = bombaEX
 		elif equippedBomb == bombaEX:
@@ -95,24 +86,25 @@ func _physics_process(delta: float) -> void:## roda a cada frame de física
 	inputMoveDirection = Vector2(0, 0) ##qual direcao e pra andar
 	
 	## checha input e se o raycast ta colidindo pra poder andar
-	if isPlayerAlive == true and canPlayerMove == true and UnlockStuff.iddqd == false:
+	if isPlayerAlive == true and canPlayerMove == true and UnlockStuff.iddqd == false \
+	and wonMatch == false and useSpawnDelay == false:
 		#print(raycastUp.get_collider())
-		if Input.is_action_pressed("p"+str(playerID)+"_moveUp") and raycastUp.is_colliding() == false:
+		if Input.is_action_pressed("p"+str(playerId)+"_moveUp") and raycastUp.is_colliding() == false:
 			inputMoveDirection = Vector2(0, -1)
 			movePlayer()
 			animPlayerNode.play("move_up")
 			
-		elif Input.is_action_pressed("p"+str(playerID)+"_moveDown") and raycastDown.is_colliding() == false:
+		elif Input.is_action_pressed("p"+str(playerId)+"_moveDown") and raycastDown.is_colliding() == false:
 			inputMoveDirection = Vector2(0, 1)
 			movePlayer()
 			animPlayerNode.play("move_down")
 			
-		elif Input.is_action_pressed("p"+str(playerID)+"_moveLeft") and raycastLeft.is_colliding() == false:
+		elif Input.is_action_pressed("p"+str(playerId)+"_moveLeft") and raycastLeft.is_colliding() == false:
 			inputMoveDirection = Vector2(-1, 0)
 			movePlayer()
 			animPlayerNode.play("move_left")
 			
-		elif Input.is_action_pressed("p"+str(playerID)+"_moveRight") and raycastRight.is_colliding() == false:
+		elif Input.is_action_pressed("p"+str(playerId)+"_moveRight") and raycastRight.is_colliding() == false:
 			inputMoveDirection = Vector2(1, 0)
 			movePlayer()
 			animPlayerNode.play("move_right")
@@ -121,18 +113,10 @@ func _physics_process(delta: float) -> void:## roda a cada frame de física
 	#if Input.is_action_just_pressed("p1_kill"):
 	#	killPlayer()
 	
-	if inputMoveDirection == Vector2(0, 0) and canPlayerMove and isPlayerAlive:
+	if inputMoveDirection == Vector2(0, 0) and canPlayerMove and isPlayerAlive and wonMatch == false:
 		animPlayerNode.stop()
 	
-	if isPlayerOnMenu:
-		animPlayerNode.play("rotate")
-		
-		
-	#IDDQD movement
-	if UnlockStuff.iddqd == true:
-		var direction = Input.get_vector("p1_moveLeft", "p1_moveRight", "p1_moveUp", "p1_moveDown")
-		velocity = (direction * movespeed)
-		move_and_slide()
+
 
 func movePlayer(): ##tween vai levar de um valor a outro de forma gradual
 	if inputMoveDirection:
@@ -149,27 +133,14 @@ func killPlayer(killerId):
 	if isPlayerAlive == true:
 		isPlayerAlive = false
 
-	VersusScoreManager.registerKill(killerId, playerID)
-	VersusScoreManager.registerDeath(playerID)
+	VersusScoreManager.registerKill(killerId, playerId)
+	VersusScoreManager.registerDeath(playerId)
 	await animPlayerNode.animation_finished
 	queue_free()
 	
-func victory():
-	canPlayerMove = false
-	wonMatch = true
-	print(playerID, "victory")
-	GlobalScript.addPoint2Player(playerID)
-	#isPlayerAlive = false
+func playWinAnim():
 	animPlayerNode.play("win")
-	
-	await get_tree().create_timer(4.0, false).timeout
-	if isPlayerAlive == true:
-		queue_free()
-		
-		GlobalScript.restartLevel()
-	#else:
-	#	GlobalScript.removePointFromPlayer(playerID)
-	#	print(GlobalScript.playerScores)
+	wonMatch = true
 
 @export var teleportTunel: Node2D  
 @export var teleportTunel2: Node2D

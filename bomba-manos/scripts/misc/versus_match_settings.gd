@@ -5,10 +5,27 @@ var mapList = {
 }
 
 var characterList = {
-	1 : preload("res://assets/res/spriteframes/bombaman-Sprite-Frames.tres"),
-	2 : preload("res://assets/res/spriteframes/ureiaman-Sprite-Frames.tres"),
-	3 : preload("res://assets/res/spriteframes/rangerman-Sprite-Frames.tres"),
-	4 : preload("res://assets/res/spriteframes/miniman-Sprite-Frames.tres")
+
+	1 : {
+		"name": "Mano",
+		"spriteFrames": preload("res://assets/res/spriteframes/bombaman-Sprite-Frames.tres"),
+		"icon": preload("res://assets/sprites/levels/campaign/extras/faces1.png")
+	},
+	2 : {
+		"name": "S. Hero",
+		"spriteFrames": preload("res://assets/res/spriteframes/ureiaman-Sprite-Frames.tres"),
+		"icon": preload("res://assets/sprites/levels/campaign/extras/faces2.png")
+	},
+	3 : {
+		"name": "Gaspar",
+		"spriteFrames": preload("res://assets/res/spriteframes/rangerman-Sprite-Frames.tres"),
+		"icon": preload("res://assets/sprites/levels/campaign/extras/faces3.png")
+	},
+	4 : {
+		"name": "Sentinela",
+		"spriteFrames": preload("res://assets/res/spriteframes/miniman-Sprite-Frames.tres"),
+		"icon": preload("res://assets/sprites/levels/campaign/extras/faces4.png")
+	}
 }
 
 var mapToLoad : String
@@ -32,17 +49,17 @@ func setupMatch(
 
 	match playerCount:
 		2:
-			p1Char = characterList[setP1Char]
-			p2Char = characterList[setP2Char]
+			p1Char =  setP1Char
+			p2Char =  setP2Char
 		3:
-			p1Char = characterList[setP1Char]
-			p2Char = characterList[setP2Char]
-			p3Char = characterList[setP3Char]
+			p1Char =  setP1Char
+			p2Char =  setP2Char
+			p3Char =  setP3Char
 		4:
-			p1Char = characterList[setP1Char]
-			p2Char = characterList[setP2Char]
-			p3Char = characterList[setP3Char]
-			p4Char = characterList[setP4Char]
+			p1Char =  setP1Char
+			p2Char =  setP2Char
+			p3Char =  setP3Char
+			p4Char =  setP4Char
 
 func setMap(mapId):
 	mapToLoad = mapList[mapId]

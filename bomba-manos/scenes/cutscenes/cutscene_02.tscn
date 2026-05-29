@@ -1,13 +1,443 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckcwf0yhamcqc"]
+[gd_scene load_steps=109 format=3 uid="uid://ckcwf0yhamcqc"]
 
 [ext_resource type="Script" uid="uid://bj12gul8etm1p" path="res://scripts/misc/cutscene_01.gd" id="1_ugm7o"]
 [ext_resource type="VideoStream" uid="uid://c6jsmrnqk6mfw" path="res://assets/video/YoU cAn'T jUsT sHoOt a hOlE iNtO ThE sUrFaCe oF mArS.ogv" id="2_ovcn2"]
+[ext_resource type="Texture2D" uid="uid://b2nexm54d27jm" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation1.png" id="3_vi5tq"]
+[ext_resource type="Texture2D" uid="uid://dfamp6w8hng7k" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation2.png" id="4_ttrm4"]
+[ext_resource type="Texture2D" uid="uid://cdo5axyuy2v18" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation3.png" id="5_y81hy"]
+[ext_resource type="Texture2D" uid="uid://do133cai8wkka" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation4.png" id="6_wn4m1"]
+[ext_resource type="Texture2D" uid="uid://chb6u5q6vebut" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation5.png" id="7_ellhd"]
+[ext_resource type="Texture2D" uid="uid://dg1qtycc47bj4" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation6.png" id="8_qr32g"]
+[ext_resource type="Texture2D" uid="uid://dnixwomjlqryc" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation7.png" id="9_bj6jx"]
+[ext_resource type="Texture2D" uid="uid://gedpit057w1r" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation8.png" id="10_wvy22"]
+[ext_resource type="Texture2D" uid="uid://j1su77qk5m4t" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation9.png" id="11_0nl0t"]
+[ext_resource type="Texture2D" uid="uid://ybg1pbhculsn" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation10.png" id="12_q0455"]
+[ext_resource type="Texture2D" uid="uid://1ad0r1ak613i" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation11.png" id="13_d80pa"]
+[ext_resource type="Texture2D" uid="uid://dwdl3typ0llpw" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation12.png" id="14_ijr6f"]
+[ext_resource type="Texture2D" uid="uid://dbye70m3r00es" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation13.png" id="15_iglk4"]
+[ext_resource type="Texture2D" uid="uid://dvntvy1v7omd0" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation14.png" id="16_7883y"]
+[ext_resource type="Texture2D" uid="uid://24umvjskskr2" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation15.png" id="17_pq2kx"]
+[ext_resource type="Texture2D" uid="uid://bpsv48r5culm6" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation16.png" id="18_gxhnx"]
+[ext_resource type="Texture2D" uid="uid://b4m3htuqbonvv" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation17.png" id="19_x6l7w"]
+[ext_resource type="Texture2D" uid="uid://br1ku3bhwp43v" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation18.png" id="20_wm8rh"]
+[ext_resource type="Texture2D" uid="uid://ba3q6m62d0m1j" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation19.png" id="21_r4xi8"]
+[ext_resource type="Texture2D" uid="uid://dx07603r4wsww" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation20.png" id="22_mbl6a"]
+[ext_resource type="Texture2D" uid="uid://dy63eeeturtmw" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation21.png" id="23_nlsfm"]
+[ext_resource type="Texture2D" uid="uid://b3jmw71esl80p" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation22.png" id="24_m5677"]
+[ext_resource type="Texture2D" uid="uid://ccftfa6d0hbes" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation23.png" id="25_qgwuk"]
+[ext_resource type="Texture2D" uid="uid://dr7q0ndsrqkmn" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation24.png" id="26_vr6us"]
+[ext_resource type="Texture2D" uid="uid://dwb0ut1xjedkj" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation25.png" id="27_5pb3w"]
+[ext_resource type="Texture2D" uid="uid://cjoc7jk22sn87" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation26.png" id="28_y766u"]
+[ext_resource type="Texture2D" uid="uid://bft860od8xl2x" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation27.png" id="29_3xpee"]
+[ext_resource type="Texture2D" uid="uid://c1jbp3ido462e" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation28.png" id="30_qeswb"]
+[ext_resource type="Texture2D" uid="uid://bsvhoae2byjib" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation29.png" id="31_x8o1w"]
+[ext_resource type="Texture2D" uid="uid://df1gs26grxvup" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation30.png" id="32_jtwy2"]
+[ext_resource type="Texture2D" uid="uid://pjvqk2g4gtb2" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation31.png" id="33_m7g40"]
+[ext_resource type="Texture2D" uid="uid://2uyydha8ukv3" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation32.png" id="34_t6nty"]
+[ext_resource type="Texture2D" uid="uid://bdjh2554npjnt" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation33.png" id="35_xqtnd"]
+[ext_resource type="Texture2D" uid="uid://cw47ir1njilxn" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation34.png" id="36_76utb"]
+[ext_resource type="Texture2D" uid="uid://cfmqfuhcsdpj7" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation35.png" id="37_iugg1"]
+[ext_resource type="Texture2D" uid="uid://ixoa405wxt8i" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation36.png" id="38_rf5xq"]
+[ext_resource type="Texture2D" uid="uid://opdfsmbedlfs" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation37.png" id="39_aisl0"]
+[ext_resource type="Texture2D" uid="uid://c44op720m6r5g" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation38.png" id="40_sfglo"]
+[ext_resource type="Texture2D" uid="uid://cabsketdcovfj" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation39.png" id="41_ohyxq"]
+[ext_resource type="Texture2D" uid="uid://buifm5iivphho" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation40.png" id="42_e4bqb"]
+[ext_resource type="Texture2D" uid="uid://c5qalgb18e6i6" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation41.png" id="43_chpjj"]
+[ext_resource type="Texture2D" uid="uid://cub7wr4gbdutr" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation42.png" id="44_lk5jf"]
+[ext_resource type="Texture2D" uid="uid://do6cctpcjn1dr" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation43.png" id="45_gdsqg"]
+[ext_resource type="Texture2D" uid="uid://c1c4s8jup7fri" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation44.png" id="46_lecyo"]
+[ext_resource type="Texture2D" uid="uid://d041u7f582hy" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation45.png" id="47_vsm5b"]
+[ext_resource type="Texture2D" uid="uid://cwfdo2fuo3h8j" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation46.png" id="48_ko5xc"]
+[ext_resource type="Texture2D" uid="uid://rqmnriv15mmm" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation47.png" id="49_r5rjx"]
+[ext_resource type="Texture2D" uid="uid://5m824yashlqy" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation48.png" id="50_ir6m2"]
+[ext_resource type="Texture2D" uid="uid://0r5s4r40mqse" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation49.png" id="51_pmcxs"]
+[ext_resource type="Texture2D" uid="uid://c64crs3khjk4f" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation50.png" id="52_jj8rx"]
+[ext_resource type="Texture2D" uid="uid://bslldy1q3rskv" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation51.png" id="53_7k0fu"]
+[ext_resource type="Texture2D" uid="uid://bphqjhki6fvcb" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation52.png" id="54_ofhum"]
+[ext_resource type="Texture2D" uid="uid://bdw51j7me7qfi" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation53.png" id="55_w5er5"]
+[ext_resource type="Texture2D" uid="uid://32hrrdas1lus" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation54.png" id="56_6wwu5"]
+[ext_resource type="Texture2D" uid="uid://bk8jx0gksv2tb" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation55.png" id="57_o4n8y"]
+[ext_resource type="Texture2D" uid="uid://bf66eu7ntpf16" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation56.png" id="58_ikrr6"]
+[ext_resource type="Texture2D" uid="uid://caawwme66pbb6" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation57.png" id="59_xyntd"]
+[ext_resource type="Texture2D" uid="uid://hsfkcnljwk2r" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation58.png" id="60_isetg"]
+[ext_resource type="Texture2D" uid="uid://fd8t6gh2h37" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation59.png" id="61_u2383"]
+[ext_resource type="Texture2D" uid="uid://by5or76427ie0" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation60.png" id="62_50sce"]
+[ext_resource type="Texture2D" uid="uid://brd6ufd7b4vch" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation61.png" id="63_nk2p0"]
+[ext_resource type="Texture2D" uid="uid://d2ru0kxhiaw4v" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation62.png" id="64_suhje"]
+[ext_resource type="Texture2D" uid="uid://ipko4sqeijnr" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation63.png" id="65_mxe0p"]
+[ext_resource type="Texture2D" uid="uid://cuyfnaa37cmo7" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation64.png" id="66_lpih0"]
+[ext_resource type="Texture2D" uid="uid://dfju3yccgsyps" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation65.png" id="67_1mnff"]
+[ext_resource type="Texture2D" uid="uid://co2xyoq0txwjh" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation66.png" id="68_1lcqa"]
+[ext_resource type="Texture2D" uid="uid://drrobwajwbego" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation67.png" id="69_kucoh"]
+[ext_resource type="Texture2D" uid="uid://jjffkajs8lc0" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation68.png" id="70_w8o00"]
+[ext_resource type="Texture2D" uid="uid://iwoovroydfla" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation69.png" id="71_8vsmx"]
+[ext_resource type="Texture2D" uid="uid://cf1t4r4203ns0" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation70.png" id="72_ibxxs"]
+[ext_resource type="Texture2D" uid="uid://bstgjm6r32dr2" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation71.png" id="73_uyw2k"]
+[ext_resource type="Texture2D" uid="uid://dv8vxds4u4ctq" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation72.png" id="74_4yext"]
+[ext_resource type="Texture2D" uid="uid://jmuduy3e6mir" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation73.png" id="75_gdmq8"]
+[ext_resource type="Texture2D" uid="uid://c7ipr7ul6srub" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation74.png" id="76_g1vo5"]
+[ext_resource type="Texture2D" uid="uid://cb4iawo74eiu3" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation75.png" id="77_ua2wr"]
+[ext_resource type="Texture2D" uid="uid://xtuvglq333lk" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation76.png" id="78_ywavr"]
+[ext_resource type="Texture2D" uid="uid://inetouc7dke6" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation77.png" id="79_n403q"]
+[ext_resource type="Texture2D" uid="uid://d0t3lcfaxofji" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation78.png" id="80_74k3i"]
+[ext_resource type="Texture2D" uid="uid://cexxlklakotf0" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation79.png" id="81_0dw73"]
+[ext_resource type="Texture2D" uid="uid://6k00na6ii0h5" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation80.png" id="82_haaus"]
+[ext_resource type="Texture2D" uid="uid://dqoclj5wdf3ea" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation81.png" id="83_d8rqk"]
+[ext_resource type="Texture2D" uid="uid://cdp0a1inals44" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation82.png" id="84_bl4yr"]
+[ext_resource type="Texture2D" uid="uid://nywj4q2lrcg3" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation83.png" id="85_10f8o"]
+[ext_resource type="Texture2D" uid="uid://cq8mcbhn5rjj5" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation84.png" id="86_6q7o8"]
+[ext_resource type="Texture2D" uid="uid://dlc563jis4s8m" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation85.png" id="87_27ji3"]
+[ext_resource type="Texture2D" uid="uid://kvrpeqq14w5c" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation86.png" id="88_4gtre"]
+[ext_resource type="Texture2D" uid="uid://bk3v17vptrieo" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation87.png" id="89_0xbni"]
+[ext_resource type="Texture2D" uid="uid://dsql2xmflgug6" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation88.png" id="90_acg1b"]
+[ext_resource type="Texture2D" uid="uid://35eny7m1pqgs" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation89.png" id="91_chci4"]
+[ext_resource type="Texture2D" uid="uid://63x3to1mv6hl" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation90.png" id="92_rxh4t"]
+[ext_resource type="Texture2D" uid="uid://dmhtfvxlev2ay" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation91.png" id="93_m511d"]
+[ext_resource type="Texture2D" uid="uid://cry2eju0e0v1m" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation92.png" id="94_ig05l"]
+[ext_resource type="Texture2D" uid="uid://c1ptgktsxw6wu" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation93.png" id="95_5mt4w"]
+[ext_resource type="Texture2D" uid="uid://bictw6vq5dovd" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation94.png" id="96_qi5ph"]
+[ext_resource type="Texture2D" uid="uid://b4o7y4b03omrc" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation95.png" id="97_khwut"]
+[ext_resource type="Texture2D" uid="uid://bu5tp4qco6gnr" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation96.png" id="98_864oy"]
+[ext_resource type="Texture2D" uid="uid://bkdfn2kjse50c" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation97.png" id="99_no2k2"]
+[ext_resource type="Texture2D" uid="uid://jt268gp8mye6" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation98.png" id="100_j48th"]
+[ext_resource type="Texture2D" uid="uid://by6imnre8xk8u" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation99.png" id="101_l52k0"]
+[ext_resource type="Texture2D" uid="uid://d3gy3etw51a0s" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation100.png" id="102_yxv1t"]
+[ext_resource type="Texture2D" uid="uid://1brsig3rrcfd" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation101.png" id="103_jyvwh"]
+[ext_resource type="Texture2D" uid="uid://dfrep8x4n4cta" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation102.png" id="104_cb68p"]
+[ext_resource type="Texture2D" uid="uid://csu8itdisaj25" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation103.png" id="105_hqilp"]
+[ext_resource type="Texture2D" uid="uid://bhv6qmcjomydo" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation104.png" id="106_l3jpg"]
+[ext_resource type="Texture2D" uid="uid://cde5kdw3oobmw" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation105.png" id="107_vr66j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_neasb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vi5tq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ttrm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y81hy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wn4m1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ellhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qr32g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bj6jx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wvy22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0nl0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_q0455")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_d80pa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ijr6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_iglk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7883y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pq2kx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_gxhnx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_x6l7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_wm8rh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_r4xi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_mbl6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_nlsfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_m5677")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_qgwuk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_vr6us")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_5pb3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_y766u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_3xpee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_qeswb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_x8o1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_jtwy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_m7g40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_t6nty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_xqtnd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_76utb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_iugg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_rf5xq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_aisl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_sfglo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_ohyxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_e4bqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_chpjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_lk5jf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_gdsqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_lecyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_vsm5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_ko5xc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_r5rjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_ir6m2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_pmcxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_jj8rx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_7k0fu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_ofhum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_w5er5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_6wwu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_o4n8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_ikrr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_xyntd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_isetg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_u2383")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_50sce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_nk2p0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_suhje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_mxe0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_lpih0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_1mnff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_1lcqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_kucoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_w8o00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_8vsmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_ibxxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_uyw2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_4yext")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_gdmq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_g1vo5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_ua2wr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_ywavr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_n403q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_74k3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_0dw73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_haaus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_d8rqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_bl4yr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_10f8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_6q7o8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_27ji3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_4gtre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_0xbni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_acg1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_chci4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_rxh4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_m511d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_ig05l")
+}, {
+"duration": 10.0,
+"texture": ExtResource("95_5mt4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_qi5ph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_khwut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_864oy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_no2k2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_j48th")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_l52k0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_yxv1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_jyvwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_cb68p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_hqilp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_l3jpg")
+}, {
+"duration": 5.0,
+"texture": ExtResource("107_vr66j")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
 
 [node name="cutscene02" type="Node2D"]
 script = ExtResource("1_ugm7o")
 toLevelFile = "uid://suap6bq2v1le"
+awaitBeforeLoad = 12.0
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -20,9 +450,13 @@ offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("2_ovcn2")
-autoplay = true
 expand = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_neasb")
+frame = 104
+frame_progress = 1.0
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

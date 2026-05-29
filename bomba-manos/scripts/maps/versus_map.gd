@@ -18,6 +18,8 @@ var playerScene := preload(
 func _ready() -> void:
 	VersusScoreManager.setupPlayers()
 	spawnAllPlayers()
+	$VersusScoreUI.createUiElements()
+	$Control/AnimationPlayer.play("begin")
 
 func _process(delta: float) -> void:
 	if GlobalScript.triggerBombaSfx:
@@ -30,8 +32,8 @@ func spawnPlayer(setId, setCharacter):
 		return
 
 	var playerInstance = playerScene.instantiate()
-	playerInstance.playerID = setId
-	playerInstance.charSkin = setCharacter
+	playerInstance.playerId = setId
+	playerInstance.charSkin = VersusMatchSettings.characterList[setCharacter]["spriteFrames"]
 	playerInstance.global_position = spawnPoints[setId - 1].global_position
 	get_tree().current_scene.call_deferred("add_child", playerInstance)
 

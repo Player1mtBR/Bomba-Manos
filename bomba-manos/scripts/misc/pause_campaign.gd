@@ -28,7 +28,10 @@ func _on_sair_pressed() -> void:
 	CurrentLevelManager.currentEnemiesAlive = 0
 	get_tree().paused = false
 	Loader.loadingScreen2Scene("res://scenes/menus/main_menu.tscn")
+	if PortalTransition.isPlaying:
+		PortalTransition.stopAnim()
 	PortalTransition.endAnimation()
+	AudioServer.set_bus_effect_enabled(1, 0, false)
 
 
 func _on_config_pressed() -> void:

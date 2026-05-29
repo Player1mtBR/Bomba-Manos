@@ -19,7 +19,7 @@ extends Node2D
 ]
 
 var skipIntro := true
-var phase := 4
+var phase := 1
 
 var projectile01Scene = preload("res://scenes/levels/campaign/extras/projectile_01.tscn")
 var projectile02Scene = preload("res://scenes/levels/campaign/extras/projectile_02.tscn")
@@ -97,6 +97,8 @@ func _ready() -> void:
 		$"../soundtrack".play()
 		await $AnimationPlayer.animation_finished
 		coolAnimation = false
+	await get_tree().create_timer(0.1, false).timeout
+	$visual.visible = true
 	
 	$"../soundtrack".play()
 	#await get_tree().create_timer(3.0).timeout
@@ -111,6 +113,9 @@ func _physics_process(delta: float) -> void:
 		#if area.name
 
 func _process(delta: float) -> void:
+	if coolAnimation == true:
+		canAttack = false
+	
 	if canAttack == true and coolAnimation == false and phase < 4:
 		var phRandom : int
 		if chargedCount > 0:
@@ -121,7 +126,16 @@ func _process(delta: float) -> void:
 			phRandom = randi_range(1, 4)
 
 		canAttack = false
-		$AnimationPlayer.play("manelFloat")
+		print("phase check", phase)
+		match phase:
+			1:
+				$visual/AnimatedSprite2D.play("attack01")
+			2:
+				$visual/AnimatedSprite2D.play("attack02")
+			3:
+				$AnimationPlayer.play("manelFloat")
+			4:
+				$AnimationPlayer.play("manelFloat")
 		match phRandom:
 			0:
 				attackLaserCorners()
@@ -130,22 +144,22 @@ func _process(delta: float) -> void:
 				if chargedCount <= 0:
 					chooseCharged()
 					chargedCount = chargeCountCap
-					$visual/AnimatedSprite2D.play("attack01")
+					#$visual/AnimatedSprite2D.play("attack01")
 					$sfx/risadaPessecopata.play()
 			2:
 				chooseLaser()
 				chargedCount -= 1
-				$visual/AnimatedSprite2D.play("attack02")
+				#$visual/AnimatedSprite2D.play("attack02")
 				#print("laser")
 			3:
 				chooseProjectile()
-				chargedCount -= 1
-				$visual/AnimatedSprite2D.play("attack03")
+				#chargedCount -= 1
+				#$visual/AnimatedSprite2D.play("attack03")
 				#print("pew")
 			4:
 				chooseProjectile()
 				chargedCount -= 1
-				$visual/AnimatedSprite2D.play("attack04")
+				#$visual/AnimatedSprite2D.play("attack04")
 				#print("pew")
 				
 		#print("chargedCount: ",chargedCount)
@@ -154,7 +168,15 @@ func _process(delta: float) -> void:
 		#print("can attack ", canAttack)
 		print("remaining to charge: ", chargedCount," / ",chargeCountCap)
 		await $visual/AnimatedSprite2D.animation_finished
-		$visual/AnimatedSprite2D.play("default")
+		match phase:
+			1:
+				$visual/AnimatedSprite2D.play("default")
+			2:
+				$visual/AnimatedSprite2D.play("idle_phase02")
+			3:
+				$AnimationPlayer.play("manelFloat")
+			4:
+				$AnimationPlayer.play("manelFloat")
 		await get_tree().create_timer(attackCooldown5, false).timeout
 		#canAttack = true
 	
@@ -614,15 +636,30 @@ func laser01(setRotation : float, laserPosition : Vector2):
 	
 func takeDamage():
 	coolAnimation = true
-	$AnimationPlayer.play("damage")
-	print("manel hit, phase ", phase)
 	canAttack = false
+	
+	$AnimationPlayer.play("damage")
+	coolAnimation = true
+	await $AnimationPlayer.animation_finished
+	canAttack = false
+	
 	$visual/AnimatedSprite2D.play("hit0"+str(phase))
+	coolAnimation = true
+	
+	canAttack = false
 	phase += 1
 	chargeCountCap -= 2
 	chargedCount = chargeCountCap
+	print("manel hit, phase ", phase)
+	$AnimationPlayer.play("manel_generic_fade")
+	coolAnimation = true
+	await get_tree().create_timer(2.5, false).timeout
+	canAttack = false
+	
+	$visual/AnimatedSprite2D.offset = Vector2(0, 48)
+	$visual.position = Vector2(0, 0)
 	await $visual/AnimatedSprite2D.animation_finished
-	await get_tree().create_timer(5.0, false).timeout #remove after animation is done
+	#await get_tree().create_timer(2.0, false).timeout #remove after animation is done
 	$sfx/risadaPessecopata.play()
 	await get_tree().create_timer(3.0, false).timeout
 	$sfx/risadaPessecopata.play()
@@ -640,6 +677,17 @@ func finalAttack():
 	#$"../Camera2D".camShake01Trigger = true
 	$"../FinalAttack".isActive = true
 	pass
+
+func playIdleAnim():
+	match phase:
+		1:
+			pass
+		2:
+			pass
+		3:
+			pass
+		4:
+			pass
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	#print("area ",area.name)

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cnj7al4mtmfwd" path="res://scripts/misc/dialog/dialog.gd" id="1_e7hda"]
 [ext_resource type="AudioStream" uid="uid://w063dn70k50t" path="res://assets/audio/tracks/extra/BombaRangers.mp3" id="2_fhwcq"]
-[ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="2_j7ayp"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="3_1r307"]
 [ext_resource type="AudioStream" uid="uid://bddd4nud342au" path="res://assets/audio/sfx/portal.wav" id="3_khg6w"]
+[ext_resource type="FontFile" uid="uid://dnyyyvu7muwki" path="res://assets/PixelOperator-Bold.ttf" id="4_fhwcq"]
 
 [sub_resource type="Animation" id="Animation_fhwcq"]
 length = 0.001
@@ -335,8 +335,10 @@ offset_top = -24.0
 offset_right = 896.0
 offset_bottom = 104.0
 scale = Vector2(0.25, 0.25)
-theme = ExtResource("2_j7ayp")
-text = "texto exibido"
+theme_override_fonts/font = ExtResource("4_fhwcq")
+theme_override_font_sizes/font_size = 48
+text = "texto exibido
+ção"
 paragraph_separator = "\\"
 visible_characters = 0
 visible_ratio = 0.0

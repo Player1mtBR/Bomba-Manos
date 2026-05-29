@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://6swpmr5f1l06"]
+[gd_scene load_steps=23 format=3 uid="uid://6swpmr5f1l06"]
 
 [ext_resource type="Script" uid="uid://8kqjejc1poha" path="res://scripts/menus/loading/portal_transition.gd" id="1_qgwgh"]
 [ext_resource type="AudioStream" uid="uid://bddd4nud342au" path="res://assets/audio/sfx/portal.wav" id="2_vvvje"]
@@ -51,6 +51,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(608, 512)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_vvvje"]
 resource_name = "in"
@@ -94,28 +106,43 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xue1a"]
-_data = {
-&"RESET": SubResource("Animation_mm6vg"),
-&"in": SubResource("Animation_vvvje"),
-&"out": SubResource("Animation_xwtas")
-}
-
-[sub_resource type="Animation" id="Animation_xue1a"]
-resource_name = "saved"
-length = 3.0
-step = 0.1
+[sub_resource type="Animation" id="Animation_q8345"]
+resource_name = "boss_in"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SavedIcon:position")
+tracks/0/path = NodePath("TextureRect2:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 2, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(608, 512), Vector2(608, 456), Vector2(608, 456), Vector2(608, 512)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_38dbv"]
+resource_name = "boss_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xue1a"]
+_data = {
+&"RESET": SubResource("Animation_mm6vg"),
+&"boss_in": SubResource("Animation_q8345"),
+&"boss_out": SubResource("Animation_38dbv"),
+&"in": SubResource("Animation_vvvje"),
+&"out": SubResource("Animation_xwtas")
 }
 
 [sub_resource type="Animation" id="Animation_bess2"]
@@ -162,6 +189,23 @@ tracks/0/keys = {
 "values": [Vector2(0, 64), Vector2(0, 0), Vector2(0, 0), Vector2(0, 64)]
 }
 
+[sub_resource type="Animation" id="Animation_xue1a"]
+resource_name = "saved"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SavedIcon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(608, 512), Vector2(608, 456), Vector2(608, 456), Vector2(608, 512)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7qf0a"]
 _data = {
 &"RESET": SubResource("Animation_bess2"),
@@ -190,6 +234,13 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="Gradient" id="Gradient_xue1a"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bess2"]
+gradient = SubResource("Gradient_xue1a")
 
 [node name="PortalTransition" type="CanvasLayer"]
 layer = 2
@@ -251,5 +302,14 @@ offset_bottom = 463.0
 theme = ExtResource("4_xue1a")
 theme_override_font_sizes/font_size = 20
 text = "Cheats ativados, salvar desativado"
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_bess2")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

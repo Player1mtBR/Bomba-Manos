@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://hola2cxa0s7h"]
+
+[ext_resource type="Script" uid="uid://blc1wor3lq6vd" path="res://scripts/menus/ui/versus_score_ui.gd" id="1_deixw"]
+[ext_resource type="Texture2D" uid="uid://db0eq0dmq02je" path="res://assets/sprites/manel/manellboss/face.png" id="2_7ojyc"]
+[ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="3_carrn"]
+
+[sub_resource type="Gradient" id="Gradient_7ojyc"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.293959, 0.000168458, 0.955282, 0.294118)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_carrn"]
+gradient = SubResource("Gradient_7ojyc")
+
+[node name="VersusScoreUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_deixw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+theme_override_constants/separation = 184
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 768.0
+offset_right = 896.0
+offset_bottom = 64.0
+texture = SubResource("GradientTexture2D_carrn")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 776.0
+offset_top = 8.0
+offset_right = 888.0
+offset_bottom = 56.0
+texture = SubResource("GradientTexture2D_carrn")
+expand_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(800, 32)
+texture = ExtResource("2_7ojyc")
+region_enabled = true
+region_rect = Rect2(0, 0, 50, 50)
+
+[node name="ManelCounter" type="Label" parent="Sprite2D"]
+offset_left = 32.0
+offset_top = -16.0
+offset_right = 72.0
+offset_bottom = 18.0
+theme = ExtResource("3_carrn")
+theme_override_font_sizes/font_size = 34
+text = "0"
