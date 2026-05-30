@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c0hokdg4uk5yy"]
 
-[ext_resource type="Script" uid="uid://cn8f1hji03nmf" path="res://scripts/teleportTunel.gd" id="1_55naq"]
+[ext_resource type="Script" uid="uid://cn8f1hji03nmf" path="res://scenes/levels/campaign/scripts/teleportTunel.gd" id="1_55naq"]
 [ext_resource type="SpriteFrames" uid="uid://bwhj4dfvfrskr" path="res://assets/res/spriteframes/TunelTeleport.tres" id="2_ov6aw"]
 
 [sub_resource type="GDScript" id="GDScript_rl2hc"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bk05cue0vo4me"]
 
-[ext_resource type="Script" uid="uid://btyho8ym5bvky" path="res://scripts/misc/bossfight/projectile_01.gd" id="1_pa28f"]
+[ext_resource type="Script" uid="uid://btyho8ym5bvky" path="res://scenes/levels/campaign/scripts/misc/bossfight/projectile_01.gd" id="1_pa28f"]
 [ext_resource type="Texture2D" uid="uid://b8f461sp7xqcr" path="res://assets/sprites/manel/manellboss/projectiles/Projetilpequeno1-sheet.png" id="2_nmbhu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sypa5"]

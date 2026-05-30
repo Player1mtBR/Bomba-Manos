@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://cy17q4irdki4b"]
 
-[ext_resource type="Script" uid="uid://dhhab8c8xnrfb" path="res://scripts/breakable_block.gd" id="1_xteda"]
+[ext_resource type="Script" uid="uid://dhhab8c8xnrfb" path="res://scenes/levels/campaign/scripts/breakable_block.gd" id="1_xteda"]
 [ext_resource type="Texture2D" uid="uid://dlwu3y6xyxc3k" path="res://assets/sprites/levels/campaign/world04/mesa.png" id="2_hiwo0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hiwo0"]

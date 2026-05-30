@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=4 uid="uid://deqh6jn3ncojq"]
 
-[ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_4h1at"]
+[ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scenes/levels/campaign/scripts/lab_test_01.gd" id="1_4h1at"]
 [ext_resource type="Texture2D" uid="uid://bxfyl8d5ehq0t" path="res://assets/sprites/levels/campaign/world04/cenario05.png" id="2_da8yb"]
 [ext_resource type="Texture2D" uid="uid://5q4y76mfra7u" path="res://assets/sprites/levels/campaign/world04/cenario04.png" id="3_vsy6w"]
 [ext_resource type="Texture2D" uid="uid://da4rtja4y128d" path="res://assets/sprites/levels/campaign/world04/wallCorne06.png" id="4_vg1gn"]

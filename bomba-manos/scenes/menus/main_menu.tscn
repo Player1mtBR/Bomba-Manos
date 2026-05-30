@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cj21dxxqeeufg"]
 
-[ext_resource type="Script" uid="uid://hx1q14ialw20" path="res://scripts/menus/main_menu.gd" id="1_xqga4"]
+[ext_resource type="Script" uid="uid://hx1q14ialw20" path="res://scenes/levels/campaign/scripts/menus/main_menu.gd" id="1_xqga4"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="2_ovrgc"]
 
 [node name="Menu" type="Control"]
@@ -69,12 +69,15 @@ text = "Creditos"
 layout_mode = 2
 theme = ExtResource("2_ovrgc")
 text = "Sair"
+<<<<<<< HEAD
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "testToRemoveAfterCommit"
+=======
+>>>>>>> a02f661414ca98951434f75f0f9782c235f615cc
 
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Campanha" to="." method="_on_campanha_pressed"]
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Versus" to="." method="_on_versus_pressed"]

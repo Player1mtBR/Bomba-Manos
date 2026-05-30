@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://wyq2fculrhic"]
 
-[ext_resource type="Script" uid="uid://cv2yv030f321n" path="res://scripts/menus/worldSelect/campaign_world_select.gd" id="1_oqn5v"]
+[ext_resource type="Script" uid="uid://cv2yv030f321n" path="res://scenes/levels/campaign/scripts/menus/worldSelect/campaign_world_select.gd" id="1_oqn5v"]
 [ext_resource type="Texture2D" uid="uid://bryq58u6v2vqq" path="res://assets/sprites/levels/campaign/extras/Sprite da cena da boss fight.png" id="2_l5fjb"]
 [ext_resource type="PackedScene" uid="uid://8cojvq8c0nxq" path="res://scenes/menus/worldSelectScenes/world_icon.tscn" id="2_x64fe"]
 [ext_resource type="Texture2D" uid="uid://c02aiiewo0clu" path="res://assets/sprites/levels/campaign/world01/WorldPixelArt.png" id="3_d48f2"]

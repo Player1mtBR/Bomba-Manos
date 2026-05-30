@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://o886kdk1rmgp"]
 
-[ext_resource type="Script" uid="uid://db51vpoxlelql" path="res://scripts/menus/worldSelect/campaign_level_select.gd" id="1_stwgo"]
+[ext_resource type="Script" uid="uid://db51vpoxlelql" path="res://scenes/levels/campaign/scripts/menus/worldSelect/campaign_level_select.gd" id="1_stwgo"]
 [ext_resource type="PackedScene" uid="uid://vqadtrjtxsn5" path="res://scenes/menus/worldSelectScenes/level_icon.tscn" id="2_x5nyx"]
 [ext_resource type="PackedScene" uid="uid://c3i3avv75txs4" path="res://scenes/menus/worldSelectScenes/player_icon.tscn" id="3_3ka0m"]
 [ext_resource type="SpriteFrames" uid="uid://dnwsmvk3wpfgx" path="res://assets/res/spriteframes/ureiaman-Sprite-Frames.tres" id="4_x5nyx"]

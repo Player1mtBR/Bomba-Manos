@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=4 uid="uid://c0lvasauvhdj5"]
 
-[ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_3c7bv"]
+[ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scenes/levels/campaign/scripts/lab_test_01.gd" id="1_3c7bv"]
 [ext_resource type="Texture2D" uid="uid://bxfyl8d5ehq0t" path="res://assets/sprites/levels/campaign/world04/cenario05.png" id="2_7pcwy"]
 [ext_resource type="Texture2D" uid="uid://cx1sqwd2s3rdj" path="res://assets/sprites/levels/campaign/world04/damnBroLetsCode.png" id="2_fxpct"]
 [ext_resource type="Texture2D" uid="uid://5q4y76mfra7u" path="res://assets/sprites/levels/campaign/world04/cenario04.png" id="3_5mrkk"]

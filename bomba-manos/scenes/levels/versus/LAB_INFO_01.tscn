@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=4 uid="uid://daotc13i8n8ay"]
 
-[ext_resource type="Script" uid="uid://jrv8xto1roqu" path="res://scripts/maps/versus_map.gd" id="1_ll2d3"]
+[ext_resource type="Script" uid="uid://jrv8xto1roqu" path="res://scenes/levels/campaign/scripts/maps/versus_map.gd" id="1_ll2d3"]
 [ext_resource type="Texture2D" uid="uid://drutjoa1y5g30" path="res://assets/sprites/damnBroLetsCode.png" id="2_du6be"]
 [ext_resource type="Texture2D" uid="uid://c3pnfnouiewui" path="res://assets/sprites/cenario02.png" id="3_7lkm1"]
 [ext_resource type="Texture2D" uid="uid://bl0ijw02ik1ku" path="res://assets/sprites/cenario03.png" id="4_ek204"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://frdo0jfku5v7"]
 
-[ext_resource type="Script" uid="uid://cnj7al4mtmfwd" path="res://scripts/misc/dialog/dialog.gd" id="1_e7hda"]
+[ext_resource type="Script" uid="uid://cnj7al4mtmfwd" path="res://scenes/levels/campaign/scripts/misc/dialog/dialog.gd" id="1_e7hda"]
 [ext_resource type="AudioStream" uid="uid://w063dn70k50t" path="res://assets/audio/tracks/extra/BombaRangers.mp3" id="2_fhwcq"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="3_1r307"]
 [ext_resource type="AudioStream" uid="uid://bddd4nud342au" path="res://assets/audio/sfx/portal.wav" id="3_khg6w"]

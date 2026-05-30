@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cb6neg2ddhkn"]
 
-[ext_resource type="Script" uid="uid://dhhab8c8xnrfb" path="res://scripts/breakable_block.gd" id="1_20sil"]
+[ext_resource type="Script" uid="uid://dhhab8c8xnrfb" path="res://scenes/levels/campaign/scripts/breakable_block.gd" id="1_20sil"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="2_0b0tg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0b0tg"]

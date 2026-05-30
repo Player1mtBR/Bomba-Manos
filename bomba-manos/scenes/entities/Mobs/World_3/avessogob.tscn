@@ -1,6 +1,6 @@
 [gd_scene load_steps=60 format=3 uid="uid://du7ge0tpaxnas"]
 
-[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scripts/IAs/base_ia.gd" id="1_hdbsl"]
+[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scenes/levels/campaign/scripts/IAs/base_ia.gd" id="1_hdbsl"]
 [ext_resource type="Texture2D" uid="uid://6t60lcmhqa2h" path="res://assets/sprites/mobs_world_3/avesogobsmorto1.png" id="2_q0vi6"]
 [ext_resource type="Texture2D" uid="uid://brpewh2q7twlu" path="res://assets/sprites/mobs_world_3/avesogobsmorto2.png" id="3_iiud4"]
 [ext_resource type="Texture2D" uid="uid://cr7b2kkocd7bj" path="res://assets/sprites/mobs_world_3/avesogobsmorto3.png" id="4_vyw84"]

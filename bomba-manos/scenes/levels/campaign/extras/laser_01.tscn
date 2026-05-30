@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://lrtpygevxk5s"]
 
-[ext_resource type="Script" uid="uid://xp2r7rgsjomg" path="res://scripts/misc/bossfight/laser_01.gd" id="1_6xnoh"]
+[ext_resource type="Script" uid="uid://xp2r7rgsjomg" path="res://scenes/levels/campaign/scripts/misc/bossfight/laser_01.gd" id="1_6xnoh"]
 [ext_resource type="Texture2D" uid="uid://ukscwey0ijyw" path="res://assets/sprites/manel/manellboss/projectiles/RAIOZAO.png" id="2_dhwic"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhwic"]

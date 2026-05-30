@@ -1,6 +1,6 @@
 [gd_scene load_steps=39 format=3 uid="uid://cbwhqu6sa22uf"]
 
-[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scripts/IAs/base_ia.gd" id="1_0rmhj"]
+[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scenes/levels/campaign/scripts/IAs/base_ia.gd" id="1_0rmhj"]
 [ext_resource type="Texture2D" uid="uid://uvnedku34eqx" path="res://assets/sprites/mobs_world_1/Sprite da corubia.png" id="2_0rmhj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xsjrv"]
