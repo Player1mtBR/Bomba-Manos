@@ -41,9 +41,6 @@ func _ready() -> void:
 	await animPlayer.animation_finished
 	queue_free()
 
-
-
-
 func _on_explosion_area_area_entered(area: Area2D) -> void:
 	if area.name == "Area2DplayerMP":
 		area.get_parent().killPlayer(fromWhatPlayer)

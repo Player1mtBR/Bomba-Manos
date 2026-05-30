@@ -655,6 +655,7 @@ rotation = 1.57079
 position = Vector2(160, 64)
 playerID = 1
 charSkin = ExtResource("15_0eyu6")
+bombaEX = 3
 teleportTunel = NodePath("../../../objects/AllTeleports/TeleportTunel")
 teleportTunel2 = NodePath("../../../objects/AllTeleports/TeleportTunel2")
 
@@ -763,6 +764,8 @@ scale = Vector2(0.325, 0.325)
 texture = ExtResource("8_kdvr3")
 
 [node name="Exit" parent="." instance=ExtResource("24_scr30")]
+visible = false
+z_index = 2
 position = Vector2(0, -16)
 levelIdentifier = "W02L04"
 nextLevel = "uid://cetxykh7jdd2r"

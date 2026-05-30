@@ -35,5 +35,5 @@ func _process(delta: float) -> void:
 		visible = true
 		$Area2D.monitoring = true
 		
-		#if PortalTransition.isPlaying == false:
-		#	usingPortal = true
+		if PortalTransition.isPlaying == false:
+			usingPortal = true
