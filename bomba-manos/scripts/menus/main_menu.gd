@@ -1,7 +1,8 @@
 extends Control
 
 func _ready() -> void:
-	$Control/start.grab_focus()
+#	$Control/start.grab_focus()
+	$Control/Buttons/VBoxContainer/Campanha.grab_focus()
 	CurrentLevelManager.deathCount = 0
 	if MusicMenu.get_child(0).playing == false:
 		MusicMenu.get_child(0).play()

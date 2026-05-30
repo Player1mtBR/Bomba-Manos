@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://deqh6jn3ncojq"]
+[gd_scene load_steps=25 format=4 uid="uid://deqh6jn3ncojq"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_4h1at"]
 [ext_resource type="Texture2D" uid="uid://bxfyl8d5ehq0t" path="res://assets/sprites/levels/campaign/world04/cenario05.png" id="2_da8yb"]
@@ -11,8 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://ck2e8e5o71yon" path="res://scenes/entities/Mobs/world_4/comedor_bomba.tscn" id="10_vg1gn"]
 [ext_resource type="AudioStream" uid="uid://bvwslt6il1m34" path="res://assets/audio/tracks/world02/Missia01.mp3.mp3" id="11_vg1gn"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="14_pp582"]
+[ext_resource type="AudioStream" uid="uid://disrwq4wmm7g2" path="res://assets/audio/dialogue/falasJP/o poder dele.mp3" id="16_da8yb"]
+[ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="16_vg1gn"]
+[ext_resource type="AudioStream" uid="uid://767es7yhe3pi" path="res://assets/audio/sfx/manel/nComamBomba.wav" id="17_nkneb"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="18_8im5y"]
+[ext_resource type="AudioStream" uid="uid://c7grvmpt7sktg" path="res://assets/audio/dialogue/falasJP/ele clonou o bomba.mp3" id="18_l57kd"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="19_iatv3"]
+[ext_resource type="AudioStream" uid="uid://dd03oiduad4as" path="res://assets/audio/dialogue/falasMessias/miseravel doentio.mp3" id="19_l57kd"]
 [ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/campaign/exit.tscn" id="22_5eaid"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="23_utsnj"]
 
@@ -662,3 +667,7 @@ position = Vector2(0, -16)
 nextLevel = "uid://dut7i1mc463d"
 
 [node name="pauseCampaign" parent="." instance=ExtResource("23_utsnj")]
+
+[node name="DIALOG" parent="." instance=ExtResource("16_vg1gn")]
+falasDosPersonagens = Array[AudioStream]([ExtResource("17_nkneb"), ExtResource("16_da8yb"), ExtResource("18_l57kd"), ExtResource("19_l57kd")])
+legendas = Array[String](["Não comam bomba no laboratório!", "O poder dele é mais forte aqui...", "Ele clonou o seu melhor amigo.\\ Deve estar tentando te atingir...", "Mas que miserável doentio!"])

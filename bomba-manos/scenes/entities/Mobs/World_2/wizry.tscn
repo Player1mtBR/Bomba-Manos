@@ -305,7 +305,8 @@ animations = [{
 
 [node name="wizry" type="CharacterBody2D"]
 script = ExtResource("1_u312f")
-passosParaSugerir = 2
+iaMoveDelay = 0.6
+smartChance = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xsjrv")

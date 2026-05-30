@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://cm4u8v4lfccte"]
+[gd_scene load_steps=33 format=4 uid="uid://cm4u8v4lfccte"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_dvhng"]
 [ext_resource type="Texture2D" uid="uid://cx1sqwd2s3rdj" path="res://assets/sprites/levels/campaign/world04/damnBroLetsCode.png" id="2_4dcfo"]
@@ -25,6 +25,9 @@
 [ext_resource type="AudioStream" uid="uid://cpbhq5nhcb5sg" path="res://assets/audio/tracks/world02/Missia04.mp3.mp3" id="22_dvhng"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="23_r18jg"]
 [ext_resource type="Texture2D" uid="uid://coq1f0bkppr40" path="res://assets/sprites/levels/campaign/world01/TroncoIndestrutivelLostWoods.png" id="25_w7a3u"]
+[ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="26_dvhng"]
+[ext_resource type="AudioStream" uid="uid://2x67rdl5521j" path="res://assets/audio/dialogue/falasMessias/cara familiar.mp3" id="27_4dcfo"]
+[ext_resource type="AudioStream" uid="uid://e1gahap2o0vn" path="res://assets/audio/dialogue/falasJP/ele foi dominado.mp3" id="28_7xi27"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bjx6k"]
 texture = ExtResource("6_62ol6")
@@ -716,3 +719,7 @@ position = Vector2(-8, -8)
 scale = Vector2(0.25, 0.25)
 tile_map_data = PackedByteArray("AAD7//v/AAAAAAAAAAD9//v/AAAAAAAAAAD///v/AAAAAAAAAAABAPv/AAAAAAAAAAADAPv/AAAAAAAAAAAFAPv/AAAAAAAAAAAHAPv/AAAAAAAAAAAJAPv/AAAAAAAAAAD5//v/AAAAAAAAAAD3//v/AAAAAAAAAAAJAP3/AAAAAAAAAAAJAP//AAAAAAAAAAAJAAEAAAAAAAAAAAAJAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAADAAMAAAAAAAAAAAABAAMAAAAAAAAAAAD//wMAAAAAAAAAAAD9/wMAAAAAAAAAAAD7/wMAAAAAAAAAAAD5/wMAAAAAAAAAAAD3/wMAAAAAAAAAAAD3/wEAAAAAAAAAAAD3////AAAAAAAAAAD3//3/AAAAAAAAAAD5//3/AAAAAAAAAAD7//3/AAAAAAAAAAD9//3/AAAAAAAAAAD///3/AAAAAAAAAAABAP3/AAAAAAAAAAADAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAHAP3/AAAAAAAAAAAHAP//AAAAAAAAAAAHAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAADAAEAAAAAAAAAAAABAAEAAAAAAAAAAAD//wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD7/wEAAAAAAAAAAAD5/wEAAAAAAAAAAAD5////AAAAAAAAAAD7////AAAAAAAAAAD9////AAAAAAAAAAADAP//AAAAAAAAAAAFAP//AAAAAAAAAAD1/wMAAAAAAAAAAAD1/wQAAAAAAAAAAAD1/wUAAAAAAAAAAAD2/wUAAAAAAAAAAAD3/wUAAAAAAAAAAAD4/wUAAAAAAAAAAAD5/wUAAAAAAAAAAAD6/wUAAAAAAAAAAAD7/wUAAAAAAAAAAAD8/wUAAAAAAAAAAAD9/wUAAAAAAAAAAAD+/wUAAAAAAAAAAAD//wUAAAAAAAAAAAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAALAAUAAAAAAAAAAAALAPn/AAAAAAAAAAALAPr/AAAAAAAAAAALAPv/AAAAAAAAAAALAPz/AAAAAAAAAAALAP3/AAAAAAAAAAALAP7/AAAAAAAAAAALAP//AAAAAAAAAAALAAAAAAAAAAAAAAALAAEAAAAAAAAAAAALAAIAAAAAAAAAAAALAAMAAAAAAAAAAAALAAQAAAAAAAAAAAD1//n/AAAAAAAAAAD2//n/AAAAAAAAAAD3//n/AAAAAAAAAAD4//n/AAAAAAAAAAD5//n/AAAAAAAAAAD6//n/AAAAAAAAAAD7//n/AAAAAAAAAAD8//n/AAAAAAAAAAD9//n/AAAAAAAAAAD+//n/AAAAAAAAAAD///n/AAAAAAAAAAAAAPn/AAAAAAAAAAABAPn/AAAAAAAAAAACAPn/AAAAAAAAAAADAPn/AAAAAAAAAAAEAPn/AAAAAAAAAAAFAPn/AAAAAAAAAAAGAPn/AAAAAAAAAAAHAPn/AAAAAAAAAAAIAPn/AAAAAAAAAAAJAPn/AAAAAAAAAAAKAPn/AAAAAAAAAAD1//r/AAAAAAAAAAD1//v/AAAAAAAAAAD1//z/AAAAAAAAAAD1//3/AAAAAAAAAAD1//7/AAAAAAAAAAD1////AAAAAAAAAAD1/wAAAAAAAAAAAAD1/wEAAAAAAAAAAAD1/wIAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_5owmg")
+
+[node name="DIALOG" parent="." instance=ExtResource("26_dvhng")]
+falasDosPersonagens = Array[AudioStream]([ExtResource("27_4dcfo"), ExtResource("28_7xi27")])
+legendas = Array[String](["Esse cara, ele me é familiar...", "Ele foi dominado pela IA.\\Já não é mais quem\\ você conhecia..."])

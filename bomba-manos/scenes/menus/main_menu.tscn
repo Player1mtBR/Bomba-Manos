@@ -1,15 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cj21dxxqeeufg"]
+[gd_scene load_steps=3 format=3 uid="uid://cj21dxxqeeufg"]
 
 [ext_resource type="Script" uid="uid://hx1q14ialw20" path="res://scripts/menus/main_menu.gd" id="1_xqga4"]
-[ext_resource type="Texture2D" uid="uid://ha33ikyafe07" path="res://assets/sprites/UI/bomba manos menu.png" id="2_2o76q"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="2_ovrgc"]
-[ext_resource type="Theme" uid="uid://ds7mb4bo4uj1a" path="res://assets/res/button_theme_01.tres" id="4_6bivr"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bivr"]
-draw_center = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_imvie"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -21,21 +13,6 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_xqga4")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -427.5
-offset_top = -240.0
-offset_right = 427.5
-offset_bottom = 240.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_2o76q")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1
@@ -54,70 +31,53 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/Buttons"]
-visible = false
 custom_minimum_size = Vector2(94.72, 0)
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -249.0
-offset_right = 247.0
-grow_vertical = 0
-theme = ExtResource("2_ovrgc")
-theme_override_constants/separation = 8
-
-[node name="Campanha" type="Button" parent="Control/Buttons/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_6bivr")
-text = "Campanha"
-alignment = 0
-
-[node name="Versus" type="Button" parent="Control/Buttons/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_6bivr")
-text = "Versus"
-alignment = 0
-
-[node name="Configurações" type="Button" parent="Control/Buttons/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_6bivr")
-text = "Ajustes"
-alignment = 0
-
-[node name="Créditos" type="Button" parent="Control/Buttons/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_6bivr")
-text = "Creditos"
-alignment = 0
-
-[node name="Sair" type="Button" parent="Control/Buttons/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_6bivr")
-text = "Sair"
-alignment = 0
-
-[node name="start" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -207.5
-offset_top = 102.0
-offset_right = 208.5
-offset_bottom = 141.0
+offset_left = -47.36
+offset_top = -15.5
+offset_right = 47.36
+offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(208, 0)
+
+[node name="Campanha" type="Button" parent="Control/Buttons/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("2_ovrgc")
-theme_override_styles/focus = SubResource("StyleBoxFlat_6bivr")
-theme_override_styles/normal = SubResource("StyleBoxFlat_imvie")
-text = "PRESSIONE START"
+text = "Campanha"
+
+[node name="Versus" type="Button" parent="Control/Buttons/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ovrgc")
+text = "Versus"
+
+[node name="Configurações" type="Button" parent="Control/Buttons/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ovrgc")
+text = "Ajustes"
+
+[node name="Créditos" type="Button" parent="Control/Buttons/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ovrgc")
+text = "Creditos"
+
+[node name="Sair" type="Button" parent="Control/Buttons/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ovrgc")
+text = "Sair"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "testToRemoveAfterCommit"
 
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Campanha" to="." method="_on_campanha_pressed"]
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Versus" to="." method="_on_versus_pressed"]
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Configurações" to="." method="_on_configurações_pressed"]
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Créditos" to="." method="_on_créditos_pressed"]
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
-[connection signal="pressed" from="Control/start" to="." method="_on_start_pressed"]

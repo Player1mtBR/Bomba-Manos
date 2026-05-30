@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dut7i1mc463d"]
+[gd_scene load_steps=25 format=4 uid="uid://dut7i1mc463d"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_l86co"]
 [ext_resource type="Texture2D" uid="uid://cx1sqwd2s3rdj" path="res://assets/sprites/levels/campaign/world04/damnBroLetsCode.png" id="2_cf0xr"]
@@ -10,8 +10,11 @@
 [ext_resource type="AudioStream" uid="uid://di7f8udmwsbqs" path="res://assets/audio/tracks/world02/Missia02.mp3.mp3" id="13_6lx2g"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="16_30xqa"]
 [ext_resource type="SpriteFrames" uid="uid://qoeojvexepwx" path="res://assets/res/spriteframes/bombaman-Sprite-Frames.tres" id="17_akatk"]
+[ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="18_5xtyu"]
 [ext_resource type="PackedScene" uid="uid://ck2e8e5o71yon" path="res://scenes/entities/Mobs/world_4/comedor_bomba.tscn" id="18_gi4rl"]
+[ext_resource type="AudioStream" uid="uid://dtr26cb7pxg56" path="res://assets/audio/dialogue/falasJP/tome cuidado.mp3" id="19_3g7pf"]
 [ext_resource type="PackedScene" uid="uid://x8wanugx3mkn" path="res://scenes/entities/Mobs/world_4/borabill.tscn" id="19_ypbqp"]
+[ext_resource type="AudioStream" uid="uid://hhbwea8o6ef1" path="res://assets/audio/dialogue/falasMessias/ja percebi.mp3" id="20_8lj8v"]
 [ext_resource type="PackedScene" uid="uid://deiblqi0tqf1d" path="res://scenes/entities/Mobs/world_4/arduino.tscn" id="20_sfito"]
 [ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/campaign/exit.tscn" id="22_plt1o"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="23_bm0l7"]
@@ -674,3 +677,7 @@ levelIdentifier = "W01L02"
 nextLevel = "uid://c0lvasauvhdj5"
 
 [node name="pauseCampaign" parent="." instance=ExtResource("23_bm0l7")]
+
+[node name="DIALOG" parent="." instance=ExtResource("18_5xtyu")]
+falasDosPersonagens = Array[AudioStream]([ExtResource("19_3g7pf"), ExtResource("20_8lj8v")])
+legendas = Array[String](["Tome cuidado.\\A cada fase o desafio aumenta!", "Já percebi!"])

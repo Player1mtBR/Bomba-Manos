@@ -1,25 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://c02kwfsjemtds"]
 
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="1_2qljs"]
+[ext_resource type="Script" uid="uid://dgx4hj7mha0ja" path="res://scripts/menus/versusMatchSetupTest.gd" id="2_0qyue"]
 [ext_resource type="Script" uid="uid://cyn5kl26ct3pp" path="res://scripts/menus/testButtonMP.gd" id="2_2qljs"]
-
-[sub_resource type="GDScript" id="GDScript_y61lx"]
-script/source = "extends Control
-
-@onready var BOMBAMAN := preload(\"res://assets/res/spriteframes/bombaman-Sprite-Frames.tres\")
-@onready var UREIAMAN := preload(\"res://assets/res/spriteframes/ureiaman-Sprite-Frames.tres\")
-@onready var RANGERMAN := preload(\"res://assets/res/spriteframes/rangerman-Sprite-Frames.tres\")
-@onready var MINIMAN := preload(\"res://assets/res/spriteframes/miniman-Sprite-Frames.tres\")
-
-@export var setPlayerCount := 0
-
-
-#func _ready() -> void:
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed(\"menu_cancel\"):
-		Loader.loadingScreen2Scene(\"res://scenes/menus/main_menu.tscn\")
-"
 
 [node name="VersusMatchSetupTest" type="Control"]
 layout_mode = 3
@@ -29,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_2qljs")
-script = SubResource("GDScript_y61lx")
+script = ExtResource("2_0qyue")
 
 [node name="buttons" type="Control" parent="."]
 layout_mode = 1

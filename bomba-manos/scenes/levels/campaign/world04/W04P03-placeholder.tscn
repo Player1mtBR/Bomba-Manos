@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://c0lvasauvhdj5"]
+[gd_scene load_steps=26 format=4 uid="uid://c0lvasauvhdj5"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_3c7bv"]
 [ext_resource type="Texture2D" uid="uid://bxfyl8d5ehq0t" path="res://assets/sprites/levels/campaign/world04/cenario05.png" id="2_7pcwy"]
@@ -14,7 +14,10 @@
 [ext_resource type="SpriteFrames" uid="uid://qoeojvexepwx" path="res://assets/res/spriteframes/bombaman-Sprite-Frames.tres" id="17_1l7m6"]
 [ext_resource type="PackedScene" uid="uid://ck2e8e5o71yon" path="res://scenes/entities/Mobs/world_4/comedor_bomba.tscn" id="18_gcw41"]
 [ext_resource type="PackedScene" uid="uid://x8wanugx3mkn" path="res://scenes/entities/Mobs/world_4/borabill.tscn" id="19_0plov"]
+[ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="19_txl23"]
 [ext_resource type="PackedScene" uid="uid://deiblqi0tqf1d" path="res://scenes/entities/Mobs/world_4/arduino.tscn" id="20_mguyu"]
+[ext_resource type="AudioStream" uid="uid://jtvf37r0ak16" path="res://assets/audio/dialogue/falasJP/o poder da matriz.mp3" id="20_qgx30"]
+[ext_resource type="AudioStream" uid="uid://dhr615yaosa50" path="res://assets/audio/dialogue/falasMessias/cachorro.mp3" id="21_43wg5"]
 [ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/campaign/exit.tscn" id="22_1bcej"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="23_0fo5b"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="28_qgjkh"]
@@ -678,3 +681,7 @@ nextLevel = "uid://cm4u8v4lfccte"
 
 [node name="pauseCampaign" parent="." instance=ExtResource("23_0fo5b")]
 visible = false
+
+[node name="DIALOG" parent="." instance=ExtResource("19_txl23")]
+falasDosPersonagens = Array[AudioStream]([ExtResource("20_qgx30"), ExtResource("21_43wg5")])
+legendas = Array[String](["O poder da matriz está perto!\\Eu consigo sentir!", "Aquilo é um cachorro!?"])

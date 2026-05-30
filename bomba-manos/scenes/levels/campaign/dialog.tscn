@@ -320,7 +320,6 @@ legendas = Array[String](["aaaaaaaa", "bbbbbbbbbbbb"])
 bus = &"Voices"
 
 [node name="Visual" type="Node2D" parent="."]
-visible = false
 z_index = 5
 position = Vector2(-208, -128)
 
@@ -333,12 +332,15 @@ libraries = {
 offset_left = 256.0
 offset_top = -24.0
 offset_right = 896.0
-offset_bottom = 104.0
+offset_bottom = 200.0
 scale = Vector2(0.25, 0.25)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/font = ExtResource("4_fhwcq")
 theme_override_font_sizes/font_size = 48
-text = "texto exibido
-ção"
 paragraph_separator = "\\"
 visible_characters = 0
 visible_ratio = 0.0

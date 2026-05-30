@@ -671,12 +671,10 @@ smartChance = 0.5
 [node name="wizry" parent="entities/Mobs" instance=ExtResource("19_8clx8")]
 position = Vector2(160, -96)
 iaMoveDelay = 0.7
-passosParaSugerir = 3
 
 [node name="wizry2" parent="entities/Mobs" instance=ExtResource("19_8clx8")]
 position = Vector2(-144, 64)
 iaMoveDelay = 0.7
-passosParaSugerir = 3
 
 [node name="bonght" parent="entities/Mobs" instance=ExtResource("20_uuxcv")]
 position = Vector2(-160, 64)

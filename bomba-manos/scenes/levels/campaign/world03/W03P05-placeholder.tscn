@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://cghduj6t35af4"]
+[gd_scene load_steps=28 format=4 uid="uid://cghduj6t35af4"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_c0prf"]
 [ext_resource type="Texture2D" uid="uid://bmh7gbx4co7l3" path="res://assets/sprites/levels/campaign/world03/chão.png" id="2_rck57"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="19_612l4"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="19_c0prf"]
 [ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="20_v5h3g"]
+[ext_resource type="AudioStream" uid="uid://cnpcllt55tt5j" path="res://assets/audio/dialogue/falasJP/assombro.mp3" id="21_vjjs5"]
 [ext_resource type="AudioStream" uid="uid://bv0t8eun72pwc" path="res://assets/audio/dialogue/World03/eu vim longe demais pra sair de mãos vazias-fala9.mp3" id="21_wjbri"]
 [ext_resource type="AudioStream" uid="uid://dv2yytahd5j8x" path="res://assets/audio/dialogue/World03/caramba cê joga mal hein-fala10.mp3" id="22_wjbri"]
 
@@ -698,8 +699,8 @@ nextLevel = "uid://wyq2fculrhic"
 [node name="pauseCampaign" parent="." instance=ExtResource("19_c0prf")]
 
 [node name="DIALOG" parent="." instance=ExtResource("20_v5h3g")]
-position = Vector2(0, -16)
-falasDosPersonagens = Array[AudioStream]([ExtResource("21_wjbri")])
+falasDosPersonagens = Array[AudioStream]([ExtResource("21_vjjs5"), ExtResource("21_wjbri")])
+legendas = Array[String](["O assombro é um dos espíritos\\corrompidos mais velozes.\\Tenha cautela ao abate-lo.", "Eu vim longe demais pra\\sair de mãos vazias!"])
 
 [node name="MOCKPLAYER" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_wjbri")
