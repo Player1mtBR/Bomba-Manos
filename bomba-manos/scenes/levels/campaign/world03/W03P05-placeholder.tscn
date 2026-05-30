@@ -546,14 +546,12 @@ iaMoveDelay = 0.1
 [node name="assombro2" parent="entities/Mobs" instance=ExtResource("12_xry5x")]
 position = Vector2(-144, 64)
 iaMoveDelay = 0.1
-smartChance = 0.1
-passosParaSugerir = 2
 
 [node name="bicho" parent="entities/Mobs" instance=ExtResource("13_2jnmt")]
 position = Vector2(144, 64)
 iaMoveDelay = 0.6
 
-[node name="bicho3" parent="entities/Mobs" instance=ExtResource("13_2jnmt")]
+[node name="bicho2" parent="entities/Mobs" instance=ExtResource("13_2jnmt")]
 position = Vector2(-144, -96)
 iaMoveDelay = 0.6
 
