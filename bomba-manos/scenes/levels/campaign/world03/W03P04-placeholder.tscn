@@ -500,6 +500,21 @@ charSkin = ExtResource("8_s50qc")
 [node name="Mobs" type="Node2D" parent="entities"]
 
 [node name="bruxa" parent="entities/Mobs" instance=ExtResource("9_2uo7c")]
+position = Vector2(-160, -96)
+iaMoveDelay = 0.2
+passosParaSugerir = 1
+
+[node name="bruxa2" parent="entities/Mobs" instance=ExtResource("9_2uo7c")]
+position = Vector2(160, 64)
+iaMoveDelay = 0.2
+passosParaSugerir = 1
+
+[node name="bruxa3" parent="entities/Mobs" instance=ExtResource("9_2uo7c")]
+position = Vector2(160, -64)
+iaMoveDelay = 0.2
+passosParaSugerir = 1
+
+[node name="bruxa4" parent="entities/Mobs" instance=ExtResource("9_2uo7c")]
 position = Vector2(-160, 64)
 iaMoveDelay = 0.2
 passosParaSugerir = 1
@@ -593,6 +608,7 @@ nextLevel = "uid://cghduj6t35af4"
 [node name="pauseCampaign" parent="." instance=ExtResource("18_q2dxs")]
 
 [node name="DIALOG" parent="." instance=ExtResource("19_hhr67")]
+position = Vector2(-16, -8)
 falasDosPersonagens = Array[AudioStream]([ExtResource("20_u51pw"), ExtResource("20_nxve7"), ExtResource("22_i5h1x"), ExtResource("21_nxve7"), ExtResource("23_j8v5w")])
 legendas = Array[String](["Essa é a bruxa...", "Que troço mais horrível!", "Ela pode te ouvir!", "Quê?!", "Eu tô brincando..."])
 
