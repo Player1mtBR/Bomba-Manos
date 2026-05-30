@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://5hyrrysra7ug"]
 
 [ext_resource type="Gradient" uid="uid://wgxcet2464q2" path="res://assets/res/gradient/red.tres" id="1_rg7my"]
-[ext_resource type="Script" uid="uid://bchte3dycebmt" path="res://scripts/misc/bossfight/beam_struggle.gd" id="1_vlx6x"]
+[ext_resource type="Script" uid="uid://bchte3dycebmt" path="res://scenes/levels/campaign/scripts/misc/bossfight/beam_struggle.gd" id="1_vlx6x"]
 [ext_resource type="Gradient" uid="uid://c136r11brf5ai" path="res://assets/res/gradient/cyan.tres" id="2_vlx6x"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8gl0l"]

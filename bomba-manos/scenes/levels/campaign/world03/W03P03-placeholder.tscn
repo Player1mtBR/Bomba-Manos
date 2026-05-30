@@ -1,6 +1,6 @@
-[gd_scene load_steps=26 format=4 uid="uid://bqjv3k83yah76"]
+[gd_scene load_steps=27 format=4 uid="uid://bqjv3k83yah76"]
 
-[ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_wqokc"]
+[ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scenes/levels/campaign/scripts/lab_test_01.gd" id="1_wqokc"]
 [ext_resource type="Texture2D" uid="uid://bmh7gbx4co7l3" path="res://assets/sprites/levels/campaign/world03/chão.png" id="2_hruej"]
 [ext_resource type="Texture2D" uid="uid://dw4hil17syrg0" path="res://assets/sprites/levels/campaign/world03/FRENTELostWoods.png" id="3_hruej"]
 [ext_resource type="Texture2D" uid="uid://b5ndgww7gucmk" path="res://assets/sprites/levels/campaign/world03/LeftWallLostWoods.png" id="4_114ws"]
@@ -14,12 +14,13 @@
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="15_vjuoa"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="16_11j6v"]
 [ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/campaign/exit.tscn" id="17_6e1ql"]
-[ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="17_ettix"]
+[ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scenes/levels/campaign/scripts/ui.gd" id="17_ettix"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="18_o58u8"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="18_xa711"]
 [ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="19_hruej"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="19_w77pn"]
 [ext_resource type="AudioStream" uid="uid://bfi34l87wta58" path="res://assets/audio/dialogue/World03/ferrou-fala6.mp3" id="20_5fcpm"]
+[ext_resource type="AudioStream" uid="uid://don0krq2h5f6u" path="res://assets/audio/dialogue/falasJP/atravessam paredes.mp3" id="20_114ws"]
 [ext_resource type="AudioStream" uid="uid://dv2yytahd5j8x" path="res://assets/audio/dialogue/World03/caramba cê joga mal hein-fala10.mp3" id="21_5fcpm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lx53w"]
@@ -762,8 +763,8 @@ nextLevel = "uid://dfkd7qqto7yw6"
 [node name="pauseCampaign" parent="." instance=ExtResource("18_xa711")]
 
 [node name="DIALOG" parent="." instance=ExtResource("19_hruej")]
-position = Vector2(0, -16)
-falasDosPersonagens = Array[AudioStream]([ExtResource("20_5fcpm")])
+falasDosPersonagens = Array[AudioStream]([ExtResource("20_114ws"), ExtResource("20_5fcpm")])
+legendas = Array[String](["Atravessam paredes?\\Eles atravessam paredes!!!", "Ferrou! Ferrou!"])
 
 [node name="MOCKPLAYER" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_5fcpm")

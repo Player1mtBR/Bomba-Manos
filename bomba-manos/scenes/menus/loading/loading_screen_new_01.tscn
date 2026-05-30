@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cem2spc4hrmqd"]
 
-[ext_resource type="Script" uid="uid://b83kybk1pq56o" path="res://scripts/menus/loading/loading_screen_new_01.gd" id="1_n0edm"]
+[ext_resource type="Script" uid="uid://b83kybk1pq56o" path="res://scenes/levels/campaign/scripts/menus/loading/loading_screen_new_01.gd" id="1_n0edm"]
 [ext_resource type="Texture2D" uid="uid://cfpki24d0xh0o" path="res://assets/sprites/bomba/BOMBA SALGADO EXPLODINDOV6.png" id="2_a7nhy"]
 [ext_resource type="LabelSettings" uid="uid://ciiuy7qsoeohc" path="res://assets/res/textSettings.tres" id="2_l7m0t"]
 

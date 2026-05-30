@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dbot6dneifqq8"]
 
-[ext_resource type="Script" uid="uid://cqlfmkq1qamd1" path="res://scripts/PlayersSelector.gd" id="1_clgm0"]
+[ext_resource type="Script" uid="uid://cqlfmkq1qamd1" path="res://scenes/levels/campaign/scripts/PlayersSelector.gd" id="1_clgm0"]
 [ext_resource type="Texture2D" uid="uid://bact0560yf5ov" path="res://assets/lanchonete_fundo.jpeg" id="1_w5wq3"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="2_clgm0"]
 [ext_resource type="PackedScene" uid="uid://bkla2y3q2sihu" path="res://scenes/entities/players/messias.tscn" id="4_h1gmx"]

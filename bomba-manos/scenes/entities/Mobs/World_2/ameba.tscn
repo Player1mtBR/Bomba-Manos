@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://jqkiby8fkuil"]
 
-[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scripts/IAs/base_ia.gd" id="1_vulh0"]
+[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scenes/levels/campaign/scripts/IAs/base_ia.gd" id="1_vulh0"]
 [ext_resource type="Texture2D" uid="uid://dgkyf4pwuppin" path="res://assets/sprites/mobs_world_1/Sprites do Jelly.png" id="2_vulh0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xsjrv"]

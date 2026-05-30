@@ -1,6 +1,6 @@
 [gd_scene load_steps=46 format=3 uid="uid://beo503f124xe2"]
 
-[ext_resource type="Script" uid="uid://rsqkdhkpm5g0" path="res://scripts/explosion_test.gd" id="1_owkdk"]
+[ext_resource type="Script" uid="uid://rsqkdhkpm5g0" path="res://scenes/levels/campaign/scripts/explosion_test.gd" id="1_owkdk"]
 [ext_resource type="Texture2D" uid="uid://c62pg8x313uxv" path="res://assets/sprites/bomba/bombaIgorFix/bombaIgorFix.png" id="2_yc1dl"]
 [ext_resource type="Texture2D" uid="uid://bf43cts6nep0c" path="res://assets/sprites/bomba/bombaIgorFix/02.png" id="3_6rmrr"]
 [ext_resource type="Texture2D" uid="uid://cicimbjiudsrk" path="res://assets/sprites/bomba/bombaIgorFix/03.png" id="4_3kdod"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://cwk6s00pnw684"]
 
-[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scripts/IAs/base_ia.gd" id="1_awk0m"]
+[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scenes/levels/campaign/scripts/IAs/base_ia.gd" id="1_awk0m"]
 [ext_resource type="Texture2D" uid="uid://tcytm2t3qwd4" path="res://assets/sprites/mobs_world_4/loboPidao.png" id="2_t6g1y"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xsjrv"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://50ntbmr4ohvq"]
 
-[ext_resource type="Script" uid="uid://c5i1rwp442crj" path="res://scripts/menus/settings.gd" id="1_del6v"]
+[ext_resource type="Script" uid="uid://c5i1rwp442crj" path="res://scenes/levels/campaign/scripts/menus/settings.gd" id="1_del6v"]
 
 [node name="settings" type="Control"]
 layout_mode = 3

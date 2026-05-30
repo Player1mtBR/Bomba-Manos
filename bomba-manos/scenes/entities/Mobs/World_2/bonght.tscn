@@ -1,6 +1,6 @@
 [gd_scene load_steps=55 format=3 uid="uid://qv2f2ttexgkc"]
 
-[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scripts/IAs/base_ia.gd" id="1_w3ol2"]
+[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scenes/levels/campaign/scripts/IAs/base_ia.gd" id="1_w3ol2"]
 [ext_resource type="Texture2D" uid="uid://pks0n4rgqkqe" path="res://assets/sprites/mobs_world_1/Sprite-do-bonght.png" id="2_w3ol2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xsjrv"]
@@ -538,7 +538,9 @@ animations = [{
 
 [node name="bonght" type="CharacterBody2D"]
 script = ExtResource("1_w3ol2")
-passosParaSugerir = 2
+iaMoveDelay = 0.1
+smartChance = 3.0
+passosParaSugerir = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xsjrv")

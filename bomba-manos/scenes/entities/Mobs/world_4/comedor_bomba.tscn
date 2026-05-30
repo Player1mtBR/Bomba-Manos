@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://ck2e8e5o71yon"]
 
-[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scripts/IAs/base_ia.gd" id="1_awk0m"]
+[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scenes/levels/campaign/scripts/IAs/base_ia.gd" id="1_awk0m"]
 [ext_resource type="Texture2D" uid="uid://ms118884148v" path="res://assets/sprites/mobs_world_4/comedordeBOMBa.png" id="2_u3thv"]
 [ext_resource type="AudioStream" uid="uid://bvldf6kdht75" path="res://assets/audio/sfx/enemies/cloneRuan02.mp3" id="3_5smwe"]
 

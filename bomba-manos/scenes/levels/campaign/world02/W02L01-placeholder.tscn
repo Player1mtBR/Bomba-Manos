@@ -1,6 +1,6 @@
 [gd_scene load_steps=56 format=4 uid="uid://rn0ut8v4q0w0"]
 
-[ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_wx4nu"]
+[ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scenes/levels/campaign/scripts/lab_test_01.gd" id="1_wx4nu"]
 [ext_resource type="Texture2D" uid="uid://drutjoa1y5g30" path="res://assets/sprites/damnBroLetsCode.png" id="2_6pv5t"]
 [ext_resource type="Texture2D" uid="uid://c3pnfnouiewui" path="res://assets/sprites/cenario02.png" id="3_3da86"]
 [ext_resource type="Texture2D" uid="uid://bl0ijw02ik1ku" path="res://assets/sprites/cenario03.png" id="4_a5yev"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bgkax6c3eo7n0" path="res://scenes/entities/manel.tscn" id="10_ibw14"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="11_tg6ll"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="12_whm4t"]
-[ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="13_wsnw5"]
+[ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scenes/levels/campaign/scripts/ui.gd" id="13_wsnw5"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="14_2bxm4"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="15_6pv5t"]
 [ext_resource type="Texture2D" uid="uid://bjk3e4cu0dnb8" path="res://assets/sprites/levels/campaign/world02/floorThing2.png" id="16_3da86"]

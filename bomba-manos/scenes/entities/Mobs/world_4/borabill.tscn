@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://x8wanugx3mkn"]
 
-[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scripts/IAs/base_ia.gd" id="1_nyon2"]
+[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scenes/levels/campaign/scripts/IAs/base_ia.gd" id="1_nyon2"]
 [ext_resource type="Texture2D" uid="uid://c2h1bqikm8863" path="res://assets/sprites/mobs_world_4/urubu.png" id="2_nyon2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xsjrv"]

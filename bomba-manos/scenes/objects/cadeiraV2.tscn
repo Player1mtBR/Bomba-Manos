@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dl8gbu4bdu50p"]
 
-[ext_resource type="Script" uid="uid://dhhab8c8xnrfb" path="res://scripts/breakable_block.gd" id="1_kbnj5"]
+[ext_resource type="Script" uid="uid://dhhab8c8xnrfb" path="res://scenes/levels/campaign/scripts/breakable_block.gd" id="1_kbnj5"]
 [ext_resource type="Texture2D" uid="uid://fboy7jjt1afj" path="res://assets/sprites/levels/campaign/world04/cadeiras.png" id="2_vrhx6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbnj5"]

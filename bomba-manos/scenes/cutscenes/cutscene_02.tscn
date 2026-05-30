@@ -1,6 +1,6 @@
 [gd_scene load_steps=109 format=3 uid="uid://ckcwf0yhamcqc"]
 
-[ext_resource type="Script" uid="uid://bj12gul8etm1p" path="res://scripts/misc/cutscene_01.gd" id="1_ugm7o"]
+[ext_resource type="Script" uid="uid://bj12gul8etm1p" path="res://scenes/levels/campaign/scripts/misc/cutscene_01.gd" id="1_ugm7o"]
 [ext_resource type="VideoStream" uid="uid://c6jsmrnqk6mfw" path="res://assets/video/YoU cAn'T jUsT sHoOt a hOlE iNtO ThE sUrFaCe oF mArS.ogv" id="2_ovcn2"]
 [ext_resource type="Texture2D" uid="uid://b2nexm54d27jm" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation1.png" id="3_vi5tq"]
 [ext_resource type="Texture2D" uid="uid://dfamp6w8hng7k" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation2.png" id="4_ttrm4"]

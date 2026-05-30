@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=4 uid="uid://cetxykh7jdd2r"]
 
-[ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_lak0r"]
+[ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scenes/levels/campaign/scripts/lab_test_01.gd" id="1_lak0r"]
 [ext_resource type="Texture2D" uid="uid://v7o6pkkgso0r" path="res://assets/sprites/levels/campaign/world01/LostWoodsCorner.png" id="2_yfhol"]
 [ext_resource type="Texture2D" uid="uid://dueqxmq3k7o4h" path="res://assets/sprites/levels/campaign/world01/FRENTELostWoods.png" id="3_5ujo2"]
 [ext_resource type="Texture2D" uid="uid://de7pnjuks4khq" path="res://assets/sprites/levels/campaign/world01/LeftWallLostWoods.png" id="4_nr7vv"]
@@ -23,7 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://d0y2oany1vlqa" path="res://assets/audio/tracks/world01/W01Phase 05.mp3" id="21_lak0r"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="22_nwxrt"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="23_v4pca"]
-[ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="24_442f2"]
+[ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scenes/levels/campaign/scripts/ui.gd" id="24_442f2"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="25_oqwko"]
 [ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/campaign/exit.tscn" id="26_yfhol"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="27_5ujo2"]
@@ -670,12 +670,10 @@ smartChance = 0.5
 [node name="wizry" parent="entities/Mobs" instance=ExtResource("19_8clx8")]
 position = Vector2(160, -96)
 iaMoveDelay = 0.7
-passosParaSugerir = 3
 
 [node name="wizry2" parent="entities/Mobs" instance=ExtResource("19_8clx8")]
 position = Vector2(-144, 64)
 iaMoveDelay = 0.7
-passosParaSugerir = 3
 
 [node name="bonght" parent="entities/Mobs" instance=ExtResource("20_uuxcv")]
 position = Vector2(-160, 64)

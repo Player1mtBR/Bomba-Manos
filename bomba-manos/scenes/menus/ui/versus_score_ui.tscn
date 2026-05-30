@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://hola2cxa0s7h"]
 
-[ext_resource type="Script" uid="uid://blc1wor3lq6vd" path="res://scripts/menus/ui/versus_score_ui.gd" id="1_deixw"]
+[ext_resource type="Script" uid="uid://blc1wor3lq6vd" path="res://scenes/levels/campaign/scripts/menus/ui/versus_score_ui.gd" id="1_deixw"]
 [ext_resource type="Texture2D" uid="uid://db0eq0dmq02je" path="res://assets/sprites/manel/manellboss/face.png" id="2_7ojyc"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="3_carrn"]
 

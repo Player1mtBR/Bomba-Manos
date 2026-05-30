@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ch1smqkxm1ox0"]
 
-[ext_resource type="Script" uid="uid://vxqs6e04o26n" path="res://scripts/player/base_player.gd" id="1_5v3ci"]
-[ext_resource type="Script" uid="uid://denkwoabotyh5" path="res://scripts/player/place_bomba.gd" id="2_ru4r5"]
+[ext_resource type="Script" uid="uid://vxqs6e04o26n" path="res://scenes/levels/campaign/scripts/player/base_player.gd" id="1_5v3ci"]
+[ext_resource type="Script" uid="uid://denkwoabotyh5" path="res://scenes/levels/campaign/scripts/player/place_bomba.gd" id="2_ru4r5"]
 [ext_resource type="SpriteFrames" uid="uid://bby48g7tnjmc4" path="res://assets/res/spriteframes/blankSkin.tres" id="3_5v3ci"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tou7l"]

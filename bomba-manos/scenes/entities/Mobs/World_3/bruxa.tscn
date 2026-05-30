@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://bfd4ctvul1ngv"]
 
-[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scripts/IAs/base_ia.gd" id="1_swjvp"]
+[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scenes/levels/campaign/scripts/IAs/base_ia.gd" id="1_swjvp"]
 [ext_resource type="Texture2D" uid="uid://bm5btg15jc64t" path="res://assets/sprites/mobs_world_3/sprite_bruxa1.png" id="2_fvutq"]
 [ext_resource type="Texture2D" uid="uid://1dg3atd5da4q" path="res://assets/sprites/mobs_world_3/sprite_bruxa2.png" id="3_3ilt8"]
 [ext_resource type="Texture2D" uid="uid://c6ia82f1v8c34" path="res://assets/sprites/mobs_world_3/sprite_bruxa3.png" id="4_cfrho"]
