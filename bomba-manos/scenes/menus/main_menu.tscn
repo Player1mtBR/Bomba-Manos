@@ -69,15 +69,6 @@ text = "Creditos"
 layout_mode = 2
 theme = ExtResource("2_ovrgc")
 text = "Sair"
-<<<<<<< HEAD
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "testToRemoveAfterCommit"
-=======
->>>>>>> a02f661414ca98951434f75f0f9782c235f615cc
 
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Campanha" to="." method="_on_campanha_pressed"]
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Versus" to="." method="_on_versus_pressed"]
