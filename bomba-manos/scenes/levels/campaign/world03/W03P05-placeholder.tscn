@@ -650,3 +650,5 @@ legendas = Array[String](["O assombro é um dos espíritos\\corrompidos mais vel
 
 [node name="MOCKPLAYER" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_wjbri")
+
+[node name="DIE" type="AudioStreamPlayer" parent="."]

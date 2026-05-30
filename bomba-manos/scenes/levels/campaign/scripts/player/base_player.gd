@@ -3,7 +3,8 @@ extends CharacterBody2D
 ## escrever ":" define o tipo da variável, pode usar := pra definir o tipo e valor ao mesmo tempo tbm
 @export var playerID := 0 ##permite usar um único script para o input de todos os jogadores
 @export var isPlayerOnMenu := false
-@export var charSkin := SpriteFrames #test
+@export var charSkin := SpriteFrames
+@export var DieSound := AudioStreamMP3 #test
 
 @export var bombaEX := 1 #01 NORMAL - 02 MESSIAS - 03 MASCARA 04 - FANTASMA - 05 REMOTO
 
@@ -15,6 +16,7 @@ extends CharacterBody2D
 @onready var raycastDown := $collisionRaycasts/down
 @onready var raycastLeft := $collisionRaycasts/left
 @onready var raycastRight := $collisionRaycasts/right
+@onready var Diesom := $DIE
 
 var isPlayerAlive := true
 var wonMatch := false
@@ -150,7 +152,9 @@ func killPlayer():
 	if GlobalScript.currentPlayers > 1:
 		GlobalScript.triggerLaugh = true
 	isPlayerAlive = false
+	Diesom.play()
 	animPlayerNode.play("die")
+	
 	
 	if wonMatch == true:
 		GlobalScript.removePointFromPlayer(playerID)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://d4j7l3uvdwopn"]
+[gd_scene load_steps=30 format=4 uid="uid://d4j7l3uvdwopn"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scenes/levels/campaign/scripts/lab_test_01.gd" id="1_lran8"]
 [ext_resource type="Texture2D" uid="uid://dw4hil17syrg0" path="res://assets/sprites/levels/campaign/world03/FRENTELostWoods.png" id="3_ljbgp"]
@@ -24,6 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://uj0a4u57cdea" path="res://assets/audio/dialogue/World03/fala 2-igor.mp3" id="21_xpafo"]
 [ext_resource type="AudioStream" uid="uid://dv2yytahd5j8x" path="res://assets/audio/dialogue/World03/caramba cê joga mal hein-fala10.mp3" id="22_unpy3"]
 [ext_resource type="AudioStream" uid="uid://d0y42p42ked7u" path="res://assets/audio/dialogue/falasJP/avessogobs.mp3" id="23_js0q6"]
+[ext_resource type="AudioStream" uid="uid://y2bkjnhvpgw" path="res://assets/audio/dialogue/World03/que_-fala8.mp3" id="25_xak70"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_33v1t"]
 texture = ExtResource("19_4di0p")
@@ -674,6 +675,7 @@ tile_set = SubResource("TileSet_uwl60")
 position = Vector2(0, -96)
 playerID = 1
 charSkin = ExtResource("8_4di0p")
+DieSound = ExtResource("22_unpy3")
 
 [node name="Mobs" type="Node2D" parent="entities"]
 
@@ -705,3 +707,6 @@ legendas = Array[String](["É aqui o Inferno?", "Se essa for\\a sua percepção 
 
 [node name="MOCKPLAYER" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_unpy3")
+
+[node name="DIE" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_xak70")

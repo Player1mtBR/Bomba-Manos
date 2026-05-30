@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var bombaSfx := $bombaSfx
+@onready var Die := $DIE
 #@onready var selectedPlayer1 : CharacterBody2D
 #@onready var selectedPlayer2 : CharacterBody2D
 #@onready var BombaMan := preload("res://scenes/entities/players/messias.tscn").instantiate()
@@ -18,6 +19,7 @@ func _ready() -> void:
 	if CurrentLevelManager.deathCount > 3:
 		if has_node("MOCKPLAYER"):
 			$MOCKPLAYER.play()
+			
 	"""
 	match GlobalScript.selectedPlayer1:
 		1:
@@ -65,3 +67,6 @@ func _process(delta: float) -> void:
 	if GlobalScript.triggerBombaSfx == true:
 		bombaSfx.play()
 		GlobalScript.triggerBombaSfx = false
+	if GlobalScript.currentPlayers == 0:
+		Die.play()
+		
