@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c02kwfsjemtds"]
+[gd_scene load_steps=3 format=3 uid="uid://c02kwfsjemtds"]
 
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="1_2qljs"]
 [ext_resource type="Script" uid="uid://cyn5kl26ct3pp" path="res://scenes/levels/campaign/scripts/menus/testButtonMP.gd" id="2_2qljs"]
@@ -11,7 +11,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_2qljs")
-script = ExtResource("2_0qyue")
 
 [node name="buttons" type="Control" parent="."]
 layout_mode = 1
@@ -37,10 +36,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -42.6667
-offset_top = -32.0
-offset_right = 85.3333
-offset_bottom = 69.0
+offset_left = -96.1667
+offset_top = -44.0
+offset_right = 138.833
+offset_bottom = 81.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -64,10 +63,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -320.0
-offset_top = -85.3333
-offset_right = 363.0
-offset_bottom = 112.667
+offset_left = -512.5
+offset_top = -126.333
+offset_right = 555.5
+offset_bottom = 153.667
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -203,10 +202,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -42.6667
-offset_top = -10.6667
-offset_right = 85.3333
-offset_bottom = 55.3333
+offset_left = -123.167
+offset_top = -18.6667
+offset_right = 165.833
+offset_bottom = 63.3333
 grow_horizontal = 2
 grow_vertical = 2
 

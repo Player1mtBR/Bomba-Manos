@@ -1,12 +1,25 @@
 extends Control
 
 func _ready() -> void:
-#	$Control/start.grab_focus()
-	$Control/Buttons/VBoxContainer/Campanha.grab_focus()
+	$Control/start.grab_focus()
 	CurrentLevelManager.deathCount = 0
-	if MusicMenu.get_child(0).playing == false:
-		MusicMenu.get_child(0).play()
+
+	for child in $Control/Buttons/VBoxContainer.get_children():
+
+		if child is Button:
+			child.focus_entered.connect(_onButtonFocused)
+			child.pressed.connect(_onButtonPressed)
+
+func _onButtonFocused():
+
+	if $buttonDefaultSfx.playing:
+		$buttonDefaultSfx.stop()
+
+	$buttonDefaultSfx.play()
 	
+func _onButtonPressed():
+	$buttonSelectSfx.play()
+
 func _process(delta: float) -> void:
 	UnlockStuff.isOnMenu = true
 	
@@ -29,6 +42,8 @@ func _on_sair_pressed() -> void:
 
 
 func _on_start_pressed() -> void:
+	$startSfx.play()
+	MusicMenu.get_child(0).play()
 	$Control/start.visible = false
 	$Control/Buttons/VBoxContainer.visible = true
 	$Control/Buttons/VBoxContainer/Campanha.grab_focus()
