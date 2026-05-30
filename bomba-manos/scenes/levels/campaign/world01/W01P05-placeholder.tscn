@@ -770,7 +770,6 @@ scale = Vector2(0.325, 0.325)
 texture = ExtResource("8_e0my4")
 
 [node name="Exit" parent="." instance=ExtResource("26_yfhol")]
-visible = false
 position = Vector2(0, -16)
 levelIdentifier = "W02L05"
 nextLevel = "uid://wyq2fculrhic"

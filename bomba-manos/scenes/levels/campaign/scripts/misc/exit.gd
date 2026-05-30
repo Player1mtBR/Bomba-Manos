@@ -33,6 +33,22 @@ func _process(delta: float) -> void:
 	await get_tree().create_timer(0.5, false).timeout
 	if CurrentLevelManager.currentEnemiesAlive <= 0:
 		visible = true
+		
+		if CurrentLevelManager.currentLevelName == "W01L05":
+			$AnimatedSprite2D.play("frag_amarelo")
+		elif CurrentLevelManager.currentLevelName == "W02L05":
+			$AnimatedSprite2D.play("frag_verde")
+		elif CurrentLevelManager.currentLevelName == "W03L05":
+			$AnimatedSprite2D.play("frag_azul")
+		elif CurrentLevelManager.currentLevelName == "W04L05":
+			$AnimatedSprite2D.play("frag_vermelho")
+		else:
+			$AnimatedSprite2D.play("portal_normal")
+		
+		
+		
+		
+		
 		$Area2D.monitoring = true
 		
 		if PortalTransition.isPlaying == false:
