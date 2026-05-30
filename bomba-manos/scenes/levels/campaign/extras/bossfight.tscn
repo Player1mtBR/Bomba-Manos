@@ -1,4 +1,4 @@
-[gd_scene load_steps=202 format=3 uid="uid://suap6bq2v1le"]
+[gd_scene load_steps=215 format=3 uid="uid://suap6bq2v1le"]
 
 [ext_resource type="Script" uid="uid://wasqsu7cxrg" path="res://scenes/levels/campaign/scripts/misc/bossfight/megazord_jp.gd" id="1_eju5j"]
 [ext_resource type="Script" uid="uid://b8x47tsklf1ns" path="res://scenes/levels/campaign/scripts/misc/bossfight/bossfight.gd" id="1_vtx7u"]
@@ -10,27 +10,40 @@
 [ext_resource type="Texture2D" uid="uid://d153g467jwmqu" path="res://assets/sprites/misc/jpPlaceholder.png" id="5_mrnxu"]
 [ext_resource type="Texture2D" uid="uid://ye0exh3kcca" path="res://assets/sprites/manel/manellboss/manel super boss form2.png" id="6_6mkqc"]
 [ext_resource type="AudioStream" uid="uid://cdnug66iunmj2" path="res://assets/audio/tracks/world05/Boss fight test.mp3" id="6_v0qoy"]
+[ext_resource type="Texture2D" uid="uid://cxsm62n6rrsjb" path="res://assets/sprites/manel/manellboss/manel super boss form 1 ataque da boca1.png" id="6_xloxu"]
 [ext_resource type="Texture2D" uid="uid://ds74i23gvb0tq" path="res://assets/sprites/manel/manellboss/manel super boss form3.png" id="7_tp6la"]
+[ext_resource type="Texture2D" uid="uid://xv1pa0meo7j0" path="res://assets/sprites/manel/manellboss/manel super boss form 1 ataque da boca2.png" id="7_xtdhn"]
 [ext_resource type="Texture2D" uid="uid://chelsrqiah7ua" path="res://assets/sprites/manel/manellboss/manel super boss form4.png" id="8_3ar53"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="8_mrnxu"]
+[ext_resource type="Texture2D" uid="uid://dscse7xurnw4y" path="res://assets/sprites/manel/manellboss/manel super boss form 1 ataque da boca3.png" id="8_vmwil"]
+[ext_resource type="Texture2D" uid="uid://c51ygkhiywyve" path="res://assets/sprites/manel/manellboss/manel super boss form 1 ataque da boca4.png" id="9_7yl5o"]
+[ext_resource type="Texture2D" uid="uid://c70qaby55i4nq" path="res://assets/sprites/manel/manellboss/manel super boss form 1 ataque da boca5.png" id="10_6aekh"]
 [ext_resource type="AudioStream" uid="uid://b1v4qih6fmo5l" path="res://assets/audio/sfx/manel/risada.wav" id="10_bjlwm"]
 [ext_resource type="Texture2D" uid="uid://digvypjpp4unv" path="res://assets/sprites/manel/manellboss/manel second boss form/manel second boss form stance1.png" id="10_hqm7d"]
+[ext_resource type="Texture2D" uid="uid://ccr2oyy1865hj" path="res://assets/sprites/manel/manellboss/manel super boss form 1 ataque da boca6.png" id="11_0lh1k"]
 [ext_resource type="Texture2D" uid="uid://bm0j10o4ti6kl" path="res://assets/sprites/manel/manellboss/manel second boss form/manel second boss form stance2.png" id="11_63t20"]
+[ext_resource type="Texture2D" uid="uid://bctr3xd7kpqkf" path="res://assets/sprites/manel/manellboss/manel super boss form 1 ataque da boca7.png" id="12_1kohj"]
 [ext_resource type="AudioStream" uid="uid://dtouqsl33uk48" path="res://assets/audio/sfx/bossfight/Charge.wav" id="12_3g2vu"]
 [ext_resource type="Texture2D" uid="uid://df5b172qm1kjg" path="res://assets/sprites/manel/manellboss/manel second boss form/manel second boss form stance3.png" id="12_7a8jy"]
 [ext_resource type="Gradient" uid="uid://dkdmh6c4sj2c8" path="res://assets/res/gradient/green.tres" id="12_tk171"]
 [ext_resource type="AudioStream" uid="uid://dslatlr5baqi2" path="res://assets/audio/sfx/bossfight/hit.wav" id="13_bjlwm"]
+[ext_resource type="Texture2D" uid="uid://il5vtmhyd0rt" path="res://assets/sprites/manel/manellboss/manel super boss form 1 ataque da boca8.png" id="13_g3eqs"]
 [ext_resource type="Gradient" uid="uid://wgxcet2464q2" path="res://assets/res/gradient/red.tres" id="13_m6yek"]
 [ext_resource type="Texture2D" uid="uid://d3woxlrnuad7h" path="res://assets/sprites/manel/manellboss/manel second boss form/manel second boss form stance4.png" id="13_y6o21"]
 [ext_resource type="Texture2D" uid="uid://cihwnpwyt820q" path="res://assets/sprites/manel/manellboss/manel second boss form/manel second boss form stance5.png" id="14_6u3c6"]
 [ext_resource type="AudioStream" uid="uid://c7yr1upscbcgc" path="res://assets/audio/sfx/bossfight/shield.wav" id="14_bk35a"]
+[ext_resource type="Texture2D" uid="uid://ksdgcmqewfgr" path="res://assets/sprites/manel/manellboss/manel super boss form 1 ataque da boca9.png" id="14_utyva"]
 [ext_resource type="Gradient" uid="uid://c136r11brf5ai" path="res://assets/res/gradient/cyan.tres" id="14_xjvhh"]
 [ext_resource type="AudioStream" uid="uid://dvf2xtpjdsrcf" path="res://assets/audio/sfx/bossfight/Fullpower.wav" id="15_1y0gk"]
+[ext_resource type="Texture2D" uid="uid://co6e11j2uqkjf" path="res://assets/sprites/manel/manellboss/manel super boss form 1 ataque da boca13.png" id="15_g06w5"]
 [ext_resource type="Texture2D" uid="uid://cx21kmulxyrtf" path="res://assets/sprites/manel/manellboss/manel second boss form/manel second boss form stance6.png" id="15_ne71w"]
+[ext_resource type="Texture2D" uid="uid://bwaiwwsji13uo" path="res://assets/sprites/manel/manellboss/manel super boss form 1 ataque da boca14.png" id="16_65nla"]
 [ext_resource type="Texture2D" uid="uid://bvuy65vo7o1rs" path="res://assets/sprites/manel/manellboss/manel second boss form/transição para segunda forma1.png" id="16_ra26h"]
 [ext_resource type="AudioStream" uid="uid://bo0an6lmx7ead" path="res://assets/audio/sfx/bossfight/BombaLaser.wav" id="16_vu88c"]
 [ext_resource type="Texture2D" uid="uid://dwsco3sm3kpc0" path="res://assets/sprites/misc/EnergyShield.png" id="16_xqcxc"]
 [ext_resource type="Texture2D" uid="uid://chthh3dophugj" path="res://assets/sprites/manel/manellboss/manel second boss form/transição para segunda forma2.png" id="17_abfbk"]
+[ext_resource type="Texture2D" uid="uid://bhiy5h5nsqypl" path="res://assets/sprites/manel/manellboss/manel super boss form 1 ataque da boca15.png" id="17_bjv1n"]
+[ext_resource type="Texture2D" uid="uid://c3e6proxubjcc" path="res://assets/sprites/manel/manellboss/manel super boss form 1 ataque da boca16.png" id="18_5ackn"]
 [ext_resource type="Texture2D" uid="uid://dycqx4w28pxvu" path="res://assets/sprites/manel/manellboss/manel second boss form/transição para segunda forma3.png" id="18_t1wqq"]
 [ext_resource type="Texture2D" uid="uid://cunpr3nan5cql" path="res://assets/sprites/levels/campaign/extras/faces1.png" id="18_vu88c"]
 [ext_resource type="Texture2D" uid="uid://c1pbleenbfbv7" path="res://assets/sprites/levels/campaign/extras/faces2.png" id="19_i0mhj"]
@@ -630,35 +643,6 @@ tracks/0/keys = {
 "values": [Vector2(-27, -24), Vector2(-68, -13), Vector2(-22, 11), Vector2(46, -21), Vector2(67, -12), Vector2(26, 12)]
 }
 
-[sub_resource type="Animation" id="Animation_0ca6s"]
-resource_name = "phase_01_to_02"
-length = 5.0
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("visual/AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.45),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"phase01_to_02", &"phase01_to_02"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("visual/AnimatedSprite2D:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.14),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 0.519)]
-}
-
 [sub_resource type="Animation" id="Animation_82edo"]
 resource_name = "manel_generic_fade"
 length = 5.0
@@ -688,6 +672,35 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_0ca6s"]
+resource_name = "phase_01_to_02"
+length = 5.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("visual/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"phase01_to_02", &"phase01_to_02"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("visual/AnimatedSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.14),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 0.519)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oofr0"]
 _data = {
 &"RESET": SubResource("Animation_mrnxu"),
@@ -702,11 +715,65 @@ _data = {
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_tp6la")
+"texture": ExtResource("6_xloxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xtdhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vmwil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7yl5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6aekh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0lh1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1kohj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_g3eqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_utyva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_g06w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_65nla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bjv1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_5ackn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bjv1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_65nla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_g06w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_utyva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1kohj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0lh1k")
 }],
 "loop": false,
 "name": &"attack01",
-"speed": 1.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -857,7 +924,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 3.0,
 "texture": ExtResource("7_tp6la")
 }, {
 "duration": 1.0,
@@ -868,7 +935,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hit02",
-"speed": 3.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -882,7 +949,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hit03",
-"speed": 3.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,

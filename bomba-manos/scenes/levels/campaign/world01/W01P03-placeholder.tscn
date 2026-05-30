@@ -151,6 +151,7 @@ scale = Vector2(0.295, 0.225)
 texture = ExtResource("10_87mqg")
 
 [node name="objects" type="Node2D" parent="."]
+visible = false
 
 [node name="AllBricks" type="Node2D" parent="objects"]
 modulate = Color(0.753984, 0.753984, 0.753984, 1)
@@ -648,6 +649,7 @@ position = Vector2(160, -16)
 rotation = 1.57079
 
 [node name="entities" type="Node2D" parent="."]
+visible = false
 
 [node name="players" type="Node2D" parent="entities"]
 
@@ -757,6 +759,7 @@ scale = Vector2(0.325, 0.325)
 texture = ExtResource("8_fgn1v")
 
 [node name="Exit" parent="." instance=ExtResource("23_ddfk8")]
+visible = false
 position = Vector2(0, -16)
 levelIdentifier = "W02L03"
 nextLevel = "uid://ctkqxl5b1ly5x"

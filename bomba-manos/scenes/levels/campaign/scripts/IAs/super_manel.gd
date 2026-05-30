@@ -18,7 +18,7 @@ extends Node2D
 	$"attackSpawn/top/5"
 ]
 
-var skipIntro := true
+var skipIntro := false
 var phase := 1
 
 var projectile01Scene = preload("res://scenes/levels/campaign/extras/projectile_01.tscn")
@@ -168,15 +168,17 @@ func _process(delta: float) -> void:
 		#print("can attack ", canAttack)
 		print("remaining to charge: ", chargedCount," / ",chargeCountCap)
 		await $visual/AnimatedSprite2D.animation_finished
-		match phase:
-			1:
-				$visual/AnimatedSprite2D.play("default")
-			2:
-				$visual/AnimatedSprite2D.play("idle_phase02")
-			3:
-				$AnimationPlayer.play("manelFloat")
-			4:
-				$AnimationPlayer.play("manelFloat")
+		if coolAnimation == false:
+			match phase:
+				1:
+					$AnimationPlayer.play("manelFloat")
+					$visual/AnimatedSprite2D.play("default")
+				2:
+					$visual/AnimatedSprite2D.play("idle_phase02")
+				3:
+					$AnimationPlayer.play("manelFloat")
+				4:
+					$AnimationPlayer.play("manelFloat")
 		await get_tree().create_timer(attackCooldown5, false).timeout
 		#canAttack = true
 	
