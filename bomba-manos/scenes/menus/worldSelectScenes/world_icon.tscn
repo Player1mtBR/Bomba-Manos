@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bpj3shtpebtdy" path="res://scenes/levels/campaign/scripts/menus/worldSelect/world_icon.gd" id="1_423lh"]
 [ext_resource type="PackedScene" uid="uid://mhuio1sn8das" path="res://scenes/menus/worldSelectScenes/campaign_level_select_01.tscn" id="2_5jklo"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="3_13mvj"]
-[ext_resource type="Texture2D" uid="uid://btftsrg3e4ixl" path="res://assets/sprites/misc/worldIcons/WorldPlaceholder.png" id="4_igpti"]
+[ext_resource type="Texture2D" uid="uid://bdjhxp21hb0xl" path="res://assets/sprites/levels/campaign/WorldTerraPixelArt.png" id="4_uk7q4"]
 [ext_resource type="Texture2D" uid="uid://skcfu3n5v314" path="res://assets/sprites/misc/worldIcons/lock.png" id="5_uk7q4"]
 
 [node name="WorldIcon" type="Control"]
@@ -27,7 +27,7 @@ text = "(Mundo 01)"
 horizontal_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("4_igpti")
+texture = ExtResource("4_uk7q4")
 
 [node name="locked" type="Sprite2D" parent="."]
 visible = false
