@@ -44,5 +44,5 @@ text = "Mundo 5?"
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(430, 240)
-scale = Vector2(0.622255, 0.625)
+scale = Vector2(0.622255, 1)
 texture = ExtResource("5_nwh7s")

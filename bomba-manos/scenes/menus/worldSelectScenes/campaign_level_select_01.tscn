@@ -79,6 +79,6 @@ text = "Mundo 1"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(430, 240)
-scale = Vector2(0.622255, 0.625)
+position = Vector2(427.5, 240)
+scale = Vector2(0.625915, 0.625)
 texture = ExtResource("5_wdmo6")
