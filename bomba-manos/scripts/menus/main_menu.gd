@@ -1,6 +1,9 @@
 extends Control
 
 func _ready() -> void:
+	VersusScoreManager.resetScores()
+	
+	
 	$Control/start.grab_focus()
 	CurrentLevelManager.deathCount = 0
 

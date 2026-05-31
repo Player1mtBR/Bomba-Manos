@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b83kybk1pq56o" path="res://scripts/menus/loading/loading_screen_new_01.gd" id="1_n0edm"]
 [ext_resource type="Texture2D" uid="uid://cfpki24d0xh0o" path="res://assets/sprites/bomba/BOMBA SALGADO EXPLODINDOV6.png" id="2_a7nhy"]
-[ext_resource type="LabelSettings" uid="uid://ciiuy7qsoeohc" path="res://assets/res/textSettings.tres" id="2_l7m0t"]
 [ext_resource type="Texture2D" uid="uid://jia0vwgdkjvb" path="res://assets/sprites/UI/mainMenu/bomba manos menu background.png" id="2_nxxnn"]
+[ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="3_nxxnn"]
 
 [node name="LoadingScreenNew01" type="CanvasLayer"]
 script = ExtResource("1_n0edm")
@@ -33,15 +33,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -345.5
-offset_top = 114.0
-offset_right = -0.5
-offset_bottom = 151.0
+offset_left = -144.5
+offset_top = 117.0
+offset_right = 28.5
+offset_bottom = 141.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_nxxnn")
+theme_override_font_sizes/font_size = 17
 text = "Carregando..."
-label_settings = ExtResource("2_l7m0t")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Control"]
 layout_mode = 1

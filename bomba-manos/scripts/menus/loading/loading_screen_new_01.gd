@@ -11,8 +11,23 @@ func _ready() -> void:
 	#print(randValue4Loading)
 	
 func _process(delta: float) -> void:
+	"""
+	$Control/Label.text = "Carregando"
+	await get_tree().create_timer(0.25, false).timeout
+	$Control/Label.text = "Carregando."
+	await get_tree().create_timer(0.25, false).timeout
+	$Control/Label.text = "Carregando.."
+	await get_tree().create_timer(0.25, false).timeout
+	$Control/Label.text = "Carregando..."
+	await get_tree().create_timer(0.25, false).timeout
+
+	"""
 	var progress = []
 	var status = ResourceLoader.load_threaded_get_status(path2Scene, progress)
+	
+	#three dots carregando
+	
+	
 	
 	if progress[0] > update:
 		update = progress[0]

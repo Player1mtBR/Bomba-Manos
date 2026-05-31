@@ -1,13 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://cj21dxxqeeufg"]
+[gd_scene load_steps=14 format=3 uid="uid://cj21dxxqeeufg"]
 
 [ext_resource type="Script" uid="uid://hx1q14ialw20" path="res://scripts/menus/main_menu.gd" id="1_xqga4"]
-[ext_resource type="Texture2D" uid="uid://ha33ikyafe07" path="res://assets/sprites/UI/bomba manos menu.png" id="2_6bivr"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="2_ovrgc"]
 [ext_resource type="Theme" uid="uid://ds7mb4bo4uj1a" path="res://assets/res/button_theme_01.tres" id="3_imvie"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="4_imvie"]
 [ext_resource type="AudioStream" uid="uid://c1tu6qo3cp6wb" path="res://assets/audio/sfx/ui/move_selection.wav" id="6_1hnlc"]
 [ext_resource type="AudioStream" uid="uid://mqsrj0ryfn6v" path="res://assets/audio/sfx/ui/select.wav" id="7_50h1w"]
+[ext_resource type="Texture2D" uid="uid://jia0vwgdkjvb" path="res://assets/sprites/UI/mainMenu/bomba manos menu background.png" id="8_bre17"]
 [ext_resource type="AudioStream" uid="uid://cm6ffsrlh456r" path="res://assets/audio/sfx/ui/start.wav" id="8_euy4r"]
+[ext_resource type="Texture2D" uid="uid://dole4gh28y4e2" path="res://assets/sprites/UI/mainMenu/bomba manos menu another png.png" id="9_88kup"]
+[ext_resource type="Texture2D" uid="uid://c0dxkavoph406" path="res://assets/sprites/UI/mainMenu/bomba manos menu png only.png" id="10_bh4e2"]
+[ext_resource type="Texture2D" uid="uid://gh4r3hvrmq6g" path="res://assets/sprites/UI/mainMenu/31 Sem Título_20260514113123.png" id="11_3w8rc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_imvie"]
 draw_center = false
@@ -26,12 +29,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_xqga4")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 855.0
-offset_bottom = 480.0
-texture = ExtResource("2_6bivr")
-
 [node name="Control" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -39,6 +36,41 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="visualElements" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="background" type="TextureRect" parent="Control/visualElements"]
+layout_mode = 0
+offset_right = 855.0
+offset_bottom = 480.0
+texture = ExtResource("8_bre17")
+
+[node name="manelMessiasFundo" type="TextureRect" parent="Control/visualElements"]
+layout_mode = 0
+offset_right = 855.0
+offset_bottom = 480.0
+texture = ExtResource("9_88kup")
+
+[node name="manelMessias" type="TextureRect" parent="Control/visualElements"]
+layout_mode = 0
+offset_right = 855.0
+offset_bottom = 480.0
+texture = ExtResource("10_bh4e2")
+
+[node name="bombaManos" type="TextureRect" parent="Control/visualElements"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = -122.0
+offset_right = 752.0
+offset_bottom = 517.0
+rotation = 0.605763
+pivot_offset = Vector2(210.5, 220)
+texture = ExtResource("11_3w8rc")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Buttons" type="Control" parent="Control"]
 layout_mode = 1
@@ -114,6 +146,8 @@ stream = ExtResource("6_1hnlc")
 
 [node name="buttonSelectSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_50h1w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Campanha" to="." method="_on_campanha_pressed"]
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Versus" to="." method="_on_versus_pressed"]
