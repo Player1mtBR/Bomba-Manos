@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://o886kdk1rmgp"]
+[gd_scene load_steps=7 format=3 uid="uid://o886kdk1rmgp"]
 
 [ext_resource type="Script" uid="uid://db51vpoxlelql" path="res://scenes/levels/campaign/scripts/menus/worldSelect/campaign_level_select.gd" id="1_stwgo"]
 [ext_resource type="PackedScene" uid="uid://vqadtrjtxsn5" path="res://scenes/menus/worldSelectScenes/level_icon.tscn" id="2_x5nyx"]
 [ext_resource type="PackedScene" uid="uid://c3i3avv75txs4" path="res://scenes/menus/worldSelectScenes/player_icon.tscn" id="3_3ka0m"]
 [ext_resource type="SpriteFrames" uid="uid://dnwsmvk3wpfgx" path="res://assets/res/spriteframes/ureiaman-Sprite-Frames.tres" id="4_x5nyx"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="5_3ka0m"]
+[ext_resource type="Texture2D" uid="uid://o31y83d3vwpt" path="res://assets/sprites/levels/campaign/world01/LostWoodsFloor.png" id="6_mfny0"]
 
 [node name="CampaignLevelSelect" type="Control"]
 layout_mode = 3
@@ -77,3 +78,9 @@ offset_right = 413.0
 offset_bottom = 31.0
 theme = ExtResource("5_3ka0m")
 text = "Mundo 2"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(430, 240)
+scale = Vector2(0.622255, 0.625)
+texture = ExtResource("6_mfny0")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxfq25mlua7ls"]
+[gd_scene load_steps=7 format=3 uid="uid://bxfq25mlua7ls"]
 
 [ext_resource type="Script" uid="uid://db51vpoxlelql" path="res://scenes/levels/campaign/scripts/menus/worldSelect/campaign_level_select.gd" id="1_3u12c"]
 [ext_resource type="PackedScene" uid="uid://vqadtrjtxsn5" path="res://scenes/menus/worldSelectScenes/level_icon.tscn" id="2_y180b"]
 [ext_resource type="PackedScene" uid="uid://c3i3avv75txs4" path="res://scenes/menus/worldSelectScenes/player_icon.tscn" id="3_1kii7"]
 [ext_resource type="SpriteFrames" uid="uid://cdjt7gy7aei07" path="res://assets/res/spriteframes/rangerman-Sprite-Frames.tres" id="4_y180b"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="5_1kii7"]
+[ext_resource type="Texture2D" uid="uid://bmh7gbx4co7l3" path="res://assets/sprites/levels/campaign/world03/chão.png" id="6_5l13r"]
 
 [node name="CampaignLevelSelect" type="Control"]
 layout_mode = 3
@@ -77,3 +78,9 @@ offset_right = 413.0
 offset_bottom = 31.0
 theme = ExtResource("5_1kii7")
 text = "Mundo 3"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(430, 240)
+scale = Vector2(0.622255, 0.625)
+texture = ExtResource("6_5l13r")
