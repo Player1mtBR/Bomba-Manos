@@ -562,7 +562,7 @@ autoplay = true
 bus = &"Soundtrack"
 
 [node name="mainCamera" parent="." instance=ExtResource("15_8e3e1")]
-position = Vector2(0, -32)
+position = Vector2(0, -48)
 
 [node name="bombaSfx" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, 2)
