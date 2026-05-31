@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://bww0rq8oxupon"]
 
-[ext_resource type="Script" uid="uid://dhhab8c8xnrfb" path="res://scenes/levels/campaign/scripts/breakable_block.gd" id="1_od2hb"]
+[ext_resource type="Script" uid="uid://dhhab8c8xnrfb" path="res://scripts/breakable_block.gd" id="1_od2hb"]
 [ext_resource type="Texture2D" uid="uid://b5aikch2jynv5" path="res://assets/sprites/levels/campaign/world02/cyberBlocks.png" id="2_od2hb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ivgbs"]

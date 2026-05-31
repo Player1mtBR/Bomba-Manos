@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://dlsguo0n2gyrp"]
 
-[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scenes/levels/campaign/scripts/IAs/base_ia.gd" id="1_4d0rs"]
+[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scripts/IAs/base_ia.gd" id="1_4d0rs"]
 [ext_resource type="Texture2D" uid="uid://pjwspwvcswcp" path="res://assets/sprites/mobs_world_3/Sprite-bicho1.png" id="2_6kwg8"]
 [ext_resource type="Texture2D" uid="uid://bjl0ijt487i3a" path="res://assets/sprites/mobs_world_3/Sprite-bicho2.png" id="3_qgiih"]
 [ext_resource type="Texture2D" uid="uid://x15dfkcitwh5" path="res://assets/sprites/mobs_world_3/Sprite-bicho3.png" id="4_8jcgp"]

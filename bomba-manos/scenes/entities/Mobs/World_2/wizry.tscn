@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://bfaodin2rks4j"]
 
-[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scenes/levels/campaign/scripts/IAs/base_ia.gd" id="1_u312f"]
+[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scripts/IAs/base_ia.gd" id="1_u312f"]
 [ext_resource type="Texture2D" uid="uid://bhwjqls5vq7md" path="res://assets/sprites/mobs_world_1/Sprites do Wizry.png" id="2_u312f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xsjrv"]

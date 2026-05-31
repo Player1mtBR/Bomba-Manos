@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2wjsl0bsfouh"]
 
-[ext_resource type="Script" uid="uid://crhholwb2f4y" path="res://scenes/levels/campaign/scripts/misc/pause_campaign.gd" id="1_6tgym"]
+[ext_resource type="Script" uid="uid://crhholwb2f4y" path="res://scripts/misc/pause_campaign.gd" id="1_6tgym"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="2_hdou6"]
 
 [node name="pauseCampaign" type="CanvasLayer"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dddt13hsx7rge"]
 
-[ext_resource type="Script" uid="uid://dbh72age3iyox" path="res://scenes/levels/campaign/scripts/menus/ui/player_score_ui.gd" id="1_apmvj"]
+[ext_resource type="Script" uid="uid://dbh72age3iyox" path="res://scripts/menus/ui/player_score_ui.gd" id="1_apmvj"]
 [ext_resource type="Texture2D" uid="uid://s2mevjohxddo" path="res://assets/sprites/UI/redX.png" id="2_4q13d"]
 [ext_resource type="Texture2D" uid="uid://cttr675ttojt3" path="res://assets/res/texture/player_score_ui.tres" id="2_bnjgv"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="3_bnjgv"]

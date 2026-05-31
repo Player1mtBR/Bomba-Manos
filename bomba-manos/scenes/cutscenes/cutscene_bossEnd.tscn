@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://djvn7p6w0x1u4"]
 
-[ext_resource type="Script" uid="uid://bj12gul8etm1p" path="res://scenes/levels/campaign/scripts/misc/cutscene_01.gd" id="1_j57co"]
+[ext_resource type="Script" uid="uid://bj12gul8etm1p" path="res://scripts/misc/cutscene_01.gd" id="1_j57co"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_yirsh"]
 file = "res://assets/video/YoU cAn'T jUsT sHoOt a hOlE iNtO ThE sUrFaCe oF mArS.ogv"

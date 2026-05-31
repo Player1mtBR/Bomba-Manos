@@ -1,6 +1,6 @@
 [gd_scene load_steps=62 format=3 uid="uid://cb2dhwp8qhodu"]
 
-[ext_resource type="Script" uid="uid://bio8lbnemnnn1" path="res://scenes/levels/campaign/scripts/misc/exit.gd" id="1_bpsdj"]
+[ext_resource type="Script" uid="uid://bio8lbnemnnn1" path="res://scripts/misc/exit.gd" id="1_bpsdj"]
 [ext_resource type="Texture2D" uid="uid://7g48cnj8bu1p" path="res://assets/sprites/levels/campaign/FragAzul1.png" id="3_leiux"]
 [ext_resource type="Texture2D" uid="uid://d1ncdb1wi66bh" path="res://assets/sprites/levels/campaign/FragAzul2.png" id="4_x4txf"]
 [ext_resource type="Texture2D" uid="uid://6m1g0dbemtki" path="res://assets/sprites/levels/campaign/FragAzul3.png" id="5_p5fx0"]

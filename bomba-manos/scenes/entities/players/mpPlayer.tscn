@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cj2k7d51p2pvx"]
 
-[ext_resource type="Script" uid="uid://iy7okbox2p6y" path="res://scenes/levels/campaign/scripts/player/mp_player.gd" id="1_dqyqc"]
+[ext_resource type="Script" uid="uid://iy7okbox2p6y" path="res://scripts/player/mp_player.gd" id="1_dqyqc"]
 [ext_resource type="SpriteFrames" uid="uid://bby48g7tnjmc4" path="res://assets/res/spriteframes/blankSkin.tres" id="2_e76da"]
-[ext_resource type="Script" uid="uid://denkwoabotyh5" path="res://scenes/levels/campaign/scripts/player/place_bomba.gd" id="3_ftyts"]
+[ext_resource type="Script" uid="uid://denkwoabotyh5" path="res://scripts/player/place_bomba.gd" id="3_ftyts"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tou7l"]
 radius = 59.5

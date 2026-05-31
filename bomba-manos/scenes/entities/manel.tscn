@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://bgkax6c3eo7n0"]
 
-[ext_resource type="Script" uid="uid://c3yrggigyrqda" path="res://scenes/levels/campaign/scripts/manel.gd" id="1_f4fsj"]
+[ext_resource type="Script" uid="uid://c3yrggigyrqda" path="res://scripts/manel.gd" id="1_f4fsj"]
 [ext_resource type="Texture2D" uid="uid://kciyrmrnrqw1" path="res://assets/phManel.png" id="1_uuirj"]
 [ext_resource type="AudioStream" uid="uid://c701ygoemed0o" path="res://assets/audio/sfx/manel/taComendoBombaDenovo.wav" id="3_nxelx"]
 [ext_resource type="AudioStream" uid="uid://b1v4qih6fmo5l" path="res://assets/audio/sfx/manel/risada.wav" id="4_un2uc"]

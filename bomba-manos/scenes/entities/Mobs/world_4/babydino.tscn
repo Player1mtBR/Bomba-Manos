@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://dvg4rkj02cf4"]
 
-[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scenes/levels/campaign/scripts/IAs/base_ia.gd" id="1_xbarm"]
+[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scripts/IAs/base_ia.gd" id="1_xbarm"]
 [ext_resource type="Texture2D" uid="uid://cljtx1ok87yyp" path="res://assets/sprites/mobs_world_4/dino_gpt/Sprite-0005.png" id="2_ipueo"]
 [ext_resource type="Texture2D" uid="uid://c8wao72o6fi8l" path="res://assets/sprites/mobs_world_4/dino_gpt/Sprite-0006.png" id="3_mfgie"]
 [ext_resource type="Texture2D" uid="uid://cwarslxxxfnjd" path="res://assets/sprites/mobs_world_4/dino_gpt/Sprite-0007.png" id="4_p0e0x"]

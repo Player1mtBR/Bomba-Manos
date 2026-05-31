@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://dpqahlf1cfqfa"]
 
-[ext_resource type="Script" uid="uid://btyho8ym5bvky" path="res://scenes/levels/campaign/scripts/misc/bossfight/projectile_01.gd" id="1_gji5s"]
+[ext_resource type="Script" uid="uid://btyho8ym5bvky" path="res://scripts/misc/bossfight/projectile_01.gd" id="1_gji5s"]
 [ext_resource type="Texture2D" uid="uid://c0oe61ekf5v8s" path="res://assets/sprites/manel/manellboss/projectiles/Projetilgrande.png" id="2_lyha4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sypa5"]

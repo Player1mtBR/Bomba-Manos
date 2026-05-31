@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=4 uid="uid://c8owbepyobwjm"]
 
-[ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scenes/levels/campaign/scripts/lab_test_01.gd" id="1_ht0kv"]
+[ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_ht0kv"]
 [ext_resource type="Texture2D" uid="uid://bmh7gbx4co7l3" path="res://assets/sprites/levels/campaign/world03/chão.png" id="2_6rlt1"]
 [ext_resource type="Texture2D" uid="uid://dw4hil17syrg0" path="res://assets/sprites/levels/campaign/world03/FRENTELostWoods.png" id="4_577iv"]
 [ext_resource type="Texture2D" uid="uid://b5ndgww7gucmk" path="res://assets/sprites/levels/campaign/world03/LeftWallLostWoods.png" id="4_m8we0"]
@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://bdacak2swvl1s" path="res://assets/audio/tracks/world 3/Igor02.mp3" id="12_ht0kv"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="15_ard0a"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="16_cq23i"]
-[ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scenes/levels/campaign/scripts/ui.gd" id="17_tjb8y"]
+[ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="17_tjb8y"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="18_few6f"]
 [ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/campaign/exit.tscn" id="18_n5bi5"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="19_ht0kv"]

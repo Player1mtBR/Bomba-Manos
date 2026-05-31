@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://c1x22kwjvm6tb"]
 
-[ext_resource type="Script" uid="uid://dhhab8c8xnrfb" path="res://scenes/levels/campaign/scripts/breakable_block.gd" id="1_4kxi0"]
+[ext_resource type="Script" uid="uid://dhhab8c8xnrfb" path="res://scripts/breakable_block.gd" id="1_4kxi0"]
 [ext_resource type="Texture2D" uid="uid://cj3jjed66nk6t" path="res://assets/sprites/levels/campaign/world01/ArbustoDestrutivelAnimation.png" id="2_4kxi0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j0f4a"]

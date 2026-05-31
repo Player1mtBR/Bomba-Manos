@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cj21dxxqeeufg"]
 
-[ext_resource type="Script" uid="uid://hx1q14ialw20" path="res://scenes/levels/campaign/scripts/menus/main_menu.gd" id="1_xqga4"]
+[ext_resource type="Script" uid="uid://hx1q14ialw20" path="res://scripts/menus/main_menu.gd" id="1_xqga4"]
 [ext_resource type="Texture2D" uid="uid://ha33ikyafe07" path="res://assets/sprites/UI/bomba manos menu.png" id="2_6bivr"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="2_ovrgc"]
 [ext_resource type="Theme" uid="uid://ds7mb4bo4uj1a" path="res://assets/res/button_theme_01.tres" id="3_imvie"]

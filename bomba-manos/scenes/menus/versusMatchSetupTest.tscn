@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c02kwfsjemtds"]
 
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="1_2qljs"]
-[ext_resource type="Script" uid="uid://cyn5kl26ct3pp" path="res://scenes/levels/campaign/scripts/menus/testButtonMP.gd" id="2_2qljs"]
+[ext_resource type="Script" uid="uid://cyn5kl26ct3pp" path="res://scripts/menus/testButtonMP.gd" id="2_2qljs"]
 
 [node name="VersusMatchSetupTest" type="Control"]
 layout_mode = 3

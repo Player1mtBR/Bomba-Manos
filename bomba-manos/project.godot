@@ -20,13 +20,13 @@ config/icon="uid://be6qw0e7jy44g"
 
 [autoload]
 
-GlobalScript="*res://scenes/levels/campaign/scripts/globalScript.gd"
+GlobalScript="*res://scripts/globalScript.gd"
 MusicMenu="*res://scenes/menus/MusicMenu.tscn"
-Loader="*res://scenes/levels/campaign/scripts/misc/loader.gd"
-VersusMatchSettings="*res://scenes/levels/campaign/scripts/misc/versus_match_settings.gd"
-VersusScoreManager="*res://scenes/levels/campaign/scripts/misc/versus_score_manager.gd"
-UnlockStuff="*res://scenes/levels/campaign/scripts/misc/unlock_stuff.gd"
-CurrentLevelManager="*res://scenes/levels/campaign/scripts/misc/current_level_manager.gd"
+Loader="*res://scripts/misc/loader.gd"
+VersusMatchSettings="*res://scripts/misc/versus_match_settings.gd"
+VersusScoreManager="*res://scripts/misc/versus_score_manager.gd"
+UnlockStuff="*res://scripts/misc/unlock_stuff.gd"
+CurrentLevelManager="*res://scripts/misc/current_level_manager.gd"
 PortalTransition="*res://scenes/menus/loading/portal_transition.tscn"
 
 [display]

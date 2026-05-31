@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c3i3avv75txs4"]
 
 [ext_resource type="SpriteFrames" uid="uid://qoeojvexepwx" path="res://assets/res/spriteframes/bombaman-Sprite-Frames.tres" id="1_4cluq"]
-[ext_resource type="Script" uid="uid://bmelme8pm3kxq" path="res://scenes/levels/campaign/scripts/menus/worldSelect/player_icon.gd" id="1_7yv4c"]
+[ext_resource type="Script" uid="uid://bmelme8pm3kxq" path="res://scripts/menus/worldSelect/player_icon.gd" id="1_7yv4c"]
 
 [node name="playerIcon" type="Node2D"]
 script = ExtResource("1_7yv4c")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://vqadtrjtxsn5"]
 
-[ext_resource type="Script" uid="uid://mtd0vsndlq47" path="res://scenes/levels/campaign/scripts/menus/worldSelect/level_icon.gd" id="1_brvjm"]
+[ext_resource type="Script" uid="uid://mtd0vsndlq47" path="res://scripts/menus/worldSelect/level_icon.gd" id="1_brvjm"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="2_xxvwq"]
 [ext_resource type="Texture2D" uid="uid://btftsrg3e4ixl" path="res://assets/sprites/misc/worldIcons/WorldPlaceholder.png" id="3_88cbk"]
 [ext_resource type="Texture2D" uid="uid://skcfu3n5v314" path="res://assets/sprites/misc/worldIcons/lock.png" id="4_gfv8p"]

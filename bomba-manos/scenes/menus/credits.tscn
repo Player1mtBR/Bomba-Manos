@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://da5pc4u2g5qoe"]
 
-[ext_resource type="Script" uid="uid://vi7bqcltd8ge" path="res://scenes/levels/campaign/scripts/menus/credits.gd" id="1_iiqlc"]
+[ext_resource type="Script" uid="uid://vi7bqcltd8ge" path="res://scripts/menus/credits.gd" id="1_iiqlc"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="2_b2mra"]
 
 [node name="Credits" type="Control"]
