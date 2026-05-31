@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://ctkqxl5b1ly5x"]
+[gd_scene load_steps=32 format=4 uid="uid://ctkqxl5b1ly5x"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_opioi"]
 [ext_resource type="Texture2D" uid="uid://v7o6pkkgso0r" path="res://assets/sprites/levels/campaign/world01/LostWoodsCorner.png" id="2_aim60"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c0hokdg4uk5yy" path="res://scenes/objects/teleportTunel2.tscn" id="13_sekdl"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="14_p4mqe"]
 [ext_resource type="SpriteFrames" uid="uid://dnwsmvk3wpfgx" path="res://assets/res/spriteframes/ureiaman-Sprite-Frames.tres" id="15_0eyu6"]
+[ext_resource type="AudioStream" uid="uid://cxavrnrjg8iwv" path="res://assets/audio/dialogue/PedroDyingXD.mp3" id="16_aim60"]
 [ext_resource type="PackedScene" uid="uid://og2qdp100kqe" path="res://scenes/entities/Mobs/World_2/borbocespa.tscn" id="16_le0l0"]
 [ext_resource type="PackedScene" uid="uid://cbwhqu6sa22uf" path="res://scenes/entities/Mobs/World_2/corubia.tscn" id="17_y54ud"]
 [ext_resource type="AudioStream" uid="uid://2234ouivlgkm" path="res://assets/audio/tracks/world01/W01Phase 04.mp3" id="19_o73as"]
@@ -655,6 +656,7 @@ rotation = 1.57079
 position = Vector2(160, 64)
 playerID = 1
 charSkin = ExtResource("15_0eyu6")
+DieSound = ExtResource("16_aim60")
 bombaEX = 3
 teleportTunel = NodePath("../../../objects/AllTeleports/TeleportTunel")
 teleportTunel2 = NodePath("../../../objects/AllTeleports/TeleportTunel2")

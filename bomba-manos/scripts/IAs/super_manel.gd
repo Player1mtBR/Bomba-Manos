@@ -18,7 +18,7 @@ extends Node2D
 	$"attackSpawn/top/5"
 ]
 
-var skipIntro := false
+var skipIntro := true
 var phase := 1
 
 var projectile01Scene = preload("res://scenes/levels/campaign/extras/projectile_01.tscn")
@@ -127,15 +127,7 @@ func _process(delta: float) -> void:
 
 		canAttack = false
 		print("phase check", phase)
-		match phase:
-			1:
-				$visual/AnimatedSprite2D.play("attack01")
-			2:
-				$visual/AnimatedSprite2D.play("attack02")
-			3:
-				$AnimationPlayer.play("manelFloat")
-			4:
-				$AnimationPlayer.play("manelFloat")
+		playAttackAnim()
 		match phRandom:
 			0:
 				attackLaserCorners()
@@ -169,16 +161,7 @@ func _process(delta: float) -> void:
 		print("remaining to charge: ", chargedCount," / ",chargeCountCap)
 		await $visual/AnimatedSprite2D.animation_finished
 		if coolAnimation == false:
-			match phase:
-				1:
-					$AnimationPlayer.play("manelFloat")
-					$visual/AnimatedSprite2D.play("default")
-				2:
-					$visual/AnimatedSprite2D.play("idle_phase02")
-				3:
-					$AnimationPlayer.play("manelFloat")
-				4:
-					$AnimationPlayer.play("manelFloat")
+			playIdleAnim()
 		await get_tree().create_timer(attackCooldown5, false).timeout
 		#canAttack = true
 	
@@ -583,15 +566,15 @@ func attackLaserCorners(): #BAD LOGIC
 	
 
 func chargeAttackTop(pos):
-	$visual/AnimatedSprite2D.play("default")
+	#$visual/AnimatedSprite2D.play("default")
 	shoot02(Vector2.DOWN, 300.0, pos.global_position, 0.0)
 	
 func chargeAttackLeft(pos):
-	$visual/AnimatedSprite2D.play("default")
+	#$visual/AnimatedSprite2D.play("default")
 	shoot02(Vector2.RIGHT, 300.0, pos.global_position, -90.0)
 
 func chargeAttackRight(pos):
-	$visual/AnimatedSprite2D.play("default")
+	#$visual/AnimatedSprite2D.play("default")
 	shoot02(Vector2.LEFT, 300.0, pos.global_position, 90.0)
 
 
@@ -660,10 +643,21 @@ func takeDamage():
 	
 	$visual/AnimatedSprite2D.offset = Vector2(0, 48)
 	$visual.position = Vector2(0, 0)
+	
+	
+	if phase == 3: 
+		$"../Background/phase03BG".visible = true
+		$visual/AnimatedSprite2D.scale = Vector2(2.75, 2.75)
+		$visual/AnimatedSprite2D.position.y = -32.0
+		$visual/leftHand.visible = true
+		$visual/rightHand.visible = true
+	
+	
 	await $visual/AnimatedSprite2D.animation_finished
-	#await get_tree().create_timer(2.0, false).timeout #remove after animation is done
+
 	$sfx/risadaPessecopata.play()
 	await get_tree().create_timer(3.0, false).timeout
+		
 	$sfx/risadaPessecopata.play()
 	print("begin next phase")
 	coolAnimation = false
@@ -683,13 +677,25 @@ func finalAttack():
 func playIdleAnim():
 	match phase:
 		1:
-			pass
+			$AnimationPlayer.play("manelFloat")
+			$visual/AnimatedSprite2D.play("default")
 		2:
-			pass
+			$visual/AnimatedSprite2D.play("idle_phase02")
 		3:
-			pass
+			$visual/AnimatedSprite2D.play("idle_phase03")
 		4:
-			pass
+			$visual/AnimatedSprite2D.play("idle_phase03")
+
+func playAttackAnim():
+	match phase:
+		1:
+			$visual/AnimatedSprite2D.play("attack01")
+		2:
+			$visual/AnimatedSprite2D.play("attack02")
+		3:
+			$visual/AnimatedSprite2D.play("attack03")
+		4:
+			$visual/AnimatedSprite2D.play("attack03")
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	#print("area ",area.name)

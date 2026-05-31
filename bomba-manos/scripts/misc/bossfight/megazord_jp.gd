@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
-var hp := 10
+var hp := 12
 var movespeed := 300
 
 @onready var parryTimer = $ParryTimer
+
+var attackCounter := 0
 
 var chargedPower := 0
 var invincible := false
@@ -23,6 +25,10 @@ func _ready() -> void:
 	pass
 	
 func _process(delta: float) -> void:
+	if attackCounter >= 4:
+		canAttack = false
+		canBlock = false
+	
 	$"../Icons/healthBarMegazordJP/TextureProgressBar".value = hp
 	$"../Icons/powerBar/TextureProgressBar".value = chargedPower
 	$"../Icons/powerBar/TextureProgressBar2".value = chargedPower
@@ -193,6 +199,7 @@ func disable_all_shields():
 	$ShieldRIGHT/CollisionShape2D.disabled = true
 	
 func jpAttack():
+	attackCounter += 1
 	$AnimatedSprite2D.play("shoot")
 	$sfx/attack.play()
 	$sfx/bombarangers.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://cb2dhwp8qhodu"]
+[gd_scene load_steps=63 format=3 uid="uid://cb2dhwp8qhodu"]
 
 [ext_resource type="Script" uid="uid://bio8lbnemnnn1" path="res://scripts/misc/exit.gd" id="1_bpsdj"]
 [ext_resource type="Texture2D" uid="uid://7g48cnj8bu1p" path="res://assets/sprites/levels/campaign/FragAzul1.png" id="3_leiux"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://nud8q2ttuhmo" path="res://assets/sprites/levels/campaign/mundo7.png" id="29_x5dre"]
 [ext_resource type="Texture2D" uid="uid://jd25g14nmh8" path="res://assets/sprites/levels/campaign/mundo8.png" id="30_gg4pa"]
 [ext_resource type="Texture2D" uid="uid://cx5gda7i6g71w" path="res://assets/sprites/levels/campaign/mundo9.png" id="31_i525u"]
+[ext_resource type="AudioStream" uid="uid://cibt7acvmabau" path="res://assets/audio/sfx/misc/menu01.wav" id="31_leiux"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpsdj"]
 size = Vector2(8, 8)
@@ -234,6 +235,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_o8okx")
 }, {
 "duration": 1.0,
@@ -247,103 +251,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4ertf")
+}],
+"loop": false,
+"name": &"portal_abrindo",
+"speed": 7.0
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0gloc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g8iuy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8h1rk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fgl44")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0gloc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g8iuy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8h1rk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fgl44")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0gloc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g8iuy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8h1rk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fgl44")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0gloc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g8iuy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8h1rk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fgl44")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0gloc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g8iuy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8h1rk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fgl44")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0gloc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g8iuy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8h1rk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fgl44")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0gloc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g8iuy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8h1rk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fgl44")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0gloc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g8iuy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8h1rk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fgl44")
-}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0gloc")
 }, {
@@ -357,11 +270,12 @@ animations = [{
 "texture": SubResource("AtlasTexture_fgl44")
 }],
 "loop": true,
-"name": &"portal_normal",
+"name": &"portal_loop",
 "speed": 7.0
 }]
 
 [node name="Exit" type="Node2D"]
+visible = false
 script = ExtResource("1_bpsdj")
 levelIdentifier = "W01L01"
 
@@ -373,7 +287,9 @@ shape = SubResource("RectangleShape2D_bpsdj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_np003")
-animation = &"portal_normal"
-frame_progress = 0.237605
+animation = &"portal_abrindo"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_leiux")
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]

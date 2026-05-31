@@ -68,5 +68,6 @@ func _process(delta: float) -> void:
 		bombaSfx.play()
 		GlobalScript.triggerBombaSfx = false
 	if GlobalScript.currentPlayers == 0:
-		Die.play()
+		pass
+#		Die.play()
 		

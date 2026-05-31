@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 ## escrever ":" define o tipo da variável, pode usar := pra definir o tipo e valor ao mesmo tempo tbm
-@export var playerID := 0 ##permite usar um único script para o input de todos os jogadores
+@export var playerID := 0 
 @export var isPlayerOnMenu := false
 @export var charSkin := SpriteFrames
-@export var DieSound := AudioStreamMP3 #test
+@export var DieSound := AudioStream
 
 @export var bombaEX := 1 #01 NORMAL - 02 MESSIAS - 03 MASCARA 04 - FANTASMA - 05 REMOTO
 
@@ -39,12 +39,11 @@ var movespeed := 100
 
 func _ready() -> void:
 	animPlayerNode.sprite_frames = charSkin
-	if isPlayerOnMenu == false:
-		#playerID = GlobalScript.selectedPlayer1
-		#GlobalScript.currentPlayers += 1               ###remove comment
-		print(GlobalScript.currentPlayers)
-		#if playerID != GlobalScript.selectedPlayer1 and playerID != GlobalScript.selectedPlayer2:
-		#	queue_free()
+	if DieSound != null:
+		Diesom.stream = DieSound
+	print(DieSound)
+	print(Diesom.stream)
+
 	
 func _process(delta: float) -> void:
 	#if GlobalScript.currentPlayers == 1 and canPlayerMove == true and isPlayerAlive == true:
@@ -148,9 +147,9 @@ func movePlayer(): ##tween vai levar de um valor a outro de forma gradual
 			
 func killPlayer():
 	CurrentLevelManager.deathCount += 1
-	GlobalScript.currentPlayers -= 1
-	if GlobalScript.currentPlayers > 1:
-		GlobalScript.triggerLaugh = true
+	#GlobalScript.currentPlayers -= 1
+	#if GlobalScript.currentPlayers > 1:
+	#	GlobalScript.triggerLaugh = true
 	isPlayerAlive = false
 	Diesom.play()
 	animPlayerNode.play("die")

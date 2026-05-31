@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cj21dxxqeeufg"]
+[gd_scene load_steps=15 format=3 uid="uid://cj21dxxqeeufg"]
 
 [ext_resource type="Script" uid="uid://hx1q14ialw20" path="res://scripts/menus/main_menu.gd" id="1_xqga4"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="2_ovrgc"]
 [ext_resource type="Theme" uid="uid://ds7mb4bo4uj1a" path="res://assets/res/button_theme_01.tres" id="3_imvie"]
-[ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="4_imvie"]
 [ext_resource type="AudioStream" uid="uid://c1tu6qo3cp6wb" path="res://assets/audio/sfx/ui/move_selection.wav" id="6_1hnlc"]
 [ext_resource type="AudioStream" uid="uid://mqsrj0ryfn6v" path="res://assets/audio/sfx/ui/select.wav" id="7_50h1w"]
 [ext_resource type="Texture2D" uid="uid://jia0vwgdkjvb" path="res://assets/sprites/UI/mainMenu/bomba manos menu background.png" id="8_bre17"]
@@ -17,6 +16,14 @@ draw_center = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hnlc"]
 draw_center = false
+
+[sub_resource type="Animation" id="Animation_euy4r"]
+resource_name = "await_start_press"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bre17"]
+_data = {
+&"await_start_press": SubResource("Animation_euy4r")
+}
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -81,15 +88,14 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/Buttons"]
-visible = false
 custom_minimum_size = Vector2(94.72, 0)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = 10.0
+offset_top = -3.0
 offset_right = 254.0
-offset_bottom = 240.0
+offset_bottom = 239.0
 grow_vertical = 2
 theme = ExtResource("3_imvie")
 theme_override_constants/separation = 8
@@ -97,26 +103,31 @@ theme_override_constants/separation = 8
 [node name="Campanha" type="Button" parent="Control/Buttons/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_ovrgc")
+theme_override_font_sizes/font_size = 34
 text = "Campanha"
 
 [node name="Versus" type="Button" parent="Control/Buttons/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_ovrgc")
+theme_override_font_sizes/font_size = 34
 text = "Versus"
 
 [node name="Configurações" type="Button" parent="Control/Buttons/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_ovrgc")
+theme_override_font_sizes/font_size = 34
 text = "Ajustes"
 
 [node name="Créditos" type="Button" parent="Control/Buttons/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_ovrgc")
+theme_override_font_sizes/font_size = 34
 text = "Creditos"
 
 [node name="Sair" type="Button" parent="Control/Buttons/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_ovrgc")
+theme_override_font_sizes/font_size = 34
 text = "Sair"
 
 [node name="start" type="Button" parent="Control"]
@@ -132,7 +143,7 @@ offset_right = 173.5
 offset_bottom = 144.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_imvie")
+theme = ExtResource("3_imvie")
 theme_override_font_sizes/font_size = 34
 theme_override_styles/focus = SubResource("StyleBoxFlat_imvie")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1hnlc")
@@ -148,6 +159,9 @@ stream = ExtResource("6_1hnlc")
 stream = ExtResource("7_50h1w")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bre17")
+}
 
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Campanha" to="." method="_on_campanha_pressed"]
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Versus" to="." method="_on_versus_pressed"]

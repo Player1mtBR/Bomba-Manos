@@ -6,6 +6,7 @@ extends Node2D
 #@export var currentLevel := 0
 @export_file("*.tscn") var nextLevel : String
 var usingPortal := false
+var spawnPortal := true
 
 #var worldIndentifierString : String = "W0"+str(currentWorld)+"L0"+str(currentLevel)
 
@@ -31,8 +32,10 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 
 func _process(delta: float) -> void:
 	await get_tree().create_timer(0.5, false).timeout
-	if CurrentLevelManager.currentEnemiesAlive <= 0:
+	if CurrentLevelManager.currentEnemiesAlive <= 0 and spawnPortal == true:
+		spawnPortal = false
 		visible = true
+		$AudioStreamPlayer.play()
 		
 		if CurrentLevelManager.currentLevelName == "W01L05":
 			$AnimatedSprite2D.play("frag_amarelo")
@@ -43,13 +46,15 @@ func _process(delta: float) -> void:
 		elif CurrentLevelManager.currentLevelName == "W04L05":
 			$AnimatedSprite2D.play("frag_vermelho")
 		else:
-			$AnimatedSprite2D.play("portal_normal")
+			$AnimatedSprite2D.play("portal_abrindo")
+			await $AnimatedSprite2D.animation_finished
+			$AnimatedSprite2D.play("portal_loop")
 		
-		
-		
-		
+	
 		
 		$Area2D.monitoring = true
 		
 		if PortalTransition.isPlaying == false:
 			usingPortal = true
+			
+	

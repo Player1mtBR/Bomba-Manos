@@ -655,6 +655,7 @@ rotation = 1.57079
 position = Vector2(-160, -96)
 playerID = 1
 charSkin = ExtResource("15_jvyfc")
+DieSound = ExtResource("16_bjx6k")
 teleportTunel = NodePath("../../../objects/AllTeleports/TeleportTunel")
 teleportTunel2 = NodePath("../../../objects/AllTeleports/TeleportTunel2")
 
@@ -761,4 +762,3 @@ nextLevel = "uid://dbgq2yvwaef37"
 [node name="pauseCampaign" parent="." instance=ExtResource("23_jtrus")]
 
 [node name="DIE" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("16_bjx6k")
