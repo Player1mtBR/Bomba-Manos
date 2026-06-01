@@ -1,18 +1,27 @@
-[gd_scene load_steps=19 format=4 uid="uid://cb1eg74baebch"]
+[gd_scene load_steps=28 format=4 uid="uid://cb1eg74baebch"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_ulfvb"]
 [ext_resource type="Texture2D" uid="uid://o31y83d3vwpt" path="res://assets/sprites/levels/campaign/world01/LostWoodsFloor.png" id="2_w5rpq"]
 [ext_resource type="SpriteFrames" uid="uid://cchhgggnuienu" path="res://assets/res/spriteframes/objects/cyberFloor.tres" id="3_1grpm"]
+[ext_resource type="Texture2D" uid="uid://bepnu3s3wcwbl" path="res://assets/sprites/levels/campaign/world02/floorThing3.png" id="3_ulfvb"]
+[ext_resource type="Texture2D" uid="uid://tkr51xmer03n" path="res://assets/sprites/levels/campaign/world02/topWall.png" id="5_w5rpq"]
+[ext_resource type="Texture2D" uid="uid://bx2o4ajdl7csf" path="res://assets/sprites/levels/campaign/world02/leftWall.png" id="6_1grpm"]
+[ext_resource type="Texture2D" uid="uid://dysvno2b24ohh" path="res://assets/sprites/levels/campaign/world02/rightWall.png" id="7_08pk1"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="8_rcimg"]
-[ext_resource type="AudioStream" uid="uid://dnacpalkhvhxt" path="res://assets/audio/tracks/world04/Cogs-In-The-System.mp3" id="9_81n73"]
+[ext_resource type="PackedScene" uid="uid://bbycuk1tnj77u" path="res://scenes/entities/Mobs/cyberworld/world02/cleaner.tscn" id="9_17af8"]
 [ext_resource type="Texture2D" uid="uid://b5aikch2jynv5" path="res://assets/sprites/levels/campaign/world02/cyberBlocks.png" id="9_lpdku"]
 [ext_resource type="PackedScene" uid="uid://bww0rq8oxupon" path="res://scenes/objects/cyberBlock.tscn" id="10_10liq"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="11_pad6v"]
 [ext_resource type="SpriteFrames" uid="uid://cyekfxld10edt" path="res://assets/res/spriteframes/miniman-Sprite-Frames.tres" id="12_tvdou"]
+[ext_resource type="AudioStream" uid="uid://7ithkqtfcqgj" path="res://assets/audio/tracks/world04/W3LC0M3_2_TH3_M4TR1X.mp3" id="14_ywaao"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="15_4gnb5"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="16_7x6xn"]
-[ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="17_dhi20"]
-[ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="18_j0j6f"]
+[ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/exit.tscn" id="17_ywaao"]
+[ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="18_ulfvb"]
+[ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="19_bbwi2"]
+[ext_resource type="AudioStream" uid="uid://gtyl104mnncw" path="res://assets/audio/dialogue/World02/silencioHero.mp3" id="20_6g8u0"]
+[ext_resource type="AudioStream" uid="uid://chfn2vpr8t8dk" path="res://assets/audio/dialogue/falasJP/escondido_central.mp3" id="21_0jf16"]
+[ext_resource type="AudioStream" uid="uid://c2be3gylpjv4l" path="res://assets/audio/dialogue/falasJP/cuidato_te_matar.mp3" id="22_rcimg"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ywaao"]
 
@@ -57,7 +66,16 @@ position = Vector2(0, -16)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_w5rpq")
 
+[node name="cyberfloor" type="TextureRect" parent="environment"]
+offset_left = -176.0
+offset_top = -112.0
+offset_right = 176.0
+offset_bottom = 80.0
+texture = ExtResource("3_ulfvb")
+stretch_mode = 1
+
 [node name="floorDeco" type="Node2D" parent="environment"]
+position = Vector2(-64, 224)
 
 [node name="cyberFloorDeco" type="AnimatedSprite2D" parent="environment/floorDeco"]
 position = Vector2(-168, -104)
@@ -84,7 +102,7 @@ animation = &"001"
 autoplay = "001"
 
 [node name="cyberFloorDeco5" type="AnimatedSprite2D" parent="environment/floorDeco"]
-position = Vector2(-40, -104)
+position = Vector2(-64, -176)
 sprite_frames = ExtResource("3_1grpm")
 animation = &"001"
 autoplay = "001"
@@ -155,6 +173,18 @@ sprite_frames = ExtResource("3_1grpm")
 animation = &"004"
 autoplay = "004"
 
+[node name="cyberFloorDeco86" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(-64, -288)
+sprite_frames = ExtResource("3_1grpm")
+animation = &"004"
+autoplay = "004"
+
+[node name="cyberFloorDeco87" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(-32, -272)
+sprite_frames = ExtResource("3_1grpm")
+animation = &"002"
+autoplay = "002"
+
 [node name="cyberFloorDeco17" type="AnimatedSprite2D" parent="environment/floorDeco"]
 position = Vector2(-40, -72)
 sprite_frames = ExtResource("3_1grpm")
@@ -192,7 +222,7 @@ animation = &"008"
 autoplay = "008"
 
 [node name="cyberFloorDeco23" type="AnimatedSprite2D" parent="environment/floorDeco"]
-position = Vector2(152, -72)
+position = Vector2(224, -272)
 sprite_frames = ExtResource("3_1grpm")
 animation = &"008"
 autoplay = "008"
@@ -206,7 +236,13 @@ autoplay = "001"
 [node name="cyberFloorDeco25" type="AnimatedSprite2D" parent="environment/floorDeco"]
 position = Vector2(-168, -40)
 sprite_frames = ExtResource("3_1grpm")
-animation = &"008"
+animation = &"009"
+autoplay = "008"
+
+[node name="cyberFloorDeco88" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(96, -240)
+sprite_frames = ExtResource("3_1grpm")
+animation = &"009"
 autoplay = "008"
 
 [node name="cyberFloorDeco26" type="AnimatedSprite2D" parent="environment/floorDeco"]
@@ -252,13 +288,62 @@ animation = &"009"
 autoplay = "009"
 
 [node name="cyberFloorDeco33" type="AnimatedSprite2D" parent="environment/floorDeco"]
-position = Vector2(88, -40)
+position = Vector2(0, -176)
 sprite_frames = ExtResource("3_1grpm")
 animation = &"007"
 autoplay = "007"
 
 [node name="cyberFloorDeco34" type="AnimatedSprite2D" parent="environment/floorDeco"]
 position = Vector2(120, -56)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("3_1grpm")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco89" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(64, -320)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("3_1grpm")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco90" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(64, -288)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("3_1grpm")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco92" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(64, -256)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("3_1grpm")
+animation = &"006"
+autoplay = "006"
+frame_progress = 0.12988
+
+[node name="cyberFloorDeco93" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(64, -224)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("3_1grpm")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco94" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(64, -192)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("3_1grpm")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco95" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(64, -160)
 rotation = 1.57079
 scale = Vector2(1, -1)
 sprite_frames = ExtResource("3_1grpm")
@@ -451,6 +536,14 @@ sprite_frames = ExtResource("3_1grpm")
 animation = &"003"
 autoplay = "003"
 
+[node name="cyberFloorDeco85" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(128, -256)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("3_1grpm")
+animation = &"003"
+autoplay = "003"
+
 [node name="cyberFloorDeco65" type="AnimatedSprite2D" parent="environment/floorDeco"]
 position = Vector2(-40, 56)
 sprite_frames = ExtResource("3_1grpm")
@@ -555,6 +648,12 @@ sprite_frames = ExtResource("3_1grpm")
 animation = &"001"
 autoplay = "001"
 
+[node name="cyberFloorDeco91" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(128, -336)
+sprite_frames = ExtResource("3_1grpm")
+animation = &"001"
+autoplay = "001"
+
 [node name="cyberFloorDeco82" type="AnimatedSprite2D" parent="environment/floorDeco"]
 position = Vector2(120, 72)
 sprite_frames = ExtResource("3_1grpm")
@@ -574,12 +673,25 @@ animation = &"001"
 autoplay = "001"
 
 [node name="Polygon2D" type="Polygon2D" parent="environment"]
+visible = false
 position = Vector2(3.97675, 0)
 scale = Vector2(0.994186, 1)
 color = Color(0, 0, 0, 0.435294)
 polygon = PackedVector2Array(-176, -112, 168, -112, 168, 88, -176, 88)
 
 [node name="mapWalls" type="Node2D" parent="environment"]
+
+[node name="topWall" type="Sprite2D" parent="environment/mapWalls"]
+position = Vector2(0, -140)
+texture = ExtResource("5_w5rpq")
+
+[node name="leftWall" type="Sprite2D" parent="environment/mapWalls"]
+position = Vector2(-198, -44)
+texture = ExtResource("6_1grpm")
+
+[node name="rightWall" type="Sprite2D" parent="environment/mapWalls"]
+position = Vector2(198, -44)
+texture = ExtResource("7_08pk1")
 
 [node name="placeholder" type="Node" parent="environment"]
 
@@ -624,7 +736,7 @@ tile_set = SubResource("TileSet_q7e64")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-8, -8)
-tile_map_data = PackedByteArray("AAD5//v/AQAAAAAAAAD7//v/AQAAAAAAAAD3//v/AQAAAAAAAAD9//v/AQAAAAAAAAD///v/AQAAAAAAAAABAPv/AQAAAAAAAAADAPv/AQAAAAAAAAAFAPv/AQAAAAAAAAAHAPv/AQAAAAAAAAAJAPv/AQAAAAAAAAD3//3/AQAAAAAAAAD5//3/AQAAAAAAAAD7//3/AQAAAAAAAAD9//3/AQAAAAAAAAD///3/AQAAAAAAAAABAP3/AQAAAAAAAAADAP3/AQAAAAAAAAAFAP3/AQAAAAAAAAAHAP3/AQAAAAAAAAAJAP3/AQAAAAAAAAD3////AQAAAAAAAAD5////AQAAAAAAAAD7////AQAAAAAAAAD9////AQAAAAAAAAD/////AQAAAAAAAAABAP//AQAAAAAAAAADAP//AQAAAAAAAAAFAP//AQAAAAAAAAAHAP//AQAAAAAAAAAJAP//AQAAAAAAAAAJAAEAAQAAAAAAAAAHAAEAAQAAAAAAAAAFAAEAAQAAAAAAAAADAAEAAQAAAAAAAAABAAEAAQAAAAAAAAD//wEAAQAAAAAAAAD9/wEAAQAAAAAAAAD7/wEAAQAAAAAAAAD5/wEAAQAAAAAAAAD3/wEAAQAAAAAAAAD5/wMAAQAAAAAAAAD7/wMAAQAAAAAAAAD3/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAD//wMAAQAAAAAAAAABAAMAAQAAAAAAAAADAAMAAQAAAAAAAAAFAAMAAQAAAAAAAAAHAAMAAQAAAAAAAAAJAAMAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD5//v/AQAAAAAAAAD7//v/AQAAAAAAAAD3//v/AQAAAAAAAAD9//v/AQAAAAAAAAD///v/AQAAAAAAAAABAPv/AQAAAAAAAAADAPv/AQAAAAAAAAAFAPv/AQAAAAAAAAAHAPv/AQAAAAAAAAAJAPv/AQAAAAAAAAD3//3/AQAAAAAAAAD5//3/AQAAAAAAAAD7//3/AQAAAAAAAAD9//3/AQAAAAAAAAD///3/AQAAAAAAAAABAP3/AQAAAAAAAAADAP3/AQAAAAAAAAAFAP3/AQAAAAAAAAAHAP3/AQAAAAAAAAAJAP3/AQAAAAAAAAD3////AQAAAAAAAAD5////AQAAAAAAAAD7////AQAAAAAAAAD9////AQAAAAAAAAD/////AQAAAAAAAAABAP//AQAAAAAAAAADAP//AQAAAAAAAAAFAP//AQAAAAAAAAAHAP//AQAAAAAAAAAJAP//AQAAAAAAAAAJAAEAAQAAAAAAAAAHAAEAAQAAAAAAAAAFAAEAAQAAAAAAAAADAAEAAQAAAAAAAAABAAEAAQAAAAAAAAD//wEAAQAAAAAAAAD9/wEAAQAAAAAAAAD7/wEAAQAAAAAAAAD5/wEAAQAAAAAAAAD3/wEAAQAAAAAAAAD5/wMAAQAAAAAAAAD7/wMAAQAAAAAAAAD3/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAD//wMAAQAAAAAAAAABAAMAAQAAAAAAAAADAAMAAQAAAAAAAAAFAAMAAQAAAAAAAAAHAAMAAQAAAAAAAAAJAAMAAQAAAAAAAAD4//r/AQAAAAAAAAAIAPr/AQAAAAAAAAD5/wIAAQAAAAAAAAD5/wAAAQAAAAAAAAD5//7/AQAAAAAAAAD5//z/AQAAAAAAAAAHAPz/AQAAAAAAAAAHAP7/AQAAAAAAAAAHAAAAAQAAAAAAAAAHAAIAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_dk4xo")
 
 [node name="decorations" type="Node2D" parent="."]
@@ -634,14 +746,8 @@ tile_set = SubResource("TileSet_dk4xo")
 [node name="AllBricks" type="Node2D" parent="objects"]
 modulate = Color(0.753984, 0.753984, 0.753984, 1)
 
-[node name="CyberBlock" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-128, -80)
-
 [node name="CyberBlock11" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-160, -48)
-
-[node name="CyberBlock2" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-96, -80)
 
 [node name="CyberBlock3" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-64, -80)
@@ -658,15 +764,6 @@ position = Vector2(32, -80)
 [node name="CyberBlock7" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(64, -80)
 
-[node name="CyberBlock8" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(96, -80)
-
-[node name="CyberBlock9" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(128, -80)
-
-[node name="CyberBlock53" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-96, -96)
-
 [node name="CyberBlock54" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-64, -96)
 
@@ -681,9 +778,6 @@ position = Vector2(32, -96)
 
 [node name="CyberBlock58" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(64, -96)
-
-[node name="CyberBlock59" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(96, -96)
 
 [node name="CyberBlock61" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-112, -96)
@@ -709,12 +803,6 @@ position = Vector2(80, -96)
 [node name="CyberBlock67" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(112, -96)
 
-[node name="CyberBlock70" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-128, -64)
-
-[node name="CyberBlock71" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-96, -64)
-
 [node name="CyberBlock72" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-64, -64)
 
@@ -729,15 +817,6 @@ position = Vector2(32, -64)
 
 [node name="CyberBlock76" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(64, -64)
-
-[node name="CyberBlock77" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(96, -64)
-
-[node name="CyberBlock78" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(128, -64)
-
-[node name="CyberBlock79" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-112, -64)
 
 [node name="CyberBlock80" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-80, -64)
@@ -757,17 +836,8 @@ position = Vector2(48, -64)
 [node name="CyberBlock85" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(80, -64)
 
-[node name="CyberBlock86" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(112, -64)
-
 [node name="CyberBlock87" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(144, -64)
-
-[node name="CyberBlock88" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-128, -32)
-
-[node name="CyberBlock89" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-96, -32)
 
 [node name="CyberBlock90" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-64, -32)
@@ -781,15 +851,6 @@ position = Vector2(32, -32)
 [node name="CyberBlock94" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(64, -32)
 
-[node name="CyberBlock95" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(96, -32)
-
-[node name="CyberBlock96" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(128, -32)
-
-[node name="CyberBlock97" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-112, -32)
-
 [node name="CyberBlock98" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-80, -32)
 
@@ -802,17 +863,8 @@ position = Vector2(48, -32)
 [node name="CyberBlock103" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(80, -32)
 
-[node name="CyberBlock104" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(112, -32)
-
 [node name="CyberBlock105" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(144, -32)
-
-[node name="CyberBlock106" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-128, 0)
-
-[node name="CyberBlock107" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-96, 0)
 
 [node name="CyberBlock108" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-64, 0)
@@ -826,15 +878,6 @@ position = Vector2(32, 0)
 [node name="CyberBlock112" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(64, 0)
 
-[node name="CyberBlock113" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(96, 0)
-
-[node name="CyberBlock114" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(128, 0)
-
-[node name="CyberBlock115" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-112, 0)
-
 [node name="CyberBlock116" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-80, 0)
 
@@ -847,17 +890,8 @@ position = Vector2(48, 0)
 [node name="CyberBlock121" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(80, 0)
 
-[node name="CyberBlock122" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(112, 0)
-
 [node name="CyberBlock123" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(144, 0)
-
-[node name="CyberBlock124" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-128, 32)
-
-[node name="CyberBlock125" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-96, 32)
 
 [node name="CyberBlock126" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-64, 32)
@@ -873,15 +907,6 @@ position = Vector2(32, 32)
 
 [node name="CyberBlock130" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(64, 32)
-
-[node name="CyberBlock131" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(96, 32)
-
-[node name="CyberBlock132" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(128, 32)
-
-[node name="CyberBlock133" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-112, 32)
 
 [node name="CyberBlock134" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-80, 32)
@@ -900,9 +925,6 @@ position = Vector2(48, 32)
 
 [node name="CyberBlock139" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(80, 32)
-
-[node name="CyberBlock140" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(112, 32)
 
 [node name="CyberBlock141" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(144, 32)
@@ -943,9 +965,6 @@ position = Vector2(-144, 0)
 [node name="CyberBlock164" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-144, 32)
 
-[node name="CyberBlock143" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-96, 64)
-
 [node name="CyberBlock144" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-64, 64)
 
@@ -960,9 +979,6 @@ position = Vector2(32, 64)
 
 [node name="CyberBlock148" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(64, 64)
-
-[node name="CyberBlock149" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(96, 64)
 
 [node name="CyberBlock151" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-112, 64)
@@ -988,12 +1004,6 @@ position = Vector2(80, 64)
 [node name="CyberBlock158" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(112, 64)
 
-[node name="CyberBlock10" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-128, -48)
-
-[node name="CyberBlock12" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-96, -48)
-
 [node name="CyberBlock13" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-64, -48)
 
@@ -1009,23 +1019,11 @@ position = Vector2(32, -48)
 [node name="CyberBlock17" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(64, -48)
 
-[node name="CyberBlock18" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(96, -48)
-
-[node name="CyberBlock19" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(128, -48)
-
 [node name="CyberBlock20" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(160, -48)
 
 [node name="CyberBlock21" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-160, -16)
-
-[node name="CyberBlock22" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-128, -16)
-
-[node name="CyberBlock23" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-96, -16)
 
 [node name="CyberBlock24" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-64, -16)
@@ -1039,23 +1037,59 @@ position = Vector2(32, -16)
 [node name="CyberBlock28" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(64, -16)
 
-[node name="CyberBlock29" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(96, -16)
-
-[node name="CyberBlock30" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(128, -16)
-
 [node name="CyberBlock31" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(160, -16)
 
 [node name="CyberBlock32" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-160, 16)
 
-[node name="CyberBlock33" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-128, 16)
+[node name="CyberBlock43" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
+position = Vector2(-160, 32)
 
-[node name="CyberBlock34" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-96, 16)
+[node name="CyberBlock60" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
+position = Vector2(-160, 48)
+
+[node name="CyberBlock68" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
+position = Vector2(-160, 64)
+
+[node name="CyberBlock92" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
+position = Vector2(-144, 64)
+
+[node name="CyberBlock101" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
+position = Vector2(-160, -64)
+
+[node name="CyberBlock110" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
+position = Vector2(-160, -80)
+
+[node name="CyberBlock118" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
+position = Vector2(-160, -96)
+
+[node name="CyberBlock119" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
+position = Vector2(-144, -96)
+
+[node name="CyberBlock171" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
+position = Vector2(144, -96)
+
+[node name="CyberBlock172" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
+position = Vector2(160, -96)
+
+[node name="CyberBlock173" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
+position = Vector2(160, -80)
+
+[node name="CyberBlock174" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
+position = Vector2(160, -64)
+
+[node name="CyberBlock175" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
+position = Vector2(160, 32)
+
+[node name="CyberBlock176" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
+position = Vector2(160, 48)
+
+[node name="CyberBlock177" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
+position = Vector2(160, 64)
+
+[node name="CyberBlock178" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
+position = Vector2(144, 64)
 
 [node name="CyberBlock35" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-64, 16)
@@ -1072,20 +1106,8 @@ position = Vector2(32, 16)
 [node name="CyberBlock39" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(64, 16)
 
-[node name="CyberBlock40" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(96, 16)
-
-[node name="CyberBlock41" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(128, 16)
-
 [node name="CyberBlock42" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(160, 16)
-
-[node name="CyberBlock44" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-128, 48)
-
-[node name="CyberBlock45" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-96, 48)
 
 [node name="CyberBlock46" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-64, 48)
@@ -1102,12 +1124,6 @@ position = Vector2(32, 48)
 [node name="CyberBlock50" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(64, 48)
 
-[node name="CyberBlock51" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(96, 48)
-
-[node name="CyberBlock52" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(128, 48)
-
 [node name="entities" type="Node2D" parent="."]
 
 [node name="players" type="Node2D" parent="entities"]
@@ -1117,9 +1133,25 @@ position = Vector2(0, -16)
 playerID = 1
 charSkin = ExtResource("12_tvdou")
 
+[node name="mobs" type="Node2D" parent="entities"]
+
+[node name="cleaner" parent="entities/mobs" instance=ExtResource("9_17af8")]
+position = Vector2(128, -80)
+
+[node name="cleaner2" parent="entities/mobs" instance=ExtResource("9_17af8")]
+position = Vector2(96, 48)
+
+[node name="cleaner3" parent="entities/mobs" instance=ExtResource("9_17af8")]
+position = Vector2(-128, -80)
+
+[node name="cleaner4" parent="entities/mobs" instance=ExtResource("9_17af8")]
+position = Vector2(-96, 48)
+
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_81n73")
+process_mode = 3
+stream = ExtResource("14_ywaao")
 autoplay = true
+bus = &"Soundtrack"
 
 [node name="mainCamera" parent="." instance=ExtResource("15_4gnb5")]
 position = Vector2(0, -44)
@@ -1128,83 +1160,15 @@ position = Vector2(0, -44)
 stream = ExtResource("16_7x6xn")
 max_polyphony = 2
 
-[node name="player2Pos" type="Node2D" parent="."]
-position = Vector2(96, 64)
+[node name="Exit" parent="." instance=ExtResource("17_ywaao")]
+position = Vector2(0, -16)
+levelIdentifier = "W04L01"
+nextLevel = "uid://buv5pewda6n4"
 
-[node name="player1Pos" type="Node2D" parent="."]
-position = Vector2(-96, -96)
+[node name="pauseCampaign" parent="." instance=ExtResource("18_ulfvb")]
 
-[node name="player1Pos2" type="Node2D" parent="."]
-position = Vector2(-96, -64)
+[node name="DIALOG" parent="." instance=ExtResource("19_bbwi2")]
+falasDosPersonagens = Array[AudioStream]([ExtResource("20_6g8u0"), ExtResource("21_0jf16"), ExtResource("22_rcimg"), ExtResource("20_6g8u0")])
+legendas = Array[String](["Certo, Crimson, primeiro, onde está o Fragmento que precisamos?", "Escondido em algum lugar no núcleo central", "Cuidado tudo aqui quer te matar", "Então nada fora dos conformes, isso já é rotina."])
 
-[node name="player1Pos3" type="Node2D" parent="."]
-position = Vector2(-96, -32)
-
-[node name="player1Pos4" type="Node2D" parent="."]
-position = Vector2(-96, 0)
-
-[node name="player1Pos5" type="Node2D" parent="."]
-position = Vector2(-96, 32)
-
-[node name="player1Pos6" type="Node2D" parent="."]
-position = Vector2(-96, 64)
-
-[node name="ui" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = -224.0
-offset_top = -168.0
-offset_right = 224.0
-offset_bottom = 80.0
-script = ExtResource("17_dhi20")
-
-[node name="Polygon2D" type="Polygon2D" parent="ui"]
-position = Vector2(5, 0)
-scale = Vector2(1, 0.96875)
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(0, 0, 56, 0, 56, 256, 29.3174, 256, 0, 256)
-
-[node name="Polygon2D2" type="Polygon2D" parent="ui"]
-position = Vector2(387, 0)
-scale = Vector2(1, 0.96875)
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(0, 0, 56, 0, 56, 256, 29.3174, 256, 0, 256, 0, 208.912, 0, 146.4, 0, 128.206)
-
-[node name="score" type="Label" parent="ui"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 24.0
-offset_right = 56.0
-offset_bottom = 230.0
-theme_override_fonts/font = ExtResource("18_j0j6f")
-theme_override_font_sizes/font_size = 15
-text = "P1
-
-(0)
-
----
-
-P2
-
-(0)
-
-"
-horizontal_alignment = 1
-
-[node name="scoreManel" type="Label" parent="ui"]
-layout_mode = 0
-offset_left = 392.0
-offset_top = 24.0
-offset_right = 440.0
-offset_bottom = 230.0
-theme_override_fonts/font = ExtResource("18_j0j6f")
-theme_override_font_sizes/font_size = 15
-text = "M
-A
-N
-E
-L
-
-(0)"
-horizontal_alignment = 1
+[node name="pauseCampaign2" parent="." instance=ExtResource("18_ulfvb")]

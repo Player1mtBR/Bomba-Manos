@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cy17q4irdki4b" path="res://scenes/objects/mesA.tscn" id="14_esmo1"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="15_es261"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="16_tmgy6"]
-[ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/campaign/exit.tscn" id="19_2ml1t"]
+[ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/exit.tscn" id="19_2ml1t"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="20_er1cw"]
 [ext_resource type="PackedScene" uid="uid://dvg4rkj02cf4" path="res://scenes/entities/Mobs/world_4/babydino.tscn" id="21_esmo1"]
 [ext_resource type="AudioStream" uid="uid://b3ck3ofsmmiv8" path="res://assets/audio/tracks/world02/MissiaFinal.mp3.mp3" id="22_esmo1"]

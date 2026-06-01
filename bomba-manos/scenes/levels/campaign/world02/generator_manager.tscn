@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://chi5pysi0doi3"]
+
+[ext_resource type="Script" uid="uid://cgh4c1y0615e1" path="res://scripts/maps/World04/generator_manager.gd" id="1_qtveu"]
+
+[node name="GeneratorManager" type="Node2D"]
+script = ExtResource("1_qtveu")

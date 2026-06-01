@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://deiblqi0tqf1d" path="res://scenes/entities/Mobs/world_4/arduino.tscn" id="20_mguyu"]
 [ext_resource type="AudioStream" uid="uid://jtvf37r0ak16" path="res://assets/audio/dialogue/falasJP/o poder da matriz.mp3" id="20_qgx30"]
 [ext_resource type="AudioStream" uid="uid://dhr615yaosa50" path="res://assets/audio/dialogue/falasMessias/cachorro.mp3" id="21_43wg5"]
-[ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/campaign/exit.tscn" id="22_1bcej"]
+[ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/exit.tscn" id="22_1bcej"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="23_0fo5b"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="28_qgjkh"]
 

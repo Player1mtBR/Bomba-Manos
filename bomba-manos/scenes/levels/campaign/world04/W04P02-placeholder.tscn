@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://x8wanugx3mkn" path="res://scenes/entities/Mobs/world_4/borabill.tscn" id="19_ypbqp"]
 [ext_resource type="AudioStream" uid="uid://hhbwea8o6ef1" path="res://assets/audio/dialogue/falasMessias/ja percebi.mp3" id="20_8lj8v"]
 [ext_resource type="PackedScene" uid="uid://deiblqi0tqf1d" path="res://scenes/entities/Mobs/world_4/arduino.tscn" id="20_sfito"]
-[ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/campaign/exit.tscn" id="22_plt1o"]
+[ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/exit.tscn" id="22_plt1o"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="23_bm0l7"]
 [ext_resource type="PackedScene" uid="uid://cb6neg2ddhkn" path="res://scenes/objects/breakable_block.tscn" id="24_juj01"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="28_s8nfj"]

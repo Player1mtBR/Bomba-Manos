@@ -18,7 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://c7grvmpt7sktg" path="res://assets/audio/dialogue/falasJP/ele clonou o bomba.mp3" id="18_l57kd"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="19_iatv3"]
 [ext_resource type="AudioStream" uid="uid://dd03oiduad4as" path="res://assets/audio/dialogue/falasMessias/miseravel doentio.mp3" id="19_l57kd"]
-[ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/campaign/exit.tscn" id="22_5eaid"]
+[ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/exit.tscn" id="22_5eaid"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="23_utsnj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jtrus"]

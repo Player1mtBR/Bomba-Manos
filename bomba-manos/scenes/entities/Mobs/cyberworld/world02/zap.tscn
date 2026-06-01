@@ -1,0 +1,195 @@
+[gd_scene load_steps=13 format=3 uid="uid://t28irw8r43g6"]
+
+[ext_resource type="Script" uid="uid://c6yu2wtfm1eat" path="res://scripts/IAs/base_ia.gd" id="1_idysv"]
+[ext_resource type="Texture2D" uid="uid://7jyiqbt0f5um" path="res://assets/sprites/mobs_world_2/zap.png" id="2_idysv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t5x8p"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3im2p"]
+atlas = ExtResource("2_idysv")
+region = Rect2(0, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_geoyh"]
+atlas = ExtResource("2_idysv")
+region = Rect2(22, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1yiy"]
+atlas = ExtResource("2_idysv")
+region = Rect2(44, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ssk0"]
+atlas = ExtResource("2_idysv")
+region = Rect2(66, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m0b5"]
+atlas = ExtResource("2_idysv")
+region = Rect2(88, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsquy"]
+atlas = ExtResource("2_idysv")
+region = Rect2(110, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w026"]
+atlas = ExtResource("2_idysv")
+region = Rect2(132, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2q87"]
+atlas = ExtResource("2_idysv")
+region = Rect2(154, 0, 22, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0qtru"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3im2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_geoyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1yiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ssk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m0b5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsquy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w026")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2q87")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_3m0b5")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_wsquy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w026")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2q87")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"die",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3im2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_geoyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1yiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ssk0")
+}],
+"loop": true,
+"name": &"down",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3im2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_geoyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1yiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ssk0")
+}],
+"loop": true,
+"name": &"left",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3im2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_geoyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1yiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ssk0")
+}],
+"loop": true,
+"name": &"right",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3im2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_geoyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1yiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ssk0")
+}],
+"loop": true,
+"name": &"up",
+"speed": 7.0
+}]
+
+[node name="zap" type="CharacterBody2D"]
+script = ExtResource("1_idysv")
+iaMoveDelay = 0.3
+smartChance = 5.0
+
+[node name="Mob" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mob"]
+shape = SubResource("RectangleShape2D_t5x8p")
+debug_color = Color(0.7, 0, 0, 0.419608)
+
+[node name="collisionRaycasts" type="Node2D" parent="."]
+
+[node name="up" type="RayCast2D" parent="collisionRaycasts"]
+target_position = Vector2(0, -16)
+collision_mask = 17
+
+[node name="down" type="RayCast2D" parent="collisionRaycasts"]
+target_position = Vector2(0, 16)
+collision_mask = 17
+
+[node name="left" type="RayCast2D" parent="collisionRaycasts"]
+target_position = Vector2(-16, 0)
+collision_mask = 17
+
+[node name="right" type="RayCast2D" parent="collisionRaycasts"]
+target_position = Vector2(16, 0)
+collision_mask = 17
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0qtru")
+animation = &"down"
+frame_progress = 0.620317
+
+[connection signal="area_entered" from="Mob" to="." method="_on_area_2d_area_entered"]

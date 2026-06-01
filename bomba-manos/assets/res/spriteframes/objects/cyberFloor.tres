@@ -163,7 +163,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"001",
-"speed": 3.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -180,7 +180,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"002",
-"speed": 3.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -197,7 +197,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"003",
-"speed": 3.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 5.0,
@@ -214,7 +214,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"004",
-"speed": 3.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 5.0,
@@ -231,7 +231,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"005",
-"speed": 3.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -248,7 +248,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"006",
-"speed": 3.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -265,7 +265,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"007",
-"speed": 3.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 5.0,
@@ -282,7 +282,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"008",
-"speed": 3.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 5.0,
@@ -299,5 +299,5 @@ animations = [{
 }],
 "loop": true,
 "name": &"009",
-"speed": 3.0
+"speed": 7.0
 }]

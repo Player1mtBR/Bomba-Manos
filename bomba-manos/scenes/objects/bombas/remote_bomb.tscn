@@ -1,28 +1,27 @@
-[gd_scene load_steps=12 format=3 uid="uid://dphll6ifuw8mv"]
+[gd_scene load_steps=11 format=3 uid="uid://dphll6ifuw8mv"]
 
 [ext_resource type="Script" uid="uid://baqgu71qd44ta" path="res://scripts/bombas/remote_bomb.gd" id="1_trlla"]
 [ext_resource type="Texture2D" uid="uid://bir2tcvl6u7d2" path="res://icon.svg" id="2_d5fid"]
-[ext_resource type="Texture2D" uid="uid://ua4lpsan01yb" path="res://assets/sprites/bomba/BOMBA SALGADO EXPLODINDOV3.png" id="3_fjub0"]
-[ext_resource type="Texture2D" uid="uid://d4eqoew3q5gbk" path="res://assets/sprites/bomba/BOMBA SALGADO EXPLODINDOV5.png" id="4_4377e"]
-[ext_resource type="Texture2D" uid="uid://cfo8eo14ckihq" path="res://assets/sprites/bomba/BOMBA SALGADO EXPLODINDOV7.png" id="5_janij"]
-[ext_resource type="Texture2D" uid="uid://dym6tsc6xxhm4" path="res://assets/sprites/bomba/BOMBA SALGADO EXPLODINDOV4.png" id="6_ab63t"]
+[ext_resource type="Texture2D" uid="uid://oo7lkchherep" path="res://assets/sprites/levels/campaign/world02/remoteBomba.png" id="3_0jqam"]
 [ext_resource type="AudioStream" uid="uid://ck0cn56w0to6j" path="res://assets/audio/sfx/placeBomba.wav" id="7_7ghyw"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="8_xhbsr"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_spfbs"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0p1n1"]
+atlas = ExtResource("3_0jqam")
+region = Rect2(0, 0, 21, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0tha"]
+atlas = ExtResource("3_0jqam")
+region = Rect2(21, 0, 21, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_trlla"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_fjub0")
+"texture": SubResource("AtlasTexture_0p1n1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_4377e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_janij")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_ab63t")
+"texture": SubResource("AtlasTexture_w0tha")
 }],
 "loop": true,
 "name": &"default",
@@ -46,16 +45,16 @@ scale = Vector2(0.75, 0.75)
 script = ExtResource("1_trlla")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 0.34902, 0, 1)
 position = Vector2(4.76837e-07, 4.76837e-07)
 scale = Vector2(0.166667, 0.166667)
 texture = ExtResource("2_d5fid")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
-sprite_frames = SubResource("SpriteFrames_spfbs")
+sprite_frames = SubResource("SpriteFrames_trlla")
 autoplay = "default"
-frame_progress = 0.655638
+frame_progress = 0.595654
 
 [node name="raycasts" type="Node2D" parent="."]
 

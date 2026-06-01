@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://diul3f1txpftc" path="res://assets/audio/tracks/world 3/Igor01.mp3" id="11_w5s4q"]
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="13_jgyab"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="14_l4kwr"]
-[ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/campaign/exit.tscn" id="17_6vrrs"]
+[ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/exit.tscn" id="17_6vrrs"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="18_aqvci"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="18_pbp7h"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="19_1oj76"]

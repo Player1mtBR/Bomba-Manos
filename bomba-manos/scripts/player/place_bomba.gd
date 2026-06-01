@@ -19,7 +19,7 @@ func placeBombOnMap(bombType, playerNum):
 	match bombType:
 		1:
 			newBomba = mainBombaScene.instantiate()
-		2:
+		5:
 			newBomba = remoteBomb.instantiate()
 	
 	#newBomba = mainBombaScene.instantiate() ## definindo instancia da bomba

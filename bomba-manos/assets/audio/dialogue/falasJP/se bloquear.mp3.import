@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3yhomtf7xj7d"
+path="res://.godot/imported/se bloquear.mp3-adf7ad95360d1aa6513daf868861d95e.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/falasJP/se bloquear.mp3"
+dest_files=["res://.godot/imported/se bloquear.mp3-adf7ad95360d1aa6513daf868861d95e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

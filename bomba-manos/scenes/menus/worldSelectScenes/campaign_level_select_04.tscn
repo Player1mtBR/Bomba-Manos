@@ -1,11 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://bid0ssiobl60c"]
+[gd_scene load_steps=12 format=3 uid="uid://bid0ssiobl60c"]
 
 [ext_resource type="Script" uid="uid://db51vpoxlelql" path="res://scripts/menus/worldSelect/campaign_level_select.gd" id="1_8dwfl"]
+[ext_resource type="Texture2D" uid="uid://bepnu3s3wcwbl" path="res://assets/sprites/levels/campaign/world02/floorThing3.png" id="2_llm37"]
 [ext_resource type="PackedScene" uid="uid://vqadtrjtxsn5" path="res://scenes/menus/worldSelectScenes/level_icon.tscn" id="2_pjj7a"]
 [ext_resource type="PackedScene" uid="uid://c3i3avv75txs4" path="res://scenes/menus/worldSelectScenes/player_icon.tscn" id="3_xae15"]
 [ext_resource type="SpriteFrames" uid="uid://cyekfxld10edt" path="res://assets/res/spriteframes/miniman-Sprite-Frames.tres" id="4_pjj7a"]
+[ext_resource type="Texture2D" uid="uid://by8swg5sad5fj" path="res://assets/sprites/levels/campaign/world02/level01Icon.png" id="4_qvf51"]
+[ext_resource type="Texture2D" uid="uid://bom6pf6f0nur1" path="res://assets/sprites/levels/campaign/world02/level02Icon.png" id="5_nig66"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="5_xae15"]
-[ext_resource type="Texture2D" uid="uid://bjk3e4cu0dnb8" path="res://assets/sprites/levels/campaign/world02/floorThing2.png" id="6_vcufj"]
+[ext_resource type="Texture2D" uid="uid://c4hnfa7a7rplj" path="res://assets/sprites/levels/campaign/world02/level03Icon.png" id="6_iljf5"]
+[ext_resource type="Texture2D" uid="uid://b0oykn4k5p8bg" path="res://assets/sprites/levels/campaign/world02/level04Icon.png" id="7_j3krg"]
+[ext_resource type="Texture2D" uid="uid://cu2nub2x0uyfr" path="res://assets/sprites/levels/campaign/world02/level05Icon.png" id="8_pf2u5"]
 
 [node name="CampaignLevelSelect" type="Control"]
 layout_mode = 3
@@ -16,11 +21,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8dwfl")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(427.5, 240)
-scale = Vector2(6.67969, 1.66667)
-texture = ExtResource("6_vcufj")
+[node name="cyberfloor" type="TextureRect" parent="."]
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 275.0
+offset_bottom = 147.0
+scale = Vector2(3, 3)
+texture = ExtResource("2_llm37")
+stretch_mode = 1
 
 [node name="LevelIcon" parent="." node_paths=PackedStringArray("nextLevelDown") instance=ExtResource("2_pjj7a")]
 offset_left = 128.0
@@ -29,6 +37,7 @@ offset_right = 192.0
 offset_bottom = 200.0
 scale = Vector2(1.5, 1.5)
 level2Load = "uid://cb1eg74baebch"
+levelIconTexture = ExtResource("4_qvf51")
 nextLevelDown = NodePath("../LevelIcon2")
 
 [node name="LevelIcon2" parent="." node_paths=PackedStringArray("nextLevelRight", "nextLevelUp") instance=ExtResource("2_pjj7a")]
@@ -38,28 +47,31 @@ offset_right = 184.0
 offset_bottom = 398.0
 scale = Vector2(1.5, 1.5)
 levelName = "2"
+levelIconTexture = ExtResource("5_nig66")
 unlockRequirement = "W04L01"
 nextLevelRight = NodePath("../LevelIcon3")
 nextLevelUp = NodePath("../LevelIcon")
 
-[node name="LevelIcon3" parent="." node_paths=PackedStringArray("nextLevelRight", "nextLevelUp") instance=ExtResource("2_pjj7a")]
+[node name="LevelIcon3" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelUp") instance=ExtResource("2_pjj7a")]
 offset_left = 344.0
 offset_top = 432.0
 offset_right = 408.0
 offset_bottom = 496.0
 scale = Vector2(1.5, 1.5)
 levelName = "3"
+levelIconTexture = ExtResource("6_iljf5")
 unlockRequirement = "W04L02"
-nextLevelRight = NodePath("../LevelIcon6")
+nextLevelLeft = NodePath("../LevelIcon2")
 nextLevelUp = NodePath("../LevelIcon4")
 
 [node name="LevelIcon4" parent="." node_paths=PackedStringArray("nextLevelRight", "nextLevelDown") instance=ExtResource("2_pjj7a")]
-offset_left = 448.0
-offset_top = 240.0
-offset_right = 512.0
-offset_bottom = 304.0
+offset_left = 456.0
+offset_top = 184.0
+offset_right = 520.0
+offset_bottom = 248.0
 scale = Vector2(1.5, 1.5)
 levelName = "4"
+levelIconTexture = ExtResource("7_j3krg")
 unlockRequirement = "W04L03"
 nextLevelRight = NodePath("../LevelIcon5")
 nextLevelDown = NodePath("../LevelIcon3")
@@ -71,6 +83,7 @@ offset_right = 776.0
 offset_bottom = 384.0
 scale = Vector2(1.5, 1.5)
 levelName = "5"
+levelIconTexture = ExtResource("8_pf2u5")
 unlockRequirement = "W04L04"
 nextLevelLeft = NodePath("../LevelIcon4")
 

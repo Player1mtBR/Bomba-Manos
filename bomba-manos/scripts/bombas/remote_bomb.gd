@@ -11,6 +11,8 @@ extends Node2D
 
 @export var blastRadius := 2 #base = 2
 
+@export var fromWhatPlayer : int
+
 var tileSize := 16
 
 func _ready():

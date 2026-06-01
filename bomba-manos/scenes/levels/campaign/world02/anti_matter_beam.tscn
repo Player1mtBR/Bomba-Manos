@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpkeke7hsultm"]
+
+[ext_resource type="Script" uid="uid://c6mojfvk5mwma" path="res://scripts/maps/World04/anti_matter_beam.gd" id="1_cnwty"]
+[ext_resource type="Texture2D" uid="uid://cwgg6nswwj2bg" path="res://assets/sprites/levels/campaign/world02/anti-matter_beam.png" id="2_6meu6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyswk"]
+atlas = ExtResource("2_6meu6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ue3bf"]
+atlas = ExtResource("2_6meu6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pedrs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyswk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ue3bf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6u5rj"]
+size = Vector2(16, 16)
+
+[node name="anti-matterBeam" type="Node2D"]
+script = ExtResource("1_cnwty")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pedrs")
+autoplay = "default"
+frame_progress = 0.27293
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_6u5rj")

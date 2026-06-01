@@ -1,0 +1,900 @@
+[gd_scene load_steps=34 format=4 uid="uid://cqdmp2i7poi8e"]
+
+[ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_mlo5p"]
+[ext_resource type="Texture2D" uid="uid://o31y83d3vwpt" path="res://assets/sprites/levels/campaign/world01/LostWoodsFloor.png" id="2_g63eb"]
+[ext_resource type="Texture2D" uid="uid://bepnu3s3wcwbl" path="res://assets/sprites/levels/campaign/world02/floorThing3.png" id="3_vxqb1"]
+[ext_resource type="SpriteFrames" uid="uid://cchhgggnuienu" path="res://assets/res/spriteframes/objects/cyberFloor.tres" id="4_3s28g"]
+[ext_resource type="Texture2D" uid="uid://tkr51xmer03n" path="res://assets/sprites/levels/campaign/world02/topWall.png" id="5_njsmy"]
+[ext_resource type="Texture2D" uid="uid://bx2o4ajdl7csf" path="res://assets/sprites/levels/campaign/world02/leftWall.png" id="6_kku3a"]
+[ext_resource type="Texture2D" uid="uid://dysvno2b24ohh" path="res://assets/sprites/levels/campaign/world02/rightWall.png" id="7_06m7m"]
+[ext_resource type="PackedScene" uid="uid://chi5pysi0doi3" path="res://scenes/levels/campaign/world02/generator_manager.tscn" id="8_c0uic"]
+[ext_resource type="PackedScene" uid="uid://d3vlwbmv0reje" path="res://scenes/levels/campaign/world02/generator.tscn" id="9_84lym"]
+[ext_resource type="PackedScene" uid="uid://bpkeke7hsultm" path="res://scenes/levels/campaign/world02/anti_matter_beam.tscn" id="10_j7vtu"]
+[ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="11_vdr35"]
+[ext_resource type="Texture2D" uid="uid://b5aikch2jynv5" path="res://assets/sprites/levels/campaign/world02/cyberBlocks.png" id="12_y0q5f"]
+[ext_resource type="PackedScene" uid="uid://bww0rq8oxupon" path="res://scenes/objects/cyberBlock.tscn" id="13_ahgox"]
+[ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="14_mosvi"]
+[ext_resource type="SpriteFrames" uid="uid://cyekfxld10edt" path="res://assets/res/spriteframes/miniman-Sprite-Frames.tres" id="15_7g2m8"]
+[ext_resource type="PackedScene" uid="uid://bbycuk1tnj77u" path="res://scenes/entities/Mobs/cyberworld/world02/cleaner.tscn" id="16_rvj6j"]
+[ext_resource type="AudioStream" uid="uid://dnacpalkhvhxt" path="res://assets/audio/tracks/world04/Cogs-In-The-System.mp3" id="17_o1ib6"]
+[ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="18_5jsi4"]
+[ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="19_7db8h"]
+[ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/exit.tscn" id="20_m11yl"]
+[ext_resource type="PackedScene" uid="uid://bmor7kkgmhpfy" path="res://scenes/entities/Mobs/cyberworld/world02/enclaveSoldier.tscn" id="21_rjxdo"]
+[ext_resource type="PackedScene" uid="uid://c7xp0h0cmrb0" path="res://scenes/entities/Mobs/cyberworld/world02/kazu.tscn" id="22_upqka"]
+[ext_resource type="PackedScene" uid="uid://t28irw8r43g6" path="res://scenes/entities/Mobs/cyberworld/world02/zap.tscn" id="23_3s28g"]
+[ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="23_g63eb"]
+[ext_resource type="PackedScene" uid="uid://c2lynah1dwhxj" path="res://scenes/entities/Mobs/cyberworld/world02/crawler.tscn" id="25_njsmy"]
+[ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="26_06m7m"]
+[ext_resource type="AudioStream" uid="uid://bf7vgii2hvjti" path="res://assets/audio/dialogue/falasJP/destrua os geradores.mp3" id="27_c0uic"]
+[ext_resource type="AudioStream" uid="uid://gtyl104mnncw" path="res://assets/audio/dialogue/World02/silencioHero.mp3" id="28_84lym"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ywaao"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_01k7s"]
+texture = ExtResource("11_vdr35")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+
+[sub_resource type="TileSet" id="TileSet_q7e64"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_01k7s")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a0hd6"]
+texture = ExtResource("12_y0q5f")
+0:0/animation_columns = 4
+0:0/animation_mode = 1
+0:0/animation_frame_0/duration = 3.0
+0:0/animation_frame_1/duration = 0.2
+0:0/animation_frame_2/duration = 3.0
+0:0/animation_frame_3/duration = 0.2
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dk4xo"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_a0hd6")
+
+[node name="mapPlaceholderCyber" type="Node2D"]
+script = ExtResource("1_mlo5p")
+
+[node name="environment" type="Node2D" parent="."]
+
+[node name="floor" type="Sprite2D" parent="environment"]
+position = Vector2(0, -16)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_g63eb")
+
+[node name="cyberfloor" type="TextureRect" parent="environment"]
+offset_left = -176.0
+offset_top = -112.0
+offset_right = 176.0
+offset_bottom = 80.0
+texture = ExtResource("3_vxqb1")
+stretch_mode = 1
+
+[node name="floorDeco" type="Node2D" parent="environment"]
+modulate = Color(1, 0.25, 1, 1)
+position = Vector2(-64, 224)
+
+[node name="cyberFloorDeco5" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(-64, -176)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"001"
+autoplay = "001"
+
+[node name="cyberFloorDeco86" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(-64, -288)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"004"
+autoplay = "004"
+
+[node name="cyberFloorDeco87" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(-32, -272)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"002"
+autoplay = "002"
+
+[node name="cyberFloorDeco23" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(224, -272)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"008"
+autoplay = "008"
+
+[node name="cyberFloorDeco88" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(96, -240)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"009"
+autoplay = "008"
+
+[node name="cyberFloorDeco33" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(0, -176)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"007"
+autoplay = "007"
+
+[node name="cyberFloorDeco89" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(64, -320)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco90" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(64, -288)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco92" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(-95.9999, -320)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"009"
+autoplay = "009"
+
+[node name="cyberFloorDeco120" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(-24, -272)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"009"
+autoplay = "009"
+
+[node name="cyberFloorDeco121" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(192, -224)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"002"
+autoplay = "002"
+
+[node name="cyberFloorDeco122" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(160, -288)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"004"
+autoplay = "004"
+
+[node name="cyberFloorDeco93" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(-95.9999, -288)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"005"
+autoplay = "005"
+
+[node name="cyberFloorDeco94" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(-95.9999, -256)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"003"
+autoplay = "003"
+
+[node name="cyberFloorDeco95" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(-95.9999, -224)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco85" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(128, -256)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"003"
+autoplay = "003"
+
+[node name="cyberFloorDeco91" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(128, -336)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"001"
+autoplay = "001"
+
+[node name="cyberFloorDeco96" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(32, -320)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco97" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(32, -288)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco98" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(32, -256)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+frame_progress = 0.113889
+
+[node name="cyberFloorDeco99" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(32, -224)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco100" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(32, -192)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco101" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(32, -160)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco102" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(96.0001, -320)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco103" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(96.0001, -288)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco104" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(96.0001, -256)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+frame_progress = 0.113889
+
+[node name="cyberFloorDeco105" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(96.0001, -224)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco106" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(96.0001, -192)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco107" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(96.0001, -160)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco108" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(128, -320)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco109" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(128, -288)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco110" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(128, -256)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+frame_progress = 0.113889
+
+[node name="cyberFloorDeco111" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(128, -224)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco112" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(128, -192)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco113" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(128, -160)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco114" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(9.91821e-05, -320)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco115" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(9.91821e-05, -288)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco116" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(9.91821e-05, -256)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+frame_progress = 0.113889
+
+[node name="cyberFloorDeco117" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(9.91821e-05, -224)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco118" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(9.91821e-05, -192)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="cyberFloorDeco119" type="AnimatedSprite2D" parent="environment/floorDeco"]
+position = Vector2(9.91821e-05, -160)
+rotation = 1.57079
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("4_3s28g")
+animation = &"006"
+autoplay = "006"
+
+[node name="mapWalls" type="Node2D" parent="environment/floorDeco"]
+position = Vector2(64, -224)
+
+[node name="topWall" type="Sprite2D" parent="environment/floorDeco/mapWalls"]
+position = Vector2(0, -140)
+texture = ExtResource("5_njsmy")
+
+[node name="leftWall" type="Sprite2D" parent="environment/floorDeco/mapWalls"]
+position = Vector2(-198, -44)
+texture = ExtResource("6_kku3a")
+
+[node name="rightWall" type="Sprite2D" parent="environment/floorDeco/mapWalls"]
+position = Vector2(198, -44)
+texture = ExtResource("7_06m7m")
+
+[node name="Polygon2D" type="Polygon2D" parent="environment"]
+visible = false
+position = Vector2(3.97675, 0)
+scale = Vector2(0.994186, 1)
+color = Color(0, 0, 0, 0.435294)
+polygon = PackedVector2Array(-176, -112, 168, -112, 168, 88, -176, 88)
+
+[node name="placeholder" type="Node" parent="environment"]
+
+[node name="TextureRect" type="TextureRect" parent="environment/placeholder"]
+visible = false
+offset_left = -219.0
+offset_top = -167.0
+offset_right = 219.0
+offset_bottom = -112.0
+texture = SubResource("PlaceholderTexture2D_ywaao")
+
+[node name="TextureRect2" type="TextureRect" parent="environment/placeholder"]
+visible = false
+offset_left = -219.0
+offset_top = -167.0
+offset_right = -171.0
+offset_bottom = 79.0
+texture = SubResource("PlaceholderTexture2D_ywaao")
+
+[node name="TextureRect3" type="TextureRect" parent="environment/placeholder"]
+visible = false
+offset_left = 171.0
+offset_top = -167.0
+offset_right = 219.0
+offset_bottom = 79.0
+texture = SubResource("PlaceholderTexture2D_ywaao")
+
+[node name="spawnSomething" type="Node2D" parent="."]
+
+[node name="GeneratorManager" parent="spawnSomething" instance=ExtResource("8_c0uic")]
+
+[node name="generator" parent="spawnSomething" instance=ExtResource("9_84lym")]
+position = Vector2(32, 0)
+
+[node name="generator2" parent="spawnSomething" instance=ExtResource("9_84lym")]
+position = Vector2(-32, 0)
+
+[node name="generator3" parent="spawnSomething" instance=ExtResource("9_84lym")]
+position = Vector2(64, 48)
+generatorId = 2
+
+[node name="generator4" parent="spawnSomething" instance=ExtResource("9_84lym")]
+position = Vector2(-64, 48)
+generatorId = 2
+
+[node name="anti-matterBeam" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(-64, -16)
+generatorId = 2
+
+[node name="anti-matterBeam4" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(-64, -32)
+generatorId = 2
+
+[node name="anti-matterBeam7" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(-64, -48)
+generatorId = 2
+
+[node name="anti-matterBeam8" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(-64, -64)
+generatorId = 2
+
+[node name="anti-matterBeam5" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(16, 0)
+rotation = 1.57079
+
+[node name="anti-matterBeam6" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+rotation = 1.57079
+
+[node name="anti-matterBeam2" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(-64, 0)
+generatorId = 2
+
+[node name="anti-matterBeam9" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(-64, 16)
+generatorId = 2
+
+[node name="anti-matterBeam10" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(-64, 32)
+generatorId = 2
+
+[node name="anti-matterBeam11" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(64, -16)
+generatorId = 2
+
+[node name="anti-matterBeam12" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(64, -32)
+generatorId = 2
+
+[node name="anti-matterBeam13" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(64, -48)
+generatorId = 2
+
+[node name="anti-matterBeam14" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(64, -64)
+generatorId = 2
+
+[node name="anti-matterBeam15" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(64, 0)
+generatorId = 2
+
+[node name="anti-matterBeam16" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(64, 16)
+generatorId = 2
+
+[node name="anti-matterBeam17" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(64, 32)
+generatorId = 2
+
+[node name="anti-matterBeam18" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(-16, 48)
+rotation = -1.57079
+generatorId = 2
+
+[node name="anti-matterBeam19" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(-32, 48)
+rotation = -1.57079
+generatorId = 2
+
+[node name="anti-matterBeam20" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(-48, 48)
+rotation = -1.57079
+generatorId = 2
+
+[node name="anti-matterBeam21" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(0, 48)
+rotation = -1.57079
+generatorId = 2
+
+[node name="anti-matterBeam22" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(16, 48)
+rotation = -1.57079
+generatorId = 2
+
+[node name="anti-matterBeam23" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(32, 48)
+rotation = -1.57079
+generatorId = 2
+
+[node name="anti-matterBeam24" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(48, 48)
+rotation = -1.57079
+generatorId = 2
+
+[node name="anti-matterBeam3" parent="spawnSomething" instance=ExtResource("10_j7vtu")]
+position = Vector2(-16, 0)
+rotation = 1.57079
+
+[node name="TileMapLayerOLD" type="TileMapLayer" parent="."]
+visible = false
+position = Vector2(-8, -8)
+tile_map_data = PackedByteArray("AAAHAPv/AQAAAAAAAAAHAPz/AQAAAAAAAAAHAP3/AQAAAAAAAAAHAP7/AQAAAAAAAAAHAP//AQAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAQAAAAAAAAAHAAMAAQAAAAAAAAAHAAQAAQAAAAAAAAD7//v/AQAAAAAAAAAFAPv/AQAAAAAAAAAFAP3/AQAAAAAAAAADAP3/AQAAAAAAAAABAP3/AQAAAAAAAAD///3/AQAAAAAAAAD9//3/AQAAAAAAAAD7//3/AQAAAAAAAAD7////AQAAAAAAAAD9////AQAAAAAAAAD/////AQAAAAAAAAABAP//AQAAAAAAAAADAP//AQAAAAAAAAAFAP//AQAAAAAAAAAFAAEAAQAAAAAAAAADAAEAAQAAAAAAAAABAAEAAQAAAAAAAAD//wEAAQAAAAAAAAD9/wEAAQAAAAAAAAD7/wEAAQAAAAAAAAD7/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAD//wMAAQAAAAAAAAABAAMAAQAAAAAAAAADAAMAAQAAAAAAAAAFAAMAAQAAAAAAAAD5//n/AQAAAAAAAAD6//n/AQAAAAAAAAD7//n/AQAAAAAAAAD8//n/AQAAAAAAAAD9//n/AQAAAAAAAAD+//n/AQAAAAAAAAD///n/AQAAAAAAAAAAAPn/AQAAAAAAAAABAPn/AQAAAAAAAAACAPn/AQAAAAAAAAADAPn/AQAAAAAAAAAEAPn/AQAAAAAAAAAFAPn/AQAAAAAAAAAGAPn/AQAAAAAAAAAHAPn/AQAAAAAAAAAHAPr/AQAAAAAAAAADAPv/AQAAAAAAAAABAPv/AQAAAAAAAAD///v/AQAAAAAAAAD9//v/AQAAAAAAAAD5//r/AQAAAAAAAAD5//z/AQAAAAAAAAD5//3/AQAAAAAAAAD5//v/AQAAAAAAAAD5//7/AQAAAAAAAAD5////AQAAAAAAAAD5/wAAAQAAAAAAAAD5/wEAAQAAAAAAAAD5/wIAAQAAAAAAAAD5/wMAAQAAAAAAAAD5/wQAAQAAAAAAAAD5/wUAAQAAAAAAAAD6/wUAAQAAAAAAAAD7/wUAAQAAAAAAAAD8/wUAAQAAAAAAAAD9/wUAAQAAAAAAAAD+/wUAAQAAAAAAAAD//wUAAQAAAAAAAAAAAAUAAQAAAAAAAAABAAUAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAA=")
+enabled = false
+tile_set = SubResource("TileSet_q7e64")
+
+[node name="tilemapBondary" type="TileMapLayer" parent="."]
+visible = false
+position = Vector2(-8, -8)
+tile_map_data = PackedByteArray("AAALAAAAAQAAAAAAAAALAP//AQAAAAAAAAD1//n/AQAAAAAAAAD1//r/AQAAAAAAAAD1//v/AQAAAAAAAAD1//z/AQAAAAAAAAD1//3/AQAAAAAAAAD1//7/AQAAAAAAAAD1////AQAAAAAAAAD1/wAAAQAAAAAAAAD1/wEAAQAAAAAAAAD1/wIAAQAAAAAAAAD1/wMAAQAAAAAAAAD1/wQAAQAAAAAAAAD1/wUAAQAAAAAAAAD2/wUAAQAAAAAAAAD3/wUAAQAAAAAAAAD4/wUAAQAAAAAAAAD5/wUAAQAAAAAAAAD6/wUAAQAAAAAAAAD7/wUAAQAAAAAAAAD8/wUAAQAAAAAAAAD9/wUAAQAAAAAAAAD+/wUAAQAAAAAAAAD//wUAAQAAAAAAAAAAAAUAAQAAAAAAAAABAAUAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAJAAUAAQAAAAAAAAAKAAUAAQAAAAAAAAALAAUAAQAAAAAAAAALAAQAAQAAAAAAAAALAAMAAQAAAAAAAAALAAIAAQAAAAAAAAALAAEAAQAAAAAAAAALAP7/AQAAAAAAAAALAP3/AQAAAAAAAAALAPz/AQAAAAAAAAALAPv/AQAAAAAAAAALAPr/AQAAAAAAAAALAPn/AQAAAAAAAAAKAPn/AQAAAAAAAAAJAPn/AQAAAAAAAAAIAPn/AQAAAAAAAAAHAPn/AQAAAAAAAAAGAPn/AQAAAAAAAAAFAPn/AQAAAAAAAAAEAPn/AQAAAAAAAAADAPn/AQAAAAAAAAACAPn/AQAAAAAAAAABAPn/AQAAAAAAAAAAAPn/AQAAAAAAAAD///n/AQAAAAAAAAD+//n/AQAAAAAAAAD9//n/AQAAAAAAAAD8//n/AQAAAAAAAAD7//n/AQAAAAAAAAD6//n/AQAAAAAAAAD5//n/AQAAAAAAAAD4//n/AQAAAAAAAAD3//n/AQAAAAAAAAD2//n/AQAAAAAAAAD1//j/AQAAAAAAAAD2//j/AQAAAAAAAAD3//j/AQAAAAAAAAD4//j/AQAAAAAAAAD5//j/AQAAAAAAAAD6//j/AQAAAAAAAAD7//j/AQAAAAAAAAD8//j/AQAAAAAAAAD9//j/AQAAAAAAAAD+//j/AQAAAAAAAAD///j/AQAAAAAAAAAAAPj/AQAAAAAAAAABAPj/AQAAAAAAAAACAPj/AQAAAAAAAAADAPj/AQAAAAAAAAAEAPj/AQAAAAAAAAAFAPj/AQAAAAAAAAAGAPj/AQAAAAAAAAAHAPj/AQAAAAAAAAAIAPj/AQAAAAAAAAAJAPj/AQAAAAAAAAAKAPj/AQAAAAAAAAALAPj/AQAAAAAAAAAMAPj/AQAAAAAAAAAMAPn/AQAAAAAAAAAMAPr/AQAAAAAAAAAMAPv/AQAAAAAAAAAMAPz/AQAAAAAAAAAMAP3/AQAAAAAAAAAMAP7/AQAAAAAAAAAMAP//AQAAAAAAAAAMAAAAAQAAAAAAAAAMAAEAAQAAAAAAAAAMAAIAAQAAAAAAAAAMAAMAAQAAAAAAAAAMAAQAAQAAAAAAAAAMAAUAAQAAAAAAAAALAAYAAQAAAAAAAAAMAAYAAQAAAAAAAAAJAAYAAQAAAAAAAAAIAAYAAQAAAAAAAAAKAAYAAQAAAAAAAAAHAAYAAQAAAAAAAAAGAAYAAQAAAAAAAAAFAAYAAQAAAAAAAAAEAAYAAQAAAAAAAAADAAYAAQAAAAAAAAACAAYAAQAAAAAAAAABAAYAAQAAAAAAAAAAAAYAAQAAAAAAAAD//wYAAQAAAAAAAAD+/wYAAQAAAAAAAAD9/wYAAQAAAAAAAAD8/wYAAQAAAAAAAAD7/wYAAQAAAAAAAAD6/wYAAQAAAAAAAAD5/wYAAQAAAAAAAAD4/wYAAQAAAAAAAAD3/wYAAQAAAAAAAAD2/wYAAQAAAAAAAAD1/wYAAQAAAAAAAAD0/wYAAQAAAAAAAAD0/wUAAQAAAAAAAAD0/wQAAQAAAAAAAAD0/wMAAQAAAAAAAAD0/wIAAQAAAAAAAAD0/wEAAQAAAAAAAAD0/wAAAQAAAAAAAAD0////AQAAAAAAAAD0//7/AQAAAAAAAAD0//3/AQAAAAAAAAD0//z/AQAAAAAAAAD0//v/AQAAAAAAAAD0//r/AQAAAAAAAAD0//n/AQAAAAAAAAD0//j/AQAAAAAAAAA=")
+tile_set = SubResource("TileSet_q7e64")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-8, -8)
+tile_map_data = PackedByteArray("AAD7//v/AQAAAAAAAAD9//v/AQAAAAAAAAD///v/AQAAAAAAAAABAPv/AQAAAAAAAAADAPv/AQAAAAAAAAAFAPv/AQAAAAAAAAAHAPv/AQAAAAAAAAAJAPv/AQAAAAAAAAD7//3/AQAAAAAAAAD9//3/AQAAAAAAAAADAP3/AQAAAAAAAAAFAP3/AQAAAAAAAAAHAP3/AQAAAAAAAAAJAP3/AQAAAAAAAAD7////AQAAAAAAAAAFAP//AQAAAAAAAAAHAP//AQAAAAAAAAAJAP//AQAAAAAAAAAJAAEAAQAAAAAAAAAHAAEAAQAAAAAAAAAFAAEAAQAAAAAAAAD7/wEAAQAAAAAAAAD5/wEAAQAAAAAAAAD3/wEAAQAAAAAAAAD5/wMAAQAAAAAAAAD7/wMAAQAAAAAAAAD3/wMAAQAAAAAAAAAFAAMAAQAAAAAAAAAHAAMAAQAAAAAAAAAJAAMAAQAAAAAAAAD3////AQAAAAAAAAD5//3/AQAAAAAAAAD///7/AQAAAAAAAAAAAP7/AQAAAAAAAAABAP7/AQAAAAAAAAABAP//AQAAAAAAAAD/////AQAAAAAAAAD9/wEAAQAAAAAAAAD+/wEAAQAAAAAAAAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAAAAAACAAEAAQAAAAAAAAADAAEAAQAAAAAAAAD+//v/AQAAAAAAAAD8//v/AQAAAAAAAAACAPv/AQAAAAAAAAAEAPv/AQAAAAAAAAAAAPv/AQAAAAAAAAD9//7/AQAAAAAAAAD9////AQAAAAAAAAD9/wAAAQAAAAAAAAADAP7/AQAAAAAAAAADAP//AQAAAAAAAAADAAAAAQAAAAAAAAD3//3/AQAAAAAAAAD3//v/AQAAAAAAAAD5////AQAAAAAAAAD5//v/AQAAAAAAAAD7/wIAAQAAAAAAAAAFAAIAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_dk4xo")
+
+[node name="decorations" type="Node2D" parent="."]
+
+[node name="objects" type="Node2D" parent="."]
+
+[node name="AllBricks" type="Node2D" parent="objects"]
+modulate = Color(0.753984, 0.753984, 0.753984, 1)
+
+[node name="CyberBlock" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-144, -96)
+
+[node name="CyberBlock2" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-144, -64)
+
+[node name="CyberBlock3" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-144, -32)
+
+[node name="CyberBlock4" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-144, 0)
+
+[node name="CyberBlock5" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-144, 32)
+
+[node name="CyberBlock36" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-128, 32)
+
+[node name="CyberBlock37" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-128, 16)
+
+[node name="CyberBlock38" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-128, 0)
+
+[node name="CyberBlock39" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-128, -64)
+
+[node name="CyberBlock40" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-160, 32)
+
+[node name="CyberBlock41" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-160, 16)
+
+[node name="CyberBlock42" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-160, 0)
+
+[node name="CyberBlock43" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-160, -16)
+
+[node name="CyberBlock44" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-160, -32)
+
+[node name="CyberBlock45" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(160, 32)
+
+[node name="CyberBlock46" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(160, 16)
+
+[node name="CyberBlock47" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(160, 0)
+
+[node name="CyberBlock48" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(160, -16)
+
+[node name="CyberBlock49" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(160, -32)
+
+[node name="CyberBlock50" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-96, -32)
+
+[node name="CyberBlock51" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-96, -48)
+
+[node name="CyberBlock52" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-96, -64)
+
+[node name="CyberBlock53" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-96, -80)
+
+[node name="CyberBlock54" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-96, -96)
+
+[node name="CyberBlock55" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(96, -32)
+
+[node name="CyberBlock56" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(96, -48)
+
+[node name="CyberBlock57" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(96, -64)
+
+[node name="CyberBlock58" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(96, -80)
+
+[node name="CyberBlock59" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(96, -96)
+
+[node name="CyberBlock6" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-112, -96)
+
+[node name="CyberBlock7" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-112, -64)
+
+[node name="CyberBlock8" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-112, -32)
+
+[node name="CyberBlock9" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-112, 0)
+
+[node name="CyberBlock60" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-112, 64)
+
+[node name="CyberBlock61" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-96, 64)
+
+[node name="CyberBlock62" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-128, 64)
+
+[node name="CyberBlock63" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-80, 64)
+
+[node name="CyberBlock74" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-64, 64)
+
+[node name="CyberBlock64" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(80, 64)
+
+[node name="CyberBlock65" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(96, 64)
+
+[node name="CyberBlock66" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(64, 64)
+
+[node name="CyberBlock67" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(112, 64)
+
+[node name="CyberBlock10" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-112, 32)
+
+[node name="CyberBlock11" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-80, -96)
+
+[node name="CyberBlock12" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-80, -64)
+
+[node name="CyberBlock13" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-80, -32)
+
+[node name="CyberBlock14" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-80, 0)
+
+[node name="CyberBlock68" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-96, 0)
+
+[node name="CyberBlock69" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(96, 0)
+
+[node name="CyberBlock70" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(96, -16)
+
+[node name="CyberBlock71" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-96, -16)
+
+[node name="CyberBlock72" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(-128, -48)
+
+[node name="CyberBlock73" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(128, -48)
+
+[node name="CyberBlock16" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(48, -96)
+
+[node name="CyberBlock17" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(48, -64)
+
+[node name="CyberBlock18" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(48, -32)
+
+[node name="CyberBlock19" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(48, 0)
+
+[node name="CyberBlock20" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(48, 32)
+
+[node name="CyberBlock21" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(80, -96)
+
+[node name="CyberBlock22" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(80, -64)
+
+[node name="CyberBlock23" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(80, -32)
+
+[node name="CyberBlock24" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(80, 0)
+
+[node name="CyberBlock26" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(112, -96)
+
+[node name="CyberBlock27" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(112, -64)
+
+[node name="CyberBlock28" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(112, -32)
+
+[node name="CyberBlock29" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(112, 0)
+
+[node name="CyberBlock30" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(112, 32)
+
+[node name="CyberBlock31" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(144, -96)
+
+[node name="CyberBlock32" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(144, -64)
+
+[node name="CyberBlock33" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(144, -32)
+
+[node name="CyberBlock34" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(144, 0)
+
+[node name="CyberBlock35" parent="objects/AllBricks" instance=ExtResource("13_ahgox")]
+position = Vector2(144, 32)
+
+[node name="entities" type="Node2D" parent="."]
+
+[node name="players" type="Node2D" parent="entities"]
+
+[node name="basePlayer01" parent="entities/players" instance=ExtResource("14_mosvi")]
+position = Vector2(0, -96)
+playerID = 1
+charSkin = ExtResource("15_7g2m8")
+bombaEX = 5
+
+[node name="mobs" type="Node2D" parent="entities"]
+
+[node name="cleaner" parent="entities/mobs" instance=ExtResource("16_rvj6j")]
+position = Vector2(-160, 64)
+
+[node name="cleaner2" parent="entities/mobs" instance=ExtResource("16_rvj6j")]
+position = Vector2(160, 64)
+
+[node name="enclaveSoldier" parent="entities/mobs" instance=ExtResource("21_rjxdo")]
+position = Vector2(-32, -48)
+
+[node name="enclaveSoldier2" parent="entities/mobs" instance=ExtResource("21_rjxdo")]
+position = Vector2(32, -48)
+
+[node name="zap" parent="entities/mobs" instance=ExtResource("23_3s28g")]
+position = Vector2(-160, -96)
+
+[node name="zap2" parent="entities/mobs" instance=ExtResource("23_3s28g")]
+position = Vector2(160, -96)
+
+[node name="kazu" parent="entities/mobs" instance=ExtResource("22_upqka")]
+position = Vector2(-96, 32)
+
+[node name="kazu2" parent="entities/mobs" instance=ExtResource("22_upqka")]
+position = Vector2(96, 32)
+
+[node name="enclaveSoldier3" parent="entities/mobs" instance=ExtResource("21_rjxdo")]
+position = Vector2(-32, 32)
+
+[node name="enclaveSoldier6" parent="entities/mobs" instance=ExtResource("21_rjxdo")]
+position = Vector2(32, 32)
+
+[node name="cleaner3" parent="entities/mobs" instance=ExtResource("25_njsmy")]
+position = Vector2(-160, -64)
+
+[node name="cleaner4" parent="entities/mobs" instance=ExtResource("25_njsmy")]
+position = Vector2(-128, -96)
+
+[node name="cleaner5" parent="entities/mobs" instance=ExtResource("25_njsmy")]
+position = Vector2(128, -96)
+
+[node name="cleaner6" parent="entities/mobs" instance=ExtResource("25_njsmy")]
+position = Vector2(160, -64)
+
+[node name="enclaveSoldier4" parent="entities/mobs" instance=ExtResource("21_rjxdo")]
+position = Vector2(-128, -32)
+
+[node name="enclaveSoldier5" parent="entities/mobs" instance=ExtResource("21_rjxdo")]
+position = Vector2(128, -32)
+
+[node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("17_o1ib6")
+autoplay = true
+bus = &"Soundtrack"
+
+[node name="mainCamera" parent="." instance=ExtResource("18_5jsi4")]
+position = Vector2(0, -44)
+
+[node name="bombaSfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_7db8h")
+max_polyphony = 2
+
+[node name="Exit" parent="." instance=ExtResource("20_m11yl")]
+visible = true
+position = Vector2(0, -16)
+levelIdentifier = "W04L05"
+nextLevel = "uid://wyq2fculrhic"
+
+[node name="pauseCampaign" parent="." instance=ExtResource("23_g63eb")]
+visible = false
+
+[node name="DIALOG" parent="." instance=ExtResource("26_06m7m")]
+falasDosPersonagens = Array[AudioStream]([ExtResource("27_c0uic"), ExtResource("28_84lym")])
+legendas = Array[String](["Destrua os geradores e o fragmento será enfim libertado", "Considere feito. Hora de acabar com a festa"])
+
+[node name="pauseCampaign2" parent="." instance=ExtResource("23_g63eb")]
