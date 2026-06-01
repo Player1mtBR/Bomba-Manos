@@ -675,8 +675,10 @@ position = Vector2(-160, -96)
 [node name="ameba2" parent="entities/Mobs" instance=ExtResource("18_qtwlu")]
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("18_43xto")
 autoplay = true
+bus = &"Soundtrack"
 parameters/looping = true
 
 [node name="mainCamera" parent="." instance=ExtResource("18_tt8ok")]

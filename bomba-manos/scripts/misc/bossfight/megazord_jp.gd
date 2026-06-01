@@ -9,7 +9,7 @@ var attackCounter := 0
 
 var chargedPower := 0
 var invincible := false
-var extraInvincibilityTime := 0.30
+var extraInvincibilityTime := 0.55 # + 0.20 da animação de tomar dano
 
 var canMove := true
 var canBlock := true
@@ -25,7 +25,7 @@ func _ready() -> void:
 	pass
 	
 func _process(delta: float) -> void:
-	if attackCounter >= 4:
+	if attackCounter >= 3:
 		canAttack = false
 		canBlock = false
 	

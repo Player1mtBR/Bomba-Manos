@@ -663,8 +663,10 @@ iaMoveDelay = 0.3
 passosParaSugerir = 0
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("14_5mrkk")
 autoplay = true
+bus = &"Soundtrack"
 parameters/looping = true
 
 [node name="mainCamera" parent="." instance=ExtResource("12_6gfpo")]

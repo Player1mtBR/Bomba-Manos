@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cj21dxxqeeufg"]
+[gd_scene load_steps=20 format=3 uid="uid://cj21dxxqeeufg"]
 
 [ext_resource type="Script" uid="uid://hx1q14ialw20" path="res://scripts/menus/main_menu.gd" id="1_xqga4"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="2_ovrgc"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dole4gh28y4e2" path="res://assets/sprites/UI/mainMenu/bomba manos menu another png.png" id="9_88kup"]
 [ext_resource type="Texture2D" uid="uid://c0dxkavoph406" path="res://assets/sprites/UI/mainMenu/bomba manos menu png only.png" id="10_bh4e2"]
 [ext_resource type="Texture2D" uid="uid://gh4r3hvrmq6g" path="res://assets/sprites/UI/mainMenu/31 Sem Título_20260514113123.png" id="11_3w8rc"]
+[ext_resource type="PackedScene" uid="uid://c4u8i5l4eu36v" path="res://scenes/menus/settings_menu.tscn" id="11_bre17"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_imvie"]
 draw_center = false
@@ -17,12 +18,264 @@ draw_center = false
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hnlc"]
 draw_center = false
 
+[sub_resource type="Animation" id="Animation_bre17"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/visualElements/manelMessias2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/visualElements/manelMessias2:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/visualElements/bombaManos:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/visualElements/bombaManos:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/Buttons/VBoxContainer:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-276, 237)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/start:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control/visualElements/manelMessias2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Control/visualElements/bombaManos:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, -124)]
+}
+
 [sub_resource type="Animation" id="Animation_euy4r"]
 resource_name = "await_start_press"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/start:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3w8rc"]
+resource_name = "buttons_show"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Buttons/VBoxContainer:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-276, 237), Vector2(0, 237)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/visualElements/manelMessias2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/visualElements/bombaManos:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bh4e2"]
+resource_name = "loop"
+length = 20.0
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/visualElements/manelMessias2:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7.6, 13.45),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.115, 1.115), Vector2(1.106, 1.106)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/visualElements/manelMessias2:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.85, 14.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-65, -18), Vector2(-1, 7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Control/visualElements/bombaManos:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6.7, 13.7, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(80, -124), Vector2(136, -123), Vector2(49, -166), Vector2(80, -124)]
+}
+
+[sub_resource type="Animation" id="Animation_88kup"]
+resource_name = "menu_intro"
+length = 5.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/visualElements/manelMessias2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.35, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/visualElements/manelMessias2:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/visualElements/bombaManos:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.3, 3.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/visualElements/bombaManos:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3.7, 3.9, 4.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bre17"]
 _data = {
-&"await_start_press": SubResource("Animation_euy4r")
+&"RESET": SubResource("Animation_bre17"),
+&"await_start_press": SubResource("Animation_euy4r"),
+&"buttons_show": SubResource("Animation_3w8rc"),
+&"loop": SubResource("Animation_bh4e2"),
+&"menu_intro": SubResource("Animation_88kup")
 }
 
 [node name="Menu" type="Control"]
@@ -45,9 +298,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="visualElements" type="Control" parent="Control"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="background" type="TextureRect" parent="Control/visualElements"]
 layout_mode = 0
@@ -55,24 +311,35 @@ offset_right = 855.0
 offset_bottom = 480.0
 texture = ExtResource("8_bre17")
 
-[node name="manelMessiasFundo" type="TextureRect" parent="Control/visualElements"]
+[node name="manelMessias2" type="Control" parent="Control/visualElements"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(427.5, 250)
+
+[node name="manelMessiasFundo" type="TextureRect" parent="Control/visualElements/manelMessias2"]
 layout_mode = 0
 offset_right = 855.0
 offset_bottom = 480.0
 texture = ExtResource("9_88kup")
 
-[node name="manelMessias" type="TextureRect" parent="Control/visualElements"]
+[node name="manelMessias" type="TextureRect" parent="Control/visualElements/manelMessias2"]
 layout_mode = 0
 offset_right = 855.0
 offset_bottom = 480.0
 texture = ExtResource("10_bh4e2")
 
 [node name="bombaManos" type="TextureRect" parent="Control/visualElements"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 53.0
-offset_top = -122.0
-offset_right = 752.0
-offset_bottom = 517.0
+offset_left = 80.0
+offset_top = -124.0
+offset_right = 779.0
+offset_bottom = 515.0
 rotation = 0.605763
 pivot_offset = Vector2(210.5, 220)
 texture = ExtResource("11_3w8rc")
@@ -93,8 +360,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
+offset_left = -276.0
 offset_top = -3.0
-offset_right = 254.0
+offset_right = -22.0
 offset_bottom = 239.0
 grow_vertical = 2
 theme = ExtResource("3_imvie")
@@ -131,16 +399,17 @@ theme_override_font_sizes/font_size = 34
 text = "Sair"
 
 [node name="start" type="Button" parent="Control"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -173.5
-offset_top = 110.0
-offset_right = 173.5
-offset_bottom = 144.0
+offset_left = -236.5
+offset_top = 109.0
+offset_right = 244.5
+offset_bottom = 143.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_imvie")
@@ -162,6 +431,9 @@ stream = ExtResource("7_50h1w")
 libraries = {
 &"": SubResource("AnimationLibrary_bre17")
 }
+
+[node name="settingsMenu" parent="." instance=ExtResource("11_bre17")]
+visible = false
 
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Campanha" to="." method="_on_campanha_pressed"]
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Versus" to="." method="_on_versus_pressed"]

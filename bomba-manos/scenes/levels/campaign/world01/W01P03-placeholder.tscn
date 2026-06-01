@@ -676,8 +676,10 @@ position = Vector2(160, 64)
 [node name="corubia2" parent="entities/Mobs" instance=ExtResource("17_ip8bx")]
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("18_lnni8")
 autoplay = true
+bus = &"Soundtrack"
 parameters/looping = true
 
 [node name="mainCamera" parent="." instance=ExtResource("22_lhubl")]

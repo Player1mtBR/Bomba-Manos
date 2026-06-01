@@ -775,9 +775,6 @@ position = Vector2(-64, -32)
 [node name="CyberBlock91" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-32, -32)
 
-[node name="CyberBlock92" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(0, -32)
-
 [node name="CyberBlock93" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(32, -32)
 
@@ -798,12 +795,6 @@ position = Vector2(-80, -32)
 
 [node name="CyberBlock99" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-48, -32)
-
-[node name="CyberBlock100" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-16, -32)
-
-[node name="CyberBlock101" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(16, -32)
 
 [node name="CyberBlock102" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(48, -32)
@@ -829,8 +820,6 @@ position = Vector2(-64, 0)
 [node name="CyberBlock109" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-32, 0)
 
-[node name="CyberBlock110" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-
 [node name="CyberBlock111" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(32, 0)
 
@@ -851,12 +840,6 @@ position = Vector2(-80, 0)
 
 [node name="CyberBlock117" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-48, 0)
-
-[node name="CyberBlock118" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(-16, 0)
-
-[node name="CyberBlock119" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(16, 0)
 
 [node name="CyberBlock120" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(48, 0)
@@ -1050,9 +1033,6 @@ position = Vector2(-64, -16)
 [node name="CyberBlock25" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(-32, -16)
 
-[node name="CyberBlock26" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
-position = Vector2(0, -16)
-
 [node name="CyberBlock27" parent="objects/AllBricks" instance=ExtResource("10_10liq")]
 position = Vector2(32, -16)
 
@@ -1133,26 +1113,8 @@ position = Vector2(128, 48)
 [node name="players" type="Node2D" parent="entities"]
 
 [node name="basePlayer01" parent="entities/players" instance=ExtResource("11_pad6v")]
-modulate = Color(0.483338, 0.649368, 1, 1)
-position = Vector2(-160, 64)
-playerID = 2
-charSkin = ExtResource("12_tvdou")
-
-[node name="basePlayer02" parent="entities/players" instance=ExtResource("11_pad6v")]
-position = Vector2(-160, -96)
+position = Vector2(0, -16)
 playerID = 1
-charSkin = ExtResource("12_tvdou")
-
-[node name="basePlayer03" parent="entities/players" instance=ExtResource("11_pad6v")]
-modulate = Color(1, 0.407246, 0.338652, 1)
-position = Vector2(160, -96)
-playerID = 3
-charSkin = ExtResource("12_tvdou")
-
-[node name="basePlayer04" parent="entities/players" instance=ExtResource("11_pad6v")]
-modulate = Color(0.537786, 1, 0.506004, 1)
-position = Vector2(160, 64)
-playerID = 4
 charSkin = ExtResource("12_tvdou")
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]

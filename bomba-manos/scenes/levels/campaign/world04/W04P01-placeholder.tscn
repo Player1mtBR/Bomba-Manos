@@ -651,8 +651,10 @@ iaMoveDelay = 0.5
 passosParaSugerir = 1
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("11_vg1gn")
 autoplay = true
+bus = &"Soundtrack"
 parameters/looping = true
 
 [node name="mainCamera" parent="." instance=ExtResource("18_8im5y")]
@@ -663,7 +665,6 @@ stream = ExtResource("19_iatv3")
 max_polyphony = 2
 
 [node name="Exit" parent="." instance=ExtResource("22_5eaid")]
-visible = false
 position = Vector2(0, -16)
 nextLevel = "uid://dut7i1mc463d"
 

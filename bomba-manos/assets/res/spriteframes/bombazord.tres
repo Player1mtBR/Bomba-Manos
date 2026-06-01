@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://45m0x7lhat50"]
+
+[ext_resource type="Texture2D" uid="uid://jmuei03m7xds" path="res://assets/sprites/bomba_zord_de_frente.png" id="1_hx88b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvenu"]
+atlas = ExtResource("1_hx88b")
+region = Rect2(0, 0, 35, 68)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvenu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
