@@ -16,49 +16,60 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8dwfl")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(427.5, 240)
+scale = Vector2(6.67969, 1.66667)
+texture = ExtResource("6_vcufj")
+
 [node name="LevelIcon" parent="." node_paths=PackedStringArray("nextLevelDown") instance=ExtResource("2_pjj7a")]
-offset_left = 120.0
-offset_top = 80.0
-offset_right = 184.0
-offset_bottom = 144.0
+offset_left = 128.0
+offset_top = 136.0
+offset_right = 192.0
+offset_bottom = 200.0
+scale = Vector2(1.5, 1.5)
 level2Load = "uid://cb1eg74baebch"
 nextLevelDown = NodePath("../LevelIcon2")
 
 [node name="LevelIcon2" parent="." node_paths=PackedStringArray("nextLevelRight", "nextLevelUp") instance=ExtResource("2_pjj7a")]
-offset_left = 80.0
-offset_top = 280.0
-offset_right = 144.0
-offset_bottom = 344.0
+offset_left = 120.0
+offset_top = 334.0
+offset_right = 184.0
+offset_bottom = 398.0
+scale = Vector2(1.5, 1.5)
 levelName = "2"
 unlockRequirement = "W04L01"
 nextLevelRight = NodePath("../LevelIcon3")
 nextLevelUp = NodePath("../LevelIcon")
 
 [node name="LevelIcon3" parent="." node_paths=PackedStringArray("nextLevelRight", "nextLevelUp") instance=ExtResource("2_pjj7a")]
-offset_left = 336.0
-offset_top = 376.0
-offset_right = 400.0
-offset_bottom = 440.0
+offset_left = 344.0
+offset_top = 432.0
+offset_right = 408.0
+offset_bottom = 496.0
+scale = Vector2(1.5, 1.5)
 levelName = "3"
 unlockRequirement = "W04L02"
 nextLevelRight = NodePath("../LevelIcon6")
 nextLevelUp = NodePath("../LevelIcon4")
 
 [node name="LevelIcon4" parent="." node_paths=PackedStringArray("nextLevelRight", "nextLevelDown") instance=ExtResource("2_pjj7a")]
-offset_left = 440.0
-offset_top = 184.0
-offset_right = 504.0
-offset_bottom = 248.0
+offset_left = 448.0
+offset_top = 240.0
+offset_right = 512.0
+offset_bottom = 304.0
+scale = Vector2(1.5, 1.5)
 levelName = "4"
 unlockRequirement = "W04L03"
 nextLevelRight = NodePath("../LevelIcon5")
 nextLevelDown = NodePath("../LevelIcon3")
 
 [node name="LevelIcon5" parent="." node_paths=PackedStringArray("nextLevelLeft") instance=ExtResource("2_pjj7a")]
-offset_left = 704.0
-offset_top = 264.0
-offset_right = 768.0
-offset_bottom = 328.0
+offset_left = 712.0
+offset_top = 320.0
+offset_right = 776.0
+offset_bottom = 384.0
+scale = Vector2(1.5, 1.5)
 levelName = "5"
 unlockRequirement = "W04L04"
 nextLevelLeft = NodePath("../LevelIcon4")
@@ -69,6 +80,7 @@ offset_left = 800.0
 offset_top = 432.0
 offset_right = 864.0
 offset_bottom = 496.0
+scale = Vector2(1.5, 1.5)
 levelName = "Bônus"
 nextLevelLeft = NodePath("../LevelIcon3")
 
@@ -81,11 +93,6 @@ offset_left = 344.0
 offset_top = 8.0
 offset_right = 413.0
 offset_bottom = 31.0
+scale = Vector2(2, 2)
 theme = ExtResource("5_xae15")
 text = "Mundo 4"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(427.5, 240)
-scale = Vector2(6.67969, 1.66667)
-texture = ExtResource("6_vcufj")

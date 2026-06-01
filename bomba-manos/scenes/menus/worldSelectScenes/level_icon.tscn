@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://vqadtrjtxsn5"]
+[gd_scene load_steps=6 format=3 uid="uid://vqadtrjtxsn5"]
 
 [ext_resource type="Script" uid="uid://mtd0vsndlq47" path="res://scripts/menus/worldSelect/level_icon.gd" id="1_brvjm"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="2_xxvwq"]
 [ext_resource type="Texture2D" uid="uid://btftsrg3e4ixl" path="res://assets/sprites/misc/worldIcons/WorldPlaceholder.png" id="3_88cbk"]
 [ext_resource type="Texture2D" uid="uid://skcfu3n5v314" path="res://assets/sprites/misc/worldIcons/lock.png" id="4_gfv8p"]
+[ext_resource type="Texture2D" uid="uid://dw6ad1f3r8xw2" path="res://assets/sprites/levels/campaign/border.png" id="5_3wnwn"]
 
 [node name="LevelIcon" type="Control"]
 layout_mode = 3
@@ -30,3 +31,7 @@ texture = ExtResource("3_88cbk")
 [node name="locked" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("4_gfv8p")
+
+[node name="border" type="Sprite2D" parent="."]
+texture = ExtResource("5_3wnwn")
+metadata/_edit_group_ = true

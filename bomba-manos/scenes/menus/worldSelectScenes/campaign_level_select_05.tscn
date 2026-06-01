@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://db51vpoxlelql" path="res://scripts/menus/worldSelect/campaign_level_select.gd" id="1_uqxyf"]
 [ext_resource type="PackedScene" uid="uid://vqadtrjtxsn5" path="res://scenes/menus/worldSelectScenes/level_icon.tscn" id="2_nydxd"]
-[ext_resource type="PackedScene" uid="uid://c3i3avv75txs4" path="res://scenes/menus/worldSelectScenes/player_icon.tscn" id="3_nwh7s"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="4_nydxd"]
 [ext_resource type="Texture2D" uid="uid://bryq58u6v2vqq" path="res://assets/sprites/levels/campaign/extras/Sprite da cena da boss fight.png" id="5_nwh7s"]
+[ext_resource type="PackedScene" uid="uid://dmdrs3usssoqg" path="res://scenes/menus/worldSelectScenes/mega_icon.tscn" id="5_thf5w"]
 
 [node name="CampaignLevelSelect" type="Control"]
 layout_mode = 3
@@ -30,8 +30,6 @@ grow_horizontal = 2
 grow_vertical = 2
 level2Load = "uid://ckcwf0yhamcqc"
 
-[node name="playerIcon" parent="." instance=ExtResource("3_nwh7s")]
-
 [node name="WordName" type="Label" parent="."]
 layout_mode = 0
 offset_left = 344.0
@@ -46,3 +44,5 @@ z_index = -1
 position = Vector2(430, 240)
 scale = Vector2(0.622255, 1)
 texture = ExtResource("5_nwh7s")
+
+[node name="megaicon" parent="." instance=ExtResource("5_thf5w")]

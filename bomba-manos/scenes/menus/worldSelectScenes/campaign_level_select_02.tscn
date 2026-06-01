@@ -1,11 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://o886kdk1rmgp"]
+[gd_scene load_steps=12 format=3 uid="uid://o886kdk1rmgp"]
 
 [ext_resource type="Script" uid="uid://db51vpoxlelql" path="res://scripts/menus/worldSelect/campaign_level_select.gd" id="1_stwgo"]
 [ext_resource type="PackedScene" uid="uid://vqadtrjtxsn5" path="res://scenes/menus/worldSelectScenes/level_icon.tscn" id="2_x5nyx"]
 [ext_resource type="PackedScene" uid="uid://c3i3avv75txs4" path="res://scenes/menus/worldSelectScenes/player_icon.tscn" id="3_3ka0m"]
+[ext_resource type="Texture2D" uid="uid://ndpogogrboaq" path="res://assets/sprites/levels/campaign/world01/level1.png" id="3_jq517"]
+[ext_resource type="Texture2D" uid="uid://c1gfngo0mv0va" path="res://assets/sprites/levels/campaign/world01/level2.png" id="4_ccstb"]
 [ext_resource type="SpriteFrames" uid="uid://dnwsmvk3wpfgx" path="res://assets/res/spriteframes/ureiaman-Sprite-Frames.tres" id="4_x5nyx"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="5_3ka0m"]
+[ext_resource type="Texture2D" uid="uid://b56ntjyqroe6b" path="res://assets/sprites/levels/campaign/world01/level3.png" id="5_6bdd3"]
 [ext_resource type="Texture2D" uid="uid://o31y83d3vwpt" path="res://assets/sprites/levels/campaign/world01/LostWoodsFloor.png" id="6_mfny0"]
+[ext_resource type="Texture2D" uid="uid://i4reoi5qrhum" path="res://assets/sprites/levels/campaign/world01/leve4.png" id="6_t20ff"]
+[ext_resource type="Texture2D" uid="uid://c4txnwxjoq6vf" path="res://assets/sprites/levels/campaign/world01/level5.png" id="7_frcxs"]
 
 [node name="CampaignLevelSelect" type="Control"]
 layout_mode = 3
@@ -16,12 +21,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_stwgo")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(427, 240)
+scale = Vector2(0.626647, 0.625)
+texture = ExtResource("6_mfny0")
+
 [node name="LevelIcon" parent="." node_paths=PackedStringArray("nextLevelRight") instance=ExtResource("2_x5nyx")]
 offset_left = 136.0
 offset_top = 376.0
 offset_right = 200.0
 offset_bottom = 440.0
+scale = Vector2(1.5, 1.5)
 level2Load = "uid://cfwugrihtwwqk"
+levelIconTexture = ExtResource("3_jq517")
 nextLevelRight = NodePath("../LevelIcon2")
 
 [node name="LevelIcon2" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight") instance=ExtResource("2_x5nyx")]
@@ -29,41 +42,50 @@ offset_left = 288.0
 offset_top = 304.0
 offset_right = 352.0
 offset_bottom = 368.0
+scale = Vector2(1.5, 1.5)
 levelName = "2"
 level2Load = "uid://dbgq2yvwaef37"
+levelIconTexture = ExtResource("4_ccstb")
 unlockRequirement = "W02L01"
+locked = true
 nextLevelLeft = NodePath("../LevelIcon")
 nextLevelRight = NodePath("../LevelIcon3")
 
 [node name="LevelIcon3" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight") instance=ExtResource("2_x5nyx")]
-offset_left = 400.0
+offset_left = 424.0
 offset_top = 392.0
-offset_right = 464.0
+offset_right = 488.0
 offset_bottom = 456.0
+scale = Vector2(1.5, 1.5)
 levelName = "3"
 level2Load = "uid://dhx4m4k7ci84q"
+levelIconTexture = ExtResource("5_6bdd3")
 unlockRequirement = "W02L02"
 nextLevelLeft = NodePath("../LevelIcon2")
 nextLevelRight = NodePath("../LevelIcon4")
 
 [node name="LevelIcon4" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight") instance=ExtResource("2_x5nyx")]
-offset_left = 528.0
-offset_top = 136.0
-offset_right = 592.0
-offset_bottom = 200.0
+offset_left = 538.0
+offset_top = 232.0
+offset_right = 602.0
+offset_bottom = 296.0
+scale = Vector2(1.5, 1.5)
 levelName = "4"
 level2Load = "uid://ctkqxl5b1ly5x"
+levelIconTexture = ExtResource("6_t20ff")
 unlockRequirement = "W02L03"
 nextLevelLeft = NodePath("../LevelIcon3")
 nextLevelRight = NodePath("../LevelIcon5")
 
 [node name="LevelIcon5" parent="." node_paths=PackedStringArray("nextLevelLeft") instance=ExtResource("2_x5nyx")]
-offset_left = 624.0
-offset_top = 360.0
-offset_right = 688.0
-offset_bottom = 424.0
+offset_left = 664.0
+offset_top = 352.0
+offset_right = 728.0
+offset_bottom = 416.0
+scale = Vector2(1.5, 1.5)
 levelName = "5"
 level2Load = "uid://cetxykh7jdd2r"
+levelIconTexture = ExtResource("7_frcxs")
 unlockRequirement = "W02L04"
 nextLevelLeft = NodePath("../LevelIcon4")
 
@@ -76,11 +98,6 @@ offset_left = 344.0
 offset_top = 8.0
 offset_right = 413.0
 offset_bottom = 31.0
+scale = Vector2(2, 2)
 theme = ExtResource("5_3ka0m")
 text = "Mundo 2"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(427, 240)
-scale = Vector2(0.626647, 0.625)
-texture = ExtResource("6_mfny0")

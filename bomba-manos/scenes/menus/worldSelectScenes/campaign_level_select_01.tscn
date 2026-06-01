@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://mhuio1sn8das"]
+[gd_scene load_steps=11 format=3 uid="uid://mhuio1sn8das"]
 
 [ext_resource type="Script" uid="uid://db51vpoxlelql" path="res://scripts/menus/worldSelect/campaign_level_select.gd" id="1_8or57"]
 [ext_resource type="PackedScene" uid="uid://vqadtrjtxsn5" path="res://scenes/menus/worldSelectScenes/level_icon.tscn" id="2_pvp6c"]
+[ext_resource type="Texture2D" uid="uid://bys1fdqyp1h28" path="res://assets/sprites/levels/campaign/world04/level1.png" id="3_4547f"]
 [ext_resource type="PackedScene" uid="uid://c3i3avv75txs4" path="res://scenes/menus/worldSelectScenes/player_icon.tscn" id="3_wdmo6"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="4_pvp6c"]
 [ext_resource type="Texture2D" uid="uid://cx1sqwd2s3rdj" path="res://assets/sprites/levels/campaign/world04/damnBroLetsCode.png" id="5_wdmo6"]
+[ext_resource type="Texture2D" uid="uid://hccht7r2n2wx" path="res://assets/sprites/levels/campaign/world04/level2.png" id="7_tv0g7"]
+[ext_resource type="Texture2D" uid="uid://d3k3d858lxop3" path="res://assets/sprites/levels/campaign/world04/level3.png" id="8_e00or"]
+[ext_resource type="Texture2D" uid="uid://cd0iucaf03sol" path="res://assets/sprites/levels/campaign/world04/level4.png" id="9_ivkc5"]
+[ext_resource type="Texture2D" uid="uid://bcv5chq8vf5n0" path="res://assets/sprites/levels/campaign/world04/level5.png" id="10_aysj5"]
 
 [node name="CampaignLevelSelect" type="Control"]
 layout_mode = 3
@@ -15,70 +20,89 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8or57")
 
-[node name="LevelIcon" parent="." node_paths=PackedStringArray("nextLevelRight") instance=ExtResource("2_pvp6c")]
-offset_left = 88.0
-offset_top = 296.0
-offset_right = 152.0
-offset_bottom = 360.0
-level2Load = "uid://deqh6jn3ncojq"
-nextLevelRight = NodePath("../LevelIcon2")
-
-[node name="LevelIcon2" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight") instance=ExtResource("2_pvp6c")]
-offset_left = 200.0
-offset_top = 384.0
-offset_right = 264.0
-offset_bottom = 448.0
-levelName = "2"
-level2Load = "uid://dut7i1mc463d"
-unlockRequirement = "W01L01"
-nextLevelLeft = NodePath("../LevelIcon")
-nextLevelRight = NodePath("../LevelIcon3")
-
-[node name="LevelIcon3" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight") instance=ExtResource("2_pvp6c")]
-offset_left = 328.0
-offset_top = 320.0
-offset_right = 392.0
-offset_bottom = 384.0
-levelName = "3"
-level2Load = "uid://c0lvasauvhdj5"
-unlockRequirement = "W01L02"
-nextLevelLeft = NodePath("../LevelIcon2")
-nextLevelRight = NodePath("../LevelIcon4")
-
-[node name="LevelIcon4" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight") instance=ExtResource("2_pvp6c")]
-offset_left = 520.0
-offset_top = 384.0
-offset_right = 584.0
-offset_bottom = 448.0
-levelName = "4"
-level2Load = "uid://cm4u8v4lfccte"
-unlockRequirement = "W01L03"
-nextLevelLeft = NodePath("../LevelIcon3")
-nextLevelRight = NodePath("../LevelIcon5")
-
-[node name="LevelIcon5" parent="." node_paths=PackedStringArray("nextLevelLeft") instance=ExtResource("2_pvp6c")]
-offset_left = 648.0
-offset_top = 128.0
-offset_right = 712.0
-offset_bottom = 192.0
-levelName = "5"
-level2Load = "uid://cu2b8yhbh2uof"
-unlockRequirement = "W01L04"
-nextLevelLeft = NodePath("../LevelIcon4")
-
-[node name="playerIcon" parent="." instance=ExtResource("3_wdmo6")]
-
-[node name="WordName" type="Label" parent="."]
-layout_mode = 0
-offset_left = 344.0
-offset_top = 32.0
-offset_right = 517.0
-offset_bottom = 63.0
-theme = ExtResource("4_pvp6c")
-text = "Mundo 1"
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(427.5, 240)
 scale = Vector2(0.625915, 0.625)
 texture = ExtResource("5_wdmo6")
+
+[node name="LevelIcon" parent="." node_paths=PackedStringArray("nextLevelRight") instance=ExtResource("2_pvp6c")]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 239.0
+offset_right = 160.0
+offset_bottom = 287.0
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(0, 0)
+localize_numeral_system = false
+level2Load = "uid://deqh6jn3ncojq"
+levelIconTexture = ExtResource("3_4547f")
+nextLevelRight = NodePath("../LevelIcon2")
+
+[node name="LevelIcon2" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight") instance=ExtResource("2_pvp6c")]
+offset_left = 265.0
+offset_top = 323.0
+offset_right = 329.0
+offset_bottom = 387.0
+scale = Vector2(1.5, 1.5)
+levelName = "2"
+level2Load = "uid://dut7i1mc463d"
+levelIconTexture = ExtResource("7_tv0g7")
+unlockRequirement = "W01L01"
+locked = true
+nextLevelLeft = NodePath("../LevelIcon")
+nextLevelRight = NodePath("../LevelIcon3")
+
+[node name="LevelIcon3" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight") instance=ExtResource("2_pvp6c")]
+offset_left = 418.0
+offset_top = 259.0
+offset_right = 482.0
+offset_bottom = 323.0
+scale = Vector2(1.5, 1.5)
+levelName = "3"
+level2Load = "uid://c0lvasauvhdj5"
+levelIconTexture = ExtResource("8_e00or")
+unlockRequirement = "W01L02"
+locked = true
+nextLevelLeft = NodePath("../LevelIcon2")
+nextLevelRight = NodePath("../LevelIcon4")
+
+[node name="LevelIcon4" parent="." node_paths=PackedStringArray("nextLevelLeft", "nextLevelRight") instance=ExtResource("2_pvp6c")]
+offset_left = 571.0
+offset_top = 291.0
+offset_right = 635.0
+offset_bottom = 355.0
+scale = Vector2(1.5, 1.5)
+levelName = "4"
+level2Load = "uid://cm4u8v4lfccte"
+levelIconTexture = ExtResource("9_ivkc5")
+unlockRequirement = "W01L03"
+locked = true
+nextLevelLeft = NodePath("../LevelIcon3")
+nextLevelRight = NodePath("../LevelIcon5")
+
+[node name="LevelIcon5" parent="." node_paths=PackedStringArray("nextLevelLeft") instance=ExtResource("2_pvp6c")]
+offset_left = 734.0
+offset_top = 371.0
+offset_right = 798.0
+offset_bottom = 435.0
+scale = Vector2(1.5, 1.5)
+levelName = "5"
+level2Load = "uid://cu2b8yhbh2uof"
+levelIconTexture = ExtResource("10_aysj5")
+unlockRequirement = "W01L04"
+locked = true
+nextLevelLeft = NodePath("../LevelIcon4")
+
+[node name="playerIcon" parent="." instance=ExtResource("3_wdmo6")]
+z_index = 2
+
+[node name="WordName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 26.0
+offset_right = 428.0
+offset_bottom = 46.0
+scale = Vector2(2, 2)
+theme = ExtResource("4_pvp6c")
+text = "Mundo 1"
