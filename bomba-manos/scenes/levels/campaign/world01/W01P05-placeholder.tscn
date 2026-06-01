@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://cetxykh7jdd2r"]
+[gd_scene load_steps=37 format=4 uid="uid://cetxykh7jdd2r"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_lak0r"]
 [ext_resource type="Texture2D" uid="uid://v7o6pkkgso0r" path="res://assets/sprites/levels/campaign/world01/LostWoodsCorner.png" id="2_yfhol"]
@@ -28,6 +28,9 @@
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="25_oqwko"]
 [ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/exit.tscn" id="26_yfhol"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="27_5ujo2"]
+[ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="29_08l5j"]
+[ext_resource type="AudioStream" uid="uid://cnften5qutc1n" path="res://assets/audio/dialogue/falasJP/escolhi certo.mp3" id="30_n4ku7"]
+[ext_resource type="AudioStream" uid="uid://b1ncwl8scqnc3" path="res://assets/audio/dialogue/falasJP/Estou com você.mp3" id="31_n4ku7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_01k7s"]
 texture = ExtResource("7_n4ku7")
@@ -779,5 +782,9 @@ levelIdentifier = "W02L05"
 nextLevel = "uid://wyq2fculrhic"
 
 [node name="pauseCampaign" parent="." instance=ExtResource("27_5ujo2")]
+
+[node name="DIALOG" parent="." instance=ExtResource("29_08l5j")]
+falasDosPersonagens = Array[AudioStream]([ExtResource("30_n4ku7"), ExtResource("31_n4ku7")])
+legendas = Array[String](["Sei que são muitos,\\mas sei que escolhi o\\elfo certo.", "Você não está sozinho,\\eu estou com você!"])
 
 [connection signal="ready" from="." to="entities/players/basePlayer02" method="_on_map_placeholder_forest_ready"]

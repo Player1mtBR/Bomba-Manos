@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://ctkqxl5b1ly5x"]
+[gd_scene load_steps=35 format=4 uid="uid://ctkqxl5b1ly5x"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_opioi"]
 [ext_resource type="Texture2D" uid="uid://v7o6pkkgso0r" path="res://assets/sprites/levels/campaign/world01/LostWoodsCorner.png" id="2_aim60"]
@@ -26,6 +26,9 @@
 [ext_resource type="Script" uid="uid://6lulbtl7con2" path="res://scripts/ui.gd" id="24_t7xr0"]
 [ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="25_7fqkq"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="25_opioi"]
+[ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="27_qx6o3"]
+[ext_resource type="AudioStream" uid="uid://cc86fb5fmhe5j" path="res://assets/audio/dialogue/falasJP/alto escalao.mp3" id="28_vil6t"]
+[ext_resource type="AudioStream" uid="uid://dmoa3wncjtmgl" path="res://assets/audio/dialogue/falasJP/wizry.mp3" id="29_4ftvo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_01k7s"]
 texture = ExtResource("7_4ftvo")
@@ -54,7 +57,7 @@ sources/0 = SubResource("TileSetAtlasSource_lx53w")
 
 [sub_resource type="GDScript" id="GDScript_a4ok7"]
 
-[node name="mapPlaceholderForest" type="Node2D"]
+[node name="mapPlaceholderForest2" type="Node2D"]
 script = ExtResource("1_opioi")
 
 [node name="environment" type="Node2D" parent="."]
@@ -774,3 +777,7 @@ levelIdentifier = "W02L04"
 nextLevel = "uid://cetxykh7jdd2r"
 
 [node name="pauseCampaign" parent="." instance=ExtResource("25_opioi")]
+
+[node name="DIALOG" parent="." instance=ExtResource("27_qx6o3")]
+falasDosPersonagens = Array[AudioStream]([ExtResource("28_vil6t"), ExtResource("29_4ftvo")])
+legendas = Array[String](["Devemos estar perto, ele\\já mandou um subordinado do\\alto escalão.", "Wizry - Um mago louco\\que tem as piores intenções\\possíveis."])

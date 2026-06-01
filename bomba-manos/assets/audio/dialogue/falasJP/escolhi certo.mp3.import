@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cnften5qutc1n"
+path="res://.godot/imported/escolhi certo.mp3-b4d24631887eaa75bb2121e7010ab1ae.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/falasJP/escolhi certo.mp3"
+dest_files=["res://.godot/imported/escolhi certo.mp3-b4d24631887eaa75bb2121e7010ab1ae.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
