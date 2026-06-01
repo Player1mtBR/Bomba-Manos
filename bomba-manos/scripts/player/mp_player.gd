@@ -4,6 +4,11 @@ extends CharacterBody2D
 @export var playerId := 0 ##permite usar um único script para o input de todos os jogadores
 @export var isPlayerOnMenu := false
 @export var charSkin := SpriteFrames 
+@export var colorVariant := Color(1, 1, 1, 1) 
+#white 1 1 1 1
+#blue  0.4, 0.7, 1.0, 1
+#green 0.4, 1.0, 0.4
+#red 0.4, 1.0, 0.4
 
 
 @export var bombaEX := 1 #01 NORMAL - 02 MESSIAS - 03 MASCARA 04 - FANTASMA - 05 REMOTO
@@ -39,6 +44,7 @@ var movespeed := 100
 
 func _ready() -> void:
 	animPlayerNode.sprite_frames = charSkin
+	animPlayerNode.modulate = colorVariant
 	await get_tree().create_timer(3.0, false).timeout
 	useSpawnDelay = false
 	

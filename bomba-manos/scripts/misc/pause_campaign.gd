@@ -1,22 +1,28 @@
 extends CanvasLayer
 
+var canQuitPause := true
+
 func _ready() -> void:
 	visible = false
 	get_tree().paused = false
 	
 func _input(event: InputEvent) -> void:
-	if event.is_action_released("pause_game"):
-		if get_tree().paused:
-			visible = false
-			get_tree().paused = false
-			AudioServer.set_bus_effect_enabled(1, 0, false)
-		
-		else:
-			AudioServer.set_bus_effect_enabled(1, 0, true)
-			visible = true
-			$VBoxContainer/continuar.grab_focus()
-			get_tree().paused = true
+	if canQuitPause == true:
+		if event.is_action_released("pause_game"):
+			if get_tree().paused :
+				visible = false
+				get_tree().paused = false
+				AudioServer.set_bus_effect_enabled(1, 0, false)
 			
+			else:
+				AudioServer.set_bus_effect_enabled(1, 0, true)
+				visible = true
+				$VBoxContainer/continuar.grab_focus()
+				get_tree().paused = true
+				
+	if event.is_action_released("menu_cancel") and get_tree().paused:
+		canQuitPause = true
+				
 
 func _on_continuar_pressed() -> void:
 	visible = false
@@ -35,4 +41,8 @@ func _on_sair_pressed() -> void:
 
 
 func _on_config_pressed() -> void:
-	pass # Replace with function body.
+	$settingsMenu.settings_focus()
+	canQuitPause = false
+	#visible = false
+	
+	

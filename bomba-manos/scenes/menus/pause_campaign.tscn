@@ -1,7 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2wjsl0bsfouh"]
+[gd_scene load_steps=8 format=3 uid="uid://b2wjsl0bsfouh"]
 
 [ext_resource type="Script" uid="uid://crhholwb2f4y" path="res://scripts/misc/pause_campaign.gd" id="1_6tgym"]
-[ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="2_hdou6"]
+[ext_resource type="Theme" uid="uid://ds7mb4bo4uj1a" path="res://assets/res/button_theme_01.tres" id="2_tqogn"]
+[ext_resource type="FontFile" uid="uid://cdhtbd5mt3a81" path="res://assets/04B_30__.TTF" id="3_w4fu4"]
+[ext_resource type="PackedScene" uid="uid://c4u8i5l4eu36v" path="res://scenes/menus/settings_menu.tscn" id="4_w4fu4"]
+
+[sub_resource type="Gradient" id="Gradient_w4fu4"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.00392157, 0.0745098, 0.376471, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2e1qo"]
+gradient = SubResource("Gradient_w4fu4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p0ghr"]
+texture = SubResource("GradientTexture2D_2e1qo")
 
 [node name="pauseCampaign" type="CanvasLayer"]
 process_mode = 3
@@ -27,31 +39,45 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_hdou6")
+theme = ExtResource("2_tqogn")
 
 [node name="continuar" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 17
+theme_override_styles/focus = SubResource("StyleBoxTexture_p0ghr")
 text = "Continuar"
 
 [node name="config" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 17
+theme_override_styles/focus = SubResource("StyleBoxTexture_p0ghr")
 text = "ajustes"
 
 [node name="sair" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 17
+theme_override_styles/focus = SubResource("StyleBoxTexture_p0ghr")
 text = "Sair para o Menu"
 
 [node name="Label" type="Label" parent="."]
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -38.5
-offset_top = 116.0
-offset_right = 38.5
-offset_bottom = 139.0
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -100.0
+offset_right = 112.0
+offset_bottom = -66.0
 grow_horizontal = 2
-theme = ExtResource("2_hdou6")
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_w4fu4")
+theme_override_font_sizes/font_size = 34
 text = "PAUSADO"
+
+[node name="settingsMenu" parent="." instance=ExtResource("4_w4fu4")]
+layer = 10
+visible = false
 
 [connection signal="pressed" from="VBoxContainer/continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="VBoxContainer/config" to="." method="_on_config_pressed"]

@@ -694,6 +694,7 @@ func playAttackAnim():
 			$visual/AnimatedSprite2D.play("attack02")
 		3:
 			$visual/AnimatedSprite2D.play("attack03")
+			$AnimationPlayer.play("handsAttack")
 		4:
 			$visual/AnimatedSprite2D.play("attack03")
 

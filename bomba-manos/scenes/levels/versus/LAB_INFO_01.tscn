@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://daotc13i8n8ay"]
+[gd_scene load_steps=21 format=4 uid="uid://daotc13i8n8ay"]
 
 [ext_resource type="Script" uid="uid://jrv8xto1roqu" path="res://scripts/maps/versus_map.gd" id="1_ll2d3"]
 [ext_resource type="Texture2D" uid="uid://drutjoa1y5g30" path="res://assets/sprites/damnBroLetsCode.png" id="2_du6be"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://by6pahl3crxa3" path="res://assets/sprites/phSprites.png" id="6_lw0ki"]
 [ext_resource type="Texture2D" uid="uid://dyxcsyn1a87a6" path="res://assets/sprites/cenario01.png" id="7_hlydc"]
 [ext_resource type="PackedScene" uid="uid://cb6neg2ddhkn" path="res://scenes/objects/breakable_block.tscn" id="8_jqveh"]
+[ext_resource type="AudioStream" uid="uid://b3ck3ofsmmiv8" path="res://assets/audio/tracks/world02/MissiaFinal.mp3.mp3" id="9_msm2m"]
 [ext_resource type="PackedScene" uid="uid://bgkax6c3eo7n0" path="res://scenes/entities/manel.tscn" id="10_dp0bx"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="11_y4x1s"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="12_mq77w"]
@@ -488,7 +489,11 @@ position = Vector2(32, 64)
 position = Vector2(48, 64)
 
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+position = Vector2(-1, 0)
+stream = ExtResource("9_msm2m")
 autoplay = true
+bus = &"Soundtrack"
 
 [node name="Manel" parent="." instance=ExtResource("10_dp0bx")]
 position = Vector2(-144, -24)

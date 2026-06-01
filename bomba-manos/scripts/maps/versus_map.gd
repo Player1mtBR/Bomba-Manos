@@ -34,6 +34,7 @@ func spawnPlayer(setId, setCharacter):
 	var playerInstance = playerScene.instantiate()
 	playerInstance.playerId = setId
 	playerInstance.charSkin = VersusMatchSettings.characterList[setCharacter]["spriteFrames"]
+	playerInstance.colorVariant = getPlayerColor(setCharacter, setId)
 	playerInstance.global_position = spawnPoints[setId - 1].global_position
 	get_tree().current_scene.call_deferred("add_child", playerInstance)
 
@@ -46,3 +47,23 @@ func spawnAllPlayers():
 		spawnPlayer(3, VersusMatchSettings.p3Char)
 	if VersusMatchSettings.playerCount >= 4:
 		spawnPlayer(4, VersusMatchSettings.p4Char)
+		
+func getPlayerColor(charId, playerId) -> Color:
+	var doppelgangerCount := 0 
+	
+	for ids in range(1, playerId + 1):
+		if VersusScoreManager.getCharFromPlayer(ids) == charId:
+			doppelgangerCount += 1
+	
+	match doppelgangerCount:
+		1:
+			return Color(1, 1, 1, 1)
+		2:
+			return Color(0.4, 0.7, 1.0, 1)
+		3:
+			return Color(0.4, 1.0, 0.4, 1)
+		4:
+			return Color(0.4, 1.0, 0.4, 1)
+			
+	return Color(1, 1, 1, 1)
+	
