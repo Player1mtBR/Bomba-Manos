@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bg2jtrrxoli1g"
+path="res://.godot/imported/jellys radioativos.mp3-6a419d557d54690f7a588c74818fd367.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/falasJP/jellys radioativos.mp3"
+dest_files=["res://.godot/imported/jellys radioativos.mp3-6a419d557d54690f7a588c74818fd367.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
