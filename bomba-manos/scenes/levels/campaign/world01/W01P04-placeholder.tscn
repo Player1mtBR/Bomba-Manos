@@ -57,7 +57,7 @@ sources/0 = SubResource("TileSetAtlasSource_lx53w")
 
 [sub_resource type="GDScript" id="GDScript_a4ok7"]
 
-[node name="mapPlaceholderForest" type="Node2D"]
+[node name="mapPlaceholderForest2" type="Node2D"]
 script = ExtResource("1_opioi")
 
 [node name="environment" type="Node2D" parent="."]
