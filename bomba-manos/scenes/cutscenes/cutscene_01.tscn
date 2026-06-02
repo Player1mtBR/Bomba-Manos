@@ -1,11 +1,336 @@
-[gd_scene load_steps=3 format=3 uid="uid://dywawragkqi21"]
+[gd_scene load_steps=83 format=3 uid="uid://dywawragkqi21"]
 
 [ext_resource type="Script" uid="uid://bj12gul8etm1p" path="res://scripts/misc/cutscene_01.gd" id="1_ygh52"]
 [ext_resource type="VideoStream" uid="uid://rkg2xv2fysjl" path="res://assets/video/MegasXLR_clip.ogv" id="2_ygh52"]
+[ext_resource type="Texture2D" uid="uid://22krewkb40nf" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos1.png" id="3_1lacv"]
+[ext_resource type="Texture2D" uid="uid://dqh5fe88jv028" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos2.png" id="4_p5x11"]
+[ext_resource type="Texture2D" uid="uid://cqpqxg1d3oehj" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos3.png" id="5_vsvkh"]
+[ext_resource type="Texture2D" uid="uid://oixkmqii0ofh" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos4.png" id="6_gg2ne"]
+[ext_resource type="Texture2D" uid="uid://j5kgflbncyon" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos5.png" id="7_vvsk2"]
+[ext_resource type="Texture2D" uid="uid://bq6k5y6p47tcn" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos6.png" id="8_7iti7"]
+[ext_resource type="Texture2D" uid="uid://b036nr5jvohw" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos7.png" id="9_kgjyw"]
+[ext_resource type="Texture2D" uid="uid://d6up3uyufnhx" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos8.png" id="10_31ui0"]
+[ext_resource type="Texture2D" uid="uid://s83dmtx68c6d" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos9.png" id="11_3pbjy"]
+[ext_resource type="Texture2D" uid="uid://5h5dkpvgf31g" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos10.png" id="12_en0ce"]
+[ext_resource type="Texture2D" uid="uid://1s052igltamg" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos11.png" id="13_2l4cp"]
+[ext_resource type="Texture2D" uid="uid://cupf1lw3riiwr" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos12.png" id="14_hgtos"]
+[ext_resource type="Texture2D" uid="uid://wx24x4tlhygx" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos13.png" id="15_oier0"]
+[ext_resource type="Texture2D" uid="uid://csd586v7kaocr" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos14.png" id="16_f6nwh"]
+[ext_resource type="Texture2D" uid="uid://c3dnwsaysc5ub" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos15.png" id="17_38ch5"]
+[ext_resource type="Texture2D" uid="uid://bguqis8fvejb5" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos16.png" id="18_ddcw7"]
+[ext_resource type="Texture2D" uid="uid://bxjjfmx1oimi7" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos17.png" id="19_km458"]
+[ext_resource type="Texture2D" uid="uid://ry43udhpkpcv" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos18.png" id="20_or7ky"]
+[ext_resource type="Texture2D" uid="uid://dqcuw7warl7oa" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos19.png" id="21_exsdp"]
+[ext_resource type="Texture2D" uid="uid://cdlhseddr4k38" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos20.png" id="22_mhdsk"]
+[ext_resource type="Texture2D" uid="uid://blq1dmm80nf12" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos21.png" id="23_hsrlp"]
+[ext_resource type="Texture2D" uid="uid://3th1736rp03d" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos22.png" id="24_o1hne"]
+[ext_resource type="Texture2D" uid="uid://by4jpda5ky0hs" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos23.png" id="25_2mon4"]
+[ext_resource type="Texture2D" uid="uid://b3lojnrk2u2tp" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos24.png" id="26_na4ai"]
+[ext_resource type="Texture2D" uid="uid://bdvt5u0hi26ej" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos25.png" id="27_rbu4y"]
+[ext_resource type="Texture2D" uid="uid://doykyrdv05gt2" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos26.png" id="28_2pfxy"]
+[ext_resource type="Texture2D" uid="uid://d0dkwtcwxfc8y" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos27.png" id="29_ipdt1"]
+[ext_resource type="Texture2D" uid="uid://d2gxbnoac6kar" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos28.png" id="30_gfmhn"]
+[ext_resource type="Texture2D" uid="uid://bqkeweafe7myw" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos29.png" id="31_5v35p"]
+[ext_resource type="Texture2D" uid="uid://c48u8kn7qx1es" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos30.png" id="32_a7uoa"]
+[ext_resource type="Texture2D" uid="uid://c6wjcrliu4a8v" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos31.png" id="33_s2uia"]
+[ext_resource type="Texture2D" uid="uid://c0s8cmblp5c4c" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos32.png" id="34_883tj"]
+[ext_resource type="Texture2D" uid="uid://ch5fn5dg63438" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos33.png" id="35_0tbgk"]
+[ext_resource type="Texture2D" uid="uid://bdqexr8mdgp44" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos34.png" id="36_sw2oe"]
+[ext_resource type="Texture2D" uid="uid://blpwk56tqvutv" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos35.png" id="37_rocn1"]
+[ext_resource type="Texture2D" uid="uid://bbhg355i44luf" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos36.png" id="38_afjwj"]
+[ext_resource type="Texture2D" uid="uid://clrsnhw3sjavf" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos37.png" id="39_8wxco"]
+[ext_resource type="Texture2D" uid="uid://bm8mh4ly268vs" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos38.png" id="40_oe0p7"]
+[ext_resource type="Texture2D" uid="uid://lbmtsg3uab5i" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos39.png" id="41_f65hn"]
+[ext_resource type="Texture2D" uid="uid://curmx3rrsnehf" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos40.png" id="42_72yu3"]
+[ext_resource type="Texture2D" uid="uid://73k2872q8oah" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos41.png" id="43_ti2jg"]
+[ext_resource type="Texture2D" uid="uid://cxqxcu6e5atlv" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos42.png" id="44_a46mt"]
+[ext_resource type="Texture2D" uid="uid://b1k0excp43pb" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos43.png" id="45_ayq5d"]
+[ext_resource type="Texture2D" uid="uid://bbdw50afb8nsj" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos44.png" id="46_tjeim"]
+[ext_resource type="Texture2D" uid="uid://ckbe5ysp0g0hf" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos45.png" id="47_ofoi3"]
+[ext_resource type="Texture2D" uid="uid://bdmqip0a66g5d" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos46.png" id="48_0atx4"]
+[ext_resource type="Texture2D" uid="uid://ctatvgncaxf8w" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos47.png" id="49_m81kw"]
+[ext_resource type="Texture2D" uid="uid://2pcnejpjmars" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos48.png" id="50_xo6gc"]
+[ext_resource type="Texture2D" uid="uid://bmpuervchpj2j" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos49.png" id="51_q8sfp"]
+[ext_resource type="Texture2D" uid="uid://folr6jenr7oc" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos50.png" id="52_q1e5d"]
+[ext_resource type="Texture2D" uid="uid://c6yxoy10sb0eh" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos51.png" id="53_ceb4c"]
+[ext_resource type="Texture2D" uid="uid://1v7pi454f4tx" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos52.png" id="54_1ynvj"]
+[ext_resource type="Texture2D" uid="uid://tkf5t1j1vnen" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos53.png" id="55_eksed"]
+[ext_resource type="Texture2D" uid="uid://dc5n8gxbpu7nq" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos54.png" id="56_cms3f"]
+[ext_resource type="Texture2D" uid="uid://3fh7usq5ougp" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos55.png" id="57_7p4f5"]
+[ext_resource type="Texture2D" uid="uid://p272084o8va2" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos56.png" id="58_nxnu4"]
+[ext_resource type="Texture2D" uid="uid://bm1bjjcpplpbr" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos57.png" id="59_ksjbg"]
+[ext_resource type="Texture2D" uid="uid://bg8n8ceyra0hx" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos58.png" id="60_ap1jl"]
+[ext_resource type="Texture2D" uid="uid://ncp8n6n1jq0l" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos59.png" id="61_40w6n"]
+[ext_resource type="Texture2D" uid="uid://cjl41mmmqgalc" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos60.png" id="62_4myn1"]
+[ext_resource type="Texture2D" uid="uid://dre0krw1t661k" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos61.png" id="63_m1tlq"]
+[ext_resource type="Texture2D" uid="uid://lni3tlmogpln" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos62.png" id="64_suj7w"]
+[ext_resource type="Texture2D" uid="uid://c0hkrl6d81vos" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos63.png" id="65_ua4ij"]
+[ext_resource type="Texture2D" uid="uid://u0t3c0rlopd7" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos64.png" id="66_5kq4o"]
+[ext_resource type="Texture2D" uid="uid://bpux7jvmsl4vh" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos65.png" id="67_54otg"]
+[ext_resource type="Texture2D" uid="uid://twbo0ql0flxj" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos66.png" id="68_mt3w3"]
+[ext_resource type="Texture2D" uid="uid://c3mfq6rxkiht2" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos67.png" id="69_0onjo"]
+[ext_resource type="Texture2D" uid="uid://thi1bkj04n0b" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos68.png" id="70_vd1th"]
+[ext_resource type="Texture2D" uid="uid://cfqjgw185hpps" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos69.png" id="71_uoeol"]
+[ext_resource type="Texture2D" uid="uid://wflitu6e3jgh" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos70.png" id="72_0123k"]
+[ext_resource type="Texture2D" uid="uid://cklofjspgktrc" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos71.png" id="73_mitat"]
+[ext_resource type="Texture2D" uid="uid://b8gndlhfotusn" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos72.png" id="74_fkvy3"]
+[ext_resource type="Texture2D" uid="uid://eskpssl0680t" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos73.png" id="75_flmw5"]
+[ext_resource type="Texture2D" uid="uid://jhvyckf0p4ao" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos74.png" id="76_fctt0"]
+[ext_resource type="Texture2D" uid="uid://kdjhu3brsfm1" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos75.png" id="77_n3ddq"]
+[ext_resource type="Texture2D" uid="uid://fwbqsmrryyse" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos76.png" id="78_18q5u"]
+[ext_resource type="Texture2D" uid="uid://dg2nekbw33hkm" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos77.png" id="79_rpjhs"]
+[ext_resource type="Texture2D" uid="uid://hnwt7e4ah7q1" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos78.png" id="80_7vipb"]
+[ext_resource type="Texture2D" uid="uid://dlklwnx0ugr81" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos79.png" id="81_ygdwg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1o0yc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1lacv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p5x11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vsvkh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gg2ne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vvsk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7iti7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kgjyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_31ui0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3pbjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_en0ce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2l4cp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_hgtos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_oier0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_f6nwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_38ch5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ddcw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_km458")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_or7ky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_exsdp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_mhdsk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_hsrlp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_o1hne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_2mon4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_na4ai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_rbu4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_2pfxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ipdt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_gfmhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_5v35p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_a7uoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_s2uia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_883tj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_0tbgk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_sw2oe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_rocn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_afjwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_8wxco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_oe0p7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_f65hn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_72yu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_ti2jg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_a46mt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_ayq5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_tjeim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_ofoi3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_0atx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_m81kw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_xo6gc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_q8sfp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_q1e5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_ceb4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_1ynvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_eksed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_cms3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_7p4f5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_nxnu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_ksjbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_ap1jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_40w6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_4myn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_m1tlq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_suj7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_ua4ij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_5kq4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_54otg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_mt3w3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_0onjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_vd1th")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_uoeol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_0123k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_mitat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_fkvy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_flmw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_fctt0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_n3ddq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_18q5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_rpjhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_7vipb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_ygdwg")
+}],
+"loop": false,
+"name": &"default",
+"speed": 7.0
+}]
 
 [node name="cutscene01" type="Node2D"]
 script = ExtResource("1_ygh52")
 toLevelFile = "uid://wyq2fculrhic"
+awaitBeforeLoad = 14.0
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 anchors_preset = 8
@@ -24,5 +349,12 @@ autoplay = true
 expand = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -1)
+sprite_frames = SubResource("SpriteFrames_1o0yc")
+autoplay = "default"
+frame = 78
+frame_progress = 1.0
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

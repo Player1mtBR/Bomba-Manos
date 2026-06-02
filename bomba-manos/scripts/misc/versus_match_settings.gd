@@ -1,6 +1,11 @@
 extends Node
 
 var mapList = {
+	0 : "res://scenes/levels/versus/LAB_INFO_01.tscn"
+
+}
+
+"""
 	0 :{
 		"name" : "LAB 21",
 		"scene" : "res://scenes/levels/versus/LAB_INFO_01.tscn"
@@ -10,7 +15,8 @@ var mapList = {
 		"name" : "LAB 21 copia",
 		"scene" : "res://scenes/levels/versus/LAB_INFO_01.tscn"
 		}
-}
+"""
+
 
 var characterList = {
 

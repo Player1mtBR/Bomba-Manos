@@ -8,8 +8,9 @@ func _ready() -> void:
 	if has_node("AnimatedSprite2D"):
 		$AnimatedSprite2D.play("default")
 		await get_tree().create_timer(awaitBeforeLoad, false).timeout
-		PortalTransition.bossIn()
-		await get_tree().create_timer(1.5, false).timeout
+		if awaitBeforeLoad == 12.0:
+			PortalTransition.bossIn()
+			await get_tree().create_timer(1.5, false).timeout
 		Loader.loadingScreen2Scene(toLevelFile)
 
 func _input(event: InputEvent) -> void:

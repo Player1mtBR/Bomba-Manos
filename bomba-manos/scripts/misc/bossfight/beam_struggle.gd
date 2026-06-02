@@ -15,9 +15,9 @@ func _process(delta: float) -> void:
 		$TextureProgressBar/Sprite2D.position.x = lerp($TextureProgressBar/Sprite2D.position.x, (1.0 - percent2move) * $TextureProgressBar.size.x, delta)
 		
 		if toggleManelPower == true:
-			beamStruggleValue -= 25 * delta
-		else:
 			beamStruggleValue -= 10 * delta
+		else:
+			beamStruggleValue -= 3.5 * delta
 			
 		if $TextureProgressBar.value != beamStruggleValue:
 			$TextureProgressBar.value = lerp($TextureProgressBar.value, beamStruggleValue, delta)
