@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfbrf5qn2v3kl"
+path="res://.godot/imported/acabar com a festa.mp3-a516a5747c6d59e2f66bc4d56e54c75e.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/World04/acabar com a festa.mp3"
+dest_files=["res://.godot/imported/acabar com a festa.mp3-a516a5747c6d59e2f66bc4d56e54c75e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

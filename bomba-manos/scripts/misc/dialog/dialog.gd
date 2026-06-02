@@ -5,6 +5,8 @@ extends Node2D
 @export var falasDosPersonagens : Array[AudioStream] = []
 @export var legendas : Array[String] = []
 
+@export var time2wait := 2.0
+
 @onready var coisosArray : Array[Sprite2D] = [
 	$"Visual/coisos/1",
 	$"Visual/coisos/2",
@@ -21,7 +23,7 @@ var shouldStart := true
 var dialogIndex := 0
 
 func _ready() -> void:
-	await get_tree().create_timer(2.0, false).timeout
+	await get_tree().create_timer(time2wait, false).timeout
 	$Visual.visible = true
 	$Visual/AnimationPlayer2.play("fade")
 	$Visual/AnimationPlayer.play("talk")

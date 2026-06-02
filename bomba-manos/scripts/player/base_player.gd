@@ -28,6 +28,7 @@ var playerMoveDelay := 0.3
 var placedBombas := 0
 var passos := 0 
 
+var canSwap := true
 var equippedBomb := 1
 
 var inputMoveDirection
@@ -46,6 +47,10 @@ func _ready() -> void:
 
 	
 func _process(delta: float) -> void:
+	if placedBombas <= 0 or placedBombas == 2:
+		canSwap = true
+	else:
+		canSwap = false
 	#if GlobalScript.currentPlayers == 1 and canPlayerMove == true and isPlayerAlive == true:
 	#	victory()
 	
@@ -60,6 +65,7 @@ func _process(delta: float) -> void:
 			
 		if equippedBomb == 5: #remote bomba
 			placedBombas += 1
+			
 	if Input.is_action_pressed("p1_bomb") and placedBombas == 2:
 		if $remoteBombResetTimer.is_stopped():
 			$remoteBombResetTimer.start()
@@ -77,7 +83,8 @@ func _process(delta: float) -> void:
 	#	await get_tree().create_timer(3.0, false).timeout ## cria um novo timer e aguarda o sinal de quando acaba o timer
 	#	placedBombas -= 1
 	
-	if Input.is_action_just_pressed("p"+str(playerID)+"_swap_bomb"):
+	if Input.is_action_just_pressed("p"+str(playerID)+"_swap_bomb") and canSwap == true:
+		#canSwap = false
 		if equippedBomb == 1:
 			equippedBomb = bombaEX
 		elif equippedBomb == bombaEX:

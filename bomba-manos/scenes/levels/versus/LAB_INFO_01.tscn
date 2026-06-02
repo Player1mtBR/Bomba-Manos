@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://daotc13i8n8ay"]
+[gd_scene load_steps=24 format=4 uid="uid://daotc13i8n8ay"]
 
 [ext_resource type="Script" uid="uid://jrv8xto1roqu" path="res://scripts/maps/versus_map.gd" id="1_ll2d3"]
 [ext_resource type="Texture2D" uid="uid://drutjoa1y5g30" path="res://assets/sprites/damnBroLetsCode.png" id="2_du6be"]
@@ -15,6 +15,7 @@
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="13_ll2d3"]
 [ext_resource type="PackedScene" uid="uid://hola2cxa0s7h" path="res://scenes/menus/ui/versus_score_ui.tscn" id="14_msm2m"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="14_stuqf"]
+[ext_resource type="Texture2D" uid="uid://gh4r3hvrmq6g" path="res://assets/sprites/UI/mainMenu/31 Sem Título_20260514113123.png" id="14_sty8r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ll2d3"]
 texture = ExtResource("6_lw0ki")
@@ -104,6 +105,13 @@ separation = Vector2i(4, 0)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ll2d3")
 
+[sub_resource type="Gradient" id="Gradient_bwcfd"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_554qq"]
+gradient = SubResource("Gradient_bwcfd")
+
 [sub_resource type="Animation" id="Animation_msm2m"]
 length = 0.001
 tracks/0/type = "value"
@@ -175,23 +183,23 @@ scale = Vector2(0.251647, 0.25)
 texture = ExtResource("2_du6be")
 
 [node name="leftWall" type="Sprite2D" parent="."]
-position = Vector2(-196, -16.5)
+position = Vector2(-142, -16)
 scale = Vector2(0.310976, 0.213408)
 texture = ExtResource("3_7lkm1")
 
 [node name="rightWall" type="Sprite2D" parent="."]
-position = Vector2(197, -19)
+position = Vector2(142, -19)
 scale = Vector2(0.285, -0.213275)
 texture = ExtResource("4_ek204")
 
 [node name="rightCorner" type="Sprite2D" parent="."]
-position = Vector2(184, -168)
+position = Vector2(147, -138)
 rotation = 1.57079
 scale = Vector2(-0.232267, 0.205622)
 texture = ExtResource("5_ttfsp")
 
 [node name="rightCorner2" type="Sprite2D" parent="."]
-position = Vector2(-200, -168)
+position = Vector2(-148, -138)
 rotation = 1.57079
 scale = Vector2(-0.232941, -0.225524)
 texture = ExtResource("5_ttfsp")
@@ -206,6 +214,10 @@ position = Vector2(-48.1783, 503.459)
 scale = Vector2(5.66803, 3.95257)
 tile_map_data = PackedByteArray("AAD5//n/AAABAAAAAAD5//r/AAABAAAAAAD5//v/AAABAAAAAAD5//z/AAABAAAAAAD5//3/AAABAAAAAAD5//7/AAABAAAAAAD5////AAABAAAAAAD5/wAAAAABAAAAAAD5/wEAAAABAAAAAAD5/wIAAAABAAAAAAD5/wMAAAABAAAAAAD5/wQAAAABAAAAAAD5/wUAAAABAAAAAAD6/wUAAAABAAAAAAD7/wUAAAABAAAAAAD8/wUAAAABAAAAAAD9/wUAAAABAAAAAAD+/wUAAAABAAAAAAD//wUAAAABAAAAAAAAAAUAAAABAAAAAAABAAUAAAABAAAAAAACAAUAAAABAAAAAAADAAUAAAABAAAAAAAEAAUAAAABAAAAAAAFAAUAAAABAAAAAAAGAAUAAAABAAAAAAAHAAUAAAABAAAAAAAHAAQAAAABAAAAAAAHAAMAAAABAAAAAAAHAAIAAAABAAAAAAAHAAEAAAABAAAAAAAHAAAAAAABAAAAAAAHAP//AAABAAAAAAAHAP7/AAABAAAAAAAHAP3/AAABAAAAAAAHAPz/AAABAAAAAAAHAPv/AAABAAAAAAAHAPr/AAABAAAAAAAHAPn/AAABAAAAAAAGAPn/AAABAAAAAAAFAPn/AAABAAAAAAAEAPn/AAABAAAAAAADAPn/AAABAAAAAAACAPn/AAABAAAAAAABAPn/AAABAAAAAAAAAPn/AAABAAAAAAD///n/AAABAAAAAAD+//n/AAABAAAAAAD9//n/AAABAAAAAAD8//n/AAABAAAAAAD7//n/AAABAAAAAAD6//n/AAABAAAAAAD7//v/AAABAAAAAAD7//3/AAABAAAAAAD7////AAABAAAAAAD7/wEAAAABAAAAAAD7/wMAAAABAAAAAAD9/wMAAAABAAAAAAD//wMAAAABAAAAAAABAAMAAAABAAAAAAADAAMAAAABAAAAAAAFAAMAAAABAAAAAAAFAAEAAAABAAAAAAAFAP//AAABAAAAAAAFAP3/AAABAAAAAAAFAPv/AAABAAAAAAADAPv/AAABAAAAAAABAPv/AAABAAAAAAD///v/AAABAAAAAAD9//v/AAABAAAAAAD9//3/AAABAAAAAAD9////AAABAAAAAAD9/wEAAAABAAAAAAD//wEAAAABAAAAAAABAAEAAAABAAAAAAADAAEAAAABAAAAAAADAP//AAABAAAAAAADAP3/AAABAAAAAAABAP3/AAABAAAAAAD///3/AAABAAAAAAD/////AAABAAAAAAABAP//AAABAAAAAAA=")
 tile_set = SubResource("TileSet_stuqf")
+
+[node name="Manel" parent="fundo" instance=ExtResource("10_dp0bx")]
+position = Vector2(-138.867, 29.1502)
+scale = Vector2(5.66803, 3.95257)
 
 [node name="AllBricks" type="Node2D" parent="."]
 modulate = Color(0.753984, 0.753984, 0.753984, 1)
@@ -495,10 +507,8 @@ stream = ExtResource("9_msm2m")
 autoplay = true
 bus = &"Soundtrack"
 
-[node name="Manel" parent="." instance=ExtResource("10_dp0bx")]
-position = Vector2(-144, -24)
-
 [node name="mainCamera" parent="." instance=ExtResource("11_y4x1s")]
+z_index = 1
 position = Vector2(0, -44)
 
 [node name="bombaSfx" type="AudioStreamPlayer2D" parent="."]
@@ -519,6 +529,15 @@ position = Vector2(96, -96)
 
 [node name="players" type="Node2D" parent="."]
 
+[node name="VersusScoreUI" parent="." instance=ExtResource("14_msm2m")]
+z_index = 50
+z_as_relative = false
+offset_left = -219.0
+offset_top = -171.0
+offset_right = -219.0
+offset_bottom = -171.0
+scale = Vector2(0.5, 0.5)
+
 [node name="ui" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -526,6 +545,34 @@ offset_left = -224.0
 offset_top = -168.0
 offset_right = 224.0
 offset_bottom = 80.0
+
+[node name="TextureRect" type="TextureRect" parent="ui"]
+layout_mode = 0
+offset_left = 389.0
+offset_top = -6.0
+offset_right = 448.0
+offset_bottom = 263.0
+texture = SubResource("GradientTexture1D_554qq")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="ui"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -6.0
+offset_right = 57.0
+offset_bottom = 263.0
+texture = SubResource("GradientTexture1D_554qq")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="ui"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 145.0
+offset_right = 439.0
+offset_bottom = 343.0
+rotation = -1.0472
+texture = ExtResource("14_sty8r")
+expand_mode = 1
 
 [node name="pauseCampaign" parent="." instance=ExtResource("14_stuqf")]
 
@@ -567,11 +614,4 @@ libraries = {
 &"": SubResource("AnimationLibrary_sty8r")
 }
 
-[node name="VersusScoreUI" parent="." instance=ExtResource("14_msm2m")]
-z_index = 50
-z_as_relative = false
-offset_left = -219.0
-offset_top = -171.0
-offset_right = -219.0
-offset_bottom = -171.0
-scale = Vector2(0.5, 0.5)
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]

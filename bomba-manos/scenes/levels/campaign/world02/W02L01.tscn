@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cb1eg74baebch"]
+[gd_scene load_steps=29 format=4 uid="uid://cb1eg74baebch"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_ulfvb"]
 [ext_resource type="Texture2D" uid="uid://o31y83d3vwpt" path="res://assets/sprites/levels/campaign/world01/LostWoodsFloor.png" id="2_w5rpq"]
@@ -19,9 +19,10 @@
 [ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/exit.tscn" id="17_ywaao"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="18_ulfvb"]
 [ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="19_bbwi2"]
-[ext_resource type="AudioStream" uid="uid://gtyl104mnncw" path="res://assets/audio/dialogue/World02/silencioHero.mp3" id="20_6g8u0"]
+[ext_resource type="AudioStream" uid="uid://mjr8uqtb5eq1" path="res://assets/audio/dialogue/World04/primeiro.mp3" id="20_6g8u0"]
 [ext_resource type="AudioStream" uid="uid://chfn2vpr8t8dk" path="res://assets/audio/dialogue/falasJP/escondido_central.mp3" id="21_0jf16"]
 [ext_resource type="AudioStream" uid="uid://c2be3gylpjv4l" path="res://assets/audio/dialogue/falasJP/cuidato_te_matar.mp3" id="22_rcimg"]
+[ext_resource type="AudioStream" uid="uid://d36puj5aad4y2" path="res://assets/audio/dialogue/World04/nada fora.mp3" id="23_0jf16"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ywaao"]
 
@@ -1168,7 +1169,7 @@ nextLevel = "uid://buv5pewda6n4"
 [node name="pauseCampaign" parent="." instance=ExtResource("18_ulfvb")]
 
 [node name="DIALOG" parent="." instance=ExtResource("19_bbwi2")]
-falasDosPersonagens = Array[AudioStream]([ExtResource("20_6g8u0"), ExtResource("21_0jf16"), ExtResource("22_rcimg"), ExtResource("20_6g8u0")])
-legendas = Array[String](["Certo, Crimson, primeiro, onde está o Fragmento que precisamos?", "Escondido em algum lugar no núcleo central", "Cuidado tudo aqui quer te matar", "Então nada fora dos conformes, isso já é rotina."])
+falasDosPersonagens = Array[AudioStream]([ExtResource("20_6g8u0"), ExtResource("21_0jf16"), ExtResource("22_rcimg"), ExtResource("23_0jf16")])
+legendas = Array[String](["Certo, Crimson, primeiro, \\onde está o Fragmento que precisamos?", "Escondido em algum lugar no núcleo central", "Cuidado tudo aqui quer te matar", "Então nada fora dos conformes, isso já é rotina."])
 
 [node name="pauseCampaign2" parent="." instance=ExtResource("18_ulfvb")]

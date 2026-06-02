@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c27tckrq8wid8"
+path="res://.godot/imported/nao falharemos.mp3-81f06236bea211c70dee679ad0229107.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/World04/nao falharemos.mp3"
+dest_files=["res://.godot/imported/nao falharemos.mp3-81f06236bea211c70dee679ad0229107.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

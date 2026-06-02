@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://dywawragkqi21"]
+[gd_scene load_steps=85 format=3 uid="uid://dywawragkqi21"]
 
 [ext_resource type="Script" uid="uid://bj12gul8etm1p" path="res://scripts/misc/cutscene_01.gd" id="1_ygh52"]
 [ext_resource type="VideoStream" uid="uid://rkg2xv2fysjl" path="res://assets/video/MegasXLR_clip.ogv" id="2_ygh52"]
@@ -81,11 +81,13 @@
 [ext_resource type="Texture2D" uid="uid://dg2nekbw33hkm" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos77.png" id="79_rpjhs"]
 [ext_resource type="Texture2D" uid="uid://hnwt7e4ah7q1" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos78.png" id="80_7vipb"]
 [ext_resource type="Texture2D" uid="uid://dlklwnx0ugr81" path="res://assets/sprites/cinematics/cutscene inciial bomba manos/Conceito Cutscenes Bomba Manos79.png" id="81_ygdwg"]
+[ext_resource type="AudioStream" uid="uid://dy1f0vnfdle7d" path="res://assets/audio/dialogue/falasJP/profecia inicial bomba manos.mp3" id="82_p5x11"]
+[ext_resource type="AudioStream" uid="uid://c2spce1kd8xif" path="res://assets/audio/tracks/Space....mp3" id="83_vsvkh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1o0yc"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 24.0,
 "texture": ExtResource("3_1lacv")
 }, {
 "duration": 1.0,
@@ -108,6 +110,30 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("10_31ui0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3pbjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_en0ce")
+}, {
+"duration": 9.0,
+"texture": ExtResource("11_3pbjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_en0ce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2l4cp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_31ui0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3pbjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_en0ce")
 }, {
 "duration": 1.0,
 "texture": ExtResource("11_3pbjy")
@@ -188,6 +214,51 @@ animations = [{
 "texture": ExtResource("36_sw2oe")
 }, {
 "duration": 1.0,
+"texture": ExtResource("21_exsdp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_mhdsk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_hsrlp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_o1hne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_2mon4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_na4ai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_rbu4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_2pfxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ipdt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_gfmhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_5v35p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_a7uoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_s2uia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_883tj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_0tbgk")
+}, {
+"duration": 1.0,
 "texture": ExtResource("37_rocn1")
 }, {
 "duration": 1.0,
@@ -247,7 +318,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("56_cms3f")
 }, {
-"duration": 1.0,
+"duration": 9.0,
 "texture": ExtResource("57_7p4f5")
 }, {
 "duration": 1.0,
@@ -324,13 +395,13 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 7.0
+"speed": 3.0
 }]
 
 [node name="cutscene01" type="Node2D"]
 script = ExtResource("1_ygh52")
 toLevelFile = "uid://wyq2fculrhic"
-awaitBeforeLoad = 14.0
+awaitBeforeLoad = 50.0
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 anchors_preset = 8
@@ -345,16 +416,22 @@ offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("2_ygh52")
-autoplay = true
 expand = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, -1)
 sprite_frames = SubResource("SpriteFrames_1o0yc")
 autoplay = "default"
-frame = 78
+frame = 101
 frame_progress = 1.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("82_p5x11")
+autoplay = true
+
+[node name="ost" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("83_vsvkh")
+autoplay = true
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

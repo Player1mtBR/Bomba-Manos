@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://07ww82w4it23"]
+[gd_scene load_steps=32 format=4 uid="uid://07ww82w4it23"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_ougf6"]
 [ext_resource type="Texture2D" uid="uid://o31y83d3vwpt" path="res://assets/sprites/levels/campaign/world01/LostWoodsFloor.png" id="2_g20rg"]
@@ -24,7 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="23_g20rg"]
 [ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="23_ou24t"]
 [ext_resource type="AudioStream" uid="uid://c2wwpt7rg7c0e" path="res://assets/audio/dialogue/falasJP/estamos perto.mp3" id="24_xjgd5"]
-[ext_resource type="AudioStream" uid="uid://gtyl104mnncw" path="res://assets/audio/dialogue/World02/silencioHero.mp3" id="25_nj2qp"]
+[ext_resource type="AudioStream" uid="uid://chdthiv5iuu02" path="res://assets/audio/dialogue/World04/o perigo.mp3" id="25_xjgd5"]
+[ext_resource type="AudioStream" uid="uid://c27tckrq8wid8" path="res://assets/audio/dialogue/World04/nao falharemos.mp3" id="26_nj2qp"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ywaao"]
 
@@ -656,6 +657,36 @@ bombaEX = 5
 
 [node name="mobs" type="Node2D" parent="entities"]
 
+[node name="cleaner" parent="entities/mobs" instance=ExtResource("21_ougf6")]
+position = Vector2(-128, -48)
+
+[node name="cleaner2" parent="entities/mobs" instance=ExtResource("21_ougf6")]
+position = Vector2(-96, -16)
+
+[node name="cleaner3" parent="entities/mobs" instance=ExtResource("21_ougf6")]
+position = Vector2(-96, -80)
+
+[node name="cleaner4" parent="entities/mobs" instance=ExtResource("21_ougf6")]
+position = Vector2(-64, -72)
+
+[node name="cleaner5" parent="entities/mobs" instance=ExtResource("21_ougf6")]
+position = Vector2(32, -80)
+
+[node name="cleaner6" parent="entities/mobs" instance=ExtResource("21_ougf6")]
+position = Vector2(96, -48)
+
+[node name="cleaner7" parent="entities/mobs" instance=ExtResource("21_ougf6")]
+position = Vector2(128, -80)
+
+[node name="cleaner8" parent="entities/mobs" instance=ExtResource("21_ougf6")]
+position = Vector2(128, -32)
+
+[node name="zap" parent="entities/mobs" instance=ExtResource("22_g20rg")]
+position = Vector2(-160, 0)
+
+[node name="zap2" parent="entities/mobs" instance=ExtResource("22_g20rg")]
+position = Vector2(160, 0)
+
 [node name="soundtrack02" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
 stream = ExtResource("17_ougf6")
@@ -675,40 +706,7 @@ levelIdentifier = "W04L04"
 nextLevel = "uid://cqdmp2i7poi8e"
 
 [node name="pauseCampaign" parent="." instance=ExtResource("23_g20rg")]
-visible = false
-
-[node name="cleaner" parent="." instance=ExtResource("21_ougf6")]
-position = Vector2(-128, -48)
-
-[node name="cleaner2" parent="." instance=ExtResource("21_ougf6")]
-position = Vector2(-96, -16)
-
-[node name="cleaner3" parent="." instance=ExtResource("21_ougf6")]
-position = Vector2(-96, -80)
-
-[node name="cleaner4" parent="." instance=ExtResource("21_ougf6")]
-position = Vector2(-64, -72)
-
-[node name="cleaner5" parent="." instance=ExtResource("21_ougf6")]
-position = Vector2(32, -80)
-
-[node name="cleaner6" parent="." instance=ExtResource("21_ougf6")]
-position = Vector2(96, -48)
-
-[node name="cleaner7" parent="." instance=ExtResource("21_ougf6")]
-position = Vector2(128, -80)
-
-[node name="cleaner8" parent="." instance=ExtResource("21_ougf6")]
-position = Vector2(128, -32)
-
-[node name="zap" parent="." instance=ExtResource("22_g20rg")]
-position = Vector2(-160, 0)
-
-[node name="zap2" parent="." instance=ExtResource("22_g20rg")]
-position = Vector2(160, 0)
 
 [node name="DIALOG" parent="." instance=ExtResource("23_ou24t")]
-falasDosPersonagens = Array[AudioStream]([ExtResource("24_xjgd5"), ExtResource("25_nj2qp"), ExtResource("25_nj2qp")])
-legendas = Array[String](["Estamos perto , o perigo aumenta a cada passo", "O perigo é permitir que continuem com essa tirania, eles pagarão.", "Não falharemos na missão a que nos confiou, Crimson"])
-
-[node name="pauseCampaign2" parent="." instance=ExtResource("23_g20rg")]
+falasDosPersonagens = Array[AudioStream]([ExtResource("24_xjgd5"), ExtResource("25_xjgd5"), ExtResource("26_nj2qp")])
+legendas = Array[String](["Estamos perto , o perigo aumenta a cada passo", "O perigo é permitir que continuem com essa tirania.", "Não falharemos na missão a que nos confiou, Crimson"])

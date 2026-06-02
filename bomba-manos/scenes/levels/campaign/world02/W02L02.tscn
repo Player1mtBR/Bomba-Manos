@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://buv5pewda6n4"]
+[gd_scene load_steps=29 format=4 uid="uid://buv5pewda6n4"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_b1ypi"]
 [ext_resource type="Texture2D" uid="uid://o31y83d3vwpt" path="res://assets/sprites/levels/campaign/world01/LostWoodsFloor.png" id="2_gomdq"]
@@ -17,11 +17,12 @@
 [ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="13_kgipl"]
 [ext_resource type="AudioStream" uid="uid://bigjv3r3svdql" path="res://assets/audio/dialogue/falasJP/nada mal.mp3" id="14_v1oo1"]
 [ext_resource type="PackedScene" uid="uid://cdwq7sa50f3wk" path="res://scenes/smallCamera.tscn" id="15_jluid"]
-[ext_resource type="AudioStream" uid="uid://gtyl104mnncw" path="res://assets/audio/dialogue/World02/silencioHero.mp3" id="15_t5jf6"]
 [ext_resource type="AudioStream" uid="uid://nr7l2q3ikch7" path="res://assets/audio/sfx/explosion.wav" id="16_jstq5"]
 [ext_resource type="PackedScene" uid="uid://cb2dhwp8qhodu" path="res://scenes/levels/exit.tscn" id="17_lylay"]
 [ext_resource type="PackedScene" uid="uid://c7xp0h0cmrb0" path="res://scenes/entities/Mobs/cyberworld/world02/kazu.tscn" id="18_gomdq"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="19_iap2e"]
+[ext_resource type="AudioStream" uid="uid://rxufqoaexjn" path="res://assets/audio/dialogue/World04/posso fazer isso o dia todo.mp3" id="22_v1oo1"]
+[ext_resource type="AudioStream" uid="uid://cv2xnu3a7fyro" path="res://assets/audio/dialogue/World04/comecando.mp3" id="23_t5jf6"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ywaao"]
 
@@ -793,12 +794,6 @@ position = Vector2(-160, -16)
 playerID = 1
 charSkin = ExtResource("12_vmn4p")
 
-[node name="DIALOG" parent="entities/players" instance=ExtResource("13_kgipl")]
-falasDosPersonagens = Array[AudioStream]([ExtResource("14_v1oo1"), ExtResource("15_t5jf6"), ExtResource("15_t5jf6")])
-legendas = Array[String](["Nada mal.", "Posso fazer isso o dia todo", "Acho que só estamos começando."])
-
-[node name="pauseCampaign" parent="entities/players" instance=ExtResource("19_iap2e")]
-
 [node name="mobs" type="Node2D" parent="entities"]
 
 [node name="cleaner" parent="entities/mobs" instance=ExtResource("13_7l8qn")]
@@ -839,3 +834,7 @@ nextLevel = "uid://t5iy6xal2t2y"
 
 [node name="pauseCampaign" parent="." instance=ExtResource("19_iap2e")]
 visible = false
+
+[node name="DIALOG" parent="." instance=ExtResource("13_kgipl")]
+falasDosPersonagens = Array[AudioStream]([ExtResource("14_v1oo1"), ExtResource("22_v1oo1"), ExtResource("23_t5jf6")])
+legendas = Array[String](["Nada mal.", "Posso fazer isso o dia todo", "Acho que só estamos começando."])

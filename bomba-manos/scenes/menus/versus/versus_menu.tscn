@@ -38,6 +38,7 @@ theme_override_font_sizes/font_size = 51
 text = "Versus"
 
 [node name="bombaManos" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 56.0
 offset_top = -192.0
 offset_right = 755.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=246 format=3 uid="uid://suap6bq2v1le"]
+[gd_scene load_steps=256 format=3 uid="uid://suap6bq2v1le"]
 
 [ext_resource type="Script" uid="uid://wasqsu7cxrg" path="res://scripts/misc/bossfight/megazord_jp.gd" id="1_eju5j"]
 [ext_resource type="Script" uid="uid://b8x47tsklf1ns" path="res://scripts/misc/bossfight/bossfight.gd" id="1_vtx7u"]
@@ -117,6 +117,16 @@
 [ext_resource type="Texture2D" uid="uid://unjou7yjv6q" path="res://assets/sprites/manel/manellboss/absolute manel/hands/manel absolute hands only cropped right 4.png" id="78_yrlu2"]
 [ext_resource type="Texture2D" uid="uid://bylfdkeokjo7o" path="res://assets/sprites/manel/manellboss/absolute manel/hands/manel absolute hands only cropped right 5.png" id="79_nwgnr"]
 [ext_resource type="Texture2D" uid="uid://q50kcevulhj4" path="res://assets/sprites/manel/manellboss/absolute manel/hands/manel absolute hands only cropped right 6.png" id="80_lgesb"]
+[ext_resource type="AudioStream" uid="uid://dv1hoj7h60ee2" path="res://assets/audio/dialogue/falasManel/nao podem me derrotar.mp3" id="82_g1rxn"]
+[ext_resource type="AudioStream" uid="uid://syp0s33tkh2l" path="res://assets/audio/dialogue/falasManel/professor pessecopata.mp3" id="83_do5pa"]
+[ext_resource type="AudioStream" uid="uid://bl4feys1g8byw" path="res://assets/audio/dialogue/falasManel/criaturas insolentes.mp3" id="84_1ijk7"]
+[ext_resource type="AudioStream" uid="uid://dmonlbe6ljqj4" path="res://assets/audio/dialogue/falasJP/bomba laser.mp3" id="116_1ijk7"]
+[ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="118_xmm4d"]
+[ext_resource type="AudioStream" uid="uid://el56sma8l5yo" path="res://assets/audio/dialogue/falasManel/nos encontramos.mp3" id="119_cesid"]
+[ext_resource type="AudioStream" uid="uid://cfw0aw3cxo2oh" path="res://assets/audio/dialogue/falasJP/nao sera como antes.mp3" id="120_f2nl1"]
+[ext_resource type="AudioStream" uid="uid://dglh4s3mwxcw5" path="res://assets/audio/dialogue/falasManel/tem razao.mp3" id="121_g1rxn"]
+[ext_resource type="AudioStream" uid="uid://c3yhomtf7xj7d" path="res://assets/audio/dialogue/falasJP/se bloquear.mp3" id="122_do5pa"]
+[ext_resource type="AudioStream" uid="uid://cfg7y2duqq2sn" path="res://assets/audio/dialogue/falasManel/risada02.mp3" id="125_do5pa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wi1c3"]
 atlas = ExtResource("2_g1im4")
@@ -238,7 +248,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../soundtrack:playing")
+tracks/6/path = NodePath("../soundtrack1:playing")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -375,7 +385,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../soundtrack:playing")
+tracks/5/path = NodePath("../soundtrack1:playing")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -1144,48 +1154,6 @@ animations = [{
 "speed": 7.0
 }, {
 "frames": [{
-"duration": 5.0,
-"texture": ExtResource("24_2uiv7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("68_x1qnh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("64_g1rxn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("65_do5pa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("66_1ijk7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("63_f2nl1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("68_x1qnh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("64_g1rxn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("65_do5pa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("66_1ijk7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("63_f2nl1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("68_x1qnh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("64_g1rxn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("65_do5pa")
-}, {
 "duration": 1.0,
 "texture": ExtResource("66_1ijk7")
 }, {
@@ -3190,6 +3158,21 @@ stream = ExtResource("10_bjlwm")
 pitch_scale = 0.75
 bus = &"Voices"
 
+[node name="souAbsoluto" type="AudioStreamPlayer" parent="SuperManel/sfx"]
+stream = ExtResource("82_g1rxn")
+pitch_scale = 0.75
+bus = &"Voices"
+
+[node name="pessecopata" type="AudioStreamPlayer" parent="SuperManel/sfx"]
+stream = ExtResource("83_do5pa")
+pitch_scale = 0.75
+bus = &"Voices"
+
+[node name="insolentes" type="AudioStreamPlayer" parent="SuperManel/sfx"]
+stream = ExtResource("84_1ijk7")
+pitch_scale = 0.75
+bus = &"Voices"
+
 [node name="Icons" type="Node2D" parent="."]
 z_index = 3
 
@@ -3254,7 +3237,7 @@ offset_left = 24.0
 offset_top = 116.0
 offset_right = 80.0
 offset_bottom = 372.0
-max_value = 12.0
+max_value = 15.0
 value = 7.0
 fill_mode = 3
 nine_patch_stretch = true
@@ -3324,7 +3307,7 @@ position = Vector2(0, 249)
 scale = Vector2(32.56, 1)
 shape = SubResource("RectangleShape2D_tp6la")
 
-[node name="soundtrack" type="AudioStreamPlayer" parent="."]
+[node name="soundtrack1" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("6_v0qoy")
 bus = &"Soundtrack"
@@ -3571,6 +3554,9 @@ volume_db = 10.0
 stream = ExtResource("22_l7u5o")
 volume_db = 5.0
 
+[node name="bombaLaser" type="AudioStreamPlayer" parent="MegazordJP/sfx"]
+stream = ExtResource("116_1ijk7")
+
 [node name="stuff2Animate" type="Node2D" parent="."]
 
 [node name="blank" type="Sprite2D" parent="stuff2Animate"]
@@ -3637,6 +3623,16 @@ anim_speed_max = 16.22
 libraries = {
 &"": SubResource("AnimationLibrary_yk26n")
 }
+
+[node name="DIALOG" parent="." instance=ExtResource("118_xmm4d")]
+position = Vector2(142, 320)
+scale = Vector2(2, 2)
+falasDosPersonagens = Array[AudioStream]([ExtResource("119_cesid"), ExtResource("120_f2nl1"), ExtResource("121_g1rxn"), ExtResource("125_do5pa")])
+legendas = Array[String](["Nos encontramos de novo", "Não será como da ultima vez ", "Tem razão, dessa vez vou te reduzir a átomos", "ha ha ha ha ha ha"])
+time2wait = 10.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("122_do5pa")
 
 [connection signal="area_entered" from="SuperManel/Area2D" to="SuperManel" method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="FinalAttack/Timer" to="FinalAttack" method="_on_timer_timeout"]

@@ -3,8 +3,12 @@ extends Node
 var playerScores := {}
 var draws := 0
 var matchEnded := false
+var addKill := 0
 
 var checkingIfMatchEnded := false
+
+signal drawRegistered
+signal killRegistered
 
 func setupPlayers():
 	matchEnded = false
@@ -38,6 +42,7 @@ func getCharFromPlayer(playerId):
 
 	
 func registerKill(killerId, victimId):
+	addKill += 1
 	if not playerScores.has(killerId):
 		return
 	
@@ -50,6 +55,7 @@ func registerKill(killerId, victimId):
 		return
 
 	playerScores[killerId]["kills"] += 1 ## DEITEI UM
+	killRegistered.emit()
 
 
 func registerDeath(playerId):
@@ -80,6 +86,7 @@ func checkMatchEnd():
 
 	## A DRAW WOMP WOMP
 	if alivePlayers.size() == 0:
+		drawRegistered.emit()
 		draws += 1
 		matchEnded = true
 		print("Draw")

@@ -1,0 +1,323 @@
+[gd_scene load_steps=74 format=3 uid="uid://bwit48fwmbyiv"]
+
+[ext_resource type="Script" uid="uid://bj12gul8etm1p" path="res://scripts/misc/cutscene_01.gd" id="1_bs5x3"]
+[ext_resource type="VideoStream" uid="uid://c6jsmrnqk6mfw" path="res://assets/video/YoU cAn'T jUsT sHoOt a hOlE iNtO ThE sUrFaCe oF mArS.ogv" id="2_caww2"]
+[ext_resource type="Texture2D" uid="uid://kvaj32qjxme8" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 1.png" id="3_urqjc"]
+[ext_resource type="Texture2D" uid="uid://kmdvqh83ss8s" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 2.png" id="4_s8mjk"]
+[ext_resource type="Texture2D" uid="uid://bv1lq71wwkpsk" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 3.png" id="5_d2d0r"]
+[ext_resource type="Texture2D" uid="uid://bxqwpfsyai0qd" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 4.png" id="6_w1y5d"]
+[ext_resource type="Texture2D" uid="uid://dqng7vt8bbp5i" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 5.png" id="7_u5pkl"]
+[ext_resource type="Texture2D" uid="uid://bsoq3hy7govn2" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 6.png" id="8_61vbo"]
+[ext_resource type="Texture2D" uid="uid://c2ypufd6trjih" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 7.png" id="9_pnmts"]
+[ext_resource type="Texture2D" uid="uid://dskdjgfbdpy7d" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 8.png" id="10_exo08"]
+[ext_resource type="Texture2D" uid="uid://die8bar84rij7" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 9.png" id="11_owl0r"]
+[ext_resource type="Texture2D" uid="uid://dd0kom5va5pqa" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 10.png" id="12_14fdu"]
+[ext_resource type="Texture2D" uid="uid://dhow7tf5oabn4" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 50.png" id="13_s7u3l"]
+[ext_resource type="Texture2D" uid="uid://2d1otxdggjqi" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 56.png" id="14_23bwo"]
+[ext_resource type="Texture2D" uid="uid://bv3w6385dacyv" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 57.png" id="15_t1yho"]
+[ext_resource type="Texture2D" uid="uid://bx8hhvs0tyjk3" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 62.png" id="16_j7vao"]
+[ext_resource type="Texture2D" uid="uid://djhfldh7ux7ab" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 72.png" id="17_154ii"]
+[ext_resource type="Texture2D" uid="uid://mjjxfhvradmo" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 73.png" id="18_vlbe0"]
+[ext_resource type="Texture2D" uid="uid://ckt7rallcqecu" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 74.png" id="19_1xwuu"]
+[ext_resource type="Texture2D" uid="uid://do2v3h7o5qxsa" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 75.png" id="20_y167l"]
+[ext_resource type="Texture2D" uid="uid://6cp18vl7ly73" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 76.png" id="21_xnihy"]
+[ext_resource type="Texture2D" uid="uid://bbapsawkd7xwh" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 77.png" id="22_8aqys"]
+[ext_resource type="Texture2D" uid="uid://cc7uxqr3oexns" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 78.png" id="23_1ktmo"]
+[ext_resource type="Texture2D" uid="uid://b0plv6lil2ro1" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 79.png" id="24_67cnn"]
+[ext_resource type="Texture2D" uid="uid://ccukck1dl67sg" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 80.png" id="25_reulm"]
+[ext_resource type="Texture2D" uid="uid://s1tdvk43x6cx" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 81.png" id="26_o0mx6"]
+[ext_resource type="Texture2D" uid="uid://1xicj4wigc54" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 82.png" id="27_c5seu"]
+[ext_resource type="Texture2D" uid="uid://b7vw2uhuh63sd" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 83.png" id="28_2dl83"]
+[ext_resource type="Texture2D" uid="uid://dg35q6cibl1kr" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 84.png" id="29_r51bm"]
+[ext_resource type="Texture2D" uid="uid://ctqpjgm3bdbul" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 85.png" id="30_x0iel"]
+[ext_resource type="Texture2D" uid="uid://bskkt6vhs4jk0" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 86.png" id="31_sccx8"]
+[ext_resource type="Texture2D" uid="uid://dctryo3x5ao0m" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 87.png" id="32_lbr0i"]
+[ext_resource type="Texture2D" uid="uid://e1cm5rl1vowl" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 88.png" id="33_02p1k"]
+[ext_resource type="Texture2D" uid="uid://qx2l8nvubgwo" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 89.png" id="34_38xu4"]
+[ext_resource type="Texture2D" uid="uid://dcfoxp3dhi4hm" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 90.png" id="35_barfa"]
+[ext_resource type="Texture2D" uid="uid://do8ucxbqfu55p" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 91.png" id="36_pd0as"]
+[ext_resource type="Texture2D" uid="uid://cc4utynkmboi" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 92.png" id="37_tod8g"]
+[ext_resource type="Texture2D" uid="uid://bxskbcvsegvqf" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 93.png" id="38_bs5x3"]
+[ext_resource type="Texture2D" uid="uid://c8xx32r6nhw0a" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 94.png" id="39_caww2"]
+[ext_resource type="Texture2D" uid="uid://dsnwqiupyfbbu" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 95.png" id="40_tco5i"]
+[ext_resource type="Texture2D" uid="uid://p72mqldh1cjk" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 96.png" id="41_p3avu"]
+[ext_resource type="Texture2D" uid="uid://cedoddlufeuri" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 97.png" id="42_02q6m"]
+[ext_resource type="Texture2D" uid="uid://dr2wo5a45tbbd" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 98.png" id="43_n6drh"]
+[ext_resource type="Texture2D" uid="uid://opxie8emjtdc" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 99.png" id="44_dkqtq"]
+[ext_resource type="Texture2D" uid="uid://cjewf4yb5bnn1" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 100.png" id="45_xt2ee"]
+[ext_resource type="Texture2D" uid="uid://bkhxdiijtvw0q" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 101.png" id="46_73bk4"]
+[ext_resource type="Texture2D" uid="uid://c8yqejs3hgxa5" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 102.png" id="47_rejvc"]
+[ext_resource type="Texture2D" uid="uid://dhb0ajwsqc50w" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 103.png" id="48_olhad"]
+[ext_resource type="Texture2D" uid="uid://8srv74ph2rwe" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 104.png" id="49_y450w"]
+[ext_resource type="Texture2D" uid="uid://bvmhcx07tton6" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 105.png" id="50_gsuod"]
+[ext_resource type="Texture2D" uid="uid://nlyic4g8y5bq" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 106.png" id="51_q38j8"]
+[ext_resource type="Texture2D" uid="uid://baxpyg5h64oti" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 107.png" id="52_20riw"]
+[ext_resource type="Texture2D" uid="uid://bvdlqv51nyqky" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 108.png" id="53_j3qm2"]
+[ext_resource type="Texture2D" uid="uid://b56hpm0pyfq5h" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 109.png" id="54_843bs"]
+[ext_resource type="Texture2D" uid="uid://dl4vl7g5w053o" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 110.png" id="55_mo75i"]
+[ext_resource type="Texture2D" uid="uid://cuhg616s6au7h" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 111.png" id="56_r8qr6"]
+[ext_resource type="Texture2D" uid="uid://b2s8ghfk405xl" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 112.png" id="57_2tgm8"]
+[ext_resource type="Texture2D" uid="uid://dtaj8nifo6dqh" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 113.png" id="58_s5b5b"]
+[ext_resource type="Texture2D" uid="uid://b4mgomtlwcayg" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 114.png" id="59_wlv86"]
+[ext_resource type="Texture2D" uid="uid://cp3mm2f1xfi0n" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 115.png" id="60_77bwo"]
+[ext_resource type="Texture2D" uid="uid://r7xascit05j" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 116.png" id="61_tvdpt"]
+[ext_resource type="Texture2D" uid="uid://3gsu7hdiqq04" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 117.png" id="62_0td0j"]
+[ext_resource type="Texture2D" uid="uid://da64374ae3amu" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 118.png" id="63_0dbnn"]
+[ext_resource type="Texture2D" uid="uid://djug6hrkqy2pd" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 119.png" id="64_rcc1k"]
+[ext_resource type="Texture2D" uid="uid://chp5s5ks7ui4h" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 120.png" id="65_n5yfw"]
+[ext_resource type="Texture2D" uid="uid://ym5ykgj3pwi2" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 121.png" id="66_ay888"]
+[ext_resource type="Texture2D" uid="uid://ch8wu5874ibmd" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 122.png" id="67_ix2qd"]
+[ext_resource type="Texture2D" uid="uid://cuh16d2lugy7j" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 123.png" id="68_gg8qa"]
+[ext_resource type="Texture2D" uid="uid://b7y4ofcvb3s3i" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 124.png" id="69_ksvxx"]
+[ext_resource type="Texture2D" uid="uid://3d6kxnaoudhd" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 125.png" id="70_rry0e"]
+[ext_resource type="Texture2D" uid="uid://bbg2xhrhioe67" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 126.png" id="71_q56do"]
+[ext_resource type="Texture2D" uid="uid://bjg1snubywtle" path="res://assets/sprites/cinematics/credits bomba manos/credits bomba manos 127.png" id="72_ntyml"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5tyc8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_urqjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_s8mjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d2d0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w1y5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u5pkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_61vbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pnmts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_exo08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_owl0r")
+}, {
+"duration": 28.0,
+"texture": ExtResource("12_14fdu")
+}, {
+"duration": 28.0,
+"texture": ExtResource("13_s7u3l")
+}, {
+"duration": 28.0,
+"texture": ExtResource("14_23bwo")
+}, {
+"duration": 28.0,
+"texture": ExtResource("15_t1yho")
+}, {
+"duration": 28.0,
+"texture": ExtResource("16_j7vao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_154ii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_vlbe0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_1xwuu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_y167l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_xnihy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_8aqys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_1ktmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_67cnn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_reulm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_o0mx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_c5seu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_2dl83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_r51bm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_x0iel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_sccx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_lbr0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_02p1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_38xu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_barfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_pd0as")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_tod8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_bs5x3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_caww2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_tco5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_p3avu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_02q6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_n6drh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_dkqtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_xt2ee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_73bk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_rejvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_olhad")
+}, {
+"duration": 28.0,
+"texture": ExtResource("49_y450w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_gsuod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_q38j8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_20riw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_j3qm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_843bs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_mo75i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_r8qr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_2tgm8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_s5b5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_wlv86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_77bwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_tvdpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_0td0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_0dbnn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_rcc1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_n5yfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_ay888")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_ix2qd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_gg8qa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_ksvxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_rry0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_q56do")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_ntyml")
+}],
+"loop": false,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="cutscene03" type="Node2D"]
+script = ExtResource("1_bs5x3")
+toLevelFile = "uid://cj21dxxqeeufg"
+awaitBeforeLoad = 30.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -428.0
+offset_top = -240.0
+offset_right = 428.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_caww2")
+expand = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5tyc8")
+autoplay = "default"
+frame = 69
+frame_progress = 1.0
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

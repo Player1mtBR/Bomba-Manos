@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://baloi4qkt3rw2"
+path="res://.godot/imported/era de ouro.mp3-b6f39eaa61d2ccffbb1e9339789a77c7.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/World04/era de ouro.mp3"
+dest_files=["res://.godot/imported/era de ouro.mp3-b6f39eaa61d2ccffbb1e9339789a77c7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

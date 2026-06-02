@@ -68,7 +68,7 @@ collision_mask = 17
 shape = SubResource("RectangleShape2D_5v3ci")
 
 [node name="remoteBombResetTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.5
 
 [node name="DIE" type="AudioStreamPlayer" parent="."]
 bus = &"Voices"

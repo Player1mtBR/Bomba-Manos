@@ -1,10 +1,144 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckyjryauswv6o"]
+[gd_scene load_steps=34 format=3 uid="uid://ckyjryauswv6o"]
 
 [ext_resource type="Script" uid="uid://db51vpoxlelql" path="res://scripts/menus/worldSelect/campaign_level_select.gd" id="1_uqxyf"]
 [ext_resource type="PackedScene" uid="uid://vqadtrjtxsn5" path="res://scenes/menus/worldSelectScenes/level_icon.tscn" id="2_nydxd"]
 [ext_resource type="Texture2D" uid="uid://bryq58u6v2vqq" path="res://assets/sprites/levels/campaign/extras/Sprite da cena da boss fight.png" id="5_nwh7s"]
 [ext_resource type="PackedScene" uid="uid://c3i3avv75txs4" path="res://scenes/menus/worldSelectScenes/player_icon.tscn" id="5_thf5w"]
 [ext_resource type="SpriteFrames" uid="uid://45m0x7lhat50" path="res://assets/res/spriteframes/bombazord.tres" id="6_dmo2x"]
+[ext_resource type="Texture2D" uid="uid://cqsvfrb1ql0cu" path="res://assets/sprites/manel/manellboss/manel super boss form1.png" id="6_s7837"]
+[ext_resource type="Texture2D" uid="uid://ye0exh3kcca" path="res://assets/sprites/manel/manellboss/manel super boss form2.png" id="7_wo1d6"]
+[ext_resource type="Texture2D" uid="uid://ds74i23gvb0tq" path="res://assets/sprites/manel/manellboss/manel super boss form3.png" id="8_101g1"]
+[ext_resource type="Texture2D" uid="uid://chelsrqiah7ua" path="res://assets/sprites/manel/manellboss/manel super boss form4.png" id="9_av06i"]
+[ext_resource type="Texture2D" uid="uid://c8skrcea0ifsn" path="res://assets/sprites/levels/campaign/FragAmarelo1.png" id="10_72tvn"]
+[ext_resource type="Texture2D" uid="uid://c8w2vforfjqkw" path="res://assets/sprites/levels/campaign/FragAmarelo2.png" id="11_hbr2l"]
+[ext_resource type="Texture2D" uid="uid://d4dd3pp2j801v" path="res://assets/sprites/levels/campaign/FragAmarelo3.png" id="12_in3qd"]
+[ext_resource type="Texture2D" uid="uid://buuqu27ye5pax" path="res://assets/sprites/levels/campaign/FragAmarelo4.png" id="13_03ll6"]
+[ext_resource type="Texture2D" uid="uid://63dwkspk35pv" path="res://assets/sprites/levels/campaign/FragAmarelo5.png" id="14_7vrco"]
+[ext_resource type="Texture2D" uid="uid://7g48cnj8bu1p" path="res://assets/sprites/levels/campaign/FragAzul1.png" id="15_gjb3h"]
+[ext_resource type="Texture2D" uid="uid://d1ncdb1wi66bh" path="res://assets/sprites/levels/campaign/FragAzul2.png" id="16_4w8sw"]
+[ext_resource type="Texture2D" uid="uid://6m1g0dbemtki" path="res://assets/sprites/levels/campaign/FragAzul3.png" id="17_w4v37"]
+[ext_resource type="Texture2D" uid="uid://b6o3ggvo5w8h6" path="res://assets/sprites/levels/campaign/FragAzul4.png" id="18_2t2hb"]
+[ext_resource type="Texture2D" uid="uid://bur1uwr4hqb4j" path="res://assets/sprites/levels/campaign/FragAzul5.png" id="19_h6e0r"]
+[ext_resource type="Texture2D" uid="uid://60cb04snkrwo" path="res://assets/sprites/levels/campaign/FragVerde1.png" id="20_qp6pl"]
+[ext_resource type="Texture2D" uid="uid://cdsivu6ngols" path="res://assets/sprites/levels/campaign/FragVerde2.png" id="21_msbfp"]
+[ext_resource type="Texture2D" uid="uid://bf53uwtjaqonf" path="res://assets/sprites/levels/campaign/FragVerde3.png" id="22_d2hap"]
+[ext_resource type="Texture2D" uid="uid://dtrrb2b4qw86p" path="res://assets/sprites/levels/campaign/FragVerde4.png" id="23_1vfjr"]
+[ext_resource type="Texture2D" uid="uid://d01aa4fidm0nu" path="res://assets/sprites/levels/campaign/FragVerde5.png" id="24_dpghf"]
+[ext_resource type="Texture2D" uid="uid://dq61hae5td7li" path="res://assets/sprites/levels/campaign/FragVermelho1.png" id="25_mdph4"]
+[ext_resource type="Texture2D" uid="uid://cwujbu0li5aqx" path="res://assets/sprites/levels/campaign/FragVermelho2.png" id="26_jrx0l"]
+[ext_resource type="Texture2D" uid="uid://fmugm3ghx7sp" path="res://assets/sprites/levels/campaign/FragVermelho3.png" id="27_4ujww"]
+[ext_resource type="Texture2D" uid="uid://bas2o8esguwn6" path="res://assets/sprites/levels/campaign/FragVermelho4.png" id="28_gxvtx"]
+[ext_resource type="Texture2D" uid="uid://cowwd16rdjjut" path="res://assets/sprites/levels/campaign/FragVermelho5.png" id="29_4sqh4"]
+
+[sub_resource type="Gradient" id="Gradient_6fe4i"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ijt7x"]
+gradient = SubResource("Gradient_6fe4i")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q2snu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_s7837")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wo1d6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_101g1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_av06i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fggfp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_72tvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hbr2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_in3qd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_03ll6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7vrco")
+}],
+"loop": true,
+"name": &"amarelo",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_gjb3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4w8sw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_w4v37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_2t2hb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_h6e0r")
+}],
+"loop": true,
+"name": &"azul",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_qp6pl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_msbfp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_d2hap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_1vfjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_dpghf")
+}],
+"loop": true,
+"name": &"verde",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_mdph4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_jrx0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_4ujww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_gxvtx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_4sqh4")
+}],
+"loop": true,
+"name": &"vermelho",
+"speed": 7.0
+}]
 
 [node name="CampaignLevelSelect" type="Control"]
 layout_mode = 3
@@ -22,13 +156,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 12.5
-offset_top = 17.0
-offset_right = 76.5
-offset_bottom = 81.0
+offset_left = 11.5
+offset_top = 131.0
+offset_right = 75.5
+offset_bottom = 195.0
 grow_horizontal = 2
 grow_vertical = 2
 level2Load = "uid://ckcwf0yhamcqc"
+levelIconTexture = SubResource("GradientTexture2D_ijt7x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
@@ -38,3 +173,43 @@ texture = ExtResource("5_nwh7s")
 
 [node name="playerIcon" parent="." instance=ExtResource("5_thf5w")]
 characterSkin = ExtResource("6_dmo2x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(245, 175)
+scale = Vector2(2.07419, 2.07419)
+sprite_frames = SubResource("SpriteFrames_q2snu")
+autoplay = "default"
+frame_progress = 0.597179
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(111, 212)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_fggfp")
+animation = &"amarelo"
+autoplay = "amarelo"
+frame_progress = 0.782651
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(214, 339)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_fggfp")
+animation = &"verde"
+autoplay = "verde"
+frame_progress = 0.32714
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(661, 339)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_fggfp")
+animation = &"azul"
+autoplay = "azul"
+frame_progress = 0.0439247
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
+position = Vector2(742, 208)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_fggfp")
+animation = &"vermelho"
+autoplay = "vermelho"
+frame_progress = 0.610253

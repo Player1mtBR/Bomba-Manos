@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var hp := 12
+var hp := 15
 var movespeed := 300
 
 @onready var parryTimer = $ParryTimer
@@ -131,8 +131,8 @@ func chargePower(amount):
 			await get_tree().create_timer(0.05, false).timeout
 			modulate = Color(1, 1, 1)
 			await get_tree().create_timer(0.05, false).timeout
-		if hp > 10:
-			hp = 10
+		if hp > 15:
+			hp = 15
 		if chargedPower >= 3:
 			canAttack = true
 			$sfx/fullpower.play()
@@ -200,16 +200,18 @@ func disable_all_shields():
 	
 func jpAttack():
 	attackCounter += 1
-	$AnimatedSprite2D.play("shoot")
-	$sfx/attack.play()
-	$sfx/bombarangers.play()
 	$AnimationPlayer.play("power_drain")
 	$"../SuperManel".coolAnimation = true
+	$sfx/bombaLaser.play()
 	$"../Icons/Faces".modulate = Color(0, 1, 0)
 	canAttack = false
 	isAttacking = true
 	invincible = true
 	#print("Attack")
+	await get_tree().create_timer(1.5, false).timeout
+	$AnimatedSprite2D.play("shoot")
+	$sfx/attack.play()
+	$sfx/bombarangers.play()
 	$Attack.visible = true
 	$Attack/Area2D/CollisionShape2D.disabled = false
 	await get_tree().create_timer(1.0, false).timeout

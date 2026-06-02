@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://t5iy6xal2t2y"]
+[gd_scene load_steps=38 format=4 uid="uid://t5iy6xal2t2y"]
 
 [ext_resource type="Script" uid="uid://cj36ot7cdlu2m" path="res://scripts/lab_test_01.gd" id="1_rgwnu"]
 [ext_resource type="Texture2D" uid="uid://o31y83d3vwpt" path="res://assets/sprites/levels/campaign/world01/LostWoodsFloor.png" id="2_2prfi"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://b5aikch2jynv5" path="res://assets/sprites/levels/campaign/world02/cyberBlocks.png" id="9_bpjwr"]
 [ext_resource type="PackedScene" uid="uid://d3vlwbmv0reje" path="res://scenes/levels/campaign/world02/generator.tscn" id="9_o6mhe"]
 [ext_resource type="PackedScene" uid="uid://bww0rq8oxupon" path="res://scenes/objects/cyberBlock.tscn" id="10_cek4b"]
-[ext_resource type="AudioStream" uid="uid://gtyl104mnncw" path="res://assets/audio/dialogue/World02/silencioHero.mp3" id="10_jb0n5"]
 [ext_resource type="PackedScene" uid="uid://bpkeke7hsultm" path="res://scenes/levels/campaign/world02/anti_matter_beam.tscn" id="10_kygv5"]
 [ext_resource type="PackedScene" uid="uid://ch1smqkxm1ox0" path="res://scenes/entities/players/basePlayer.tscn" id="11_wpwlr"]
 [ext_resource type="SpriteFrames" uid="uid://cyekfxld10edt" path="res://assets/res/spriteframes/miniman-Sprite-Frames.tres" id="12_5x6ko"]
@@ -27,6 +26,12 @@
 [ext_resource type="PackedScene" uid="uid://c7xp0h0cmrb0" path="res://scenes/entities/Mobs/cyberworld/world02/kazu.tscn" id="22_ejxv2"]
 [ext_resource type="PackedScene" uid="uid://t28irw8r43g6" path="res://scenes/entities/Mobs/cyberworld/world02/zap.tscn" id="23_ejxv2"]
 [ext_resource type="PackedScene" uid="uid://b2wjsl0bsfouh" path="res://scenes/menus/pause_campaign.tscn" id="24_40ik3"]
+[ext_resource type="AudioStream" uid="uid://baloi4qkt3rw2" path="res://assets/audio/dialogue/World04/era de ouro.mp3" id="27_ayu53"]
+[ext_resource type="AudioStream" uid="uid://bqoou8hq4l745" path="res://assets/audio/dialogue/World04/barreiras.mp3" id="28_mte2e"]
+[ext_resource type="AudioStream" uid="uid://cgpci1cgip55j" path="res://assets/audio/dialogue/World04/ja sei.mp3" id="29_es18s"]
+[ext_resource type="AudioStream" uid="uid://7jbv4evg363c" path="res://assets/audio/dialogue/World04/instrucoes.mp3" id="30_ugsuk"]
+[ext_resource type="AudioStream" uid="uid://bo348np18h5km" path="res://assets/audio/dialogue/World04/apos colocar.mp3" id="31_mte2e"]
+[ext_resource type="AudioStream" uid="uid://co8v53lyv8ybi" path="res://assets/audio/dialogue/World04/ok n parece dificil.mp3" id="31_reshh"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ywaao"]
 
@@ -237,10 +242,6 @@ offset_top = -167.0
 offset_right = 219.0
 offset_bottom = 79.0
 texture = SubResource("PlaceholderTexture2D_ywaao")
-
-[node name="DIALOG" parent="environment" instance=ExtResource("8_wpwlr")]
-falasDosPersonagens = Array[AudioStream]([ExtResource("9_5x6ko"), ExtResource("10_jb0n5"), ExtResource("10_jb0n5"), ExtResource("10_jb0n5"), ExtResource("10_jb0n5"), ExtResource("10_jb0n5")])
-legendas = Array[String](["E pensar que aqui já foi um dos lugares mais pacíficos da galáxia", " Eu luto para que a Era de Ouro retorne a este lugar, e ela retornará, isso eu lhe garanto.", "Hm… barreiras cinéticas anti-bomba.", "Já sei, se eu sobrecarregar os geradores, a barreira vai cair, vou usar a bomba remota.", "instruções:aperte q no teclado ou b no controle para mudar a bomba equipada.apos colocar duas bombas segure o detonador por 3 segundos.", "Ok, não deve ser difícil"])
 
 [node name="pauseCampaign" parent="environment" instance=ExtResource("24_40ik3")]
 
@@ -732,3 +733,7 @@ nextLevel = "uid://07ww82w4it23"
 
 [node name="pauseCampaign" parent="." instance=ExtResource("24_40ik3")]
 visible = false
+
+[node name="DIALOG" parent="." instance=ExtResource("8_wpwlr")]
+falasDosPersonagens = Array[AudioStream]([ExtResource("9_5x6ko"), ExtResource("27_ayu53"), ExtResource("28_mte2e"), ExtResource("29_es18s"), ExtResource("30_ugsuk"), ExtResource("31_mte2e"), ExtResource("31_reshh")])
+legendas = Array[String](["E pensar que aqui já foi um dos lugares mais pacíficos da galáxia", " Eu luto para que a Era de Ouro retorne a este lugar, e ela retornará, isso eu lhe garanto.", "Hm… barreiras cinéticas anti-bomba.", "Já sei, se eu sobrecarregar os geradores, a barreira vai cair, vou usar a bomba remota.", "instruções:aperte q no teclado ou b no controle para mudar a bomba equipada.apos colocar duas bombas segure o detonador por 3 segundos.", "Apos colocar duas bombas segure o detonador por 3 segundos.", "Ok, não deve ser difícil"])

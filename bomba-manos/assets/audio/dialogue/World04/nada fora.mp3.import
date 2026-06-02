@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d36puj5aad4y2"
+path="res://.godot/imported/nada fora.mp3-da65763281d27c1c032b88f83d9a803c.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/World04/nada fora.mp3"
+dest_files=["res://.godot/imported/nada fora.mp3-da65763281d27c1c032b88f83d9a803c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

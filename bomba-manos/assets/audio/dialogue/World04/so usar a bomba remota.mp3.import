@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://tgmkal7l4ihk"
+path="res://.godot/imported/so usar a bomba remota.mp3-d970262da57f1a77ccf486a933bc6893.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/World04/so usar a bomba remota.mp3"
+dest_files=["res://.godot/imported/so usar a bomba remota.mp3-d970262da57f1a77ccf486a933bc6893.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

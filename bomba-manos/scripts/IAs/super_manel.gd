@@ -18,7 +18,7 @@ extends Node2D
 	$"attackSpawn/top/5"
 ]
 
-var skipIntro := true
+var skipIntro := false
 var phase := 1
 
 var projectile01Scene = preload("res://scenes/levels/campaign/extras/projectile_01.tscn")
@@ -93,14 +93,14 @@ func _ready() -> void:
 		coolAnimation = true
 		$AnimationPlayer.play("intro")
 		await get_tree().create_timer(10.0, false).timeout
-		$sfx/risadaPessecopata.play()
-		$"../soundtrack".play()
+		#$sfx/risadaPessecopata.play()
+		$"../soundtrack1".play()
 		await $AnimationPlayer.animation_finished
 		coolAnimation = false
 	await get_tree().create_timer(0.1, false).timeout
 	$visual.visible = true
 	
-	$"../soundtrack".play()
+	$"../soundtrack1".play()
 	#await get_tree().create_timer(3.0).timeout
 	canAttack = true
 	print(coolAnimation, canAttack)
@@ -636,7 +636,8 @@ func takeDamage():
 	chargeCountCap -= 2
 	chargedCount = chargeCountCap
 	print("manel hit, phase ", phase)
-	$AnimationPlayer.play("manel_generic_fade")
+	if phase != 4:
+		$AnimationPlayer.play("manel_generic_fade")
 	coolAnimation = true
 	await get_tree().create_timer(2.5, false).timeout
 	canAttack = false
@@ -655,16 +656,17 @@ func takeDamage():
 	
 	await $visual/AnimatedSprite2D.animation_finished
 
-	$sfx/risadaPessecopata.play()
+	playVoiceline()
 	await get_tree().create_timer(3.0, false).timeout
 		
-	$sfx/risadaPessecopata.play()
+	#$sfx/risadaPessecopata.play()
 	print("begin next phase")
 	coolAnimation = false
 	canAttack = true
 	
 func finalAttack():
 	await get_tree().create_timer(5.0, false).timeout
+	$sfx/insolentes.play()
 	coolAnimation = true
 	$"../MegazordJP".canMove = false
 	$"../stuff2Animate/megaBomb/AnimationPlayer".play("go")
@@ -697,6 +699,15 @@ func playAttackAnim():
 			$AnimationPlayer.play("handsAttack")
 		4:
 			$visual/AnimatedSprite2D.play("attack03")
+			
+func playVoiceline():
+	match phase:
+		2:
+			$sfx/pessecopata.play()
+		3:
+			$sfx/souAbsoluto.play()
+		4:
+			$sfx/insolentes.play()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	#print("area ",area.name)

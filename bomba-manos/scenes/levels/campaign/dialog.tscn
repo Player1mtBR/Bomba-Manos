@@ -320,6 +320,7 @@ legendas = Array[String](["aaaaaaaa", "bbbbbbbbbbbb"])
 bus = &"Voices"
 
 [node name="Visual" type="Node2D" parent="."]
+visible = false
 z_index = 5
 position = Vector2(-208, -128)
 

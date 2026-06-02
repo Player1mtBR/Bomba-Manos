@@ -185,50 +185,50 @@ func displaySelectedChar(playerNum, charNum) -> void:
 		1:
 			match charNum:
 				1:
-					$CharSelect2/player1/Label.text = "BOMBAMAN\nPlayer 1"
+					$CharSelect2/player1/Label.text = "Mano\nPlayer 1"
 				2:
-					$CharSelect2/player1/Label.text = "UREIAMAN\nPlayer 1"
+					$CharSelect2/player1/Label.text = "S. Hero\nPlayer 1"
 				3:
-					$CharSelect2/player1/Label.text = "RANGERMAN\nPlayer 1"
+					$CharSelect2/player1/Label.text = "Gaspar\nPlayer 1"
 				4:
-					$CharSelect2/player1/Label.text = "MINIMAN\nPlayer 1"
+					$CharSelect2/player1/Label.text = "Sentinela\nPlayer 1"
 				5:
 					$CharSelect2/player1/Label.text = "???\nPlayer 1"
 					
 		2:
 			match charNum:
 				1:
-					$CharSelect2/player2/Label.text = "BOMBAMAN\nPlayer 2"
+					$CharSelect2/player2/Label.text = "Mano\nPlayer 2"
 				2:
-					$CharSelect2/player2/Label.text = "UREIAMAN\nPlayer 2"
+					$CharSelect2/player2/Label.text = "S. Hero\nPlayer 2"
 				3:
-					$CharSelect2/player2/Label.text = "RANGERMAN\nPlayer 2"
+					$CharSelect2/player2/Label.text = "Gaspar\nPlayer 2"
 				4:
-					$CharSelect2/player2/Label.text = "MINIMAN\nPlayer 2"
+					$CharSelect2/player2/Label.text = "Sentinela\nPlayer 2"
 				5:
 					$CharSelect2/player2/Label.text = "???\nPlayer 2"
 		3:
 			match charNum:
 				1:
-					$CharSelect2/player3/Label.text = "BOMBAMAN\nPlayer 3"
+					$CharSelect2/player3/Label.text = "Mano\nPlayer 3"
 				2:
-					$CharSelect2/player3/Label.text = "UREIAMAN\nPlayer 3"
+					$CharSelect2/player3/Label.text = "S. Hero\nPlayer 3"
 				3:
-					$CharSelect2/player3/Label.text = "RANGERMAN\nPlayer 3"
+					$CharSelect2/player3/Label.text = "Gaspar\nPlayer 3"
 				4:
-					$CharSelect2/player3/Label.text = "MINIMAN\nPlayer 3"
+					$CharSelect2/player3/Label.text = "Sentinela\nPlayer 3"
 				5:
 					$CharSelect2/player3/Label.text = "???\nPlayer 3"
 		4:
 			match charNum:
 				1:
-					$CharSelect2/player4/Label.text = "BOMBAMAN\nPlayer 4"
+					$CharSelect2/player4/Label.text = "Mano\nPlayer 4"
 				2:
-					$CharSelect2/player4/Label.text = "UREIAMAN\nPlayer 4"
+					$CharSelect2/player4/Label.text = "S. Hero\nPlayer 4"
 				3:
-					$CharSelect2/player4/Label.text = "RANGERMAN\nPlayer 4"
+					$CharSelect2/player4/Label.text = "Gaspar\nPlayer 4"
 				4:
-					$CharSelect2/player4/Label.text = "MINIMAN\nPlayer 4"
+					$CharSelect2/player4/Label.text = "Sentinela\nPlayer 4"
 				5:
 					$CharSelect2/player4/Label.text = "???\nPlayer 4"
 

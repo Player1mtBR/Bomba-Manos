@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dy1f0vnfdle7d"
+path="res://.godot/imported/profecia inicial bomba manos.mp3-dd75468e5ca2c6219bbc5996992d245e.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/dialogue/falasJP/profecia inicial bomba manos.mp3"
+dest_files=["res://.godot/imported/profecia inicial bomba manos.mp3-dd75468e5ca2c6219bbc5996992d245e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -8,13 +8,21 @@ extends Node2D
 @onready var voice03 := $voiceLines/taComendoBombaDenovo
 
 var canMove := true
-var moveSpeed := 25
+var moveSpeed := 100
 var moveLeft2Right := true
 var wonMatch := false
 
 
+var previousScore := 0
+
+func _ready():
+	VersusScoreManager.drawRegistered.connect(_onDrawRegistered)
+	VersusScoreManager.killRegistered.connect(_onKillRegistered)
+
+
 func _process(delta: float) -> void:
 	#if GlobalScript.currentPlayers == 0 and canMove == true:
+	"""
 	if GlobalScript.MANEL_WINS == true and canMove == true:
 		victoryPose()
 	
@@ -26,23 +34,31 @@ func _process(delta: float) -> void:
 		GlobalScript.triggerLaugh = false
 		playVoice(2)
 		
+	"""
+	
+
+		
 	if canMove == true and GlobalScript.MANEL_WINS == false:
 		if moveLeft2Right == true:
-			position.y += moveSpeed * delta
+			position.x += moveSpeed * delta
 			
-			if position.y >= 120.0:
-				position.x = -position.x
+			if position.x >= 541.0:
+				#position.x = -position.x
 				moveLeft2Right = !moveLeft2Right
 			
 		else:
-			position.y -= moveSpeed * delta
+			position.x -= moveSpeed * delta
 			
-			if position.y <= -128.0:
+			if position.x <= -501.0:
 				#position.x = -144.0
 				moveLeft2Right = !moveLeft2Right
 				
 		
+func _onDrawRegistered():
+	playVoice(3)
 		
+func _onKillRegistered():
+	playVoice(3)
 		
 ## mudar implementacao dps
 func playVoice(voice):
@@ -54,12 +70,12 @@ func playVoice(voice):
 			animPlayer.play("talk")
 			await get_tree().create_timer(2.4).timeout
 			
-		2:
+		3:
 			voice02.play()
 			animPlayer.play("laugh")
 			await get_tree().create_timer(2.1).timeout
 			
-		3:
+		2:
 			voice03.play()
 			animPlayer.play("talk")
 			await get_tree().create_timer(2.5).timeout
@@ -81,3 +97,8 @@ func victoryPose():
 	GlobalScript.addPoint2Player(0) ##Manel ID = 0
 	await get_tree().create_timer(4.0).timeout
 	GlobalScript.restartLevel()
+
+
+func _on_timer_timeout() -> void:
+	playVoice(randi_range(1,2))
+	$Timer.start()

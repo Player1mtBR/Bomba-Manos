@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://ckcwf0yhamcqc"]
+[gd_scene load_steps=110 format=3 uid="uid://ckcwf0yhamcqc"]
 
 [ext_resource type="Script" uid="uid://bj12gul8etm1p" path="res://scripts/misc/cutscene_01.gd" id="1_ugm7o"]
 [ext_resource type="VideoStream" uid="uid://c6jsmrnqk6mfw" path="res://assets/video/YoU cAn'T jUsT sHoOt a hOlE iNtO ThE sUrFaCe oF mArS.ogv" id="2_ovcn2"]
@@ -107,6 +107,7 @@
 [ext_resource type="Texture2D" uid="uid://csu8itdisaj25" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation103.png" id="105_hqilp"]
 [ext_resource type="Texture2D" uid="uid://bhv6qmcjomydo" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation104.png" id="106_l3jpg"]
 [ext_resource type="Texture2D" uid="uid://cde5kdw3oobmw" path="res://assets/sprites/cinematics/bombazordTransformation/bombazord transformation animation105.png" id="107_vr66j"]
+[ext_resource type="AudioStream" uid="uid://w063dn70k50t" path="res://assets/audio/tracks/extra/BombaRangers.mp3" id="108_ttrm4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_neasb"]
 animations = [{
@@ -458,5 +459,8 @@ expand = true
 sprite_frames = SubResource("SpriteFrames_neasb")
 frame = 104
 frame_progress = 1.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimatedSprite2D"]
+stream = ExtResource("108_ttrm4")
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

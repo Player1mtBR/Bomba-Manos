@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://hola2cxa0s7h"]
+[gd_scene load_steps=7 format=3 uid="uid://hola2cxa0s7h"]
 
 [ext_resource type="Script" uid="uid://blc1wor3lq6vd" path="res://scripts/menus/ui/versus_score_ui.gd" id="1_deixw"]
 [ext_resource type="Texture2D" uid="uid://db0eq0dmq02je" path="res://assets/sprites/manel/manellboss/face.png" id="2_7ojyc"]
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="3_carrn"]
+[ext_resource type="Theme" uid="uid://ds7mb4bo4uj1a" path="res://assets/res/button_theme_01.tres" id="5_0ehs6"]
 
 [sub_resource type="Gradient" id="Gradient_7ojyc"]
 offsets = PackedFloat32Array(0)
@@ -20,28 +21,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_deixw")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-theme_override_constants/separation = 184
+offset_bottom = 96.0
+theme_override_constants/separation = 96
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 768.0
-offset_right = 896.0
-offset_bottom = 64.0
+offset_left = 744.0
+offset_right = 880.0
+offset_bottom = 104.0
 texture = SubResource("GradientTexture2D_carrn")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 776.0
+offset_left = 752.0
 offset_top = 8.0
-offset_right = 888.0
-offset_bottom = 56.0
+offset_right = 880.0
+offset_bottom = 96.0
 texture = SubResource("GradientTexture2D_carrn")
 expand_mode = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(800, 32)
+position = Vector2(784, 64)
 texture = ExtResource("2_7ojyc")
 region_enabled = true
 region_rect = Rect2(0, 0, 50, 50)
@@ -54,3 +56,12 @@ offset_bottom = 18.0
 theme = ExtResource("3_carrn")
 theme_override_font_sizes/font_size = 34
 text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -28.0
+offset_top = -48.0
+offset_right = 86.0
+offset_bottom = -25.0
+theme = ExtResource("5_0ehs6")
+text = "Derrotas"

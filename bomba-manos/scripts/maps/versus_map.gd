@@ -16,6 +16,7 @@ var playerScene := preload(
 )
 	
 func _ready() -> void:
+	MusicMenu.get_child(0).stop
 	VersusScoreManager.setupPlayers()
 	spawnAllPlayers()
 	$VersusScoreUI.createUiElements()

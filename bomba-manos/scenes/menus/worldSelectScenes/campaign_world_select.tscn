@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://wyq2fculrhic"]
+[gd_scene load_steps=31 format=3 uid="uid://wyq2fculrhic"]
 
 [ext_resource type="Script" uid="uid://cv2yv030f321n" path="res://scripts/menus/worldSelect/campaign_world_select.gd" id="1_oqn5v"]
 [ext_resource type="Texture2D" uid="uid://bryq58u6v2vqq" path="res://assets/sprites/levels/campaign/extras/Sprite da cena da boss fight.png" id="2_l5fjb"]
@@ -11,6 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://bid0ssiobl60c" path="res://scenes/menus/worldSelectScenes/campaign_level_select_04.tscn" id="6_fw80g"]
 [ext_resource type="PackedScene" uid="uid://ckyjryauswv6o" path="res://scenes/menus/worldSelectScenes/campaign_level_select_05.tscn" id="7_cur5s"]
 [ext_resource type="Texture2D" uid="uid://bpfrjnt1qc62i" path="res://assets/sprites/levels/campaign/mundo.png" id="8_od3au"]
+[ext_resource type="Texture2D" uid="uid://cssqthpgchlbx" path="res://assets/sprites/levels/campaign/world02/lua_articial (1).webp" id="10_od3au"]
+[ext_resource type="Texture2D" uid="uid://dudbimm7j0q4k" path="res://assets/sprites/levels/campaign/mundo6.png" id="12_c30vb"]
+[ext_resource type="Texture2D" uid="uid://nud8q2ttuhmo" path="res://assets/sprites/levels/campaign/mundo7.png" id="13_t2w4e"]
+[ext_resource type="Texture2D" uid="uid://jd25g14nmh8" path="res://assets/sprites/levels/campaign/mundo8.png" id="14_2oroy"]
+[ext_resource type="Texture2D" uid="uid://cx5gda7i6g71w" path="res://assets/sprites/levels/campaign/mundo9.png" id="15_lucp6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wi1c3"]
 atlas = ExtResource("2_l5fjb")
@@ -61,6 +66,33 @@ colors = PackedColorArray(0, 0, 0, 0.294118)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_cur5s"]
 gradient = SubResource("Gradient_mrnxu")
+
+[sub_resource type="Gradient" id="Gradient_t2w4e"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2oroy"]
+gradient = SubResource("Gradient_t2w4e")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xgntl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_c30vb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_t2w4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2oroy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_lucp6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
 
 [sub_resource type="Animation" id="Animation_fw80g"]
 length = 0.001
@@ -178,6 +210,7 @@ offset_right = 544.0
 offset_bottom = 248.0
 worldIndex = 4
 go2LevelPacked = ExtResource("6_fw80g")
+worldIconTexture = ExtResource("10_od3au")
 
 [node name="WorldIcon5" parent="." instance=ExtResource("2_x64fe")]
 offset_left = 680.0
@@ -186,6 +219,14 @@ offset_right = 744.0
 offset_bottom = 272.0
 worldIndex = 5
 go2LevelPacked = ExtResource("7_cur5s")
+worldIconTexture = SubResource("GradientTexture2D_2oroy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(680, 208)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_xgntl")
+autoplay = "default"
+frame_progress = 0.0303757
 
 [node name="playerIcon" parent="." instance=ExtResource("3_lhlb2")]
 

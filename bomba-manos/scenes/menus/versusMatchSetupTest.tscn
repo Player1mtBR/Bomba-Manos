@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c02kwfsjemtds"]
+[gd_scene load_steps=6 format=3 uid="uid://c02kwfsjemtds"]
 
 [ext_resource type="Theme" uid="uid://dvty1m771uoa3" path="res://assets/res/new_theme.tres" id="1_2qljs"]
 [ext_resource type="Script" uid="uid://cyn5kl26ct3pp" path="res://scripts/menus/testButtonMP.gd" id="2_2qljs"]
+[ext_resource type="Texture2D" uid="uid://jia0vwgdkjvb" path="res://assets/sprites/UI/mainMenu/bomba manos menu background.png" id="2_mxgfn"]
+[ext_resource type="Theme" uid="uid://ds7mb4bo4uj1a" path="res://assets/res/button_theme_01.tres" id="3_fe8de"]
+[ext_resource type="Texture2D" uid="uid://gh4r3hvrmq6g" path="res://assets/sprites/UI/mainMenu/31 Sem Título_20260514113123.png" id="5_7px3w"]
 
 [node name="VersusMatchSetupTest" type="Control"]
 layout_mode = 3
@@ -11,6 +14,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_2qljs")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 855.0
+offset_bottom = 480.0
+texture = ExtResource("2_mxgfn")
 
 [node name="buttons" type="Control" parent="."]
 layout_mode = 1
@@ -27,6 +36,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.75, 0.75)
 size_flags_horizontal = 4
+theme = ExtResource("3_fe8de")
 script = ExtResource("2_2qljs")
 
 [node name="playerCountSelect" type="VBoxContainer" parent="buttons"]
@@ -36,24 +46,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -96.1667
-offset_top = -44.0
-offset_right = 138.833
-offset_bottom = 81.0
+offset_left = -96.6667
+offset_top = 56.0
+offset_right = 138.333
+offset_bottom = 181.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="2players" type="Button" parent="buttons/playerCountSelect"]
 layout_mode = 2
-text = "2 Players"
+text = "
+2 Players"
 
 [node name="3players" type="Button" parent="buttons/playerCountSelect"]
 layout_mode = 2
-text = "3 Players"
+text = "
+3 Players"
 
 [node name="4players" type="Button" parent="buttons/playerCountSelect"]
 layout_mode = 2
-text = "4 Players"
+text = "
+4 Players"
 
 [node name="CharSelect2" type="BoxContainer" parent="buttons"]
 visible = false
@@ -63,10 +76,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -512.5
-offset_top = -126.333
-offset_right = 555.5
-offset_bottom = 153.667
+offset_left = -512.667
+offset_top = -21.3333
+offset_right = 555.333
+offset_bottom = 258.667
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -77,28 +90,37 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="buttons/CharSelect2/player1"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 27
 text = "
 Player 1"
 horizontal_alignment = 1
 
 [node name="bombaman" type="Button" parent="buttons/CharSelect2/player1"]
 layout_mode = 2
-text = "BOMBAMAN"
+theme_override_font_sizes/font_size = 27
+text = "
+Mano
+"
 
 [node name="ureiaman" type="Button" parent="buttons/CharSelect2/player1"]
 layout_mode = 2
-text = "UREIAMAN"
+theme_override_font_sizes/font_size = 27
+text = "S. Hero"
 
 [node name="rangerman" type="Button" parent="buttons/CharSelect2/player1"]
 layout_mode = 2
-text = "RANGERMAN"
+theme_override_font_sizes/font_size = 27
+text = "Gaspar
+"
 
 [node name="miniman" type="Button" parent="buttons/CharSelect2/player1"]
 layout_mode = 2
-text = "MINIMAN"
+theme_override_font_sizes/font_size = 27
+text = "Sentinela"
 
 [node name="secret" type="Button" parent="buttons/CharSelect2/player1"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 27
 disabled = true
 text = "???"
 
@@ -109,28 +131,37 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="buttons/CharSelect2/player2"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 27
 text = "
 Player 2"
 horizontal_alignment = 1
 
 [node name="bombaman" type="Button" parent="buttons/CharSelect2/player2"]
 layout_mode = 2
-text = "BOMBAMAN"
+theme_override_font_sizes/font_size = 27
+text = "
+Mano
+"
 
 [node name="ureiaman" type="Button" parent="buttons/CharSelect2/player2"]
 layout_mode = 2
-text = "UREIAMAN"
+theme_override_font_sizes/font_size = 27
+text = "S. Hero"
 
 [node name="rangerman" type="Button" parent="buttons/CharSelect2/player2"]
 layout_mode = 2
-text = "RANGERMAN"
+theme_override_font_sizes/font_size = 27
+text = "Gaspar
+"
 
 [node name="miniman" type="Button" parent="buttons/CharSelect2/player2"]
 layout_mode = 2
-text = "MINIMAN"
+theme_override_font_sizes/font_size = 27
+text = "Sentinela"
 
 [node name="secret" type="Button" parent="buttons/CharSelect2/player2"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 27
 disabled = true
 text = "???"
 
@@ -141,27 +172,37 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="buttons/CharSelect2/player3"]
 layout_mode = 2
-text = "Player 3"
+theme_override_font_sizes/font_size = 27
+text = "
+Player 3"
 horizontal_alignment = 1
 
 [node name="bombaman" type="Button" parent="buttons/CharSelect2/player3"]
 layout_mode = 2
-text = "BOMBAMAN"
+theme_override_font_sizes/font_size = 27
+text = "
+Mano
+"
 
 [node name="ureiaman" type="Button" parent="buttons/CharSelect2/player3"]
 layout_mode = 2
-text = "UREIAMAN"
+theme_override_font_sizes/font_size = 27
+text = "S. Hero"
 
 [node name="rangerman" type="Button" parent="buttons/CharSelect2/player3"]
 layout_mode = 2
-text = "RANGERMAN"
+theme_override_font_sizes/font_size = 27
+text = "Gaspar
+"
 
 [node name="miniman" type="Button" parent="buttons/CharSelect2/player3"]
 layout_mode = 2
-text = "MINIMAN"
+theme_override_font_sizes/font_size = 27
+text = "Sentinela"
 
 [node name="secret" type="Button" parent="buttons/CharSelect2/player3"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 27
 disabled = true
 text = "???"
 
@@ -172,28 +213,37 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="buttons/CharSelect2/player4"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 27
 text = "
 Player 4"
 horizontal_alignment = 1
 
 [node name="bombaman" type="Button" parent="buttons/CharSelect2/player4"]
 layout_mode = 2
-text = "BOMBAMAN"
+theme_override_font_sizes/font_size = 27
+text = "
+Mano
+"
 
 [node name="ureiaman" type="Button" parent="buttons/CharSelect2/player4"]
 layout_mode = 2
-text = "UREIAMAN"
+theme_override_font_sizes/font_size = 27
+text = "S. Hero"
 
 [node name="rangerman" type="Button" parent="buttons/CharSelect2/player4"]
 layout_mode = 2
-text = "RANGERMAN"
+theme_override_font_sizes/font_size = 27
+text = "Gaspar
+"
 
 [node name="miniman" type="Button" parent="buttons/CharSelect2/player4"]
 layout_mode = 2
-text = "MINIMAN"
+theme_override_font_sizes/font_size = 27
+text = "Sentinela"
 
 [node name="secret" type="Button" parent="buttons/CharSelect2/player4"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 27
 disabled = true
 text = "???"
 
@@ -205,20 +255,41 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -123.167
-offset_top = -18.6667
-offset_right = 165.833
-offset_bottom = 63.3333
+offset_left = -308.667
+offset_top = 48.0
+offset_right = 351.333
+offset_bottom = 167.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="changeMap" type="Button" parent="buttons/startMatch"]
 layout_mode = 2
-text = "Change Map"
+text = "Escolher Mapa (Em Breve!)"
 
 [node name="begin" type="Button" parent="buttons/startMatch"]
 layout_mode = 2
-text = "Start Match"
+text = "
+INICIAR PARTIDA"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 440.0
+offset_top = 64.0
+offset_right = 698.0
+offset_bottom = 115.0
+theme = ExtResource("3_fe8de")
+theme_override_font_sizes/font_size = 51
+text = "Versus"
+
+[node name="bombaManos" type="TextureRect" parent="."]
+offset_left = 56.0
+offset_top = -192.0
+offset_right = 755.0
+offset_bottom = 447.0
+rotation = 0.523598
+pivot_offset = Vector2(210.5, 220)
+texture = ExtResource("5_7px3w")
+expand_mode = 1
+stretch_mode = 4
 
 [connection signal="pressed" from="buttons/playerCountSelect/2players" to="buttons" method="_on_2_players_pressed"]
 [connection signal="pressed" from="buttons/playerCountSelect/3players" to="buttons" method="_on_3_players_pressed"]
