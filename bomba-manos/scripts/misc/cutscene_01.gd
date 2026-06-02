@@ -9,6 +9,8 @@ func _ready() -> void:
 		$AnimatedSprite2D.play("default")
 		await get_tree().create_timer(awaitBeforeLoad, false).timeout
 		if awaitBeforeLoad == 12.0:
+			$ost.stop()
+			$AnimatedSprite2D/AudioStreamPlayer.play()
 			PortalTransition.bossIn()
 			await get_tree().create_timer(1.5, false).timeout
 		Loader.loadingScreen2Scene(toLevelFile)
