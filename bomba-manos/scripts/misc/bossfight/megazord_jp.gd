@@ -22,7 +22,8 @@ var canParry := true
 var currentDirection : Vector2
 
 func _ready() -> void:
-	pass
+	await get_tree().create_timer(25.0, false).timeout
+	$"../AudioStreamPlayer".play
 	
 func _process(delta: float) -> void:
 	if attackCounter >= 3:

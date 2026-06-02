@@ -1,4 +1,4 @@
-[gd_scene load_steps=256 format=3 uid="uid://suap6bq2v1le"]
+[gd_scene load_steps=257 format=3 uid="uid://suap6bq2v1le"]
 
 [ext_resource type="Script" uid="uid://wasqsu7cxrg" path="res://scripts/misc/bossfight/megazord_jp.gd" id="1_eju5j"]
 [ext_resource type="Script" uid="uid://b8x47tsklf1ns" path="res://scripts/misc/bossfight/bossfight.gd" id="1_vtx7u"]
@@ -120,6 +120,7 @@
 [ext_resource type="AudioStream" uid="uid://dv1hoj7h60ee2" path="res://assets/audio/dialogue/falasManel/nao podem me derrotar.mp3" id="82_g1rxn"]
 [ext_resource type="AudioStream" uid="uid://syp0s33tkh2l" path="res://assets/audio/dialogue/falasManel/professor pessecopata.mp3" id="83_do5pa"]
 [ext_resource type="AudioStream" uid="uid://bl4feys1g8byw" path="res://assets/audio/dialogue/falasManel/criaturas insolentes.mp3" id="84_1ijk7"]
+[ext_resource type="AudioStream" uid="uid://buaqcupv25xrk" path="res://assets/audio/tracks/world05/ManelPhase03.mp3" id="94_x1qnh"]
 [ext_resource type="AudioStream" uid="uid://dmonlbe6ljqj4" path="res://assets/audio/dialogue/falasJP/bomba laser.mp3" id="116_1ijk7"]
 [ext_resource type="PackedScene" uid="uid://frdo0jfku5v7" path="res://scenes/levels/campaign/dialog.tscn" id="118_xmm4d"]
 [ext_resource type="AudioStream" uid="uid://el56sma8l5yo" path="res://assets/audio/dialogue/falasManel/nos encontramos.mp3" id="119_cesid"]
@@ -3310,6 +3311,11 @@ shape = SubResource("RectangleShape2D_tp6la")
 [node name="soundtrack1" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("6_v0qoy")
+bus = &"Soundtrack"
+
+[node name="soundtrack2" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("94_x1qnh")
 bus = &"Soundtrack"
 
 [node name="pauseCampaign" parent="." instance=ExtResource("8_mrnxu")]

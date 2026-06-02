@@ -647,6 +647,8 @@ func takeDamage():
 	
 	
 	if phase == 3: 
+		$"../soundtrack1".stop()
+		$"../soundtrack2".play()
 		$"../Background/phase03BG".visible = true
 		$visual/AnimatedSprite2D.scale = Vector2(2.75, 2.75)
 		$visual/AnimatedSprite2D.position.y = -32.0
